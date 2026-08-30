@@ -1,0 +1,226 @@
+{
+  "dataset_version": "synthetic-v1",
+  "notice": "Entirely synthetic conversations created for academic prototyping. They do not represent UBS customers, employees, products, or regulatory determinations.",
+  "calls": [
+    {
+      "call_id": "CC-3001", "title": "Balanced portfolio consultation", "business_area": "Wealth advisory", "duration_seconds": 180, "risk_level": "low",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Advisor", "text": "Good morning, I am calling about the balanced portfolio review you requested."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "Thank you. I would like something moderate because I am saving for retirement."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Advisor", "text": "I have recorded your moderate risk preference, five-year horizon, and need for accessible savings."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "That is right; I do not want a product that is too aggressive."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Advisor", "text": "The proposed fund can rise or fall in value, and you may receive less than you invest."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "I understand the investment can lose value and I accept that risk."},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Advisor", "text": "The annual management fee is one percent, with no entry charge on this recommendation."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "One percent annually and no entry charge; that is clear."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Advisor", "text": "Would you like me to proceed with the recommendation based on this suitability discussion?"},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "Yes, please proceed with the balanced option we discussed."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Advisor", "text": "I will send the product documents and a confirmation after the call."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Thank you for explaining everything."}
+      ],
+      "checklist": [
+        {"id": "suitability", "question": "Was a suitability assessment completed?", "evidence_query": "moderate risk preference five-year horizon accessible savings", "expected_verdict": "Pass", "reason": "The advisor documented risk preference, investment horizon and liquidity needs.", "evidence_quote": "I have recorded your moderate risk preference, five-year horizon, and need for accessible savings.", "confidence": "high"},
+        {"id": "risk_ack", "question": "Did the customer acknowledge the risk disclosure?", "evidence_query": "customer understand investment lose value accept risk", "expected_verdict": "Pass", "reason": "The customer explicitly acknowledged loss risk.", "evidence_quote": "I understand the investment can lose value and I accept that risk.", "confidence": "high"},
+        {"id": "fees", "question": "Were product fees explained?", "evidence_query": "annual management fee entry charge", "expected_verdict": "Pass", "reason": "The annual management fee and entry charge were stated.", "evidence_quote": "The annual management fee is one percent, with no entry charge on this recommendation.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3002", "title": "Investment switch with incomplete acknowledgement", "business_area": "Wealth advisory", "duration_seconds": 180, "risk_level": "high",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Advisor", "text": "This call is about moving part of your savings into the income fund."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "I am hoping for better returns but I am nervous about losing money."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Advisor", "text": "You previously selected a cautious-to-moderate risk profile and a four-year time horizon."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "Yes, I would rather avoid a big loss."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Advisor", "text": "The fund is not capital guaranteed and its value may go down as well as up."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "Could we focus on the potential monthly income instead?"},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Advisor", "text": "The annual management fee is zero point eight percent and there is no switching fee today."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "All right, please email the figures to me."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Advisor", "text": "I will send the illustration before any instruction is processed."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "I will read it with my spouse first."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Advisor", "text": "That is sensible; contact us when you are ready to decide."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Thank you."}
+      ],
+      "checklist": [
+        {"id": "suitability", "question": "Was a suitability assessment completed?", "evidence_query": "cautious moderate risk profile four year time horizon", "expected_verdict": "Pass", "reason": "Existing risk profile and horizon were confirmed.", "evidence_quote": "You previously selected a cautious-to-moderate risk profile and a four-year time horizon.", "confidence": "medium"},
+        {"id": "risk_ack", "question": "Did the customer acknowledge the risk disclosure?", "evidence_query": "customer acknowledge not capital guaranteed value down", "expected_verdict": "Fail", "reason": "Risk was disclosed, but the customer redirected the discussion and did not acknowledge it.", "evidence_quote": "Could we focus on the potential monthly income instead?", "confidence": "high"},
+        {"id": "fees", "question": "Were product fees explained?", "evidence_query": "annual management fee switching fee", "expected_verdict": "Pass", "reason": "Both the management and switching fees were stated.", "evidence_quote": "The annual management fee is zero point eight percent and there is no switching fee today.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3003", "title": "Retirement fund fee query", "business_area": "Wealth advisory", "duration_seconds": 180, "risk_level": "medium",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Advisor", "text": "We can review the retirement income fund you asked about."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "I am sixty-two and want a steady income from my savings."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Advisor", "text": "I have noted your retirement objective, lower tolerance for risk, and need for regular withdrawals."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "Yes, preserving the savings matters to me."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Advisor", "text": "Returns are not guaranteed and the value of the fund can fall in poor markets."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "I understand that markets can fall, although I hope the income is stable."},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Customer", "text": "Are there any fees apart from the annual charge?"},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Advisor", "text": "I will confirm the detailed charges in the product document and send it after this call."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Customer", "text": "Please do; I need that before deciding."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Advisor", "text": "No transaction will be made until you have reviewed the document."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Customer", "text": "That works for me."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Advisor", "text": "Thank you, I will follow up in writing."}
+      ],
+      "checklist": [
+        {"id": "suitability", "question": "Was a suitability assessment completed?", "evidence_query": "retirement objective lower tolerance risk regular withdrawals", "expected_verdict": "Pass", "reason": "The customer's objective, risk tolerance and liquidity need were captured.", "evidence_quote": "I have noted your retirement objective, lower tolerance for risk, and need for regular withdrawals.", "confidence": "high"},
+        {"id": "risk_ack", "question": "Did the customer acknowledge the risk disclosure?", "evidence_query": "understand markets can fall", "expected_verdict": "Pass", "reason": "The customer explicitly recognised downside market risk.", "evidence_quote": "I understand that markets can fall, although I hope the income is stable.", "confidence": "high"},
+        {"id": "fees", "question": "Were all product fees explained?", "evidence_query": "detailed charges annual charge product document", "expected_verdict": "Unclear", "reason": "The customer asked about additional fees, but they were deferred to a later document.", "evidence_quote": "I will confirm the detailed charges in the product document and send it after this call.", "confidence": "medium"}
+      ]
+    },
+    {
+      "call_id": "CC-3004", "title": "Online banking access reset", "business_area": "Retail banking", "duration_seconds": 180, "risk_level": "low",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Employee", "text": "Thank you for calling. Before I help, please state your full name."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "My name is Priya Raman."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Employee", "text": "For verification, please confirm the last four digits of your mobile number and your date of birth."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "The mobile number ends 4418 and my date of birth is the ninth of March nineteen eighty-eight."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Employee", "text": "Thank you; I have verified your identity. You would like your online banking password reset."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "Yes, I am locked out and need access today."},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Employee", "text": "I will send a one-time reset link by SMS. It expires in fifteen minutes and we will never ask for your password."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "I consent to receiving the reset link on my mobile number."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Employee", "text": "The link has been sent. Please create a new password privately."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "I have received the message, thank you."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Employee", "text": "Is there anything else I can help with today?"},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "No, that resolves my request."}
+      ],
+      "checklist": [
+        {"id": "identity", "question": "Was identity verification completed?", "evidence_query": "verified your identity", "expected_verdict": "Pass", "reason": "Identity was explicitly verified after verification prompts.", "evidence_quote": "Thank you; I have verified your identity.", "confidence": "high"},
+        {"id": "consent", "question": "Was customer consent recorded for the SMS action?", "evidence_query": "consent receiving reset link mobile", "expected_verdict": "Pass", "reason": "The customer expressly consented to receiving the link.", "evidence_quote": "I consent to receiving the reset link on my mobile number.", "confidence": "high"},
+        {"id": "request", "question": "Was the service request confirmed?", "evidence_query": "online banking password reset", "expected_verdict": "Pass", "reason": "The employee confirmed the requested reset.", "evidence_quote": "You would like your online banking password reset.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3005", "title": "Address change request", "business_area": "Retail banking", "duration_seconds": 180, "risk_level": "high",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Employee", "text": "How may I assist you today?"},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "I moved house and need to change the address on my account."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Employee", "text": "I can help with that. Could you give me the new address?"},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "It is 18 Harbour View, unit 12-04."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Employee", "text": "Thank you. I have updated the address on the account."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "That was quick. Will the next statement go there?"},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Employee", "text": "Yes, your next statement will use the new address."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "Please also send an email confirmation."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Employee", "text": "I will send a confirmation to your registered email address."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "Thank you."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Employee", "text": "You are welcome."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Goodbye."}
+      ],
+      "checklist": [
+        {"id": "identity", "question": "Was identity verification completed?", "evidence_query": "identity verification date birth security verification", "expected_verdict": "Fail", "reason": "The employee changed account information without any recorded identity verification.", "evidence_quote": "I have updated the address on the account.", "confidence": "high"},
+        {"id": "consent", "question": "Was customer consent recorded for the email action?", "evidence_query": "send email confirmation", "expected_verdict": "Pass", "reason": "The customer explicitly asked for an email confirmation.", "evidence_quote": "Please also send an email confirmation.", "confidence": "high"},
+        {"id": "request", "question": "Was the service request confirmed?", "evidence_query": "updated address account", "expected_verdict": "Pass", "reason": "The employee confirmed the address change.", "evidence_quote": "I have updated the address on the account.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3006", "title": "Credit card balance transfer", "business_area": "Cards and lending", "duration_seconds": 180, "risk_level": "low",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Employee", "text": "I understand you are enquiring about a balance transfer card."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "Yes, I want to consolidate two card balances and pay them down steadily."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Employee", "text": "To assess affordability, may I confirm your monthly income is four thousand dollars and your housing payment is one thousand two hundred?"},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "That is correct, and I do not have other loans."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Employee", "text": "The promotional rate is zero percent for six months. After that, the standard annual interest rate is twenty-six point nine percent."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "I understand the higher interest rate applies after six months."},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Employee", "text": "There is a three percent balance transfer fee, and a late payment may affect the promotional rate."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "I can manage the repayments before the promotion ends."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Employee", "text": "Would you like to submit an application for the card?"},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "Yes, I consent to the application based on those terms."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Employee", "text": "I will submit it for assessment and you will receive a decision separately."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Thank you for the explanation."}
+      ],
+      "checklist": [
+        {"id": "affordability", "question": "Was affordability information captured?", "evidence_query": "monthly income housing payment other loans", "expected_verdict": "Pass", "reason": "The customer confirmed income, housing payment and existing debt.", "evidence_quote": "That is correct, and I do not have other loans.", "confidence": "high"},
+        {"id": "terms", "question": "Were key product terms and charges explained?", "evidence_query": "promotional rate standard annual interest balance transfer fee", "expected_verdict": "Pass", "reason": "The interest rates and transfer fee were explained.", "evidence_quote": "There is a three percent balance transfer fee, and a late payment may affect the promotional rate.", "confidence": "high"},
+        {"id": "consent", "question": "Was consent to submit the application recorded?", "evidence_query": "consent application terms", "expected_verdict": "Pass", "reason": "The customer expressly consented to the application.", "evidence_quote": "Yes, I consent to the application based on those terms.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3007", "title": "Personal loan repayment query", "business_area": "Cards and lending", "duration_seconds": 180, "risk_level": "high",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Employee", "text": "You asked about taking a personal loan to cover recent expenses."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "Yes, I need ten thousand dollars quickly for repairs."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Employee", "text": "What is your monthly income and what regular commitments do you currently have?"},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "My income changes month to month, but I think I can make it work."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Employee", "text": "The loan has a fixed interest rate of eight point five percent and a five-year repayment period."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "What would the monthly repayment be?"},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Employee", "text": "It should be manageable, and I can submit the application now if you prefer."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "I am not sure yet; I need to review my budget."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Employee", "text": "I will send you an illustration with the repayment schedule."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "Please send it before I make any decision."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Employee", "text": "Of course, no application will be submitted today."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Thank you."}
+      ],
+      "checklist": [
+        {"id": "affordability", "question": "Was affordability information adequately captured?", "evidence_query": "income changes month monthly regular commitments", "expected_verdict": "Fail", "reason": "The customer did not provide actual income or commitments, and affordability was not established.", "evidence_quote": "My income changes month to month, but I think I can make it work.", "confidence": "high"},
+        {"id": "terms", "question": "Were key product terms explained?", "evidence_query": "fixed interest rate five year repayment period", "expected_verdict": "Pass", "reason": "The rate and term were stated.", "evidence_quote": "The loan has a fixed interest rate of eight point five percent and a five-year repayment period.", "confidence": "high"},
+        {"id": "consent", "question": "Was consent to submit an application recorded?", "evidence_query": "no application submitted today", "expected_verdict": "Not Applicable", "reason": "No application was submitted during the call.", "evidence_quote": "Of course, no application will be submitted today.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3008", "title": "Debit card travel notice", "business_area": "Service desk", "duration_seconds": 180, "risk_level": "low",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Employee", "text": "How can I help you prepare for your trip?"},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "I am travelling to Japan next week and want to know if my debit card will work."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Employee", "text": "I can place a travel notice on your card after confirming the dates and destination."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "The dates are the third to the tenth of October and the destination is Tokyo."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Employee", "text": "I have placed a travel notice for Tokyo from the third to the tenth of October."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "Great. Are there charges for using the card there?"},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Employee", "text": "Foreign currency transactions may include a conversion fee; the exact rate is in your card terms."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "That is fine; I will check the terms before travelling."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Employee", "text": "Please keep the bank informed if your itinerary changes."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "I will. That is all I needed."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Employee", "text": "Have a safe trip."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Thank you, goodbye."}
+      ],
+      "checklist": [
+        {"id": "request", "question": "Was the service request completed and confirmed?", "evidence_query": "placed travel notice Tokyo third tenth October", "expected_verdict": "Pass", "reason": "The employee confirmed the destination and dates for the travel notice.", "evidence_quote": "I have placed a travel notice for Tokyo from the third to the tenth of October.", "confidence": "high"},
+        {"id": "identity", "question": "Was identity verification required and completed?", "evidence_query": "travel notice low risk no identity verification", "expected_verdict": "Not Applicable", "reason": "This synthetic checklist treats travel notice recording as a low-risk service action.", "evidence_quote": "I can place a travel notice on your card after confirming the dates and destination.", "confidence": "medium"},
+        {"id": "fees", "question": "Were relevant usage fees signposted?", "evidence_query": "foreign currency conversion fee exact rate card terms", "expected_verdict": "Pass", "reason": "The employee signposted the potential conversion fee and card terms.", "evidence_quote": "Foreign currency transactions may include a conversion fee; the exact rate is in your card terms.", "confidence": "medium"}
+      ]
+    },
+    {
+      "call_id": "CC-3009", "title": "Junior account investment enquiry", "business_area": "Wealth advisory", "duration_seconds": 180, "risk_level": "medium",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Advisor", "text": "You asked about investing money held in a junior account."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "Yes, I am the parent and I want to save for university in about eight years."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Advisor", "text": "I need to confirm the account authority and whether another guardian needs to approve an investment instruction."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "The other guardian is abroad, so I do not know whether their approval is required."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Advisor", "text": "A global equity fund may fluctuate significantly and is not guaranteed."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "I understand it may fluctuate, but I want to know the paperwork first."},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Advisor", "text": "The fund charge is zero point seven percent annually and the factsheet lists other possible costs."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "Please send the factsheet and tell me if both guardians must sign."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Advisor", "text": "I will confirm the mandate requirements before offering a recommendation."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "Thank you; I will wait for that confirmation."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Advisor", "text": "No instruction will be accepted on this call."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Understood."}
+      ],
+      "checklist": [
+        {"id": "suitability", "question": "Was suitability established before a recommendation?", "evidence_query": "confirm account authority other guardian approval", "expected_verdict": "Unclear", "reason": "The advisor identified unresolved authority requirements and did not complete a suitability review.", "evidence_quote": "I will confirm the mandate requirements before offering a recommendation.", "confidence": "high"},
+        {"id": "risk_ack", "question": "Did the customer acknowledge the investment risk?", "evidence_query": "understand may fluctuate", "expected_verdict": "Pass", "reason": "The customer explicitly acknowledged potential fluctuations.", "evidence_quote": "I understand it may fluctuate, but I want to know the paperwork first.", "confidence": "high"},
+        {"id": "consent", "question": "Was consent to execute an investment instruction recorded?", "evidence_query": "no instruction accepted call", "expected_verdict": "Not Applicable", "reason": "No investment instruction was accepted.", "evidence_quote": "No instruction will be accepted on this call.", "confidence": "high"}
+      ]
+    },
+    {
+      "call_id": "CC-3010", "title": "Standing instruction cancellation", "business_area": "Retail banking", "duration_seconds": 180, "risk_level": "low",
+      "utterances": [
+        {"start_seconds": 0, "end_seconds": 14, "speaker": "Employee", "text": "Thank you for calling about your standing instruction."},
+        {"start_seconds": 15, "end_seconds": 29, "speaker": "Customer", "text": "I want to cancel the monthly transfer to my old savings account."},
+        {"start_seconds": 30, "end_seconds": 44, "speaker": "Employee", "text": "For security, please confirm the last four digits of your identification number and the amount of the transfer."},
+        {"start_seconds": 45, "end_seconds": 59, "speaker": "Customer", "text": "The identification number ends 7721 and the transfer amount is five hundred dollars."},
+        {"start_seconds": 60, "end_seconds": 74, "speaker": "Employee", "text": "I have completed the security check. You are requesting cancellation of the five hundred dollar monthly transfer."},
+        {"start_seconds": 75, "end_seconds": 89, "speaker": "Customer", "text": "Yes, please cancel it before the next payment date."},
+        {"start_seconds": 90, "end_seconds": 104, "speaker": "Employee", "text": "I will cancel the instruction today. No fee applies for this cancellation."},
+        {"start_seconds": 105, "end_seconds": 119, "speaker": "Customer", "text": "I consent to the cancellation and understand no fee applies."},
+        {"start_seconds": 120, "end_seconds": 134, "speaker": "Employee", "text": "The instruction is now cancelled and a confirmation will be sent to your secure inbox."},
+        {"start_seconds": 135, "end_seconds": 149, "speaker": "Customer", "text": "Thank you, that is exactly what I needed."},
+        {"start_seconds": 150, "end_seconds": 164, "speaker": "Employee", "text": "You are welcome."},
+        {"start_seconds": 165, "end_seconds": 180, "speaker": "Customer", "text": "Goodbye."}
+      ],
+      "checklist": [
+        {"id": "identity", "question": "Was identity verification completed?", "evidence_query": "completed security check", "expected_verdict": "Pass", "reason": "The employee stated that the security check was completed.", "evidence_quote": "I have completed the security check.", "confidence": "high"},
+        {"id": "consent", "question": "Was consent to cancel the instruction recorded?", "evidence_query": "consent cancellation no fee", "expected_verdict": "Pass", "reason": "The customer expressly consented to the cancellation.", "evidence_quote": "I consent to the cancellation and understand no fee applies.", "confidence": "high"},
+        {"id": "fees", "question": "Were cancellation fees explained?", "evidence_query": "no fee cancellation", "expected_verdict": "Pass", "reason": "The employee stated that no cancellation fee applies.", "evidence_quote": "I will cancel the instruction today. No fee applies for this cancellation.", "confidence": "high"}
+      ]
+    }
+  ]
+}
