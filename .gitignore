@@ -12,3 +12,7 @@ artifacts/
 react-frontend-staging/node_modules/
 react-frontend-staging/dist/
 **/__pycache__/
+
+# LangGraph dev server state
+.langgraph_api/
+**/.langgraph_api/

@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "."
+  ],
+  "graphs": {
+    "compliance": "compliance_pipeline.graph:graph"
+  },
+  "env": "../.env"
+}
