@@ -41,11 +41,19 @@ def retrieve(query: str, chunks: Iterable[Chunk], top_k: int = TOP_K) -> list[Re
     return sorted(results, key=lambda r: r["score"], reverse=True)[:top_k]
 
 
+def chunk_timestamp(chunk: Chunk) -> str | None:
+    """`mm:ss-mm:ss` when the source carried timing, else None (pasted text)."""
+    if chunk.get("start_seconds") is None:
+        return None
+    return f'{format_timestamp(chunk["start_seconds"])}-{format_timestamp(chunk["end_seconds"])}'
+
+
 def build_context(retrieved: list[RetrievedChunk]) -> str:
-    return "\n\n".join(
-        f'[{format_timestamp(r["start_seconds"])}-{format_timestamp(r["end_seconds"])}] {r["text"]}'
-        for r in retrieved
-    )
+    lines = []
+    for r in retrieved:
+        stamp = chunk_timestamp(r)
+        lines.append(f'[{stamp}] {r["text"]}' if stamp else r["text"])
+    return "\n\n".join(lines)
 
 
 def retrieval_node(state: ComplianceState) -> dict[str, Any]:

@@ -15,7 +15,7 @@ from .nodes.analysis import analysis_node
 from .nodes.ingestion import ingestion_node
 from .nodes.output import output_node
 from .nodes.retrieval import retrieval_node
-from .state import ComplianceState
+from .state import AnalyseInput, ComplianceState
 
 
 def fan_out_to_analysis(state: ComplianceState) -> list[Send]:
@@ -25,13 +25,18 @@ def fan_out_to_analysis(state: ComplianceState) -> list[Send]:
     whole state and items cannot leak evidence into one another.
     """
     evidence = state["evidence"]
+    transcript = state["transcript"]
     return [
-        Send("analysis", {"item": item, "retrieved": evidence.get(item["id"], [])})
+        Send("analysis", {
+            "item": item,
+            "retrieved": evidence.get(item["id"], []),
+            "transcript": transcript,
+        })
         for item in state["checklist"]
     ]
 
 
-builder = StateGraph(ComplianceState)
+builder = StateGraph(ComplianceState, input_schema=AnalyseInput)
 
 builder.add_node("ingestion", ingestion_node)
 builder.add_node("retrieval", retrieval_node)

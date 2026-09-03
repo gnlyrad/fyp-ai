@@ -1,5 +1,0 @@
--r requirements.txt
-
-# Install these for SageMaker Processing / Managed MLflow deployment.
-mlflow==2.20.1
-boto3==1.35.97

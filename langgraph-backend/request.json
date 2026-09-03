@@ -1,0 +1,12 @@
+{ 
+  "assistant_id": "compliance",
+  "input": {
+    "transcript": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing. Customer: That sounds good to me, let us go ahead.",
+    "checklist": [
+      { "id": "fees", "question": "Were fees and charges explained?" },
+      { "id": "guarantees", "question": "Did the advisor avoid guaranteeing returns or outcomes?" },
+      { "id": "recording_notice", "question": "Was the customer told the call was recorded?" },
+      { "id": "identity", "question": "Was identity verification completed?" }
+    ]
+  }
+}

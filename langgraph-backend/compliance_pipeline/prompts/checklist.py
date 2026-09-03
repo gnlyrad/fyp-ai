@@ -68,8 +68,16 @@ You will be given ONE compliance question and EXCERPTS from the call transcript.
 
 Rules:
 - Answer using the transcript excerpts ONLY. Never rely on outside knowledge.
-- `evidence_quote` MUST be copied verbatim from the excerpts. Do not paraphrase,
-  reformat, or repair it. If no excerpt supports an answer, return an empty quote.
+- Return EVERY passage in the excerpts that bears on the question, as a separate
+  entry in `evidence`. Label each one:
+    compliant - the passage shows the requirement being met
+    violation - the passage shows it being breached, or shows prohibited conduct
+- Each `quote` MUST be copied verbatim from the excerpts, character for character.
+  Do not paraphrase, reformat, trim, or repair it, and do not merge two separate
+  passages into one quote. A quote that does not appear exactly in the excerpts is
+  discarded, taking your verdict with it.
+- Quote the shortest passage that makes the point; do not quote a whole excerpt.
+- If no excerpt supports an answer, return an empty `evidence` list.
 - Choose exactly one verdict:
     Pass    - the transcript shows the requirement was met
     Fail    - the transcript shows the requirement was not met
