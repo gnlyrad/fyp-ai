@@ -29,8 +29,13 @@ flowchart LR
 ## Default AWS choices
 
 - Model: `apac.amazon.nova-lite-v1:0`
-- Embeddings: `amazon.titan-embed-text-v2:0`
+- Embeddings: `cohere.embed-english-v3`
 - Region: `ap-southeast-1`
+
+This default pairing is configured for Singapore. The AWS account behind
+`AWS_BEARER_TOKEN_BEDROCK` must be permitted to invoke Cohere Embed English in
+`ap-southeast-1`. To use a different region or embedding model, set
+`AWS_REGION` and `BEDROCK_EMBEDDING_MODEL` in `.env`.
 
 ## Endpoints
 

@@ -11,7 +11,7 @@ class Settings:
             "BEDROCK_CHAT_MODEL", "apac.amazon.nova-lite-v1:0"
         )
         self.bedrock_embedding_model = os.getenv(
-            "BEDROCK_EMBEDDING_MODEL", "amazon.titan-embed-text-v2:0"
+            "BEDROCK_EMBEDDING_MODEL", "cohere.embed-english-v3"
         )
         self.workspace_root = Path(
             os.getenv("WORKSPACE_ROOT", str(Path(__file__).resolve().parents[2]))
