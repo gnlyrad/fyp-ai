@@ -5,6 +5,7 @@ backend/artifacts/
 .venv-test/
 **/.venv/
 **/.venv-test/
+**/.venv-local/
 artifacts/
 *.sqlite3
 .env
