@@ -4,7 +4,18 @@ from __future__ import annotations
 from collections import Counter
 from typing import Any
 
-from ..state import ComplianceState
+from ..state import QUESTION_TYPES, ComplianceState, Finding
+
+
+def verdict_counts(findings: list[Finding]) -> dict[str, int]:
+    counts = Counter(f["verdict"] for f in findings)
+    return {
+        "total": len(findings),
+        "pass": counts.get("Pass", 0),
+        "fail": counts.get("Fail", 0),
+        "unclear": counts.get("Unclear", 0),
+        "not_applicable": counts.get("N/A", 0),
+    }
 
 
 def output_node(state: ComplianceState) -> dict[str, Any]:
@@ -15,18 +26,19 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
 
     findings = sorted(state["findings"], key=lambda f: order.get(f["checklist_id"], 999))
     counts = Counter(f["verdict"] for f in findings)
+    # Per-type breakdown: a run that is all-Pass on presence checks but Unclear on
+    # every judgement question is a different situation from one that is evenly
+    # good, and the headline counts hide that.
+    by_type = {
+        qtype: verdict_counts([f for f in findings if f.get("question_type") == qtype])
+        for qtype in QUESTION_TYPES
+    }
 
     spans = sorted(state.get("spans", []), key=lambda s: s["start"])
     labels = Counter(s["label"] for s in spans)
 
-    call = state.get("call", {})
-
     return {
         "report": {
-            "call_id": state.get("call_id"),
-            "title": call.get("title"),
-            "business_area": call.get("business_area"),
-            "risk_level": call.get("risk_level"),
             "summary": {
                 "total": len(findings),
                 "pass": counts.get("Pass", 0),
@@ -36,8 +48,12 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
                 "compliant_spans": labels.get("compliant", 0),
                 "violation_spans": labels.get("violation", 0),
                 # Any Fail, or an Unclear rate above a third, warrants a human review.
+                # N/A findings — which today includes every audio-metrics item —
+                # are not Unclear, so routed-but-unimplemented checks cannot on
+                # their own trip the review flag.
                 "requires_review": counts.get("Fail", 0) > 0
                 or counts.get("Unclear", 0) > len(findings) / 3,
+                "by_type": by_type,
             },
             "findings": findings,
             "spans": spans,

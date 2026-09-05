@@ -5,5 +5,5 @@
   "graphs": {
     "compliance": "compliance_pipeline.graph:graph"
   },
-  "env": ".env"
+  "env": "../.env"
 }

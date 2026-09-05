@@ -1,0 +1,921 @@
+{
+  "transcript": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright? Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund. Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+  "chunks": [
+    {
+      "chunk_id": "chunk-01",
+      "start_char": 0,
+      "end_char": 187,
+      "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?"
+    },
+    {
+      "chunk_id": "chunk-02",
+      "start_char": 188,
+      "end_char": 420,
+      "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund."
+    },
+    {
+      "chunk_id": "chunk-03",
+      "start_char": 421,
+      "end_char": 591,
+      "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "recording_notice",
+      "question": "Was the customer told the call was recorded?"
+    },
+    {
+      "id": "identity",
+      "question": "Was identity verification completed?"
+    },
+    {
+      "id": "fees",
+      "question": "Were fees and charges explained?"
+    },
+    {
+      "id": "cooling_off",
+      "question": "Was the cooling-off / cancellation right explained?"
+    },
+    {
+      "id": "risk_ack",
+      "question": "Did the customer acknowledge the investment risk?"
+    },
+    {
+      "id": "guarantees",
+      "question": "Did the advisor avoid guaranteeing returns or outcomes?"
+    }
+  ],
+  "evidence": {
+    "recording_notice": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 187,
+        "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+        "score": 0.7526
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 188,
+        "end_char": 420,
+        "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+        "score": 0.2522
+      },
+      {
+        "chunk_id": "chunk-03",
+        "start_char": 421,
+        "end_char": 591,
+        "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+        "score": 0.2521
+      }
+    ],
+    "identity": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 187,
+        "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+        "score": 0.0026
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 188,
+        "end_char": 420,
+        "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+        "score": 0.0022
+      },
+      {
+        "chunk_id": "chunk-03",
+        "start_char": 421,
+        "end_char": 591,
+        "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+        "score": 0.0021
+      }
+    ],
+    "fees": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 187,
+        "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+        "score": 0.0026
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 188,
+        "end_char": 420,
+        "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+        "score": 0.0022
+      },
+      {
+        "chunk_id": "chunk-03",
+        "start_char": 421,
+        "end_char": 591,
+        "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+        "score": 0.0021
+      }
+    ],
+    "cooling_off": [
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 188,
+        "end_char": 420,
+        "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+        "score": 0.2522
+      },
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 187,
+        "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+        "score": 0.0026
+      },
+      {
+        "chunk_id": "chunk-03",
+        "start_char": 421,
+        "end_char": 591,
+        "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+        "score": 0.0021
+      }
+    ],
+    "risk_ack": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 187,
+        "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+        "score": 0.2026
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 188,
+        "end_char": 420,
+        "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+        "score": 0.2022
+      },
+      {
+        "chunk_id": "chunk-03",
+        "start_char": 421,
+        "end_char": 591,
+        "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+        "score": 0.2021
+      }
+    ],
+    "guarantees": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 187,
+        "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+        "score": 0.1693
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 188,
+        "end_char": 420,
+        "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+        "score": 0.1688
+      },
+      {
+        "chunk_id": "chunk-03",
+        "start_char": 421,
+        "end_char": 591,
+        "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+        "score": 0.1687
+      }
+    ]
+  },
+  "findings": [
+    {
+      "checklist_id": "recording_notice",
+      "question": "Was the customer told the call was recorded?",
+      "verdict": "Pass",
+      "reason": "The advisor informed the customer that the call may be recorded at the beginning of the call.",
+      "confidence": "high",
+      "spans": [
+        {
+          "text": "Morning, this call may be recorded.",
+          "start": 9,
+          "end": 44,
+          "label": "compliant",
+          "checklist_id": "recording_notice",
+          "chunk_id": "chunk-01",
+          "timestamp": null
+        }
+      ],
+      "evidence_quote": "Morning, this call may be recorded.",
+      "timestamp": null,
+      "chunk_id": "chunk-01",
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 187,
+          "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+          "score": 0.7526
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 188,
+          "end_char": 420,
+          "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+          "score": 0.2522
+        },
+        {
+          "chunk_id": "chunk-03",
+          "start_char": 421,
+          "end_char": 591,
+          "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+          "score": 0.2521
+        }
+      ]
+    },
+    {
+      "checklist_id": "identity",
+      "question": "Was identity verification completed?",
+      "verdict": "Pass",
+      "reason": "The customer confirms providing details to a colleague earlier, which implies identity verification was completed.",
+      "confidence": "high",
+      "spans": [
+        {
+          "text": "Advisor: Morning, this call may be recorded.",
+          "start": 0,
+          "end": 44,
+          "label": "compliant",
+          "checklist_id": "identity",
+          "chunk_id": "chunk-01",
+          "timestamp": null
+        },
+        {
+          "text": "Customer: I gave all of that to your colleague earlier, is that alright?",
+          "start": 115,
+          "end": 187,
+          "label": "compliant",
+          "checklist_id": "identity",
+          "chunk_id": "chunk-01",
+          "timestamp": null
+        }
+      ],
+      "evidence_quote": "Advisor: Morning, this call may be recorded.",
+      "timestamp": null,
+      "chunk_id": "chunk-01",
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 187,
+          "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+          "score": 0.0026
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 188,
+          "end_char": 420,
+          "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+          "score": 0.0022
+        },
+        {
+          "chunk_id": "chunk-03",
+          "start_char": 421,
+          "end_char": 591,
+          "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+          "score": 0.0021
+        }
+      ]
+    },
+    {
+      "checklist_id": "fees",
+      "question": "Were fees and charges explained?",
+      "verdict": "Pass",
+      "reason": "The advisor mentioned an annual charge, which is a type of fee.",
+      "confidence": "high",
+      "spans": [
+        {
+          "text": "There is an annual charge, it moves around a bit depending on the fund.",
+          "start": 349,
+          "end": 420,
+          "label": "compliant",
+          "checklist_id": "fees",
+          "chunk_id": "chunk-02",
+          "timestamp": null
+        }
+      ],
+      "evidence_quote": "There is an annual charge, it moves around a bit depending on the fund.",
+      "timestamp": null,
+      "chunk_id": "chunk-02",
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 187,
+          "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+          "score": 0.0026
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 188,
+          "end_char": 420,
+          "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+          "score": 0.0022
+        },
+        {
+          "chunk_id": "chunk-03",
+          "start_char": 421,
+          "end_char": 591,
+          "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+          "score": 0.0021
+        }
+      ]
+    },
+    {
+      "checklist_id": "cooling_off",
+      "question": "Was the cooling-off / cancellation right explained?",
+      "verdict": "Fail",
+      "reason": "The advisor mentioned a cancellation window and an annual charge, but did not provide a clear explanation of the cooling-off period or cancellation rights.",
+      "confidence": "high",
+      "spans": [
+        {
+          "text": "There is a cancellation window on this product, and I will put the exact period in the paperwork.",
+          "start": 197,
+          "end": 294,
+          "label": "compliant",
+          "checklist_id": "cooling_off",
+          "chunk_id": "chunk-02",
+          "timestamp": null
+        },
+        {
+          "text": "There is an annual charge, it moves around a bit depending on the fund.",
+          "start": 349,
+          "end": 420,
+          "label": "compliant",
+          "checklist_id": "cooling_off",
+          "chunk_id": "chunk-02",
+          "timestamp": null
+        }
+      ],
+      "evidence_quote": "There is a cancellation window on this product, and I will put the exact period in the paperwork.",
+      "timestamp": null,
+      "chunk_id": "chunk-02",
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 188,
+          "end_char": 420,
+          "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+          "score": 0.2522
+        },
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 187,
+          "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+          "score": 0.0026
+        },
+        {
+          "chunk_id": "chunk-03",
+          "start_char": 421,
+          "end_char": 591,
+          "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+          "score": 0.0021
+        }
+      ]
+    },
+    {
+      "checklist_id": "risk_ack",
+      "question": "Did the customer acknowledge the investment risk?",
+      "verdict": "Pass",
+      "reason": "The customer acknowledges the potential for the investment value to decrease, which implies an understanding of investment risk.",
+      "confidence": "high",
+      "spans": [
+        {
+          "text": "Customer: I suppose the value can go down as well as up, can it not?",
+          "start": 421,
+          "end": 489,
+          "label": "compliant",
+          "checklist_id": "risk_ack",
+          "chunk_id": "chunk-03",
+          "timestamp": null
+        }
+      ],
+      "evidence_quote": "Customer: I suppose the value can go down as well as up, can it not?",
+      "timestamp": null,
+      "chunk_id": "chunk-03",
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 187,
+          "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+          "score": 0.2026
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 188,
+          "end_char": 420,
+          "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+          "score": 0.2022
+        },
+        {
+          "chunk_id": "chunk-03",
+          "start_char": 421,
+          "end_char": 591,
+          "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+          "score": 0.2021
+        }
+      ]
+    },
+    {
+      "checklist_id": "guarantees",
+      "question": "Did the advisor avoid guaranteeing returns or outcomes?",
+      "verdict": "Fail",
+      "reason": "The advisor made a statement that implies a guarantee of positive returns, which is prohibited.",
+      "confidence": "high",
+      "spans": [
+        {
+          "text": "Between you and me, this one has never had a bad year.",
+          "start": 499,
+          "end": 553,
+          "label": "violation",
+          "checklist_id": "guarantees",
+          "chunk_id": "chunk-03",
+          "timestamp": null
+        }
+      ],
+      "evidence_quote": "Between you and me, this one has never had a bad year.",
+      "timestamp": null,
+      "chunk_id": "chunk-03",
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 187,
+          "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+          "score": 0.1693
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 188,
+          "end_char": 420,
+          "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+          "score": 0.1688
+        },
+        {
+          "chunk_id": "chunk-03",
+          "start_char": 421,
+          "end_char": 591,
+          "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+          "score": 0.1687
+        }
+      ]
+    }
+  ],
+  "spans": [
+    {
+      "text": "Morning, this call may be recorded.",
+      "start": 9,
+      "end": 44,
+      "label": "compliant",
+      "checklist_id": "recording_notice",
+      "chunk_id": "chunk-01",
+      "timestamp": null
+    },
+    {
+      "text": "Advisor: Morning, this call may be recorded.",
+      "start": 0,
+      "end": 44,
+      "label": "compliant",
+      "checklist_id": "identity",
+      "chunk_id": "chunk-01",
+      "timestamp": null
+    },
+    {
+      "text": "Customer: I gave all of that to your colleague earlier, is that alright?",
+      "start": 115,
+      "end": 187,
+      "label": "compliant",
+      "checklist_id": "identity",
+      "chunk_id": "chunk-01",
+      "timestamp": null
+    },
+    {
+      "text": "There is an annual charge, it moves around a bit depending on the fund.",
+      "start": 349,
+      "end": 420,
+      "label": "compliant",
+      "checklist_id": "fees",
+      "chunk_id": "chunk-02",
+      "timestamp": null
+    },
+    {
+      "text": "There is a cancellation window on this product, and I will put the exact period in the paperwork.",
+      "start": 197,
+      "end": 294,
+      "label": "compliant",
+      "checklist_id": "cooling_off",
+      "chunk_id": "chunk-02",
+      "timestamp": null
+    },
+    {
+      "text": "There is an annual charge, it moves around a bit depending on the fund.",
+      "start": 349,
+      "end": 420,
+      "label": "compliant",
+      "checklist_id": "cooling_off",
+      "chunk_id": "chunk-02",
+      "timestamp": null
+    },
+    {
+      "text": "Customer: I suppose the value can go down as well as up, can it not?",
+      "start": 421,
+      "end": 489,
+      "label": "compliant",
+      "checklist_id": "risk_ack",
+      "chunk_id": "chunk-03",
+      "timestamp": null
+    },
+    {
+      "text": "Between you and me, this one has never had a bad year.",
+      "start": 499,
+      "end": 553,
+      "label": "violation",
+      "checklist_id": "guarantees",
+      "chunk_id": "chunk-03",
+      "timestamp": null
+    }
+  ],
+  "report": {
+    "call_id": null,
+    "title": null,
+    "business_area": null,
+    "risk_level": null,
+    "summary": {
+      "total": 6,
+      "pass": 4,
+      "fail": 2,
+      "unclear": 0,
+      "not_applicable": 0,
+      "compliant_spans": 7,
+      "violation_spans": 1,
+      "requires_review": true
+    },
+    "findings": [
+      {
+        "checklist_id": "recording_notice",
+        "question": "Was the customer told the call was recorded?",
+        "verdict": "Pass",
+        "reason": "The advisor informed the customer that the call may be recorded at the beginning of the call.",
+        "confidence": "high",
+        "spans": [
+          {
+            "text": "Morning, this call may be recorded.",
+            "start": 9,
+            "end": 44,
+            "label": "compliant",
+            "checklist_id": "recording_notice",
+            "chunk_id": "chunk-01",
+            "timestamp": null
+          }
+        ],
+        "evidence_quote": "Morning, this call may be recorded.",
+        "timestamp": null,
+        "chunk_id": "chunk-01",
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 187,
+            "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+            "score": 0.7526
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 188,
+            "end_char": 420,
+            "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+            "score": 0.2522
+          },
+          {
+            "chunk_id": "chunk-03",
+            "start_char": 421,
+            "end_char": 591,
+            "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+            "score": 0.2521
+          }
+        ]
+      },
+      {
+        "checklist_id": "identity",
+        "question": "Was identity verification completed?",
+        "verdict": "Pass",
+        "reason": "The customer confirms providing details to a colleague earlier, which implies identity verification was completed.",
+        "confidence": "high",
+        "spans": [
+          {
+            "text": "Advisor: Morning, this call may be recorded.",
+            "start": 0,
+            "end": 44,
+            "label": "compliant",
+            "checklist_id": "identity",
+            "chunk_id": "chunk-01",
+            "timestamp": null
+          },
+          {
+            "text": "Customer: I gave all of that to your colleague earlier, is that alright?",
+            "start": 115,
+            "end": 187,
+            "label": "compliant",
+            "checklist_id": "identity",
+            "chunk_id": "chunk-01",
+            "timestamp": null
+          }
+        ],
+        "evidence_quote": "Advisor: Morning, this call may be recorded.",
+        "timestamp": null,
+        "chunk_id": "chunk-01",
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 187,
+            "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+            "score": 0.0026
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 188,
+            "end_char": 420,
+            "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+            "score": 0.0022
+          },
+          {
+            "chunk_id": "chunk-03",
+            "start_char": 421,
+            "end_char": 591,
+            "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+            "score": 0.0021
+          }
+        ]
+      },
+      {
+        "checklist_id": "fees",
+        "question": "Were fees and charges explained?",
+        "verdict": "Pass",
+        "reason": "The advisor mentioned an annual charge, which is a type of fee.",
+        "confidence": "high",
+        "spans": [
+          {
+            "text": "There is an annual charge, it moves around a bit depending on the fund.",
+            "start": 349,
+            "end": 420,
+            "label": "compliant",
+            "checklist_id": "fees",
+            "chunk_id": "chunk-02",
+            "timestamp": null
+          }
+        ],
+        "evidence_quote": "There is an annual charge, it moves around a bit depending on the fund.",
+        "timestamp": null,
+        "chunk_id": "chunk-02",
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 187,
+            "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+            "score": 0.0026
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 188,
+            "end_char": 420,
+            "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+            "score": 0.0022
+          },
+          {
+            "chunk_id": "chunk-03",
+            "start_char": 421,
+            "end_char": 591,
+            "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+            "score": 0.0021
+          }
+        ]
+      },
+      {
+        "checklist_id": "cooling_off",
+        "question": "Was the cooling-off / cancellation right explained?",
+        "verdict": "Fail",
+        "reason": "The advisor mentioned a cancellation window and an annual charge, but did not provide a clear explanation of the cooling-off period or cancellation rights.",
+        "confidence": "high",
+        "spans": [
+          {
+            "text": "There is a cancellation window on this product, and I will put the exact period in the paperwork.",
+            "start": 197,
+            "end": 294,
+            "label": "compliant",
+            "checklist_id": "cooling_off",
+            "chunk_id": "chunk-02",
+            "timestamp": null
+          },
+          {
+            "text": "There is an annual charge, it moves around a bit depending on the fund.",
+            "start": 349,
+            "end": 420,
+            "label": "compliant",
+            "checklist_id": "cooling_off",
+            "chunk_id": "chunk-02",
+            "timestamp": null
+          }
+        ],
+        "evidence_quote": "There is a cancellation window on this product, and I will put the exact period in the paperwork.",
+        "timestamp": null,
+        "chunk_id": "chunk-02",
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 188,
+            "end_char": 420,
+            "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+            "score": 0.2522
+          },
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 187,
+            "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+            "score": 0.0026
+          },
+          {
+            "chunk_id": "chunk-03",
+            "start_char": 421,
+            "end_char": 591,
+            "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+            "score": 0.0021
+          }
+        ]
+      },
+      {
+        "checklist_id": "risk_ack",
+        "question": "Did the customer acknowledge the investment risk?",
+        "verdict": "Pass",
+        "reason": "The customer acknowledges the potential for the investment value to decrease, which implies an understanding of investment risk.",
+        "confidence": "high",
+        "spans": [
+          {
+            "text": "Customer: I suppose the value can go down as well as up, can it not?",
+            "start": 421,
+            "end": 489,
+            "label": "compliant",
+            "checklist_id": "risk_ack",
+            "chunk_id": "chunk-03",
+            "timestamp": null
+          }
+        ],
+        "evidence_quote": "Customer: I suppose the value can go down as well as up, can it not?",
+        "timestamp": null,
+        "chunk_id": "chunk-03",
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 187,
+            "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+            "score": 0.2026
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 188,
+            "end_char": 420,
+            "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+            "score": 0.2022
+          },
+          {
+            "chunk_id": "chunk-03",
+            "start_char": 421,
+            "end_char": 591,
+            "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+            "score": 0.2021
+          }
+        ]
+      },
+      {
+        "checklist_id": "guarantees",
+        "question": "Did the advisor avoid guaranteeing returns or outcomes?",
+        "verdict": "Fail",
+        "reason": "The advisor made a statement that implies a guarantee of positive returns, which is prohibited.",
+        "confidence": "high",
+        "spans": [
+          {
+            "text": "Between you and me, this one has never had a bad year.",
+            "start": 499,
+            "end": 553,
+            "label": "violation",
+            "checklist_id": "guarantees",
+            "chunk_id": "chunk-03",
+            "timestamp": null
+          }
+        ],
+        "evidence_quote": "Between you and me, this one has never had a bad year.",
+        "timestamp": null,
+        "chunk_id": "chunk-03",
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 187,
+            "text": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright?",
+            "score": 0.1693
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 188,
+            "end_char": 420,
+            "text": "Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund.",
+            "score": 0.1688
+          },
+          {
+            "chunk_id": "chunk-03",
+            "start_char": 421,
+            "end_char": 591,
+            "text": "Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+            "score": 0.1687
+          }
+        ]
+      }
+    ],
+    "spans": [
+      {
+        "text": "Advisor: Morning, this call may be recorded.",
+        "start": 0,
+        "end": 44,
+        "label": "compliant",
+        "checklist_id": "identity",
+        "chunk_id": "chunk-01",
+        "timestamp": null
+      },
+      {
+        "text": "Morning, this call may be recorded.",
+        "start": 9,
+        "end": 44,
+        "label": "compliant",
+        "checklist_id": "recording_notice",
+        "chunk_id": "chunk-01",
+        "timestamp": null
+      },
+      {
+        "text": "Customer: I gave all of that to your colleague earlier, is that alright?",
+        "start": 115,
+        "end": 187,
+        "label": "compliant",
+        "checklist_id": "identity",
+        "chunk_id": "chunk-01",
+        "timestamp": null
+      },
+      {
+        "text": "There is a cancellation window on this product, and I will put the exact period in the paperwork.",
+        "start": 197,
+        "end": 294,
+        "label": "compliant",
+        "checklist_id": "cooling_off",
+        "chunk_id": "chunk-02",
+        "timestamp": null
+      },
+      {
+        "text": "There is an annual charge, it moves around a bit depending on the fund.",
+        "start": 349,
+        "end": 420,
+        "label": "compliant",
+        "checklist_id": "fees",
+        "chunk_id": "chunk-02",
+        "timestamp": null
+      },
+      {
+        "text": "There is an annual charge, it moves around a bit depending on the fund.",
+        "start": 349,
+        "end": 420,
+        "label": "compliant",
+        "checklist_id": "cooling_off",
+        "chunk_id": "chunk-02",
+        "timestamp": null
+      },
+      {
+        "text": "Customer: I suppose the value can go down as well as up, can it not?",
+        "start": 421,
+        "end": 489,
+        "label": "compliant",
+        "checklist_id": "risk_ack",
+        "chunk_id": "chunk-03",
+        "timestamp": null
+      },
+      {
+        "text": "Between you and me, this one has never had a bad year.",
+        "start": 499,
+        "end": 553,
+        "label": "violation",
+        "checklist_id": "guarantees",
+        "chunk_id": "chunk-03",
+        "timestamp": null
+      }
+    ]
+  }
+}

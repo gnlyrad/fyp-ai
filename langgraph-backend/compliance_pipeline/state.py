@@ -12,16 +12,25 @@ from typing import Annotated, Any, Literal, TypedDict
 Verdict = Literal["Pass", "Fail", "Unclear", "N/A"]
 SpanLabel = Literal["compliant", "violation"]
 
+# How a checklist question has to be answered, which decides both how much of the
+# transcript retrieval hands over and which analysis node judges it.
+#   deterministic - fixed rule/phrase presence; absence is a Fail, not an Unclear
+#   exhaustive    - every occurrence matters, so the whole transcript is needed
+#   targeted      - one specific passage, found by retrieval (the default)
+#   audio_metrics - signals that are not in the text at all (talk-over, pace)
+QuestionType = Literal["deterministic", "exhaustive", "targeted", "audio_metrics"]
+QUESTION_TYPES: tuple[QuestionType, ...] = (
+    "deterministic", "exhaustive", "targeted", "audio_metrics",
+)
+DEFAULT_QUESTION_TYPE: QuestionType = "targeted"
+
 
 class Chunk(TypedDict, total=False):
     chunk_id: str
     text: str
-    # Offsets into the canonical transcript string. Always present.
+    # Offsets into the transcript. Always present.
     start_char: int
     end_char: int
-    # Only present when the source had timing (the call_id dataset path).
-    start_seconds: int
-    end_seconds: int
 
 
 class RetrievedChunk(Chunk, total=False):
@@ -32,30 +41,39 @@ class ChecklistItem(TypedDict, total=False):
     id: str
     question: str
     evidence_query: str
+    # Filled by the classification node when the caller omits it. Supplying it in
+    # the request skips classification entirely for that item.
+    question_type: QuestionType
+    type_rationale: str  # one line, so the routing decision stays auditable
 
 
 class Span(TypedDict, total=False):
-    """A verbatim substring of the transcript, located by character offset."""
+    """A verbatim substring of the transcript, located by character offset.
+
+    `label` is reconciled with the finding's verdict; `model_label` preserves what
+    the model originally said so a disagreement stays auditable rather than silent.
+    """
 
     text: str
     start: int
     end: int
     label: SpanLabel
+    model_label: SpanLabel | None
+    label_corrected: bool
     checklist_id: str
     chunk_id: str | None
-    timestamp: str | None
 
 
 class Finding(TypedDict, total=False):
     checklist_id: str
     question: str
+    question_type: QuestionType
     verdict: Verdict
     reason: str
     confidence: Literal["high", "low"]
     spans: list[Span]
-    # Kept for the CLI printer and existing consumers: the first verified span.
+    # Convenience view of the first verified span.
     evidence_quote: str | None
-    timestamp: str | None
     chunk_id: str | None
     retrieved_evidence: list[RetrievedChunk]
 
@@ -63,24 +81,19 @@ class Finding(TypedDict, total=False):
 class AnalyseInput(TypedDict, total=False):
     """The public API body — what `POST /runs/wait` accepts as `input`.
 
-    Supply `transcript` (a paragraph or a whole transcript) and `checklist`.
-    `call_id` is the legacy fallback that loads a call from the synthetic dataset.
+    Supply `transcript` (a paragraph or a whole call) and the `checklist` to run
+    against it. Omitting the checklist falls back to the built-in one.
     """
 
     transcript: str
     checklist: list[ChecklistItem]
-    call_id: str
 
 
 class ComplianceState(TypedDict, total=False):
     """State for the top-level graph."""
 
-    # --- set by the caller ---
-    call_id: str
-
     # --- ingestion ---
-    transcript: str  # the canonical text every span offset refers to
-    call: dict[str, Any]
+    transcript: str  # the text every span offset refers to
     chunks: list[Chunk]
     checklist: list[ChecklistItem]
 
