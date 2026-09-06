@@ -47,6 +47,19 @@ class ChecklistItem(TypedDict, total=False):
     type_rationale: str  # one line, so the routing decision stays auditable
 
 
+class RegulationPassage(TypedDict, total=False):
+    """An extract from the MAS corpus, carrying enough to cite it.
+
+    This is the *standard* a checklist item is judged against, never evidence of
+    what happened on the call. It can therefore never become a `Span`.
+    """
+
+    text: str
+    source: str  # pdf filename, relative to the corpus folder
+    page: int  # 1-based, as printed
+    score: float
+
+
 class Span(TypedDict, total=False):
     """A verbatim substring of the transcript, located by character offset.
 
@@ -76,6 +89,9 @@ class Finding(TypedDict, total=False):
     evidence_quote: str | None
     chunk_id: str | None
     retrieved_evidence: list[RetrievedChunk]
+    # The regulatory extracts this judgement was made under. Empty for question
+    # types that are not given guidance, and when the corpus is unreachable.
+    regulatory_basis: list[RegulationPassage]
 
 
 class AnalyseInput(TypedDict, total=False):
@@ -97,6 +113,9 @@ class ComplianceState(TypedDict, total=False):
     chunks: list[Chunk]
     checklist: list[ChecklistItem]
 
+    # --- guidance ---
+    guidance: dict[str, list[RegulationPassage]]  # checklist_id -> regulatory extracts
+
     # --- retrieval ---
     evidence: dict[str, list[RetrievedChunk]]  # checklist_id -> retrieved chunks
 
@@ -114,3 +133,4 @@ class AnalysisTask(TypedDict):
     item: ChecklistItem
     retrieved: list[RetrievedChunk]
     transcript: str
+    guidance: list[RegulationPassage]

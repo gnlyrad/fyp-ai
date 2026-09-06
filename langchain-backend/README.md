@@ -29,7 +29,7 @@ flowchart LR
 ## Default AWS choices
 
 - Model: `apac.amazon.nova-lite-v1:0`
-- Embeddings: `amazon.titan-embed-text-v2:0`
+- Embeddings: `cohere.embed-english-v3` (Titan is not offered in `ap-southeast-1`)
 - Region: `ap-southeast-1`
 
 ## Endpoints

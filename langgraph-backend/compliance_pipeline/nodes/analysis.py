@@ -28,7 +28,7 @@ from ..prompts.analysis import (
     EXHAUSTIVE_SYSTEM_PROMPT,
     TARGETED_SYSTEM_PROMPT,
 )
-from ..state import AnalysisTask, Finding, RetrievedChunk, Span
+from ..state import AnalysisTask, Finding, RegulationPassage, RetrievedChunk, Span
 from .retrieval import build_context
 
 
@@ -122,12 +122,25 @@ def locate(
     return None
 
 
+def cite(passage: RegulationPassage) -> str:
+    """`Fair Dealing Guidelines.pdf, p.4` — what an analyst reads back."""
+    page = passage.get("page")
+    source = passage.get("source", "unknown")
+    return f"{source}, p.{page}" if page else source
+
+
+def build_guidance_block(guidance: list[RegulationPassage]) -> str:
+    """The regulatory extracts, each headed by its citation."""
+    return "\n\n".join(f"[{cite(p)}]\n{p['text']}" for p in guidance)
+
+
 def build_finding(
     item: dict,
     retrieved: list[RetrievedChunk],
     spans: list[Span],
     verdict: str,
     reason: str,
+    guidance: list[RegulationPassage] | None = None,
 ) -> Finding:
     """Assemble the finding once the verdict and its verified spans are final."""
     supported = bool(spans)
@@ -143,6 +156,7 @@ def build_finding(
         "evidence_quote": first["text"] if first else None,
         "chunk_id": first["chunk_id"] if first else None,
         "retrieved_evidence": retrieved,
+        "regulatory_basis": guidance or [],
     }
 
 
@@ -152,16 +166,26 @@ def _run_analysis(task: AnalysisTask, system_prompt: str) -> dict[str, Any]:
     The prompt varies by question type; everything after the model call — quote
     location, verdict normalisation, label reconciliation — does not, and is the
     part that makes the output auditable.
+
+    Regulatory guidance, when the guidance node found any, is appended after the
+    transcript excerpts. When there is none — a deterministic item, or a corpus
+    that could not be reached — the message is byte-identical to the one this
+    pipeline sent before guidance existed, so those verdicts cannot drift.
     """
     item = task["item"]
     retrieved = task["retrieved"]
     transcript = task["transcript"]
+    guidance = task.get("guidance") or []
     context = build_context(retrieved)
+
+    prompt = f"Compliance question: {item['question']}\n\nTranscript excerpts:\n{context}"
+    if guidance:
+        prompt += f"\n\nREGULATORY GUIDANCE (the standard, not evidence):\n{build_guidance_block(guidance)}"
 
     try:
         answer = judge_model().invoke([
             SystemMessage(content=system_prompt),
-            HumanMessage(content=f"Compliance question: {item['question']}\n\nTranscript excerpts:\n{context}"),
+            HumanMessage(content=prompt),
         ])
         verdict = normalise_verdict(answer.verdict)
         cited = answer.evidence or []
@@ -197,7 +221,7 @@ def _run_analysis(task: AnalysisTask, system_prompt: str) -> dict[str, Any]:
         span["label_corrected"] = expected is not None and model_label != expected
 
     return {
-        "findings": [build_finding(item, retrieved, spans, verdict, reason)],
+        "findings": [build_finding(item, retrieved, spans, verdict, reason, guidance)],
         "spans": spans,
     }
 

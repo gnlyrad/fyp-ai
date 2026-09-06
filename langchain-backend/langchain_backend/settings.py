@@ -3,6 +3,14 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+from dotenv import find_dotenv, load_dotenv
+
+# `settings` below is a module-level singleton, so it is constructed the moment
+# anything imports this module — which happens well before an entry point gets a
+# chance to call `load_dotenv` itself. Loading here is what makes the `.env`
+# values actually reach `Settings` rather than silently losing to the defaults.
+load_dotenv(find_dotenv())
+
 
 class Settings:
     def __init__(self) -> None:
@@ -10,8 +18,10 @@ class Settings:
         self.bedrock_chat_model = os.getenv(
             "BEDROCK_CHAT_MODEL", "apac.amazon.nova-lite-v1:0"
         )
+        # Titan embeddings are not offered in ap-southeast-1; Cohere v3 is the
+        # on-demand English embedding model available there.
         self.bedrock_embedding_model = os.getenv(
-            "BEDROCK_EMBEDDING_MODEL", "amazon.titan-embed-text-v2:0"
+            "BEDROCK_EMBEDDING_MODEL", "cohere.embed-english-v3"
         )
         self.workspace_root = Path(
             os.getenv("WORKSPACE_ROOT", str(Path(__file__).resolve().parents[2]))

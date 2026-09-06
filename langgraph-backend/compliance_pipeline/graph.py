@@ -1,4 +1,4 @@
-"""Graph wiring: ingestion -> classification -> retrieval -> (fan-out) analysis -> output.
+"""Graph wiring: ingestion -> classification -> guidance -> retrieval -> (fan-out) analysis -> output.
 
 This is a *workflow*, not an agent loop: the sequence is fixed and the LLM never
 chooses the route. Two things are dynamic, and both are decided before any
@@ -9,7 +9,11 @@ order, every checklist item gets exactly one judgement, and the routing decision
 is recorded on the item as `type_rationale`.
 
 Classification sits before retrieval because the type decides how much of the
-transcript retrieval hands over, not just how it is judged.
+transcript retrieval hands over, not just how it is judged. Guidance sits after
+classification for the same reason — the type decides whether an item is given
+regulatory context at all — and before retrieval only for simplicity; the two are
+independent, and retrieval is local and cheap enough that ordering them costs
+nothing worth a join node.
 """
 from __future__ import annotations
 
@@ -23,6 +27,7 @@ from .nodes.analysis import (
     analysis_targeted_node,
 )
 from .nodes.classification import classification_node
+from .nodes.guidance import guidance_node
 from .nodes.ingestion import ingestion_node
 from .nodes.output import output_node
 from .nodes.retrieval import retrieval_node
@@ -45,12 +50,14 @@ def fan_out_to_analysis(state: ComplianceState) -> list[Send]:
     state and items cannot leak evidence into one another.
     """
     evidence = state["evidence"]
+    guidance = state.get("guidance", {})
     transcript = state["transcript"]
     return [
         Send(NODE_BY_TYPE.get(item.get("question_type"), DEFAULT_ANALYSIS_NODE), {
             "item": item,
             "retrieved": evidence.get(item["id"], []),
             "transcript": transcript,
+            "guidance": guidance.get(item["id"], []),
         })
         for item in state["checklist"]
     ]
@@ -60,6 +67,7 @@ builder = StateGraph(ComplianceState, input_schema=AnalyseInput)
 
 builder.add_node("ingestion", ingestion_node)
 builder.add_node("classification", classification_node)
+builder.add_node("guidance", guidance_node)
 builder.add_node("retrieval", retrieval_node)
 for name, node in ANALYSIS_NODES.values():
     builder.add_node(name, node)
@@ -67,7 +75,8 @@ builder.add_node("output", output_node)
 
 builder.add_edge(START, "ingestion")
 builder.add_edge("ingestion", "classification")
-builder.add_edge("classification", "retrieval")
+builder.add_edge("classification", "guidance")
+builder.add_edge("guidance", "retrieval")
 builder.add_conditional_edges("retrieval", fan_out_to_analysis, list(NODE_BY_TYPE.values()))
 for name in NODE_BY_TYPE.values():
     builder.add_edge(name, "output")

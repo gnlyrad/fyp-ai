@@ -37,6 +37,15 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
     spans = sorted(state.get("spans", []), key=lambda s: s["start"])
     labels = Counter(s["label"] for s in spans)
 
+    # Which notices this run was judged against, at a glance. The per-passage
+    # citations stay on each finding; this is the cover sheet.
+    sources = sorted({
+        passage["source"]
+        for finding in findings
+        for passage in finding.get("regulatory_basis", [])
+        if passage.get("source")
+    })
+
     return {
         "report": {
             "summary": {
@@ -54,6 +63,7 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
                 "requires_review": counts.get("Fail", 0) > 0
                 or counts.get("Unclear", 0) > len(findings) / 3,
                 "by_type": by_type,
+                "regulatory_sources": sources,
             },
             "findings": findings,
             "spans": spans,

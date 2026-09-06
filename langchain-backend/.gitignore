@@ -1,3 +1,6 @@
 .index/
 __pycache__/
 *.pyc
+
+# Editable-install metadata
+*.egg-info/

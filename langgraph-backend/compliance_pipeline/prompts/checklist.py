@@ -87,13 +87,27 @@ CHECKLIST: list[ChecklistItem] = [
 
 CHECKLIST_BY_ID = {item["id"]: item for item in CHECKLIST}
 
-ANALYSIS_SYSTEM_PROMPT = """\
+# The one rule that differs between the guided and unguided bases. Regulation is
+# outside knowledge, so an item that is given regulatory extracts cannot be told
+# to ignore outside knowledge — but the substitute has to be just as strict about
+# where *facts* may come from, because `locate()` and the whole audit trail rest
+# on every quote being transcript text.
+_EVIDENCE_ONLY_RULE = (
+    "- Answer using the transcript excerpts ONLY. Never rely on outside knowledge."
+)
+_GUIDED_EVIDENCE_RULE = (
+    "- The REGULATORY GUIDANCE decides the standard you apply; the transcript\n"
+    "  excerpts are the ONLY source of fact about what happened on this call.\n"
+    "  Never treat the guidance as something the advisor said or did."
+)
+
+_ANALYSIS_BASE = """\
 You are a compliance analyst reviewing a recorded customer call.
 
 You will be given ONE compliance question and EXCERPTS from the call transcript.
 
 Rules:
-- Answer using the transcript excerpts ONLY. Never rely on outside knowledge.
+{evidence_rule}
 - Return EVERY passage in the excerpts that bears on the question, as a separate
   entry in `evidence`. Label each one:
     compliant - the passage shows the requirement being met
@@ -111,3 +125,10 @@ Rules:
     N/A     - the requirement does not apply to this kind of call
 - Prefer Unclear over guessing. An unsupported Pass is a serious error.
 """
+
+# Byte-identical to what deterministic and audio-metrics items have always been
+# sent; the split above must not move them.
+ANALYSIS_SYSTEM_PROMPT = _ANALYSIS_BASE.format(evidence_rule=_EVIDENCE_ONLY_RULE)
+
+# For items that are handed regulatory extracts alongside the transcript.
+GUIDED_ANALYSIS_SYSTEM_PROMPT = _ANALYSIS_BASE.format(evidence_rule=_GUIDED_EVIDENCE_RULE)
