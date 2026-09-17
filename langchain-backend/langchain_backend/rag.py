@@ -26,8 +26,8 @@ class CodeRAGService:
             temperature=0,
         )
 
-    def ingest(self) -> dict[str, int | str]:
-        return self._search.ingest()
+    def ingest(self, *, target: str = "faiss", dry_run: bool = False) -> dict[str, int | str | bool]:
+        return self._search.ingest(target=target, dry_run=dry_run)
 
     # Groups the retrieval and the generation under one root run, so a
     # LangSmith trace of `/ask` shows the whole RAG pipeline rather than a
