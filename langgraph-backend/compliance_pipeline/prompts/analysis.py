@@ -60,17 +60,8 @@ not a selection of excerpts.
   occurrence anywhere in it.
 """ + GUIDANCE_RULES
 
-# Not used while the pipeline is transcript-only; kept here so the prompt lands
-# beside its siblings when AWS Transcribe supplies diarisation and timings.
-AUDIO_METRICS_SYSTEM_PROMPT = ANALYSIS_SYSTEM_PROMPT + """
-This question is about AUDIO METRICS: interruption and talk-over, silence and
-hold duration, speaking pace, and tone. Judge it from the supplied speaker turns
-and timings, and quote the turn that evidences the measurement.
-"""
-
 SYSTEM_PROMPT_BY_TYPE: dict[str, str] = {
     "deterministic": DETERMINISTIC_SYSTEM_PROMPT,
     "exhaustive": EXHAUSTIVE_SYSTEM_PROMPT,
     "targeted": TARGETED_SYSTEM_PROMPT,
-    "audio_metrics": AUDIO_METRICS_SYSTEM_PROMPT,
 }

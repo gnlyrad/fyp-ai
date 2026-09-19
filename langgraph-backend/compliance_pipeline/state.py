@@ -17,11 +17,8 @@ SpanLabel = Literal["compliant", "violation"]
 #   deterministic - fixed rule/phrase presence; absence is a Fail, not an Unclear
 #   exhaustive    - every occurrence matters, so the whole transcript is needed
 #   targeted      - one specific passage, found by retrieval (the default)
-#   audio_metrics - signals that are not in the text at all (talk-over, pace)
-QuestionType = Literal["deterministic", "exhaustive", "targeted", "audio_metrics"]
-QUESTION_TYPES: tuple[QuestionType, ...] = (
-    "deterministic", "exhaustive", "targeted", "audio_metrics",
-)
+QuestionType = Literal["deterministic", "exhaustive", "targeted"]
+QUESTION_TYPES: tuple[QuestionType, ...] = ("deterministic", "exhaustive", "targeted")
 DEFAULT_QUESTION_TYPE: QuestionType = "targeted"
 
 
@@ -31,6 +28,20 @@ class Chunk(TypedDict, total=False):
     # Offsets into the transcript. Always present.
     start_char: int
     end_char: int
+    # Present only when the chunk came from a diarized turn (AWS Transcribe
+    # `audio_segments`) rather than sentence-splitting a plain string.
+    start_seconds: float
+    end_seconds: float
+    speaker_label: str  # e.g. "spk_0", as Transcribe assigned it
+
+
+class AudioSegment(TypedDict, total=False):
+    """One diarized turn, as AWS Transcribe's `results.audio_segments` shapes it."""
+
+    transcript: str
+    start_time: str
+    end_time: str
+    speaker_label: str
 
 
 class RetrievedChunk(Chunk, total=False):
@@ -75,6 +86,14 @@ class Span(TypedDict, total=False):
     label_corrected: bool
     checklist_id: str
     chunk_id: str | None
+    # The raw speaker id (e.g. "spk_0") the source chunk carried, for a caller
+    # that wants to display evidence by speaker. Absent for a plain-text
+    # transcript (not diarized turns).
+    speaker_label: str | None
+    # The source chunk's real timing, carried through for a caller that wants to
+    # seek audio playback to this passage. Absent for a plain-text transcript.
+    start_seconds: float | None
+    end_seconds: float | None
 
 
 class Finding(TypedDict, total=False):
@@ -97,11 +116,15 @@ class Finding(TypedDict, total=False):
 class AnalyseInput(TypedDict, total=False):
     """The public API body — what `POST /runs/wait` accepts as `input`.
 
-    Supply `transcript` (a paragraph or a whole call) and the `checklist` to run
-    against it. Omitting the checklist falls back to the built-in one.
+    Supply either `transcript` (a paragraph or a whole call, as plain text) or
+    `audio_segments` (AWS Transcribe's `results.audio_segments`, diarized and
+    timestamped) — not both; `audio_segments` takes priority if both are given.
+    `checklist` runs against whichever is supplied; omitting it falls back to
+    the built-in one.
     """
 
     transcript: str
+    audio_segments: list[AudioSegment]
     checklist: list[ChecklistItem]
 
 
@@ -110,6 +133,7 @@ class ComplianceState(TypedDict, total=False):
 
     # --- ingestion ---
     transcript: str  # the text every span offset refers to
+    audio_segments: list[AudioSegment]  # raw input, if the caller supplied it
     chunks: list[Chunk]
     checklist: list[ChecklistItem]
 

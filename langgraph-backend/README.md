@@ -8,9 +8,9 @@ ingestion -> classification -> guidance -> retrieval -> (fan-out) analysis -> ou
 ```
 
 `guidance` looks up the regulatory standard for each `targeted` and `exhaustive`
-checklist item; `deterministic` presence checks and `audio_metrics` items are
-deliberately excluded (see `nodes/guidance.py` for why). Every finding carries a
-`regulatory_basis` naming the notice and page it was judged under.
+checklist item; `deterministic` presence checks are deliberately excluded (see
+`nodes/guidance.py` for why). Every finding carries a `regulatory_basis` naming
+the notice and page it was judged under.
 
 ## Setup (once)
 

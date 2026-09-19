@@ -15,7 +15,6 @@ Only `targeted` and `exhaustive` items are given guidance:
                   the line is in the excerpts; its prompt turns silence into Fail,
                   and handing the model regulatory prose gives it material to
                   argue its way out of that Fail.
-  audio_metrics - no model call at all, so nothing to ground.
 
 Batched over the checklist in one pass, like `retrieval_node`.
 """

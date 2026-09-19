@@ -1,8 +1,8 @@
 """Classification node: label each checklist question with how it must be answered.
 
 Sits between ingestion and retrieval, because the type decides how much of the
-transcript retrieval hands over — an exhaustive question needs all of it, an
-audio-metrics question needs none of it.
+transcript retrieval hands over — an exhaustive question needs all of it, a
+targeted or deterministic one needs only the relevant excerpts.
 
 One LLM call labels the whole checklist. Items that already carry a
 `question_type` are left alone, so the built-in checklist (which ships tagged)
@@ -30,12 +30,12 @@ class ItemType(BaseModel):
 
     id: str = Field(description="The checklist item id, echoed exactly as given.")
     question_type: str = Field(
-        description="One of: deterministic, exhaustive, targeted, audio_metrics"
+        description="One of: deterministic, exhaustive, targeted"
     )
     rationale: str = Field(description="One sentence justifying the type.")
     evidence_query: str = Field(
         default="",
-        description="Short keyword string for lexical retrieval; empty for audio_metrics.",
+        description="Short keyword string for lexical retrieval.",
     )
 
 
@@ -49,9 +49,6 @@ def normalise_question_type(value: str) -> str | None:
     """Map the model's answer onto our vocabulary; None when it says nothing usable."""
     text = (value or "").strip().lower().replace("-", "_").replace(" ", "_")
     aliases = {
-        "audio": "audio_metrics",
-        "audio_metric": "audio_metrics",
-        "acoustic": "audio_metrics",
         "rule_based": "deterministic",
         "binary": "deterministic",
         "presence": "deterministic",

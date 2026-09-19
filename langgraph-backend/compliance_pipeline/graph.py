@@ -21,7 +21,6 @@ from langgraph.graph import END, START, StateGraph
 from langgraph.types import Send
 
 from .nodes.analysis import (
-    analysis_audio_node,
     analysis_deterministic_node,
     analysis_exhaustive_node,
     analysis_targeted_node,
@@ -37,7 +36,6 @@ ANALYSIS_NODES = {
     "deterministic": ("analysis_deterministic", analysis_deterministic_node),
     "exhaustive": ("analysis_exhaustive", analysis_exhaustive_node),
     "targeted": ("analysis_targeted", analysis_targeted_node),
-    "audio_metrics": ("analysis_audio", analysis_audio_node),
 }
 NODE_BY_TYPE = {qtype: name for qtype, (name, _) in ANALYSIS_NODES.items()}
 DEFAULT_ANALYSIS_NODE = NODE_BY_TYPE[DEFAULT_QUESTION_TYPE]

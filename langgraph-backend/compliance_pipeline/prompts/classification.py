@@ -1,7 +1,7 @@
 """Prompt for the classification node: what kind of question is this?
 
-The four types are not stylistic labels — each one selects a different amount of
-transcript at retrieval and a different judging prompt downstream, so a
+The three types are not stylistic labels — each one selects a different amount
+of transcript at retrieval and a different judging prompt downstream, so a
 misclassification changes the answer. The definitions below are written to be
 decidable from the question text alone, without seeing the call.
 """
@@ -34,17 +34,10 @@ one-sentence `rationale`, and an `evidence_query`.
                   e.g. "Was the refund policy explained correctly?"
                        "Was suitability established before a recommendation?"
 
-  audio_metrics - The answer depends on signals that are NOT in the words:
-                  interruption or talk-over, silence and hold duration, speaking
-                  pace, volume, or tone of voice.
-                  e.g. "Did the agent talk over the customer?"
-                       "Was there excessive dead air?"
-
 Choosing between them:
 - Presence-only and one instance is enough -> deterministic.
 - Presence-or-absence but ALL instances must be found -> exhaustive.
 - Needs judgement of how well something was done -> targeted.
-- Cannot be decided from a written transcript at all -> audio_metrics.
 - When genuinely torn between deterministic and targeted, choose targeted.
 
 `evidence_query` is a short bag of keywords — no punctuation, no question
@@ -52,7 +45,6 @@ wording — used to retrieve the relevant part of the transcript by lexical
 overlap. Include the words a speaker would actually SAY, not the words of the
 question. For "Were fees and charges explained?" a good query is:
 "annual management fee entry charge cancellation cost percent".
-For an audio_metrics question, return an empty string.
 
 Return one entry per question, echoing the question's `id` exactly as given.
 """

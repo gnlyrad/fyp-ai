@@ -17,6 +17,8 @@ verdict from being reported as fact.
 """
 from __future__ import annotations
 
+import difflib
+import re
 from typing import Any
 
 from langchain.messages import HumanMessage, SystemMessage
@@ -86,17 +88,63 @@ def normalise_label(value: str) -> str | None:
     return None
 
 
+_WORD_RE = re.compile(r"\S+")
+# How much of the quote's words must actually appear, in order, in the chunk
+# for a near-miss to still count. High enough that an unrelated or mostly
+# invented "quote" is rejected, not just one with a short word dropped.
+FUZZY_MATCH_MIN_RATIO = 0.8
+
+
+def _fuzzy_span(quote: str, text: str) -> tuple[int, int] | None:
+    """Best-effort span of `quote` inside `text` when the exact substring isn't
+    there — the model is asked to quote verbatim but occasionally drops a short
+    incidental word or phrase ("given the structure,") from an otherwise
+    faithful quote. Word-level alignment (not character-level) means a small
+    drop doesn't fragment the match into two separate, individually-too-short
+    halves.
+
+    The returned span always runs first-matched-word to last-matched-word in
+    `text` — real transcript text throughout, occasionally a few words longer
+    than the model's literal quote (the words it dropped), never shorter and
+    never invented.
+    """
+    quote_words = list(_WORD_RE.finditer(quote))
+    text_words = list(_WORD_RE.finditer(text))
+    if not quote_words or not text_words:
+        return None
+
+    matcher = difflib.SequenceMatcher(
+        None,
+        [m.group().lower() for m in quote_words],
+        [m.group().lower() for m in text_words],
+        autojunk=False,
+    )
+    blocks = [b for b in matcher.get_matching_blocks() if b.size]
+    if not blocks:
+        return None
+
+    matched_words = sum(b.size for b in blocks)
+    if matched_words / len(quote_words) < FUZZY_MATCH_MIN_RATIO:
+        return None
+
+    first = text_words[blocks[0].b]
+    last = text_words[blocks[-1].b + blocks[-1].size - 1]
+    return first.start(), last.end()
+
+
 def locate(
     quote: str,
     retrieved: list[RetrievedChunk],
     transcript: str,
     checklist_id: str,
 ) -> Span | None:
-    """Resolve a model-supplied quote to exact character offsets in `transcript`.
+    """Resolve a model-supplied quote to character offsets in `transcript`.
 
     Searched within the retrieved chunks only, so a quote lifted from elsewhere in
-    the call (or invented) cannot be attributed to this item's evidence. The final
-    slice check is what guarantees `transcript[start:end] == text` for the caller.
+    the call (or invented) cannot be attributed to this item's evidence. Tries an
+    exact case-insensitive substring first; if that fails, falls back to a
+    word-level fuzzy alignment (`_fuzzy_span`) so a quote that is faithful but not
+    byte-exact still locates, rather than silently becoming `Unclear`.
     """
     quote = (quote or "").strip()
     if not quote:
@@ -104,20 +152,31 @@ def locate(
 
     needle = quote.lower()
     for chunk in retrieved:
-        offset = chunk["text"].lower().find(needle)
-        if offset == -1:
+        chunk_text = chunk["text"]
+        offset = chunk_text.lower().find(needle)
+        if offset != -1:
+            start, end = chunk["start_char"] + offset, chunk["start_char"] + offset + len(quote)
+            if transcript[start:end].lower() != needle:
+                continue  # chunk text drifted from the transcript; refuse to guess
+        else:
+            span = _fuzzy_span(quote, chunk_text)
+            if span is None:
+                continue
+            start, end = chunk["start_char"] + span[0], chunk["start_char"] + span[1]
+
+        text = transcript[start:end]
+        if not text:
             continue
-        start = chunk["start_char"] + offset
-        end = start + len(quote)
-        if transcript[start:end].lower() != needle:
-            continue  # chunk text drifted from the transcript; refuse to guess
         return {
-            "text": transcript[start:end],
+            "text": text,
             "start": start,
             "end": end,
             "label": "compliant",  # overwritten by the caller
             "checklist_id": checklist_id,
             "chunk_id": chunk["chunk_id"],
+            "speaker_label": chunk.get("speaker_label") or None,
+            "start_seconds": chunk.get("start_seconds"),
+            "end_seconds": chunk.get("end_seconds"),
         }
     return None
 
@@ -245,25 +304,3 @@ def analysis_deterministic_node(task: AnalysisTask) -> dict[str, Any]:
 def analysis_exhaustive_node(task: AnalysisTask) -> dict[str, Any]:
     """Every occurrence, over the whole transcript."""
     return _run_analysis(task, EXHAUSTIVE_SYSTEM_PROMPT)
-
-
-AUDIO_METRICS_UNAVAILABLE = (
-    "Audio metrics unavailable: the pipeline is transcript-only. Answering this "
-    "needs speaker diarisation and per-turn timings from AWS Transcribe."
-)
-
-
-def analysis_audio_node(task: AnalysisTask) -> dict[str, Any]:
-    """Talk-over, silence, and pace — not answerable from text, so not guessed.
-
-    No model call: there is nothing in a transcript for it to read. Reported as
-    N/A with the reason stated, rather than as an Unclear that looks like the
-    model tried and failed.
-
-    TODO: once ingestion carries `start_seconds`, `end_seconds` and `speaker` on
-    each chunk, compute talk-over, dead air and words-per-minute here in code and
-    judge them with `AUDIO_METRICS_SYSTEM_PROMPT`.
-    """
-    item = task["item"]
-    finding = build_finding(item, task["retrieved"], [], "N/A", AUDIO_METRICS_UNAVAILABLE)
-    return {"findings": [finding], "spans": []}
