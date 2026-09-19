@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Literal
+
 from dotenv import find_dotenv, load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
@@ -23,9 +25,16 @@ class AskResponse(BaseModel):
 
 
 class IngestResponse(BaseModel):
+    target: Literal["faiss", "s3vectors"]
+    dry_run: bool
     documents: int
+    pdf_files: int
     chunks: int
-    index_dir: str
+    corpus_dir: str
+    index_dir: str | None = None
+    index_arn: str | None = None
+    corpus_version: str | None = None
+    vectors_uploaded: int | None = None
 
 
 @app.get("/health")
@@ -33,9 +42,11 @@ def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
-@app.post("/ingest", response_model=IngestResponse)
-def ingest() -> dict[str, int | str]:
-    return service.ingest()
+@app.post("/ingest", response_model=IngestResponse, response_model_exclude_none=True)
+def ingest(
+    target: Literal["faiss", "s3vectors"] = "faiss", dry_run: bool = False
+) -> dict[str, int | str | bool]:
+    return service.ingest(target=target, dry_run=dry_run)
 
 
 @app.post("/ask", response_model=AskResponse)

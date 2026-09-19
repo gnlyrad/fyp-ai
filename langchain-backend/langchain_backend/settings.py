@@ -38,6 +38,10 @@ class Settings:
                 str(Path(__file__).resolve().parents[1] / ".index"),
             )
         )
+        # Ingestion destination only; query retrieval continues to use FAISS.
+        self.s3_vectors_index_arn = os.getenv("S3_VECTORS_INDEX_ARN", "").strip()
+        self.s3_vectors_bucket_name = os.getenv("S3_VECTORS_BUCKET_NAME", "").strip()
+        self.s3_vectors_index_name = os.getenv("S3_VECTORS_INDEX_NAME", "").strip()
         raw_extensions = os.getenv(
             "LANGCHAIN_ALLOWED_EXTENSIONS",
             ".py,.md,.txt,.json,.yaml,.yml,.js,.ts,.tsx,.jsx",

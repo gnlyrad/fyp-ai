@@ -13,12 +13,9 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langsmith import traceable
 
-from .documents import load_pdf_documents
+from .documents import CHUNK_OVERLAP, CHUNK_SIZE, load_pdf_documents
 from .settings import settings
 from .vectorstore import build_vector_store, load_vector_store
-
-CHUNK_SIZE = 1200
-CHUNK_OVERLAP = 200
 
 
 def drop_self(inputs: dict) -> dict:
@@ -40,13 +37,25 @@ class RegulationSearch:
         )
         self._store = None
 
-    def ingest(self) -> dict[str, int | str]:
-        """Rebuild the index from every PDF in the corpus folder."""
+    def ingest(self, *, target: str = "faiss", dry_run: bool = False) -> dict[str, int | str | bool]:
+        """Ingest corpus PDFs into the explicitly selected destination."""
+        if target == "s3vectors":
+            from .s3_ingestion import ingest_pdf_corpus
+
+            return ingest_pdf_corpus(dry_run=dry_run)
+        if target != "faiss":
+            raise ValueError("Ingestion target must be 'faiss' or 's3vectors'.")
         documents = load_pdf_documents(settings.corpus_dir)
         chunks = self._splitter.split_documents(documents)
-        self._store = build_vector_store(chunks, self._embeddings, settings.index_dir)
+        if not chunks:
+            raise ValueError(f"No extractable PDF text found in {settings.corpus_dir}")
+        if not dry_run:
+            self._store = build_vector_store(chunks, self._embeddings, settings.index_dir)
         return {
+            "target": "faiss",
+            "dry_run": dry_run,
             "documents": len(documents),
+            "pdf_files": len({document.metadata["source"] for document in documents}),
             "chunks": len(chunks),
             "index_dir": str(settings.index_dir),
             "corpus_dir": str(settings.corpus_dir),
