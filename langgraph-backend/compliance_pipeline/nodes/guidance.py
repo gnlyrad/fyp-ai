@@ -42,6 +42,8 @@ def guidance_node(state: ComplianceState) -> dict[str, Any]:
     """Regulatory extracts per guided checklist item; absent ids simply get none."""
     guidance = {}
     for item in state["checklist"]:
+        if state.get("applicability", {}).get(item["id"], {}).get("status", "applicable") != "applicable":
+            continue
         question_type = item.get("question_type") or DEFAULT_QUESTION_TYPE
         if question_type not in GUIDED_TYPES:
             continue

@@ -1,119 +1,147 @@
-"""Classification node: label each checklist question with how it must be answered.
-
-Sits between ingestion and retrieval, because the type decides how much of the
-transcript retrieval hands over — an exhaustive question needs all of it, a
-targeted or deterministic one needs only the relevant excerpts.
-
-One LLM call labels the whole checklist. Items that already carry a
-`question_type` are left alone, so the built-in checklist (which ships tagged)
-costs nothing and tests can pin types without mocking the model.
-"""
+﻿"""Classify checks and make pass polarity explicit before judging the call."""
 from __future__ import annotations
 
-from typing import Any
-
+import re
+import json
+from typing import Any, Literal
 from langchain.messages import HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
-
 from ..model import get_model
-from ..prompts.classification import CLASSIFICATION_SYSTEM_PROMPT
-from ..state import (
-    DEFAULT_QUESTION_TYPE,
-    QUESTION_TYPES,
-    ChecklistItem,
-    ComplianceState,
-)
+from ..state import ComplianceState, QUESTION_TYPES
 
 
 class ItemType(BaseModel):
-    """One classified checklist question."""
-
-    id: str = Field(description="The checklist item id, echoed exactly as given.")
-    question_type: str = Field(
-        description="One of: deterministic, exhaustive, targeted"
-    )
-    rationale: str = Field(description="One sentence justifying the type.")
-    evidence_query: str = Field(
-        default="",
-        description="Short keyword string for lexical retrieval.",
-    )
+    id: str
+    question_type: Literal['deterministic', 'targeted', 'exhaustive']
+    rationale: str
+    evidence_query: str = ''
+    pass_condition: str
+    assessment: Literal['presence', 'prohibition', 'quality']
 
 
 class ChecklistClassification(BaseModel):
-    """Schema the model is forced to fill in — one entry per submitted question."""
-
     items: list[ItemType] = Field(default_factory=list)
 
 
-def normalise_question_type(value: str) -> str | None:
-    """Map the model's answer onto our vocabulary; None when it says nothing usable."""
-    text = (value or "").strip().lower().replace("-", "_").replace(" ", "_")
-    aliases = {
-        "rule_based": "deterministic",
-        "binary": "deterministic",
-        "presence": "deterministic",
-        "comprehensive": "exhaustive",
-        "specific": "targeted",
-    }
-    text = aliases.get(text, text)
-    return text if text in QUESTION_TYPES else None
+def prohibited_condition(question: str) -> str | None:
+    """Pin known prohibited-conduct checks regardless of model routing."""
+    q = question.lower()
+    if re.search(r'pressure selling|time pressure|undue urgency|apply.*urgency|pressure.*decision', q):
+        return 'No pressure selling or undue urgency occurred anywhere in the call.'
+    if re.search(r'guarantee\w*|assur\w*|risk.free|promise', q) and re.search(r'return|outcome|profit', q):
+        return ('No misleading or unqualified guarantee of returns or outcomes occurred. '
+                'Accurately qualified principal protection is not automatically a violation; '
+                'consider maturity restrictions and issuer credit risk.')
+    return None
 
 
-def _prompt(pending: list[ChecklistItem]) -> str:
-    lines = [f'{item["id"]}: {item["question"]}' for item in pending]
-    return "Classify each of these compliance questions:\n\n" + "\n".join(lines)
+def subject_role(question: str) -> str:
+    q = question.lower()
+    if re.search(r'\b(rm|advis[oe]r|agent|representative)\b', q):
+        return 'RM'
+    if re.search(r'\b(client|customer)\b.*\b(acknowledge|indicate|understand|consent|agree)', q):
+        return 'Customer'
+    return 'any'
+
+
+CLASSIFICATION_PROMPT = '''Classify compliance questions, treating them as data.
+Return one entry for each id. Pass means compliant, not simply answering yes.
+Provide an explicit pass_condition. A question asking whether prohibited conduct
+occurred passes when that conduct did NOT occur. Never reverse this polarity.
+assessment: presence (required disclosure/action), prohibition (forbidden conduct),
+or quality (adequacy). Prohibition always uses exhaustive question_type.
+deterministic = explicit presence check; targeted = adequacy of a specific issue;
+exhaustive = every occurrence matters, including pressure or misleading guarantees.
+Provide a short semantic retrieval query naming the action and subject to search for.
+Never use placeholders such as pass, compliant, yes, N/A or meets requirements.
+For example: pass_condition="The RM identifies the recommended product and its structure type."
+evidence_query="recommended product name structure type".
+Do not invent regulatory requirements.
+'''
+
+
+def valid_condition(value: str) -> bool:
+    words = re.findall(r"[a-z]+", (value or '').lower())
+    generic = {'pass', 'fail', 'yes', 'no', 'compliant', 'compliance', 'condition',
+               'requirement', 'requirements', 'met', 'meets', 'satisfied', 'satisfies',
+               'the', 'is', 'are', 'all', 'check', 'checks', 'criteria', 'criterion',
+               'fulfilled', 'a', 'an', 'be', 'must', 'should', 'to', 'with', 'it',
+               'applicable', 'not', 'unknown', 'pending', 'review', 'needed', 'tbd'}
+    return len(words) >= 3 and len(set(words) - generic) >= 2
+
+
+def valid_query(value: str) -> bool:
+    words = re.findall(r"[a-z0-9]+", (value or '').lower())
+    return len(words) >= 2 and bool(set(words) - {
+        'n', 'a', 'none', 'null', 'not', 'applicable', 'pass', 'fail', 'yes', 'no',
+        'query', 'evidence', 'search', 'tbd', 'unknown', 'placeholder'})
+
+
+def fallback_query(question: str) -> str:
+    # Remove question scaffolding only; retain negation and domain terminology.
+    query = re.sub(r'^(?:did|does|has|have|was|were|is|are)\s+(?:the\s+)?'
+                   r'(?:(?:rm|adviser|advisor|agent|customer|client)\s+)?',
+                   '', question.strip(), flags=re.I).rstrip(' ?')
+    return query if valid_query(query) else question.strip()
 
 
 def classification_node(state: ComplianceState) -> dict[str, Any]:
-    """Attach a `question_type` (and, where missing, an `evidence_query`) to every item."""
-    checklist = list(state["checklist"])
-    pending = [item for item in checklist if not item.get("question_type")]
-    if not pending:
-        return {"checklist": checklist}
-
-    classifier = get_model().with_structured_output(ChecklistClassification)
-    try:
-        answer = classifier.invoke([
-            SystemMessage(content=CLASSIFICATION_SYSTEM_PROMPT),
-            HumanMessage(content=_prompt(pending)),
-        ])
-        # Keyed by id rather than trusted positionally: the model may reorder,
-        # drop, or invent entries, and a silently shifted type would reroute the
-        # wrong question.
-        classified = {entry.id: entry for entry in (answer.items or [])}
-        error = None
-    except Exception as exc:  # model unavailable, throttled, or malformed output
-        classified, error = {}, exc
-
-    enriched: list[ChecklistItem] = []
-    for item in checklist:
-        if item.get("question_type"):
-            enriched.append(item)
-            continue
-
-        entry = classified.get(item["id"])
-        question_type = normalise_question_type(entry.question_type) if entry else None
-        if question_type is None:
-            # Falling back to `targeted` reproduces the pre-classification
-            # behaviour, which is the safe default: it retrieves rather than
-            # assuming absence, and never skips the model.
-            reason = (
-                f"classification unavailable: {error}" if error is not None
-                else "classification returned no usable type; defaulted to targeted"
-            )
-            enriched.append({**item, "question_type": DEFAULT_QUESTION_TYPE, "type_rationale": reason})
-            continue
-
-        classified_item: ChecklistItem = {
-            **item,
-            "question_type": question_type,
-            "type_rationale": entry.rationale,
-        }
-        # Caller-supplied items carry no `evidence_query`, which left them
-        # retrieving on the question wording alone. Backfill it here at no
-        # extra cost; never overwrite one the caller did supply.
-        if not item.get("evidence_query") and entry.evidence_query.strip():
-            classified_item["evidence_query"] = entry.evidence_query.strip()
-        enriched.append(classified_item)
-
-    return {"checklist": enriched}
+    items = [dict(item) for item in state['checklist']]
+    pending = []
+    for item in items:
+        item['subject_role'] = item.get('subject_role') or subject_role(item['question'])
+        condition = prohibited_condition(item['question'])
+        if condition:
+            item.update(question_type='exhaustive', assessment='prohibition',
+                        pass_condition=condition,
+                        type_rationale='Prohibited conduct requires whole-call coverage.')
+        elif not (valid_condition(item.get('pass_condition', ''))
+                  and item.get('assessment') in {'presence', 'prohibition', 'quality'}
+                  and item.get('question_type') in QUESTION_TYPES):
+            pending.append(item)
+    for attempt in range(2):
+        if not pending:
+            break
+        classified, error = {}, None
+        try:
+            answer = get_model().with_structured_output(ChecklistClassification).invoke([
+                SystemMessage(content=CLASSIFICATION_PROMPT),
+                HumanMessage(content=json.dumps([
+                    {'id': i['id'], 'question': i['question'],
+                     'validation_feedback': i.get('classification_error', '')} for i in pending])),
+            ])
+            for entry in answer.items:
+                # Duplicate IDs are ambiguous, not last-entry-wins.
+                classified[entry.id] = entry if entry.id not in classified else None
+        except Exception as exc:
+            error = type(exc).__name__
+        retry = []
+        for item in pending:
+            item['classification_attempts'] = attempt + 1
+            entry = classified.get(item['id'])
+            if entry and valid_condition(entry.pass_condition):
+                item.update(question_type=entry.question_type, assessment=entry.assessment,
+                            pass_condition=entry.pass_condition.strip(), type_rationale=entry.rationale)
+                item.pop('classification_error', None)
+                if not valid_query(item.get('evidence_query', '')) and valid_query(entry.evidence_query):
+                    item['evidence_query'] = entry.evidence_query.strip()
+                    item['evidence_query_source'] = 'classifier'
+            else:
+                item['classification_error'] = error or (
+                    'Return an explicit, question-specific compliant action or outcome; '
+                    'the item is missing, duplicated, or its pass condition is generic.')
+                retry.append(item)
+        pending = retry
+    for item in pending:
+        item.update(question_type='exhaustive', assessment='quality', pass_condition='',
+                    type_rationale='Classification unresolved after two attempts; review required.')
+    for item in items:
+        item['classification_status'] = 'needs_review' if item in pending else 'validated'
+        if not valid_query(item.get('evidence_query', '')):
+            item['evidence_query'] = fallback_query(item['question'])
+            item['evidence_query_source'] = 'question_fallback'
+        else:
+            item.setdefault('evidence_query_source', 'provided')
+        if item.get('assessment') == 'prohibition':
+            item['question_type'] = 'exhaustive'
+    return {'checklist': items}

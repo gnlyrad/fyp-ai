@@ -34,8 +34,20 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
         for qtype in QUESTION_TYPES
     }
 
-    spans = sorted(state.get("spans", []), key=lambda s: s["start"])
+    # Same quote under different questions remains distinct; duplicate entries
+    # within a finding do not inflate highlights or summary counts.
+    unique = {(s["checklist_id"], s["chunk_id"], s["start"], s["end"]): s
+              for s in state.get("spans", [])}
+    spans = sorted(unique.values(), key=lambda s: s["start"])
     labels = Counter(s["label"] for s in spans)
+    consistency = state.get("consistency", {"status": "not_checked", "conflicts": []})
+    review_reasons = []
+    if any(f.get("requires_review", f["verdict"] in {"Fail", "Unclear"}) for f in findings):
+        review_reasons.append("One or more findings need review.")
+    if consistency["status"] not in {"checked", "not_applicable"}:
+        review_reasons.append("Cross-call consistency is unresolved or conflicting.")
+    # Attribution gaps block only findings that need attribution. Input notices
+    # (including timing limitations) remain visible without overriding N/A.
 
     # Which notices this run was judged against, at a glance. The per-passage
     # citations stay on each finding; this is the cover sheet.
@@ -56,16 +68,20 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
                 "not_applicable": counts.get("N/A", 0),
                 "compliant_spans": labels.get("compliant", 0),
                 "violation_spans": labels.get("violation", 0),
-                # Any Fail, or an Unclear rate above a third, warrants a human review.
-                # N/A findings — which today includes every audio-metrics item —
-                # are not Unclear, so routed-but-unimplemented checks cannot on
-                # their own trip the review flag.
-                "requires_review": counts.get("Fail", 0) > 0
-                or counts.get("Unclear", 0) > len(findings) / 3,
+                "context_spans": labels.get("context", 0),
+                # Any unresolved finding, attribution, coverage or contradiction
+                # needs review, even when every other item passed.
+                "requires_review": bool(review_reasons),
+                "review_reasons": review_reasons,
+                "evidence_status_counts": dict(Counter(f.get("evidence_status", "unknown") for f in findings)),
                 "by_type": by_type,
                 "regulatory_sources": sources,
             },
             "findings": findings,
+            "warnings": list(dict.fromkeys(state.get("input_warnings", []))),
             "spans": spans,
+            "consistency": consistency,
+            "applicability": state.get("applicability", {}),
+            "retrieval_diagnostics": state.get("retrieval_diagnostics", {}),
         }
     }

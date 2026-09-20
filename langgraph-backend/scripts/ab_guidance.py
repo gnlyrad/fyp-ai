@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from compliance_pipeline.graph import ANALYSIS_NODES
 from compliance_pipeline.nodes.classification import classification_node
+from compliance_pipeline.nodes.applicability import applicability_node
 from compliance_pipeline.nodes.guidance import GUIDED_TYPES, guidance_node
 from compliance_pipeline.nodes.ingestion import ingestion_node
 from compliance_pipeline.nodes.retrieval import retrieval_node
@@ -44,6 +45,9 @@ def judge(item, state, guidance):
         "retrieved": state["evidence"].get(item["id"], []),
         "transcript": state["transcript"],
         "guidance": guidance,
+        "chunks": state["chunks"],
+        "applicability": state["applicability"].get(item["id"], {}),
+        "retrieval_diagnostics": state["retrieval_diagnostics"].get(item["id"], {}),
     }
     return NODE_FN[qtype](task)["findings"][0]
 
@@ -64,6 +68,8 @@ def main(request_path: str, json_out: str | None) -> None:
     state |= ingestion_node(state)
     say("classification...")
     state |= classification_node(state)
+    say("applicability...")
+    state |= applicability_node(state)
     say("guidance (one corpus lookup per guided item)...")
     state |= guidance_node(state)
     say("retrieval...")
@@ -103,7 +109,7 @@ def main(request_path: str, json_out: str | None) -> None:
     # Counting those as evidence of anything would overstate the result.
     errored = sum(
         1 for _, w, g, _, _ in rows
-        if "Analysis unavailable" in (w["reason"] + g["reason"])
+        if "analysis_unavailable" in {w.get("evidence_status"), g.get("evidence_status")}
     )
     say(f"verdicts changed: {changed}/{len(rows)}   unchanged: {len(rows) - changed}")
     say(f"evidence quote changed: {quote_moves}/{len(rows)}")

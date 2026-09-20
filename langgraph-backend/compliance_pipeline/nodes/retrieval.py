@@ -33,9 +33,8 @@ from ..state import (
     ComplianceState,
     RetrievedChunk,
 )
-from .tools import chunks_with_phrase
 
-TOKEN_RE = re.compile(r"[a-zA-Z][a-zA-Z'-]+")
+TOKEN_RE = re.compile(r"[a-zA-Z]+")
 STOP_WORDS = {
     "the", "a", "an", "and", "or", "to", "of", "for", "in", "on", "is", "was",
     "are", "i", "you", "we", "it", "that", "this", "with", "my", "your",
@@ -70,8 +69,21 @@ def cosine_similarity(a: list[float], b: list[float]) -> float:
     return dot / (norm_a * norm_b) if norm_a and norm_b else 0.0
 
 
+TERM_FORMS = {
+    "objectives": "objective", "fees": "fee", "charges": "charge",
+    "risks": "risk", "terms": "term", "rights": "right",
+    "cancellation": "cancel", "cancellations": "cancel", "cancelled": "cancel",
+    "canceling": "cancel", "cancelling": "cancel", "canceled": "cancel",
+    "recommendation": "recommend", "recommendations": "recommend", "recommended": "recommend",
+    "guaranteed": "guarantee", "guarantees": "guarantee", "guaranteeing": "guarantee",
+    "assured": "assure", "assurances": "assure", "written": "writing",
+}
+
+
 def tokens(text: str) -> list[str]:
-    return [t.lower() for t in TOKEN_RE.findall(text) if t.lower() not in STOP_WORDS]
+    # Hyphens/dashes become word boundaries; only search text is normalised.
+    return [TERM_FORMS.get(t.lower(), t.lower()) for t in TOKEN_RE.findall(text)
+            if t.lower() not in STOP_WORDS]
 
 
 def retrieve_lexical(
@@ -82,9 +94,8 @@ def retrieve_lexical(
 ) -> list[RetrievedChunk]:
     """Bag-of-words fallback, used only when the embedding call itself fails.
 
-    Returning an empty list is a valid answer: it means the transcript contains
-    nothing addressing this checklist item, and the analysis node will report
-    `Unclear` rather than invite the model to quote something unrelated.
+    An empty result means no lexical match was found, not that the required
+    statement is absent. Analysis uses full-call coverage before an omission.
     """
     q = Counter(tokens(query))
     results: list[RetrievedChunk] = []
@@ -106,6 +117,7 @@ def retrieve(
     chunk_vectors: list[list[float]] | None,
     top_k: int = TOP_K,
     min_relevance: float = MIN_RELEVANCE,
+    diagnostics: dict | None = None,
 ) -> list[RetrievedChunk]:
     """Return the chunks closest in meaning to the query, best first.
 
@@ -114,15 +126,22 @@ def retrieve(
     matching instead of making — and likely re-failing — another Bedrock call.
     """
     if chunk_vectors is None:
+        if diagnostics is not None:
+            diagnostics.update(method="lexical_fallback", fallback_reason="chunk_embedding_unavailable")
         return retrieve_lexical(query, chunks, top_k)
 
     try:
         query_vector = embedding_client().embed_query(query)
-    except Exception:
+    except Exception as exc:
         # The batch chunk embedding above succeeded, but this item's query call
         # didn't (e.g. a transient throttle) — fall back for this item alone
         # rather than failing the whole run over one query.
+        if diagnostics is not None:
+            diagnostics.update(method="lexical_fallback", fallback_reason=f"query_embedding_failed:{type(exc).__name__}")
         return retrieve_lexical(query, chunks, top_k)
+
+    if diagnostics is not None:
+        diagnostics.update(method="semantic", fallback_reason=None)
 
     results: list[RetrievedChunk] = []
     for chunk, vector in zip(chunks, chunk_vectors):
@@ -133,18 +152,8 @@ def retrieve(
     return sorted(results, key=lambda r: r["score"], reverse=True)[:top_k]
 
 
-# AWS Transcribe's diarization tells us two speakers exist and separates their
-# turns; it never tells us which one is staff. This fixed spk_0 -> RM mapping
-# is a starting assumption, not something Transcribe guarantees: it holds for
-# an outbound call where the RM places the call and speaks first, and silently
-# mislabels an inbound call, a call where the customer speaks first, or one
-# where the recording channels are swapped. Revisit if either becomes common.
-#
-# Used only to label the *prompt* context the model reads (so it can attribute
-# statements to the right party) — never written into `chunk["text"]` itself,
-# so a located quote stays a clean excerpt with no role prefix to strip.
-SPEAKER_ROLE = {"spk_0": "RM", "spk_1": "Customer"}
-DEFAULT_SPEAKER_ROLE = "Speaker"
+# Speaker identity is provided by Transcribe; role is caller-supplied metadata.
+# Unmapped speaker labels remain neutral in the model context.
 
 
 def format_timestamp(seconds: float) -> str:
@@ -167,13 +176,14 @@ def chunk_speaker_role(chunk: Chunk) -> str | None:
     speaker = chunk.get("speaker_label")
     if not speaker:
         return None
-    return SPEAKER_ROLE.get(speaker, DEFAULT_SPEAKER_ROLE)
+    return chunk.get("speaker_role") or f"{speaker} (role unverified)"
 
 
 def build_context(retrieved: list[RetrievedChunk]) -> str:
     lines = []
     for r in retrieved:
         prefix = " ".join(filter(None, [
+            f'[{r["chunk_id"]}]',
             f'[{chunk_timestamp(r)}]' if chunk_timestamp(r) else None,
             f'{chunk_speaker_role(r)}:' if chunk_speaker_role(r) else None,
         ]))
@@ -183,32 +193,38 @@ def build_context(retrieved: list[RetrievedChunk]) -> str:
 
 def retrieve_targeted(
     item: ChecklistItem, chunks: list[Chunk], chunk_vectors: list[list[float]] | None,
+    diagnostics: dict | None = None,
 ) -> list[RetrievedChunk]:
     """The single best passage or two — enough to judge how well it was done."""
-    return retrieve(item.get("evidence_query") or item["question"], chunks, chunk_vectors)
+    return retrieve(item.get("evidence_query") or item["question"], chunks, chunk_vectors, diagnostics=diagnostics)
 
 
 def retrieve_deterministic(
     item: ChecklistItem, chunks: list[Chunk], chunk_vectors: list[list[float]] | None,
+    diagnostics: dict | None = None,
 ) -> list[RetrievedChunk]:
     """Wider top-k, plus every chunk that literally contains one of the terms.
 
-    The literal pass is the point: a presence check that answers Fail because the
-    line ranked sixth is worse than no check at all. Union, kept in transcript
-    order so the model reads the call the way it happened.
+    Add normalised term matches to the semantic candidates. These candidates
+    alone cannot establish absence; analysis performs that check over the call.
     """
     query = item.get("evidence_query") or item["question"]
-    scored = retrieve(query, chunks, chunk_vectors, top_k=DETERMINISTIC_TOP_K)
+    scored = retrieve(query, chunks, chunk_vectors, top_k=DETERMINISTIC_TOP_K, diagnostics=diagnostics)
     by_id = {chunk["chunk_id"]: chunk for chunk in scored}
-    for chunk in chunks_with_phrase(tokens(query), chunks):
-        by_id.setdefault(chunk["chunk_id"], {**chunk, "score": 0.0})
+    query_terms = set(tokens(query))
+    for chunk in chunks:
+        if query_terms.intersection(tokens(chunk["text"])):
+            by_id.setdefault(chunk["chunk_id"], {**chunk, "score": 0.0})
     return sorted(by_id.values(), key=lambda c: c["start_char"])
 
 
 def retrieve_exhaustive(
     item: ChecklistItem, chunks: list[Chunk], chunk_vectors: list[list[float]] | None,
+    diagnostics: dict | None = None,
 ) -> list[RetrievedChunk]:
     """The whole transcript, in order. Ranking would defeat the question."""
+    if diagnostics is not None:
+        diagnostics.update(method="full_transcript", fallback_reason=None)
     return [{**chunk, "score": 1.0} for chunk in chunks]
 
 
@@ -243,10 +259,22 @@ def retrieval_node(state: ComplianceState) -> dict[str, Any]:
     reusing the vectors is a large saving over one embedding call per item.
     """
     chunks = state["chunks"]
-    chunk_vectors = embed_chunks(chunks)
+    active = [item for item in state["checklist"]
+              if state.get("applicability", {}).get(item["id"], {}).get("status", "applicable") == "applicable"]
+    chunk_vectors = embed_chunks(chunks) if any(i.get("question_type") != "exhaustive" for i in active) else None
     evidence = {}
+    diagnostics = {}
     for item in state["checklist"]:
+        detail = {"query": item.get("evidence_query") or item["question"],
+                  "total_chunks": len(chunks), "method": "skipped", "fallback_reason": None}
+        diagnostics[item["id"]] = detail
+        if item not in active:
+            evidence[item["id"]] = []
+            detail.update(selected_chunk_ids=[], coverage="not_reviewed")
+            continue
         retriever = RETRIEVERS.get(item.get("question_type") or DEFAULT_QUESTION_TYPE,
                                    retrieve_targeted)
-        evidence[item["id"]] = retriever(item, chunks, chunk_vectors)
-    return {"evidence": evidence}
+        evidence[item["id"]] = retriever(item, chunks, chunk_vectors, diagnostics=detail)
+        detail["selected_chunk_ids"] = [c["chunk_id"] for c in evidence[item["id"]]]
+        detail["coverage"] = "full_transcript" if len(evidence[item["id"]]) == len(chunks) else "selected_chunks"
+    return {"evidence": evidence, "retrieval_diagnostics": diagnostics}

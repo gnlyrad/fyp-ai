@@ -10,11 +10,11 @@ import operator
 from typing import Annotated, Any, Literal, TypedDict
 
 Verdict = Literal["Pass", "Fail", "Unclear", "N/A"]
-SpanLabel = Literal["compliant", "violation"]
+SpanLabel = Literal["compliant", "violation", "context"]
 
 # How a checklist question has to be answered, which decides both how much of the
 # transcript retrieval hands over and which analysis node judges it.
-#   deterministic - fixed rule/phrase presence; absence is a Fail, not an Unclear
+#   deterministic - disclosure/action check, with full-call review before omission
 #   exhaustive    - every occurrence matters, so the whole transcript is needed
 #   targeted      - one specific passage, found by retrieval (the default)
 QuestionType = Literal["deterministic", "exhaustive", "targeted"]
@@ -33,6 +33,10 @@ class Chunk(TypedDict, total=False):
     start_seconds: float
     end_seconds: float
     speaker_label: str  # e.g. "spk_0", as Transcribe assigned it
+    speaker_role: str  # only supplied by the caller, never inferred from speaker order
+    speaker_role_source: str
+    word_timings: list[dict[str, Any]]
+    source_segment_id: int
 
 
 class AudioSegment(TypedDict, total=False):
@@ -52,10 +56,16 @@ class ChecklistItem(TypedDict, total=False):
     id: str
     question: str
     evidence_query: str
-    # Filled by the classification node when the caller omits it. Supplying it in
-    # the request skips classification entirely for that item.
+    evidence_query_source: str
+    classification_status: str
+    classification_error: str | None
+    classification_attempts: int
+    # Valid caller metadata skips model classification; invalid entries are retried.
     question_type: QuestionType
     type_rationale: str  # one line, so the routing decision stays auditable
+    pass_condition: str
+    assessment: Literal["presence", "prohibition", "quality"]
+    subject_role: Literal["RM", "Customer", "any"]
 
 
 class RegulationPassage(TypedDict, total=False):
@@ -74,8 +84,8 @@ class RegulationPassage(TypedDict, total=False):
 class Span(TypedDict, total=False):
     """A verbatim substring of the transcript, located by character offset.
 
-    `label` is reconciled with the finding's verdict; `model_label` preserves what
-    the model originally said so a disagreement stays auditable rather than silent.
+    `quote_verified` confirms source text only. `label` and `evidence_relation`
+    come from a separate relevance review; they are never forced by the verdict.
     """
 
     text: str
@@ -94,6 +104,12 @@ class Span(TypedDict, total=False):
     # seek audio playback to this passage. Absent for a plain-text transcript.
     start_seconds: float | None
     end_seconds: float | None
+    speaker_role: str | None
+    speaker_role_source: str | None
+    timing_precision: Literal["word", "segment", "unavailable"]
+    quote_verified: bool
+    evidence_relation: str
+    relevance_reason: str
 
 
 class Finding(TypedDict, total=False):
@@ -102,7 +118,16 @@ class Finding(TypedDict, total=False):
     question_type: QuestionType
     verdict: Verdict
     reason: str
-    confidence: Literal["high", "low"]
+    pass_condition: str
+    evidence_status: str
+    analysis_coverage: str
+    applicability_coverage: str
+    classification_status: str
+    classification_error: str | None
+    reviewed_chunk_ids: list[str]
+    applicability: dict[str, Any]
+    retrieval_diagnostics: dict[str, Any]
+    requires_review: bool
     spans: list[Span]
     # Convenience view of the first verified span.
     evidence_quote: str | None
@@ -116,32 +141,42 @@ class Finding(TypedDict, total=False):
 class AnalyseInput(TypedDict, total=False):
     """The public API body — what `POST /runs/wait` accepts as `input`.
 
-    Supply either `transcript` (a paragraph or a whole call, as plain text) or
-    `audio_segments` (AWS Transcribe's `results.audio_segments`, diarized and
-    timestamped) — not both; `audio_segments` takes priority if both are given.
+    Supply `results` (the complete AWS Transcribe results object),
+    `audio_segments` (diarized, timestamped turns), or a plain `transcript`.
+    Precedence is results > audio_segments > transcript. Within results,
+    audio_segments take priority over transcripts. Raw results are preserved
+    in the returned state, including items and speaker_labels.
     `checklist` runs against whichever is supplied; omitting it falls back to
     the built-in one.
     """
 
     transcript: str
+    results: dict[str, Any]
     audio_segments: list[AudioSegment]
     checklist: list[ChecklistItem]
+    speaker_roles: dict[str, Literal["RM", "Customer"]]
 
 
 class ComplianceState(TypedDict, total=False):
     """State for the top-level graph."""
 
     # --- ingestion ---
+    results: dict[str, Any]  # original Transcribe results, preserved unchanged
     transcript: str  # the text every span offset refers to
     audio_segments: list[AudioSegment]  # raw input, if the caller supplied it
     chunks: list[Chunk]
     checklist: list[ChecklistItem]
+    speaker_roles: dict[str, Literal["RM", "Customer"]]
+    input_warnings: list[str]
+    applicability: dict[str, dict[str, Any]]
+    consistency: dict[str, Any]
 
     # --- guidance ---
     guidance: dict[str, list[RegulationPassage]]  # checklist_id -> regulatory extracts
 
     # --- retrieval ---
     evidence: dict[str, list[RetrievedChunk]]  # checklist_id -> retrieved chunks
+    retrieval_diagnostics: dict[str, dict[str, Any]]
 
     # --- analysis (fan-out; concatenated, not overwritten) ---
     findings: Annotated[list[Finding], operator.add]
@@ -158,3 +193,6 @@ class AnalysisTask(TypedDict):
     retrieved: list[RetrievedChunk]
     transcript: str
     guidance: list[RegulationPassage]
+    chunks: list[Chunk]
+    applicability: dict[str, Any]
+    retrieval_diagnostics: dict[str, Any]
