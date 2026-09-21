@@ -38,7 +38,10 @@ class Settings:
                 str(Path(__file__).resolve().parents[1] / ".index"),
             )
         )
-        # Ingestion destination only; query retrieval continues to use FAISS.
+        self.regulation_search_backend = os.getenv("REGULATION_SEARCH_BACKEND", "faiss").strip().lower()
+        if self.regulation_search_backend not in {"faiss", "s3vectors"}:
+            raise ValueError("REGULATION_SEARCH_BACKEND must be faiss or s3vectors.")
+        self.s3_vectors_corpus_version = os.getenv("S3_VECTORS_CORPUS_VERSION", "").strip()
         self.s3_vectors_index_arn = os.getenv("S3_VECTORS_INDEX_ARN", "").strip()
         self.s3_vectors_bucket_name = os.getenv("S3_VECTORS_BUCKET_NAME", "").strip()
         self.s3_vectors_index_name = os.getenv("S3_VECTORS_INDEX_NAME", "").strip()

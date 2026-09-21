@@ -1,7 +1,7 @@
 """The regulatory knowledge base, exposed as a tool.
 
-Backed by the FAISS index in `langchain-backend`: five MAS financial-advisory
-notices and guidelines, embedded with Bedrock Titan. This module is the only
+Backed by the configured FAISS or S3 Vectors index in `langchain-backend`.
+This module is the only
 place the two backends touch, so swapping FAISS for OpenSearch Serverless or a
 Bedrock Knowledge Base later means editing `RegulationSearch`, not this graph.
 
@@ -79,6 +79,10 @@ def search_regulations(query: str, k: int = GUIDANCE_TOP_K) -> list[RegulationPa
             return list(_cached_search.__wrapped__(query, k))
         return list(_cached_search(query, k))
     except Exception:
+        # An explicitly selected cloud backend must not silently produce a
+        # report without guidance when credentials/configuration are broken.
+        if os.getenv("REGULATION_SEARCH_BACKEND", "faiss").strip().lower() == "s3vectors":
+            raise
         # The corpus is an enhancement, not a dependency. A missing index,
         # absent AWS credentials or a throttled embedding call must leave the
         # pipeline judging exactly as it did before guidance existed.

@@ -8,7 +8,8 @@ This folder is a starter RAG backend for answering questions over a PDF corpus u
 - Splits them into retrieval-sized chunks.
 - Embeds the chunks with Amazon Bedrock embeddings.
 - Stores the chunks in a local FAISS index by default.
-- Can explicitly ingest the PDF corpus into S3 Vectors; retrieval still uses FAISS.
+- Can ingest and search the PDF corpus in S3 Vectors with `REGULATION_SEARCH_BACKEND=s3vectors`.
+- See [S3 Vectors setup and testing](S3_VECTORS_TESTING.md) for the Docker handoff.
 - Uses an Amazon Bedrock chat model to answer questions from retrieved context.
 
 ## How it maps to the AWS diagram
@@ -18,7 +19,7 @@ flowchart LR
   PDFs[PDF corpus folder] --> Load[PDF loading]
   Load --> Chunk[Chunking]
   Chunk --> Embed[Bedrock embeddings]
-  Embed --> Store[(FAISS now / OpenSearch Serverless later)]
+  Embed --> Store[(FAISS or S3 Vectors)]
   Ask[User question] --> QEmbed[Question embedding]
   QEmbed --> Search[Semantic search]
   Search --> Store
@@ -44,6 +45,7 @@ This default pairing is configured for Singapore. The AWS account behind
 - `POST /ingest?target=s3vectors` uploads corpus PDF chunks to S3 Vectors.
 - Add `&dry_run=true` to preview S3 ingestion without embedding or uploading.
 - `POST /ask` answers a question using retrieved code context.
+- `POST /search` returns regulatory passages using the selected backend, without chat generation.
 - `GET /health` returns a simple status payload.
 
 ## Corpus folder
@@ -57,7 +59,7 @@ Put your PDFs in [corpus/](corpus/) under this folder. The ingestion step reads 
 3. Set AWS credentials and region in your shell or `.env` file.
 4. Run the app with `python -m langchain_backend.main`.
 
-## S3 Vectors ingestion only
+## S3 Vectors ingestion
 
 Only PDFs inside the configured corpus folder (including nested folders) are
 loaded. Checklist Python/JSON files, transcripts, and files outside the corpus
@@ -66,8 +68,9 @@ The PDF text is split into 1,200-character chunks with 200-character overlap,
 embedded with Bedrock, and uploaded with text, relative source filename,
 zero-based page, embedding model, and corpus version metadata.
 
-This is an explicit upload path. `/ask` and LangGraph guidance still query local
-FAISS. Their automatic local index creation does not trigger an S3 upload.
+This is an explicit upload path. `/ask` and LangGraph guidance use the backend
+selected by `REGULATION_SEARCH_BACKEND` (default `faiss`). S3 queries never
+trigger automatic ingestion. See [setup and testing](S3_VECTORS_TESTING.md).
 
 ### Preview without an AWS bucket
 
@@ -135,10 +138,10 @@ regenerates embeddings, so retrying incurs embedding charges.
 
 Ingestion is versioned and does not delete old vectors. Revised PDFs produce a
 new `corpus_version` and new keys. For a replacement corpus, use a fresh index,
-or have future S3 retrieval filter by the version returned by a **successful**
-ingestion. Do not query an incomplete version after a failed run. This change
-does not provision resources, upload the original PDF binaries, or implement S3
-query retrieval.
+or set `S3_VECTORS_CORPUS_VERSION` to the version returned by a **successful**
+ingestion. S3 retrieval filters by this version and the configured embedding model.
+Do not query an incomplete version after a failed run. Ingestion does not provision
+resources or upload the original PDF binaries.
 
 ### Offline verification
 
