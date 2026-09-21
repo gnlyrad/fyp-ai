@@ -151,7 +151,7 @@ def _finding(task, verdict, reason, status, reviewed, spans=None, coverage="not_
         "retrieved_evidence": task["retrieved"],
         "regulatory_basis": task.get("guidance") or [],
     }
-    return {"findings": [finding], "spans": spans}
+    return {"raw_findings": [finding], "spans": spans}
 
 
 def _invoke(task, reviewed, coverage):
@@ -170,9 +170,10 @@ def _invoke(task, reviewed, coverage):
 def _run_analysis(task, system_prompt=None):
     item = task["item"]
     applicability = task.get("applicability", {})
-    if applicability.get("status") == "not_applicable":
+    applicability_status = applicability.get("status", "applicable")
+    if applicability_status == "not_applicable":
         return _finding(task, "N/A", applicability["reason"], "not_applicable", [])
-    if applicability.get("status") != "applicable":
+    if applicability_status != "applicable":
         return _finding(task, "Unclear", applicability.get("reason", "Applicability has not been checked."),
                         "applicability_uncertain", [])
     if item.get("classification_status") == "needs_review" or not valid_condition(item.get("pass_condition", "")):

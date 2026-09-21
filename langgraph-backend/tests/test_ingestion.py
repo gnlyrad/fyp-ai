@@ -32,7 +32,8 @@ class IngestionTests(unittest.TestCase):
 
     def test_results_preserve_metadata_and_turn_offsets(self):
         original = copy.deepcopy(self.results)
-        state = ingestion_node({"results": self.results, "checklist": self.checklist})
+        state = ingestion_node({"results": self.results, "checklist": self.checklist,
+                                "speaker_roles": {"spk_0": "RM", "spk_1": "Customer"}})
         self.assertEqual(state["results"], original)
         self.assertEqual(self.results, original)
         self.assertEqual(state["audio_segments"], original["audio_segments"])
@@ -48,7 +49,8 @@ class IngestionTests(unittest.TestCase):
 
     def test_results_take_priority_over_legacy_inputs(self):
         state = ingestion_node({"results": self.results, "transcript": "Ignore me.",
-                                "audio_segments": [{"transcript": "Ignore me too."}]})
+                                "audio_segments": [{"transcript": "Ignore me too."}],
+                                "speaker_roles": {"spk_0": "RM", "spk_1": "Customer"}})
         self.assertEqual(state["chunks"][0]["text"], "Hello.")
 
     def test_results_without_segments_use_transcript_without_inventing_speakers(self):
@@ -76,10 +78,11 @@ class IngestionTests(unittest.TestCase):
         self.assertEqual(text_state["transcript"], "Hello. Welcome.")
         self.assertNotIn("results", text_state)
         segment_state = ingestion_node({"audio_segments": self.results["audio_segments"],
-                                        "transcript": "Ignored."})
+                                        "transcript": "Ignored.",
+                                        "speaker_roles": {"spk_0": "RM", "spk_1": "Customer"}})
         self.assertEqual(segment_state["chunks"][1]["speaker_label"], "spk_1")
 
-    def test_graph_accepts_results_and_returns_them_alongside_report(self):
+    def test_graph_accepts_results_and_returns_them_alongside_summary(self):
         # Exercise the public input schema and actual output node without calling
         # classification, retrieval, or a paid model.
         builder = StateGraph(ComplianceState, input_schema=AnalyseInput)
@@ -88,11 +91,12 @@ class IngestionTests(unittest.TestCase):
         builder.add_edge(START, "ingestion")
         builder.add_edge("ingestion", "output")
         builder.add_edge("output", END)
-        state = builder.compile().invoke({"results": self.results, "checklist": self.checklist})
+        state = builder.compile().invoke({"results": self.results, "checklist": self.checklist,
+                                          "speaker_roles": {"spk_0": "RM", "spk_1": "Customer"}})
         self.assertEqual(state["results"], self.results)
         self.assertEqual(state["audio_segments"], self.results["audio_segments"])
         self.assertEqual(len(state["chunks"]), 2)
-        self.assertIn("report", state)
+        self.assertIn("summary", state)
 
 
 if __name__ == "__main__":

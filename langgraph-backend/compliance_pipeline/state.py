@@ -33,7 +33,7 @@ class Chunk(TypedDict, total=False):
     start_seconds: float
     end_seconds: float
     speaker_label: str  # e.g. "spk_0", as Transcribe assigned it
-    speaker_role: str  # only supplied by the caller, never inferred from speaker order
+    speaker_role: str  # caller-supplied, or LLM-inferred from content; never from speaker order
     speaker_role_source: str
     word_timings: list[dict[str, Any]]
     source_segment_id: int
@@ -179,11 +179,30 @@ class ComplianceState(TypedDict, total=False):
     retrieval_diagnostics: dict[str, dict[str, Any]]
 
     # --- analysis (fan-out; concatenated, not overwritten) ---
-    findings: Annotated[list[Finding], operator.add]
+    raw_findings: Annotated[list[Finding], operator.add]
     spans: Annotated[list[Span], operator.add]
 
     # --- output ---
-    report: dict[str, Any]
+    # Projected, trimmed findings written by output_node. Deliberately not an
+    # operator.add accumulator: raw_findings already concatenated the fan-out,
+    # and output_node writes this once as a plain replacement.
+    findings: list[dict[str, Any]]
+    summary: dict[str, Any]
+
+
+class AnalyseOutput(TypedDict, total=False):
+    """The public API response shape — what `POST /runs/wait` returns.
+
+    `output_schema` filters the compiled graph's final state down to exactly
+    these five keys. `transcript` is written by ingestion and passes through
+    unchanged; the rest are written by output_node's projection.
+    """
+
+    transcript: str
+    chunks: list[dict[str, Any]]
+    checklist: list[dict[str, Any]]
+    findings: list[dict[str, Any]]
+    summary: dict[str, Any]
 
 
 class AnalysisTask(TypedDict):

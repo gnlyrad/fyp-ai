@@ -7,7 +7,7 @@ from unittest.mock import Mock, patch
 os.environ["LANGSMITH_TRACING"] = "false"
 os.environ["LANGCHAIN_TRACING_V2"] = "false"
 
-from compliance_pipeline.nodes import analysis, applicability, classification, consistency, guidance, retrieval
+from compliance_pipeline.nodes import analysis, applicability, classification, consistency, guidance, ingestion, retrieval
 from compliance_pipeline.nodes.ingestion import ingestion_node, chunk_text
 from compliance_pipeline.nodes.output import output_node
 
@@ -48,12 +48,53 @@ class IngestionAndTimingTests(unittest.TestCase):
         task = task_for()
         self.assertEqual([c["chunk_id"] for c in task["chunks"]], ["chunk-00", "chunk-01"])
 
-    def test_speaker_number_never_assigns_role(self):
-        state = ingestion_node({"audio_segments": [
-            {"transcript": "Hello.", "speaker_label": "spk_0", "start_time": "0", "end_time": "1"}]})
+    def test_speaker_order_never_assigns_role_only_content_can(self):
+        # Content too sparse to support either role: the model must say
+        # "uncertain" rather than guessing from which speaker went first.
+        model = Mock()
+        model.with_structured_output.return_value.invoke.return_value = ingestion.SpeakerRoleInference(
+            speakers=[{"speaker_label": "spk_0", "role": "uncertain", "reason": "Too little content to tell."}])
+        with patch.object(ingestion, "get_model", return_value=model):
+            state = ingestion_node({"audio_segments": [
+                {"transcript": "Hello.", "speaker_label": "spk_0", "start_time": "0", "end_time": "1"}]})
         self.assertNotIn("speaker_role", state["chunks"][0])
         self.assertIn("role unverified", retrieval.build_context(state["chunks"]))
         self.assertTrue(state["input_warnings"])
+
+    def test_llm_infers_roles_from_content_when_caller_omits_speaker_roles(self):
+        model = Mock()
+        model.with_structured_output.return_value.invoke.return_value = ingestion.SpeakerRoleInference(speakers=[
+            {"speaker_label": "spk_0", "role": "RM", "reason": "Recommends the note and discloses the fee."},
+            {"speaker_label": "spk_1", "role": "Customer", "reason": "Asks a clarifying question and agrees."},
+        ])
+        with patch.object(ingestion, "get_model", return_value=model):
+            state = ingestion_node({"audio_segments": [
+                {"transcript": "Here is the product we recommend, with a one percent fee.",
+                 "speaker_label": "spk_0", "start_time": "0", "end_time": "3"},
+                {"transcript": "Sounds good, let's proceed.", "speaker_label": "spk_1",
+                 "start_time": "3", "end_time": "4"},
+            ]})
+        self.assertEqual(state["chunks"][0]["speaker_role"], "RM")
+        self.assertEqual(state["chunks"][0]["speaker_role_source"], "llm_inferred")
+        self.assertEqual(state["chunks"][1]["speaker_role"], "Customer")
+        self.assertTrue(any("inferred by a language model" in w for w in state["input_warnings"]))
+
+    def test_caller_supplied_roles_are_not_overridden_by_inference(self):
+        model = Mock()
+        with patch.object(ingestion, "get_model", return_value=model):
+            state = ingestion_node({"audio_segments": [
+                {"transcript": "Hello.", "speaker_label": "spk_0", "start_time": "0", "end_time": "1"}],
+                "speaker_roles": {"spk_0": "Customer"}})
+        model.assert_not_called()
+        self.assertEqual(state["chunks"][0]["speaker_role"], "Customer")
+        self.assertEqual(state["chunks"][0]["speaker_role_source"], "caller")
+
+    def test_role_inference_failure_is_visible_and_does_not_block_ingestion(self):
+        with patch.object(ingestion, "get_model", side_effect=RuntimeError("offline")):
+            state = ingestion_node({"audio_segments": [
+                {"transcript": "Here is the product.", "speaker_label": "spk_0", "start_time": "0", "end_time": "2"}]})
+        self.assertNotIn("speaker_role", state["chunks"][0])
+        self.assertTrue(any("inference unavailable" in w for w in state["input_warnings"]))
 
     def test_word_timings_map_quotes_to_words_not_whole_segment(self):
         results = {"audio_segments": [{"id": 0, "transcript": "Hello there.", "speaker_label": "spk_0",
@@ -62,11 +103,11 @@ class IngestionAndTimingTests(unittest.TestCase):
             {"id": 11, "type": "pronunciation", "alternatives": [{"content": "there"}], "start_time": "1.2", "end_time": "1.8"},
             {"id": 12, "type": "punctuation", "alternatives": [{"content": "."}]},
         ]}
-        state = ingestion_node({"results": results})
+        state = ingestion_node({"results": results, "speaker_roles": {"spk_0": "RM"}})
         span = analysis.locate("there.", state["chunks"], state["transcript"], "test", "chunk-00")
         self.assertEqual((span["start_seconds"], span["end_seconds"], span["timing_precision"]), (1.2, 1.8, "word"))
         results["items"][1]["alternatives"][0]["content"] = "elsewhere"
-        state = ingestion_node({"results": results})
+        state = ingestion_node({"results": results, "speaker_roles": {"spk_0": "RM"}})
         span = analysis.locate("there.", state["chunks"], state["transcript"], "test")
         self.assertEqual(span["timing_precision"], "segment")
 
@@ -105,16 +146,31 @@ class RetrievalTests(unittest.TestCase):
 
 
 class ClassificationAndApplicabilityTests(unittest.TestCase):
-    def test_prohibitions_pin_coverage_and_pass_polarity(self):
-        items = [{"id": "pressure", "question": "Did the RM apply time pressure or urgency?", "question_type": "targeted"},
-                 {"id": "guarantees", "question": "Did the RM describe any return as guaranteed?", "question_type": "deterministic"}]
-        with patch.object(classification, "get_model") as model:
+    def test_prohibitions_are_classified_as_exhaustive_by_the_model(self):
+        # No caller-supplied metadata: the LLM (not regex) must recognise these as
+        # prohibited-conduct questions and classify them accordingly.
+        items = [{"id": "pressure", "question": "Did the RM apply time pressure or urgency?"},
+                 {"id": "guarantees", "question": "Did the RM describe any return as guaranteed?"}]
+        model = Mock()
+        model.with_structured_output.return_value.invoke.return_value = classification.ChecklistClassification(
+            items=[
+                {"id": "pressure", "question_type": "exhaustive", "assessment": "prohibition",
+                 "pass_condition": "No pressure selling or undue urgency occurred anywhere in the call.",
+                 "rationale": "Prohibited conduct requires whole-call coverage.",
+                 "evidence_query": "time pressure urgency", "subject_role": "RM"},
+                {"id": "guarantees", "question_type": "exhaustive", "assessment": "prohibition",
+                 "pass_condition": "No unqualified guarantee of returns or outcomes occurred.",
+                 "rationale": "Prohibited conduct requires whole-call coverage.",
+                 "evidence_query": "return guarantee assure risk-free", "subject_role": "RM"},
+            ])
+        with patch.object(classification, "get_model", return_value=model):
             output = classification.classification_node({"checklist": items})
-        model.assert_not_called()
+        model.with_structured_output.return_value.invoke.assert_called_once()
         for item in output["checklist"]:
             self.assertEqual(item["question_type"], "exhaustive")
             self.assertEqual(item["assessment"], "prohibition")
             self.assertTrue(item["pass_condition"].startswith("No "))
+            self.assertEqual(item["classification_status"], "validated")
 
     def test_unverifiable_applicability_is_uncertain(self):
         task = task_for()
@@ -137,12 +193,12 @@ class AnalysisTests(unittest.TestCase):
         task = task_for()
         task["applicability"] = {"status": "not_applicable", "reason": "Unrelated conversation."}
         with patch.object(analysis, "judge_model") as judge:
-            self.assertEqual(analysis._run_analysis(task)["findings"][0]["verdict"], "N/A")
+            self.assertEqual(analysis._run_analysis(task)["raw_findings"][0]["verdict"], "N/A")
         judge.assert_not_called()
         task["applicability"]["status"] = "applicable"
         task["chunks"][0].pop("speaker_role")
         with patch.object(analysis, "judge_model") as judge:
-            finding = analysis._run_analysis(task)["findings"][0]
+            finding = analysis._run_analysis(task)["raw_findings"][0]
         judge.assert_not_called()
         self.assertEqual(finding["evidence_status"], "speaker_role_unverified")
 
@@ -150,7 +206,7 @@ class AnalysisTests(unittest.TestCase):
         task = task_for("targeted")
         responses = [judgement("Unclear", "insufficient", []), judgement("Fail", "absence", [])]
         with patch.object(analysis, "_invoke", side_effect=responses) as invoke:
-            finding = analysis._run_analysis(task)["findings"][0]
+            finding = analysis._run_analysis(task)["raw_findings"][0]
         self.assertEqual(invoke.call_args_list[1].args[2], "full_transcript")
         self.assertEqual(finding["verdict"], "Fail")
         self.assertEqual(finding["spans"], [])
@@ -161,21 +217,21 @@ class AnalysisTests(unittest.TestCase):
         task = task_for("targeted")
         with patch.object(analysis, "_invoke", return_value=judgement("Fail", "absence", [])), \
              patch.object(analysis, "MAX_REVIEW_CHARS", len(retrieval.build_context(task["retrieved"])) + 1):
-            finding = analysis._run_analysis(task)["findings"][0]
+            finding = analysis._run_analysis(task)["raw_findings"][0]
         self.assertEqual(finding["verdict"], "Unclear")
         self.assertEqual(finding["evidence_status"], "coverage_incomplete")
 
     def test_real_but_irrelevant_quote_does_not_support_fail(self):
         with patch.object(analysis, "_invoke", return_value=judgement("Fail")), \
              patch.object(analysis, "get_model", return_value=auditor("context", "irrelevant")):
-            finding = analysis._run_analysis(task_for())["findings"][0]
+            finding = analysis._run_analysis(task_for())["raw_findings"][0]
         self.assertEqual(finding["verdict"], "Unclear")
         self.assertEqual(finding["spans"], [])
 
     def test_quote_labels_are_not_forced_to_verdict(self):
         with patch.object(analysis, "_invoke", return_value=judgement("Fail")), \
              patch.object(analysis, "get_model", return_value=auditor("compliant", "contradicts")):
-            finding = analysis._run_analysis(task_for())["findings"][0]
+            finding = analysis._run_analysis(task_for())["raw_findings"][0]
         self.assertEqual(finding["verdict"], "Unclear")
         self.assertEqual(finding["spans"][0]["label"], "compliant")
 
@@ -183,7 +239,7 @@ class AnalysisTests(unittest.TestCase):
         evidence = [{"chunk_id": "chunk-01", "quote": "I understand.", "label": "compliant"}]
         with patch.object(analysis, "_invoke", return_value=judgement(evidence=evidence)), \
              patch.object(analysis, "get_model", return_value=auditor()):
-            finding = analysis._run_analysis(task_for())["findings"][0]
+            finding = analysis._run_analysis(task_for())["raw_findings"][0]
         self.assertEqual(finding["verdict"], "Unclear")
         self.assertEqual(finding["spans"][0]["label"], "context")
 
@@ -192,7 +248,7 @@ class AnalysisTests(unittest.TestCase):
         answer.evidence.append(answer.evidence[0])
         with patch.object(analysis, "_invoke", return_value=answer), \
              patch.object(analysis, "get_model", return_value=auditor()):
-            finding = analysis._run_analysis(task_for())["findings"][0]
+            finding = analysis._run_analysis(task_for())["raw_findings"][0]
         self.assertEqual(finding["verdict"], "Pass")
         self.assertEqual(len(finding["spans"]), 1)
         self.assertEqual(finding["evidence_status"], "direct_evidence")
@@ -209,7 +265,7 @@ class AnalysisTests(unittest.TestCase):
     def test_prohibition_pass_has_full_coverage_and_no_fake_green_quotes(self):
         task = task_for("exhaustive", "prohibition")
         with patch.object(analysis, "_invoke", return_value=judgement("Pass", "absence", [])):
-            finding = analysis._run_analysis(task)["findings"][0]
+            finding = analysis._run_analysis(task)["raw_findings"][0]
         self.assertEqual(finding["verdict"], "Pass")
         self.assertEqual(finding["spans"], [])
         self.assertEqual(finding["analysis_coverage"], "full_transcript")
@@ -223,19 +279,20 @@ class ConsistencyAndOutputTests(unittest.TestCase):
         model.with_structured_output.return_value.invoke.return_value = consistency.ConsistencyReview(conflicts=[{
             "reason": "Conflicting coupon conditions.", "evidence": [
                 {"chunk_id": c["chunk_id"], "quote": c["text"]} for c in chunks]}])
-        state = {"chunks": chunks, "transcript": text, "findings": [], "checklist": []}
+        state = {"chunks": chunks, "transcript": text, "raw_findings": [], "checklist": []}
         with patch.object(consistency, "get_model", return_value=model):
-            state.update(consistency.consistency_node(state))
-        report = output_node(state)["report"]
-        self.assertTrue(report["summary"]["requires_review"])
-        self.assertEqual(report["consistency"]["status"], "conflicts_found")
-        self.assertEqual(len(report["consistency"]["conflicts"][0]["spans"]), 2)
+            consistency_result = consistency.consistency_node(state)
+            state.update(consistency_result)
+        summary = output_node(state)["summary"]
+        self.assertTrue(summary["requires_review"])
+        self.assertEqual(consistency_result["consistency"]["status"], "conflicts_found")
+        self.assertEqual(len(consistency_result["consistency"]["conflicts"][0]["spans"]), 2)
 
     def test_one_unclear_is_enough_to_require_review(self):
         findings = [{"checklist_id": str(i), "verdict": "Pass"} for i in range(20)]
         findings[0]["verdict"] = "Unclear"
-        report = output_node({"findings": findings, "consistency": {"status": "checked"}})["report"]
-        self.assertTrue(report["summary"]["requires_review"])
+        summary = output_node({"raw_findings": findings, "consistency": {"status": "checked"}})["summary"]
+        self.assertTrue(summary["requires_review"])
 
     def test_full_graph_retains_results_and_skips_irrelevant_compliance_calls(self):
         from compliance_pipeline.graph import graph
@@ -249,10 +306,10 @@ class ConsistencyAndOutputTests(unittest.TestCase):
             output = graph.invoke({"results": source, "checklist": [task_for()["item"]]})
         judge.assert_not_called()
         embed.assert_not_called()
-        self.assertEqual(output["results"], source)
+        self.assertNotIn("results", output)
         self.assertEqual(output["chunks"][0]["chunk_id"], "chunk-00")
-        self.assertEqual(output["report"]["summary"]["not_applicable"], 1)
-        self.assertEqual(output["spans"], [])
+        self.assertEqual(output["summary"]["not_applicable"], 1)
+        self.assertNotIn("spans", output)
 
     def test_full_graph_mixed_routes_produces_one_consistency_report(self):
         from compliance_pipeline.graph import graph
@@ -278,10 +335,10 @@ class ConsistencyAndOutputTests(unittest.TestCase):
             regulations.invoke.return_value = []
             result = graph.invoke({"audio_segments": segments, "checklist": [presence, prohibition],
                                    "speaker_roles": {"spk_0": "RM", "spk_1": "Customer"}})
-        self.assertEqual(result["report"]["summary"]["pass"], 2)
+        self.assertEqual(result["summary"]["pass"], 2)
         self.assertEqual(len(result["findings"]), 2)
         consistency_model.with_structured_output.return_value.invoke.assert_called_once()
-        self.assertFalse(result["report"]["summary"]["requires_review"])
+        self.assertFalse(result["summary"]["requires_review"])
 
 
 if __name__ == "__main__":

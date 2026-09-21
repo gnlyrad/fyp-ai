@@ -50,11 +50,11 @@ class V6RefinementTests(unittest.TestCase):
         with patch.object(analysis, 'judge_model') as judge:
             result = analysis._run_analysis(task)
         judge.assert_not_called()
-        finding = result['findings'][0]
+        finding = result['raw_findings'][0]
         self.assertEqual(finding['verdict'], 'N/A')
         self.assertTrue(finding['requires_review'])
-        report = output_node({**result, 'consistency': {'status': 'not_applicable'}})['report']
-        self.assertTrue(report['summary']['requires_review'])
+        summary = output_node({**result, 'consistency': {'status': 'not_applicable'}})['summary']
+        self.assertTrue(summary['requires_review'])
 
     def test_query_fallback_does_not_require_reclassifying_valid_metadata(self):
         for query in ['', 'pass', 'N/A', 'search query']:
@@ -73,7 +73,7 @@ class V6RefinementTests(unittest.TestCase):
         with patch.object(classification, 'get_model', return_value=model):
             task['item'] = classification.classification_node({'checklist': [task['item']]})['checklist'][0]
         self.assertEqual(model.with_structured_output.return_value.invoke.call_count, 2)
-        finding = analysis._run_analysis(task)['findings'][0]
+        finding = analysis._run_analysis(task)['raw_findings'][0]
         self.assertEqual(finding['evidence_status'], 'classification_unavailable')
         self.assertEqual(finding['verdict'], 'Unclear')
 
@@ -85,20 +85,20 @@ class V6RefinementTests(unittest.TestCase):
         task['applicability'] = {'status': 'not_applicable', 'reason': 'Unrelated conversation.',
                                  'applicability_coverage': 'full_transcript'}
         result = analysis._run_analysis(task)
-        finding = result['findings'][0]
+        finding = result['raw_findings'][0]
         self.assertEqual(finding['applicability_coverage'], 'full_transcript')
         self.assertEqual(finding['analysis_coverage'], 'skipped_not_applicable')
         self.assertNotIn('coverage', finding)
-        report = output_node({**result, 'input_warnings': [warning],
-                              'consistency': {'status': 'not_applicable'}})['report']
-        self.assertEqual(report['warnings'], [warning])
-        self.assertFalse(report['summary']['requires_review'])
+        summary = output_node({**result, 'input_warnings': [warning],
+                              'consistency': {'status': 'not_applicable'}})['summary']
+        self.assertEqual(summary['warnings'], [warning])
+        self.assertFalse(summary['requires_review'])
         task['applicability']['status'] = 'applicable'
         result = analysis._run_analysis(task)
-        self.assertEqual(result['findings'][0]['evidence_status'], 'speaker_role_unverified')
-        report = output_node({**result, 'input_warnings': [warning],
-                              'consistency': {'status': 'checked'}})['report']
-        self.assertTrue(report['summary']['requires_review'])
+        self.assertEqual(result['raw_findings'][0]['evidence_status'], 'speaker_role_unverified')
+        summary = output_node({**result, 'input_warnings': [warning],
+                              'consistency': {'status': 'checked'}})['summary']
+        self.assertTrue(summary['requires_review'])
 
 
 if __name__ == '__main__':

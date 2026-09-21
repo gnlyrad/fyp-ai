@@ -96,44 +96,83 @@ save a response. The backend does not automatically create output_vN.json.
 
 ## Returned state and evidence
 
-- results is preserved unchanged, including items and speaker_labels.
-- audio_segments retains the original segments.
-- transcript is reconstructed from the segment text.
-- chunks starts at chunk-00 and follows supplied segment order; source_segment_id
-  preserves the original segment id. Text chunking also starts at chunk-00.
-- Each chunk carries source timing and speaker identity. Exactly aligned source
-  items provide word_timings without changing transcript text or offsets.
-- applicability records context-based applicable/not_applicable/uncertain
-  decisions before compliance scoring. Missing disclosures in an applicable call
-  do not make that call irrelevant.
-- Applicability decisions use `applicability_coverage`. Findings expose this field
-  alongside `analysis_coverage` (replacing the ambiguous finding `coverage` field).
-  N/A findings report `analysis_coverage: skipped_not_applicable`, even when
-  applicability reviewed the full transcript.
-- retrieval_diagnostics records semantic, lexical_fallback, full_transcript or
-  skipped retrieval, fallback reasons, selected chunk IDs and coverage.
-- findings uses evidence_status instead of the old automatic confidence field.
-  Statuses include direct_evidence, absence_after_full_review, conflicting_evidence,
-  insufficient_evidence, not_applicable, applicability_uncertain,
-  speaker_role_unverified, classification_unavailable, coverage_incomplete, and
-  analysis_unavailable.
-- quote_verified proves only verbatim source text. A separate model review checks
-  relevance and labels each passage compliant, violation or context. Labels are
-  not forced by the finding's verdict. Duplicate spans within a finding are removed.
-- Absence findings require whole-call coverage and have no fabricated quote or
-  red/green highlight. Deterministic and exhaustive checks review the whole call;
-  negative, uncertain or absence-based targeted results receive a whole-call recheck.
-- spans carries timing_precision=word when exact source items align with the quote,
-  otherwise segment or unavailable. Segment timing is not exact word timing.
-- consistency records verified quote pairs for possible contradictions across
-  the call, such as conflicting coupon conditions. These are review findings,
-  not automatic legal conclusions.
-- report includes summary, findings, spans, applicability, consistency and retrieval
-  diagnostics, plus informational `warnings`. Any Fail/Unclear, unresolved
-  classification or consistency check requires review. Unverified speaker roles
-  block applicable findings that need attribution; they do not alone block N/A.
-  Full-call coverage means text was supplied to the model, not
-  a guarantee of perfect reasoning.
+The response has exactly five top-level keys — `transcript`, `chunks`,
+`checklist`, `findings`, `summary` — with no `results`, `audio_segments`,
+`report`, `applicability`, `consistency` or `retrieval_diagnostics` in the
+payload. Shared data is stated once; findings reference other sections by ID
+instead of re-embedding them.
+
+- `transcript` is the reconstructed full call text. Character offsets used
+  elsewhere (`spans[].start`/`end`) index into this string.
+- `chunks` lists each chunk once: `chunk_id`, `speaker` (mapped from
+  `speaker_label`, omitted for plain-text input with no diarization), `text`,
+  `start_seconds`, `end_seconds`. `source_segment_id` and `word_timings` are
+  not returned. Word timings still exist internally and still drive
+  word-precision span timing during analysis — they are just no longer part
+  of the payload.
+- `checklist` carries question metadata once: `id`, `question`,
+  `question_type`, `pass_condition`. Findings key back to this via
+  `checklist_id` instead of repeating it.
+- `findings` has one entry per checklist item: `checklist_id`, `verdict`,
+  `reason`, `evidence_chunk_ids` (the chunk IDs retrieval selected as
+  evidence — the replacement for embedding full evidence-chunk objects),
+  `evidence_status`, `requires_review`, `regulatory_basis`, and `spans`.
+  - `evidence_status` replaces the old automatic confidence field. Statuses
+    include direct_evidence, absence_after_full_review, conflicting_evidence,
+    insufficient_evidence, not_applicable, applicability_uncertain,
+    speaker_role_unverified, classification_unavailable,
+    coverage_incomplete, and analysis_unavailable.
+  - `requires_review` is retained alongside `evidence_status` because the two
+    distinguish, for example, "Unclear because the applicability gate failed"
+    from "Unclear because evidence was weak".
+  - `regulatory_basis` is trimmed to `{source, page}` refs; the full MAS
+    passage text is no longer included.
+  - `spans[]` is trimmed to `text`, `start`, `end`, `label`, `chunk_id`,
+    `start_seconds`, `end_seconds`. `start`/`end` are character offsets into
+    `transcript` used for highlighting; `label` (compliant/violation/context)
+    drives the highlight colour; `chunk_id` ties a span back to `chunks`.
+    `timing_precision` is no longer on returned spans (word-level timing is
+    still computed internally, just not surfaced).
+- `summary` is today's report summary, promoted to the top level, with
+  `warnings` nested inside it (`summary.warnings`, e.g. *"Speaker identities
+  are preserved; some RM/Customer roles are unverified."*). It carries
+  `total`, `pass`, `fail`, `unclear`, `not_applicable`, `compliant_spans`,
+  `violation_spans`, `context_spans`, `requires_review`, `review_reasons`,
+  `evidence_status_counts`, `by_type`, and `regulatory_sources`.
+
+`applicability_node` and `consistency_node` are currently disabled, so
+applicability decisions and cross-call consistency checks are not part of
+findings or the response.
+
+Example (abbreviated):
+
+```json
+{
+  "transcript": "Hello, this is your RM calling about...",
+  "chunks": [
+    { "chunk_id": "chunk-00", "speaker": "spk_0", "text": "Hello, this is your RM calling about...",
+      "start_seconds": 0.0, "end_seconds": 5.4 }
+  ],
+  "checklist": [
+    { "id": "wm_q01", "question": "Did the RM disclose the fee structure?",
+      "question_type": "deterministic", "pass_condition": "Fee structure is explicitly stated" }
+  ],
+  "findings": [
+    { "checklist_id": "wm_q01", "verdict": "Pass", "reason": "The RM disclosed the fee structure.",
+      "evidence_chunk_ids": ["chunk-02"],
+      "evidence_status": "direct_evidence", "requires_review": false,
+      "regulatory_basis": [{ "source": "SFA-Guidelines.pdf", "page": 15 }],
+      "spans": [
+        { "text": "our management fee is 1.5% annually", "start": 120, "end": 156,
+          "label": "compliant", "chunk_id": "chunk-02", "start_seconds": 5.4, "end_seconds": 8.1 }
+      ] }
+  ],
+  "summary": {
+    "total": 1, "pass": 1, "fail": 0, "unclear": 0, "not_applicable": 0,
+    "requires_review": false, "warnings": []
+  }
+}
+```
 
 An unrelated conversation is useful for testing N/A handling, not for judging
 the original investment call. Diarization is preserved from Transcribe; the

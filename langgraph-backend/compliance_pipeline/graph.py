@@ -1,7 +1,9 @@
-"""Fixed workflow with applicability, evidence review and consistency checks.
+"""Fixed workflow with evidence review.
 
-Each checklist item is judged separately. The final consistency stage reviews
-cross-call claims before output aggregates findings and review reasons.
+Each checklist item is judged separately.
+
+NOTE: applicability_node and consistency_node are temporarily disabled below
+for testing (both imports and graph wiring) - see graph.py history to restore.
 """
 from __future__ import annotations
 
@@ -14,13 +16,11 @@ from .nodes.analysis import (
     analysis_targeted_node,
 )
 from .nodes.classification import classification_node
-from .nodes.applicability import applicability_node
-from .nodes.consistency import consistency_node
 from .nodes.guidance import guidance_node
 from .nodes.ingestion import ingestion_node
 from .nodes.output import output_node
 from .nodes.retrieval import retrieval_node
-from .state import DEFAULT_QUESTION_TYPE, AnalyseInput, ComplianceState
+from .state import DEFAULT_QUESTION_TYPE, AnalyseInput, AnalyseOutput, ComplianceState
 
 ANALYSIS_NODES = {
     "deterministic": ("analysis_deterministic", analysis_deterministic_node),
@@ -54,12 +54,10 @@ def fan_out_to_analysis(state: ComplianceState) -> list[Send]:
     ]
 
 
-builder = StateGraph(ComplianceState, input_schema=AnalyseInput)
+builder = StateGraph(ComplianceState, input_schema=AnalyseInput, output_schema=AnalyseOutput)
 
 builder.add_node("ingestion", ingestion_node)
 builder.add_node("classification", classification_node)
-builder.add_node("applicability", applicability_node)
-builder.add_node("consistency", consistency_node)
 builder.add_node("guidance", guidance_node)
 builder.add_node("retrieval", retrieval_node)
 for name, node in ANALYSIS_NODES.values():
@@ -68,13 +66,11 @@ builder.add_node("output", output_node)
 
 builder.add_edge(START, "ingestion")
 builder.add_edge("ingestion", "classification")
-builder.add_edge("classification", "applicability")
-builder.add_edge("applicability", "guidance")
+builder.add_edge("classification", "guidance")
 builder.add_edge("guidance", "retrieval")
 builder.add_conditional_edges("retrieval", fan_out_to_analysis, list(NODE_BY_TYPE.values()))
 for name in NODE_BY_TYPE.values():
-    builder.add_edge(name, "consistency")
-builder.add_edge("consistency", "output")
+    builder.add_edge(name, "output")
 builder.add_edge("output", END)
 
 graph = builder.compile()
