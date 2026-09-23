@@ -17,7 +17,7 @@ The LangGraph graph's `AnalyseInput` has three relevant fields:
 ```python
 {
     "results": transcript_json,
-    "speaker_roles": speaker_roles_json["speaker_roles"],
+    "speaker_roles": speaker_roles_json,
     "checklist": [{"id": item["id"], "question": item["text"]} for item in checklist_json],
 }
 ```
@@ -43,7 +43,7 @@ Studio exposes the graph input fields separately. For one call:
 | Results | The complete `transcript.json` object |
 | Audio Segments | Leave empty; they are already inside Results |
 | Checklist | The projected list of `{ "id", "question" }` objects |
-| Speaker Roles | The inner `speaker_roles` mapping, for example `{ "spk_0": "RM", "spk_1": "Customer" }` |
+| Speaker Roles | The complete `speaker_roles.json` mapping, for example `{ "spk_0": "RM", "spk_1": "Customer" }` |
 
 Studio is useful for a manual smoke run and tracing a graph. The future batch
 evaluator should import and call `graph.invoke(...)` directly, avoiding HTTP

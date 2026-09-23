@@ -87,14 +87,13 @@ def graph_input_for_call(dataset: dict[str, Any], call_id: str) -> dict[str, Any
     call_dir = dataset["root"] / "calls" / call_id
     ground_truth = _read_json(call_dir / "ground_truth.json")
     transcript = _read_json(call_dir / "transcript.json")
-    roles_document = _read_json(call_dir / "speaker_roles.json")
+    roles = _read_json(call_dir / "speaker_roles.json")
     if ground_truth.get("call_id") != call_id:
         raise DatasetError(f"{call_id}: ground_truth call_id does not match directory")
     if not isinstance(transcript, dict) or not isinstance(transcript.get("audio_segments"), list):
         raise DatasetError(f"{call_id}: transcript requires audio_segments")
-    roles = roles_document.get("speaker_roles") if isinstance(roles_document, dict) else None
     if not isinstance(roles, dict) or not roles:
-        raise DatasetError(f"{call_id}: speaker_roles.json requires a non-empty speaker_roles object")
+        raise DatasetError(f"{call_id}: speaker_roles.json requires a non-empty role mapping")
     labels = {segment.get("speaker_label") for segment in transcript["audio_segments"] if isinstance(segment, dict)}
     if set(roles) != labels or any(role not in {"RM", "Customer"} for role in roles.values()):
         raise DatasetError(f"{call_id}: speaker role mapping does not match transcript labels")
