@@ -1,0 +1,14 @@
+{
+  "assistant_id": "compliance",
+  "input": {
+    "transcript": "Advisor: Hi Mrs. Lim, thanks for joining today, just a reminder this call is being recorded. Customer: No problem. Advisor: I wanted to walk you through a unit trust we think suits your goals, it invests mainly in Asian investment grade bonds. Customer: What's the fee on that? Advisor: There's a 1% annual management fee and no entry charge. Customer: And if markets fall, could I lose money? Advisor: Yes, the value can go down as well as up, this isn't guaranteed, but the fund has a conservative mandate. Customer: Okay, and how long should I hold it for? Advisor: Ideally a horizon of at least three years to ride out volatility. Customer: Got it, let's go ahead then. Advisor: Great, I'll send the prospectus and application form after this call.",
+    "checklist": [
+      { "id": "fees", "question": "Were fees and charges explained?", "question_type": "deterministic", "evidence_query": "fees charges" },
+      { "id": "guarantees", "question": "Did the advisor avoid guaranteeing returns or outcomes?", "question_type": "deterministic", "evidence_query": "guarantee return risk-free" },
+      { "id": "recording_notice", "question": "Was the customer told the call was recorded?", "question_type": "deterministic", "evidence_query": "call recorded" },
+      { "id": "risk_disclosure", "question": "Did the advisor disclose that the value of the investment could fall as well as rise?", "question_type": "deterministic", "evidence_query": "value fall rise risk" },
+      { "id": "horizon", "question": "Did the advisor disclose a recommended investment horizon?", "question_type": "deterministic", "evidence_query": "investment horizon time frame" },
+      { "id": "documentation", "question": "Did the advisor commit to providing written product documentation?", "question_type": "deterministic", "evidence_query": "prospectus documentation written" }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+langgraph==1.2.11
+langchain==1.3.18
+langchain-aws>=1.0.0
+pydantic>=2.10
+python-dotenv>=1.0
+langgraph-cli[inmem]==0.4.31
+# The MAS regulatory corpus and its FAISS index, imported by knowledge.py.
+-e ../langchain-backend

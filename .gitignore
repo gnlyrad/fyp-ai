@@ -1,0 +1,19 @@
+# Local dependencies and generated build/evaluation output
+backend/.venv/
+backend/artifacts/
+.venv/
+.venv-test/
+**/.venv/
+**/.venv-test/
+**/.venv-local/
+artifacts/
+*.sqlite3
+.env
+**/.env
+react-frontend-staging/node_modules/
+react-frontend-staging/dist/
+**/__pycache__/
+
+# LangGraph dev server state
+.langgraph_api/
+**/.langgraph_api/

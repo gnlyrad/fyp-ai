@@ -1,0 +1,422 @@
+[
+  {
+    "checklist_id": "suitability",
+    "question_type": "targeted",
+    "verdict_without": "Pass",
+    "verdict_with": "Fail",
+    "changed": true,
+    "reason_without": "Suitability was established before a recommendation was made.",
+    "reason_with": "The advisor made a recommendation before establishing the customer's suitability.",
+    "quote_without": "Advisor: Great, that's your risk profile sorted then. I've had a look and the Horizon Balanced Fund is the one I'd point you towards.",
+    "quote_with": "Advisor: Great, that's your risk profile sorted then. I've had a look and the Horizon Balanced Fund is the one I'd point you towards.",
+    "regulatory_basis": [
+      {
+        "text": "draw reference and elevate standards where relevant. \n \n1.5 On investment suitability, PBs generally have relevant controls in place, although \nthere was room to improve the effectiveness of surveillance checks, as well as the product \ncoverage of these checks, to mitigate the risks of inappropriate advice and sales of \nproducts to clients. MAS expects PBs to update clients\u2019 risk profiles and financial needs \nregularly, and implement adequate checks to identify mismatches between product \nfeatures and clients \u2019 risk profile s on a pre -trade basis and through timely post-trade \nsurveillance checks. MAS also encourages PBs that are assessing investment suitability at \nthe product and transaction level, to complement these with assessments at the client \u2019s \nportfolio level . This is  to provide a more holistic approach  towards assessing the \nappropriateness of clients\u2019 investment portfolios vis-\u00e0-vis their investment objectives and \nrisk appetites. In addition, MAS noted a few front office staff 6 who attempted to steer \nclients towards higher risk profiles so that they could be availed to riskier products , and",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 4
+      },
+      {
+        "text": "reasonable basis for any recommendation made, with respect to any investment \nproduct, to a person who may reasonably be expected to rely on the \nrecommendation1. In particular, the licensed financial adviser shall give due \nconsideration to the person's investment objectives, financial situation and \nparticular needs. \n[FAA-N16 (Amendment) 2025] \n \n9 Where the investment product recommended is a Specified Investment \nProduct, the financial adviser shall also give due consideration to the person\u2019s \nknowledge or experience in the Specified Investment Product. \n \n10 A financial adviser that is involved in making recommendations on \ninvestment products to clients shall comply with the requirements set out in this \n \n1 Sections 20(2) and 46 of the Act provides that section 36 also applies to exempt financial advisers, appointed and \nprovisional representatives.",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 12
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 18  \nwhether the investment product is a Specified Investment Product, before making \nany recommendation on that investment product. The financial adviser shall keep \nproper records of such information and shall accordingly convey this information \nto a client who intends to transact in that investment product. \n[FAA-N16 (Amendment) 2012] \n[FAA-N16 (Amendment No. 2) 2018] \n[FAA-N16 (Amendment No. 3) 2018] \n \n16 Subject to paragraph 27, where the investment product is an unlisted \nSpecified Investment Product, a financial adviser shall conduct a Customer \nKnowledge Assessment based on the criteria set out in Annex 2 to this Notice \nbefore making a recommendation on the unlisted Specified Investment Product \nconcerned to a client. \n[FAA-N16 (Amendment) 2012] \n[FAA-N16 (Amendment No. 2) 2018] \n[FAA-N16 (Amendment No. 3) 2018] \n \n17 For the purpose of the Customer Knowledge Assessment, a financial \nadviser shall take into consideration information on a client\u2019s educational \nqualifications, investment experience and work experience. Where a client does \nnot provide information on his educational qualifications, investment experience",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 18
+      }
+    ]
+  },
+  {
+    "checklist_id": "risk_ack",
+    "question_type": "targeted",
+    "verdict_without": "Pass",
+    "verdict_with": "Pass",
+    "changed": false,
+    "reason_without": "The customer acknowledged the medium risk associated with the investment by agreeing to the advisor's statement.",
+    "reason_with": "The customer acknowledged the investment risk by confirming they are comfortable with medium risk.",
+    "quote_without": "Customer: I think so, yes.",
+    "quote_with": "Advisor: Right, and you're comfortable with medium risk, yes?",
+    "regulatory_basis": [
+      {
+        "text": "Knowledge Assessment. \n \n23 Where a client, after being informed of the outcome of the Customer \nKnowledge Assessment in accordance with paragraph 22, nevertheless intends \nto proceed to transact in the unlisted Specified Investment Product, the financial \nadviser shall provide advice t o the client, taking into account the client's \ninvestment objectives, financial situation and particular needs, as well as the \noutcome of the Customer Knowledge Assessment.",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 19
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 19  \ninaccurate or incomplete information provided by the client may affect the \noutcome of the Customer Knowledge Assessment. \n \n19 Subject to paragraphs 24 and 25, a financial adviser shall not allow a client \nto transact in an unlisted Specified Investment Product unless it is satisfied, on \nthe basis of the outcome of the Customer Knowledge Assessment referred to in \nparagraph 16 or 27, that the client has knowledge or experience in the unlisted \nSpecified Investment Product, as set out in Annex 2 to this Notice. \n[FAA-N16 (Amendment No. 3) 2018] \n \n20 Notwithstanding a positive outcome of the Customer Knowledge \nAssessment, the financial adviser shall offer to provide advice concerning the \nunlisted Specified Investment Product to the client. \n \n21 Where the client does not wish to receive advice concerning the unlisted \nSpecified Investment Product from the financial adviser, the financial adviser \nshall document the decision of the client and highlight to the client in writing that \nit is the client\u2019s responsibility to ensure the suitability of the unlisted Specified",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 19
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 25  \n \n27M  Where a client, after being informed of the outcome of the Customer \nAccount Review, in accordance with paragraph 27L, nevertheless intends to \nproceed to transact in a Listed Specified Investment Product, the financial adviser \nshall provide advice to the client, taking into account the client's investment \nobjectives, financial situation and particular needs, as well as the outcome of the \nCustomer Account Review. \n[FAA-N16 (Amendment No. 3) 2018] \n \n27N  If a client, who is assessed as not possessing knowledge or experience in \nderivatives pursuant to the Customer Account Review, nevertheless chooses to \ntransact in a Listed Specified Investment Product which is not recommended by \nthe financial adviser, the financial adviser shall: \n \n(a) inform the client in writing of the outcome of the Customer Account \nReview; \n \n(b) obtain the client\u2019s written confirmation that the client still intends \nto proceed to transact in the Listed Specified Investment Product \ndespite the outcome of the Customer Account Review; and \n \ninform the client in writing that it is the client\u2019s responsibility to ensure the",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 25
+      }
+    ]
+  },
+  {
+    "checklist_id": "fees",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Insufficient retrieved evidence to support a definitive outcome.",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "such as unauthorised deviations from agreed pricing arrangements identified from \npost-trade surveillance checks were not escalated and re ported regularly at \nmanagement committees . In some PBs, such information were tabled at \nmanagement forums, but there were no in -depth deliberation  or root cause \nanalysis, resulting in missed opportunities to improve controls to prevent recurring \ncases of over-charging.  \n \n(b) Awareness of front office staff \nA few PBs have explained that some clients were over-charged due to front offices\u2019 \noversight or negligence. Besides Relationship Managers (RMs), instances where \nAssistant Relationship Managers (ARMs) with client-facing roles had \nmiscommunicated fees and charges to clients were noted. As RMs and ARMs form \nthe first line of defence, they play a key role in communicating and providing clear \ndisclosures to clients. PBs should promote awareness amongst RMs and ARMs, so \nthat they appreciate the importance of transparency and acting in clients\u2019 interests, \nincluding ensuring clients understand what they are being charged.  \n \n(c) Change management and post-implementation reviews",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 5
+      },
+      {
+        "text": "account opening or prior to the client\u2019s first order taking. The standard fee schedule sets \nout the range of fees a PB would charge for all categories of investment products and \nservices. Some fee schedules lacked details and were not sufficiently comprehensive by \nomitting certain p roducts, particularly structured products. Most PBs require RMs to \ninform clients, and obtain their agreement , on a pre-trade basis if prices exceed the fee \nschedules. Most PBs also implement controls to monitor deviations from fee schedules , \nalthough in most cases, the range of products covered as part of these monitoring controls \nwas incomplete. In addition, not all PBs had adequate policies to inform clients of changes \nto fee schedules on a timely basis.  As a result, the inspections noted instances where \nclients were charged fees above those stated in the fee schedules. \n \n5.3 Bilaterally agreed pricing arrangements  \u2013 RMs may have bilateral pricing \narrangements agreed with clients  that deviate from the standard fee schedules . Such \narrangements, usually regarding discounts on standard fee schedules, ranged from formal",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 20
+      },
+      {
+        "text": "PRIVATE BANKING SALES AND ADVISORY PRACTICES                                                                                                          FEBRUARY 2020 \n_______________________________________________________________________________________ \nMONETARY AUTHORITY OF SINGAPORE  3 \nor bilateral pricing arrangements. There were also instances where price improvements \narising from client transactions 7, and how such benefits from price improvements were \nallocated, were not disclosed to clients. MAS would like PBs to pay attention to the \nfollowing observations:   \n \n(a) Management attention on pricing matters  \nOne of the root causes of control lapses leading to over-charging of clients in a few \nPBs was the lack of management attention and emphasis on pricing issues. \nControls relating to pricing were not prioritised for discussion, and r equests for \nsystem enhancements to facilitate adherence to pricing arrangements were not \nraised for management\u2019s consideration and not implemented. Pricing exceptions \nsuch as unauthorised deviations from agreed pricing arrangements identified from \npost-trade surveillance checks were not escalated and re ported regularly at",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "checklist_id": "request",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Analysis unavailable: 4 validation errors for Judgement\nevidence.0.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.0.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "Notice on Recommendations On Investment Products 44  \n \n(b) a third party service provider, or \n \n(c) in the case of check mentioned in paragraph 41V(a), a system-\nbased method, \n \nif the financial adviser is able to demonstrate that the non-sales staff, third party \nservice provider, or system -based method, as the case may be, is effective in \nconducting the checks mentioned in paragraph 41V. \n[FAA-N16 (Amendment) 2025] \n \n41Y Where audio-recording of the Call-back is not possible (such as where \nthe client declines to be recorded), the Call-back may be conducted as a non -\nrecorded Call-back or meeting, if all the following conditions are satisfied:  \n \n(a) the questions in paragraph 41V(b) and the client\u2019s answers are \ndocumented in writing in a  summary document, including the \nreason(s) why the Call-back was not audio-recorded; \n \n(b) where the client is a selected client, the client is offered the option \nof having a trusted individual 5 present during the non -recorded \nCall-back or meeting, and where the client declines to have a \ntrusted individual present, the reason(s) for this is documented in \nthe summary document;",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 44
+      },
+      {
+        "text": "recorded;  \n \n(b) where the client is a selected client, the client is offered the option \nof having a trusted individual 3 present during the non -recorded \nCall-back or meeting, and w here the selected client declines to \nhave a trusted individual  present, the reason(s) for this  is \ndocumented in the summary document;  \n \n(c) the summary document is acknowledged by both the client and \nthe supervisor, non-sales staff or third party provider, as the case \nmay be, conducting the Call-back; and \n \n3 To avoid doubt, this trusted individual does not need to be the same individual who was present when the \nrecommendation was made to the selected client.",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 41
+      },
+      {
+        "text": "27O(c) may be given by a designated person or by an automated \nprocess on behalf of its senior management, so long as its senior \nmanagement ensures that the framework is sufficiently robust to \nfulfil the requirements set out in paragraph 27O(a) and (b). \n[FAA-N16 (Amendment No. 3) 2018] \n \nReliance on a Third Party Customer Account Review \n \n27Q  Where a client of a financial adviser has previously undergone a Customer \nAccount Review with a third party, the financial adviser may, instead of \nconducting a Customer Account Review, rely on the Customer Account Review \npreviously conducted by the third party for such client, if the following conditions \nare met: \n \n(a) the financial adviser is satisfied that the third party had complied  \nwith the criteria set out in Annex 3 to this Notice and the requirements \nset out in paragraphs 27F to 27H when the third party conducted the \nCustomer Account Review for such client; \n \n(b) the third party is not one which the financial adviser has been",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 26
+      }
+    ]
+  },
+  {
+    "checklist_id": "affordability",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Analysis unavailable: 6 validation errors for Judgement\nevidence.0.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.0.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.2.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.2.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "as pricing or product committee meetings. Most PBs also have processes to monitor and \nreport key performance and risk indicators to management, including sales of higher risk \nproducts, number and nature of client complaints, timely completion of suitability reviews \nand staff\u2019s compliance with policies and procedures. However, the management of a few \nPBs did not pay adequate attention to  the implementation of controls to monitor and \nfollow up on unauthorised deviations from fee schedules and bilaterally agreed pricing \narrangements with clients . They did not notice omissions in the reporting of pricing -\nrelated key risk indicators, and had not requested root-cause analyses or trend analyses \nwhen instances of over-charging were uncovered during post-trade surveillance reviews. \nIn one instance, pricing control gaps  identified by Internal Audit were not discussed at \nmanagement committees and were not addressed for more than two years. Consequently, \ninstances of over -charging were identified during MAS\u2019 inspection s. These observations \nwere indicative of inadequate management attention and oversight in governing pricing",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 11
+      },
+      {
+        "text": "draw reference and elevate standards where relevant. \n \n1.5 On investment suitability, PBs generally have relevant controls in place, although \nthere was room to improve the effectiveness of surveillance checks, as well as the product \ncoverage of these checks, to mitigate the risks of inappropriate advice and sales of \nproducts to clients. MAS expects PBs to update clients\u2019 risk profiles and financial needs \nregularly, and implement adequate checks to identify mismatches between product \nfeatures and clients \u2019 risk profile s on a pre -trade basis and through timely post-trade \nsurveillance checks. MAS also encourages PBs that are assessing investment suitability at \nthe product and transaction level, to complement these with assessments at the client \u2019s \nportfolio level . This is  to provide a more holistic approach  towards assessing the \nappropriateness of clients\u2019 investment portfolios vis-\u00e0-vis their investment objectives and \nrisk appetites. In addition, MAS noted a few front office staff 6 who attempted to steer \nclients towards higher risk profiles so that they could be availed to riskier products , and",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 4
+      },
+      {
+        "text": "comments made by staff MAS spoke with. PBs should pay attention to observations that \napply to some front office staff below: \n \n(a) Front office lacked clarity on the key performance indicators (KPIs) that they were \nmeasured against, particularly non-financial or behavioural targets, the weightage \nbetween financial and non -financial targets , and their impact on performance \nevaluation and remuneration.  \n(b) The pressure on front office to grow the business and achieve targets was evident \nin a few PBs, partly attributable to a sales-focused and competitive culture, and an \nappraisal system that benchmarked RMs against their peers.  \n(c) Front office did not have strong recollection of messages from senior management. \nThey could remember organisational values , but were unable to articulate how \nthese values translate d into behavioural expectations and what the se meant to \ntheir specific roles on a day-to-day basis.  \n                                                             \n9 Refer to Annex A for examples of scenarios of over-charging.  \n10 Such staff include RMs or private bankers and their assistants, as well as product specialists or advisors.",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 7
+      }
+    ]
+  },
+  {
+    "checklist_id": "terms",
+    "question_type": "targeted",
+    "verdict_without": "Fail",
+    "verdict_with": "Fail",
+    "changed": false,
+    "reason_without": "The advisor briefly mentioned fees but did not explain key product terms in detail, and the customer asked for more information about potential issues.",
+    "reason_with": "The advisor did not explain key product terms or features when discussing fees, and did not provide any information about what happens if the product goes wrong.",
+    "quote_without": "There are some fees, all pretty standard stuff for this type of product, nothing out of the ordinary.",
+    "quote_with": "There are some fees, all pretty standard stuff for this type of product, nothing out of the ordinary.",
+    "regulatory_basis": [
+      {
+        "text": "understanding and awareness\nExamples of good practices: \n\u2022 Provide concise disclosure summaries for \ncomplex products in simple language on \nkey product features and risks (e.g. \n\u201cInterest rate is variable. A higher interest \nrate would result in higher loan \nrepayments.\u201d)\nEnsure customers understand \nthe key product features and \nrisks\n5\nProspecting & Advertising Activities Advisory & Sales Process Safeguards for Vulnerable Customers Complaints Handling\nGood practices to support representative-customer engagement \nduring advisory and sales process\nSupervisory Expectations\n\u2022 Outcome Three of the Guidelines on Fair Dealing sets out expectations that FIs should develop a robust training and \ncompetency programme to ensure representatives are equipped with the necessary skills and knowledge to undertake \nproper fact-find and provide advice to customers. \n\u2022 FIs should also ensure that its fact-find form and risk profiling questionnaires adequately capture all relevant information \nabout the customer.",
+        "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+        "page": 5
+      },
+      {
+        "text": "mentioned in paragraph 41K, 41L or 41M, as the case may be; \n[FAA-N16 (Amendment) 2025] \n \n\u201cproduct highlights sheet\u201d means a product highlights sheet prepared by \nissuers or insurers in accordance with the MAS Guidelines on the Product \nHighlights Sheet (SFA 13 -G10) or the Notice on Investment -Linked \nPolicies [MAS Notice 307] respectively; \n[FAA-N16 (Amendment) 2012] \n[FAA-N16 (Amendment) 2018] \n \n\u201cprospectus\u201d has the same meaning as in section 283(1) of the Securities \nand Futures Act 2001; \n[FAA-N16 (Amendment) 2012] \n[FAA-N16 (Amendment) 2025] \n \n\u201cproduct summary\u201d, in relation to a life policy, has the same meaning as in \nparagraph 2 of the Notice on Market Conduct Standards for Direct Life \nInsurer as a Product Provider [MAS Notice 318]; \n[FAA-N16 (Amendment) 2018]",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 9
+      },
+      {
+        "text": "agent) in which a PB is acting, (iii) any actual/perceived conflicts of interest in dealing with product issues or \naffiliates, (iv) key risks associated with the transaction such as those associated wit h leverage and margin \nfinancing, and (v) termination clauses. \n27  Order taking standards include setting out the mandatory information on the transaction to be \ncommunicated to clients, such as product name and features, currency, price, quantity, and order type (i.e. \nmarket or limit order).",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 20
+      }
+    ]
+  },
+  {
+    "checklist_id": "vulnerability",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Insufficient retrieved evidence to support a definitive outcome.",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "Good practices on additional safeguards for vulnerable customers\nProactively identifying vulnerable customers to allow for \nmore care and attention to be provided\nExamples of good practices: \n\u2022 Adopt broader definitions of vulnerable customers \nbeyond MAS\u2019 definition of Selected Clients (SCs), such \nas customers who: \n\u2022 meet any one criterion of MAS\u2019 definition of SC, \ninstead of two  \n\u2022 experience recent change in personal \ncircumstances, such as loss of employment or \nbereavement\n\u2022 exhibit signs of vulnerability, such as impaired \nphysical or mental capabilities\nProactive approach in identifying \nvulnerable customers\nAdditional measures to support such customers in the \nsales and advisory process\nExamples of good practices: \n\u2022 Apply the same safeguards for vulnerable customers \nas those required for SCs under MAS\u2019 regulations (e.g. \nrequire a Trusted Individual to be offered to \nvulnerable customers)  \n\u2022 Implement additional controls (e.g. requiring face-to-\nface advisory sales, pre-transaction call-backs by \nsupervisors) \nAdditional safeguards to support \nvulnerable customers\n6",
+        "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+        "page": 6
+      },
+      {
+        "text": "\u2022 Implement additional controls (e.g. requiring face-to-\nface advisory sales, pre-transaction call-backs by \nsupervisors) \nAdditional safeguards to support \nvulnerable customers\n6\nProspecting & Advertising Activities Advisory & Sales Process Safeguards for Vulnerable Customers Complaints Handling\nSupervisory Expectations\n\u2022 Outcome Two of the Guidelines on Fair Dealing sets out expectations that FIs should pay special attention to customers \nwho have been identified to be more vulnerable. In particular, FIs should take steps to identify vulnerable customers for \nwhom certain products may not be suitable, and have robust controls and appropriate safeguards to prevent the \ninappropriate sale of the product to these customers.",
+        "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+        "page": 6
+      },
+      {
+        "text": "trends and patterns, and perform ance of independent sampling checks (e.g. listening to \nvoice logs) to assess whether RMs inappropriately influenced clients to adopt a higher risk \ntolerance.  \n \n4.2.4 Vulnerable clients (VCs) \u2013 Most PBs require RMs to identify clients who  display \ntraits of vulnerability and assess if they are VCs 18. This is performed at the time of client \non-boarding and  during periodic client reviews. As a good control, s ome PBs restrict  \npotential VCs from transacting until the assessment is completed and approved. Most PBs \nadopt safeguards for VCs, such as offering them third-party companionship - a companion \nof the VC\u2019s choice or another PB staff - during order taking, assigning them to more \nconservative risk profiles, restricting their investments in risky or complex products, and \nrequiring RMs\u2019 supervisors to perform call-backs to confirm that the VC understands the \ninvestment risks of a transaction19 before execution. Most PBs allow clients to opt out of \nbeing classified as VCs and the corresponding safeguards, with the approval of the RMs\u2019 \nsupervisors. A few PBs\u2019 practices were not in line with industry standards  as they did not",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 15
+      }
+    ]
+  },
+  {
+    "checklist_id": "cooling_off",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Pass",
+    "changed": true,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "The advisor explained the cancellation right to the customer, and the customer acknowledged understanding by agreeing to proceed with the cancellation.",
+    "quote_without": null,
+    "quote_with": "Advisor: You can cancel if you change your mind, there's a window for that.",
+    "regulatory_basis": [
+      {
+        "text": "(b) either the recommended investment product has a free-look period \nor cancellation period , or the transaction in the recommended \ninvestment product is time -sensitive and the recommended \ninvestment product has no free-look period or cancellation period; \n \n(c) the financial adviser has agreed to assume \u2013  \n \n(i) any fees or charges that are payable by the client  arising \nfrom cancelling or modifying the transaction;  \n \n(ii) where the recommended investment product is  an \ninvestment-linked policy  with a free -look period , any \nadjustment that is made by an insurer to the sum \nrecoverable by the client to reflect the change in market \nvalue of the underlying assets; and \n \n(iii) where the recommended investment product is  a capital \nmarkets product or a spot foreign exchange contract other \nthan for the purpose of leveraged foreign exchange trading, \nany loss arising from a fall in the market value of the",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 37
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 38  \ninvestment product that is incurred by the client, \n \nshould the Documentation Review uncover any issues with the \nsuitability of the recommended investment product for the client \nand the client decides to cancel or modify the transaction. \n[FAA-N16 (Amendment) 2025] \n \n41M A financial adviser who relies on the exception in paragraph 41L must \ncomplete the Documentation Review  within the free -look period or cancellation \nperiod, or where there is no such period, within 5 business days after the effective \ndate of the transaction.   \n[FAA-N16 (Amendment) 2025] \n \n41N The financial adviser must ensure that all Pre-Transaction Checks  are \nconducted either by a supervisor of the representative who made the \nrecommendation or by \u2013   \n \n(a) a member of staff who does not make recommendations or execute \ntransactions for clients (called in this Notice, \u201cnon-sales staff\u201d); \n \n(b) a third party service provider; or \n \n(c) in the case of Documentation Reviews, a  computerised system \n(called in this Notice, \u201csystem-based method\u201d), \n \nif the financial adviser is able to demonstrate that the non-sales staff, third party",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 38
+      },
+      {
+        "text": "audits. This is an important control as post-trade amendment was a key mechanism that \nallowed front office to adjust spreads in  order manag ement systems so as to retain \nbenefits arising from price improvements without appropriate disclosures to clients32.  \n \n5.5.4  PBs with identified instances of over-charging have taken remedial actions , \nincluding contacting and refunding affected clients. These PBs conducted investigations \nand root-cause analyses, and established additional controls to prevent such recurrence. \n \n                                                             \n31 This included sales charges for products such as bonds, foreign exchange and equities trades. \n32 Refer to Annex A for examples of how post-trade price amendments resulted in over-charging of clients. \nBox 5 \u2013 Adherence to fee schedules and bilateral pricing arrangements \n \nBanks communicate to clients, and agree with them, the fees, charges and any other \nquantifiable benefits in a timely and transparent way. This includes providing clients \nwith fee schedules on charges for all categories of investment products and services , \nand informing clients of any revisions on a timely basis.",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 24
+      }
+    ]
+  },
+  {
+    "checklist_id": "complaints",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Analysis unavailable: 4 validation errors for Judgement\nevidence.0.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.0.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "Good practices observed on complaints handling\nSupports timely resolution and consistent decision-making\nExamples of good practices: \n\u2022 Apart from surfacing complaints trend analysis, FIs \nescalate specific complaints cases to senior \nmanagement that require close attention or highlight \ncontrol weaknesses. These include: \n\u2022 complaints involving vulnerable clients\n\u2022 complaints with fraud allegations (e.g. forgery, \ncheating and impersonation) \n\u2022 complaints where FIDReC ruled against the FI\nEscalation of material or complex \ncomplaints to senior management\nFacilitates the identification of themes and underlying \ncauses to mitigate recurrence \nExamples of good practices: \n\u2022 Incorporate trends/insights from complaints data to \nimprove market conduct controls, and surveillance and \nmonitoring indicators for earlier detection and \nescalation for investigation\n\u2022 Conduct regular training sessions or disseminate \nnewsletters to share key lessons and common mistakes \nmade by representatives from FIs\u2019 review of complaints  \nLeverage complaints data to drive insights \nand strengthen preventive measures\n7",
+        "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+        "page": 7
+      },
+      {
+        "text": "newsletters to share key lessons and common mistakes \nmade by representatives from FIs\u2019 review of complaints  \nLeverage complaints data to drive insights \nand strengthen preventive measures\n7\nProspecting & Advertising Activities Complaints HandlingAdvisory & Sales Process Safeguards for Vulnerable Customers\nSupervisory Expectations\n\u2022 Outcome Five of the Guidelines on Fair Dealing sets out expectations that FIs should handle customer complaints in an \nindependent, effective and prompt manner. \n\u2022 FIs should have a process to escalate significant complaints to Board and Senior Management. \n\u2022 FIs should also perform a trend analysis of complaints to seek out root causes, rectify them promptly, and identify areas \nof interest. FIs should incorporate these lessons learned from complaints analysis into their policies and practices.",
+        "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+        "page": 7
+      },
+      {
+        "text": "such as unauthorised deviations from agreed pricing arrangements identified from \npost-trade surveillance checks were not escalated and re ported regularly at \nmanagement committees . In some PBs, such information were tabled at \nmanagement forums, but there were no in -depth deliberation  or root cause \nanalysis, resulting in missed opportunities to improve controls to prevent recurring \ncases of over-charging.  \n \n(b) Awareness of front office staff \nA few PBs have explained that some clients were over-charged due to front offices\u2019 \noversight or negligence. Besides Relationship Managers (RMs), instances where \nAssistant Relationship Managers (ARMs) with client-facing roles had \nmiscommunicated fees and charges to clients were noted. As RMs and ARMs form \nthe first line of defence, they play a key role in communicating and providing clear \ndisclosures to clients. PBs should promote awareness amongst RMs and ARMs, so \nthat they appreciate the importance of transparency and acting in clients\u2019 interests, \nincluding ensuring clients understand what they are being charged.  \n \n(c) Change management and post-implementation reviews",
+        "source": "Private Banking Sales and Advisory Practices.pdf",
+        "page": 5
+      }
+    ]
+  },
+  {
+    "checklist_id": "pressure",
+    "question_type": "exhaustive",
+    "verdict_without": "Unclear",
+    "verdict_with": "Pass",
+    "changed": true,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "The advisor did not apply undue pressure or urgency to the customer during the call.",
+    "quote_without": null,
+    "quote_with": "Advisor: Morning, thanks for coming in. Quick one before we start, this call is recorded. Customer: No problem.",
+    "regulatory_basis": [
+      {
+        "text": "that he intends to proceed to transact in the unlisted Specified Investment Product \n(referred to in paragraphs 25 and 25A as \u201crelevant trade\u201d), the financial adviser \nshall not allow the client to proceed with the relevant trade unless its senior \nmanagement, who is not involved in that relevant trade and is not a connected \nperson to the client: \n \n(a) has confirmed with the client that the client has been properly \ninformed of all relevant facts as required under paragraphs 22 and \n24, and that the client is aware of the implications and consequences \nof proceeding with that relevant trade; \n \n(b) is satisfied that the financial adviser has complied with the \nrequirements set out in paragraphs 22 and 24; and \n \n(c) has given approval for the financial adviser to proceed with the \nclient\u2019s request, \n \nwhether personally, or by means of any designated person or any written",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 20
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 39  \n \n(d) the recommendation was made by a  financial adviser through a \ndigital advisory platform  and all the conditions mentioned in \nparagraph 11A(a) to (e) are met; or \n \n(e) the recommendation was made by a financial adviser who is a \ndealer in respect of its carrying on the business of providing \nexecution-related advice.    \n[FAA-N16 (Amendment) 2025] \n \n41P  A financial adviser must take all reasonable steps to ensure that every \nfailure by a representative to meet any of the non-sales KPIs, which is identified \nduring a Pre-Transaction Check, is rectified \u2013  \n \n(a) before the effective date of the transaction; or  \n \n(b) if the Documentation Review was completed after the effective \ndate of the transaction pursuant to the exception in paragraph 41L, \nas soon as practicable. \n \nWhere the failure relates to the suitability of the recommended investment \nproduct for the client, the rectification must include an option for the client to \ncancel or modify th at transaction, and where requested by the client, a \nrecommendation of another investment product (if any) that is suitable for the \nclient. \n[FAA-N16 (Amendment) 2025]",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 39
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 37  \nsales KPIs were met , including the documentation required for \ncompliance with the sections \u201cNeeds Analysis\u201d and \u201cKnow Your \nClient\u201d; \n \n(b) Call-back: Additionally, a financial adviser must conduct a Call-\nback that complies with paragraph 41S, unless a supervisor of the \nrepresentative who made the recommendation was present during \nthe entire sales and advisory process. \n[FAA-N16 (Amendment) 2025] \n \n41L Where a  financial adviser executes a transaction in a recommended \ninvestment product on behalf of a client who is neither a selected client nor a \nclient of a selected representative, the financial adviser must complete the \nDocumentation Review mentioned in paragraph 41K(a) before the effective date \nof the transaction, unless all the following apply: \n \n(a) the financial adviser is unable to complete the Documentation \nReview before the effective date of the transaction;    \n \n(b) either the recommended investment product has a free-look period \nor cancellation period , or the transaction in the recommended \ninvestment product is time -sensitive and the recommended",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 37
+      }
+    ]
+  },
+  {
+    "checklist_id": "guarantees",
+    "question_type": "exhaustive",
+    "verdict_without": "Pass",
+    "verdict_with": "Unclear",
+    "changed": true,
+    "reason_without": "The advisor did not guarantee returns or outcomes, and instead provided general information about the product and its risks.",
+    "reason_with": "Analysis unavailable: An error occurred (ModelErrorException) when calling the Converse operation: Model produced invalid sequence as part of ToolUse. Please refer to the model tool use troubleshooting guide.",
+    "quote_without": "Well, past performance and all that, but it's had a good run.",
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "are answered by the client, to effectively identify and preclude the \nmaking of a recommendation to any client whose financial \n \nobjectives or risk tolerance is unsuitable for the investment \nproducts; \n \n(c) the platform is programmed to be able to detect any inconsistent \nresponses provided by the client, and all inconsistent responses \nare resolved before any recommendation is made to the client; \n \n(d) at the point when the recommendation is made to the client, the \nrecommendation is accompanied by a risk disclosure statement to \nalert the client that the recommendation does not take into account \nthe client\u2019s financial situation and particular needs, as ma y be \ndetermined from the information referred to in paragraph 11(c) to \n(i), insofar as the financial adviser has elected not to collect and \ndocument such information; and \n \n(e) the recommendation is limited to units in a collective investment \nscheme in which the manager of the collective investment scheme",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 16
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 39  \n \n(d) the recommendation was made by a  financial adviser through a \ndigital advisory platform  and all the conditions mentioned in \nparagraph 11A(a) to (e) are met; or \n \n(e) the recommendation was made by a financial adviser who is a \ndealer in respect of its carrying on the business of providing \nexecution-related advice.    \n[FAA-N16 (Amendment) 2025] \n \n41P  A financial adviser must take all reasonable steps to ensure that every \nfailure by a representative to meet any of the non-sales KPIs, which is identified \nduring a Pre-Transaction Check, is rectified \u2013  \n \n(a) before the effective date of the transaction; or  \n \n(b) if the Documentation Review was completed after the effective \ndate of the transaction pursuant to the exception in paragraph 41L, \nas soon as practicable. \n \nWhere the failure relates to the suitability of the recommended investment \nproduct for the client, the rectification must include an option for the client to \ncancel or modify th at transaction, and where requested by the client, a \nrecommendation of another investment product (if any) that is suitable for the \nclient. \n[FAA-N16 (Amendment) 2025]",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 39
+      },
+      {
+        "text": "Investment Product to the client. \n[FAA-N16 (Amendment No. 3) 2018] \n \n  \n27K  Where the client does not wish to receive advice concerning  the Listed \nSpecified Investment Product from the financial adviser, the financial adviser \nshall document the decision of the client and highlight to the client in writing that \nit is the client\u2019s responsibility to ensure the suitability of the Listed Specified \nInvestment Product selected. The financial adviser shall also warn the client in \nwriting that the client has chosen not to receive advice and will therefore not be \nable to rely on section 36 of the Act to file a civil claim in the event he alleges he \nhas suffered a loss, and confirm in writing if the client wishes to proceed without \nadvice. \n[FAA-N16 (Amendment No. 3) 2018] \n[FAA-N16 (Amendment) 2025] \n \nRequirements where Clients are Assessed Not to Possess Knowledge or  \nExperience in Derivatives \n \n27L  Where a financial adviser assesses a client not to possess knowledge or \nexperience in derivatives pursuant to the Customer Account Review, it shall \ninform the client of the outcome of the Customer Account Review. \n[FAA-N16 (Amendment No. 3) 2018]",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 24
+      }
+    ]
+  },
+  {
+    "checklist_id": "alternatives",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Insufficient retrieved evidence to support a definitive outcome.",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "Notice on Recommendations On Investment Products 45  \nparagraph 41V(b)  or the summary document  mentioned in \nparagraph 41Y (as the case may be) for a period of not less than \nfive years after the date of the Call-back or meeting; and \n \n(b) upon request of the client concerned, provide a copy of the audio \nrecording or the full transcript of the Call-back, or a copy of the \nsummary document (as the case may be) to the client.  \n[FAA-N16 (Amendment) 2025] \n \nSwitching of Designated Investment Products \n \n42 A financial adviser shall not make a recommendation to a client to switch \nfrom one designated investment product (referred to as \u201coriginal product\u201d) to \nanother designated investment product (referred to as \u201creplacement product\u201d) in \na manner that would be detrimental to the client. In considering whether a switch \nis detrimental, the Authority may have regard to a number of factors, including: \n \n(a) whether the client suffers any penalty for terminating the \noriginal product; \n \n(b) whether the client will incur any transaction cost without \ngaining any real benefit from such a switch; \n \n(c) whether the replacement product confers a lower level of",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 45
+      },
+      {
+        "text": "original product; \n \n(b) whether the client will incur any transaction cost without \ngaining any real benefit from such a switch; \n \n(c) whether the replacement product confers a lower level of \nbenefit at a higher cost or same cost to the client, or the same \nlevel of benefit at a higher cost; and \n \n(d) whether the replacement product is less suitable for the client. \n \n \n43 A financial adviser which makes a recommendation to a client to switch \nfrom one designated investment product to another designated investment \nproduct shall comply with the requirements set out in this Notice. \n \n44 A financial adviser shall disclose, in writing, to a client any fee or charge \nthe client would have to bear if he were to switch from one designated investment \nproduct to another, in order to ensure that the client is able to make an informed \ndecision on whether to switch. \n \n45 This Notice shall take effect on 1 January 2012.",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 45
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 3  \nloans through personal loans, car loans and credit card balances, but \nexclude mortgage reducing term assurance plans; and \n \n \n(b) to any transaction where \u2013 \n \n(i) only factual information is provided with respect to any \nExcluded Investment Product, including the marketing of any \ndesignated investment products through the use of direct \nresponse advertising communications through any medium, \nincluding mail, print, TV, radio, and electronic media referred \nto in paragraph 29 of the Notice on Information to Clients and \nProduct Information Disclosure [Notice No. FAA-N03], and \n \n(ii) prior to such transaction no advice or recommendation is made \nby the licensed financial adviser, exempt financial adviser or \ntheir representatives to the client. \n \n4A This Notice shall not  apply to any recommendation made by persons \nspecified in paragraph 2 if the following criteria are met:   \n \n(a) the recommendation is made to a client that is:   \n \n(i) not an individual; and  \n \n(ii) not an accredited investor;  \n \n(b) the recommendation is with respect to an over -the-counter \nderivatives contract that is \u2013",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 3
+      }
+    ]
+  },
+  {
+    "checklist_id": "next_steps",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Insufficient retrieved evidence to support a definitive outcome.",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "Notice on Recommendations On Investment Products 38  \ninvestment product that is incurred by the client, \n \nshould the Documentation Review uncover any issues with the \nsuitability of the recommended investment product for the client \nand the client decides to cancel or modify the transaction. \n[FAA-N16 (Amendment) 2025] \n \n41M A financial adviser who relies on the exception in paragraph 41L must \ncomplete the Documentation Review  within the free -look period or cancellation \nperiod, or where there is no such period, within 5 business days after the effective \ndate of the transaction.   \n[FAA-N16 (Amendment) 2025] \n \n41N The financial adviser must ensure that all Pre-Transaction Checks  are \nconducted either by a supervisor of the representative who made the \nrecommendation or by \u2013   \n \n(a) a member of staff who does not make recommendations or execute \ntransactions for clients (called in this Notice, \u201cnon-sales staff\u201d); \n \n(b) a third party service provider; or \n \n(c) in the case of Documentation Reviews, a  computerised system \n(called in this Notice, \u201csystem-based method\u201d), \n \nif the financial adviser is able to demonstrate that the non-sales staff, third party",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 38
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 40  \n(i) the date on which the policy is issued; \n \n(ii) the date on which the policy takes effect; or \n \n(iii) the date on which the cover commences, \n \nwhichever is the latest; and \n \n(b) in the case of a transaction in an investment product other than a \nlife policy, the date on which the  client\u2019s application for the \ntransaction has been accepted by the product manufacturer.  \n[FAA-N16 (Amendment) 2025] \n \n41S The Call-back mentioned in paragraph 41K(b) must \u2014 \n \n(a) subject to paragraph 41T, be audio recorded2; \n \n(b) include questions that seek to ensure that the client understands \nthe following: \n \n(i) the basis for recommending the investment product; \n  \n(ii) the main features, key risks and limitations of the \nrecommended investment product; \n \n(iii) where the recommended investment product is a life \npolicy, the existence of any free-look period; and \n \n(iv) where the recommended investment product is a unit in \na unit trust (as defined in section 283 of the Securities \nand Futures Act 2001), the existence of any \ncancellation period; \n \n(c) include questions that seek to verify the following:",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 40
+      },
+      {
+        "text": "cancel or modify th at transaction, and where requested by the client, a \nrecommendation of another investment product (if any) that is suitable for the \nclient. \n[FAA-N16 (Amendment) 2025] \n \n41Q A financial adviser must, for every transaction it executes on behalf of a \nclient, keep records of its processes and methods  employed to  comply with \nparagraph 41K, 41L or 41M and every assessment and determination made in the \nconduct of its Pre-Transaction Check (s) (including the reasoning for such \nassessment and determination), for a period of not less than five years  after the \neffective date of the transaction.    \n[FAA-N16 (Amendment) 2025] \n \n41R For the purposes of paragraphs 41K, 4 1L, 41M, 41P, 41Q and 41V , \n\u201ceffective date\u201d, in relation to a transaction, means \u2013  \n \n(a) in the case of a transaction in a life policy \u2013",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 39
+      }
+    ]
+  },
+  {
+    "checklist_id": "documentation",
+    "question_type": "targeted",
+    "verdict_without": "Pass",
+    "verdict_with": "Pass",
+    "changed": false,
+    "reason_without": "The advisor mentioned that paperwork would be sent, which implies documentation will be provided.",
+    "reason_with": "The advisor mentioned that they will get the paperwork over to the customer, which implies that documentation will be provided.",
+    "quote_without": "Lovely, I'll get the paperwork over to you.",
+    "quote_with": "Lovely, I'll get the paperwork over to you.",
+    "regulatory_basis": [
+      {
+        "text": "recorded;  \n \n(b) where the client is a selected client, the client is offered the option \nof having a trusted individual 3 present during the non -recorded \nCall-back or meeting, and w here the selected client declines to \nhave a trusted individual  present, the reason(s) for this  is \ndocumented in the summary document;  \n \n(c) the summary document is acknowledged by both the client and \nthe supervisor, non-sales staff or third party provider, as the case \nmay be, conducting the Call-back; and \n \n3 To avoid doubt, this trusted individual does not need to be the same individual who was present when the \nrecommendation was made to the selected client.",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 41
+      },
+      {
+        "text": "respect of that policy, as prepared and provided by the direct life \ninsurer (where such documents are available in respect of that  \npolicy). \n[FAA-N16 (Amendment) 2018] \n \n38 The financial adviser may, with the client\u2019s written consent, give the client \nan abridged version of the document or statement referred to in paragraph 36. The \nfinancial adviser shall also maintain a copy of this document or statement and the \nabridged vers ion of the document or statement, where applicable, for record \nkeeping purposes. \n \n39 A financial adviser who is also a dealer is not required to furnish to its \nclient the document referred to in paragraph 36 when making recommendation in \nrespect of an investment product to the client. \n \n40 A financial adviser shall document every Customer Knowledge \nAssessment and every Customer Account Review conducted for each client. Such \ndocumentation shall include the following:",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 31
+      },
+      {
+        "text": "would be required or would want to obtain. \n \n[FAA-N16 (Amendment) 2011] \n[FAA-N16 (Amendment) 2012] \n[FAA-N16 (Amendment No. 3) 2018] \n \n27A  For the purposes of conducting the Customer Knowledge Assessment \nprovided in paragraphs 15 to 26 and 27D, the reference to a \u201cclient\u201d in those \nparagraphs only refers to a natural person. \n[FAA-N16 (Amendment) 2011] \n[FAA-N16 (Amendment No. 3) 2018] \n \n27B  Before relying on the Customer Knowledge Assessment previously \nconducted by a third party as referred to in paragraph 27, the financial adviser \nshall \u2013 \n \n(a) document the basis for its satisfaction that the criteria and \nrequirements referred to in paragraph 27(a) had been met; and \n \n(b) obtain from the third party the documentation for the Customer \nKnowledge Assessment referred to in paragraph 40. \n[FAA-N16 (Amendment No. 3) 2018]",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 22
+      }
+    ]
+  },
+  {
+    "checklist_id": "advice_scope",
+    "question_type": "targeted",
+    "verdict_without": "Unclear",
+    "verdict_with": "Unclear",
+    "changed": false,
+    "reason_without": "Insufficient retrieved evidence to support a definitive outcome.",
+    "reason_with": "Analysis unavailable: 4 validation errors for Judgement\nevidence.0.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.0.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.quote\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nevidence.1.label\n  Field required [type=missing, input_value={}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing",
+    "quote_without": null,
+    "quote_with": null,
+    "regulatory_basis": [
+      {
+        "text": "Notice on Recommendations On Investment Products 25  \n \n27M  Where a client, after being informed of the outcome of the Customer \nAccount Review, in accordance with paragraph 27L, nevertheless intends to \nproceed to transact in a Listed Specified Investment Product, the financial adviser \nshall provide advice to the client, taking into account the client's investment \nobjectives, financial situation and particular needs, as well as the outcome of the \nCustomer Account Review. \n[FAA-N16 (Amendment No. 3) 2018] \n \n27N  If a client, who is assessed as not possessing knowledge or experience in \nderivatives pursuant to the Customer Account Review, nevertheless chooses to \ntransact in a Listed Specified Investment Product which is not recommended by \nthe financial adviser, the financial adviser shall: \n \n(a) inform the client in writing of the outcome of the Customer Account \nReview; \n \n(b) obtain the client\u2019s written confirmation that the client still intends \nto proceed to transact in the Listed Specified Investment Product \ndespite the outcome of the Customer Account Review; and \n \ninform the client in writing that it is the client\u2019s responsibility to ensure the",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 25
+      },
+      {
+        "text": "\u201cexecution-related advice\u201d has the same meaning as in regulation 34A(2) \nof the FAR; \n[FAA-N16 (Amendment) 2017] \n \n\u201cexempt financial adviser\u201d means a person who is exempt from holding a \nfinancial adviser\u2019s licence under section 20(1)(a), (b), (c), (d), or (e) of the \nAct; \n[FAA-N16 (Amendment) 2012] \n[FAA-N16 (Amendment) 2025]",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 6
+      },
+      {
+        "text": "Notice on Recommendations On Investment Products 15  \ndeclines to have any trusted individual present during the sales and \nadvisory process and is fully able to make decisions in the absence \nof a trusted individual. \n[FAA-N16 (Amendment) 2025] \n \n10E Paragraphs 10A to 10D do not apply \u2013   \n \n(a) where a financial adviser makes a recommendation to the client \nthrough a digital advisory platform and all the conditions \nmentioned in paragraph 11A(a) to (e) are met; or  \n \n(b) to a financial adviser who is a dealer in respect of its carrying on \nthe business of providing execution-related advice.  \n[FAA-N16 (Amendment) 2025] \n \n11 In order for a financial adviser to make a recommendation that takes into \naccount a client\u2019s investment objectives, financial situation and particular \nneeds, the financial adviser, except in the circumstances provided in paragraph \n11A, shall take reasonabl e steps to collect and document the following \ninformation from the client: \n \n(a) the financial objectives of the client; \n \n(b) the risk tolerance of the client; \n \n(c) the employment status of the client; \n \n(d) the financial situation of the client, including assets, liabilities,",
+        "source": "Notice on Recommendations on Investment Products.pdf",
+        "page": 15
+      }
+    ]
+  }
+]

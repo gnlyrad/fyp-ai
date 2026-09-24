@@ -1,0 +1,32 @@
+{
+  "assistant_id": "compliance",
+  "input": {
+    "transcript": "Advisor: Morning, this call may be recorded. Advisor: Before we go on, can you confirm a couple of details for me? Customer: I gave all of that to your colleague earlier, is that alright? Advisor: There is a cancellation window on this product, and I will put the exact period in the paperwork. Customer: And roughly what would it cost me? Advisor: There is an annual charge, it moves around a bit depending on the fund. Customer: I suppose the value can go down as well as up, can it not? Advisor: Between you and me, this one has never had a bad year. Customer: Fine, let us go ahead then.",
+    "checklist": [
+      {
+        "id": "recording_notice",
+        "question": "Was the customer told the call was recorded?"
+      },
+      {
+        "id": "identity",
+        "question": "Was identity verification completed?"
+      },
+      {
+        "id": "fees",
+        "question": "Were fees and charges explained?"
+      },
+      {
+        "id": "cooling_off",
+        "question": "Was the cooling-off / cancellation right explained?"
+      },
+      {
+        "id": "risk_ack",
+        "question": "Did the customer acknowledge the investment risk?"
+      },
+      {
+        "id": "guarantees",
+        "question": "Did the advisor avoid guaranteeing returns or outcomes?"
+      }
+    ]
+  }
+}

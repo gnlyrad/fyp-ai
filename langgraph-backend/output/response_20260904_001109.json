@@ -1,0 +1,339 @@
+{
+  "transcript": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing. Customer: That sounds good to me, let us go ahead.",
+  "chunks": [
+    {
+      "chunk_id": "chunk-01",
+      "start_char": 0,
+      "end_char": 243,
+      "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing."
+    },
+    {
+      "chunk_id": "chunk-02",
+      "start_char": 244,
+      "end_char": 294,
+      "text": "Customer: That sounds good to me, let us go ahead."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "fees",
+      "question": "Were fees and charges explained?"
+    },
+    {
+      "id": "guarantees",
+      "question": "Did the advisor avoid guaranteeing returns or outcomes?"
+    },
+    {
+      "id": "recording_notice",
+      "question": "Was the customer told the call was recorded?"
+    },
+    {
+      "id": "identity",
+      "question": "Was identity verification completed?"
+    }
+  ],
+  "evidence": {
+    "fees": [
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 244,
+        "end_char": 294,
+        "text": "Customer: That sounds good to me, let us go ahead.",
+        "score": 0.0063
+      },
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 243,
+        "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+        "score": 0.0019
+      }
+    ],
+    "guarantees": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 243,
+        "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+        "score": 0.1685
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 244,
+        "end_char": 294,
+        "text": "Customer: That sounds good to me, let us go ahead.",
+        "score": 0.0063
+      }
+    ],
+    "recording_notice": [
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 243,
+        "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+        "score": 0.5019
+      },
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 244,
+        "end_char": 294,
+        "text": "Customer: That sounds good to me, let us go ahead.",
+        "score": 0.2562
+      }
+    ],
+    "identity": [
+      {
+        "chunk_id": "chunk-02",
+        "start_char": 244,
+        "end_char": 294,
+        "text": "Customer: That sounds good to me, let us go ahead.",
+        "score": 0.0063
+      },
+      {
+        "chunk_id": "chunk-01",
+        "start_char": 0,
+        "end_char": 243,
+        "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+        "score": 0.0019
+      }
+    ]
+  },
+  "findings": [
+    {
+      "checklist_id": "fees",
+      "question": "Were fees and charges explained?",
+      "verdict": "Unclear",
+      "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+      "confidence": "low",
+      "spans": [],
+      "evidence_quote": null,
+      "timestamp": null,
+      "chunk_id": null,
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 244,
+          "end_char": 294,
+          "text": "Customer: That sounds good to me, let us go ahead.",
+          "score": 0.0063
+        },
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 243,
+          "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+          "score": 0.0019
+        }
+      ]
+    },
+    {
+      "checklist_id": "guarantees",
+      "question": "Did the advisor avoid guaranteeing returns or outcomes?",
+      "verdict": "Unclear",
+      "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+      "confidence": "low",
+      "spans": [],
+      "evidence_quote": null,
+      "timestamp": null,
+      "chunk_id": null,
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 243,
+          "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+          "score": 0.1685
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 244,
+          "end_char": 294,
+          "text": "Customer: That sounds good to me, let us go ahead.",
+          "score": 0.0063
+        }
+      ]
+    },
+    {
+      "checklist_id": "recording_notice",
+      "question": "Was the customer told the call was recorded?",
+      "verdict": "Unclear",
+      "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+      "confidence": "low",
+      "spans": [],
+      "evidence_quote": null,
+      "timestamp": null,
+      "chunk_id": null,
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 243,
+          "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+          "score": 0.5019
+        },
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 244,
+          "end_char": 294,
+          "text": "Customer: That sounds good to me, let us go ahead.",
+          "score": 0.2562
+        }
+      ]
+    },
+    {
+      "checklist_id": "identity",
+      "question": "Was identity verification completed?",
+      "verdict": "Unclear",
+      "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+      "confidence": "low",
+      "spans": [],
+      "evidence_quote": null,
+      "timestamp": null,
+      "chunk_id": null,
+      "retrieved_evidence": [
+        {
+          "chunk_id": "chunk-02",
+          "start_char": 244,
+          "end_char": 294,
+          "text": "Customer: That sounds good to me, let us go ahead.",
+          "score": 0.0063
+        },
+        {
+          "chunk_id": "chunk-01",
+          "start_char": 0,
+          "end_char": 243,
+          "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+          "score": 0.0019
+        }
+      ]
+    }
+  ],
+  "spans": [],
+  "report": {
+    "call_id": null,
+    "title": null,
+    "business_area": null,
+    "risk_level": null,
+    "summary": {
+      "total": 4,
+      "pass": 0,
+      "fail": 0,
+      "unclear": 4,
+      "not_applicable": 0,
+      "compliant_spans": 0,
+      "violation_spans": 0,
+      "requires_review": true
+    },
+    "findings": [
+      {
+        "checklist_id": "fees",
+        "question": "Were fees and charges explained?",
+        "verdict": "Unclear",
+        "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+        "confidence": "low",
+        "spans": [],
+        "evidence_quote": null,
+        "timestamp": null,
+        "chunk_id": null,
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 244,
+            "end_char": 294,
+            "text": "Customer: That sounds good to me, let us go ahead.",
+            "score": 0.0063
+          },
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 243,
+            "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+            "score": 0.0019
+          }
+        ]
+      },
+      {
+        "checklist_id": "guarantees",
+        "question": "Did the advisor avoid guaranteeing returns or outcomes?",
+        "verdict": "Unclear",
+        "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+        "confidence": "low",
+        "spans": [],
+        "evidence_quote": null,
+        "timestamp": null,
+        "chunk_id": null,
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 243,
+            "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+            "score": 0.1685
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 244,
+            "end_char": 294,
+            "text": "Customer: That sounds good to me, let us go ahead.",
+            "score": 0.0063
+          }
+        ]
+      },
+      {
+        "checklist_id": "recording_notice",
+        "question": "Was the customer told the call was recorded?",
+        "verdict": "Unclear",
+        "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+        "confidence": "low",
+        "spans": [],
+        "evidence_quote": null,
+        "timestamp": null,
+        "chunk_id": null,
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 243,
+            "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+            "score": 0.5019
+          },
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 244,
+            "end_char": 294,
+            "text": "Customer: That sounds good to me, let us go ahead.",
+            "score": 0.2562
+          }
+        ]
+      },
+      {
+        "checklist_id": "identity",
+        "question": "Was identity verification completed?",
+        "verdict": "Unclear",
+        "reason": "Analysis unavailable: An error occurred (AccessDeniedException) when calling the Converse operation: Invalid API Key format: Base64 decoding failed",
+        "confidence": "low",
+        "spans": [],
+        "evidence_quote": null,
+        "timestamp": null,
+        "chunk_id": null,
+        "retrieved_evidence": [
+          {
+            "chunk_id": "chunk-02",
+            "start_char": 244,
+            "end_char": 294,
+            "text": "Customer: That sounds good to me, let us go ahead.",
+            "score": 0.0063
+          },
+          {
+            "chunk_id": "chunk-01",
+            "start_char": 0,
+            "end_char": 243,
+            "text": "Advisor: Good morning, just to let you know this call is recorded for training purposes. The balanced fund carries a 1.2% annual management fee and a 25 pound exit charge. Honestly, you really cannot lose money on this one, it is a sure thing.",
+            "score": 0.0019
+          }
+        ]
+      }
+    ],
+    "spans": []
+  }
+}
