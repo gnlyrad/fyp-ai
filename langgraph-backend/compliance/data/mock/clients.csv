@@ -1,0 +1,7 @@
+client_id,name,classification,risk_profile,jurisdiction,account_types,pre_authorized_callers,kyc_status
+CL001,Tan Wei Ming,accredited_investor,moderate,SG,"individual,joint",Tan Wei Ming;Tan Siew Ling,verified
+CL002,Sarah Lim,retail,conservative,SG,individual,Sarah Lim,verified
+CL003,Global Horizon Holdings,institutional,aggressive,SG,corporate,Jeff Ong;Michelle Wong,verified
+CL004,Rajesh Kumar,retail,moderate,MY,individual,Rajesh Kumar,pending
+CL005,Amanda Chua,accredited_investor,aggressive,SG,"individual,trust",Amanda Chua;David Chua,verified
+CL006,Kenji Watanabe,retail,conservative,JP,individual,Kenji Watanabe,expired

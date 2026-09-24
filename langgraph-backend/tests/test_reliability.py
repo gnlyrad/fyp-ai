@@ -4,6 +4,8 @@ import os
 import unittest
 from unittest.mock import Mock, patch
 
+from pydantic import ValidationError
+
 os.environ["LANGSMITH_TRACING"] = "false"
 os.environ["LANGCHAIN_TRACING_V2"] = "false"
 
@@ -189,6 +191,75 @@ class ClassificationAndApplicabilityTests(unittest.TestCase):
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_schema_validation_failure_surfaces_field_detail_not_just_exception_name(self):
+        try:
+            analysis.Judgement.model_validate({"verdict": "pass", "reason": "x", "basis": "not-a-real-basis"})
+        except ValidationError as exc:
+            bad_response = exc
+        task = task_for()
+        with patch.object(analysis, "_invoke", side_effect=bad_response):
+            finding = analysis._run_analysis(task)["raw_findings"][0]
+        self.assertEqual(finding["verdict"], "Unclear")
+        self.assertEqual(finding["evidence_status"], "analysis_unavailable")
+        # Must name the offending field, not just the generic exception class.
+        self.assertIn("basis", finding["reason"])
+        self.assertNotIn("Analysis or evidence verification unavailable: ValidationError.", finding["reason"])
+
+    def test_prohibition_pass_accepts_direct_evidence_under_full_coverage(self):
+        # "this isn't guaranteed" is direct proof of the opposite of the
+        # prohibited conduct; with the whole call reviewed it should Pass, not
+        # be rejected just because basis was "direct" rather than "absence".
+        task = task_for(question_type="exhaustive", assessment="prohibition")
+        with patch.object(analysis, "_invoke", return_value=judgement("Pass", "direct")), \
+             patch.object(analysis, "get_model", return_value=auditor()):
+            finding = analysis._run_analysis(task)["raw_findings"][0]
+        self.assertEqual(finding["verdict"], "Pass")
+        self.assertEqual(finding["evidence_status"], "direct_evidence")
+
+    def test_prohibition_pass_still_rejected_on_partial_coverage(self):
+        # The original safety property: one compliant line cannot prove the
+        # conduct never occurred elsewhere when only some chunks were reviewed.
+        task = task_for(question_type="targeted", assessment="prohibition")
+        task["chunks"] = task["chunks"] + [{"chunk_id": "chunk-99", "text": "Unreviewed tail.",
+                                            "start_char": 999, "end_char": 1015}]
+        with patch.object(analysis, "_invoke", return_value=judgement("Pass", "direct")), \
+             patch.object(analysis, "get_model", return_value=auditor()):
+            finding = analysis._run_analysis(task)["raw_findings"][0]
+        self.assertEqual(finding["verdict"], "Unclear")
+
+    def test_prohibition_pass_rejected_when_a_violation_span_survives(self):
+        task = task_for(question_type="exhaustive", assessment="prohibition")
+        with patch.object(analysis, "_invoke", return_value=judgement("Pass", "direct")), \
+             patch.object(analysis, "get_model", return_value=auditor(label="violation")):
+            finding = analysis._run_analysis(task)["raw_findings"][0]
+        self.assertEqual(finding["verdict"], "Unclear")
+
+    def test_context_only_evidence_under_full_coverage_is_an_absence_finding(self):
+        # Model cites only context for an omission. Previously this fell through
+        # to insufficient_evidence purely because nothing decisive survived the
+        # audit, even though the whole call had been reviewed.
+        task = task_for(question_type="deterministic", assessment="presence")
+        with patch.object(analysis, "_invoke", return_value=judgement("Fail", "direct")), \
+             patch.object(analysis, "get_model", return_value=auditor(label="context", relation="context")):
+            finding = analysis._run_analysis(task)["raw_findings"][0]
+        self.assertEqual(finding["verdict"], "Fail")
+        self.assertEqual(finding["evidence_status"], "absence_after_full_review")
+
+    def test_evidence_entry_missing_quote_does_not_crash_analysis(self):
+        # Observed in a real run: the model concludes absence but, instead of
+        # the instructed evidence=[], emits a placeholder entry with a fake
+        # "full_transcript" chunk_id and no quote at all.
+        task = task_for(question_type="deterministic", assessment="presence")
+        malformed = analysis.Judgement.model_validate({
+            "verdict": "Fail", "reason": "No disclosure found.", "basis": "absence",
+            "evidence": [{"chunk_id": "full_transcript", "label": "compliant"}],
+        })
+        with patch.object(analysis, "_invoke", return_value=malformed):
+            finding = analysis._run_analysis(task)["raw_findings"][0]
+        self.assertNotEqual(finding["evidence_status"], "analysis_unavailable")
+        self.assertNotIn("expected schema", finding["reason"])
+        self.assertEqual(finding["spans"], [])
+
     def test_not_applicable_and_unknown_roles_do_not_call_judge(self):
         task = task_for()
         task["applicability"] = {"status": "not_applicable", "reason": "Unrelated conversation."}

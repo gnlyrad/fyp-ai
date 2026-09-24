@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import Literal
 from langchain.messages import HumanMessage, SystemMessage
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ValidationError
 from ..model import get_model
 from ..prompts.analysis import SYSTEM_PROMPT_BY_TYPE
 from .applicability import MAX_REVIEW_CHARS
@@ -13,7 +13,12 @@ from .retrieval import build_context
 
 class EvidenceSpan(BaseModel):
     chunk_id: str
-    quote: str
+    # Optional, not required: a model that concludes absence sometimes still
+    # emits a placeholder entry (e.g. chunk_id="full_transcript") instead of
+    # the instructed evidence=[]. Defaulting to "" lets that fall through to
+    # locate()'s existing "no quote, skip this entry" handling below rather
+    # than crash the whole analysis on one malformed entry.
+    quote: str = ""
     label: Literal["compliant", "violation", "context"]
 
 
@@ -33,6 +38,21 @@ class AuditedEvidence(BaseModel):
 
 class EvidenceAudit(BaseModel):
     items: list[AuditedEvidence] = Field(default_factory=list)
+
+
+def _format_validation_error(exc: ValidationError, limit: int = 300) -> str:
+    """Compact, bounded rendering of pydantic's field-level detail.
+
+    `loc` alone identifies which structured-output call failed: `Judgement`
+    uses verdict/basis/evidence, `EvidenceAudit` uses items/relation/label -
+    no overlap, so no need to track which call site raised this.
+    """
+    parts = []
+    for err in exc.errors():
+        loc = ".".join(str(p) for p in err.get("loc", ()))
+        parts.append(f"{loc or 'value'}: {err.get('msg')} (got {err.get('input')!r})")
+    text = "; ".join(parts)
+    return text[:limit] + ("..." if len(text) > limit else "")
 
 
 _judge = None
@@ -218,17 +238,26 @@ def _run_analysis(task, system_prompt=None):
             seen.add(key)
             span["model_label"] = evidence.label
             spans.append(span)
+        # Which verdicts an absence of decisive evidence is allowed to support:
+        # a required disclosure that never happened, or prohibited conduct that
+        # never occurred. Hoisted so the post-audit chain below can reuse it.
+        allowed = ((answer.verdict == "Fail" and item.get("assessment") in {"presence", "quality"})
+                   or (answer.verdict == "Pass" and item.get("assessment") == "prohibition"))
         if answer.basis == "absence":
             # No occurrence exists to highlight red/green.
-            allowed = ((answer.verdict == "Fail" and item.get("assessment") in {"presence", "quality"})
-                       or (answer.verdict == "Pass" and item.get("assessment") == "prohibition"))
             if coverage == "full_transcript" and allowed:
                 return _finding(task, answer.verdict, answer.reason, "absence_after_full_review", reviewed,
                                 coverage=coverage)
             return _finding(task, "Unclear", "Absence verdict is unsupported by review coverage or pass condition.",
                             "insufficient_evidence", reviewed, coverage=coverage)
+        proposed = len(spans)
         if spans:
             spans = audit_evidence(item, answer, spans, reviewed, task.get("guidance") or [])
+        # The audit discarded every quote the model offered: its stated reasoning
+        # was checked and found unsupported. That is a very different situation
+        # from a model that cited nothing because there was nothing to cite, and
+        # it must not be read as an absence finding below.
+        audited_away = proposed > 0 and not spans
         decisive = [s for s in spans if s["label"] in {"compliant", "violation"}]
         contrary = any(s["evidence_relation"] == "contradicts" for s in decisive)
         labels = {s["label"] for s in decisive}
@@ -238,14 +267,31 @@ def _run_analysis(task, system_prompt=None):
         if answer.basis == "conflict" or contrary or (labels == {"compliant", "violation"} and item.get("assessment") != "prohibition"):
             verdict, status = "Unclear", "conflicting_evidence"
             reason = "Conflicting evidence requires review. " + reason
+        elif (verdict != "Unclear" and not decisive and not audited_away
+                and coverage == "full_transcript" and allowed):
+            # The whole call was reviewed and the audit left no decisive quote.
+            # That is an absence finding, whatever `basis` the model labelled it
+            # with: a model that cites only context for an omission should not be
+            # penalised relative to one that cites nothing at all.
+            status = "absence_after_full_review"
         elif verdict == "Unclear" or answer.basis != "direct" or not any(
                 s["label"] == expected and s["evidence_relation"] == "supports" for s in decisive):
             verdict, status = "Unclear", "insufficient_evidence"
             reason = "No independently supported evidence establishes the proposed verdict. " + reason
-        elif verdict == "Pass" and item.get("assessment") == "prohibition":
+        elif verdict == "Pass" and item.get("assessment") == "prohibition" and (
+                coverage != "full_transcript" or any(s["label"] == "violation" for s in decisive)):
+            # A prohibition Pass still may not rest on a partial review - one
+            # compliant line cannot prove the conduct never occurred elsewhere -
+            # but full coverage with a supporting quote and no violation found
+            # meets the same bar as the absence path, so it is no longer rejected
+            # merely for having cited evidence.
             verdict, status = "Unclear", "insufficient_evidence"
-            reason = "A prohibition Pass requires a full-call absence finding."
+            reason = "A prohibition Pass requires full-call coverage with no violation found."
         return _finding(task, verdict, reason, status, reviewed, spans, coverage)
+    except ValidationError as exc:
+        return _finding(task, "Unclear",
+                        f"Model response did not match the expected schema: {_format_validation_error(exc)}",
+                        "analysis_unavailable", reviewed, coverage=coverage)
     except Exception as exc:
         return _finding(task, "Unclear", f"Analysis or evidence verification unavailable: {type(exc).__name__}.",
                         "analysis_unavailable", reviewed, coverage=coverage)

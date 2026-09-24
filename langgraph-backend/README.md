@@ -181,7 +181,9 @@ backend cannot correct incorrectly merged speakers without reviewed source data.
 ## Limits and configuration
 
 Default region: ap-southeast-1.
-Default judge/classifier: apac.amazon.nova-lite-v1:0 (CLEARCALL_MODEL_ID).
+Default judge/classifier: apac.amazon.nova-pro-v1:0 (CLEARCALL_MODEL_ID). Anthropic
+profiles suit the strict structured-output schemas better, but need the Anthropic
+use case details form submitted for the AWS account before they can be invoked.
 Default embedding model: cohere.embed-english-v3 (BEDROCK_EMBEDDING_MODEL).
 
 | Variable | Default | Meaning |

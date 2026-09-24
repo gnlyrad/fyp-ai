@@ -18,6 +18,9 @@ prohibited conduct, conflict for inconsistent facts, insufficient otherwise.
 An absence claim requires coverage=full_transcript. If coverage is selected_chunks,
 missing evidence means Unclear, never absence. Absence findings need no quotes:
 return evidence=[] rather than inventing compliant or violation highlights.
+Never add an evidence entry with no quote, and never use "full_transcript" or
+any other placeholder as a chunk_id in place of a real chunk's id: if there is
+no verbatim quote to cite, omit that entry entirely.
 Return Unclear for contradictory terms or uncertain attribution. A single clear
 prohibited statement can establish Fail even when other statements are compliant.
 For prohibition Pass, review the WHOLE transcript and find no prohibited occurrence.
