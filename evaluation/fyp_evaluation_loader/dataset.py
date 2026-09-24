@@ -37,12 +37,12 @@ def _project_checklist(checklist: Any) -> list[dict[str, str]]:
     projected = []
     seen = set()
     for index, item in enumerate(checklist):
-        if not isinstance(item, dict) or not isinstance(item.get("id"), str) or not isinstance(item.get("text"), str):
-            raise DatasetError(f"checklist[{index}] needs string id and text")
-        if not item["id"] or not item["text"].strip() or item["id"] in seen:
-            raise DatasetError(f"checklist[{index}] has an empty or duplicate id/text")
+        if not isinstance(item, dict) or not isinstance(item.get("id"), str) or not isinstance(item.get("question"), str):
+            raise DatasetError(f"checklist[{index}] needs string id and question")
+        if not item["id"] or not item["question"].strip() or item["id"] in seen:
+            raise DatasetError(f"checklist[{index}] has an empty or duplicate id/question")
         seen.add(item["id"])
-        projected.append({"id": item["id"], "question": item["text"]})
+        projected.append({"id": item["id"], "question": item["question"]})
     return projected
 
 

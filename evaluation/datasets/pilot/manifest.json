@@ -6,7 +6,7 @@
     "CALL_004",
     "CALL_005"
   ],
-  "dataset_sha256": "ae6bb2d70d07d0d7f039c634a9b150da8b168225fe7471e3deaa16dee6af7073",
+  "dataset_sha256": "d138f0fd2247fdcea83b62ceff3899390d1a505bd1cb78696635cc4f13b60c37",
   "files": {
     "calls/CALL_001/ground_truth.json": "4261369fef1426f78c0236c5a0981ee2bb1e4b06b8dcaef8052cdcfdbdb6c12c",
     "calls/CALL_001/speaker_roles.json": "1987f4bb4ce3375b087d2e419aaca088f1c0a1c1e6c585617ecaaf7fa542bc12",
@@ -23,12 +23,12 @@
     "calls/CALL_005/ground_truth.json": "ad21e59daefca2c168691efcc83097a04865ba016f38852415f74ffa13881751",
     "calls/CALL_005/speaker_roles.json": "1987f4bb4ce3375b087d2e419aaca088f1c0a1c1e6c585617ecaaf7fa542bc12",
     "calls/CALL_005/transcript.json": "d7b37bb2ddb0ae3e7a556fdeae5084eae858dadb222f817a9135a6ec842b5d71",
-    "checklist.json": "e149d00491537ffec2d4cb71796f9d68758ff6014cd408dbf80de704a70ddc9e"
+    "checklist.json": "c8bd1aeaaa88ccd1325554dcf2089ad7f830cc5331a06ae5efc018ecaddd98ea"
   },
   "format": "fyp-nlp-dataset-v1",
   "source": {
     "dataset_path": "evaluation-dataset/evaluation_dataset",
-    "git_commit": "4e24e285011fa733c6f4908f8fb2e0df0186a9c8"
+    "git_commit": "e1c038c2872edbc6f563d6c521fb963c7c8ec4de"
   },
   "timing_status": "placeholder_zero"
 }

@@ -42,6 +42,14 @@ Return one entry for each checklist id. Never assert applicability without conte
 
 
 def applicability_node(state):
+    if os.getenv("CLEARCALL_SKIP_APPLICABILITY", "").lower() in {"1", "true", "yes"}:
+        # Debug bypass: no LLM call; every requirement is treated as applicable.
+        return {"applicability": {item["id"]: {
+            "status": "applicable",
+            "reason": "Applicability check bypassed (CLEARCALL_SKIP_APPLICABILITY).",
+            "context_quotes": [],
+            "applicability_coverage": "not_reviewed",
+        } for item in state["checklist"]}}
     context = build_context(state["chunks"])
     entries = {}
     error = None

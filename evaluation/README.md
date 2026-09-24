@@ -18,7 +18,7 @@ The LangGraph graph's `AnalyseInput` has three relevant fields:
 {
     "results": transcript_json,
     "speaker_roles": speaker_roles_json,
-    "checklist": [{"id": item["id"], "question": item["text"]} for item in checklist_json],
+    "checklist": [{"id": item["id"], "question": item["question"]} for item in checklist_json],
 }
 ```
 
@@ -29,9 +29,13 @@ the `results` key. The graph uses `audio_segments` in preference to
 `transcripts`.
 
 The saved `checklist.json` is authoritative evaluation data, but it is not
-passed unchanged: its `text` fields are deterministically projected to the
-graph's `question` fields. `ground_truth.json` and `manifest.json` never enter
-the graph; they are for later scoring and provenance.
+passed unchanged: it is deterministically filtered down to only `id` and
+`question` per item, dropping `type`/`requirement_type`/`field`. As of the
+source's checklist schema revision 0.3.0, `question` is already the field
+name stored in `checklist.json` itself (it was previously named `text`,
+which required a rename here); this is now a selection, not a rename.
+`ground_truth.json` and `manifest.json` never enter the graph; they are for
+later scoring and provenance.
 
 ## LangSmith Studio
 

@@ -1,62 +1,62 @@
 [
   {
     "id": "C01",
+    "question": "The employee must confirm the client's investment objective.",
     "requirement_type": "OBLIGATION",
-    "text": "The employee must confirm the client's investment objective.",
     "type": "COMPLIANCE"
   },
   {
     "id": "C02",
+    "question": "The employee must confirm the client's willingness to accept investment losses.",
     "requirement_type": "OBLIGATION",
-    "text": "The employee must confirm the client's willingness to accept investment losses.",
     "type": "COMPLIANCE"
   },
   {
     "id": "C03",
+    "question": "The employee must explain that the client could lose invested capital.",
     "requirement_type": "OBLIGATION",
-    "text": "The employee must explain that the client could lose invested capital.",
     "type": "COMPLIANCE"
   },
   {
     "id": "C04",
+    "question": "The employee must disclose the bank's transaction fee as an amount or a rate.",
     "requirement_type": "OBLIGATION",
-    "text": "The employee must disclose the bank's transaction fee as an amount or a rate.",
     "type": "COMPLIANCE"
   },
   {
     "id": "C05",
+    "question": "The employee must not tell the client that past investment performance guarantees future returns.",
     "requirement_type": "PROHIBITION",
-    "text": "The employee must not tell the client that past investment performance guarantees future returns.",
     "type": "COMPLIANCE"
   },
   {
     "id": "C06",
+    "question": "The employee must not encourage the client to overstate their willingness to accept investment losses.",
     "requirement_type": "PROHIBITION",
-    "text": "The employee must not encourage the client to overstate their willingness to accept investment losses.",
     "type": "COMPLIANCE"
   },
   {
     "field": "client_identification_number",
     "id": "K01",
-    "text": "What is the client's NRIC or FIN number?",
+    "question": "What is the client's NRIC or FIN number?",
     "type": "CLIENT_KYC"
   },
   {
     "field": "dob",
     "id": "K02",
-    "text": "What is the client's date of birth?",
+    "question": "What is the client's date of birth?",
     "type": "CLIENT_KYC"
   },
   {
     "field": "transaction_instrument",
     "id": "T01",
-    "text": "Which investment instrument does the client instruct the employee to transact in?",
+    "question": "Which investment instrument does the client instruct the employee to transact in?",
     "type": "TRANSACTION"
   },
   {
     "field": "transaction_currency",
     "id": "T02",
-    "text": "What is the transaction currency specified in the client's instruction for that transaction?",
+    "question": "What is the transaction currency specified in the client's instruction for that transaction?",
     "type": "TRANSACTION"
   }
 ]
