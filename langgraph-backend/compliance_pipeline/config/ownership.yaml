@@ -1,0 +1,7 @@
+# action_type -> owning role. Used by `nodes/decide.py`; the LLM never picks
+# the owner, it only proposes `action_type` + `description`.
+place_order: Operations
+cancel_order: Operations
+send_documents: Advisor
+obtain_information: Advisor
+raise_case: Compliance

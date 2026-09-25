@@ -1,0 +1,57 @@
+# Deterministic escalation rules, evaluated in order by `nodes/decide.py`.
+# `when` conditions supported by decide.py:
+#   red_flag_severity: <low|medium|high>   -> fires if any red flag has this severity
+#   item: <checklist id>, status: <Status or list> -> fires if that item has this status
+#   other_item_status: <Status or list>        -> fires if any Stage 2 item with no
+#                                                 `item` rule of its own has this status (the
+#                                                 red-flag list item is left to the red_flag rules)
+#                                                 (e.g. checks added via a caller checklist)
+# Item rules fire on PARTIAL too: any failed sub-criterion is worth a human
+# look, since every call is reviewed and over-reporting is preferred.
+- id: high_red_flag
+  when: {red_flag_severity: high}
+  escalate: true
+  hold: true
+  reason: "A high-severity red flag was identified during the call."
+
+- id: medium_red_flag
+  when: {red_flag_severity: medium}
+  escalate: true
+  hold: false
+  reason: "A medium-severity red flag was identified during the call."
+
+- id: c04_fail
+  when: {item: C04, status: [FAIL, PARTIAL]}
+  escalate: false
+  hold: true
+  reason: "The product's eligibility for this client was not established or failed."
+
+- id: c01_fail
+  when: {item: C01, status: [FAIL, PARTIAL]}
+  escalate: true
+  hold: false
+  reason: "Caller identity or authority was not fully confirmed."
+
+- id: c03_fail
+  when: {item: C03, status: [FAIL, PARTIAL]}
+  escalate: true
+  hold: true
+  reason: "The order instruction was not fully valid or not confirmed."
+
+- id: c05_fail
+  when: {item: C05, status: [FAIL, PARTIAL]}
+  escalate: true
+  hold: false
+  reason: "One or more required disclosures were not made."
+
+- id: other_item_fail
+  when: {other_item_status: [FAIL, PARTIAL]}
+  escalate: true
+  hold: false
+  reason: "A checklist item without its own escalation rule failed or partially failed."
+
+- id: low_red_flag
+  when: {red_flag_severity: low}
+  escalate: true
+  hold: false
+  reason: "A low-severity red flag was identified during the call."

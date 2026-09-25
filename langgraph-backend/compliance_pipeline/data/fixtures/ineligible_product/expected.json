@@ -1,0 +1,19 @@
+{
+  "description": "Bad call: client explicitly self-identifies as a conservative retail investor, advisor recommends a triple-leveraged commodity note and dismisses the client's own risk concern ('let's not worry too much about that').",
+  "call_intent": "advisory",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["PASS", "PARTIAL"],
+    "C04": ["FAIL", "PARTIAL"],
+    "C05": ["FAIL", "PARTIAL"],
+    "C06": ["PASS", "PARTIAL"],
+    "C07": ["FAIL"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": true,
+  "expected_action_types": ["raise_case"],
+  "expected_red_flag_categories": [],
+  "notes": "The client states outright that they are a retail, conservative investor ('I don't like seeing big swings'), and the advisor recommends a triple-leveraged commodity-linked note -- a clear classification/risk mismatch, so C04's classification_match and risk_match should FAIL. The advisor also brushes off the client's own risk question instead of explaining it, so C05's risks (and arguably costs/losses, never mentioned) should FAIL. C04 or C05 landing on FAIL/PARTIAL fires c04_fail (hold=true) and/or c05_fail (escalate=true) in escalation_rules.yaml, so C07 is FAIL and escalation_required=true, hold_transaction=true. C03 is left ambivalent (PASS/PARTIAL) since the instruction itself is mechanically clear even though it shouldn't have been taken; either way the overall escalation outcome is unchanged because C04/C05 already force it. C06 is similarly left ambivalent in case a reviewer treats the mis-sold leveraged note as a restricted_product flag, but the primary failure mode here is suitability (C04/C05), not a red flag category."
+}

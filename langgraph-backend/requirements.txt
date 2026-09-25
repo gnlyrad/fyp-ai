@@ -1,8 +1,12 @@
 langgraph==1.2.11
 langchain==1.3.18
 langchain-aws>=1.0.0
+# ingest fetches the Transcribe output JSON from S3 (compliance_pipeline/s3.py).
+boto3>=1.34
 pydantic>=2.10
 python-dotenv>=1.0
 langgraph-cli[inmem]==0.4.31
+langchain-google-genai
+pyyaml
 # The MAS regulatory corpus and its FAISS index, imported by knowledge.py.
 -e ../langchain-backend
