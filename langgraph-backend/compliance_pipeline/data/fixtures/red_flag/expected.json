@@ -1,0 +1,19 @@
+{
+  "description": "Bad call: client asks to liquidate $400k and wire it to a third party's (a 'business associate') overseas account, then explicitly asks to split it into four transfers of ~$95k to stay under reporting limits -- textbook structuring/smurfing plus a third-party suspicious instruction. The advisor agrees without pushing back.",
+  "call_intent": "execution_only",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["PASS", "PARTIAL"],
+    "C04": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C05": ["NOT_APPLICABLE", "CANNOT_DETERMINE"],
+    "C06": ["FAIL"],
+    "C07": ["FAIL"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": true,
+  "expected_action_types": ["raise_case"],
+  "expected_red_flag_categories": ["aml", "suspicious_instruction"],
+  "notes": "The client explicitly asks to split a large transfer into amounts designed to stay 'under any reporting limits' -- structuring is a classic AML red flag -- and to send the money to a third party's overseas account rather than the client's own, which is a suspicious instruction. C06's aml and suspicious_instruction sub-criteria (both absence:true) should FAIL once the red flag is raised, giving C06 FAIL with at least one high-severity red flag. Per escalation_rules.yaml, high_red_flag fires escalate=true, hold=true, so C07 is FAIL and escalation_required=true/hold_transaction=true. C03/C04/C05 are left ambivalent: the instruction itself is mechanically clear and confirmed, and no specific product/disclosure discussion applies to a cash liquidation/transfer, so those items shouldn't be the ones driving the failure here -- C06 is."
+}

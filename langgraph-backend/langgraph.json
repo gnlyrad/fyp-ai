@@ -3,8 +3,7 @@
     "."
   ],
   "graphs": {
-    "compliance": "compliance_pipeline.graph:graph",
-    "compliance_v2": "compliance.graph:graph"
+    "compliance": "compliance_pipeline.graph:graph"
   },
   "env": "../.env"
 }
