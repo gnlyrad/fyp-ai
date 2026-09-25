@@ -23,6 +23,20 @@ def test_every_published_call_prepares_direct_graph_input():
         assert all(set(item) == {"id", "question"} for item in value["checklist"])
 
 
+def test_evaluation_family_comes_from_checklist_type_and_never_reaches_the_graph():
+    from fyp_evaluation_loader import evaluation_family_for_question_type
+
+    dataset = load_dataset(DATASET)
+    families = {item["id"]: item["evaluation_family"] for item in dataset["checklist"]}
+    assert families == {**{f"C0{n}": "compliance" for n in range(1, 7)},
+                        "K01": "extraction", "K02": "extraction", "T01": "extraction", "T02": "extraction"}
+    assert [evaluation_family_for_question_type(t) for t in ("COMPLIANCE", "CLIENT_KYC", "TRANSACTION")] == [
+        "compliance", "extraction", "extraction"]
+    with pytest.raises(DatasetError):
+        evaluation_family_for_question_type("OTHER")
+    assert all("evaluation_family" not in item for item in dataset["graph_checklist"])
+
+
 def test_tampered_dataset_is_rejected(tmp_path):
     import shutil
     copied = tmp_path / "pilot"
