@@ -13,13 +13,13 @@ import math
 
 import boto3
 from botocore.config import Config
-from langchain_aws import BedrockEmbeddings
+from .models import create_embeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from .documents import CHUNK_OVERLAP, CHUNK_SIZE, load_pdf_documents
 from .settings import settings
 
-# Below both Cohere v3's 96-text batch limit and S3 Vectors' 500-vector limit.
+# Below both the embedding API's batch limit and S3 Vectors' 500-vector limit.
 BATCH_SIZE = 64
 
 
@@ -60,7 +60,7 @@ def ingest_pdf_corpus(*, dry_run: bool = False) -> dict[str, int | str | bool]:
             "source": chunk.metadata["source"],
             "page": int(chunk.metadata["page"]),  # Keep PyPDFLoader's zero-based pages.
             "chunk_index": position,
-            "embedding_model": settings.bedrock_embedding_model,
+            "embedding_model": settings.embedding_model,
             "text": chunk.page_content,
         }
         key = hashlib.sha256(json.dumps(metadata, sort_keys=True).encode("utf-8")).hexdigest()
@@ -114,17 +114,14 @@ def ingest_pdf_corpus(*, dry_run: bool = False) -> dict[str, int | str | bool]:
         if len(json.dumps(filterable, ensure_ascii=False).encode("utf-8")) > 2 * 1024:
             raise ValueError(f"Filterable PDF metadata exceeds 2 KB: {metadata['source']}")
 
-    embeddings = BedrockEmbeddings(
-        model_id=settings.bedrock_embedding_model,
-        region_name=settings.aws_region,
-    )
+    embeddings = create_embeddings()
     result["index_arn"] = index["indexArn"]
     for offset in range(0, len(records), BATCH_SIZE):
         batch = records[offset:offset + BATCH_SIZE]
-        # embed_documents uses Cohere's search_document input type.
+        # embed_documents uses the retrieval-document task type.
         vectors = embeddings.embed_documents([record["metadata"]["text"] for record in batch])
         if len(vectors) != len(batch):
-            raise ValueError("Bedrock returned a different number of vectors than PDF chunks.")
+            raise ValueError("Gemini returned a different number of vectors than PDF chunks.")
         payload = []
         for record, vector in zip(batch, vectors, strict=True):
             if len(vector) != index["dimension"]:
@@ -134,7 +131,7 @@ def ingest_pdf_corpus(*, dry_run: bool = False) -> dict[str, int | str | bool]:
                 )
             values = [float(value) for value in vector]
             if not all(math.isfinite(value) and abs(value) <= 3.4028234663852886e38 for value in values):
-                raise ValueError("Bedrock returned an invalid float32 embedding.")
+                raise ValueError("Gemini returned an invalid float32 embedding.")
             if index["distanceMetric"] == "cosine" and not any(values):
                 raise ValueError("A cosine index cannot accept an all-zero embedding.")
             payload.append({**record, "data": {"float32": values}})

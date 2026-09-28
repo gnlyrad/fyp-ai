@@ -1,4 +1,4 @@
-"""Offline ingestion tests: real PDF loading, fake Bedrock, validated S3 calls."""
+"""Offline ingestion tests: real PDF loading, fake Gemini, validated S3 calls."""
 from __future__ import annotations
 
 import copy
@@ -57,7 +57,7 @@ class S3IngestionTests(unittest.TestCase):
             s3_ingestion.settings,
             corpus_dir=self.root,
             aws_region="ap-southeast-1",
-            bedrock_embedding_model="cohere.embed-english-v3",
+            embedding_model="gemini-embedding-001",
             s3_vectors_index_arn=INDEX_ARN,
             s3_vectors_bucket_name="",
             s3_vectors_index_name="",
@@ -76,7 +76,7 @@ class S3IngestionTests(unittest.TestCase):
         self.embeddings = Mock()
         self.embeddings.embed_documents.side_effect = lambda texts: [[1.0, 0.5, -0.25] for _ in texts]
         self.embedding_factory = patch.object(
-            s3_ingestion, "BedrockEmbeddings", return_value=self.embeddings
+            s3_ingestion, "create_embeddings", return_value=self.embeddings
         ).start()
 
     def queue_index(self, *, dimension=3, non_filterable=None, destination=None) -> None:

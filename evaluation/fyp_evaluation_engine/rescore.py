@@ -1,4 +1,4 @@
-"""Derive a new run from a saved run's raw graph outputs. Never invokes LangGraph or Bedrock."""
+"""Derive a new run from a saved run's raw graph outputs. Never invokes LangGraph or any model API."""
 from __future__ import annotations
 
 import json

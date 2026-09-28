@@ -1,9 +1,8 @@
 """The regulatory knowledge base, exposed as a tool.
 
 Backed by the FAISS index in `langchain-backend`: five MAS financial-advisory
-notices and guidelines, embedded with Bedrock Titan. This module is the only
-place the two backends touch, so swapping FAISS for OpenSearch Serverless or a
-Bedrock Knowledge Base later means editing `RegulationSearch`, not this graph.
+notices and guidelines, embedded with Gemini. This module is the only
+place the two backends touch, so swapping FAISS for another vector store later means editing `RegulationSearch`, not this graph.
 
 Written as a `@tool` rather than a plain function so it shows up as its own run
 in LangSmith and can be exercised on its own. It is still *called by the graph*,
@@ -47,7 +46,7 @@ def _regulation_search():
 def _cached_search(query: str, k: int) -> tuple[RegulationPassage, ...]:
     """Cached because the checklist is static: `suitability` asks the same thing
     every run, so the corpus answer is the same too. Without this, every run
-    spends one Bedrock embedding call per guided checklist item.
+    spends one Gemini embedding call per guided checklist item.
 
     Returns a tuple because `lru_cache` hands the same object to every caller,
     so it must not be something a caller can mutate.
@@ -80,6 +79,6 @@ def search_regulations(query: str, k: int = GUIDANCE_TOP_K) -> list[RegulationPa
         return list(_cached_search(query, k))
     except Exception:
         # The corpus is an enhancement, not a dependency. A missing index,
-        # absent AWS credentials or a throttled embedding call must leave the
+        # absent Google API credentials or a throttled embedding call must leave the
         # pipeline judging exactly as it did before guidance existed.
         return []

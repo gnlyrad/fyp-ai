@@ -59,6 +59,7 @@ class ChecklistItem(TypedDict, total=False):
     evidence_query_source: str
     classification_status: str
     classification_error: str | None
+    classification_failure: dict[str, Any]
     classification_attempts: int
     # Valid caller metadata skips model classification; invalid entries are retried.
     question_type: QuestionType
@@ -116,7 +117,14 @@ class Finding(TypedDict, total=False):
     checklist_id: str
     question: str
     question_type: QuestionType
-    verdict: Verdict
+    verdict: Verdict | None  # no semantic verdict when execution failed
+    execution_status: Literal["success", "prediction_failure"]
+    failure_category: str | None
+    failure_stage: str | None
+    failure_error_type: str | None
+    failure_error_code: str | None
+    analysis_diagnostics: list[dict[str, Any]]
+    context_mode: Literal["routed", "full_transcript"]
     reason: str
     pass_condition: str
     evidence_status: str
@@ -151,6 +159,8 @@ class AnalyseInput(TypedDict, total=False):
     """
 
     transcript: str
+    context_mode: Literal["routed", "full_transcript"]
+    analysis_max_attempts: int
     results: dict[str, Any]
     audio_segments: list[AudioSegment]
     checklist: list[ChecklistItem]
@@ -161,6 +171,8 @@ class ComplianceState(TypedDict, total=False):
     """State for the top-level graph."""
 
     # --- ingestion ---
+    context_mode: Literal["routed", "full_transcript"]
+    analysis_max_attempts: int
     results: dict[str, Any]  # original Transcribe results, preserved unchanged
     transcript: str  # the text every span offset refers to
     audio_segments: list[AudioSegment]  # raw input, if the caller supplied it
@@ -190,6 +202,8 @@ class AnalysisTask(TypedDict):
     """Payload handed to a single `analysis_node` invocation via `Send`."""
 
     item: ChecklistItem
+    context_mode: Literal["routed", "full_transcript"]
+    analysis_max_attempts: int
     retrieved: list[RetrievedChunk]
     transcript: str
     guidance: list[RegulationPassage]

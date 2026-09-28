@@ -2,7 +2,7 @@
 
 Checks, in order:
   1. the FAISS index exists, and what is in it
-  2. a live query embedding really goes to Bedrock (dimensions + latency)
+  2. a live query embedding really goes to Gemini (dimensions + latency)
   3. retrieval returns real corpus passages with source and page
   4. the same call, traced, lands in LangSmith as a `regulation_search` run
 
@@ -54,9 +54,8 @@ def main() -> None:
     for src, n in collections.Counter(d.metadata.get("source") for d in docs).most_common():
         print(f"           {n:4}  {src}")
 
-    rule("2. EMBEDDING CALL TO BEDROCK")
-    print(f"model    : {settings.bedrock_embedding_model}")
-    print(f"region   : {settings.aws_region}")
+    rule("2. EMBEDDING CALL TO GEMINI")
+    print(f"model    : {settings.embedding_model}")
     started = time.perf_counter()
     vector = search._embeddings.embed_query(QUERY)
     elapsed = time.perf_counter() - started

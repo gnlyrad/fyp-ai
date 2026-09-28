@@ -140,7 +140,8 @@ def align_word_timings(chunk: Chunk, segment: dict, items: list[dict]) -> list[d
 
 def ingestion_node(state: ComplianceState) -> dict[str, Any]:
     """Resolve the request into a transcript, its chunks, and the checklist to run."""
-    update: dict[str, Any] = {}
+    from ..reliability import analysis_options
+    update: dict[str, Any] = analysis_options(state)
     segments = state.get("audio_segments")
     transcript = state.get("transcript") or ""
     if "results" in state:

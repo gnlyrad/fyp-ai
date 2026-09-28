@@ -7,6 +7,7 @@ from typing import Any, Literal
 from langchain.messages import HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
 from ..model import get_model
+from ..reliability import error_details
 from ..state import ComplianceState, QUESTION_TYPES
 
 
@@ -37,7 +38,14 @@ def prohibited_condition(question: str) -> str | None:
 
 def subject_role(question: str) -> str:
     q = question.lower()
-    if re.search(r'\b(rm|advis[oe]r|agent|representative)\b', q):
+    employee = re.search(r'\b(rm|advis[oe]r|agent|representative|employee)\b', q)
+    # A later employee mention can be the recipient, not the actor (e.g.
+    # "Which instrument does the client instruct the employee to transact in?").
+    customer_action = re.search(
+        r'\b(client|customer)\s+(acknowledg\w*|indicat\w*|understand\w*|consent\w*|agree\w*|instruct\w*)\b', q)
+    if customer_action and (employee is None or customer_action.start() < employee.start()):
+        return 'Customer'
+    if employee:
         return 'RM'
     if re.search(r'\b(client|customer)\b.*\b(acknowledge|indicate|understand|consent|agree)', q):
         return 'Customer'
@@ -89,6 +97,8 @@ def classification_node(state: ComplianceState) -> dict[str, Any]:
     items = [dict(item) for item in state['checklist']]
     pending = []
     for item in items:
+        if item.get('subject_role') not in {None, 'RM', 'Customer', 'any'}:
+            raise ValueError('subject_role must be RM, Customer, or any')
         item['subject_role'] = item.get('subject_role') or subject_role(item['question'])
         condition = prohibited_condition(item['question'])
         if condition:
@@ -102,7 +112,7 @@ def classification_node(state: ComplianceState) -> dict[str, Any]:
     for attempt in range(2):
         if not pending:
             break
-        classified, error = {}, None
+        classified, error, failure = {}, None, None
         try:
             answer = get_model().with_structured_output(ChecklistClassification).invoke([
                 SystemMessage(content=CLASSIFICATION_PROMPT),
@@ -115,6 +125,7 @@ def classification_node(state: ComplianceState) -> dict[str, Any]:
                 classified[entry.id] = entry if entry.id not in classified else None
         except Exception as exc:
             error = type(exc).__name__
+            failure, _ = error_details(exc)
         retry = []
         for item in pending:
             item['classification_attempts'] = attempt + 1
@@ -123,6 +134,7 @@ def classification_node(state: ComplianceState) -> dict[str, Any]:
                 item.update(question_type=entry.question_type, assessment=entry.assessment,
                             pass_condition=entry.pass_condition.strip(), type_rationale=entry.rationale)
                 item.pop('classification_error', None)
+                item.pop('classification_failure', None)
                 if not valid_query(item.get('evidence_query', '')) and valid_query(entry.evidence_query):
                     item['evidence_query'] = entry.evidence_query.strip()
                     item['evidence_query_source'] = 'classifier'
@@ -130,11 +142,18 @@ def classification_node(state: ComplianceState) -> dict[str, Any]:
                 item['classification_error'] = error or (
                     'Return an explicit, question-specific compliant action or outcome; '
                     'the item is missing, duplicated, or its pass condition is generic.')
+                if failure:
+                    item['classification_failure'] = {**failure, 'stage': 'classification'}
+                else:
+                    item.pop('classification_failure', None)
                 retry.append(item)
         pending = retry
+        # Repeating an authentication/access failure cannot repair classification.
+        if failure and failure['error_code'] and not failure['retryable']:
+            break
     for item in pending:
         item.update(question_type='exhaustive', assessment='quality', pass_condition='',
-                    type_rationale='Classification unresolved after two attempts; review required.')
+                    type_rationale='Classification unresolved; review required.')
     for item in items:
         item['classification_status'] = 'needs_review' if item in pending else 'validated'
         if not valid_query(item.get('evidence_query', '')):

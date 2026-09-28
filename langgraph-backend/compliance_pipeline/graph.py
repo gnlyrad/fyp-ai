@@ -49,6 +49,8 @@ def fan_out_to_analysis(state: ComplianceState) -> list[Send]:
             "chunks": state["chunks"],
             "applicability": state.get("applicability", {}).get(item["id"], {}),
             "retrieval_diagnostics": state.get("retrieval_diagnostics", {}).get(item["id"], {}),
+            "context_mode": state["context_mode"],
+            "analysis_max_attempts": state["analysis_max_attempts"],
         })
         for item in state["checklist"]
     ]

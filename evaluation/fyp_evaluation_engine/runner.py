@@ -48,7 +48,7 @@ def _git_metadata() -> dict[str, Any]:
 
 def _package_versions() -> dict[str, str]:
     versions = {}
-    for package in ("langgraph", "langchain", "langchain-aws", "pydantic"):
+    for package in ("langgraph", "langchain", "langchain-google-genai", "pydantic"):
         try:
             versions[package] = importlib.metadata.version(package)
         except importlib.metadata.PackageNotFoundError:
@@ -58,10 +58,10 @@ def _package_versions() -> dict[str, str]:
 
 def _model_configuration() -> dict[str, Any]:
     return {
-        "chat_model_id": os.getenv("CLEARCALL_MODEL_ID", "apac.amazon.nova-lite-v1:0"),
-        "embedding_model_id": os.getenv("BEDROCK_EMBEDDING_MODEL", "cohere.embed-english-v3"),
-        "aws_region": os.getenv("AWS_REGION", "ap-southeast-1"),
-        "temperature": 0,
+        "model_provider": "google_genai",
+        "chat_model_id": os.getenv("CLEARCALL_MODEL_ID", "gemini-3.5-flash"),
+        "embedding_model_id": os.getenv("GOOGLE_EMBEDDING_MODEL", "gemini-embedding-001"),
+        "temperature": float(os.getenv("CLEARCALL_TEMPERATURE", "1")),
         "retrieval_top_k": int(os.getenv("CLEARCALL_TOP_K", "3")),
         "deterministic_top_k": int(os.getenv("CLEARCALL_DETERMINISTIC_TOP_K", "5")),
         "minimum_relevance": float(os.getenv("CLEARCALL_MIN_RELEVANCE", "0.25")),
@@ -114,6 +114,8 @@ def run_evaluation(
     run_id: str | None = None,
     graph_invoke: Callable[[dict[str, Any]], Any] | None = None,
     progress: Callable[[str], None] | None = None,
+    context_mode: str | None = None,
+    analysis_max_attempts: int | None = None,
 ) -> dict[str, Any]:
     """Execute, normalize, score, and persist one immutable evaluation run."""
     dataset = load_dataset(dataset_dir)
@@ -125,6 +127,15 @@ def run_evaluation(
         raise ValueError("Select one or more unique call IDs")
 
     invoke = graph_invoke or load_real_graph_invoke()
+    # Resolve after graph import, which loads the configured environment file.
+    mode = context_mode if context_mode is not None else os.getenv("CLEARCALL_CONTEXT_MODE", "routed")
+    attempts = (analysis_max_attempts if analysis_max_attempts is not None
+                else os.getenv("CLEARCALL_ANALYSIS_MAX_ATTEMPTS", "3"))
+    if mode not in {"routed", "full_transcript"}:
+        raise ValueError("context_mode must be routed or full_transcript")
+    if isinstance(attempts, bool) or str(attempts) not in {"1", "2", "3", "4", "5"}:
+        raise ValueError("analysis_max_attempts must be an integer from 1 to 5")
+    analysis_configuration = {"context_mode": mode, "analysis_max_attempts": int(attempts)}
     identifier = run_id or _new_run_id()
     if not identifier or any(character not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_" for character in identifier):
         raise ValueError("run_id may contain only letters, numbers, hyphens, and underscores")
@@ -150,6 +161,7 @@ def run_evaluation(
                 progress(f"{call_id}: invoking graph")
             documents = call_documents(dataset, call_id)
             graph_input = graph_input_for_call(dataset, call_id)
+            graph_input.update(analysis_configuration)
             call_started = time.perf_counter()
             output = None
             call_error = None
@@ -222,6 +234,7 @@ def run_evaluation(
         "graph_worktree_dirty": git["dirty"],
         "model_configuration": _model_configuration(),
         "execution_configuration": {
+            **analysis_configuration,
             "graph": "compliance_pipeline.graph:graph",
             "graph_invocations_per_call": 1,
             "applicability_bypassed": True,

@@ -7,6 +7,30 @@ CHECKLIST = [
 ]
 
 
+def test_explicit_null_verdict_failure_preserves_stage_diagnostics():
+    diagnostics = [{"stage": "evidence_audit", "attempts": 3, "status": "prediction_failure"}]
+    findings = [{"checklist_id": item["id"], "verdict": None,
+                 "execution_status": "prediction_failure", "failure_category": "analysis_unavailable",
+                 "evidence_status": "analysis_unavailable", "failure_stage": "evidence_audit",
+                 "failure_error_type": "ClientError", "failure_error_code": "ThrottlingException",
+                 "analysis_diagnostics": diagnostics, "spans": []} for item in CHECKLIST]
+    predictions, errors = normalize_call_output("CALL_001", CHECKLIST, {1}, _output(findings), 1.0)
+    assert all(p["execution_status"] == "prediction_failure" for p in predictions)
+    assert all(p["failure_category"] == "analysis_unavailable" for p in predictions)
+    assert all(p["native_verdict"] is None and p["predicted_verdict"] is None for p in predictions)
+    assert predictions[0]["graph_metadata"]["finding"]["analysis_diagnostics"] == diagnostics
+    assert errors[0]["details"]["failure_stage"] == "evidence_audit"
+    assert errors[0]["details"]["failure_error_code"] == "ThrottlingException"
+
+
+def test_applicability_service_failure_is_not_an_abstention():
+    findings = [{"checklist_id": item["id"], "verdict": None,
+                 "execution_status": "prediction_failure", "evidence_status": "applicability_unavailable",
+                 "spans": []} for item in CHECKLIST]
+    predictions, _ = normalize_call_output("CALL_001", CHECKLIST, {1}, _output(findings), 1.0)
+    assert all(p["failure_category"] == "applicability_unavailable" for p in predictions)
+
+
 def _output(findings, chunks=None):
     return {
         "chunks": chunks or [],

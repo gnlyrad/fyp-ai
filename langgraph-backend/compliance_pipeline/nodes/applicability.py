@@ -53,6 +53,7 @@ def applicability_node(state):
     context = build_context(state["chunks"])
     entries = {}
     error = None
+    execution_failed = False
     if len(context) > MAX_REVIEW_CHARS:
         error = "Full-call applicability review exceeds configured size limit."
     else:
@@ -64,6 +65,7 @@ def applicability_node(state):
             ])
             entries = {entry.id: entry for entry in review.items}
         except Exception as exc:
+            execution_failed = True
             error = f"Applicability review unavailable: {type(exc).__name__}."
     decisions = {}
     for item in state["checklist"]:
@@ -72,6 +74,7 @@ def applicability_node(state):
                                           if q.strip() and q in state["transcript"]]
         status = entry.status if entry and quotes and entry.reason.strip() else "uncertain"
         decisions[item["id"]] = {
+            "execution_status": "prediction_failure" if execution_failed else "success",
             "status": status,
             "reason": entry.reason if entry and status != "uncertain" else (
                 error or (entry.reason if entry and entry.status == "uncertain"

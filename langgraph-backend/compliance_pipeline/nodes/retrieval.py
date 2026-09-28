@@ -9,11 +9,11 @@ a top-k selection is the wrong answer for some questions:
   exhaustive    - the whole transcript, in order; "every occurrence" cannot be
                   answered from three chunks
 
-Scoring is cosine similarity over Bedrock embeddings (the same
-`BEDROCK_EMBEDDING_MODEL` used for the regulatory corpus in
+Scoring is cosine similarity over Gemini embeddings (the same
+`GOOGLE_EMBEDDING_MODEL` used for the regulatory corpus in
 `langchain-backend/settings.py`), not lexical overlap — a paraphrase ("no rush"
 for "urgency", "assured" for "guaranteed") has to be caught by meaning, not by
-shared substrings. If Bedrock is unreachable for a run, retrieval falls back to
+shared substrings. If Gemini is unreachable for a run, retrieval falls back to
 a lexical bag-of-words scorer so the pipeline still produces verdicts rather
 than erroring out.
 """
@@ -24,7 +24,7 @@ import re
 from collections import Counter
 from typing import Any, Iterable
 
-from langchain_aws import BedrockEmbeddings
+from langchain_backend.models import create_embeddings
 
 from ..state import (
     DEFAULT_QUESTION_TYPE,
@@ -48,17 +48,14 @@ MIN_RELEVANCE = float(os.getenv("CLEARCALL_MIN_RELEVANCE", "0.25"))
 # the judgement questions that only need the single best passage.
 DETERMINISTIC_TOP_K = int(os.getenv("CLEARCALL_DETERMINISTIC_TOP_K", "5"))
 
-EMBEDDING_MODEL = os.getenv("BEDROCK_EMBEDDING_MODEL", "cohere.embed-english-v3")
-AWS_REGION = os.getenv("AWS_REGION", "ap-southeast-1")
-
 _embeddings = None
 
 
-def embedding_client() -> BedrockEmbeddings:
-    """The shared Bedrock embeddings client, built on first use."""
+def embedding_client():
+    """The shared Gemini embeddings client, built on first use."""
     global _embeddings
     if _embeddings is None:
-        _embeddings = BedrockEmbeddings(model_id=EMBEDDING_MODEL, region_name=AWS_REGION)
+        _embeddings = create_embeddings()
     return _embeddings
 
 
@@ -123,7 +120,7 @@ def retrieve(
 
     `chunk_vectors` is `None` exactly when embedding this run's chunks already
     failed once (see `retrieval_node`), in which case this falls back to lexical
-    matching instead of making — and likely re-failing — another Bedrock call.
+    matching instead of making — and likely re-failing — another Gemini call.
     """
     if chunk_vectors is None:
         if diagnostics is not None:
@@ -238,9 +235,9 @@ RETRIEVERS = {
 def embed_chunks(chunks: list[Chunk]) -> list[list[float]] | None:
     """Embed every transcript chunk once, shared by every checklist item's query.
 
-    `None` means embedding failed for this run (no AWS credentials, Bedrock
+    `None` means embedding failed for this run (no Google API credentials, Gemini
     throttled, etc.) — callers fall back to lexical retrieval rather than
-    attempting, and likely re-failing, one Bedrock call per checklist item.
+    attempting, and likely re-failing, one Gemini call per checklist item.
     """
     if not chunks:
         return []
@@ -259,9 +256,11 @@ def retrieval_node(state: ComplianceState) -> dict[str, Any]:
     reusing the vectors is a large saving over one embedding call per item.
     """
     chunks = state["chunks"]
+    full_context = state.get("context_mode", "routed") == "full_transcript"
     active = [item for item in state["checklist"]
               if state.get("applicability", {}).get(item["id"], {}).get("status", "applicable") == "applicable"]
-    chunk_vectors = embed_chunks(chunks) if any(i.get("question_type") != "exhaustive" for i in active) else None
+    chunk_vectors = embed_chunks(chunks) if not full_context and any(
+        i.get("question_type") != "exhaustive" for i in active) else None
     evidence = {}
     diagnostics = {}
     for item in state["checklist"]:
@@ -272,8 +271,8 @@ def retrieval_node(state: ComplianceState) -> dict[str, Any]:
             evidence[item["id"]] = []
             detail.update(selected_chunk_ids=[], coverage="not_reviewed")
             continue
-        retriever = RETRIEVERS.get(item.get("question_type") or DEFAULT_QUESTION_TYPE,
-                                   retrieve_targeted)
+        retriever = retrieve_exhaustive if full_context else RETRIEVERS.get(
+            item.get("question_type") or DEFAULT_QUESTION_TYPE, retrieve_targeted)
         evidence[item["id"]] = retriever(item, chunks, chunk_vectors, diagnostics=detail)
         detail["selected_chunk_ids"] = [c["chunk_id"] for c in evidence[item["id"]]]
         detail["coverage"] = "full_transcript" if len(evidence[item["id"]]) == len(chunks) else "selected_chunks"

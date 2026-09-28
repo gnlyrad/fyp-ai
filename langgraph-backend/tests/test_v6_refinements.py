@@ -65,7 +65,7 @@ class V6RefinementTests(unittest.TestCase):
                 self.assertEqual(result['evidence_query'], 'disclose fees')
                 self.assertEqual(result['evidence_query_source'], 'question_fallback')
 
-    def test_model_failure_is_bounded_and_applicable_finding_is_unclear(self):
+    def test_model_failure_is_bounded_and_reported_as_prediction_failure(self):
         model = Mock()
         model.with_structured_output.return_value.invoke.side_effect = RuntimeError('offline')
         task = task_for()
@@ -75,7 +75,8 @@ class V6RefinementTests(unittest.TestCase):
         self.assertEqual(model.with_structured_output.return_value.invoke.call_count, 2)
         finding = analysis._run_analysis(task)['findings'][0]
         self.assertEqual(finding['evidence_status'], 'classification_unavailable')
-        self.assertEqual(finding['verdict'], 'Unclear')
+        self.assertIsNone(finding['verdict'])
+        self.assertEqual(finding['execution_status'], 'prediction_failure')
 
     def test_unknown_roles_warn_without_blocking_na_but_block_applicable(self):
         task = task_for()

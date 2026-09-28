@@ -1,42 +1,45 @@
 # LangChain Backend
 
-This folder is a starter RAG backend for answering questions over a PDF corpus using AWS.
+This folder is a starter RAG backend for answering questions over a PDF corpus using Gemini.
 
 ## What it does
 
 - Loads PDFs from a dedicated corpus folder.
 - Splits them into retrieval-sized chunks.
-- Embeds the chunks with Amazon Bedrock embeddings.
+- Embeds the chunks with Gemini embeddings.
 - Stores the chunks in a local FAISS index by default.
 - Can explicitly ingest the PDF corpus into S3 Vectors; retrieval still uses FAISS.
-- Uses an Amazon Bedrock chat model to answer questions from retrieved context.
+- Uses an Gemini chat model to answer questions from retrieved context.
 
-## How it maps to the AWS diagram
+## Retrieval flow
 
 ```mermaid
 flowchart LR
   PDFs[PDF corpus folder] --> Load[PDF loading]
   Load --> Chunk[Chunking]
-  Chunk --> Embed[Bedrock embeddings]
+  Chunk --> Embed[Gemini embeddings]
   Embed --> Store[(FAISS now / OpenSearch Serverless later)]
   Ask[User question] --> QEmbed[Question embedding]
   QEmbed --> Search[Semantic search]
   Search --> Store
   Store --> Context[Retrieved code context]
-  Context --> Bedrock[Bedrock LLM]
-  Bedrock --> Answer[Grounded answer + sources]
+  Context --> Gemini[Gemini LLM]
+  Gemini --> Answer[Grounded answer + sources]
 ```
 
-## Default AWS choices
+## Gemini configuration
 
-- Model: `apac.amazon.nova-lite-v1:0`
-- Embeddings: `cohere.embed-english-v3` (Titan is not offered in `ap-southeast-1`)
-- Region: `ap-southeast-1`
+Set `GOOGLE_API_KEY` in the repository-root `fyp-ai/.env`.
 
-This default pairing is configured for Singapore. The AWS account behind
-`AWS_BEARER_TOKEN_BEDROCK` must be permitted to invoke Cohere Embed English in
-`ap-southeast-1`. To use a different region or embedding model, set
-`AWS_REGION` and `BEDROCK_EMBEDDING_MODEL` in `.env`.
+- Chat: `gemini-3.5-flash` (`CLEARCALL_MODEL_ID`).
+- Embeddings: `gemini-embedding-001` (`GOOGLE_EMBEDDING_MODEL`), 3072 dimensions.
+- Temperature: 1 (`CLEARCALL_TEMPERATURE`).
+- Authentication: Gemini Developer API key, with Vertex AI disabled.
+
+Local FAISS indexes live under `.index/google-<model hash>/faiss`.
+The first retrieval builds the selected model's index from the PDF corpus.
+Changing embedding models creates a separate index; existing Bedrock vectors
+are not reused or overwritten. Normal chat and retrieval require no AWS credentials.
 
 ## Endpoints
 
@@ -54,7 +57,7 @@ Put your PDFs in [corpus/](corpus/) under this folder. The ingestion step reads 
 
 1. Create a virtual environment.
 2. Install dependencies from `requirements.txt`.
-3. Set AWS credentials and region in your shell or `.env` file.
+3. Set `GOOGLE_API_KEY` in `fyp-ai/.env`.
 4. Run the app with `python -m langchain_backend.main`.
 
 ## S3 Vectors ingestion only
@@ -63,7 +66,7 @@ Only PDFs inside the configured corpus folder (including nested folders) are
 loaded. Checklist Python/JSON files, transcripts, and files outside the corpus
 are not ingested. Linked files resolving outside the corpus are skipped.
 The PDF text is split into 1,200-character chunks with 200-character overlap,
-embedded with Bedrock, and uploaded with text, relative source filename,
+embedded with Gemini, and uploaded with text, relative source filename,
 zero-based page, embedding model, and corpus version metadata.
 
 This is an explicit upload path. `/ask` and LangGraph guidance still query local
@@ -77,37 +80,37 @@ From `langchain-backend`, using the environment where dependencies are installed
 python -m langchain_backend.s3_ingestion --dry-run
 ```
 
-This does not construct AWS clients or invoke Bedrock. The response reports
+This does not construct AWS clients or invoke Gemini. The response reports
 `pdf_files`, `documents` (PDF pages, preserving the existing API meaning),
 `chunks`, `corpus_version`, and `vectors_uploaded: 0`. PDFs without extractable
 text require OCR before they can contribute chunks.
 
 ### Create the AWS destination once
 
-Use an AWS CLI/profile with credentials for your account. A Bedrock API key
-(`AWS_BEARER_TOKEN_BEDROCK`) alone cannot authenticate S3 Vectors requests.
+This optional storage-only path still needs an AWS CLI/profile. Your Google
+API key authenticates embeddings; it does not authenticate S3 Vectors requests.
 The following example creates a dedicated vector bucket and an index compatible
-with the default `cohere.embed-english-v3` model. Substitute your own names:
+with the default `gemini-embedding-001` model. Substitute your own names:
 
 ```powershell
 aws s3vectors create-vector-bucket --vector-bucket-name clearcall-mas-corpus --region ap-southeast-1
-aws s3vectors create-index --vector-bucket-name clearcall-mas-corpus --index-name mas-cohere-v3 --data-type float32 --dimension 1024 --distance-metric cosine --metadata-configuration nonFilterableMetadataKeys=text --region ap-southeast-1
+aws s3vectors create-index --vector-bucket-name clearcall-mas-corpus --index-name mas-gemini-001 --data-type float32 --dimension 3072 --distance-metric cosine --metadata-configuration nonFilterableMetadataKeys=text --region ap-southeast-1
 ```
 
-Add the destination to `langchain-backend/.env`:
+Add the destination to the repository-root `fyp-ai/.env`:
 
 ```dotenv
 AWS_REGION=ap-southeast-1
-BEDROCK_EMBEDDING_MODEL=cohere.embed-english-v3
+GOOGLE_EMBEDDING_MODEL=gemini-embedding-001
 S3_VECTORS_BUCKET_NAME=clearcall-mas-corpus
-S3_VECTORS_INDEX_NAME=mas-cohere-v3
+S3_VECTORS_INDEX_NAME=mas-gemini-001
 ```
 
 Alternatively set `S3_VECTORS_INDEX_ARN` instead of the bucket/index pair; the ARN
 takes precedence. Use an index in `AWS_REGION`. Provide standard AWS credentials
 through an AWS profile, environment variables, or the application's IAM role.
 The ingestion identity needs `s3vectors:GetIndex` and `s3vectors:PutVectors` on
-the destination index, plus `bedrock:InvokeModel` for embeddings. Provisioning
+the destination index, plus a Google API key for embeddings. Provisioning
 also needs `s3vectors:CreateVectorBucket` and `s3vectors:CreateIndex`. If you use a
 customer-managed KMS key, its policy and permissions must allow the operation.
 

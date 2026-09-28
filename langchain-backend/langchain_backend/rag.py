@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from langchain.chat_models import init_chat_model
+from .models import create_chat_model
 from langchain_core.messages import HumanMessage
 from langsmith import traceable
 
@@ -19,12 +19,7 @@ class RagResult:
 class CodeRAGService:
     def __init__(self) -> None:
         self._search = RegulationSearch()
-        self._llm = init_chat_model(
-            settings.bedrock_chat_model,
-            model_provider="bedrock_converse",
-            region_name=settings.aws_region,
-            temperature=0,
-        )
+        self._llm = create_chat_model()
 
     def ingest(self, *, target: str = "faiss", dry_run: bool = False) -> dict[str, int | str | bool]:
         return self._search.ingest(target=target, dry_run=dry_run)

@@ -43,15 +43,45 @@ From `fyp-ai/`, evaluate the full snapshot:
 python -B evaluation/scripts/run_evaluation.py --all
 ```
 
+Compare transcript selection while keeping the same model, question types,
+prompts, guidance and retry budget:
+
+```powershell
+python -B evaluation/scripts/run_evaluation.py --all --context-mode routed --max-attempts 3
+python -B evaluation/scripts/run_evaluation.py --all --context-mode full_transcript --max-attempts 3
+```
+
+Use `--max-attempts 1` to disable application-level judge/audit retries in either
+condition. This does not revert the other workflow repairs, disable SDK retries,
+or change classification's existing retry policy. Omitted options use
+`CLEARCALL_CONTEXT_MODE` (default `routed`) and `CLEARCALL_ANALYSIS_MAX_ATTEMPTS`
+(default `3`). Both resolved values are saved under `execution_configuration`
+in `metadata.json`; each run remains immutable. These flags are applied to graph
+input, without modifying the published dataset or sending gold metadata.
+
+A faithful live run requires the complete backend dependencies, a valid Google API key, and working regulatory retrieval. Full-transcript mode skips only
+transcript embeddings; guidance retrieval remains enabled as before. Compare
+failure rate and decision coverage alongside accuracy, breach outcomes, evidence
+quality and latency. A lower Unclear count alone is not proof of improvement.
+
 Run one or more selected calls:
 
 ```powershell
 python -B evaluation/scripts/run_evaluation.py --call CALL_001 --call CALL_005
 ```
 
-The real graph uses the configured Bedrock models. AWS credentials, network
-access, and the LangGraph backend dependencies must therefore be available.
+The real graph uses Gemini chat and embeddings. Set `GOOGLE_API_KEY` in
+`fyp-ai/.env` and install the LangGraph backend dependencies. Network access
+is required. Defaults: `gemini-3.5-flash`, `gemini-embedding-001`, temperature 1.
+The regulatory FAISS index is namespaced by embedding model; its first query
+builds a new Gemini index without overwriting the old Bedrock index.
 Graph errors are persisted and do not become model abstentions.
+
+Classification failures also preserve the provider error type and code in each
+affected finding. Known permanent provider errors (for example,
+Google HTTP `401`, `403` or `404`) stop classification
+retries immediately; they require a credential/access fix, not prompt tuning.
+Raw provider exception messages are not copied into classification findings.
 
 ## Evaluation families
 
@@ -66,10 +96,20 @@ Three dimensions are kept apart and never merged into one enum:
 
 - `execution_status`: `success` or `prediction_failure`. `failure_category` says why
   (`analysis_unavailable`, `missing_prediction`, ...).
-- `native_verdict`: the raw graph value (`Pass`/`Fail`/`Unclear`/`N/A`). Diagnostic only.
+- `native_verdict`: the raw graph value (`Pass`/`Fail`/`Unclear`/`N/A`, or null for
+  an operational failure in the repaired graph). Diagnostic only.
   A native `Unclear` is a compliance abstention only when execution succeeded; after a
   failure it is a fallback; for extraction it is ordinary output.
 - The family-specific result below.
+
+New graph failures have a null verdict and explicit `execution_status` and
+`failure_category`. The adapter recognizes these before validating the verdict,
+and continues recognizing historical `Unclear / analysis_unavailable` fallbacks.
+Judge/audit `analysis_diagnostics`, failure stage, error type and provider error
+code are retained under `graph_metadata.finding` in predictions and in failure
+details in `errors.jsonl`. A null native verdict is grouped under `MISSING` in
+the existing raw-verdict diagnostic histogram; consult execution status to
+distinguish an explicit failed finding from a missing finding.
 
 ### Compliance
 
@@ -151,10 +191,10 @@ state does not expose them.
 `artifact_schema_version`, `scorer_version`, `metric_definitions_version`, the dataset
 fingerprint and the graph commit.
 
-### Rescoring without Bedrock
+### Rescoring without model calls
 
 `raw/<call_id>.json` holds each call's graph output, so scoring can be redone
-deterministically into a NEW run without LangGraph or Bedrock. The source run is only
+deterministically into a NEW run without LangGraph or Gemini. The source run is only
 read, and the dataset fingerprint must match:
 
 ```powershell
@@ -194,7 +234,7 @@ text from here. It is a shared metric reference, not a prediction or score file.
 ## Tests
 
 Tests use synthetic fixtures and injected graph functions. They do not call
-Bedrock:
+Gemini:
 
 ```powershell
 python -m pytest evaluation/tests -q

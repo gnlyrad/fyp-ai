@@ -8,14 +8,22 @@ from ..state import QUESTION_TYPES, ComplianceState, Finding
 
 
 def verdict_counts(findings: list[Finding]) -> dict[str, int]:
-    counts = Counter(f["verdict"] for f in findings)
+    failed = [f for f in findings if prediction_failed(f)]
+    counts = Counter(f["verdict"] for f in findings if not prediction_failed(f))
     return {
         "total": len(findings),
         "pass": counts.get("Pass", 0),
         "fail": counts.get("Fail", 0),
         "unclear": counts.get("Unclear", 0),
         "not_applicable": counts.get("N/A", 0),
+        "prediction_failure": len(failed),
     }
+
+
+def prediction_failed(finding):
+    # Recognize persisted legacy findings as well as the explicit new contract.
+    return finding.get("execution_status") == "prediction_failure" or finding.get("evidence_status") in {
+        "analysis_unavailable", "classification_unavailable", "applicability_unavailable"}
 
 
 def output_node(state: ComplianceState) -> dict[str, Any]:
@@ -25,7 +33,6 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
     order = {item["id"]: index for index, item in enumerate(checklist)}
 
     findings = sorted(state["findings"], key=lambda f: order.get(f["checklist_id"], 999))
-    counts = Counter(f["verdict"] for f in findings)
     # Per-type breakdown: a run that is all-Pass on presence checks but Unclear on
     # every judgement question is a different situation from one that is evenly
     # good, and the headline counts hide that.
@@ -42,7 +49,7 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
     labels = Counter(s["label"] for s in spans)
     consistency = state.get("consistency", {"status": "not_checked", "conflicts": []})
     review_reasons = []
-    if any(f.get("requires_review", f["verdict"] in {"Fail", "Unclear"}) for f in findings):
+    if any(prediction_failed(f) or f.get("requires_review", f["verdict"] in {"Fail", "Unclear"}) for f in findings):
         review_reasons.append("One or more findings need review.")
     if consistency["status"] not in {"checked", "not_applicable"}:
         review_reasons.append("Cross-call consistency is unresolved or conflicting.")
@@ -61,11 +68,7 @@ def output_node(state: ComplianceState) -> dict[str, Any]:
     return {
         "report": {
             "summary": {
-                "total": len(findings),
-                "pass": counts.get("Pass", 0),
-                "fail": counts.get("Fail", 0),
-                "unclear": counts.get("Unclear", 0),
-                "not_applicable": counts.get("N/A", 0),
+                **verdict_counts(findings),
                 "compliant_spans": labels.get("compliant", 0),
                 "violation_spans": labels.get("violation", 0),
                 "context_spans": labels.get("context", 0),
