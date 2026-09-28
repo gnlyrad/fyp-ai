@@ -1,0 +1,19 @@
+{
+  "description": "Bad call: the caller is not the account holder (Peter Lau) but his wife Linda, calling on his behalf. No identity verification (no DOB/account digits) is performed on Linda, and her authority to instruct on Peter's account is never actually confirmed -- she just asserts 'we share everything so it should be fine'. The advisor proceeds anyway and moves $80k out to an external account.",
+  "call_intent": "execution_only",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["FAIL", "PARTIAL"],
+    "C03": ["PASS", "PARTIAL"],
+    "C04": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C05": ["NOT_APPLICABLE", "CANNOT_DETERMINE"],
+    "C06": ["PASS", "PARTIAL"],
+    "C07": ["PARTIAL", "FAIL"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": true,
+  "expected_action_types": ["raise_case"],
+  "expected_red_flag_categories": [],
+  "notes": "No identity check (no DOB/account digits) is ever performed on Linda, and no actual mandate/power-of-attorney is confirmed -- she simply asserts shared access. C01's identity_verified and verification_method sub-criteria have no evidence to cite (FAIL), and authority_confirmed similarly FAILs since nothing on the call actually confirms Linda is authorized on Peter's account, only her own claim. Per escalation_rules.yaml, c01_fail fires escalate=true, hold=false, so C07's no_escalation sub-criterion FAILs while no_hold PASSes, giving C07 PARTIAL (mixed) with escalation_required=true, hold_transaction=false. The instruction itself (move $80k to a joint account elsewhere) is mechanically clear and 'confirmed' by the caller, so C03 is left ambivalent (PASS/PARTIAL) -- the failure here is about who is instructing, not what they asked for. C06 is left ambivalent too, since a reviewer might independently flag this as a suspicious_instruction (unauthorized third party moving funds to an account not the client's own), but the primary, intended failure mode for this fixture is C01."
+}

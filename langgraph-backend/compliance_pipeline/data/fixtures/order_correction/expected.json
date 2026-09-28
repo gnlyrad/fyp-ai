@@ -1,0 +1,19 @@
+{
+  "description": "Client-initiated bond top-up where the amount is corrected mid-call ($50k -> $75k); the correction is explicitly acknowledged and the corrected instruction is read back and confirmed.",
+  "call_intent": "execution_only",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["PASS"],
+    "C04": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C05": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C06": ["PASS"],
+    "C07": ["PASS"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": false,
+  "expected_action_types": ["place_order"],
+  "expected_red_flag_categories": [],
+  "notes": "The client corrects the amount ($50k -> $75k); the advisor explicitly catches and re-confirms it ('so to confirm the correction, you'd like seventy five thousand...'), then reads the full final instruction back and gets an explicit yes -- C03's corrections_handled and confirmed sub-criteria should both PASS, giving C03 PASS overall. This is a simple client-initiated bond purchase with no classification/risk/cost discussion, so C04/C05 land on CANNOT_DETERMINE the same way as execution_only_order. Single action: place the (corrected) order."
+}

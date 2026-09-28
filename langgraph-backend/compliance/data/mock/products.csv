@@ -1,7 +1,0 @@
-product_id,product_name,risk_rating,allowed_client_types,allowed_jurisdictions,complexity_flag
-PD001,Singapore Government Bond 2030,low,"retail,accredited_investor,institutional","SG,MY,JP",false
-PD002,Global Equity Growth Fund,moderate,"retail,accredited_investor,institutional","SG,MY",false
-PD003,Structured Note Autocallable USD,high,"accredited_investor,institutional",SG,true
-PD004,Emerging Markets Corporate Bond Fund,moderate,"accredited_investor,institutional","SG,MY,JP",false
-PD005,Leveraged FX Accumulator,high,institutional,SG,true
-PD006,Money Market Fund SGD,low,"retail,accredited_investor,institutional","SG,MY,JP",false

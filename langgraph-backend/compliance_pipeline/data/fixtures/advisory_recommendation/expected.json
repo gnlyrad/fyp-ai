@@ -1,0 +1,19 @@
+{
+  "description": "Clean advisory call: structured note recommended after reconfirming investor classification and risk profile, full risk/cost/lock-up/conflict-of-interest disclosure, client confirms understanding, order confirmed via readback.",
+  "call_intent": "advisory",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["PASS"],
+    "C04": ["PASS", "CANNOT_DETERMINE"],
+    "C05": ["PASS"],
+    "C06": ["PASS"],
+    "C07": ["PASS"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": false,
+  "expected_action_types": ["place_order", "send_documents"],
+  "expected_red_flag_categories": [],
+  "notes": "This is the 'good' advisory call the other fixtures are contrasted against. C04: classification (accredited investor) and risk profile (moderate growth) are both explicitly reconfirmed before the recommendation, and the advisor takes extra care for a complex product (explains barrier, potential loss of principal, lock-up) -- PASS is the expected outcome, with CANNOT_DETERMINE allowed only if a strict reviewer thinks a leveraged-loss note vs 'moderate growth' profile isn't clearly enough justified from the call alone. C05: risks, costs, restrictions (lock-up), potential losses, the conflict of interest (UBS-issued note, structuring margin), and client understanding are all explicitly covered -- PASS. Order (invest $200k) is read back and explicitly confirmed -- C03 PASS. Actions: place the order and send documentation for signature."
+}

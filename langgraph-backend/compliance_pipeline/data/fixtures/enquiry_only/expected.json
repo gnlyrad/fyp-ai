@@ -1,0 +1,19 @@
+{
+  "description": "Clean enquiry-only call: client asks about fund performance and fees, no order given. Identity verified with DOB and last-4 account digits; advisor offers to send a factsheet.",
+  "call_intent": "enquiry",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["NOT_APPLICABLE", "CANNOT_DETERMINE"],
+    "C04": ["NOT_APPLICABLE", "CANNOT_DETERMINE"],
+    "C05": ["NOT_APPLICABLE", "CANNOT_DETERMINE"],
+    "C06": ["PASS"],
+    "C07": ["PASS"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": false,
+  "expected_action_types": ["send_documents"],
+  "expected_red_flag_categories": [],
+  "notes": "No order or advice is given, so C03/C04/C05 should be gated out or CANNOT_DETERMINE (gate.py is not wired in, so these still run and must land on one of those two). C01: identity is verified with specific DOB + last-4 details, but authority is never asked separately from identity -- since the caller self-identifies as the account holder, a reviewer may treat that as sufficient (PASS) or, since authority was never explicitly and separately confirmed, mark it CANNOT_DETERMINE (authority_confirmed has warn_if_unconfirmed:true, so this is an expected, tolerated outcome, not a failure). No red flags; the only action is sending the factsheet the advisor promised."
+}
