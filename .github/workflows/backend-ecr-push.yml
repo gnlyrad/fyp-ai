@@ -1,0 +1,64 @@
+name: Push Backend Image to ECR
+
+on:
+  push:
+    branches:
+      - main
+      - langgraph-backend
+    paths:
+      - 'langchain-backend/**'
+      - 'langgraph-backend/**'
+      - 'Dockerfile'
+      - 'docker-entrypoint.sh'
+      - '.github/workflows/backend-ecr-push.yml'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.BACKEND_ECR_PUSH_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push image
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: ${{ vars.BACKEND_ECR_REPOSITORY_NAME }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build \
+            -t "$REGISTRY/$REPOSITORY:$IMAGE_TAG" \
+            -t "$REGISTRY/$REPOSITORY:latest" \
+            .
+          docker push "$REGISTRY/$REPOSITORY:$IMAGE_TAG"
+          docker push "$REGISTRY/$REPOSITORY:latest"
+
+      # The ECS task definition points at ":latest", so forcing a new deployment is enough
+      # to roll onto the image just pushed. Skipped until the ECS vars are set.
+      - name: Force new ECS deployment
+        if: ${{ vars.ECS_CLUSTER_NAME != '' && vars.ECS_SERVICE_NAME != '' }}
+        run: |
+          aws ecs update-service \
+            --cluster "${{ vars.ECS_CLUSTER_NAME }}" \
+            --service "${{ vars.ECS_SERVICE_NAME }}" \
+            --force-new-deployment \
+            --region "${{ vars.AWS_REGION }}"
+          aws ecs wait services-stable \
+            --cluster "${{ vars.ECS_CLUSTER_NAME }}" \
+            --services "${{ vars.ECS_SERVICE_NAME }}" \
+            --region "${{ vars.AWS_REGION }}"
