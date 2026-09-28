@@ -18,7 +18,7 @@ Postgres writer is a stub, not yet implemented). It is registered as the
 
 ```powershell
 docker build -t clearcall-backend .
-$envPath = (Resolve-Path ".\langgraph-backend\.env").Path
+$envPath = (Resolve-Path ".\.env").Path
 docker run --rm --name clearcall-backend -p 2024:2024 -p 8001:8001 --env-file "$envPath" --mount "type=bind,source=$envPath,target=/app/.env,readonly" clearcall-backend
 ```
 
