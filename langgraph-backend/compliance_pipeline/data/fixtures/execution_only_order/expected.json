@@ -1,0 +1,19 @@
+{
+  "description": "Clean execution-only sell order (Singtel shares). Identity verified, advisor explicitly flags no advice/no suitability check, order read back and explicitly confirmed.",
+  "call_intent": "execution_only",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["PASS"],
+    "C04": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C05": ["CANNOT_DETERMINE"],
+    "C06": ["PASS"],
+    "C07": ["PASS"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": false,
+  "expected_action_types": ["place_order"],
+  "expected_red_flag_categories": [],
+  "notes": "Instruction (sell all 2000 Singtel shares at market) is complete, unambiguous, read back verbatim, and explicitly confirmed -- C03 PASS. This is a plain execution-only equity trade the client initiated on their own; no classification or risk profile is discussed on the call, so C04's classification_match/risk_match sub-criteria have nothing to confirm (CANNOT_DETERMINE, which is the intended, tolerated outcome for those warn_if_unconfirmed sub-criteria -- not a failure). C05 similarly gets a generic risk statement (\"risks are entirely for your own account\") but no costs/restrictions/losses discussion, so it lands on CANNOT_DETERMINE via rollup_status rather than PASS or FAIL. Nothing here should ever resolve to FAIL/PARTIAL, so escalation stays false. Single action: place the sell order."
+}

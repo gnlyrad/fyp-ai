@@ -15,6 +15,7 @@ from fyp_evaluation_loader import call_documents, graph_input_for_call, load_dat
 
 from . import ARTIFACT_SCHEMA_VERSION, METRIC_DEFINITIONS_VERSION, SCORER_VERSION
 from .adapter import normalize_call_output
+from .current_pipeline import prepare_input, adapt_output
 from .persistence import to_jsonable, write_run_artifacts
 from .scoring import aggregate_scores, score_prediction
 
@@ -34,7 +35,7 @@ def _git_metadata() -> dict[str, Any]:
     def command(*args: str) -> str | None:
         try:
             result = subprocess.run(
-                ["git", *args], cwd=REPOSITORY_ROOT, check=True,
+                ["git", "-c", f"safe.directory={REPOSITORY_ROOT.as_posix()}", *args], cwd=REPOSITORY_ROOT, check=True,
                 stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True,
             )
             return result.stdout.strip()
@@ -59,9 +60,11 @@ def _package_versions() -> dict[str, str]:
 def _model_configuration() -> dict[str, Any]:
     return {
         "model_provider": "google_genai",
-        "chat_model_id": os.getenv("CLEARCALL_MODEL_ID", "gemini-3.5-flash"),
+        "chat_model_id": os.getenv("COMPLIANCE_MODEL_ID") or os.getenv("CLEARCALL_MODEL_ID", "gemini-3.5-flash"),
         "embedding_model_id": os.getenv("GOOGLE_EMBEDDING_MODEL", "gemini-embedding-001"),
         "temperature": float(os.getenv("CLEARCALL_TEMPERATURE", "1")),
+        "structured_method": os.getenv("COMPLIANCE_STRUCTURED_METHOD", "function_calling"),
+        "sampling_seed": os.getenv("COMPLIANCE_LLM_SEED", "42"),
         "retrieval_top_k": int(os.getenv("CLEARCALL_TOP_K", "3")),
         "deterministic_top_k": int(os.getenv("CLEARCALL_DETERMINISTIC_TOP_K", "5")),
         "minimum_relevance": float(os.getenv("CLEARCALL_MIN_RELEVANCE", "0.25")),
@@ -76,7 +79,11 @@ def load_real_graph_invoke() -> Callable[[dict[str, Any]], dict[str, Any]]:
     if str(backend) not in sys.path:
         sys.path.insert(0, str(backend))
     from compliance_pipeline.graph import graph  # noqa: PLC0415
-    return graph.invoke
+    def invoke(value):
+        if value.get("context_mode") != "full_transcript":
+            raise ValueError("The staged pipeline supports full_transcript only")
+        return graph.invoke(prepare_input(value))
+    return invoke
 
 
 def normalize_and_score_call(
@@ -89,9 +96,15 @@ def normalize_and_score_call(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     """Normalize one call's graph output and score it. Shared by live runs and rescoring."""
     transcript_turn_ids = {segment["id"] for segment in documents["transcript"]["audio_segments"]}
+    native = isinstance(output, dict) and "final_results" in output
+    graph_errors = list(output.get("errors", [])) if native else []
+    if native:
+        output = adapt_output(output, documents["transcript"])
     predictions, errors = normalize_call_output(
         call_id, checklist, transcript_turn_ids, output, latency_ms, call_error
     )
+    errors.extend({"category": "pipeline_diagnostic", "call_id": call_id,
+                   "question_id": None, "message": message} for message in graph_errors)
     gold_by_id = {check["question_id"]: check for check in documents["ground_truth"]["checks"]}
     scores = [score_prediction(prediction, gold_by_id[prediction["question_id"]]) for prediction in predictions]
     return predictions, errors, scores
@@ -128,13 +141,15 @@ def run_evaluation(
 
     invoke = graph_invoke or load_real_graph_invoke()
     # Resolve after graph import, which loads the configured environment file.
-    mode = context_mode if context_mode is not None else os.getenv("CLEARCALL_CONTEXT_MODE", "routed")
+    mode = context_mode if context_mode is not None else os.getenv("CLEARCALL_CONTEXT_MODE", "full_transcript")
     attempts = (analysis_max_attempts if analysis_max_attempts is not None
                 else os.getenv("CLEARCALL_ANALYSIS_MAX_ATTEMPTS", "3"))
     if mode not in {"routed", "full_transcript"}:
         raise ValueError("context_mode must be routed or full_transcript")
     if isinstance(attempts, bool) or str(attempts) not in {"1", "2", "3", "4", "5"}:
         raise ValueError("analysis_max_attempts must be an integer from 1 to 5")
+    if graph_invoke is None and mode != "full_transcript":
+        raise ValueError("The staged pipeline supports full_transcript only")
     analysis_configuration = {"context_mode": mode, "analysis_max_attempts": int(attempts)}
     identifier = run_id or _new_run_id()
     if not identifier or any(character not in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_" for character in identifier):
@@ -153,8 +168,8 @@ def run_evaluation(
     observed_runtime_metadata: dict[str, dict[str, Any]] = {}
     checklist = dataset["checklist"]
 
-    prior_bypass = os.environ.get("CLEARCALL_SKIP_APPLICABILITY")
-    os.environ["CLEARCALL_SKIP_APPLICABILITY"] = "true"
+    prior_attempts = os.environ.get("COMPLIANCE_LLM_MAX_ATTEMPTS")
+    os.environ["COMPLIANCE_LLM_MAX_ATTEMPTS"] = str(attempts)
     try:
         for call_id in selected:
             if progress:
@@ -162,6 +177,7 @@ def run_evaluation(
             documents = call_documents(dataset, call_id)
             graph_input = graph_input_for_call(dataset, call_id)
             graph_input.update(analysis_configuration)
+            graph_input["call_id"] = call_id
             call_started = time.perf_counter()
             output = None
             call_error = None
@@ -204,10 +220,10 @@ def run_evaluation(
             if progress:
                 progress(f"{call_id}: {'completed' if call_error is None else 'failed'} in {latency_ms:.3f} ms")
     finally:
-        if prior_bypass is None:
-            os.environ.pop("CLEARCALL_SKIP_APPLICABILITY", None)
+        if prior_attempts is None:
+            os.environ.pop("COMPLIANCE_LLM_MAX_ATTEMPTS", None)
         else:
-            os.environ["CLEARCALL_SKIP_APPLICABILITY"] = prior_bypass
+            os.environ["COMPLIANCE_LLM_MAX_ATTEMPTS"] = prior_attempts
 
     summary = aggregate_scores(scores)
     completed_at = _utc_now()
@@ -238,7 +254,9 @@ def run_evaluation(
             "graph": "compliance_pipeline.graph:graph",
             "graph_invocations_per_call": 1,
             "applicability_bypassed": True,
-            "applicability_environment": "CLEARCALL_SKIP_APPLICABILITY=true",
+            "applicability_environment": "all stage-2 items run; gate is not wired",
+            "pipeline_format": "staged-v1" if graph_invoke is None else "injected",
+            "llm_max_attempts": int(attempts),
             "selected_call_ids": selected,
         },
         "scorer_version": SCORER_VERSION,

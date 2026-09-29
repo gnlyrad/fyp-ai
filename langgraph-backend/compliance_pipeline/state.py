@@ -1,212 +1,104 @@
-"""Graph state for the compliance pipeline.
+"""Graph state (CLAUDE.md "State" section), plus the input/output schemas.
 
-`findings` and `spans` use `operator.add` so that the fanned-out analysis nodes
-can each return a one-element list and have LangGraph concatenate them, rather
-than the last writer overwriting the rest.
+Deviations from CLAUDE.md, documented per the plan:
+- `verified_results` / `verified_red_flags`: `item_results` and `red_flags` are
+  `operator.add` reducers (parallel `check_item` branches append to them), so
+  `verify` cannot edit them in place. It writes replacements to these two
+  plain-overwrite keys instead; `aggregate` prefers a verified entry over the
+  matching `item_results`/`red_flags` entry for the same id.
+- `final_results`: `aggregate` cannot write back to `item_results` (it is an
+  add-reducer, so a write would append rather than replace). It writes the
+  deduplicated, gap-filled list to `final_results` instead, and `output` reads
+  from there. `final_red_flags` is the same for red flags (verified list when
+  `verify` ran, else the raw `red_flags`).
+- `summary`, `speaker_roles`, `dual_channel`: bookkeeping the plan
+  calls for but CLAUDE.md's `ComplianceState` listing predates.
+- `item_results` (CLAUDE.md calls it `results`): the caller's request uses
+  `results` for the raw AWS Transcribe object, so the `operator.add`
+  `ItemResult` accumulator is named `item_results` to avoid a channel clash.
+- No `orders`/`product_context`: the pipeline does not extract structured
+  entities. Product facts are inferred from the transcript itself, judged
+  against MAS rules from RAG.
+- No `client_context`/`restricted_context`/`client_id`: there is no
+  context_lookup stage; every check works from the transcript and RAG rules.
 """
 from __future__ import annotations
 
 import operator
-from typing import Annotated, Any, Literal, TypedDict
+from typing import Annotated, Any, TypedDict
 
-Verdict = Literal["Pass", "Fail", "Unclear", "N/A"]
-SpanLabel = Literal["compliant", "violation", "context"]
-
-# How a checklist question has to be answered, which decides both how much of the
-# transcript retrieval hands over and which analysis node judges it.
-#   deterministic - disclosure/action check, with full-call review before omission
-#   exhaustive    - every occurrence matters, so the whole transcript is needed
-#   targeted      - one specific passage, found by retrieval (the default)
-QuestionType = Literal["deterministic", "exhaustive", "targeted"]
-QUESTION_TYPES: tuple[QuestionType, ...] = ("deterministic", "exhaustive", "targeted")
-DEFAULT_QUESTION_TYPE: QuestionType = "targeted"
+from compliance_pipeline.schemas import Action, ItemResult, RedFlag
 
 
-class Chunk(TypedDict, total=False):
-    chunk_id: str
-    text: str
-    # Offsets into the transcript. Always present.
-    start_char: int
-    end_char: int
-    # Present only when the chunk came from a diarized turn (AWS Transcribe
-    # `audio_segments`) rather than sentence-splitting a plain string.
-    start_seconds: float
-    end_seconds: float
-    speaker_label: str  # e.g. "spk_0", as Transcribe assigned it
-    speaker_role: str  # only supplied by the caller, never inferred from speaker order
-    speaker_role_source: str
-    word_timings: list[dict[str, Any]]
-    source_segment_id: int
+class CheckItemTask(TypedDict, total=False):
+    """The `Send` payload from `gate` to one `check_item` branch."""
 
-
-class AudioSegment(TypedDict, total=False):
-    """One diarized turn, as AWS Transcribe's `results.audio_segments` shapes it."""
-
-    transcript: str
-    start_time: str
-    end_time: str
-    speaker_label: str
-
-
-class RetrievedChunk(Chunk, total=False):
-    score: float
-
-
-class ChecklistItem(TypedDict, total=False):
-    id: str
-    question: str
-    evidence_query: str
-    evidence_query_source: str
-    classification_status: str
-    classification_error: str | None
-    classification_failure: dict[str, Any]
-    classification_attempts: int
-    # Valid caller metadata skips model classification; invalid entries are retried.
-    question_type: QuestionType
-    type_rationale: str  # one line, so the routing decision stays auditable
-    pass_condition: str
-    assessment: Literal["presence", "prohibition", "quality"]
-    subject_role: Literal["RM", "Customer", "any"]
-
-
-class RegulationPassage(TypedDict, total=False):
-    """An extract from the MAS corpus, carrying enough to cite it.
-
-    This is the *standard* a checklist item is judged against, never evidence of
-    what happened on the call. It can therefore never become a `Span`.
-    """
-
-    text: str
-    source: str  # pdf filename, relative to the corpus folder
-    page: int  # 1-based, as printed
-    score: float
-
-
-class Span(TypedDict, total=False):
-    """A verbatim substring of the transcript, located by character offset.
-
-    `quote_verified` confirms source text only. `label` and `evidence_relation`
-    come from a separate relevance review; they are never forced by the verdict.
-    """
-
-    text: str
-    start: int
-    end: int
-    label: SpanLabel
-    model_label: SpanLabel | None
-    label_corrected: bool
-    checklist_id: str
-    chunk_id: str | None
-    # The raw speaker id (e.g. "spk_0") the source chunk carried, for a caller
-    # that wants to display evidence by speaker. Absent for a plain-text
-    # transcript (not diarized turns).
-    speaker_label: str | None
-    # The source chunk's real timing, carried through for a caller that wants to
-    # seek audio playback to this passage. Absent for a plain-text transcript.
-    start_seconds: float | None
-    end_seconds: float | None
-    speaker_role: str | None
-    speaker_role_source: str | None
-    timing_precision: Literal["word", "segment", "unavailable"]
-    quote_verified: bool
-    evidence_relation: str
-    relevance_reason: str
-
-
-class Finding(TypedDict, total=False):
-    checklist_id: str
-    question: str
-    question_type: QuestionType
-    verdict: Verdict | None  # no semantic verdict when execution failed
-    execution_status: Literal["success", "prediction_failure"]
-    failure_category: str | None
-    failure_stage: str | None
-    failure_error_type: str | None
-    failure_error_code: str | None
-    analysis_diagnostics: list[dict[str, Any]]
-    context_mode: Literal["routed", "full_transcript"]
-    reason: str
-    pass_condition: str
-    evidence_status: str
-    analysis_coverage: str
-    applicability_coverage: str
-    classification_status: str
-    classification_error: str | None
-    reviewed_chunk_ids: list[str]
-    applicability: dict[str, Any]
-    retrieval_diagnostics: dict[str, Any]
-    requires_review: bool
-    spans: list[Span]
-    # Convenience view of the first verified span.
-    evidence_quote: str | None
-    chunk_id: str | None
-    retrieved_evidence: list[RetrievedChunk]
-    # The regulatory extracts this judgement was made under. Empty for question
-    # types that are not given guidance, and when the corpus is unreachable.
-    regulatory_basis: list[RegulationPassage]
-
-
-class AnalyseInput(TypedDict, total=False):
-    """The public API body — what `POST /runs/wait` accepts as `input`.
-
-    Supply `results` (the complete AWS Transcribe results object),
-    `audio_segments` (diarized, timestamped turns), or a plain `transcript`.
-    Precedence is results > audio_segments > transcript. Within results,
-    audio_segments take priority over transcripts. Raw results are preserved
-    in the returned state, including items and speaker_labels.
-    `checklist` runs against whichever is supplied; omitting it falls back to
-    the built-in one.
-    """
-
-    transcript: str
-    context_mode: Literal["routed", "full_transcript"]
-    analysis_max_attempts: int
-    results: dict[str, Any]
-    audio_segments: list[AudioSegment]
-    checklist: list[ChecklistItem]
-    speaker_roles: dict[str, Literal["RM", "Customer"]]
+    item_id: str
+    checklist_item: dict | None  # the item's config (ChecklistItem dump) for this run
+    call_id: str
+    segments: list[dict]
+    call_intent: dict | None
+    quality_flags: list[str]
 
 
 class ComplianceState(TypedDict, total=False):
-    """State for the top-level graph."""
+    call_id: str
+    s3_url: str  # S3 location of the Transcribe output JSON; ingest fetches it
+    raw_transcript: dict
+    results: dict  # AWS Transcribe `results` object (preferred over raw_transcript)
+    checklist: list[dict]  # this run's checklist (ChecklistItem dumps), resolved by ingest
+    transcript: str  # formatted transcript, one line per turn
+    segments: list[dict]  # {id, speaker, turn, start, end, text, role, confidence, word_count}
+    quality_flags: list[str]
+    call_intent: dict | None  # {category, confidence, evidence, reached, reasoning}
+    applicable_items: list[str]
+    item_results: Annotated[list[ItemResult], operator.add]
+    red_flags: Annotated[list[RedFlag], operator.add]
+    actions: list[Action]
+    escalation: dict | None  # {required, reasons, hold_transaction}
+    errors: Annotated[list[str], operator.add]
 
-    # --- ingestion ---
-    context_mode: Literal["routed", "full_transcript"]
-    analysis_max_attempts: int
-    results: dict[str, Any]  # original Transcribe results, preserved unchanged
-    transcript: str  # the text every span offset refers to
-    audio_segments: list[AudioSegment]  # raw input, if the caller supplied it
-    chunks: list[Chunk]
-    checklist: list[ChecklistItem]
-    speaker_roles: dict[str, Literal["RM", "Customer"]]
-    input_warnings: list[str]
-    applicability: dict[str, dict[str, Any]]
-    consistency: dict[str, Any]
-
-    # --- guidance ---
-    guidance: dict[str, list[RegulationPassage]]  # checklist_id -> regulatory extracts
-
-    # --- retrieval ---
-    evidence: dict[str, list[RetrievedChunk]]  # checklist_id -> retrieved chunks
-    retrieval_diagnostics: dict[str, dict[str, Any]]
-
-    # --- analysis (fan-out; concatenated, not overwritten) ---
-    findings: Annotated[list[Finding], operator.add]
-    spans: Annotated[list[Span], operator.add]
-
-    # --- output ---
-    report: dict[str, Any]
+    # Deviations from CLAUDE.md's ComplianceState, see module docstring.
+    verified_results: list[ItemResult]
+    verified_red_flags: list[RedFlag]
+    final_red_flags: list[RedFlag]
+    final_results: list[ItemResult]
+    summary: dict
+    speaker_roles: dict | None
+    dual_channel: bool
 
 
-class AnalysisTask(TypedDict):
-    """Payload handed to a single `analysis_node` invocation via `Send`."""
+class InputState(TypedDict, total=False):
+    """What callers pass in to invoke the graph.
 
-    item: ChecklistItem
-    context_mode: Literal["routed", "full_transcript"]
-    analysis_max_attempts: int
-    retrieved: list[RetrievedChunk]
+    `s3_url` (where the AWS Transcribe output JSON lives: `s3://bucket/key`,
+    an S3 HTTPS URL, or a presigned URL) is the normal input; `ingest`
+    fetches the file itself. It takes precedence over `results` (the AWS
+    Transcribe `results` object, as in the caller request's
+    `input["results"]`), which takes precedence over `raw_transcript` (a
+    full Transcribe job JSON, or its `results` object).
+    """
+
+    s3_url: str  # S3 location of the Transcribe output JSON; takes precedence
+    raw_transcript: dict  # AWS Transcribe job JSON, or its "results" object
+    results: dict  # AWS Transcribe `results` object; takes precedence
+    checklist: list[dict]  # optional; replaces the default Stage 2 checks (see config.resolve_checklist)
+    call_id: str
+    speaker_roles: dict
+
+
+class OutputState(TypedDict, total=False):
+    """What the graph returns."""
+
+    call_id: str
     transcript: str
-    guidance: list[RegulationPassage]
-    chunks: list[Chunk]
-    applicability: dict[str, Any]
-    retrieval_diagnostics: dict[str, Any]
+    segments: list[dict]
+    quality_flags: list[str]
+    call_intent: dict | None
+    checklist: list[dict]  # the checklist this run used
+    final_red_flags: list[RedFlag]
+    actions: list[Action]
+    escalation: dict | None
+    summary: dict
+    final_results: list[ItemResult]
+    errors: list[str]

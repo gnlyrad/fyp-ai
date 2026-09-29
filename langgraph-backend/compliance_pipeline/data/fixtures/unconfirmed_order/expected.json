@@ -1,0 +1,19 @@
+{
+  "description": "Bad call: the advisor treats a hesitant, unconfirmed musing ('maybe put like a hundred thousand into it, I'm not fully sure yet') as an instruction and says he'll process it, without ever reading back the order or getting an explicit yes.",
+  "call_intent": "execution_only",
+  "items": {
+    "C02": ["PASS"],
+    "C01": ["PASS", "CANNOT_DETERMINE"],
+    "C03": ["FAIL", "PARTIAL"],
+    "C04": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C05": ["CANNOT_DETERMINE", "NOT_APPLICABLE"],
+    "C06": ["PASS"],
+    "C07": ["FAIL"],
+    "C08": ["PASS"],
+    "C09": ["PASS"]
+  },
+  "escalation_required": true,
+  "expected_action_types": ["raise_case"],
+  "expected_red_flag_categories": [],
+  "notes": "The client never gives a clear, confirmed instruction -- 'I'm not fully sure yet but let's see' is explicitly hedged, and the advisor never reads the order back or asks for explicit confirmation before saying he'll process it. C03's confirmed sub-criterion should FAIL (no explicit confirmation exists to cite), and unambiguous is doubtful too, so C03 is FAIL or PARTIAL, never a clean PASS. Per escalation_rules.yaml, c03_fail fires on C03 FAIL/PARTIAL with escalate=true, hold=true, so C07 (no_escalation, no_hold) should be FAIL and escalation_required=true/hold_transaction=true. decide.py adds a raise_case action when escalation is required even if the actions LLM doesn't propose one itself."
+}

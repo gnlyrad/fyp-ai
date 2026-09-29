@@ -267,7 +267,7 @@ def normalize_call_output(
         finding_metadata = {
             key: finding.get(key)
             for key in (
-                "question_type", "reason", "pass_condition", "evidence_status",
+                "native_status", "question_type", "reason", "pass_condition", "evidence_status",
                 "analysis_coverage", "applicability_coverage", "classification_status",
                 "classification_error", "requires_review", "applicability",
                 "retrieval_diagnostics",

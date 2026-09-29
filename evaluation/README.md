@@ -24,10 +24,11 @@ The graph receives the existing adapter output:
 ```
 
 Ground truth and evaluation-only checklist metadata never enter the graph.
-Applicability is deliberately bypassed for this evaluation by setting
-`CLEARCALL_SKIP_APPLICABILITY=true` only during graph execution. All questions
-are treated as applicable; an `N/A` output is normalized to
-`NOT_APPLICABLE` and reported as unexpected.
+The live adapter prefixes checklist IDs with `eval_` so pilot questions cannot
+inherit production checklist semantics (production C02 is call intent). All pilot
+questions run as Stage 2 checks; the current graph does not wire its applicability
+gate. Its computed Stage 1/3 results are retained in raw output but not scored as
+pilot questions. An N/A prediction remains an unexpected outcome.
 
 Validate the published dataset without invoking the graph:
 
@@ -43,26 +44,19 @@ From `fyp-ai/`, evaluate the full snapshot:
 python -B evaluation/scripts/run_evaluation.py --all
 ```
 
-Compare transcript selection while keeping the same model, question types,
-prompts, guidance and retry budget:
+The staged graph uses the full transcript:
 
 ```powershell
-python -B evaluation/scripts/run_evaluation.py --all --context-mode routed --max-attempts 3
 python -B evaluation/scripts/run_evaluation.py --all --context-mode full_transcript --max-attempts 3
 ```
 
-Use `--max-attempts 1` to disable application-level judge/audit retries in either
-condition. This does not revert the other workflow repairs, disable SDK retries,
-or change classification's existing retry policy. Omitted options use
-`CLEARCALL_CONTEXT_MODE` (default `routed`) and `CLEARCALL_ANALYSIS_MAX_ATTEMPTS`
-(default `3`). Both resolved values are saved under `execution_configuration`
-in `metadata.json`; each run remains immutable. These flags are applied to graph
-input, without modifying the published dataset or sending gold metadata.
+`--max-attempts` caps each LLM stage's total application attempts (default 3;
+1 disables application retries). SDK retries are disabled. The old routed mode
+is rejected for live runs. The resolved options and pipeline format are recorded
+in `metadata.json`. The published dataset remains unchanged.
 
-A faithful live run requires the complete backend dependencies, a valid Google API key, and working regulatory retrieval. Full-transcript mode skips only
-transcript embeddings; guidance retrieval remains enabled as before. Compare
-failure rate and decision coverage alongside accuracy, breach outcomes, evidence
-quality and latency. A lower Unclear count alone is not proof of improvement.
+A live run needs a valid Gemini key, backend dependencies, and working regulatory
+retrieval. Check execution errors and evidence quality alongside accuracy.
 
 Run one or more selected calls:
 
@@ -77,11 +71,18 @@ The regulatory FAISS index is namespaced by embedding model; its first query
 builds a new Gemini index without overwriting the old Bedrock index.
 Graph errors are persisted and do not become model abstentions.
 
-Classification failures also preserve the provider error type and code in each
-affected finding. Known permanent provider errors (for example,
-Google HTTP `401`, `403` or `404`) stop classification
-retries immediately; they require a credential/access fix, not prompt tuning.
-Raw provider exception messages are not copied into classification findings.
+The staged adapter maps PASS/FAIL/CANNOT_DETERMINE/NOT_APPLICABLE to the
+legacy scorer vocabulary; PARTIAL maps to Fail. The original status is retained
+in `graph_metadata.finding.native_status`. Evidence character offsets are mapped
+back to published turn IDs only when ingested text and speaker sequences match.
+References that cannot be mapped are recorded as invalid, not silently discarded.
+Saved legacy runs can still be rescored through the original adapter.
+
+Known permanent Gemini errors (401/403/404) stop retries immediately. Failed or
+incomplete checks and failed verification are prediction failures, not semantic
+abstentions. Other graph diagnostics appear in `errors.jsonl` and make the run
+`completed_with_errors`. Historical results from the previous architecture are
+not validation of the merged pipeline; run a fresh evaluation for that comparison.
 
 ## Evaluation families
 
@@ -102,7 +103,7 @@ Three dimensions are kept apart and never merged into one enum:
   failure it is a fallback; for extraction it is ordinary output.
 - The family-specific result below.
 
-New graph failures have a null verdict and explicit `execution_status` and
+Legacy repaired graph failures have a null verdict and explicit `execution_status` and
 `failure_category`. The adapter recognizes these before validating the verdict,
 and continues recognizing historical `Unclear / analysis_unavailable` fallbacks.
 Judge/audit `analysis_diagnostics`, failure stage, error type and provider error

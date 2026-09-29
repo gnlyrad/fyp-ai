@@ -15,10 +15,12 @@ def _api_key() -> str:
     return key.strip()
 
 
-def create_chat_model():
+def create_chat_model(model_id=None, **options):
+    configuration = dict(temperature=settings.temperature, timeout=60, max_retries=0)
+    configuration.update(options)
     return ChatGoogleGenerativeAI(
-        model=settings.chat_model, api_key=_api_key(), vertexai=False,
-        temperature=settings.temperature, timeout=60, max_retries=0,
+        model=model_id or settings.chat_model, api_key=_api_key(), vertexai=False,
+        **configuration,
     )
 
 

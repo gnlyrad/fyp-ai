@@ -7,7 +7,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # `settings` below is a module-level singleton, so it is constructed the moment
-# anything imports this module — which happens well before an entry point gets a
+# anything imports this module â€” which happens well before an entry point gets a
 # chance to call `load_dotenv` itself. Loading here is what makes the `.env`
 # values actually reach `Settings` rather than silently losing to the defaults.
 load_dotenv(Path(__file__).resolve().parents[2] / ".env")
@@ -37,7 +37,10 @@ class Settings:
         # Different models inhabit different vector spaces, even at equal dimensions.
         model_hash = hashlib.sha256(self.embedding_model.encode()).hexdigest()[:12]
         self.index_dir = self.index_dir / f"google-{model_hash}"
-        # Ingestion destination only; query retrieval continues to use FAISS.
+        self.regulation_search_backend = os.getenv("REGULATION_SEARCH_BACKEND", "faiss").strip().lower()
+        if self.regulation_search_backend not in {"faiss", "s3vectors"}:
+            raise ValueError("REGULATION_SEARCH_BACKEND must be faiss or s3vectors.")
+        self.s3_vectors_corpus_version = os.getenv("S3_VECTORS_CORPUS_VERSION", "").strip()
         self.s3_vectors_index_arn = os.getenv("S3_VECTORS_INDEX_ARN", "").strip()
         self.s3_vectors_bucket_name = os.getenv("S3_VECTORS_BUCKET_NAME", "").strip()
         self.s3_vectors_index_name = os.getenv("S3_VECTORS_INDEX_NAME", "").strip()

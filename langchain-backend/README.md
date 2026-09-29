@@ -8,8 +8,8 @@ This folder is a starter RAG backend for answering questions over a PDF corpus u
 - Splits them into retrieval-sized chunks.
 - Embeds the chunks with Gemini embeddings.
 - Stores the chunks in a local FAISS index by default.
-- Can explicitly ingest the PDF corpus into S3 Vectors; retrieval still uses FAISS.
-- Uses an Gemini chat model to answer questions from retrieved context.
+- Can ingest and search the PDF corpus in S3 Vectors when explicitly configured.
+- Uses a Gemini chat model to answer questions from retrieved context.
 
 ## Retrieval flow
 
@@ -18,7 +18,7 @@ flowchart LR
   PDFs[PDF corpus folder] --> Load[PDF loading]
   Load --> Chunk[Chunking]
   Chunk --> Embed[Gemini embeddings]
-  Embed --> Store[(FAISS now / OpenSearch Serverless later)]
+  Embed --> Store[(FAISS or S3 Vectors)]
   Ask[User question] --> QEmbed[Question embedding]
   QEmbed --> Search[Semantic search]
   Search --> Store
@@ -60,7 +60,7 @@ Put your PDFs in [corpus/](corpus/) under this folder. The ingestion step reads 
 3. Set `GOOGLE_API_KEY` in `fyp-ai/.env`.
 4. Run the app with `python -m langchain_backend.main`.
 
-## S3 Vectors ingestion only
+## Optional S3 Vectors
 
 Only PDFs inside the configured corpus folder (including nested folders) are
 loaded. Checklist Python/JSON files, transcripts, and files outside the corpus
@@ -69,8 +69,8 @@ The PDF text is split into 1,200-character chunks with 200-character overlap,
 embedded with Gemini, and uploaded with text, relative source filename,
 zero-based page, embedding model, and corpus version metadata.
 
-This is an explicit upload path. `/ask` and LangGraph guidance still query local
-FAISS. Their automatic local index creation does not trigger an S3 upload.
+This is an explicit upload path. `/ask` and LangGraph rule lookup use the
+configured FAISS or S3 Vectors backend. Their automatic local index creation does not trigger an S3 upload.
 
 ### Preview without an AWS bucket
 
@@ -87,7 +87,7 @@ text require OCR before they can contribute chunks.
 
 ### Create the AWS destination once
 
-This optional storage-only path still needs an AWS CLI/profile. Your Google
+This optional S3 path still needs an AWS CLI/profile. Your Google
 API key authenticates embeddings; it does not authenticate S3 Vectors requests.
 The following example creates a dedicated vector bucket and an index compatible
 with the default `gemini-embedding-001` model. Substitute your own names:
@@ -138,10 +138,9 @@ regenerates embeddings, so retrying incurs embedding charges.
 
 Ingestion is versioned and does not delete old vectors. Revised PDFs produce a
 new `corpus_version` and new keys. For a replacement corpus, use a fresh index,
-or have future S3 retrieval filter by the version returned by a **successful**
+or configure S3 retrieval to filter by the version returned by a **successful**
 ingestion. Do not query an incomplete version after a failed run. This change
-does not provision resources, upload the original PDF binaries, or implement S3
-query retrieval.
+does not provision resources or upload the original PDF binaries.
 
 ### Offline verification
 
@@ -151,3 +150,5 @@ python -m unittest discover -s tests -v
 
 Tests load real PDF fixtures and validate S3 request shapes using Botocore's
 Stubber, with mocked embeddings. No AWS access or charges are required.
+
+For S3 retrieval configuration and validation, see [S3_VECTORS_TESTING.md](S3_VECTORS_TESTING.md). Set `REGULATION_SEARCH_BACKEND=s3vectors` and select a successfully ingested `S3_VECTORS_CORPUS_VERSION`. `POST /search` returns passages and citations without a chat call.

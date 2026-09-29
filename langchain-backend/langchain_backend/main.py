@@ -7,11 +7,14 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
 from .rag import CodeRAGService
+from .retrieval import RegulationSearch
+from .settings import settings
 
 load_dotenv(find_dotenv())
 
 app = FastAPI(title="LangChain Code RAG Backend", version="0.1.0")
 service = CodeRAGService()
+search_service = RegulationSearch()
 
 
 class AskRequest(BaseModel):
@@ -53,6 +56,14 @@ def ingest(
 def ask(request: AskRequest) -> AskResponse:
     result = service.answer(request.question, top_k=request.top_k)
     return AskResponse(answer=result.answer, sources=result.sources)
+
+
+@app.post("/search")
+def search(request: AskRequest) -> dict:
+    """Exercise the same retriever used by guidance, without generating an answer."""
+    documents = search_service.search(request.question, k=request.top_k)
+    return {"backend": settings.regulation_search_backend, "passages": [
+        {"text": d.page_content, **d.metadata} for d in documents]}
 
 
 if __name__ == "__main__":

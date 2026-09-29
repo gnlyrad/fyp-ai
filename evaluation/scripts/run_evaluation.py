@@ -21,10 +21,10 @@ def main(argv: list[str] | None = None) -> int:
     selection.add_argument("--all", action="store_true", help="Evaluate every published call")
     selection.add_argument("--call", dest="call_ids", action="append", help="Call ID; repeat to select several")
     parser.add_argument("--run-id", help="Optional immutable directory name")
-    parser.add_argument("--context-mode", choices=["routed", "full_transcript"],
-                        help="Transcript context selection; does not change question types or guidance")
+    parser.add_argument("--context-mode", choices=["full_transcript"],
+                        help="Full transcript (the staged pipeline context mode)")
     parser.add_argument("--max-attempts", type=int, choices=range(1, 6),
-                        help="Total attempts per judge/audit stage; 1 disables application retries")
+                        help="Total attempts per LLM stage; 1 disables application retries")
     args = parser.parse_args(argv)
     try:
         result = run_evaluation(

@@ -24,7 +24,7 @@ def drop_self(inputs: dict) -> dict:
 
 
 class RegulationSearch:
-    """Embeddings plus the FAISS index. No LLM."""
+    """Embeddings plus the selected FAISS or S3 Vectors index. No LLM."""
 
     def __init__(self) -> None:
         self._embeddings = create_embeddings()
@@ -33,6 +33,7 @@ class RegulationSearch:
             chunk_overlap=CHUNK_OVERLAP,
         )
         self._store = None
+        self._s3_search = None
 
     def ingest(self, *, target: str = "faiss", dry_run: bool = False) -> dict[str, int | str | bool]:
         """Ingest corpus PDFs into the explicitly selected destination."""
@@ -78,4 +79,11 @@ class RegulationSearch:
     @traceable(run_type="retriever", name="regulation_search", process_inputs=drop_self)
     def search(self, query: str, k: int = 5) -> list[Document]:
         """The `k` corpus passages closest to `query`, best first."""
+        if not query.strip() or not 1 <= k <= 100:
+            raise ValueError("Search needs a nonempty query and k between 1 and 100.")
+        if settings.regulation_search_backend == "s3vectors":
+            from .s3_retrieval import S3RegulationSearch
+            if self._s3_search is None:
+                self._s3_search = S3RegulationSearch(self._embeddings)
+            return self._s3_search.search(query, k)
         return self.vector_store().similarity_search(query, k=k)

@@ -1,0 +1,167 @@
+# Checklist items for the compliance pipeline. See CLAUDE.md "Checklist config"
+# for the field shapes. `sub_criteria` and `rule_queries` are written in the
+# style of C05 for Singapore MAS wealth-management calls (mock corpus).
+#
+# The Stage 1 (facts) item (C02) is not run through check_item; it is
+# recorded here mainly so `aggregate` can fill it in if a branch is skipped,
+# and so the checklist is a complete, self-describing catalogue. There is no
+# extraction item: the pipeline does not pull structured entities out of the
+# transcript, only refers back to it.
+
+- id: C02
+  name: Call intent
+  stage: 1
+  answer_type: category
+  applies_when:
+    always: true
+  depends_on: []
+  rule_queries: []
+  question: >
+    What is the most regulated intent reached during the call: enquiry,
+    execution_only, or advisory?
+  sub_criteria: []
+
+- id: C01
+  name: Identity and authority
+  stage: 2
+  answer_type: criteria
+  applies_when:
+    always: true
+  depends_on: [C02]
+  rule_queries:
+    - "customer identification and verification requirements telephone banking"
+    - "authorized caller and mandate verification wealth management"
+  question: >
+    Was the caller's identity verified, and did the advisor confirm the
+    caller was authorized to give instructions on this account?
+  sub_criteria:
+    - {id: identity_verified, text: "Caller identity was verified"}
+    - {id: authority_confirmed, text: "Caller's authority on the account was confirmed", warn_if_unconfirmed: true}
+    - {id: verification_method, text: "Verification used specific personal or account details, not just the caller's name"}
+
+- id: C03
+  name: Instruction validity
+  stage: 2
+  answer_type: criteria
+  applies_when:
+    call_intent: [execution_only, advisory]
+  depends_on: [C02]
+  rule_queries:
+    - "valid instruction requirements order taking telephone recording"
+    - "order confirmation and client consent execution only"
+  question: >
+    Was each order instruction clear, complete, and explicitly confirmed by
+    the client before it was treated as final?
+  sub_criteria:
+    - {id: complete, text: "Instruction included product, direction, and size or amount"}
+    - {id: unambiguous, text: "Instruction was not ambiguous or contradictory"}
+    - {id: confirmed, text: "Client explicitly confirmed the instruction"}
+    - {id: corrections_handled, text: "Any correction to an earlier instruction was acknowledged"}
+
+- id: C04
+  name: Product eligibility
+  stage: 2
+  answer_type: criteria
+  applies_when:
+    call_intent: [advisory, execution_only]
+  depends_on: [C02]
+  rule_queries:
+    - "customer suitability and product eligibility assessment MAS"
+    - "complex product client classification restrictions"
+  question: >
+    Based on what was said on this call about the product and the client,
+    was the product appropriate for this client's classification, risk
+    profile, and jurisdiction?
+  sub_criteria:
+    - {id: classification_match, text: "Client's investor classification was established and the product is permitted for it", warn_if_unconfirmed: true}
+    - {id: risk_match, text: "Client's risk profile was established and the product's risk is consistent with it", warn_if_unconfirmed: true}
+    - {id: jurisdiction_match, text: "Nothing said indicates the product is not permitted in the client's jurisdiction", absence: true}
+    - {id: complexity_handled, text: "Extra care was taken for a complex product, if applicable"}
+
+- id: C05
+  name: Client understanding and disclosures
+  stage: 2
+  answer_type: criteria
+  applies_when:
+    call_intent: [advisory, execution_only]
+  depends_on: [C02]
+  rule_queries:
+    - "risk disclosure requirements investment products"
+  question: >
+    Were the important risks, costs, restrictions, potential losses,
+    and conflicts explained, and did the client appear to understand them?
+  sub_criteria:
+    - {id: risks, text: "Key risks explained"}
+    - {id: costs, text: "Costs and fees explained"}
+    - {id: restrictions, text: "Restrictions explained"}
+    - {id: losses, text: "Potential losses explained"}
+    - {id: conflicts, text: "Any conflict of interest in the recommendation was disclosed (e.g. an in-house or affiliated product, or fees, commissions or spreads earned by the bank); FAIL if a recommended product carries one and it was not disclosed", warn_if_unconfirmed: true}
+    - {id: understanding, text: "Client appeared to understand"}
+
+- id: C06
+  name: Restrictions and red flags
+  stage: 2
+  answer_type: list
+  applies_when:
+    always: true
+  depends_on: [C02]
+  rule_queries:
+    - "anti-money laundering red flags suspicious transaction indicators"
+    - "targeted financial sanctions screening requirements MAS"
+    - "fraud indicators telephone instruction banking"
+    - "market abuse and insider trading indicators"
+    - "restricted or prohibited product sale restrictions"
+    - "suspicious instruction third-party transfer red flags"
+  question: >
+    Does the call contain any indicator of money laundering, sanctions
+    exposure, fraud, market abuse, a restricted product, or a suspicious
+    instruction?
+  sub_criteria:
+    - {id: aml, text: "No AML red flag present", absence: true}
+    - {id: sanctions, text: "No sanctions exposure present", absence: true}
+    - {id: fraud, text: "No fraud indicator present", absence: true}
+    - {id: market_abuse, text: "No market abuse indicator present", absence: true}
+    - {id: restricted_product, text: "No restricted product offered", absence: true}
+    - {id: suspicious_instruction, text: "No suspicious instruction given", absence: true}
+
+- id: C07
+  name: Escalation
+  stage: 3
+  answer_type: criteria
+  applies_when:
+    always: true
+  depends_on: [C01, C03, C04, C05, C06]
+  rule_queries:
+    - "escalation triggers compliance breach wealth management calls"
+  question: >
+    Does this call need to be escalated to compliance, and should any
+    pending transaction be put on hold?
+  sub_criteria:
+    - {id: no_escalation, text: "No escalation to compliance required"}
+    - {id: no_hold, text: "No transaction hold required"}
+
+- id: C08
+  name: Post-call action
+  stage: 3
+  answer_type: list
+  applies_when:
+    always: true
+  depends_on: [C01, C03, C04, C05, C06, C07]
+  rule_queries:
+    - "post-call follow-up actions order confirmation documentation"
+  question: >
+    What follow-up actions does this call require (place or cancel an order,
+    send documents, obtain information, raise a case)?
+  sub_criteria: []
+
+- id: C09
+  name: Task ownership
+  stage: 3
+  answer_type: list
+  applies_when:
+    always: true
+  depends_on: [C08]
+  rule_queries: []
+  question: >
+    Which role owns each post-call action?
+  sub_criteria: []
