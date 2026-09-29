@@ -1,0 +1,435 @@
+{
+  "call_id": "CALL_003",
+  "checks": [
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never establishes or confirms the client's investment objective, directly or indirectly, anywhere in the call; neither participant states an investment goal or horizon.",
+        "content_constraints": [
+          "Keep the callback reason, the loss-tolerance exchange, the recommendation and the final instruction free of any objective or horizon confirmation."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C01"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "This exchange must occur before the C06 coaching attempt; the stated tolerance here is the client's genuine, uninflated preference and must not be revised afterwards.",
+          "Must not include an employee capital-loss explanation or an investment-objective discussion."
+        ],
+        "forbidden_patterns": [],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "C02_E1",
+            "required_speaker": "CLIENT",
+            "text": "I’d only be comfortable with a limited amount of loss on this — nothing too aggressive."
+          },
+          {
+            "evidence_id": "C02_E2",
+            "required_speaker": "EMPLOYEE",
+            "text": "Understood, so we’re working with a limited loss tolerance on this allocation."
+          }
+        ]
+      },
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "I’d only be comfortable with a limited amount of loss on this — nothing too aggressive.\nUnderstood, so we’re working with a limited loss tolerance on this allocation.",
+      "gold_evidence_turns": [
+        3,
+        4
+      ],
+      "question_id": "C02"
+    },
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never explains that the client could lose invested capital, at any point, including during the C02 acknowledgement, the C06 coaching, or the recommendation and closing.",
+        "content_constraints": [
+          "No corrective capital-loss warning may appear after the false performance guarantee."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C03"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "Must occur before the client's buy instruction."
+        ],
+        "forbidden_patterns": [],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "C04_E1",
+            "required_speaker": "EMPLOYEE",
+            "text": "There's a one-off transaction fee of 0.5% on the subscription amount, charged separately."
+          }
+        ]
+      },
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "There's a one-off transaction fee of 0.5% on the subscription amount, charged separately.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "question_id": "C04"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "Must be an unqualified, uncorrected employee assertion, not a hope, forecast, or a rejected client claim."
+        ],
+        "forbidden_patterns": [],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "C05_E1",
+            "required_speaker": "EMPLOYEE",
+            "text": "This fund's past performance has been strong, and that guarantees you'll get similar positive returns in future."
+          }
+        ]
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "This fund's past performance has been strong, and that guarantees you'll get similar positive returns in future.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "question_id": "C05"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "Must occur strictly after the C02 exchange; the client declines the inflation and the original C02 preference remains unchanged.",
+          "Must not be reframed as neutral clarification or a genuine change of client preference."
+        ],
+        "forbidden_patterns": [],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "C06_E1",
+            "required_speaker": "EMPLOYEE",
+            "text": "If you tell the committee you're comfortable with substantial losses, it'll be much easier to get this approved — could you declare a higher risk tolerance than what you just said?"
+          }
+        ]
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "If you tell the committee you're comfortable with substantial losses, it'll be much easier to get this approved — could you declare a higher risk tolerance than what you just said?",
+      "gold_evidence_turns": [
+        6
+      ],
+      "question_id": "C06"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [],
+        "forbidden_patterns": [
+          "S9100001X",
+          "S8400002X",
+          "G8800004A"
+        ],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "K01_E1",
+            "required_speaker": "CLIENT",
+            "text": "My identification number is F7800003A."
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "F7800003A",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "gold_evidence_text": "My identification number is F7800003A.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "question_id": "K01"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [],
+        "forbidden_patterns": [],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "K02_E1",
+            "required_speaker": "CLIENT",
+            "text": "My date of birth is 22 November 1978."
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "22 November 1978",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "gold_evidence_text": "My date of birth is 22 November 1978.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "question_id": "K02"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "This phrase and T02's evidence phrase must occur in the single, final client buy instruction turn, together with the order_notional amount 30,000; no second order, tentative instruction or unit price may appear anywhere else in the call."
+        ],
+        "forbidden_patterns": [
+          "TEST\\ SGD\\ Equity\\ Fund",
+          "TEST\\ USD\\ Equity\\ Fund",
+          "TEST\\ GBP\\ Equity\\ Fund",
+          "TEST\\ AUD\\ Equity\\ Fund"
+        ],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "T01_E1",
+            "required_speaker": "CLIENT",
+            "text": "TEST EUR Equity Fund"
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "TEST EUR Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "gold_evidence_text": "TEST EUR Equity Fund",
+      "gold_evidence_turns": [
+        19
+      ],
+      "question_id": "T01"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "Must occur in the same single client buy instruction turn as T01's evidence."
+        ],
+        "forbidden_patterns": [
+          "\\bSGD\\b",
+          "\\bUSD\\b",
+          "\\bGBP\\b",
+          "\\bAUD\\b"
+        ],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "T02_E1",
+            "required_speaker": "CLIENT",
+            "text": "in EUR"
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "EUR",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "gold_evidence_text": "in EUR",
+      "gold_evidence_turns": [
+        19
+      ],
+      "question_id": "T02"
+    }
+  ],
+  "dialogue": [
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Hi Alex, thanks for taking my call back. You'd asked for some information on how dealing works for the fund we discussed, so let's go through that.",
+      "turn_id": 0
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Thanks for calling, Priya. Go ahead.",
+      "turn_id": 1
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Before we get into the details, what level of investment loss, if any, would you be willing to accept?",
+      "turn_id": 2
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "I’d only be comfortable with a limited amount of loss on this — nothing too aggressive.",
+      "turn_id": 3
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Understood, so we’re working with a limited loss tolerance on this allocation.",
+      "turn_id": 4
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "That's right.",
+      "turn_id": 5
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "If you tell the committee you're comfortable with substantial losses, it'll be much easier to get this approved — could you declare a higher risk tolerance than what you just said?",
+      "turn_id": 6
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "No, I'd rather keep it as I said — just a limited amount.",
+      "turn_id": 7
+    },
+    {
+      "critical_tokens": [
+        "TEST EUR Equity Fund"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "Understood, we'll keep that as is. Let me tell you a bit about the fund itself — the TEST EUR Equity Fund, a diversified equity fund. This fund's past performance has been strong, and that guarantees you'll get similar positive returns in future.",
+      "turn_id": 8
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "That sounds promising, thank you.",
+      "turn_id": 9
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "It's straightforward to hold, and dealing on our side is quick once everything is confirmed.",
+      "turn_id": 10
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Good to know.",
+      "turn_id": 11
+    },
+    {
+      "critical_tokens": [
+        "0.5%"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "There's a one-off transaction fee of 0.5% on the subscription amount, charged separately.",
+      "turn_id": 12
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Understood, thank you.",
+      "turn_id": 13
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Could you confirm your identification number for our records?",
+      "turn_id": 14
+    },
+    {
+      "critical_tokens": [
+        "F7800003A"
+      ],
+      "speaker": "CLIENT",
+      "text": "My identification number is F7800003A.",
+      "turn_id": 15
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. And your date of birth?",
+      "turn_id": 16
+    },
+    {
+      "critical_tokens": [
+        "22 November 1978"
+      ],
+      "speaker": "CLIENT",
+      "text": "My date of birth is 22 November 1978.",
+      "turn_id": 17
+    },
+    {
+      "critical_tokens": [
+        "TEST EUR Equity Fund"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "That all matches what we have on file. Shall we go ahead with the TEST EUR Equity Fund?",
+      "turn_id": 18
+    },
+    {
+      "critical_tokens": [
+        "TEST EUR Equity Fund",
+        "30,000",
+        "in EUR"
+      ],
+      "speaker": "CLIENT",
+      "text": "Yes, I'd like to buy the TEST EUR Equity Fund — please invest 30,000, in EUR.",
+      "turn_id": 19
+    },
+    {
+      "critical_tokens": [
+        "TEST EUR Equity Fund",
+        "30,000",
+        "in EUR",
+        "0.5%"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "Understood. I've noted your instruction to buy the TEST EUR Equity Fund for 30,000 in EUR, with the 0.5% transaction fee applied separately. I'll process this today.",
+      "turn_id": 20
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Perfect, thank you.",
+      "turn_id": 21
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Thanks, Alex — I'll send confirmation shortly. Have a good rest of your day.",
+      "turn_id": 22
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Thanks, Priya. You too, bye for now.",
+      "turn_id": 23
+    }
+  ],
+  "metadata": {
+    "language": "en-SG",
+    "scenario": "private_banking_investment_advice_and_order"
+  },
+  "schema_version": "0.6.0"
+}

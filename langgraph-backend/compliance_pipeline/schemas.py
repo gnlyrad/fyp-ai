@@ -76,6 +76,9 @@ class ReviewWarning(BaseModel):
 class ItemResult(BaseModel):
     item_id: str
     status: Status
+    execution_status: Literal["success", "prediction_failure"] = "success"
+    failure_category: str | None = None
+    failure_stage: str | None = None
     confidence: float = 0.0  # 0 to 1
     sub_criteria: list[SubCriterionResult] = Field(default_factory=list)
     evidence: list[EvidenceRef] = Field(default_factory=list)

@@ -6,75 +6,81 @@
 <title>Pipeline Evaluation</title>
 <style>
   :root {
-    --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #677084; --border: #e2e5eb;
-    --pass: #2f9e6b; --partial: #d9a21b; --fail: #d64545; --na: #9aa3b2; --cd: #7b61c4;
-    --accent: #2f6fdb;
+    --bg: #f6f7f9; --card: #fff; --text: #1d2330; --muted: #677084; --border: #e2e5eb; --soft: #f0f2f5;
+    --good: #2f9e6b; --warn: #d9a21b; --bad: #d64545; --info: #2f6fdb; --gray: #9aa3b2; --purple: #7b61c4;
+    --s-PASS: var(--good); --s-PARTIAL: var(--warn); --s-FAIL: var(--bad); --s-NOT_APPLICABLE: var(--gray); --s-CANNOT_DETERMINE: var(--purple);
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #14171d; --card: #1c2029; --text: #e6e9ef; --muted: #98a1b3; --border: #2c3240; }
+    :root { --bg: #14171d; --card: #1c2029; --text: #e6e9ef; --muted: #98a1b3; --border: #2c3240; --soft: #232834; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
-  header { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  header h1 { font-size: 18px; margin: 0 auto 0 0; }
-  select, button { font: inherit; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); }
-  main { padding: 20px 24px; max-width: 1400px; margin: 0 auto; }
-  h2 { font-size: 15px; margin: 28px 0 10px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
-  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+  header { padding: 14px 24px; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; background: var(--card); position: sticky; top: 0; z-index: 5; }
+  header h1 { font-size: 17px; margin: 0 auto 0 0; }
+  select, button { font: inherit; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--card); color: var(--text); max-width: 100%; }
+  main { padding: 16px 24px 60px; max-width: 1400px; margin: 0 auto; }
+  h2 { font-size: 16px; margin: 32px 0 4px; }
+  h3 { font-size: 12px; margin: 18px 0 8px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+  p.lead { margin: 0 0 12px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; }
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; overflow-x: auto; }
-  .stat .label { color: var(--muted); font-size: 12px; }
-  .stat .value { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; }
-  .stat .sub { color: var(--muted); font-size: 12px; }
+  .tile .label { color: var(--muted); font-size: 12px; }
+  .tile .value { font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tile .frac { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .tile details { margin-top: 6px; font-size: 12px; color: var(--muted); }
+  .tile details summary { cursor: pointer; list-style: none; color: var(--info); }
+  .tile details summary::-webkit-details-marker { display: none; }
+  .tile details p { margin: 4px 0; }
+  .watch { color: var(--warn); }
   table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
-  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; vertical-align: top; }
   th { color: var(--muted); font-weight: 500; font-size: 12px; }
+  td.wrap { white-space: normal; min-width: 240px; }
   tr.clickable { cursor: pointer; }
-  tr.clickable:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
-  .bar { display: flex; height: 14px; border-radius: 4px; overflow: hidden; min-width: 160px; background: var(--border); }
+  tr.clickable:hover { background: var(--soft); }
+  tr.selected { background: color-mix(in srgb, var(--info) 12%, transparent); }
+  .bar { display: flex; height: 22px; border-radius: 5px; overflow: hidden; background: var(--soft); margin: 6px 0 8px; }
+  .bar.thin { height: 12px; min-width: 160px; margin: 3px 0; }
   .bar span { display: block; height: 100%; }
-  .s-PASS { background: var(--pass); } .s-PARTIAL { background: var(--partial); } .s-FAIL { background: var(--fail); }
-  .s-NOT_APPLICABLE { background: var(--na); } .s-CANNOT_DETERMINE { background: var(--cd); }
-  .legend { display: flex; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; margin-bottom: 8px; }
-  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
-  .pill { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 12px; color: #fff; }
-  .ok { color: var(--pass); } .bad { color: var(--fail); } .muted { color: var(--muted); }
-  .hbar { height: 8px; background: var(--accent); border-radius: 4px; }
-  .cm td { text-align: center; } .cm td.diag { font-weight: 700; }
-  #detail { position: fixed; inset: 0 0 0 auto; width: min(760px, 100%); background: var(--card); border-left: 1px solid var(--border);
-            overflow-y: auto; padding: 20px; box-shadow: -8px 0 24px rgba(0,0,0,.15); display: none; }
-  #detail.open { display: block; }
-  #detail pre { white-space: pre-wrap; font-size: 12px; background: var(--bg); padding: 10px; border-radius: 6px; }
-  .empty { padding: 40px; text-align: center; color: var(--muted); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  .cm { width: auto; } .cm td, .cm th { text-align: center; padding: 10px 16px; }
+  .cm.big td { font-size: 20px; font-weight: 600; }
+  .muted { color: var(--muted); } .good { color: var(--good); } .bad { color: var(--bad); }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; color: #fff; }
+  .hbar { height: 8px; background: var(--info); border-radius: 4px; }
+  #drawer { position: fixed; inset: 0 0 0 auto; width: min(780px, 100%); background: var(--card); border-left: 1px solid var(--border);
+            overflow-y: auto; padding: 20px; box-shadow: -8px 0 24px rgba(0,0,0,.18); display: none; z-index: 10; }
+  #drawer.open { display: block; }
+  pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; background: var(--soft); padding: 10px; border-radius: 6px; max-height: 420px; overflow: auto; }
+  .empty { padding: 48px; text-align: center; color: var(--muted); }
   @media (max-width: 600px) { header, main { padding-left: 16px; padding-right: 16px; } .two { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 <header>
   <h1>Compliance pipeline evaluation</h1>
-  <label>Tag <select id="f-tag"><option value="">All</option></select></label>
   <label>Model <select id="f-model"><option value="">All</option></select></label>
   <label>Call <select id="f-call"><option value="">All</option></select></label>
+  <label>Scope <select id="scope"><option value="all">All items</option></select></label>
+  <label title="Only the newest uploaded run of each call"><input type="checkbox" id="f-latest" checked> Latest run per call</label>
   <button id="refresh">Refresh</button>
 </header>
 <main id="app"><div class="empty">Loading…</div></main>
-<aside id="detail"></aside>
+<aside id="drawer"></aside>
 
 <script>
 const STATUSES = ["PASS", "PARTIAL", "FAIL", "NOT_APPLICABLE", "CANNOT_DETERMINE"];
 const $ = (id) => document.getElementById(id);
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const pct = (r) => r && r.rate != null ? `${(r.rate * 100).toFixed(0)}%` : "–";
-const frac = (r) => r && r.total ? `${r.hits}/${r.total}` : "";
+const isRatio = (r) => r && typeof r === "object" && "denominator" in r;
+const pct = (r) => !isRatio(r) ? "–" : r.value == null ? "n/a" : `${(r.value * 100).toFixed(1)}%`;
+const frac = (r) => !isRatio(r) ? "" : r.value == null ? "zero denominator" : `${+(+r.numerator).toFixed(2)} / ${r.denominator}`;
 const num = (v, d = 2) => v == null ? "–" : Number(v).toFixed(d);
+const mark = (m) => m ? '<span class="good">✓</span>' : '<span class="bad">✗</span>';
 
-function params() {
-  const p = new URLSearchParams();
-  if ($("f-tag").value) p.set("tag", $("f-tag").value);
-  if ($("f-model").value) p.set("model", $("f-model").value);
-  if ($("f-call").value) p.set("call_id", $("f-call").value);
-  return p.toString();
-}
+const state = { defs: {}, metrics: null, runs: [], scope: "all" };
 
 async function api(path) {
   const res = await fetch(path);
@@ -82,154 +88,272 @@ async function api(path) {
   return res.json();
 }
 
-function fillSelect(el, values) {
-  const current = el.value;
-  el.innerHTML = '<option value="">All</option>' + values.map((v) => `<option>${esc(v)}</option>`).join("");
-  el.value = values.includes(current) ? current : "";
+function params() {
+  const p = new URLSearchParams();
+  if ($("f-model").value) p.set("model", $("f-model").value);
+  if ($("f-call").value) p.set("call_id", $("f-call").value);
+  p.set("latest", $("f-latest").checked);
+  return p.toString();
 }
 
-function stat(label, value, sub = "") {
-  return `<div class="card stat"><div class="label">${esc(label)}</div><div class="value">${value}</div><div class="sub">${esc(sub)}</div></div>`;
+function tile(id, r, override) {
+  const d = state.defs[id] || { label: id };
+  return `<div class="card tile">
+    <div class="label">${esc(d.label)}</div>
+    <div class="value">${override ?? pct(r)}</div>
+    <div class="frac">${override != null ? "" : esc(frac(r))}</div>
+    ${d.formula ? `<details><summary>What is this?</summary>
+      <p><b>Formula:</b> ${esc(d.formula)}</p><p><b>Population:</b> ${esc(d.population)}</p>
+      <p>${esc(d.interpretation)}</p>${d.watch_out ? `<p class="watch">⚠ ${esc(d.watch_out)}</p>` : ""}</details>` : ""}
+  </div>`;
 }
 
-function statusBar(counts) {
-  const total = STATUSES.reduce((s, k) => s + (counts[k] || 0), 0) || 1;
-  return `<div class="bar" title="${STATUSES.map((s) => `${s}: ${counts[s] || 0}`).join("\n")}">` +
-    STATUSES.map((s) => counts[s] ? `<span class="s-${s}" style="width:${(counts[s] / total) * 100}%"></span>` : "").join("") + "</div>";
+function plainTile(label, value, sub = "") {
+  return `<div class="card tile"><div class="label">${esc(label)}</div><div class="value">${value}</div><div class="frac">${esc(sub)}</div></div>`;
 }
 
-const legend = `<div class="legend">${STATUSES.map((s) => `<span><i class="s-${s}"></i>${s}</span>`).join("")}</div>`;
+function stackedBar(parts, thin = false) {
+  const total = parts.reduce((s, p) => s + p.count, 0);
+  const bar = `<div class="bar ${thin ? "thin" : ""}" title="${esc(parts.map((p) => `${p.label}: ${p.count}`).join("\n"))}">` +
+    (total ? parts.filter((p) => p.count).map((p) => `<span style="width:${(p.count / total) * 100}%;background:var(${p.color})"></span>`).join("") : "") + "</div>";
+  if (thin) return bar;
+  return bar + `<div class="legend">${parts.map((p) => `<span><i style="background:var(${p.color})"></i>${esc(p.label)} <b>${p.count}</b>${total ? ` <span class="muted">(${((p.count / total) * 100).toFixed(0)}%)</span>` : ""}</span>`).join("")}</div>`;
+}
+
+const statusBar = (counts, thin = true) => stackedBar(STATUSES.map((s) => ({ label: s, color: `--s-${s}`, count: counts[s] || 0 })), thin);
+
+function confusion2x2(cm, posLabel, negLabel) {
+  const cell = (k, good) => `<td style="background:color-mix(in srgb, var(${good ? "--good" : "--bad"}) ${cm[k] ? 18 : 4}%, transparent)">${cm[k] ?? 0}<div class="muted" style="font-size:11px;font-weight:400">${k}</div></td>`;
+  return `<table class="cm big"><tr><th></th><th>Predicted ${posLabel}</th><th>Predicted ${negLabel}</th></tr>
+    <tr><th>Gold ${posLabel}</th>${cell("TP", true)}${cell("FN", false)}</tr>
+    <tr><th>Gold ${negLabel}</th>${cell("FP", false)}${cell("TN", true)}</tr></table>`;
+}
+
+function statusMatrix(matrix) {
+  const cols = [...STATUSES, "missing"].filter((c) => c !== "missing" || Object.values(matrix).some((r) => r.missing));
+  const rows = STATUSES.filter((s) => matrix[s]);
+  return `<table class="cm"><tr><th>expected ↓ / actual →</th>${cols.map((c) => `<th>${esc(c)}</th>`).join("")}</tr>` +
+    rows.map((e) => `<tr><th>${esc(e)}</th>${cols.map((a) => {
+      const v = matrix[e][a] || 0;
+      return `<td style="${v ? `background:color-mix(in srgb, var(${e === a ? "--good" : "--bad"}) ${Math.min(12 + v * 5, 55)}%, transparent)` : ""}">${v || ""}</td>`;
+    }).join("")}</tr>`).join("") + "</table>";
+}
 
 function countTable(title, obj) {
   const entries = Object.entries(obj || {});
   if (!entries.length) return `<div class="card"><b>${esc(title)}</b><p class="muted">none</p></div>`;
   const max = Math.max(...entries.map(([, v]) => v));
-  return `<div class="card"><b>${esc(title)}</b><table>` + entries.map(([k, v]) =>
-    `<tr><td>${esc(k)}</td><td style="width:50%"><div class="hbar" style="width:${(v / max) * 100}%"></div></td><td>${v}</td></tr>`).join("") + "</table></div>";
+  return `<div class="card"><b>${esc(title)}</b><table>${entries.map(([k, v]) =>
+    `<tr><td>${esc(k)}</td><td style="width:50%"><div class="hbar" style="width:${(v / max) * 100}%"></div></td><td>${v}</td></tr>`).join("")}</table></div>`;
 }
 
-function renderAccuracy(acc, names) {
-  if (!acc) return `<h2>Accuracy vs expected</h2><div class="card muted">No runs matched a fixture with an <code>expected.json</code>. Run <code>scripts/score_fixtures.py</code>, then upload <code>output/fixtures</code>.</div>`;
-  const labels = acc.confusion_matrix.labels.filter((l) => l !== "?" || acc.confusion_matrix.matrix["?"] ||
-    Object.values(acc.confusion_matrix.matrix).some((r) => r["?"]));
-  const cm = `<table class="cm"><tr><th>expected ↓ / actual →</th>${labels.map((l) => `<th>${esc(l)}</th>`).join("")}</tr>` +
-    labels.map((e) => `<tr><th>${esc(e)}</th>${labels.map((a) => {
-      const v = (acc.confusion_matrix.matrix[e] || {})[a] || 0;
-      return `<td class="${e === a ? "diag" : ""}" style="${v ? `background:color-mix(in srgb, var(${e === a ? "--pass" : "--fail"}) ${Math.min(15 + v * 6, 60)}%, transparent)` : ""}">${v || ""}</td>`;
-    }).join("")}</tr>`).join("") + "</table>";
-  const perItem = `<table><tr><th>Item</th><th>Name</th><th>Accuracy</th><th></th></tr>` +
-    Object.entries(acc.per_item_accuracy).map(([id, r]) =>
-      `<tr><td>${esc(id)}</td><td class="muted">${esc(names[id] || "")}</td><td>${pct(r)} <span class="muted">${frac(r)}</span></td>
-       <td style="width:40%"><div class="hbar" style="width:${(r.rate || 0) * 100}%;background:${r.rate >= 0.8 ? "var(--pass)" : r.rate >= 0.5 ? "var(--partial)" : "var(--fail)"}"></div></td></tr>`).join("") + "</table>";
-  const mark = (m) => m ? '<span class="ok">✓</span>' : '<span class="bad">✗</span>';
-  const perRun = `<table><tr><th>Call</th><th>Model</th><th>Tag</th><th>Items</th><th>Intent</th><th>Escalation</th><th>Actions</th><th>Red flags</th></tr>` +
-    acc.per_run.map((r) => `<tr class="clickable" data-id="${esc(r._id)}"><td>${esc(r.call_id)}</td><td>${esc(r.model)}</td><td>${esc(r.tag ?? "")}</td>
-      <td>${pct(r.item_accuracy)} <span class="muted">${frac(r.item_accuracy)}</span></td>
-      <td>${mark(r.score.call_intent.match)} <span class="muted">${esc(r.score.call_intent.actual ?? "null")}</span></td>
-      <td>${mark(r.score.escalation.match)}</td><td>${mark(r.score.action_types.match)}</td><td>${mark(r.score.red_flag_categories.match)}</td></tr>`).join("") + "</table>";
-  return `<h2>Accuracy vs expected <span class="muted">(${acc.scored_runs} scored run${acc.scored_runs === 1 ? "" : "s"})</span></h2>
-    <div class="grid">
-      ${stat("Item accuracy", pct(acc.overall_item_accuracy), frac(acc.overall_item_accuracy))}
-      ${stat("Call intent accuracy", pct(acc.call_intent_accuracy), frac(acc.call_intent_accuracy))}
-      ${stat("Escalation accuracy", pct(acc.escalation_accuracy), frac(acc.escalation_accuracy))}
-      ${stat("Action-type recall", pct(acc.action_type_recall), "runs with all expected actions")}
-      ${stat("Red-flag recall", pct(acc.red_flag_recall), "runs with all expected categories")}
-    </div>
-    <div class="two" style="margin-top:16px">
-      <div class="card"><b>Per-item accuracy</b>${perItem}</div>
-      <div class="card"><b>Status confusion matrix</b> <span class="muted">(first acceptable expected status)</span>${cm}</div>
-    </div>
-    <div class="card" style="margin-top:16px"><b>Per-run scores</b>${perRun}</div>`;
+// ---- Sections ----
+function scoped() {
+  const ev = state.metrics.evaluation;
+  if (state.scope.startsWith("item:")) return { items: ev.by_item[state.scope.slice(5)], calls: null };
+  if (state.scope.startsWith("call:")) return ev.by_call[state.scope.slice(5)];
+  return { items: ev.items, calls: ev.calls };
 }
 
-function render(metrics, runs) {
-  const op = metrics.operational;
-  if (!op.runs) { $("app").innerHTML = `<div class="empty">No runs found. Upload outputs with <code>python evaluation/upload_outputs.py</code>.</div>`; return; }
-  const names = metrics.item_names || {};
-  const perItem = `<table><tr><th>Item</th><th>Name</th><th>Status distribution</th><th>Avg conf</th><th>n</th></tr>` +
-    Object.entries(op.per_item).map(([id, v]) => `<tr><td>${esc(id)}</td><td class="muted">${esc(names[id] || "")}</td>
-      <td>${statusBar(v.statuses)}</td><td>${num(v.avg_confidence)}</td><td>${v.total}</td></tr>`).join("") + "</table>";
-  const runTable = `<table><tr><th>Call</th><th>Generated</th><th>Model</th><th>Tag</th><th>Intent</th><th>Statuses</th><th>Review</th><th>Escalate</th><th>Red flags</th><th>Errors</th><th>Accuracy</th></tr>` +
-    runs.map((r) => `<tr class="clickable" data-id="${esc(r._id)}"><td>${esc(r.call_id)}</td><td class="muted">${esc((r.generated_at || "").slice(0, 16).replace("T", " "))}</td>
-      <td>${esc(r.model)}</td><td>${esc(r.tag ?? "")}</td><td>${esc(r.call_intent ?? "–")}</td><td>${statusBar(r.counts)}</td>
-      <td>${r.needs_review ? "yes" : "no"}</td><td>${r.escalated ? '<span class="bad">yes</span>' : "no"}</td>
-      <td>${r.red_flags}</td><td>${r.errors ? `<span class="bad">${r.errors}</span>` : 0}</td>
-      <td>${r.item_accuracy ? pct(r.item_accuracy) : '<span class="muted">–</span>'}</td></tr>`).join("") + "</table>";
+function renderItems(it) {
+  return `<h2>Checklist items <span class="muted" style="font-weight:400">(${it.total} scored items)</span></h2>
+    <p class="lead">Each item's actual status compared with the fixture's acceptable statuses.</p>
+    <div class="grid">${tile("status_accuracy", it.status_accuracy)}${tile("decision_coverage", it.decision_coverage)}${tile("abstention_rate", it.abstention_rate)}${tile("not_applicable_rate", it.not_applicable_rate)}${it.outcome_population.missing ? tile("missing_rate", it.missing_rate) : ""}</div>
+    <h3>Outcomes — all scored items</h3>
+    <div class="card">${stackedBar([
+      { label: "Decision (PASS / PARTIAL / FAIL)", color: "--info", count: it.outcome_population.decision },
+      { label: "Abstention (CANNOT_DETERMINE)", color: "--purple", count: it.outcome_population.abstention },
+      { label: "Not applicable", color: "--gray", count: it.outcome_population.not_applicable },
+      { label: "Missing", color: "--bad", count: it.outcome_population.missing },
+    ])}</div>
+    <h3>Status confusion matrix <span style="text-transform:none;font-weight:400">(first acceptable expected status vs actual)</span></h3>
+    <div class="card">${statusMatrix(it.status_confusion_matrix)}</div>`;
+}
 
-  $("app").innerHTML = `
-    <h2>Overview</h2>
-    <div class="grid">
-      ${stat("Runs", op.runs, Object.keys(op.models).length + " model(s)")}
-      ${stat("Needs review", pct(op.needs_review), frac(op.needs_review))}
-      ${stat("Escalated", pct(op.escalated), frac(op.escalated))}
-      ${stat("Hold transaction", pct(op.hold_transaction), frac(op.hold_transaction))}
-      ${stat("Avg confidence", num(op.avg_confidence), "across all items")}
-      ${stat("Verified items", pct(op.verified_items), frac(op.verified_items))}
-      ${stat("Warnings / run", num(op.avg_warnings_per_run, 1), "")}
-      ${stat("Runs with errors", pct(op.runs_with_errors), frac(op.runs_with_errors))}
-    </div>
-    ${renderAccuracy(metrics.accuracy, names)}
-    <h2>Status distribution</h2>
-    <div class="card">${legend}<div style="margin-bottom:12px">${statusBar(op.status_totals)}</div>${perItem}</div>
-    <h2>Breakdown</h2>
+function renderBreach(it) {
+  const b = it.binary, bo = it.breach_outcomes;
+  return `<h2>Breach detection</h2>
+    <p class="lead">FAIL is the positive class; PARTIAL counts as a breach. ${b.gold_labelled} items have a binary gold label;
+      ${b.no_binary_gold} accept mixed statuses (e.g. PASS or CANNOT_DETERMINE) and are left out here.</p>
+    <h3>Correctness — completed decisions only (${b.decisions})</h3>
     <div class="two">
-      ${countTable("Call intent", op.call_intents)}
-      ${countTable("Models", op.models)}
-      ${countTable("Quality flags", op.quality_flags)}
-      ${countTable("Actions by owner", op.actions_by_owner)}
-      ${countTable("Red flags by severity", op.red_flags_by_severity)}
-      ${countTable("Red flags by category", op.red_flags_by_category)}
+      <div class="grid">${tile("binary_accuracy", b.accuracy)}${tile("breach_precision", b.breach_precision)}${tile("breach_recall", b.breach_recall)}</div>
+      <div class="card"><b>Confusion matrix</b>${confusion2x2(b.confusion_matrix, "FAIL", "PASS")}</div>
     </div>
-    <h2>Runs</h2>
-    <div class="card">${runTable}</div>`;
-  document.querySelectorAll("tr.clickable").forEach((tr) => tr.addEventListener("click", () => openDetail(tr.dataset.id)));
+    <h3>What happened to every real breach (${bo.gold_fail_total})</h3>
+    <div class="card">${stackedBar([
+      { label: "Detected", color: "--good", count: bo.counts.detected },
+      { label: "Falsely cleared", color: "--bad", count: bo.counts.false_clearance },
+      { label: "Abstained", color: "--purple", count: bo.counts.abstained },
+      { label: "Not applicable", color: "--gray", count: bo.counts.not_applicable },
+      { label: "Missing", color: "--warn", count: bo.counts.missing },
+    ])}</div>
+    <div class="grid" style="margin-top:12px">${tile("automatic_breach_detection_rate", bo.automatic_breach_detection_rate)}${tile("false_clearance_rate", bo.false_clearance_rate)}${tile("breach_abstention_rate", bo.abstention_rate)}</div>`;
 }
 
-async function openDetail(id) {
+function renderCalls(c) {
+  if (!c) return "";
+  return `<h2>Call-level outcomes <span class="muted" style="font-weight:400">(${c.calls} scored runs)</span></h2>
+    <p class="lead">Stage 1 intent, escalation decision, follow-up actions and red flags per call.</p>
+    <div class="grid">${tile("call_intent_accuracy", c.call_intent_accuracy)}${tile("escalation_accuracy", c.escalation.accuracy)}${tile("escalation_recall", c.escalation.recall)}${tile("escalation_precision", c.escalation.precision)}</div>
+    <div class="two" style="margin-top:12px">
+      <div class="card"><b>Escalation confusion matrix</b> <span class="muted">(escalate = positive)</span>${confusion2x2(c.escalation.confusion_matrix, "escalate", "no escalation")}</div>
+      <div class="grid">${tile("action_recall", c.action_types.recall)}${tile("action_precision", c.action_types.precision)}${tile("red_flag_recall", c.red_flag_categories.recall)}${tile("red_flag_precision", c.red_flag_categories.precision)}</div>
+    </div>`;
+}
+
+function renderBreakdown() {
+  const ev = state.metrics.evaluation, names = state.metrics.item_names || {};
+  const row = (kind, id, it, c) => `<tr class="clickable ${state.scope === `${kind}:${id}` ? "selected" : ""}" data-scope="${kind}:${esc(id)}">
+    <td>${esc(id)}</td>${kind === "item" ? `<td class="muted">${esc(names[id] || "")}</td>` : ""}
+    <td>${pct(it.status_accuracy)} <span class="muted">${frac(it.status_accuracy)}</span></td>
+    <td>${pct(it.decision_coverage)}</td><td>${pct(it.abstention_rate)}</td>
+    <td>${it.breach_outcomes.gold_fail_total ? pct(it.breach_outcomes.automatic_breach_detection_rate) : '<span class="muted">no breaches</span>'}</td>
+    <td>${it.breach_outcomes.gold_fail_total ? pct(it.breach_outcomes.false_clearance_rate) : ""}</td>
+    ${kind === "call" ? `<td>${pct(c.call_intent_accuracy)}</td><td>${pct(c.escalation.accuracy)}</td>` : ""}
+    <td style="width:180px">${statusBar(Object.fromEntries(STATUSES.map((s) => [s, Object.values(it.status_confusion_matrix).reduce((n, r) => n + (r[s] || 0), 0)])))}</td></tr>`;
+  const head = (kind) => `<tr><th>${kind === "item" ? "Item" : "Call"}</th>${kind === "item" ? "<th>Name</th>" : ""}<th>Status accuracy</th><th>Decision coverage</th><th>Abstention</th><th>Breach detection</th><th>False clearance</th>${kind === "call" ? "<th>Intent</th><th>Escalation</th>" : ""}<th>Actual statuses</th></tr>`;
+  return `<h2>Breakdown</h2><p class="lead">Click a row to scope the sections above to it; click again to reset.</p>
+    <div style="display:grid;gap:16px">
+      <div class="card"><b>By checklist item</b><table>${head("item")}${Object.entries(ev.by_item).map(([id, it]) => row("item", id, it)).join("")}</table></div>
+      <div class="card"><b>By call</b><table>${head("call")}${Object.entries(ev.by_call).map(([id, v]) => row("call", id, v.items, v.calls)).join("")}</table></div>
+    </div>`;
+}
+
+function renderOperational(op) {
+  return `<h2>Operational <span class="muted" style="font-weight:400">(all ${op.runs} runs, scored or not)</span></h2>
+    <div class="grid">
+      ${plainTile("Needs review", pct(op.needs_review), frac(op.needs_review))}
+      ${plainTile("Escalated", pct(op.escalated), frac(op.escalated))}
+      ${plainTile("Hold transaction", pct(op.hold_transaction), frac(op.hold_transaction))}
+      ${plainTile("Avg confidence", num(op.avg_confidence), "across all items")}
+      ${plainTile("Verified items", pct(op.verified_items), frac(op.verified_items))}
+      ${plainTile("Warnings / run", num(op.avg_warnings_per_run, 1))}
+      ${plainTile("Runs with errors", pct(op.runs_with_errors), frac(op.runs_with_errors))}
+    </div>
+    <div class="card" style="margin-top:12px"><b>Status distribution</b>${statusBar(op.status_totals, false)}</div>
+    <div class="two" style="margin-top:12px">
+      ${countTable("Call intent", op.call_intents)}${countTable("Models", op.models)}
+      ${countTable("Quality flags", op.quality_flags)}${countTable("Actions by owner", op.actions_by_owner)}
+      ${countTable("Red flags by severity", op.red_flags_by_severity)}
+    </div>`;
+}
+
+function renderRuns() {
+  return `<h2>Runs <span class="muted" style="font-weight:400">(${state.runs.length})</span></h2>
+    <p class="lead">Click a run for item-by-item results against the fixture.</p>
+    <div class="card"><table><tr><th>Call</th><th>Generated</th><th>Model</th><th>Intent</th><th>Statuses</th><th>Item accuracy</th><th>Intent ✓</th><th>Escalation ✓</th><th>Actions ✓</th><th>Red flags ✓</th><th>Breaches missed</th><th>Errors</th></tr>
+    ${state.runs.map((r) => `<tr class="clickable" data-run="${esc(r._id)}"><td>${esc(r.call_id)}</td>
+      <td class="muted">${esc((r.generated_at || "").slice(0, 16).replace("T", " "))}</td><td>${esc(r.model)}</td>
+      <td>${esc(r.call_intent ?? "–")}</td><td style="width:170px">${statusBar(r.counts)}</td>
+      ${r.score ? `<td>${pct(r.score.item_accuracy)} <span class="muted">${frac(r.score.item_accuracy)}</span></td>
+        <td>${mark(r.score.call_intent)}</td><td>${mark(r.score.escalation)}</td><td>${mark(r.score.action_types)}</td><td>${mark(r.score.red_flag_categories)}</td>
+        <td>${r.score.breaches_missed ? `<span class="bad">${r.score.breaches_missed}</span>` : 0}</td>`
+        : '<td colspan="6" class="muted">no fixture — not scored</td>'}
+      <td>${r.errors ? `<span class="bad">${r.errors}</span>` : 0}</td></tr>`).join("")}</table></div>`;
+}
+
+function render() {
+  const m = state.metrics;
+  if (!m.operational.runs) {
+    $("app").innerHTML = `<div class="empty">No runs found. Put pipeline outputs in <code>langgraph-backend/output</code> and run <code>python evaluation/upload_outputs.py</code>.</div>`;
+    return;
+  }
+  const ev = m.evaluation;
+  let body;
+  if (!ev) {
+    body = `<div class="card muted" style="margin-top:16px">None of these runs match a fixture in <code>compliance_pipeline/data/fixtures/</code>, so there is nothing to score. The run's <code>call_id</code> must equal the fixture folder name.</div>`;
+  } else {
+    const s = scoped();
+    const label = state.scope === "all" ? "All scored items" : state.scope.replace(":", " ");
+    body = `<p class="muted" style="margin-top:14px">Scope: <b>${esc(label)}</b>${state.scope !== "all" ? ' · <a href="#" id="clear-scope">reset</a>' : ""} ·
+      ${m.scored_runs} scored run(s)${m.unscored_runs ? `, ${m.unscored_runs} without a fixture` : ""} · scorer ${esc(state.scorer)}</p>
+      ${renderItems(s.items)}${renderBreach(s.items)}${renderCalls(s.calls)}${renderBreakdown()}`;
+  }
+  $("app").innerHTML = body + renderOperational(m.operational) + renderRuns();
+  document.querySelectorAll("[data-scope]").forEach((el) => el.addEventListener("click", () => setScope(el.dataset.scope === state.scope ? "all" : el.dataset.scope)));
+  document.querySelectorAll("[data-run]").forEach((el) => el.addEventListener("click", () => openRun(el.dataset.run)));
+  $("clear-scope")?.addEventListener("click", (e) => { e.preventDefault(); setScope("all"); });
+}
+
+function setScope(scope) {
+  state.scope = scope;
+  $("scope").value = scope;
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function fillScope() {
+  const ev = state.metrics.evaluation;
+  const opts = ['<option value="all">All items</option>'];
+  if (ev) {
+    opts.push(`<optgroup label="Checklist item">${Object.keys(ev.by_item).map((id) => `<option value="item:${esc(id)}">${esc(id)}</option>`).join("")}</optgroup>`);
+    opts.push(`<optgroup label="Call">${Object.keys(ev.by_call).map((id) => `<option value="call:${esc(id)}">${esc(id)}</option>`).join("")}</optgroup>`);
+  }
+  $("scope").innerHTML = opts.join("");
+  if (![...$("scope").options].some((o) => o.value === state.scope)) state.scope = "all";
+  $("scope").value = state.scope;
+}
+
+async function openRun(id) {
   const run = await api(`/api/runs/${encodeURIComponent(id)}`);
   const score = run.score;
   const names = Object.fromEntries((run.checklist || []).map((c) => [c.id, c.name]));
+  const byId = Object.fromEntries((score?.items || []).map((i) => [i.item_id, i]));
   const rows = (run.results || []).map((r) => {
-    const s = score && score.items[r.item_id];
+    const s = byId[r.item_id];
     return `<tr><td>${esc(r.item_id)}</td><td class="muted">${esc(names[r.item_id] || "")}</td>
-      <td><span class="pill s-${esc(r.status)}">${esc(r.status)}</span></td>
-      <td>${s ? `${s.match ? '<span class="ok">✓</span>' : '<span class="bad">✗</span>'} <span class="muted">${esc(s.expected.join(" / "))}</span>` : ""}</td>
+      <td><span class="pill" style="background:var(--s-${esc(r.status)})">${esc(r.status)}</span></td>
+      <td>${s ? `${mark(s.match)} <span class="muted">${esc(s.expected.join(" / "))}</span>` : '<span class="muted">not in fixture</span>'}</td>
+      <td>${s?.breach_outcome ? esc(s.breach_outcome.replace("_", " ")) : ""}</td>
       <td>${num(r.confidence)}</td><td>${r.verified ? "yes" : ""}</td><td>${(r.warnings || []).length || ""}</td></tr>
-      <tr><td></td><td colspan="6" class="muted" style="white-space:normal">${esc(r.reasoning)}</td></tr>`;
+      <tr><td></td><td colspan="7" class="wrap muted">${esc(r.reasoning)}</td></tr>`;
   }).join("");
-  const list = (title, items, fmt) => `<h2>${title} (${(items || []).length})</h2>` +
+  const setRow = (label, s) => s ? `<tr><td>${label}</td><td>${mark(s.match)}</td><td>${esc(s.expected.join(", ") || "none")}</td><td>${esc(s.actual.join(", ") || "none")}</td><td class="bad">${esc(s.missing.join(", "))}</td></tr>` : "";
+  const list = (title, items, fmt) => `<h3>${title} (${(items || []).length})</h3>` +
     ((items || []).length ? `<ul>${items.map((i) => `<li>${fmt(i)}</li>`).join("")}</ul>` : '<p class="muted">none</p>');
-  $("detail").innerHTML = `
-    <button onclick="document.getElementById('detail').classList.remove('open')" style="float:right">Close</button>
-    <h1 style="font-size:18px;margin:0">${esc(run.call_id)}</h1>
-    <p class="muted">${esc(run.model?.id)} · ${esc(run.generated_at)} · ${esc(run.source_file)}${run.tag ? " · tag " + esc(run.tag) : ""}</p>
-    <p>Intent: <b>${esc(run.call_intent?.category ?? "undetermined")}</b>${score ? ` (expected ${esc(score.call_intent.expected)})` : ""} ·
-       Escalation: <b>${run.escalation?.required ? "required" : "no"}</b>${score ? ` (expected ${score.escalation.expected ? "required" : "no"})` : ""}</p>
-    ${run.expected?.description ? `<p class="muted" style="white-space:normal">${esc(run.expected.description)}</p>` : ""}
-    <h2>Items</h2><table><tr><th>Item</th><th>Name</th><th>Status</th><th>Expected</th><th>Conf</th><th>Verified</th><th>Warn</th></tr>${rows}</table>
+  $("drawer").innerHTML = `
+    <button id="close-drawer" style="float:right">Close</button>
+    <h2 style="margin-top:0">${esc(run.call_id)}</h2>
+    <p class="muted">${esc(run.model?.id)} · ${esc(run.generated_at)} · ${esc(run.source_file)}</p>
+    ${run.expected?.description ? `<p class="wrap">${esc(run.expected.description)}</p>` : ""}
+    ${score ? `<table><tr><th>Call-level</th><th></th><th>Expected</th><th>Actual</th><th>Missing</th></tr>
+      <tr><td>Call intent</td><td>${mark(score.call_intent.match)}</td><td>${esc(score.call_intent.expected)}</td><td>${esc(score.call_intent.actual ?? "undetermined")}</td><td></td></tr>
+      <tr><td>Escalation</td><td>${mark(score.escalation.match)}</td><td>${score.escalation.expected ? "required" : "no"}</td><td>${score.escalation.actual ? "required" : "no"}</td><td></td></tr>
+      ${setRow("Action types", score.action_types)}${setRow("Red-flag categories", score.red_flag_categories)}</table>` : '<p class="muted">No fixture for this call, so it is not scored.</p>'}
+    <h3>Items</h3><table><tr><th>Item</th><th>Name</th><th>Actual</th><th>Expected</th><th>Breach</th><th>Conf</th><th>Verified</th><th>Warn</th></tr>${rows}</table>
     ${list("Actions", run.actions, (a) => `[${esc(a.owner_role)}] <b>${esc(a.action_type)}</b>: ${esc(a.description)}`)}
     ${list("Red flags", run.red_flags, (f) => `[${esc(f.severity)}/${esc(f.category)}] ${esc(f.description)}`)}
     ${list("Review reasons", run.summary?.review_reasons, esc)}
     ${list("Errors", run.errors, esc)}
-    <h2>Transcript</h2><pre>${esc(run.transcript)}</pre>`;
-  $("detail").classList.add("open");
+    ${run.expected?.notes ? `<h3>Fixture notes</h3><p class="wrap muted">${esc(run.expected.notes)}</p>` : ""}
+    <h3>Transcript</h3><pre>${esc(run.transcript)}</pre>`;
+  $("drawer").classList.add("open");
+  $("close-drawer").addEventListener("click", () => $("drawer").classList.remove("open"));
 }
 
 async function load() {
   try {
-    const f = await api("/api/filters");
-    fillSelect($("f-tag"), f.tags); fillSelect($("f-model"), f.models); fillSelect($("f-call"), f.call_ids);
+    const [f, defs] = await Promise.all([api("/api/filters"), api("/api/definitions")]);
+    state.defs = defs.metrics; state.scorer = defs.scorer_version;
+    for (const [el, values] of [[$("f-model"), f.models], [$("f-call"), f.call_ids]]) {
+      const current = el.value;
+      el.innerHTML = '<option value="">All</option>' + values.map((v) => `<option>${esc(v)}</option>`).join("");
+      el.value = values.includes(current) ? current : "";
+    }
     const q = params();
-    const [metrics, runs] = await Promise.all([api(`/api/metrics?${q}`), api(`/api/runs?${q}`)]);
-    render(metrics, runs);
+    [state.metrics, state.runs] = await Promise.all([api(`/api/metrics?${q}`), api(`/api/runs?${q}`)]);
+    fillScope();
+    render();
   } catch (err) {
     $("app").innerHTML = `<div class="empty bad">Failed to load: ${esc(err.message)}</div>`;
   }
 }
 
-["f-tag", "f-model", "f-call"].forEach((id) => $(id).addEventListener("change", load));
+["f-model", "f-call", "f-latest"].forEach((id) => $(id).addEventListener("change", load));
+$("scope").addEventListener("change", () => setScope($("scope").value));
 $("refresh").addEventListener("click", load);
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("detail").classList.remove("open"); });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") $("drawer").classList.remove("open"); });
 load();
 </script>
 </body>

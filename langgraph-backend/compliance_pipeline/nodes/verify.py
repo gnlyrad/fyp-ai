@@ -143,7 +143,10 @@ def verify_node(state: ComplianceState) -> dict:
         return _verify_node(state)
     except Exception as exc:  # noqa: BLE001 - never crash the graph
         return {
-            "verified_results": [],
+            "verified_results": [r.model_copy(update={
+                "execution_status": "prediction_failure", "failure_category": "verification_unavailable",
+                "failure_stage": "verify", "verified": False,
+            }) for r in state.get("item_results", [])],
             "verified_red_flags": list(state.get("red_flags", [])),
             "errors": [f"verify: unexpected error: {type(exc).__name__}: {exc}"],
         }
@@ -246,6 +249,11 @@ def _verify_node(state: ComplianceState) -> dict:
         llm_result = llm_results[item_id]
         if not llm_result.ok:
             errors.append(f"verify[{item_id}]: {llm_result.error}")
+            failed = items_by_id[item_id]
+            failed.execution_status = "prediction_failure"
+            failed.failure_category = "verification_unavailable"
+            failed.failure_stage = "verify"
+            changed_item_ids.add(item_id)
             continue
 
         item = items_by_id[item_id]
@@ -260,6 +268,9 @@ def _verify_node(state: ComplianceState) -> dict:
             verdict = verdict_by_target.get(tid)
             if verdict is None:
                 errors.append(f"verify: no verdict for {item_id}/{tid}")
+                item.execution_status = "prediction_failure"
+                item.failure_category = "incomplete_verification"
+                item.failure_stage = "verify"
                 upheld += 1
                 continue
             if verdict.verdict != "not_supported":
@@ -300,7 +311,7 @@ def _verify_node(state: ComplianceState) -> dict:
                 dropped_reason_by_category[flags[idx].category] = verdict.reason
 
         item.reasoning = f"{item.reasoning} [verify: {upheld} upheld, {downgraded} downgraded]".strip()
-        item.verified = True
+        item.verified = item.execution_status == "success"
         verified_item_ids.add(item_id)
         _recompute(item)
         apply_rule_warnings(item, cfg_by_id.get(item_id))

@@ -108,7 +108,14 @@ def resolve_evidence(
     notes: list[str] = []
 
     for q in quotes:
-        seg = by_id.get(q.segment_id)
+        segment_id = q.segment_id.strip()
+        # Prompts display IDs in brackets; accept that exact display form only
+        # when its contents resolve to an existing segment.
+        if segment_id not in by_id and segment_id.startswith("[") and segment_id.endswith("]"):
+            candidate = segment_id[1:-1]
+            if candidate in by_id:
+                segment_id = candidate
+        seg = by_id.get(segment_id)
         if seg is None:
             notes.append(f"resolve_evidence: unknown segment_id {q.segment_id!r}; dropped")
             continue
@@ -117,23 +124,23 @@ def resolve_evidence(
         quote = q.quote or ""
 
         if not quote.strip():
-            ref = EvidenceRef(segment_id=q.segment_id, start_char=0, end_char=len(text), verified=False)
+            ref = EvidenceRef(segment_id=segment_id, start_char=0, end_char=len(text), verified=False)
         else:
             idx = text.find(quote)
             if idx != -1:
                 ref = EvidenceRef(
-                    segment_id=q.segment_id, start_char=idx, end_char=idx + len(quote), verified=True,
+                    segment_id=segment_id, start_char=idx, end_char=idx + len(quote), verified=True,
                 )
             else:
                 match = _find_normalised(text, quote)
                 if match is not None:
                     start, end = match
                     ref = EvidenceRef(
-                        segment_id=q.segment_id, start_char=start, end_char=end, verified=True,
+                        segment_id=segment_id, start_char=start, end_char=end, verified=True,
                     )
                 else:
                     ref = EvidenceRef(
-                        segment_id=q.segment_id, start_char=0, end_char=len(text), verified=False,
+                        segment_id=segment_id, start_char=0, end_char=len(text), verified=False,
                     )
                     notes.append(
                         f"resolve_evidence: quote not found in {q.segment_id!r}; "

@@ -1,0 +1,500 @@
+{
+  "schema_version": "2.0.0",
+  "purpose": "Single source of human-readable metric and status definitions for evaluation results and dashboard tooltips. It defines metrics, not individual predictions. A dashboard must read labels, formulas and interpretations from here and values from summary.json / scores.jsonl; it must not recompute or re-describe them.",
+  "result_files": {
+    "metadata.json": "Run identity, versions, dataset fingerprint, graph commit and lineage (derived_from for rescored runs).",
+    "summary.json": "Family-specific aggregates overall, by call ID (by_call_id) and by checklist question ID (by_question_id).",
+    "scores.jsonl": "One deterministic scoring record per call-question. Contains everything needed to display a row without rescoring.",
+    "predictions.jsonl": "Normalized graph predictions, final selected evidence and graph metadata, for drill-down.",
+    "results.csv": "Flat one-row-per-call-question view of scores.jsonl for both families. Fields of the other family are blank, never zero.",
+    "errors.jsonl": "Operational and validation diagnostics that must not be treated as model decisions."
+  },
+  "summary_path_convention": "Every metric's summary_path is relative to one aggregate node: summary.overall, summary.by_call_id[<call_id>] or summary.by_question_id[<question_id>]. A family block is null when that node contains no question of the family. Ratio objects have value, percentage, numerator and denominator; value is null when the denominator is zero.",
+  "evaluation_families": [
+    {
+      "id": "compliance",
+      "label": "Compliance decisioning",
+      "meaning": "Requirement questions (checklist type COMPLIANCE). Gold is PASS or FAIL; FAIL (a breach) is the positive class. Scored on the automatic decision, its correctness, breach handling and evidence."
+    },
+    {
+      "id": "extraction",
+      "label": "Structured extraction",
+      "meaning": "Field questions (checklist types CLIENT_KYC and TRANSACTION). Gold is an expected value. Scored only on whether the final selected evidence contains that value. It is not a PASS/FAIL task and not called NER."
+    }
+  ],
+  "status_definitions": [
+    {
+      "id": "execution_status",
+      "label": "Execution status",
+      "field": "scores.jsonl / predictions.jsonl: execution_status",
+      "meaning": "Whether the graph produced a usable question-level result. Independent of correctness.",
+      "values": [
+        {"id": "success", "label": "Success", "meaning": "A valid final finding with a recognised native verdict and well-formed evidence was returned."},
+        {"id": "prediction_failure", "label": "Prediction failure", "meaning": "The graph did not produce a reliable usable question-level prediction: exception, missing/duplicate/malformed finding, unrecognised verdict, malformed evidence, or a caught analysis/classification failure. Any native verdict left behind is only a fallback."}
+      ]
+    },
+    {
+      "id": "failure_category",
+      "label": "Failure category",
+      "field": "failure_category (null when execution_status is success)",
+      "meaning": "Why a prediction failed.",
+      "values": [
+        {"id": "analysis_unavailable", "label": "Analysis unavailable", "meaning": "The graph caught an analysis or validation error for the question and emitted a fallback verdict."},
+        {"id": "classification_unavailable", "label": "Classification unavailable", "meaning": "The graph could not classify the question."},
+        {"id": "missing_prediction", "label": "Missing prediction", "meaning": "No final finding for the question, or the whole call failed before output."},
+        {"id": "duplicate_prediction", "label": "Duplicate prediction", "meaning": "More than one final finding for the question."},
+        {"id": "malformed_verdict", "label": "Malformed verdict", "meaning": "The native verdict was not Pass, Fail, Unclear or N/A."},
+        {"id": "malformed_evidence", "label": "Malformed evidence", "meaning": "The finding's spans field was not a list."}
+      ]
+    },
+    {
+      "id": "native_verdict",
+      "label": "Native verdict",
+      "field": "native_verdict",
+      "meaning": "The raw graph value (Pass, Fail, Unclear, N/A). It is diagnostic metadata and is never sufficient on its own to determine an evaluation result. Native Unclear may be a compliance abstention, a fallback after a prediction failure, or an ordinary extraction output.",
+      "values": [
+        {"id": "Pass", "label": "Pass", "meaning": "Raw graph verdict. Maps to PASS for successful compliance questions."},
+        {"id": "Fail", "label": "Fail", "meaning": "Raw graph verdict. Maps to FAIL for successful compliance questions."},
+        {"id": "Unclear", "label": "Unclear", "meaning": "Raw graph verdict. A compliance abstention only when execution succeeded; a fallback when execution failed; ordinary diagnostic output for extraction questions."},
+        {"id": "N/A", "label": "N/A", "meaning": "Raw graph verdict. Unexpected for compliance because applicability is bypassed."}
+      ]
+    },
+    {
+      "id": "compliance_outcome_status",
+      "label": "Compliance outcome status",
+      "field": "compliance.outcome_status",
+      "meaning": "Mutually exclusive classification of every applicable compliance question. The four values sum to the compliance question count.",
+      "values": [
+        {"id": "binary_decision", "label": "Binary decision", "meaning": "Execution succeeded and the normalized verdict is PASS or FAIL. Enters the 2x2 confusion matrix."},
+        {"id": "abstention", "label": "Abstention", "meaning": "Execution succeeded and the graph genuinely returned UNCLEAR: a supported refusal to make a binary determination."},
+        {"id": "prediction_failure", "label": "Prediction failure", "meaning": "Execution did not succeed. A native UNCLEAR fallback from such a failure is NOT an abstention."},
+        {"id": "unexpected_not_applicable", "label": "Unexpected not applicable", "meaning": "The graph returned N/A although applicability is bypassed and every question is intentionally in scope."}
+      ]
+    },
+    {
+      "id": "breach_outcome",
+      "label": "Breach outcome",
+      "field": "compliance.breach_outcome (only for gold FAIL questions)",
+      "meaning": "What happened to each actual breach. The five values sum to the gold FAIL count.",
+      "values": [
+        {"id": "detected", "label": "Automatically detected", "meaning": "Gold FAIL, predicted FAIL (true positive)."},
+        {"id": "false_clearance", "label": "Falsely cleared", "meaning": "Gold FAIL, predicted PASS (false negative)."},
+        {"id": "abstained", "label": "Abstained", "meaning": "Gold FAIL, genuine successful UNCLEAR abstention."},
+        {"id": "prediction_failure", "label": "Prediction failure", "meaning": "Gold FAIL, the prediction failed."},
+        {"id": "unexpected_not_applicable", "label": "Unexpected N/A", "meaning": "Gold FAIL, unexpected N/A."}
+      ]
+    },
+    {
+      "id": "extraction_gold_value_status",
+      "label": "Gold value status",
+      "field": "extraction.gold_value_status",
+      "meaning": "A property of the ground-truth data, not of the model.",
+      "values": [
+        {"id": "PRESENT", "label": "Present", "meaning": "The ground truth has a non-null expected value."},
+        {"id": "NOT_STATED", "label": "Not stated", "meaning": "The ground truth intentionally has no expected value (expected_value is null). This is a dataset property, never a model outcome. These rows are excluded from extraction evidence coverage, and the evaluator does not claim they were correctly extracted because the graph returns no dedicated extracted value."}
+      ]
+    },
+    {
+      "id": "extraction_evidence_status",
+      "label": "Extraction evidence status",
+      "field": "extraction.evidence_status (null unless execution succeeded, the gold value is PRESENT and the evaluator supports it)",
+      "meaning": "Whether the expected value occurs in the final selected evidence.",
+      "values": [
+        {"id": "FOUND", "label": "Found", "meaning": "The expected value occurs within the final selected evidence."},
+        {"id": "NOT_FOUND", "label": "Not found", "meaning": "Execution succeeded, but the expected value is absent from the final selected evidence. This is not a prediction failure."}
+      ]
+    },
+    {
+      "id": "evaluator_support",
+      "label": "Evaluator support",
+      "field": "extraction.evaluator_support (null for NOT_STATED rows)",
+      "meaning": "Whether the deterministic evaluator can compare this expected-value type. Supported types are text (token-boundary matching) and dob_dd_month_yyyy (calendar-date normalization).",
+      "values": [
+        {"id": "SUPPORTED", "label": "Supported", "meaning": "A deterministic comparison exists for the expected value."},
+        {"id": "UNSUPPORTED", "label": "Unsupported", "meaning": "The evaluator cannot validly compare this value type. It does not mean the model is wrong, hallucinated, or cited evidence outside the transcript. Unsupported rows are excluded from coverage. Invalid evidence references are never UNSUPPORTED."}
+      ]
+    },
+    {
+      "id": "evidence_status",
+      "label": "Evidence scoring status",
+      "field": "evidence.status",
+      "meaning": "How the evidence sets of a row were scored.",
+      "values": [
+        {"id": "scored", "label": "Scored", "meaning": "All final evidence spans resolved to transcript turns."},
+        {"id": "invalid_references", "label": "Invalid references", "meaning": "At least one final evidence span could not be mapped to a transcript turn. Invalid references stay in the precision denominator and prevent an exact-set match."},
+        {"id": "prediction_failure", "label": "Prediction failure", "meaning": "Execution failed, so evidence is unavailable. It receives a zero penalty and is not treated as legitimate empty evidence."},
+        {"id": "evidence_failure", "label": "Evidence failure", "meaning": "Execution succeeded but evidence was unavailable. Zero penalty."}
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "compliance.decision_coverage",
+      "label": "Decision coverage",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All applicable compliance questions.",
+      "summary_path": "compliance.decision_coverage",
+      "formula": "binary decisions / all applicable compliance questions",
+      "interpretation": "How often the system returns an automatic PASS or FAIL decision. Higher is better.",
+      "watch_out": "Says nothing about whether the decisions were correct."
+    },
+    {
+      "id": "compliance.abstention_rate",
+      "label": "Abstention rate",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All applicable compliance questions.",
+      "summary_path": "compliance.abstention_rate",
+      "formula": "successful genuine UNCLEAR abstentions / all applicable compliance questions",
+      "interpretation": "How often the graph completes its analysis but declines to make a binary determination.",
+      "watch_out": "Excludes prediction failures even when their native fallback verdict is UNCLEAR."
+    },
+    {
+      "id": "compliance.prediction_failure_rate",
+      "label": "Prediction failure rate",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All applicable compliance questions.",
+      "summary_path": "compliance.prediction_failure_rate",
+      "formula": "compliance prediction failures / all applicable compliance questions",
+      "interpretation": "Operational and model-output reliability, not uncertainty. Lower is better.",
+      "watch_out": "decision coverage + abstention rate + prediction failure rate + unexpected N/A rate = 100%."
+    },
+    {
+      "id": "compliance.unexpected_not_applicable_rate",
+      "label": "Unexpected N/A rate",
+      "role": "secondary",
+      "applies_to": "compliance",
+      "population": "All applicable compliance questions.",
+      "summary_path": "compliance.unexpected_not_applicable_rate",
+      "formula": "unexpected NOT_APPLICABLE outcomes / all applicable compliance questions",
+      "interpretation": "N/A was returned although applicability is bypassed. Expected to be 0."
+    },
+    {
+      "id": "compliance.binary_accuracy",
+      "label": "Binary accuracy",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "Completed PASS/FAIL decisions only.",
+      "summary_path": "compliance.binary.accuracy",
+      "formula": "(TP + TN) / (TP + TN + FP + FN)",
+      "interpretation": "Correctness when the graph makes a definite binary decision.",
+      "watch_out": "Excludes abstentions and prediction failures; it does not describe the whole compliance population. Read it with decision coverage."
+    },
+    {
+      "id": "compliance.breach_precision",
+      "label": "Breach precision",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "Completed PASS/FAIL decisions only.",
+      "summary_path": "compliance.binary.breach_precision",
+      "formula": "TP / (TP + FP)",
+      "interpretation": "Among FAIL decisions, the share that are genuine breaches.",
+      "watch_out": "Null when the graph made no FAIL decision."
+    },
+    {
+      "id": "compliance.breach_recall",
+      "label": "Breach recall",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "Completed PASS/FAIL decisions only.",
+      "summary_path": "compliance.binary.breach_recall",
+      "formula": "TP / (TP + FN)",
+      "interpretation": "Among breaches the graph decided on, the share detected as FAIL.",
+      "watch_out": "Excludes abstained and failed breaches. Use the automatic breach detection rate for the whole gold-FAIL population."
+    },
+    {
+      "id": "compliance.confusion_matrix",
+      "label": "Confusion matrix",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "Completed PASS/FAIL decisions only.",
+      "summary_path": "compliance.binary.confusion_matrix",
+      "formula": "TP: gold FAIL predicted FAIL. TN: gold PASS predicted PASS. FP: gold PASS predicted FAIL. FN: gold FAIL predicted PASS.",
+      "interpretation": "The 2x2 outcome counts of completed binary decisions, with FAIL as the positive class.",
+      "watch_out": "It answers a different question from the breach-outcome decomposition."
+    },
+    {
+      "id": "compliance.automatic_breach_detection_rate",
+      "label": "Automatic breach detection rate",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All gold FAIL compliance questions.",
+      "summary_path": "compliance.breach_outcomes.automatic_breach_detection_rate",
+      "formula": "gold FAIL predicted FAIL / all gold FAIL",
+      "interpretation": "End-to-end share of actual breaches automatically surfaced as FAIL.",
+      "watch_out": "Abstentions and prediction failures stay in the denominator, so this is stricter than breach recall."
+    },
+    {
+      "id": "compliance.false_clearance_rate",
+      "label": "False-clearance rate",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All gold FAIL compliance questions.",
+      "summary_path": "compliance.breach_outcomes.false_clearance_rate",
+      "formula": "gold FAIL predicted PASS / all gold FAIL",
+      "interpretation": "Share of actual breaches incorrectly cleared as PASS. Lower is better."
+    },
+    {
+      "id": "compliance.gold_breach_abstention_rate",
+      "label": "Gold-breach abstention rate",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All gold FAIL compliance questions.",
+      "summary_path": "compliance.breach_outcomes.abstention_rate",
+      "formula": "gold FAIL with a genuine successful UNCLEAR abstention / all gold FAIL",
+      "interpretation": "Share of actual breaches the graph declined to decide."
+    },
+    {
+      "id": "compliance.gold_breach_prediction_failure_rate",
+      "label": "Gold-breach prediction-failure rate",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All gold FAIL compliance questions.",
+      "summary_path": "compliance.breach_outcomes.prediction_failure_rate",
+      "formula": "gold FAIL with a prediction failure / all gold FAIL",
+      "interpretation": "Share of actual breaches lost to operational failure."
+    },
+    {
+      "id": "compliance.gold_breach_unexpected_not_applicable_rate",
+      "label": "Gold-breach unexpected-N/A rate",
+      "role": "secondary",
+      "applies_to": "compliance",
+      "population": "All gold FAIL compliance questions.",
+      "summary_path": "compliance.breach_outcomes.unexpected_not_applicable_rate",
+      "formula": "gold FAIL with an unexpected NOT_APPLICABLE / all gold FAIL",
+      "interpretation": "Share of actual breaches returned as N/A. Expected to be 0.",
+      "watch_out": "detected + falsely cleared + abstained + prediction failure + unexpected N/A = all gold FAIL."
+    },
+    {
+      "id": "compliance.evidence_precision",
+      "label": "Evidence precision",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All compliance questions, using final selected evidence turns.",
+      "summary_path": "compliance.evidence.overall.precision",
+      "breakdowns": {
+        "non_empty_gold": "compliance.evidence.non_empty_gold.precision",
+        "empty_gold": "compliance.evidence.empty_gold.precision"
+      },
+      "formula": "mean over questions of |gold turns ∩ predicted turns| / |predicted turns|",
+      "interpretation": "Whether the selected evidence is relevant.",
+      "watch_out": "Uses the project's custom empty-set convention (see evidence_empty_set_convention). Non-empty-gold measures evidence-selection skill; empty-gold measures absence-case correctness."
+    },
+    {
+      "id": "compliance.evidence_recall",
+      "label": "Evidence recall",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All compliance questions, using final selected evidence turns.",
+      "summary_path": "compliance.evidence.overall.recall",
+      "breakdowns": {
+        "non_empty_gold": "compliance.evidence.non_empty_gold.recall",
+        "empty_gold": "compliance.evidence.empty_gold.recall"
+      },
+      "formula": "mean over questions of |gold turns ∩ predicted turns| / |gold turns|",
+      "interpretation": "Whether the expected evidence was recovered.",
+      "watch_out": "Uses the project's custom empty-set convention."
+    },
+    {
+      "id": "compliance.evidence_exact_set_match",
+      "label": "Evidence exact-set match",
+      "role": "headline",
+      "applies_to": "compliance",
+      "population": "All compliance questions, using final selected evidence turns.",
+      "summary_path": "compliance.evidence.overall.exact_set_match",
+      "breakdowns": {
+        "non_empty_gold": "compliance.evidence.non_empty_gold.exact_set_match",
+        "empty_gold": "compliance.evidence.empty_gold.exact_set_match"
+      },
+      "formula": "mean over questions of 1 if the predicted turn set equals the gold turn set, otherwise 0",
+      "interpretation": "Strict evidence-selection correctness."
+    },
+    {
+      "id": "compliance.invalid_evidence_reference_rate",
+      "label": "Invalid evidence-reference rate",
+      "role": "secondary",
+      "applies_to": "compliance",
+      "population": "All compliance questions.",
+      "summary_path": "compliance.evidence.invalid_reference_cases",
+      "formula": "questions with at least one unmappable final evidence span / compliance questions",
+      "interpretation": "Reference validity of the final evidence. Lower is better."
+    },
+    {
+      "id": "compliance.native_unclear_outputs",
+      "label": "Native UNCLEAR outputs",
+      "role": "diagnostic",
+      "applies_to": "compliance",
+      "population": "All compliance questions.",
+      "summary_path": "compliance.native_diagnostics.native_unclear_outputs",
+      "formula": "graph-native Unclear verdicts / compliance questions",
+      "interpretation": "Raw graph output before separating genuine abstentions from failure fallbacks.",
+      "watch_out": "Diagnostic only. Native Unclear = abstention + prediction failures with an Unclear fallback."
+    },
+    {
+      "id": "compliance.native_unclear_prediction_failures",
+      "label": "Native UNCLEAR from prediction failures",
+      "role": "diagnostic",
+      "applies_to": "compliance",
+      "population": "All compliance questions.",
+      "summary_path": "compliance.native_diagnostics.native_unclear_prediction_failures",
+      "formula": "prediction failures whose native verdict is Unclear / compliance questions",
+      "interpretation": "Unclear values that are operational fallbacks rather than abstentions."
+    },
+    {
+      "id": "extraction.evidence_coverage",
+      "label": "Extraction evidence coverage",
+      "role": "headline",
+      "applies_to": "extraction",
+      "population": "Extraction questions whose gold value is PRESENT and whose value type the evaluator supports (prediction failures included).",
+      "summary_path": "extraction.extraction_evidence_coverage",
+      "formula": "FOUND / (PRESENT and SUPPORTED expected values)",
+      "interpretation": "Whether the final selected evidence contains the expected structured value.",
+      "watch_out": "Not extraction-value accuracy: the graph returns no dedicated extracted value. NOT_STATED and UNSUPPORTED rows are excluded. A prediction failure on a PRESENT row stays in the denominator but is not counted as NOT_FOUND."
+    },
+    {
+      "id": "extraction.prediction_failure_rate",
+      "label": "Extraction prediction failure rate",
+      "role": "headline",
+      "applies_to": "extraction",
+      "population": "All extraction questions.",
+      "summary_path": "extraction.prediction_failure_rate",
+      "formula": "extraction prediction failures / all extraction questions",
+      "interpretation": "Execution reliability, independent of whether values were found."
+    },
+    {
+      "id": "extraction.present_expected_values",
+      "label": "Expected values present",
+      "role": "count",
+      "applies_to": "extraction",
+      "population": "All extraction questions.",
+      "summary_path": "extraction.counts.present_expected_values",
+      "formula": "count of gold_value_status = PRESENT",
+      "interpretation": "Dataset composition."
+    },
+    {
+      "id": "extraction.not_stated_expected_values",
+      "label": "Expected values not stated",
+      "role": "count",
+      "applies_to": "extraction",
+      "population": "All extraction questions.",
+      "summary_path": "extraction.counts.not_stated_expected_values",
+      "formula": "count of gold_value_status = NOT_STATED",
+      "interpretation": "Dataset composition; not scoreable for value correctness."
+    },
+    {
+      "id": "extraction.found",
+      "label": "Expected value found",
+      "role": "count",
+      "applies_to": "extraction",
+      "population": "Successful, PRESENT, SUPPORTED extraction rows.",
+      "summary_path": "extraction.counts.found",
+      "formula": "count of evidence_status = FOUND",
+      "interpretation": "Coverage numerator."
+    },
+    {
+      "id": "extraction.not_found",
+      "label": "Expected value not found",
+      "role": "count",
+      "applies_to": "extraction",
+      "population": "Successful, PRESENT, SUPPORTED extraction rows.",
+      "summary_path": "extraction.counts.not_found",
+      "formula": "count of evidence_status = NOT_FOUND",
+      "interpretation": "Successful executions whose final evidence lacks the value."
+    },
+    {
+      "id": "extraction.unsupported",
+      "label": "Evaluator-unsupported values",
+      "role": "diagnostic",
+      "applies_to": "extraction",
+      "population": "PRESENT extraction rows.",
+      "summary_path": "extraction.counts.unsupported",
+      "formula": "count of evaluator_support = UNSUPPORTED",
+      "interpretation": "Values the deterministic evaluator cannot compare. Zero for the pilot dataset.",
+      "watch_out": "Not a model error. Surface it only when non-zero."
+    },
+    {
+      "id": "extraction.evidence_precision",
+      "label": "Extraction evidence precision",
+      "role": "secondary",
+      "applies_to": "extraction",
+      "population": "All extraction questions, using final selected evidence turns.",
+      "summary_path": "extraction.evidence.overall.precision",
+      "breakdowns": {
+        "non_empty_gold": "extraction.evidence.non_empty_gold.precision",
+        "empty_gold": "extraction.evidence.empty_gold.precision"
+      },
+      "formula": "mean over questions of |gold turns ∩ predicted turns| / |predicted turns|",
+      "interpretation": "Diagnostic: how much of the selected evidence is the expected turn.",
+      "watch_out": "Secondary to evidence coverage. A value can be FOUND with low precision when excess evidence is selected."
+    },
+    {
+      "id": "extraction.evidence_recall",
+      "label": "Extraction evidence recall",
+      "role": "secondary",
+      "applies_to": "extraction",
+      "population": "All extraction questions, using final selected evidence turns.",
+      "summary_path": "extraction.evidence.overall.recall",
+      "breakdowns": {
+        "non_empty_gold": "extraction.evidence.non_empty_gold.recall",
+        "empty_gold": "extraction.evidence.empty_gold.recall"
+      },
+      "formula": "mean over questions of |gold turns ∩ predicted turns| / |gold turns|",
+      "interpretation": "Diagnostic: whether the gold evidence turn was selected."
+    },
+    {
+      "id": "extraction.evidence_exact_set_match",
+      "label": "Extraction evidence exact-set match",
+      "role": "secondary",
+      "applies_to": "extraction",
+      "population": "All extraction questions, using final selected evidence turns.",
+      "summary_path": "extraction.evidence.overall.exact_set_match",
+      "breakdowns": {
+        "non_empty_gold": "extraction.evidence.non_empty_gold.exact_set_match",
+        "empty_gold": "extraction.evidence.empty_gold.exact_set_match"
+      },
+      "formula": "mean over questions of 1 if the predicted turn set equals the gold turn set, otherwise 0",
+      "interpretation": "Diagnostic: strict evidence-selection correctness."
+    },
+    {
+      "id": "extraction.invalid_evidence_reference_rate",
+      "label": "Extraction invalid evidence-reference rate",
+      "role": "secondary",
+      "applies_to": "extraction",
+      "population": "All extraction questions.",
+      "summary_path": "extraction.evidence.invalid_reference_cases",
+      "formula": "questions with at least one unmappable final evidence span / extraction questions",
+      "interpretation": "Reference validity of the final evidence."
+    },
+    {
+      "id": "extraction.native_unclear_outputs",
+      "label": "Extraction native UNCLEAR outputs",
+      "role": "diagnostic",
+      "applies_to": "extraction",
+      "population": "All extraction questions.",
+      "summary_path": "extraction.native_diagnostics.native_unclear_outputs",
+      "formula": "graph-native Unclear verdicts / extraction questions",
+      "interpretation": "Raw shared-graph output only.",
+      "watch_out": "A successful native Unclear on an extraction question is NOT an abstention and says nothing about whether the value was FOUND."
+    },
+    {
+      "id": "diagnostic.evidence_all_questions_precision",
+      "label": "All-question evidence precision",
+      "role": "diagnostic",
+      "applies_to": "both",
+      "population": "All questions of both families.",
+      "summary_path": "evidence_all_questions.overall.precision",
+      "formula": "mean over all questions of |gold turns ∩ predicted turns| / |predicted turns|",
+      "interpretation": "Backward-compatible blended value.",
+      "watch_out": "Mixes families. Use the compliance and extraction evidence metrics instead."
+    }
+  ],
+  "evidence_empty_set_convention": {
+    "non_empty_gold_non_empty_prediction": "Use standard precision, recall, and exact-set formulas.",
+    "non_empty_gold_empty_prediction": "precision=0, recall=0, exact_set_match=0",
+    "empty_gold_non_empty_prediction": "precision=0, recall=0, exact_set_match=0",
+    "empty_gold_empty_prediction": "precision=1, recall=1, exact_set_match=1",
+    "failed_or_malformed_evidence": "All evidence metrics receive zero; failed output is not treated as legitimate empty evidence."
+  }
+}

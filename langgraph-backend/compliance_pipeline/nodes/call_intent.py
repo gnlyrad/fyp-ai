@@ -77,6 +77,9 @@ def call_intent_node(state: ComplianceState) -> dict:
             confidence=0.0,
             evidence=[],
             reasoning="Call intent classification failed.",
+            execution_status="prediction_failure",
+            failure_category="classification_unavailable",
+            failure_stage="call_intent",
         )
         return {"call_intent": _empty_call_intent(), "item_results": [item_result], "errors": errors}
 

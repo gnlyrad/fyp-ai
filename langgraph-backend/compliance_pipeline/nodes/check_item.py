@@ -120,6 +120,9 @@ def _cannot_determine_result(
     result = ItemResult(
         item_id=item_id,
         status=Status.CANNOT_DETERMINE,
+        execution_status="prediction_failure",
+        failure_category="analysis_unavailable",
+        failure_stage="check_item",
         confidence=0.0,
         sub_criteria=[
             SubCriterionResult(id=sid, status=Status.CANNOT_DETERMINE, evidence=[], note=note)
@@ -329,6 +332,11 @@ def check_item_node(task: CheckItemTask) -> dict:
         reasoning=reasoning,
         warnings=warnings,
     )
+    if any(sc.id not in answers_by_id for sc in item.sub_criteria):
+        result.execution_status = "prediction_failure"
+        result.failure_category = "incomplete_structured_output"
+        result.failure_stage = "check_item"
+        errors.append(f"check_item[{item.id}]: missing sub-criterion answer")
     apply_rule_warnings(result, item)
 
     out: dict = {"item_results": [result], "red_flags": red_flags}

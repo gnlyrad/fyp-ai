@@ -1,5 +1,4 @@
 # Keep only the compliance package and its config in version control.
-tests/
 scripts/
 output/
 requests/

@@ -6,20 +6,21 @@ created automatically and no credentials belong in Git.
 
 ## Configure
 
-For the root Docker setup, edit `langgraph-backend/.env` locally:
+For the root Docker setup, edit `fyp-ai/.env` locally:
 
 ```dotenv
 AWS_REGION=ap-southeast-1
-BEDROCK_EMBEDDING_MODEL=cohere.embed-english-v3
+GOOGLE_API_KEY=your-local-key
+GOOGLE_EMBEDDING_MODEL=gemini-embedding-001
 REGULATION_SEARCH_BACKEND=s3vectors
 S3_VECTORS_BUCKET_NAME=clearcall-mas-corpus
-S3_VECTORS_INDEX_NAME=mas-cohere-v3
+S3_VECTORS_INDEX_NAME=mas-gemini-001
 # Fill after a successful ingestion:
 S3_VECTORS_CORPUS_VERSION=
 ```
 
 Alternatively use `S3_VECTORS_INDEX_ARN`; it overrides the bucket/index pair.
-Use a float32, 1024-dimensional cosine index for this embedding model, with
+Use a float32, 3072-dimensional cosine index for this embedding model, with
 `text` non-filterable and `corpus_version`/`embedding_model` filterable.
 Supply standard AWS credentials to the container through environment variables
 or an IAM role. A Bedrock bearer token alone cannot authenticate S3 Vectors.
@@ -37,7 +38,7 @@ An index encrypted with a customer KMS key needs corresponding KMS access.
 docker build -t clearcall-backend .
 # Stop the previous container if one exists:
 docker stop clearcall-backend
-$envPath = (Resolve-Path '.\langgraph-backend\.env').Path
+$envPath = (Resolve-Path '.\.env').Path
 docker run --rm --name clearcall-backend -p 2024:2024 -p 8001:8001 --env-file "$envPath" --mount "type=bind,source=$envPath,target=/app/.env,readonly" clearcall-backend
 ```
 
@@ -69,13 +70,14 @@ cosine distance (lower is closer), not a compliance confidence score.
 This endpoint uses embeddings and S3 retrieval, without calling the chat model.
 
 Then send the normal request to POST http://localhost:2024/runs/wait.
-Guidance currently runs for targeted/exhaustive items only. Use one of those
-items to test integration; deterministic-only checklists do not exercise it.
-The current branch deliberately disables applicability/consistency nodes;
-this integration does not re-enable them.
+The staged graph uses cached rules for unchanged production checklist items.
+Caller-added or edited rule queries use live regulatory retrieval. Use a custom
+checklist item to exercise S3 retrieval end to end. Never query a Cohere-built
+index with Gemini embeddings; create and ingest a compatible index first.
 
-S3 retrieval failures propagate instead of silently using FAISS or returning
-no guidance. Read `docker logs --tail 100 clearcall-backend` for the cause.
+The retrieval service propagates S3 failures and never silently uses FAISS.
+The graph records a rule-lookup error and may continue judging without rules;
+inspect its errors as well as the final statuses. Read `docker logs --tail 100 clearcall-backend` for the cause.
 Missing corpus version, wrong dimensions, no matching vectors or invalid
 citation metadata are errors. Set REGULATION_SEARCH_BACKEND=faiss and recreate
 the container to explicitly return to local retrieval.

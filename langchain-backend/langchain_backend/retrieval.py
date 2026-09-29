@@ -2,13 +2,13 @@
 
 Split out from `rag.py` because the two callers want different things. `/ask`
 wants a synthesised answer and needs a chat model; the compliance pipeline wants
-the passages themselves and does not. Constructing a Bedrock chat model just to
+the passages themselves and does not. Constructing a Gemini chat model just to
 run a similarity search is wasted setup, so `RegulationSearch` holds only the
 embeddings and the index, and `CodeRAGService` composes it.
 """
 from __future__ import annotations
 
-from langchain_aws import BedrockEmbeddings
+from .models import create_embeddings
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langsmith import traceable
@@ -27,10 +27,7 @@ class RegulationSearch:
     """Embeddings plus the selected FAISS or S3 Vectors index. No LLM."""
 
     def __init__(self) -> None:
-        self._embeddings = BedrockEmbeddings(
-            model_id=settings.bedrock_embedding_model,
-            region_name=settings.aws_region,
-        )
+        self._embeddings = create_embeddings()
         self._splitter = RecursiveCharacterTextSplitter(
             chunk_size=CHUNK_SIZE,
             chunk_overlap=CHUNK_OVERLAP,

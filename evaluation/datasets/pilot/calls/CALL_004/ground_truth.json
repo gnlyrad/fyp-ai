@@ -1,0 +1,362 @@
+{
+  "call_id": "CALL_004",
+  "checks": [
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never seeks, infers aloud, restates or confirms the client's investment objective anywhere in the call.",
+        "content_constraints": [
+          "The recommendation must not reveal or assume the client's objective through a personal-suitability statement or order rationale."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C01"
+    },
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never asks about, infers aloud, or obtains any confirmation of the client's willingness to accept investment losses.",
+        "content_constraints": [
+          "No profile read-back or indirect risk-acceptance confirmation may appear."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C02"
+    },
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never explains that the client could lose invested capital, including at the order stage.",
+        "content_constraints": [
+          "Limit product discussion to holdings and dealing mechanics only; no risk or principal-protection language."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C03"
+    },
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never discloses the transaction fee — no amount, rate, waiver claim or all-in total from which the fee could be inferred — anywhere in the call.",
+        "content_constraints": [
+          "Do not describe the order as fee-free or provide a total from which the fee could be inferred by subtraction."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C04"
+    },
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never claims or endorses that past investment performance guarantees future returns.",
+        "content_constraints": [
+          "The recommendation may reference the fund's approach without any performance-guarantee language."
+        ],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C05"
+    },
+    {
+      "evidence_plan": {
+        "absent_event": "The employee never encourages an inflated loss-tolerance declaration or introduces risk-questionnaire coaching.",
+        "content_constraints": [],
+        "forbidden_patterns": [],
+        "mode": "absence",
+        "required_speaker": "EMPLOYEE",
+        "scope": "entire_dialogue"
+      },
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "question_id": "C06"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [],
+        "forbidden_patterns": [
+          "S9100001X",
+          "S8400002X",
+          "F7800003A"
+        ],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "K01_E1",
+            "required_speaker": "CLIENT",
+            "text": "My identification number is G8800004A."
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "G8800004A",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "gold_evidence_text": "My identification number is G8800004A.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "question_id": "K01"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [],
+        "forbidden_patterns": [],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "K02_E1",
+            "required_speaker": "CLIENT",
+            "text": "My date of birth is 9 February 1988."
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "09 February 1988",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "gold_evidence_text": "My date of birth is 9 February 1988.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "question_id": "K02"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "This phrase and T02's evidence phrase must occur in the single, final client buy instruction turn, together with the order_notional amount 25,000; no second order, tentative instruction or unit price may appear anywhere else in the call."
+        ],
+        "forbidden_patterns": [
+          "TEST\\ SGD\\ Equity\\ Fund",
+          "TEST\\ USD\\ Equity\\ Fund",
+          "TEST\\ EUR\\ Equity\\ Fund",
+          "TEST\\ AUD\\ Equity\\ Fund"
+        ],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "T01_E1",
+            "required_speaker": "CLIENT",
+            "text": "TEST GBP Equity Fund"
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "TEST GBP Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "gold_evidence_text": "TEST GBP Equity Fund",
+      "gold_evidence_turns": [
+        13
+      ],
+      "question_id": "T01"
+    },
+    {
+      "evidence_plan": {
+        "content_constraints": [
+          "Must occur in the same single client buy instruction turn as T01's evidence."
+        ],
+        "forbidden_patterns": [
+          "\\bSGD\\b",
+          "\\bUSD\\b",
+          "\\bEUR\\b",
+          "\\bAUD\\b"
+        ],
+        "mode": "presence",
+        "planned_evidence": [
+          {
+            "evidence_id": "T02_E1",
+            "required_speaker": "CLIENT",
+            "text": "in GBP"
+          }
+        ]
+      },
+      "expected": {
+        "expected_value": "GBP",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "gold_evidence_text": "in GBP",
+      "gold_evidence_turns": [
+        13
+      ],
+      "question_id": "T02"
+    }
+  ],
+  "dialogue": [
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Hi Nadia, thanks for taking my call. I wanted to walk you through the fund we discussed last time and see if it's something you'd like to move ahead with today.",
+      "turn_id": 0
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Thanks, Ethan. Go ahead, I've got a few minutes.",
+      "turn_id": 1
+    },
+    {
+      "critical_tokens": [
+        "TEST GBP Equity Fund"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "The TEST GBP Equity Fund is a diversified equity fund, holding a broad mix of listed companies across several industries. Dealing is straightforward — you can subscribe or redeem on any business day, and everything is handled electronically once you're set up. I recommend investing in this fund.",
+      "turn_id": 2
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "That sounds convenient.",
+      "turn_id": 3
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "There's no minimum holding period, and statements are issued monthly so you can keep track of the position. Subscriptions placed before the daily cut-off are processed the same business day.",
+      "turn_id": 4
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Good to know.",
+      "turn_id": 5
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "A number of our clients hold it alongside other positions in their portfolio, and the minimum for any top-up afterwards is quite low.",
+      "turn_id": 6
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "That's useful, thanks.",
+      "turn_id": 7
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Before I can process anything, I'll need to confirm a couple of details on file. Could you give me your identification number?",
+      "turn_id": 8
+    },
+    {
+      "critical_tokens": [
+        "G8800004A"
+      ],
+      "speaker": "CLIENT",
+      "text": "My identification number is G8800004A.",
+      "turn_id": 9
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. And your date of birth, please?",
+      "turn_id": 10
+    },
+    {
+      "critical_tokens": [
+        "9 February 1988"
+      ],
+      "speaker": "CLIENT",
+      "text": "My date of birth is 9 February 1988.",
+      "turn_id": 11
+    },
+    {
+      "critical_tokens": [
+        "TEST GBP Equity Fund"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "That all matches what we have on file. Would you like to go ahead with the TEST GBP Equity Fund?",
+      "turn_id": 12
+    },
+    {
+      "critical_tokens": [
+        "TEST GBP Equity Fund",
+        "25,000",
+        "in GBP"
+      ],
+      "speaker": "CLIENT",
+      "text": "Yes, I'd like to buy the TEST GBP Equity Fund — please invest 25,000, in GBP.",
+      "turn_id": 13
+    },
+    {
+      "critical_tokens": [
+        "TEST GBP Equity Fund",
+        "25,000",
+        "in GBP"
+      ],
+      "speaker": "EMPLOYEE",
+      "text": "Understood. I've noted your instruction to buy the TEST GBP Equity Fund for 25,000 in GBP. I'll get this processed today and send you the dealing confirmation once it's through.",
+      "turn_id": 14
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Perfect, thank you.",
+      "turn_id": 15
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "EMPLOYEE",
+      "text": "Thanks, Nadia — I'll be in touch once it's done. Have a good rest of your day.",
+      "turn_id": 16
+    },
+    {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Thanks, Ethan. You too, bye for now.",
+      "turn_id": 17
+    }
+  ],
+  "metadata": {
+    "language": "en-SG",
+    "scenario": "private_banking_investment_advice_and_order"
+  },
+  "schema_version": "0.6.0"
+}
