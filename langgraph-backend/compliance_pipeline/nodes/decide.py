@@ -1,4 +1,4 @@
-"""`decide`: escalation (C07), post-call actions (C08), task ownership (C09).
+"""`decide`: escalation, post-call actions and task ownership.
 
 Runs once after `verify` joins, before `aggregate`. Code first throughout
 (CLAUDE.md "Prefer plain code over an LLM whenever the task is
@@ -17,8 +17,8 @@ deterministic"):
 3. Ownership: `action_type -> owner_role` is a plain lookup in
    `config/ownership.yaml`; the LLM never picks the owner.
 
-Never raises: any unexpected failure falls back to CANNOT_DETERMINE C07/C08
-results, a NOT_APPLICABLE C09, no actions, and an `errors` entry.
+Never raises: any unexpected failure returns an undetermined escalation, no
+actions, and an `errors` entry.
 """
 from __future__ import annotations
 
@@ -33,7 +33,6 @@ from compliance_pipeline.nodes._common import (
     format_transcript,
     merged_results,
     resolve_evidence,
-    rollup_status,
 )
 from compliance_pipeline.prompts.decide import (
     SYSTEM_ACTIONS,
@@ -50,7 +49,6 @@ from compliance_pipeline.schemas import (
     ItemResult,
     RedFlag,
     Status,
-    SubCriterionResult,
 )
 from compliance_pipeline.state import ComplianceState
 
@@ -255,24 +253,6 @@ def decide_node(state: ComplianceState) -> dict:
         return {
             "actions": [],
             "escalation": Escalation(source="undetermined").model_dump(),
-            "item_results": [
-                ItemResult(
-                    item_id="C07", status=Status.CANNOT_DETERMINE,
-                    sub_criteria=[
-                        SubCriterionResult(id="no_escalation", status=Status.CANNOT_DETERMINE),
-                        SubCriterionResult(id="no_hold", status=Status.CANNOT_DETERMINE),
-                    ],
-                    reasoning="Escalation decision failed.",
-                ),
-                ItemResult(
-                    item_id="C08", status=Status.CANNOT_DETERMINE,
-                    reasoning="Post-call action determination failed.",
-                ),
-                ItemResult(
-                    item_id="C09", status=Status.NOT_APPLICABLE,
-                    reasoning="No post-call actions to assign.",
-                ),
-            ],
             "errors": [f"decide: unexpected error: {type(exc).__name__}: {exc}"],
         }
 
@@ -289,8 +269,14 @@ def _decide_node(state: ComplianceState) -> dict:
 
     # ---- 1. Escalation. --------------------------------------------------
     rules = _escalation_rules()
+    if not state.get("using_default_checklist", False):
+        # Item-specific rules describe the meanings of the default C01/C03/etc.
+        # Caller-defined checklists may reuse those ids for unrelated questions.
+        rules = [rule for rule in rules if "item" not in (rule.get("when") or {})]
     checklist = config.active_checklist(state)
-    escalate, hold, reasons, rule_ids, rule_evidence = _evaluate_rules(rules, merged, red_flags, checklist)
+    escalate, hold, reasons, rule_ids, _rule_evidence = _evaluate_rules(
+        rules, merged, red_flags, checklist
+    )
 
     if rule_ids:
         source = "rules"
@@ -320,7 +306,6 @@ def _decide_node(state: ComplianceState) -> dict:
 
     # ---- 2. Post-call actions. --------------------------------------------
     actions: list[Action] = []
-    c08_status = Status.PASS
     if segments:
         llm_result = get_llm_response(
             "decide_actions", SYSTEM_ACTIONS,
@@ -335,7 +320,6 @@ def _decide_node(state: ComplianceState) -> dict:
                 actions.append(_resolve_action(item, segments, errors))
         else:
             errors.append(f"decide[actions]: {llm_result.error}")
-            c08_status = Status.CANNOT_DETERMINE
 
     if escalation.required and not any(a.action_type == "raise_case" for a in actions):
         actions.append(Action(
@@ -350,68 +334,9 @@ def _decide_node(state: ComplianceState) -> dict:
 
     # ---- 3. Ownership is already filled in `_resolve_action` / above. -----
 
-    # ---- Stage 3 ItemResults. ---------------------------------------------
-    if source == "undetermined":
-        c07_subs = [
-            SubCriterionResult(id="no_escalation", status=Status.CANNOT_DETERMINE, note="Escalation could not be determined."),
-            SubCriterionResult(id="no_hold", status=Status.CANNOT_DETERMINE, note="Hold could not be determined."),
-        ]
-    else:
-        c07_subs = [
-            SubCriterionResult(
-                id="no_escalation",
-                status=Status.FAIL if escalate else Status.PASS,
-                evidence=rule_evidence if escalate else [],
-                note="; ".join(r for r in reasons if r) if escalate else "No escalation required.",
-            ),
-            SubCriterionResult(
-                id="no_hold",
-                status=Status.FAIL if hold else Status.PASS,
-                evidence=rule_evidence if hold else [],
-                note="; ".join(r for r in reasons if r) if hold else "No hold required.",
-            ),
-        ]
-    c07_status = rollup_status(c07_subs)
-    source_desc = source + (f" {', '.join(rule_ids)}" if rule_ids else "")
-    c07 = ItemResult(
-        item_id="C07",
-        status=c07_status,
-        confidence=1.0 if source in ("rules", "none") else (0.5 if source == "llm" else 0.0),
-        sub_criteria=c07_subs,
-        evidence=_dedupe_refs([ref for sc in c07_subs for ref in sc.evidence]),
-        reasoning=f"Escalation: {'required' if escalate else 'not required'} (source: {source_desc}).",
-    )
-
-    c08_evidence = _dedupe_refs([ref for a in actions for ref in a.evidence])
-    if c08_status == Status.CANNOT_DETERMINE:
-        c08_reasoning = "Post-call action determination failed."
-    elif actions:
-        c08_reasoning = f"{len(actions)} follow-up action(s) identified."
-    else:
-        c08_reasoning = "No follow-up actions required."
-    c08 = ItemResult(
-        item_id="C08",
-        status=c08_status,
-        confidence=1.0 if c08_status == Status.PASS else 0.0,
-        evidence=c08_evidence,
-        reasoning=c08_reasoning,
-    )
-
-    if not actions:
-        c09 = ItemResult(
-            item_id="C09", status=Status.NOT_APPLICABLE, confidence=1.0,
-            reasoning="No post-call actions to assign.",
-        )
-    else:
-        c09 = ItemResult(
-            item_id="C09", status=Status.PASS, confidence=1.0,
-            reasoning="; ".join(f"{a.action_type} -> {a.owner_role}" for a in actions),
-        )
-
     out: dict = {
         "actions": actions,
         "escalation": escalation.model_dump(),
-        "item_results": [c07, c08, c09],
     }
     if errors:
         out["errors"] = errors

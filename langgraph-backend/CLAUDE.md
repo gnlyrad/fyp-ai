@@ -115,24 +115,21 @@ looks an id up in a given checklist, or the default when none is given.
 Rules for `resolve_checklist`:
 
 - `None` or `[]` -> the default checklist unchanged.
-- Otherwise the caller's Stage 2 items replace the default Stage 2 items,
-  in the caller's order: leaving a default item out skips it (e.g. sending
-  only `C01` drops `C03`-`C06`), and a new id adds a check.
-- An item that reuses a default id (e.g. `C01`) only needs the fields it
-  changes -- every field it leaves out inherits the default item's value.
+- Otherwise the caller's items replace the defaults exactly, in caller
+  order. A supplied id never inherits YAML fields, even if it matches a
+  default id.
 - A new id needs only `id` and `question`; it becomes a Stage 2
   `criteria` check with `applies_when: {always: true}`, `rule_queries:
   [question]` (searched live -- see "Retrieval"), and one sub-criterion
   `{id: "met", text: pass_condition or question}`.
-- Stage 1 (`C02`) and Stage 3 (`C07`-`C09`) are always computed by the
-  pipeline, so they are always kept; a caller may send them to edit their
-  `question` text, but cannot add new Stage 1/3 items.
+- Call intent, escalation, actions and ownership are separate structured
+  outputs and are not checklist items.
 - Unknown keys (e.g. an old-format `question_type`) are ignored.
 - Raises `ValueError` for: a non-list checklist; a non-dict entry; an entry
   missing `id`; a new item without `question`; a duplicate id; a new item
   that isn't Stage 2 `criteria`; an entry that changes the `stage` or
   `answer_type` of a default item; an unknown `applies_when` key; a
-  checklist with no Stage 2 items left; and duplicate sub-criterion ids
+  checklist with no items; and duplicate sub-criterion ids
   within one item.
 
 Each item in `config/checklist.yaml` has this shape:
@@ -144,7 +141,7 @@ Each item in `config/checklist.yaml` has this shape:
   answer_type: criteria        # yes_no | category | criteria | entities | list
   applies_when:
     call_intent: [advisory, execution_only]
-  depends_on: [C02]
+  depends_on: []
   rule_queries:                # used to build the cached rule lookup
     - "risk disclosure requirements investment products"
   question: >
@@ -165,15 +162,11 @@ Current items:
 
 | ID | Name | Stage | Answer type | Applies when |
 |---|---|---|---|---|
-| C02 | Call intent | 1 | category | always |
 | C01 | Identity and authority | 2 | criteria | always |
 | C03 | Instruction validity | 2 | criteria | call_intent in [execution_only, advisory] |
 | C04 | Product eligibility | 2 | criteria | call_intent in [advisory, execution_only] |
 | C05 | Client understanding and disclosures | 2 | criteria | call_intent in [advisory, execution_only] |
 | C06 | Restrictions and red flags | 2 | list | always |
-| C07 | Escalation | 3 | criteria | always |
-| C08 | Post-call action | 3 | list | always |
-| C09 | Task ownership | 3 | list | C08 has actions |
 
 There is no order/entity extraction item: the pipeline never extracts structured entities. C04's product facts come from what the advisor said about the product on the call, not a product master.
 
@@ -306,7 +299,8 @@ No `orders` / `product_context`: there is no order extraction and no product mas
 1. Escalation: apply `escalation_rules.yaml` rules-first, in order; every firing rule contributes (escalate/hold ORed, reasons/ids kept). An `item`+`status` rule fires on FAIL **or** PARTIAL (any failed sub-criterion is worth a human look, since every call is reviewed and over-reporting is preferred). There is also an `other_item_status` rule (`other_item_fail`, `when: {other_item_status: [FAIL, PARTIAL]}`): it fires for any Stage 2 item that has no `item`-specific rule of its own -- typically a check added through a caller-supplied checklist -- excluding `answer_type: list` items (C06's red flags are already covered by the `red_flag_severity` rules). This is what makes a failing caller-added check escalate. The LLM is used only as a fallback, when no rule fires at all but some Stage 2 result is `PARTIAL` or `CANNOT_DETERMINE` (an unclear case the rules don't cover) -- see `_has_unclear_stage2`. `Escalation.source` records which path decided it: `"rules"`, `"llm"`, `"none"` (nothing fired, nothing unclear), or `"undetermined"` (the LLM fallback itself failed).
 2. Post-call actions: one LLM call proposes actions with evidence quotes; `action_type` is constrained via a dynamically-built Pydantic model (`_actions_output_model`) to exactly the keys in `ownership.yaml`, so an invalid action type fails validation instead of silently passing through. If escalation ended up required and the LLM didn't itself propose a `raise_case`, code adds one -- a case always gets raised when escalation is required.
 3. Ownership: `action_type -> owner_role` is a plain lookup in `ownership.yaml`; the LLM never picks the owner.
-4. Stage 3 `ItemResult`s: C07's sub-criteria are `no_escalation` (FAIL if escalation required) and `no_hold` (FAIL if a hold is required) -- so a C07 FAIL/PARTIAL means escalation and/or a transaction hold is needed. C07 is the output of the escalation rules, never an input to them. C08 is PASS with `reasoning` naming the actions found, or CANNOT_DETERMINE if the actions LLM call failed. C09 is NOT_APPLICABLE when there are no actions, else PASS with `reasoning` listing `action_type -> owner_role` for each.
+4. The node returns `escalation` and `actions` directly. Each action already
+   contains its `owner_role`; no C07/C08/C09 checklist results are created.
 
 **aggregate:** Merge `item_results` with `verified_results` via `nodes/_common.py:merged_results` (verified wins per `item_id`) -- reused rather than duplicated. Every checklist item appears exactly once, in config order; a missing branch becomes `CANNOT_DETERMINE` "branch did not return". A result whose `item_id` isn't a real checklist item is dropped from `final_results` and reported in `errors` (guards a bad `Send` payload). Computes `summary`:
 
@@ -351,7 +345,7 @@ than failing the branch.
 - `test_s3.py`: URL parsing, the boto3 and presigned paths, and `ingest` reading from `s3_url` (boto3/urllib stubbed, no network).
 - Unit tests for `ingest`, `quality_check`, `role_inference`, `call_intent`, and `resolve_evidence` (fake LLM backend, no network -- `tests/compliance_pipeline/conftest.py` blocks live calls by default).
 - `test_scaffold.py`: the graph compiles with the expected topology and runs end to end on stubs.
-- `test_custom_checklist.py`: `config.resolve_checklist`'s replace/inherit/system-items rules and its `ValueError` cases; `retrieval.get_rules`' cache-hit vs. live-search branching (with a fake regulation-search object, restored after each test) and `get_rule` resolving a live rule id; `check_item_node` running a caller-added item and recovering from a failed live rule lookup; a full `graph.invoke` on a custom checklist (custom item ids appear in `final_results`/`checklist` in order, dropped defaults are absent, a failing added check escalates via `other_item_fail`); and that `other_item_fail` does not fire for a C06 (red-flag list item) failure on the default checklist.
+- `test_custom_checklist.py`: `config.resolve_checklist` replacement and validation rules; `retrieval.get_rules`' cache-hit vs. live-search branching; `check_item_node` running a caller-added item and recovering from a failed live rule lookup; and full graph checks for custom checklist ordering and generic escalation.
 - Fixture calls in `data/fixtures/` covering the standard call shapes (enquiry, execution-only, advisory, a red flag, an unknown caller, and so on) once `check_item`/`decide` are implemented.
 - LLM tests use a fake `get_llm_response()` that returns saved responses.
 

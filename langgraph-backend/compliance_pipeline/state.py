@@ -47,6 +47,7 @@ class ComplianceState(TypedDict, total=False):
     raw_transcript: dict
     results: dict  # AWS Transcribe `results` object (preferred over raw_transcript)
     checklist: list[dict]  # this run's checklist (ChecklistItem dumps), resolved by ingest
+    using_default_checklist: bool  # distinguish default IDs from caller-defined IDs
     transcript: str  # formatted transcript, one line per turn
     segments: list[dict]  # {id, speaker, turn, start, end, text, role, confidence, word_count}
     quality_flags: list[str]

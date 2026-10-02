@@ -1,4 +1,5 @@
 ﻿"""Regression checks for merging the staged graph with the Gemini evaluator."""
+import json
 from pathlib import Path
 
 import pytest
@@ -62,20 +63,20 @@ def sample():
                 {"id": 33, "speaker_label": "spk_1", "transcript": "Confirmed."}]}}
 
 
-def test_namespacing_keeps_pilot_c02_as_a_stage2_question():
+def test_supplied_c02_remains_an_ordinary_stage2_question():
     value = prepare_input(sample())
-    assert value["checklist"] == [{"id": "eval_C02", "question": "Was the request confirmed?"}]
+    assert value["checklist"] == [{"id": "C02", "question": "Was the request confirmed?"}]
     state = ingest_node(value)
-    item = next(i for i in state["checklist"] if i["id"] == "eval_C02")
+    item = next(i for i in state["checklist"] if i["id"] == "C02")
     assert item["stage"] == 2
-    assert any(i["id"] == "C02" and i["stage"] == 1 for i in state["checklist"])
+    assert len(state["checklist"]) == 1
 
 
 @pytest.mark.parametrize("start,end,expected", [(7, 14, [7]), (0, 14, [91, 7])])
 def test_evidence_maps_merged_turns_to_original_ids(start, end, expected):
     value = sample()
     state = ingest_node(prepare_input(value))
-    state["final_results"] = [ItemResult(item_id="eval_C02", status=Status.PASS,
+    state["final_results"] = [ItemResult(item_id="C02", status=Status.PASS,
         evidence=[{"segment_id": "seg_0001", "start_char": start, "end_char": end}])]
     bridged = adapt_output(state, value["results"])
     assert [c["source_segment_id"] for c in bridged["chunks"]] == expected
@@ -84,7 +85,7 @@ def test_evidence_maps_merged_turns_to_original_ids(start, end, expected):
 def test_invalid_evidence_is_not_silently_dropped():
     value = sample()
     state = ingest_node(prepare_input(value))
-    state["final_results"] = [ItemResult(item_id="eval_C02", status=Status.PASS,
+    state["final_results"] = [ItemResult(item_id="C02", status=Status.PASS,
         evidence=[{"segment_id": "seg_0091", "start_char": 0, "end_char": 5}])]
     bridged = adapt_output(state, value["results"])
     assert bridged["report"]["findings"][0]["spans"]
@@ -93,7 +94,7 @@ def test_invalid_evidence_is_not_silently_dropped():
 
 def test_check_failure_differs_from_semantic_unclear():
     state = ingest_node(prepare_input(sample()))
-    item = next(i for i in state["checklist"] if i["id"] == "eval_C02")
+    item = next(i for i in state["checklist"] if i["id"] == "C02")
     task = {**state, "item_id": item["id"], "checklist_item": item}
     llm.set_backend(lambda *args: {"sub_criteria": [{"id": "met", "status": "CANNOT_DETERMINE"}]})
     assert check_item_node(task)["item_results"][0].execution_status == "success"
@@ -105,7 +106,7 @@ def test_check_failure_differs_from_semantic_unclear():
 
 def test_failed_verification_is_propagated():
     state = ingest_node(prepare_input(sample()))
-    state["item_results"] = [ItemResult(item_id="eval_C02", status=Status.FAIL,
+    state["item_results"] = [ItemResult(item_id="C02", status=Status.FAIL,
         sub_criteria=[SubCriterionResult(id="met", status=Status.FAIL)])]
     def fail(*args):
         raise ClientError(403, {"error": {"code": 403, "message": "denied"}})
@@ -127,7 +128,16 @@ def test_full_graph_to_evaluation_artifacts(tmp_path, monkeypatch):
     assert result["metadata"]["call_executions"][0]["status"] == "success"
     assert result["summary"]["overall"]["compliance"]["outcome_population"]["prediction_failures"] == 0
     assert result["summary"]["overall"]["compliance"]["outcome_population"]["abstentions"] == 6
-    assert (tmp_path / "graph" / "CALL_001.json").exists()
+    graph_output = tmp_path / "graph" / "CALL_001.json"
+    assert graph_output.exists()
+    payload = json.loads(graph_output.read_text(encoding="utf-8"))
+    assert len(payload["results"]) == 10
+    assert {r["item_id"] for r in payload["results"]} == {
+        "C01", "C02", "C03", "C04", "C05", "C06", "K01", "K02", "T01", "T02",
+    }
+    assert payload["call_intent"] is not None
+    assert "required" in payload["escalation"]
+    assert isinstance(payload["actions"], list)
 
 
 def test_display_brackets_resolve_only_existing_segment_ids():

@@ -1,20 +1,18 @@
 ﻿"""Bridge the staged pipeline to the published pilot, without sending gold labels.
 
-Pilot IDs are namespaced because C02, for example, means something different in
-production. Evidence is mapped only after the full sequence of ingested turns
+Supplied checklist IDs are kept exactly as provided. Evidence is mapped only
+after the full sequence of ingested turns
 matches the published transcript (text and speaker); IDs are never guessed.
 """
 from .persistence import to_jsonable
 
-PREFIX = "eval_"
-SYSTEM_IDS = {"C02", "C07", "C08", "C09"}
 STATUS = {"PASS": "Pass", "FAIL": "Fail", "PARTIAL": "Fail",
           "NOT_APPLICABLE": "N/A", "CANNOT_DETERMINE": "Unclear"}
 
 
 def prepare_input(value):
     return {**value, "checklist": [
-        {"id": PREFIX + item["id"], "question": item["question"]}
+        {"id": item["id"], "question": item["question"]}
         for item in value["checklist"]]}
 
 
@@ -43,8 +41,6 @@ def adapt_output(output, transcript):
             findings.append(result)
             continue
         item_id = result.get("item_id", "")
-        if item_id in SYSTEM_IDS:
-            continue
         spans = []
         evidence = result.get("evidence")
         if not isinstance(evidence, list):
@@ -67,7 +63,7 @@ def adapt_output(output, transcript):
                     chunks.append({"chunk_id": chunk_id, "source_segment_id": sid})
                     spans.append({"chunk_id": chunk_id, "text": group["text"][a:b]})
         findings.append({
-            "checklist_id": item_id.removeprefix(PREFIX),
+            "checklist_id": item_id,
             "verdict": STATUS.get(result.get("status"), result.get("status")),
             "native_status": result.get("status"), "spans": spans,
             "reason": result.get("reasoning"),

@@ -12,7 +12,7 @@ Two passes:
 2. LLM, one call per item that has anything worth re-checking: every FAIL
    sub-criterion, every PASS sub-criterion when the item's confidence is
    below `LOW_CONFIDENCE`, and every red flag attached to the item (matched
-   to the `answer_type: list` item). Stage 1/3 items and NOT_APPLICABLE
+   to the `answer_type: list` item). NOT_APPLICABLE
    items are skipped. Calls run concurrently (`ThreadPoolExecutor`,
    `MAX_WORKERS`), but results are applied in deterministic item order.
 

@@ -24,11 +24,11 @@ The graph receives the existing adapter output:
 ```
 
 Ground truth and evaluation-only checklist metadata never enter the graph.
-The live adapter prefixes checklist IDs with `eval_` so pilot questions cannot
-inherit production checklist semantics (production C02 is call intent). All pilot
-questions run as Stage 2 checks; the current graph does not wire its applicability
-gate. Its computed Stage 1/3 results are retained in raw output but not scored as
-pilot questions. An N/A prediction remains an unexpected outcome.
+Supplied checklist IDs are preserved exactly and all pilot questions run as
+generic Stage 2 checks. Call intent, escalation, actions and ownership are
+separate structured outputs, not extra checklist results. The current graph does
+not wire its applicability gate, so every supplied checklist question runs. An
+N/A prediction remains an unexpected outcome.
 
 Validate the published dataset without invoking the graph:
 

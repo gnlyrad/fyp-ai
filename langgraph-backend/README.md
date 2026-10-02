@@ -82,14 +82,12 @@ and send the result as `input.checklist`, e.g.:
 }
 ```
 
-The caller's Stage 2 items replace the default Stage 2 items (`C01`,
-`C03`-`C06`), in the order given: an item reusing a default id (like `C01`
-above) only needs the fields it changes and inherits the rest, a default
-item left out of the list is dropped, and a new id (like `fees_disclosed`)
-adds a check with just `id` + `question`. Stage 1 (`C02`) and Stage 3
-(`C07`-`C09`) are always run by the pipeline itself; the caller may edit
-their `question` text but cannot add new ones. See `CLAUDE.md` "Checklist
-config" for the full rules and error cases.
+The caller's items replace the default checklist exactly, in the order given.
+Every supplied item is an independent Stage 2 check; it does not inherit YAML
+fields even when its id matches a default item. Call intent, escalation,
+post-call actions and ownership are always computed as separate structured
+outputs, not inserted as C02/C07/C08/C09 checklist results. See `CLAUDE.md`
+"Checklist config" for the full rules and error cases.
 
 A new or edited item's rules are looked up live in the MAS corpus for that
 run (no prebuilt cache entry exists for it); if the regulation-search
