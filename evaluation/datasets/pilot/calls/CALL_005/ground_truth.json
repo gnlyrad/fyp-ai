@@ -83,7 +83,7 @@
       },
       "gold_evidence_text": "I need to be upfront that this fund's value can fall, and you could lose some of the capital you invest.",
       "gold_evidence_turns": [
-        9
+        10
       ],
       "question_id": "C03"
     },
@@ -145,7 +145,7 @@
       },
       "gold_evidence_text": "If you say you're fine with substantial losses, it'll be much easier to get this approved — could you put down a higher risk tolerance than what you told me?",
       "gold_evidence_turns": [
-        11
+        12
       ],
       "question_id": "C06"
     },
@@ -314,41 +314,41 @@
       "turn_id": 8
     },
     {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Yes, that's right.",
+      "turn_id": 9
+    },
+    {
       "critical_tokens": [
         "TEST AUD Equity Fund"
       ],
       "speaker": "EMPLOYEE",
       "text": "Based on that, I'd suggest the TEST AUD Equity Fund. I need to be upfront that this fund's value can fall, and you could lose some of the capital you invest.",
-      "turn_id": 9
+      "turn_id": 10
     },
     {
       "critical_tokens": [],
       "speaker": "CLIENT",
       "text": "I understand, that's fine.",
-      "turn_id": 10
+      "turn_id": 11
     },
     {
       "critical_tokens": [],
       "speaker": "EMPLOYEE",
       "text": "If you say you're fine with substantial losses, it'll be much easier to get this approved — could you put down a higher risk tolerance than what you told me?",
-      "turn_id": 11
+      "turn_id": 12
     },
     {
       "critical_tokens": [],
       "speaker": "CLIENT",
       "text": "No, I'd rather keep it as I said — just limited losses.",
-      "turn_id": 12
-    },
-    {
-      "critical_tokens": [],
-      "speaker": "EMPLOYEE",
-      "text": "Understood, we'll keep that as is.",
       "turn_id": 13
     },
     {
       "critical_tokens": [],
       "speaker": "EMPLOYEE",
-      "text": "Before we finish up, could you confirm your date of birth for our records?",
+      "text": "Understood, we'll keep that as is. Before we finish up, could you confirm your date of birth for our records?",
       "turn_id": 14
     },
     {

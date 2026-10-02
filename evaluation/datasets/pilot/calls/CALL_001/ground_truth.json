@@ -109,7 +109,7 @@
       },
       "gold_evidence_text": "The bank charges a one-off transaction fee of 0.5% of the amount you invest, charged separately from your subscription.",
       "gold_evidence_turns": [
-        13
+        12
       ],
       "question_id": "C04"
     },
@@ -175,7 +175,7 @@
       },
       "gold_evidence_text": "My NRIC number is S9100001X.",
       "gold_evidence_turns": [
-        16
+        15
       ],
       "question_id": "K01"
     },
@@ -199,7 +199,7 @@
       },
       "gold_evidence_text": "My date of birth is 4 August 1991.",
       "gold_evidence_turns": [
-        18
+        17
       ],
       "question_id": "K02"
     },
@@ -230,7 +230,7 @@
       },
       "gold_evidence_text": "TEST SGD Equity Fund",
       "gold_evidence_turns": [
-        20
+        19
       ],
       "question_id": "T01"
     },
@@ -261,7 +261,7 @@
       },
       "gold_evidence_text": "in SGD",
       "gold_evidence_turns": [
-        20
+        19
       ],
       "question_id": "T02"
     }
@@ -322,17 +322,17 @@
       "turn_id": 8
     },
     {
+      "critical_tokens": [],
+      "speaker": "CLIENT",
+      "text": "Yes, that's right.",
+      "turn_id": 9
+    },
+    {
       "critical_tokens": [
         "TEST SGD Equity Fund"
       ],
       "speaker": "EMPLOYEE",
-      "text": "Given that, I'd suggest looking at the TEST SGD Equity Fund. It's a diversified equity fund, and it fits a long-term growth objective like yours.",
-      "turn_id": 9
-    },
-    {
-      "critical_tokens": [],
-      "speaker": "EMPLOYEE",
-      "text": "I have to be clear that the unit value of this fund can fall, and you could lose some of the money you invest.",
+      "text": "Given that, I'd suggest looking at the TEST SGD Equity Fund. It's a diversified equity fund, and it fits a long-term growth objective like yours. I have to be clear that the unit value of this fund can fall, and you could lose some of the money you invest.",
       "turn_id": 10
     },
     {
@@ -342,30 +342,24 @@
       "turn_id": 11
     },
     {
-      "critical_tokens": [],
-      "speaker": "EMPLOYEE",
-      "text": "The fund has grown over the years it's been running, but I want to be upfront that how it's performed before doesn't tell us how it'll perform going forward.",
-      "turn_id": 12
-    },
-    {
       "critical_tokens": [
         "0.5%"
       ],
       "speaker": "EMPLOYEE",
-      "text": "The bank charges a one-off transaction fee of 0.5% of the amount you invest, charged separately from your subscription.",
-      "turn_id": 13
+      "text": "The fund has grown over the years it's been running, but I want to be upfront that how it's performed before doesn't tell us how it'll perform going forward. The bank charges a one-off transaction fee of 0.5% of the amount you invest, charged separately from your subscription.",
+      "turn_id": 12
     },
     {
       "critical_tokens": [],
       "speaker": "CLIENT",
       "text": "That's clear, thank you.",
-      "turn_id": 14
+      "turn_id": 13
     },
     {
       "critical_tokens": [],
       "speaker": "EMPLOYEE",
       "text": "Before I set anything up, I do need to confirm a couple of details on file. Could you give me your NRIC number?",
-      "turn_id": 15
+      "turn_id": 14
     },
     {
       "critical_tokens": [
@@ -373,13 +367,13 @@
       ],
       "speaker": "CLIENT",
       "text": "My NRIC number is S9100001X.",
-      "turn_id": 16
+      "turn_id": 15
     },
     {
       "critical_tokens": [],
       "speaker": "EMPLOYEE",
       "text": "Thank you. And your date of birth, for our records?",
-      "turn_id": 17
+      "turn_id": 16
     },
     {
       "critical_tokens": [
@@ -387,7 +381,7 @@
       ],
       "speaker": "CLIENT",
       "text": "My date of birth is 4 August 1991.",
-      "turn_id": 18
+      "turn_id": 17
     },
     {
       "critical_tokens": [
@@ -395,7 +389,7 @@
       ],
       "speaker": "EMPLOYEE",
       "text": "Great, that all matches what we have on file. So, would you like to go ahead with the TEST SGD Equity Fund?",
-      "turn_id": 19
+      "turn_id": 18
     },
     {
       "critical_tokens": [
@@ -405,7 +399,7 @@
       ],
       "speaker": "CLIENT",
       "text": "Yes, please. I'd like to buy the TEST SGD Equity Fund — please invest 50,000, in SGD.",
-      "turn_id": 20
+      "turn_id": 19
     },
     {
       "critical_tokens": [
@@ -416,25 +410,25 @@
       ],
       "speaker": "EMPLOYEE",
       "text": "Understood. I've noted your instruction to buy the TEST SGD Equity Fund for 50,000 in SGD, with the 0.5% transaction fee applied separately.",
-      "turn_id": 21
+      "turn_id": 20
     },
     {
       "critical_tokens": [],
       "speaker": "CLIENT",
       "text": "Perfect, thank you.",
-      "turn_id": 22
+      "turn_id": 21
     },
     {
       "critical_tokens": [],
       "speaker": "EMPLOYEE",
       "text": "Thanks, Daniel — I'll get that processed and send you a confirmation. Have a good rest of your day.",
-      "turn_id": 23
+      "turn_id": 22
     },
     {
       "critical_tokens": [],
       "speaker": "CLIENT",
       "text": "You too, Maya. Bye for now.",
-      "turn_id": 24
+      "turn_id": 23
     }
   ],
   "metadata": {
