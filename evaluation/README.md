@@ -3,8 +3,8 @@
 This directory evaluates the committed, error-free synthetic transcripts against
 the repository's actual compiled LangGraph pipeline. The runner invokes the graph
 once per complete call, then scores all checklist findings returned by that
-invocation. It does not regenerate data, simulate NLP logic, call STT, or build a
-dashboard.
+invocation. It does not regenerate data, simulate NLP logic, or call STT. The
+same versioned artifacts are consumed by the local/shared evaluation dashboard.
 
 ## Dataset and graph input
 
@@ -189,8 +189,9 @@ Token usage, estimated cost, and trace IDs are marked not exposed when the curre
 state does not expose them.
 
 `metadata.json` records `run_kind` (`graph_execution` or `rescored`),
-`artifact_schema_version`, `scorer_version`, `metric_definitions_version`, the dataset
-fingerprint and the graph commit.
+`artifact_schema_version`, `scorer_version`, `metric_definitions_version`, immutable
+dataset/checklist/metric-definition fingerprints, and graph Git lineage (commit,
+author, timestamp and dirty-worktree flag).
 
 ### Rescoring without model calls
 
@@ -224,13 +225,107 @@ version, or rescore v1 runs into v2.
 | summary `compliance.native_unclear_outputs` (always 0: it compared `Unclear` to `UNCLEAR`) | `compliance.native_diagnostics.*`, corrected |
 | results.csv `answer_status`, `extraction_coverage_status`, `extraction_expected_value_found`, `gold_value` | `compliance_outcome_status`, `extraction_evidence_status`, `extraction_evidence_coverage`, `expected_value` |
 
-## Metric definitions for a future UI
+## Metric definitions
 
 [`metric_definitions.json`](metric_definitions.json) is a versioned glossary for
 dashboard tooltips. It is the single source of metric formulas, populations,
 interpretations and status definitions. Each metric has a `summary_path`, relative to
 one aggregate node of `summary.json`, so a dashboard reads values from the summary and
 text from here. It is a shared metric reference, not a prediction or score file.
+
+Its SHA-256 is recorded in every run and checked before two runs are compared, so do
+not edit it for wording. Plain-English dashboard wording (labels, "what it tells you",
+calculation, caveat, and human status labels) lives in
+[`metric_presentation.json`](metric_presentation.json), keyed by the same metric and
+status IDs. That file is UI-only and not fingerprinted; `tests/test_metric_presentation.py`
+rejects entries for unknown IDs and evaluator vocabulary in sponsor-facing text.
+
+## Evaluation dashboard
+
+The dashboard is a React app (`web/`) over a small FastAPI API (`dashboard/api.py`).
+The API reads through `EvaluationRepository`, so **Local** (files under `datasets/`
+and `runs/`) and **Shared** (published history in Supabase) use one API contract. The
+browser never reads run files or queries Supabase itself, and the dashboard never
+recomputes a metric: values come from `summary.json`/Postgres, drill-down lists are
+filters over score records (tested to reproduce the summary counts), and wording comes
+from `metric_presentation.json`. Times are shown in SGT.
+
+Start it from `fyp-ai/` (one command: it serves the API and the web app on one port, and builds
+the web app itself the first time and whenever its source changes):
+
+```powershell
+python -m pip install -r evaluation\requirements.txt        # once; Node.js 20+ is also needed once, to build
+python evaluation\scripts\serve_dashboard.py
+# open http://127.0.0.1:8000
+```
+
+Restart it after pulling backend changes (the page and the server must match). Use `--default-source
+local` to open on your local runs, `--port`, or `--no-build` to skip the automatic build. For
+frontend development, run that server and `npm run dev` in `evaluation/web` (http://localhost:5173,
+which proxies `/api` to port 8000). `web/dist` is a build output and is not committed.
+
+The legacy Streamlit dashboard (`dashboard/app.py`) is kept temporarily as a parity
+reference: `.\.venv\Scripts\python.exe -m streamlit run evaluation\dashboard\app.py`.
+
+Copy the project URL and publishable key from `.env.example` into the repository-root
+`.env` file. Those are the only two values required to view Shared mode; there is no
+dashboard login. Published synthetic evaluation rows are publicly readable through the
+publishable key, and the same key can publish runs (insert and finalize only, never edit
+or delete). No publisher account or password is needed. A service-role or secret key is
+never required.
+
+Publish a complete run. With no arguments the script lists your local runs (newest first,
+marking which are ready, already published, or partial and local-only) and asks which to publish:
+
+```powershell
+python -B evaluation\scripts\upload_run.py
+python -B evaluation\scripts\upload_run.py --run-id <RUN_ID>   # skip the menu
+```
+
+Progress is printed step by step. The command validates all required artifacts and full dataset
+coverage before network access, then writes in batches (a run is a few dozen requests, not
+one per row), and skips dataset work when the dataset snapshot is already published. Partial/debug
+runs stay local. Repeating an identical publication is a no-op; reusing a run ID with different
+contents is rejected; an interrupted publication resumes when re-run. A complete
+`completed_with_errors` run remains publishable. Older runs without the lineage fingerprints must
+first be rescored into a new immutable run:
+
+```powershell
+python -B evaluation\scripts\rescore_run.py --source-run <RUN_ID>
+```
+
+## Time, tokens and cost
+
+Every run records its wall-clock time (per call and total) and, for new runs, chat-model token
+usage and an estimated cost.
+
+- **Tokens come from the pipeline itself.** The model-calling graph nodes are wrapped in
+  `compliance_pipeline/usage.py`, which adds each node's token usage to a `usage` field of the
+  graph state. The pipeline's output (and its written JSON payload) therefore includes
+  `usage`, shaped `{model: {input_tokens, output_tokens, total_tokens, ...}}`, for any caller.
+  Retried attempts are included. The evaluation reads that field (falling back to a callback
+  around the call for graphs that do not report it). It works for any LangChain chat model,
+  so trying another model needs no code change. Embedding calls are not counted.
+- **Cost cannot come from the model.** Gemini (like most providers) returns token counts, not a
+  price, so the pipeline reports tokens only and the evaluation turns tokens into money. A model's
+  price is found in this order: (1) an entry you set in [`model_pricing.json`](model_pricing.json)
+  (an optional override, e.g. a negotiated rate); (2) otherwise a public price catalog
+  ([LiteLLM's](https://github.com/BerriAI/litellm), which cites each provider's own pricing page),
+  downloaded at run time only when needed, with the Gemini Developer API entry preferred over
+  resellers. Standard rates are used (not batch or priority) and thinking tokens are billed as
+  output. If neither source has the model, or you are offline, tokens are still recorded and cost
+  shows as unavailable, never zero. Trying another model needs no code or config change.
+- **Prices are retained.** Each run copies the exact prices it used, with their source and date, into
+  its own metadata (shown under Run details), so a model getting cheaper later never changes an
+  old run's cost. `python -B evaluation\scripts\update_prices.py` refreshes the price book
+  from the catalog and keeps the previous price in each entry's `history`. The catalog is
+  community-maintained, so treat costs as estimates; pin a price in `model_pricing.json` to override it.
+  Set `EVALUATION_PRICE_CATALOG_URL=off` to disable the lookup.
+- Runs made before this was tracked show these values as empty, never zero. Everything is stored
+  in `metadata.observability`, which Shared already stores, so no database change is needed.
+
+Supabase setup and role provisioning are documented in
+[`../supabase/README.md`](../supabase/README.md).
 
 ## Tests
 
@@ -239,4 +334,10 @@ Gemini:
 
 ```powershell
 python -m pytest evaluation/tests -q
+```
+
+Browser smoke test of the built dashboard (server running, Local source):
+
+```powershell
+.\.venv\Scripts\python.exe evaluation\tests\browser_web_dashboard.py http://127.0.0.1:8000
 ```

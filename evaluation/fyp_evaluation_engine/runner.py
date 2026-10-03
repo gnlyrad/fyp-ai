@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import importlib.metadata
+import hashlib
 import os
+import re
 import subprocess
 import sys
 import time
@@ -18,6 +20,7 @@ from .adapter import normalize_call_output
 from .current_pipeline import prepare_input, adapt_output
 from .persistence import to_jsonable, write_run_artifacts
 from .scoring import aggregate_scores, score_prediction
+from .usage import PRICING_FILE, invoke_with_usage, load_pricing, model_key, resolve_pricing, summarize_run_usage
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
@@ -44,7 +47,45 @@ def _git_metadata() -> dict[str, Any]:
 
     commit = command("rev-parse", "HEAD")
     status = command("status", "--porcelain")
-    return {"commit": commit, "dirty": bool(status) if status is not None else None}
+    author = command("show", "-s", "--format=%an", "HEAD") if commit else None
+    committed_at = command("show", "-s", "--format=%cI", "HEAD") if commit else None
+    return {
+        "commit": commit,
+        "author": author,
+        "committed_at": committed_at,
+        "dirty": bool(status) if status is not None else None,
+    }
+
+
+def _git_commit_identity(commit: str | None) -> dict[str, str | None]:
+    """Resolve immutable author metadata for an already-recorded commit."""
+    if not commit:
+        return {"author": None, "committed_at": None}
+
+    def command(format_value: str) -> str | None:
+        try:
+            result = subprocess.run(
+                ["git", "-c", f"safe.directory={REPOSITORY_ROOT.as_posix()}", "show", "-s", format_value, commit],
+                cwd=REPOSITORY_ROOT,
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+            )
+            return result.stdout.strip()
+        except (OSError, subprocess.CalledProcessError):
+            return None
+
+    return {"author": command("--format=%an"), "committed_at": command("--format=%cI")}
+
+
+def _sha256_file(path: Path) -> str:
+    """Hash a versioned input file exactly as persisted on disk."""
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _package_versions() -> dict[str, str]:
@@ -82,8 +123,20 @@ def load_real_graph_invoke() -> Callable[[dict[str, Any]], dict[str, Any]]:
     def invoke(value):
         if value.get("context_mode") != "full_transcript":
             raise ValueError("The staged pipeline supports full_transcript only")
-        return graph.invoke(prepare_input(value))
+        return invoke_with_usage(graph, prepare_input(value))
     return invoke
+
+
+# The graph's errors channel is list[str]. Its per-question nodes prefix every
+# message with "<node>[<checklist id>]:", and checklist IDs pass through the
+# adapter unchanged, so the prefix is the graph's own attribution.
+_QUESTION_DIAGNOSTIC = re.compile(r"^(?:check_item|verify)\[([^\]]+)\]:")
+
+
+def diagnostic_question_id(message: Any, question_ids: set[str]) -> str | None:
+    """Attribute a graph diagnostic to a checklist question; None when it is not question-level."""
+    match = _QUESTION_DIAGNOSTIC.match(message) if isinstance(message, str) else None
+    return match.group(1) if match and match.group(1) in question_ids else None
 
 
 def normalize_and_score_call(
@@ -103,8 +156,10 @@ def normalize_and_score_call(
     predictions, errors = normalize_call_output(
         call_id, checklist, transcript_turn_ids, output, latency_ms, call_error
     )
+    question_ids = {item["id"] for item in checklist}
     errors.extend({"category": "pipeline_diagnostic", "call_id": call_id,
-                   "question_id": None, "message": message} for message in graph_errors)
+                   "question_id": diagnostic_question_id(message, question_ids), "message": message}
+                  for message in graph_errors)
     gold_by_id = {check["question_id"]: check for check in documents["ground_truth"]["checks"]}
     scores = [score_prediction(prediction, gold_by_id[prediction["question_id"]]) for prediction in predictions]
     return predictions, errors, scores
@@ -165,7 +220,7 @@ def run_evaluation(
     errors: list[dict[str, Any]] = []
     raw_outputs: dict[str, Any] = {}
     call_executions: list[dict[str, Any]] = []
-    observed_runtime_metadata: dict[str, dict[str, Any]] = {}
+    usage_by_call: dict[str, dict[str, Any]] = {}
     checklist = dataset["checklist"]
 
     prior_attempts = os.environ.get("COMPLIANCE_LLM_MAX_ATTEMPTS")
@@ -188,17 +243,18 @@ def run_evaluation(
             except Exception as exc:  # persisted per call so the batch can finish
                 exception_type = type(exc).__name__
                 call_error = f"{exception_type}: {exc}"
+                partial_usage = getattr(exc, "usage_metadata", None)
+                if isinstance(partial_usage, dict) and partial_usage:
+                    usage_by_call[call_id] = to_jsonable(partial_usage)
             latency_ms = round((time.perf_counter() - call_started) * 1000, 3)
             if call_error is None:
                 raw_outputs[call_id] = to_jsonable(output)
                 if isinstance(output, dict):
-                    observed = {
-                        key: to_jsonable(output[key])
-                        for key in ("usage_metadata", "estimated_cost", "trace_id")
-                        if output.get(key) is not None
-                    }
-                    if observed:
-                        observed_runtime_metadata[call_id] = observed
+                    # The pipeline reports its own `usage`; the outer callback total is the fallback
+                    # for graphs that do not.
+                    reported = output.get("usage") or output.get("usage_metadata")
+                    if isinstance(reported, dict) and reported:
+                        usage_by_call[call_id] = to_jsonable(reported)
             else:
                 raw_outputs[call_id] = {
                     "execution_status": "graph_exception",
@@ -226,10 +282,13 @@ def run_evaluation(
             os.environ["COMPLIANCE_LLM_MAX_ATTEMPTS"] = prior_attempts
 
     summary = aggregate_scores(scores)
+    reported_models = {model_key(model) for usage in usage_by_call.values() for model in usage}
+    run_pricing = resolve_pricing(load_pricing(REPOSITORY_ROOT / "evaluation" / PRICING_FILE), reported_models)
     completed_at = _utc_now()
     total_latency_ms = round((time.perf_counter() - run_started) * 1000, 3)
     execution_status = run_status(call_executions, errors)
     git = _git_metadata()
+    metric_definitions_path = REPOSITORY_ROOT / "evaluation" / "metric_definitions.json"
     metadata = {
         "run_id": identifier,
         "run_kind": "graph_execution",
@@ -242,11 +301,14 @@ def run_evaluation(
             "format": dataset["manifest"]["format"],
             "dataset_sha256": dataset["manifest"].get("dataset_sha256"),
             "manifest_sha256": dataset["manifest_sha256"],
+            "checklist_sha256": dataset["manifest"].get("files", {}).get("checklist.json"),
             "source": dataset["manifest"].get("source"),
             "call_ids": selected,
         },
         "source_commit": dataset["manifest"].get("source", {}).get("git_commit"),
         "graph_commit": git["commit"],
+        "git_commit_author": git["author"],
+        "git_commit_timestamp": git["committed_at"],
         "graph_worktree_dirty": git["dirty"],
         "model_configuration": _model_configuration(),
         "execution_configuration": {
@@ -261,17 +323,10 @@ def run_evaluation(
         },
         "scorer_version": SCORER_VERSION,
         "metric_definitions_version": METRIC_DEFINITIONS_VERSION,
-        "metric_definitions_path": str(REPOSITORY_ROOT / "evaluation" / "metric_definitions.json"),
+        "metric_definitions_sha256": _sha256_file(metric_definitions_path),
+        "metric_definitions_path": str(metric_definitions_path),
         "call_executions": call_executions,
-        "observability": (
-            {"by_call_id": observed_runtime_metadata}
-            if observed_runtime_metadata
-            else {
-                "token_usage": "not_exposed_by_current_graph_state",
-                "estimated_cost": "not_exposed_by_current_graph_state",
-                "trace_ids": "not_exposed_by_current_graph_state",
-            }
-        ),
+        "observability": summarize_run_usage(usage_by_call, run_pricing),
         "artifact_schema_version": ARTIFACT_SCHEMA_VERSION,
     }
     write_run_artifacts(

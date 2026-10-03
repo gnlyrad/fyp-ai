@@ -11,6 +11,7 @@ Uses the shared Gemini Developer API client and repository-root credentials.
 """
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
@@ -22,6 +23,20 @@ from langchain_backend.settings import settings
 from compliance_pipeline.reliability import error_details
 from pydantic import BaseModel
 
+
+class _DerefedDefsFilter(logging.Filter):
+    """Drop one harmless warning from langchain-google-genai.
+
+    It inlines every `$ref` of a schema (so nested models are sent in full) and then logs that
+    the now-unused `$defs` key is ignored, once per model call. Only that exact message is
+    dropped; every other warning from the library still shows.
+    """
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        return "Key '$defs' is not supported in schema" not in record.getMessage()
+
+
+logging.getLogger("langchain_google_genai._function_utils").addFilter(_DerefedDefsFilter())
 
 T = TypeVar("T", bound=BaseModel)
 

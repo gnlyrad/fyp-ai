@@ -9,7 +9,15 @@ from fyp_evaluation_loader import call_documents, load_dataset
 
 from . import ARTIFACT_SCHEMA_VERSION, METRIC_DEFINITIONS_VERSION, SCORER_VERSION
 from .persistence import write_run_artifacts
-from .runner import REPOSITORY_ROOT, _new_run_id, _utc_now, normalize_and_score_call, run_status
+from .runner import (
+    REPOSITORY_ROOT,
+    _git_commit_identity,
+    _new_run_id,
+    _sha256_file,
+    _utc_now,
+    normalize_and_score_call,
+    run_status,
+)
 from .scoring import aggregate_scores
 
 
@@ -72,16 +80,26 @@ def rescore_run(
         })
 
     source_kind = source_metadata.get("run_kind", "graph_execution")
+    metric_definitions_path = REPOSITORY_ROOT / "evaluation" / "metric_definitions.json"
+    commit_identity = _git_commit_identity(source_metadata.get("graph_commit"))
+    updated_snapshot = {
+        **snapshot,
+        "path": str(dataset["root"]),
+        "checklist_sha256": dataset["manifest"].get("files", {}).get("checklist.json"),
+    }
     metadata = {
         **source_metadata,
         "run_id": identifier,
         "run_kind": "rescored",
         "execution_status": run_status(call_executions, errors),
         "rescored_at": _utc_now(),
-        "dataset_snapshot": {**snapshot, "path": str(dataset["root"])},
+        "dataset_snapshot": updated_snapshot,
+        "git_commit_author": source_metadata.get("git_commit_author") or commit_identity["author"],
+        "git_commit_timestamp": source_metadata.get("git_commit_timestamp") or commit_identity["committed_at"],
         "scorer_version": SCORER_VERSION,
         "metric_definitions_version": METRIC_DEFINITIONS_VERSION,
-        "metric_definitions_path": str(REPOSITORY_ROOT / "evaluation" / "metric_definitions.json"),
+        "metric_definitions_sha256": _sha256_file(metric_definitions_path),
+        "metric_definitions_path": str(metric_definitions_path),
         "artifact_schema_version": ARTIFACT_SCHEMA_VERSION,
         "call_executions": call_executions,
         "derived_from": {

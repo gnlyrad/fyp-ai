@@ -1,0 +1,500 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Dashboard-only plain-English wording, keyed by the IDs in metric_definitions.json. It is deliberately NOT fingerprinted into runs, so it can be reworded without breaking run comparison. It never defines a metric: populations, formulas and semantics live in metric_definitions.json, which the dashboard shows as secondary technical detail.",
+  "audiences": {
+    "summary": "Shown on the main dashboard to every viewer.",
+    "developer": "Shown only in Diagnostics, Individual Result evidence details, and technical sections."
+  },
+  "families": {
+    "compliance": {
+      "label": "Compliance decisioning",
+      "description": "Checks whether the employee met each compliance requirement. The system answers PASS, FAIL (a breach), or UNCLEAR."
+    },
+    "extraction": {
+      "label": "Structured extraction",
+      "description": "Checks whether the system located key facts in the call, such as client ID, date of birth, product and currency."
+    }
+  },
+  "fields": {
+    "client_identification_number": {
+      "label": "Client NRIC / FIN"
+    },
+    "dob": {
+      "label": "Date of birth"
+    },
+    "transaction_instrument": {
+      "label": "Investment instrument"
+    },
+    "transaction_currency": {
+      "label": "Transaction currency"
+    }
+  },
+  "metrics": {
+    "compliance.decision_coverage": {
+      "label": "Decision coverage",
+      "audience": "summary",
+      "what": "How often does the system make a clear PASS or FAIL decision?",
+      "calculation": "PASS/FAIL decisions ÷ all compliance checks.",
+      "important": "A high value means more checks can be handled automatically. It does not say whether those decisions are correct."
+    },
+    "compliance.abstention_rate": {
+      "label": "Abstention rate",
+      "audience": "summary",
+      "what": "How often does the analysis complete successfully but return UNCLEAR instead of a PASS/FAIL decision?",
+      "calculation": "UNCLEAR results from successful analyses ÷ all compliance checks.",
+      "important": "Technical failures are not counted as abstentions, even when they also show UNCLEAR."
+    },
+    "compliance.prediction_failure_rate": {
+      "label": "Prediction failure rate",
+      "audience": "summary",
+      "what": "How often does the pipeline fail to produce a usable result because of an error or invalid output?",
+      "calculation": "Failed checks ÷ all compliance checks.",
+      "important": "This measures reliability, not uncertainty. Lower is better."
+    },
+    "compliance.unexpected_not_applicable_rate": {
+      "label": "Unexpected N/A rate",
+      "audience": "summary",
+      "what": "How often did the system mark a compliance check as not applicable?",
+      "calculation": "Checks marked N/A ÷ all compliance checks.",
+      "important": "Every check is meant to apply in this evaluation, so this should be 0."
+    },
+    "compliance.binary_accuracy": {
+      "label": "Binary accuracy",
+      "audience": "summary",
+      "what": "When the system makes a PASS/FAIL decision, how often is it correct?",
+      "calculation": "Correct PASS/FAIL decisions ÷ all PASS/FAIL decisions.",
+      "important": "UNCLEAR results and technical failures are excluded. Read it together with Decision coverage."
+    },
+    "compliance.breach_precision": {
+      "label": "Breach precision",
+      "audience": "summary",
+      "what": "When the system flags a breach (FAIL), how often is it genuinely a breach?",
+      "calculation": "Correct FAIL decisions ÷ all FAIL decisions.",
+      "important": "Lower precision means more false alarms for reviewers. Shown as — when the system made no FAIL decision."
+    },
+    "compliance.breach_recall": {
+      "label": "Breach recall",
+      "audience": "summary",
+      "what": "Of the actual breaches where the system made a PASS/FAIL decision, how many did it catch?",
+      "calculation": "Actual breaches flagged FAIL ÷ actual breaches that received a PASS/FAIL decision.",
+      "important": "Lower recall means more real breaches are being missed and marked PASS, so they would never reach a reviewer. Read it together with Breach precision, which shows the false alarms."
+    },
+    "compliance.confusion_matrix": {
+      "label": "Decision matrix",
+      "audience": "summary",
+      "what": "How the system's PASS/FAIL decisions line up with the ground truth.",
+      "calculation": "Counts only the checks that received a PASS/FAIL decision.",
+      "important": "UNCLEAR results and failures are not in the matrix. Breach outcomes covers every actual breach."
+    },
+    "compliance.automatic_breach_detection_rate": {
+      "label": "Automatic breach detection",
+      "audience": "summary",
+      "what": "Across all actual breaches, how many were automatically flagged as FAIL?",
+      "calculation": "Actual breaches flagged FAIL ÷ all actual breaches.",
+      "important": "Unlike Breach recall, breaches that ended UNCLEAR or failed technically stay in the count, so this is the stricter, end-to-end measure."
+    },
+    "compliance.false_clearance_rate": {
+      "label": "False-clearance rate",
+      "audience": "summary",
+      "what": "Of all actual breaches, how many were incorrectly marked as compliant (PASS)?",
+      "calculation": "Actual breaches marked PASS ÷ all actual breaches.",
+      "important": "Lower is better."
+    },
+    "compliance.gold_breach_abstention_rate": {
+      "label": "Breaches left UNCLEAR",
+      "audience": "summary",
+      "what": "Of all actual breaches, how many ended UNCLEAR instead of receiving a decision?",
+      "calculation": "Actual breaches with an UNCLEAR result ÷ all actual breaches."
+    },
+    "compliance.gold_breach_prediction_failure_rate": {
+      "label": "Breaches lost to failures",
+      "audience": "summary",
+      "what": "Of all actual breaches, how many could not be assessed because the pipeline failed?",
+      "calculation": "Actual breaches with a prediction failure ÷ all actual breaches."
+    },
+    "compliance.gold_breach_unexpected_not_applicable_rate": {
+      "label": "Breaches marked N/A",
+      "audience": "summary",
+      "what": "Of all actual breaches, how many were marked not applicable?",
+      "calculation": "Actual breaches marked N/A ÷ all actual breaches.",
+      "important": "Expected to be 0."
+    },
+    "compliance.evidence_precision": {
+      "label": "Evidence precision",
+      "audience": "developer",
+      "what": "Of the transcript turns the model selected as evidence, how much matched the expected evidence?",
+      "calculation": "Averaged per check: matching turns ÷ turns selected.",
+      "important": "When no evidence is expected, selecting none scores 100% and selecting anything scores 0%."
+    },
+    "compliance.evidence_recall": {
+      "label": "Evidence recall",
+      "audience": "developer",
+      "what": "Of the expected evidence turns, how many did the model select?",
+      "calculation": "Averaged per check: matching turns ÷ expected turns.",
+      "important": "When no evidence is expected, selecting none scores 100% and selecting anything scores 0%."
+    },
+    "compliance.evidence_exact_set_match": {
+      "label": "Exact evidence match",
+      "audience": "developer",
+      "what": "Did the model select exactly the expected evidence turns?",
+      "calculation": "Share of checks whose selected turns equal the expected turns.",
+      "important": "Any extra or missing turn prevents an exact match."
+    },
+    "compliance.invalid_evidence_reference_rate": {
+      "label": "Unmatched evidence references",
+      "audience": "developer",
+      "what": "How often did the model cite evidence that could not be matched to a transcript turn?",
+      "calculation": "Checks with at least one unmatched evidence reference ÷ all compliance checks.",
+      "important": "Lower is better."
+    },
+    "compliance.native_unclear_outputs": {
+      "label": "Raw UNCLEAR outputs",
+      "audience": "developer",
+      "what": "How often the pipeline's raw output was UNCLEAR, before separating genuine abstentions from failure fallbacks.",
+      "calculation": "Raw UNCLEAR outputs ÷ all compliance checks.",
+      "important": "Diagnostic only. Raw UNCLEAR = abstentions + failures that fell back to UNCLEAR."
+    },
+    "compliance.native_unclear_prediction_failures": {
+      "label": "Raw UNCLEAR from failures",
+      "audience": "developer",
+      "what": "How often a raw UNCLEAR output was really a fallback after a prediction failure.",
+      "calculation": "Failures whose raw output was UNCLEAR ÷ all compliance checks."
+    },
+    "extraction.evidence_coverage": {
+      "label": "Extraction evidence coverage",
+      "audience": "summary",
+      "what": "When a value was expected, how often did the evidence selected by the model contain it?",
+      "calculation": "Expected values located ÷ expected values the evaluator can check.",
+      "important": "This shows whether the information was located, not whether a structured value was extracted correctly. Checks with no expected value are excluded; technically failed checks stay in the total."
+    },
+    "extraction.prediction_failure_rate": {
+      "label": "Extraction failure rate",
+      "audience": "summary",
+      "what": "How often did an extraction check fail to produce a usable result because of a technical or output error?",
+      "calculation": "Failed extraction checks ÷ all extraction checks.",
+      "important": "Lower is better. Independent of whether values were located."
+    },
+    "extraction.present_expected_values": {
+      "label": "Values expected",
+      "audience": "summary",
+      "what": "Extraction checks where the ground truth contains a value.",
+      "calculation": "Count of checks with an expected value."
+    },
+    "extraction.not_stated_expected_values": {
+      "label": "No value expected",
+      "audience": "summary",
+      "what": "Extraction checks where the ground truth intentionally contains no value.",
+      "calculation": "Count of checks with no expected value.",
+      "important": "Excluded from extraction coverage."
+    },
+    "extraction.found": {
+      "label": "Successfully located",
+      "audience": "summary",
+      "what": "Expected values that appear in the evidence selected by the model.",
+      "calculation": "Count of located values."
+    },
+    "extraction.not_found": {
+      "label": "Not located",
+      "audience": "summary",
+      "what": "Checks that ran successfully, but whose selected evidence did not contain the expected value.",
+      "calculation": "Count of values not located.",
+      "important": "Technical failures are counted separately, not here."
+    },
+    "extraction.unsupported": {
+      "label": "Cannot be checked",
+      "audience": "developer",
+      "what": "Expected values of a type the evaluator cannot compare automatically.",
+      "calculation": "Count of values the evaluator cannot check.",
+      "important": "Not a model error. Excluded from coverage; shown only when non-zero."
+    },
+    "extraction.evidence_precision": {
+      "label": "Extraction evidence precision",
+      "audience": "developer",
+      "what": "Of the turns the model selected, how much matched the expected evidence turn?",
+      "calculation": "Averaged per check: matching turns ÷ turns selected.",
+      "important": "A value can be located even with low precision, when extra turns were selected."
+    },
+    "extraction.evidence_recall": {
+      "label": "Extraction evidence recall",
+      "audience": "developer",
+      "what": "Of the expected evidence turns, how many did the model select?",
+      "calculation": "Averaged per check: matching turns ÷ expected turns."
+    },
+    "extraction.evidence_exact_set_match": {
+      "label": "Extraction exact evidence match",
+      "audience": "developer",
+      "what": "Did the model select exactly the expected evidence turns?",
+      "calculation": "Share of checks whose selected turns equal the expected turns.",
+      "important": "Any extra or missing turn prevents an exact match."
+    },
+    "extraction.invalid_evidence_reference_rate": {
+      "label": "Extraction unmatched evidence references",
+      "audience": "developer",
+      "what": "How often did the model cite evidence that could not be matched to a transcript turn?",
+      "calculation": "Checks with at least one unmatched evidence reference ÷ all extraction checks."
+    },
+    "extraction.native_unclear_outputs": {
+      "label": "Extraction raw UNCLEAR outputs",
+      "audience": "developer",
+      "what": "How often the pipeline's raw output for an extraction check was UNCLEAR.",
+      "calculation": "Raw UNCLEAR outputs ÷ all extraction checks.",
+      "important": "Not an abstention, and says nothing about whether the value was located."
+    },
+    "diagnostic.evidence_all_questions_precision": {
+      "label": "Blended evidence precision",
+      "audience": "developer",
+      "what": "Evidence precision across both compliance and extraction checks.",
+      "calculation": "Averaged per check across both families.",
+      "important": "Kept for backward compatibility. Mixes families; prefer the per-family evidence metrics."
+    }
+  },
+  "operations": {
+    "latency_total": {
+      "label": "Total run time",
+      "what": "How long the whole evaluation took.",
+      "calculation": "Time from the first call starting to scoring finishing.",
+      "important": "Response times vary from run to run, so small differences are noise."
+    },
+    "latency_per_call": {
+      "label": "Average time per call",
+      "what": "How long the pipeline takes to analyse one call, on average.",
+      "calculation": "Sum of each call's time ÷ number of calls."
+    },
+    "tokens_total": {
+      "label": "Tokens used",
+      "what": "How much text the model read and wrote across the run.",
+      "calculation": "Input tokens + output tokens, including retried attempts.",
+      "important": "Counts the chat model only (embeddings are not included) and includes its internal reasoning. Shown as — for runs that did not record usage."
+    },
+    "cost_total": {
+      "label": "Estimated cost",
+      "what": "The estimated model cost of the whole run.",
+      "calculation": "Tokens × the model's price per token at the time of the run.",
+      "important": "An estimate from list prices, not a bill. Shown as — when usage was not recorded or no price was configured."
+    },
+    "cost_per_call": {
+      "label": "Estimated cost per call",
+      "what": "The estimated model cost of analysing one call, on average.",
+      "calculation": "Estimated run cost ÷ number of calls.",
+      "important": "An estimate from list prices, not a bill."
+    }
+  },
+  "statuses": {
+    "execution_status": {
+      "success": {
+        "label": "Completed",
+        "description": "The pipeline returned a usable result."
+      },
+      "prediction_failure": {
+        "label": "Prediction failed",
+        "description": "The pipeline did not return a usable result because of an error or invalid output."
+      }
+    },
+    "failure_category": {
+      "analysis_unavailable": {
+        "label": "Analysis failed",
+        "description": "The analysis step hit an error and fell back to a placeholder result."
+      },
+      "classification_unavailable": {
+        "label": "Classification failed",
+        "description": "The pipeline could not classify this check."
+      },
+      "missing_prediction": {
+        "label": "No result returned",
+        "description": "No result came back for this check, or the whole call failed."
+      },
+      "duplicate_prediction": {
+        "label": "Duplicate results",
+        "description": "More than one result came back for this check."
+      },
+      "malformed_verdict": {
+        "label": "Invalid verdict",
+        "description": "The verdict was not PASS, FAIL, UNCLEAR or N/A."
+      },
+      "malformed_evidence": {
+        "label": "Invalid evidence format",
+        "description": "The evidence was not returned in the expected format."
+      }
+    },
+    "native_verdict": {
+      "Pass": {
+        "label": "Pass (raw)"
+      },
+      "Fail": {
+        "label": "Fail (raw)"
+      },
+      "Unclear": {
+        "label": "Unclear (raw)"
+      },
+      "N/A": {
+        "label": "N/A (raw)"
+      }
+    },
+    "compliance_outcome_status": {
+      "binary_decision": {
+        "label": "PASS / FAIL decision",
+        "description": "The system made a clear PASS or FAIL decision."
+      },
+      "abstention": {
+        "label": "UNCLEAR",
+        "description": "The analysis completed but did not reach a PASS/FAIL decision."
+      },
+      "prediction_failure": {
+        "label": "Prediction failed",
+        "description": "The pipeline did not return a usable result."
+      },
+      "unexpected_not_applicable": {
+        "label": "Marked N/A",
+        "description": "Marked not applicable, although every check is meant to apply."
+      }
+    },
+    "breach_outcome": {
+      "detected": {
+        "label": "Caught",
+        "description": "An actual breach the system flagged as FAIL."
+      },
+      "false_clearance": {
+        "label": "Falsely cleared",
+        "description": "An actual breach the system marked PASS."
+      },
+      "abstained": {
+        "label": "Left UNCLEAR",
+        "description": "An actual breach the system did not decide."
+      },
+      "prediction_failure": {
+        "label": "Prediction failed",
+        "description": "An actual breach the pipeline failed to assess."
+      },
+      "unexpected_not_applicable": {
+        "label": "Marked N/A",
+        "description": "An actual breach marked not applicable."
+      }
+    },
+    "extraction_gold_value_status": {
+      "PRESENT": {
+        "label": "Value expected",
+        "description": "The ground truth contains a value for this field."
+      },
+      "NOT_STATED": {
+        "label": "No value expected",
+        "description": "The ground truth intentionally contains no value for this field, so this case is excluded from extraction coverage."
+      }
+    },
+    "extraction_evidence_status": {
+      "FOUND": {
+        "label": "Successfully located",
+        "description": "The expected value appears in the evidence selected by the model."
+      },
+      "NOT_FOUND": {
+        "label": "Expected value not located",
+        "description": "A value was expected, but the model's selected evidence did not contain it."
+      }
+    },
+    "evaluator_support": {
+      "SUPPORTED": {
+        "label": "Can be checked",
+        "description": "The evaluator can compare this value type automatically."
+      },
+      "UNSUPPORTED": {
+        "label": "Cannot be checked",
+        "description": "The evaluator cannot compare this value type. This is not a model error."
+      }
+    },
+    "evidence_status": {
+      "scored": {
+        "label": "Scored",
+        "description": "All selected evidence matched transcript turns."
+      },
+      "invalid_references": {
+        "label": "Unmatched evidence",
+        "description": "Some selected evidence could not be matched to a transcript turn."
+      },
+      "prediction_failure": {
+        "label": "No evidence (failed)",
+        "description": "The prediction failed, so evidence scores zero."
+      },
+      "evidence_failure": {
+        "label": "Evidence unavailable",
+        "description": "The result had no usable evidence, so evidence scores zero."
+      }
+    }
+  },
+  "confusion_categories": {
+    "TP": {
+      "label": "Breach caught",
+      "description": "Actual breach, flagged FAIL."
+    },
+    "TN": {
+      "label": "Correct pass",
+      "description": "Compliant, marked PASS."
+    },
+    "FP": {
+      "label": "False alarm",
+      "description": "Compliant, but flagged FAIL."
+    },
+    "FN": {
+      "label": "Missed breach",
+      "description": "Actual breach, but marked PASS."
+    }
+  },
+  "run_status": {
+    "completed": {
+      "label": "Complete",
+      "description": "Every call ran without errors or warnings."
+    },
+    "completed_with_errors": {
+      "label": "Completed with issues",
+      "description": "The run finished, but some calls produced pipeline warnings or prediction failures. All results remain part of the evaluation."
+    },
+    "failed": {
+      "label": "Failed",
+      "description": "Every call failed to run."
+    }
+  },
+  "error_categories": {
+    "pipeline_diagnostic": {
+      "label": "Pipeline warning",
+      "description": "The pipeline recovered from a problem and kept going. Not a model decision."
+    },
+    "prediction_failure": {
+      "label": "Prediction failed",
+      "description": "A check did not return a usable result."
+    },
+    "missing_prediction": {
+      "label": "No result returned",
+      "description": "A check returned no result."
+    },
+    "duplicate_prediction": {
+      "label": "Duplicate results",
+      "description": "A check returned more than one result."
+    },
+    "malformed_verdict": {
+      "label": "Invalid verdict",
+      "description": "A check returned an unrecognised verdict."
+    },
+    "malformed_evidence": {
+      "label": "Invalid evidence format",
+      "description": "A check's evidence was not in the expected format."
+    },
+    "invalid_evidence_reference": {
+      "label": "Unmatched evidence",
+      "description": "Some selected evidence could not be matched to a transcript turn."
+    },
+    "graph_exception": {
+      "label": "Call failed",
+      "description": "The pipeline raised an error for the whole call."
+    },
+    "malformed_output": {
+      "label": "Invalid call output",
+      "description": "The pipeline's output for the call was not in the expected shape."
+    },
+    "malformed_finding": {
+      "label": "Invalid result",
+      "description": "A result had no checklist ID."
+    },
+    "unexpected_prediction": {
+      "label": "Unexpected result",
+      "description": "The pipeline returned a result for a check not in the checklist."
+    }
+  }
+}

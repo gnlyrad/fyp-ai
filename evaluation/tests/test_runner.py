@@ -86,6 +86,9 @@ def test_runner_persists_family_aware_records_and_v2_versions(tmp_path):
                             run_id="v2-run", graph_invoke=invoke)
     metadata = json.loads((tmp_path / "v2-run" / "metadata.json").read_text(encoding="utf-8"))
     assert (metadata["artifact_schema_version"], metadata["run_kind"]) == ("2.0.0", "graph_execution")
+    assert metadata["dataset_snapshot"]["checklist_sha256"]
+    assert len(metadata["metric_definitions_sha256"]) == 64
+    assert "git_commit_author" in metadata and "git_commit_timestamp" in metadata
     scores = [json.loads(line) for line in (tmp_path / "v2-run" / "scores.jsonl").read_text(encoding="utf-8").splitlines()]
     assert [score["evaluation_family"] for score in scores] == ["compliance"] * 6 + ["extraction"] * 4
     summary = result["summary"]["overall"]
@@ -104,3 +107,22 @@ def test_evaluation_records_gemini_not_bedrock(monkeypatch):
     assert config["embedding_model_id"] == "gemini-embedding-001"
     assert config["temperature"] == 1
     assert "aws_region" not in config
+
+
+def test_pipeline_diagnostics_are_attributed_to_checklist_questions():
+    from fyp_evaluation_engine.runner import normalize_and_score_call
+    from fyp_evaluation_loader import call_documents, load_dataset
+
+    dataset = load_dataset(EVALUATION_ROOT / "datasets" / "pilot")
+    native = {"final_results": [], "segments": [], "errors": [
+        "check_item[C01]: resolve_evidence: quote not found in 'seg_0003'; used whole segment, unverified",
+        "verify[K02]: model returned no verdict",
+        "check_item[Z99]: unknown item id",
+        "call_intent: model unavailable",
+    ]}
+    _, errors, _ = normalize_and_score_call(
+        "CALL_001", dataset["checklist"], call_documents(dataset, "CALL_001"), native, 1.0, None
+    )
+    diagnostics = [error for error in errors if error["category"] == "pipeline_diagnostic"]
+    assert [error["question_id"] for error in diagnostics] == ["C01", "K02", None, None]
+    assert [error["message"] for error in diagnostics] == native["errors"]

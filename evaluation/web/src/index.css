@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* Design tokens. Outcome colors were validated (light + dark) with the dataviz
+   palette checker in the bar orders the dashboard uses:
+   decided/correct = blue, UNCLEAR = yellow, prediction failure = violet,
+   wrong = red, N/A = gray. Transcript markers: expected = yellow, selected = blue,
+   both = aqua (validated on all pairs, since any two can sit on adjacent turns).
+   Color never carries meaning alone: every mark has a label, legend or icon beside it. */
+:root {
+  color-scheme: light;
+  --bg: #f4f4f2;
+  --surface: #fcfcfb;
+  --surface-2: #f0efec;
+  --line: #e3e2de;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --ink-3: #7a7974;
+  --accent: #2a78d6;
+  --accent-ink: #1c5cab;
+  --o-correct: #2a78d6;
+  --o-unclear: #eda100;
+  --o-failure: #4a3aa7;
+  --o-wrong: #e34948;
+  --o-neutral: #a9a7a1;
+  --o-both: #1baf7a;
+  --tint-correct: #e6f0fb;
+  --tint-wrong: #fcebea;
+  --tint-warn: #fdf4dd;
+  --ink-wrong: #b42828;
+  --ink-warn: #8a5a00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --bg: #121211;
+    --surface: #1a1a19;
+    --surface-2: #232321;
+    --line: #2f2f2c;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --ink-3: #8f8e86;
+    --accent: #3987e5;
+    --accent-ink: #86b6ef;
+    --o-correct: #3987e5;
+    --o-unclear: #c98500;
+    --o-failure: #9085e9;
+    --o-wrong: #e66767;
+    --o-neutral: #6b6a65;
+    --o-both: #199e70;
+    --tint-correct: #18263a;
+    --tint-wrong: #3a1d1d;
+    --tint-warn: #352a12;
+    --ink-wrong: #f19a9a;
+    --ink-warn: #e9bf63;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-o-correct: var(--o-correct);
+  --color-o-unclear: var(--o-unclear);
+  --color-o-failure: var(--o-failure);
+  --color-o-wrong: var(--o-wrong);
+  --color-o-neutral: var(--o-neutral);
+  --color-o-both: var(--o-both);
+  --color-tint-correct: var(--tint-correct);
+  --color-tint-wrong: var(--tint-wrong);
+  --color-tint-warn: var(--tint-warn);
+  --color-ink-wrong: var(--ink-wrong);
+  --color-ink-warn: var(--ink-warn);
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Clickable metric cells: restrained, but obviously interactive. */
+.drill {
+  border-radius: 6px;
+  padding: 2px 6px;
+  margin: -2px -6px;
+  cursor: pointer;
+  text-align: inherit;
+}
+.drill:hover {
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.drill:focus-visible,
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@keyframes flash {
+  from { box-shadow: 0 0 0 2px var(--accent); }
+  to { box-shadow: 0 0 0 2px transparent; }
+}
+.flash {
+  animation: flash 1.6s ease-out;
+}

@@ -39,6 +39,16 @@ def test_every_metric_is_fully_described_and_unique():
         assert metric["role"] in {"headline", "secondary", "count", "diagnostic"}
 
 
+def test_compliance_evidence_metrics_are_secondary_diagnostics():
+    metrics = {metric["id"]: metric for metric in DEFINITIONS["metrics"]}
+    for metric_id in (
+        "compliance.evidence_precision",
+        "compliance.evidence_recall",
+        "compliance.evidence_exact_set_match",
+    ):
+        assert metrics[metric_id]["role"] == "secondary"
+
+
 def test_every_defined_summary_path_exists_in_the_persisted_summary(summary):
     for metric in DEFINITIONS["metrics"]:
         paths = [metric["summary_path"], *metric.get("breakdowns", {}).values()]

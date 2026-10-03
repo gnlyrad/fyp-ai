@@ -52,6 +52,9 @@ def test_rescore_creates_a_new_run_with_lineage_and_never_touches_the_source(sou
     assert lineage["graph_commit"] == source_metadata["graph_commit"] == metadata["graph_commit"]
     assert (lineage["scorer_version"], metadata["scorer_version"]) == (
         source_metadata["scorer_version"], "fyp-nlp-evaluator-v2.0")
+    assert metadata["dataset_snapshot"]["checklist_sha256"]
+    assert len(metadata["metric_definitions_sha256"]) == 64
+    assert "git_commit_author" in metadata and "git_commit_timestamp" in metadata
     assert (derived / "raw" / "CALL_001.json").read_bytes() == (source / "raw" / "CALL_001.json").read_bytes()
 
 
