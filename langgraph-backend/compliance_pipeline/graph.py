@@ -33,6 +33,7 @@ from compliance_pipeline.nodes.quality_check import quality_check_node
 from compliance_pipeline.nodes.role_inference import role_inference_node
 from compliance_pipeline.nodes.verify import verify_node
 from compliance_pipeline.state import CheckItemTask, ComplianceState, InputState, OutputState
+from compliance_pipeline.usage import track_usage
 
 
 def _route_to_checks(state: ComplianceState) -> list[Send] | str:
@@ -73,11 +74,11 @@ def build_graph():
 
     builder.add_node("ingest", ingest_node)
     builder.add_node("quality_check", quality_check_node)
-    builder.add_node("role_inference", role_inference_node)
-    builder.add_node("call_intent", call_intent_node)
-    builder.add_node("check_item", check_item_node)
-    builder.add_node("verify", verify_node)
-    builder.add_node("decide", decide_node)
+    builder.add_node("role_inference", track_usage(role_inference_node))
+    builder.add_node("call_intent", track_usage(call_intent_node))
+    builder.add_node("check_item", track_usage(check_item_node))
+    builder.add_node("verify", track_usage(verify_node))
+    builder.add_node("decide", track_usage(decide_node))
     builder.add_node("aggregate", aggregate_node)
     builder.add_node("output", output_node)
 

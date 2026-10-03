@@ -82,14 +82,12 @@ and send the result as `input.checklist`, e.g.:
 }
 ```
 
-The caller's Stage 2 items replace the default Stage 2 items (`C01`,
-`C03`-`C06`), in the order given: an item reusing a default id (like `C01`
-above) only needs the fields it changes and inherits the rest, a default
-item left out of the list is dropped, and a new id (like `fees_disclosed`)
-adds a check with just `id` + `question`. Stage 1 (`C02`) and Stage 3
-(`C07`-`C09`) are always run by the pipeline itself; the caller may edit
-their `question` text but cannot add new ones. See `CLAUDE.md` "Checklist
-config" for the full rules and error cases.
+The caller's items replace the default checklist exactly, in the order given.
+Every supplied item is an independent Stage 2 check; it does not inherit YAML
+fields even when its id matches a default item. Call intent, escalation,
+post-call actions and ownership are always computed as separate structured
+outputs, not inserted as C02/C07/C08/C09 checklist results. See `CLAUDE.md`
+"Checklist config" for the full rules and error cases.
 
 A new or edited item's rules are looked up live in the MAS corpus for that
 run (no prebuilt cache entry exists for it); if the regulation-search
@@ -130,7 +128,7 @@ real Gemini model):
 | Variable | Default | Meaning |
 |---|---|---|
 | GOOGLE_API_KEY | -- | Gemini API key (from the repo-root `.env`) |
-| COMPLIANCE_MODEL_ID | gemini-3.6-flash | Gemini model id |
+| COMPLIANCE_MODEL_ID | CLEARCALL_MODEL_ID or gemini-3.5-flash | Optional pipeline model override |
 | COMPLIANCE_LLM_SEED | 42 | Fixed sampling seed (the model ignores temperature); `none` disables it |
 | COMPLIANCE_STRUCTURED_METHOD | function_calling | LangChain structured-output method (`json_schema` drops nested models) |
 | COMPLIANCE_MAX_OUTPUT_TOKENS | 4096 | Max tokens per LLM call |
@@ -162,3 +160,21 @@ python -m pytest tests/compliance_pipeline -q
 
 Tests never reach Gemini or AWS: a fake LLM backend is installed by
 `tests/compliance_pipeline/conftest.py`, and `test_s3.py` stubs boto3/urllib.
+
+
+### Gemini integration after merging main
+
+Chat and live regulatory embeddings use the shared Gemini Developer API client.
+Set `GOOGLE_API_KEY` (or `GEMINI_API_KEY`) in `fyp-ai/.env`; Vertex AI and Bedrock
+are not used for model calls. `CLEARCALL_MODEL_ID`, `CLEARCALL_TEMPERATURE`, and
+`GOOGLE_EMBEDDING_MODEL` configure the shared clients. The pipeline also honors
+`COMPLIANCE_MODEL_ID`, output-token/timeout limits, and `COMPLIANCE_LLM_SEED`.
+
+Regulatory search defaults to local FAISS. Set `REGULATION_SEARCH_BACKEND=s3vectors`
+only with a corpus ingested using the same Gemini embedding model and dimension;
+an existing Cohere index cannot be reused. AWS credentials are needed only for
+optional S3 input/storage/retrieval and deployment.
+
+Results retain the native status and include `execution_status`, `failure_category`,
+and `failure_stage`. Failed checks/verification are distinct from successful
+`CANNOT_DETERMINE` answers. Provider diagnostics omit raw exception messages.

@@ -17,7 +17,7 @@ class S3RetrievalTests(unittest.TestCase):
     def setUp(self):
         self.config = patch.multiple(s3_retrieval.settings,
             s3_vectors_index_arn=ARN, s3_vectors_corpus_version='version1',
-            bedrock_embedding_model='cohere.embed-english-v3', regulation_search_backend='s3vectors')
+            embedding_model='gemini-embedding-001', regulation_search_backend='s3vectors')
         self.config.start()
         self.addCleanup(self.config.stop)
         self.client = boto3.client('s3vectors', region_name='ap-southeast-1',
@@ -42,13 +42,13 @@ class S3RetrievalTests(unittest.TestCase):
     def expected_query(self):
         return dict(indexArn=ARN, queryVector={'float32': [1.0, 0.5, -0.25]}, topK=3,
             filter={'$and': [{'corpus_version': {'$eq': 'version1'}},
-                            {'embedding_model': {'$eq': 'cohere.embed-english-v3'}}]},
+                            {'embedding_model': {'$eq': 'gemini-embedding-001'}}]},
             returnMetadata=True, returnDistance=True)
 
     def hit(self):
         return {'key': 'chunk1', 'distance': 0.2, 'metadata': {
             'text': 'Disclose all fees.', 'source': 'notice.pdf', 'page': 0,
-            'corpus_version': 'version1', 'embedding_model': 'cohere.embed-english-v3'}}
+            'corpus_version': 'version1', 'embedding_model': 'gemini-embedding-001'}}
 
     def test_query_preserves_text_citations_and_filters_version(self):
         reader = self.reader()
@@ -91,7 +91,7 @@ class S3RetrievalTests(unittest.TestCase):
             reader.search('fees', 3)
 
     def test_backend_selection_does_not_use_faiss_for_s3(self):
-        with patch.object(retrieval, 'BedrockEmbeddings', return_value=self.embeddings):
+        with patch.object(retrieval, 'create_embeddings', return_value=self.embeddings):
             search = retrieval.RegulationSearch()
         with patch.object(s3_retrieval, 'S3RegulationSearch') as factory, \
              patch.object(search, 'vector_store') as faiss:
@@ -108,7 +108,7 @@ class S3RetrievalTests(unittest.TestCase):
         from fastapi.testclient import TestClient
         from langchain_core.documents import Document
         with patch('langchain_backend.rag.CodeRAGService'), \
-             patch.object(retrieval, 'BedrockEmbeddings', return_value=self.embeddings):
+             patch.object(retrieval, 'create_embeddings', return_value=self.embeddings):
             main = import_module('langchain_backend.main')
         with patch.object(main, 'search_service') as search, \
              patch.object(main, 'service') as chat, TestClient(main.app) as client:

@@ -7,25 +7,40 @@ once and, on a second failure, returns `LLMResult(ok=False, ...)` instead of
 raising. Callers turn that into a `CANNOT_DETERMINE` result plus an `errors`
 entry.
 
-Gemini only for this package (per plan); `compliance_pipeline/model.py`'s
-Bedrock/Nova default is out of scope here.
+Uses the shared Gemini Developer API client and repository-root credentials.
 """
 from __future__ import annotations
 
+import logging
 import os
 import re
 import time
 from dataclasses import dataclass
 from typing import Callable, Generic, TypeVar
 
-from dotenv import find_dotenv, load_dotenv
+from langchain_backend.models import create_chat_model
+from langchain_backend.settings import settings
+from compliance_pipeline.reliability import error_details
 from pydantic import BaseModel
 
-load_dotenv(find_dotenv())  # must run before the client reads GOOGLE_API_KEY
+
+class _DerefedDefsFilter(logging.Filter):
+    """Drop one harmless warning from langchain-google-genai.
+
+    It inlines every `$ref` of a schema (so nested models are sent in full) and then logs that
+    the now-unused `$defs` key is ignored, once per model call. Only that exact message is
+    dropped; every other warning from the library still shows.
+    """
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        return "Key '$defs' is not supported in schema" not in record.getMessage()
+
+
+logging.getLogger("langchain_google_genai._function_utils").addFilter(_DerefedDefsFilter())
 
 T = TypeVar("T", bound=BaseModel)
 
-DEFAULT_MODEL_ID = "gemini-3.6-flash"
+DEFAULT_MODEL_ID = settings.chat_model
 
 # Gemini's default `json_schema` structured-output mode drops nested models
 # (e.g. a list of observations each holding evidence quotes): it returns an
@@ -59,11 +74,8 @@ _clients: dict[str, object] = {}  # ChatGoogleGenerativeAI per model id, built l
 
 def _get_client(model_id: str):
     if model_id not in _clients:
-        from langchain_google_genai import ChatGoogleGenerativeAI
-
-        _clients[model_id] = ChatGoogleGenerativeAI(
-            model=model_id,
-            temperature=0,
+        _clients[model_id] = create_chat_model(
+            model_id=model_id,
             max_output_tokens=MAX_OUTPUT_TOKENS,
             timeout=REQUEST_TIMEOUT_S,
             max_retries=0,  # get_llm_response() owns the retry
@@ -134,6 +146,7 @@ def get_llm_response(
     attempts = 0
     output_retries_left = 1
     backoff = list(TRANSIENT_BACKOFF_S)
+    max_attempts = int(os.getenv("COMPLIANCE_LLM_MAX_ATTEMPTS", str(len(backoff) + 2)))
     while True:
         attempts += 1
         try:
@@ -142,10 +155,19 @@ def get_llm_response(
                 value = schema.model_validate(value)
             return LLMResult(ok=True, value=value, attempts=attempts)
         except Exception as exc:  # noqa: BLE001 - covers ValidationError; never raise out of here
-            last_error = f"{type(exc).__name__}: {exc}"
-            if _is_transient(exc) and backoff:
+            detail, malformed = error_details(exc)
+            last_error = detail["error_type"]
+            if detail["error_code"]:
+                last_error += f" (code {detail['error_code']})"
+            # Keep provider messages (which may contain credentials/input) out of artifacts.
+            if attempts >= max_attempts or (detail["error_code"] and not detail["retryable"]):
+                return LLMResult(ok=False, error=last_error, attempts=attempts)
+            transient = detail["retryable"] and not malformed or _is_transient(exc)
+            if transient and backoff:
                 time.sleep(backoff.pop(0))
                 continue
+            if transient:
+                return LLMResult(ok=False, error=last_error, attempts=attempts)
             if output_retries_left:
                 output_retries_left -= 1
                 continue

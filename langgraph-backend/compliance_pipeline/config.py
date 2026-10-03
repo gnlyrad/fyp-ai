@@ -4,11 +4,11 @@ Three files: `checklist.yaml` (the default checklist), `ownership.yaml`
 (action_type -> owning role), `escalation_rules.yaml` (deterministic
 escalation rules). All are loaded once per process via `lru_cache`.
 
-`checklist.yaml` is only the *default*: a caller may send its own
-`checklist` with the request (e.g. a human edited it before the API call).
-`resolve_checklist` turns that into the checklist for one run, `ingest`
-stores the result in state, and every node reads it back with
-`active_checklist(state)`.
+`checklist.yaml` contains only the default generic compliance checks. Call
+intent, escalation and post-call actions are separate pipeline outputs and
+are not checklist items. A caller may replace the defaults by sending its
+own `checklist`; supplied items never inherit fields from YAML items that
+happen to use the same id.
 """
 from __future__ import annotations
 
@@ -93,7 +93,7 @@ def _new_item_defaults(entry: dict) -> dict:
     }
 
 
-def _resolve_item(index: int, entry, defaults_by_id: dict[str, ChecklistItem]) -> ChecklistItem:
+def _resolve_item(index: int, entry) -> ChecklistItem:
     where = f"checklist[{index}]"
     if not isinstance(entry, dict):
         raise ValueError(f"{where} must be an object with at least 'id' and 'question'")
@@ -105,14 +105,9 @@ def _resolve_item(index: int, entry, defaults_by_id: dict[str, ChecklistItem]) -
     # Unknown keys (e.g. old-format `question_type`) are ignored.
     given = {k: v for k, v in entry.items() if k in ChecklistItem.model_fields}
     given["id"] = item_id
-    base = defaults_by_id.get(item_id)
-    if base is not None:
-        # Editing a default item: fields left out keep their default values.
-        data = {**base.model_dump(), **given}
-    else:
-        if not str(entry.get("question") or "").strip():
-            raise ValueError(f"{where} is a new item and needs a 'question'")
-        data = {**_new_item_defaults(entry), **given}
+    if not str(entry.get("question") or "").strip():
+        raise ValueError(f"{where} needs a non-empty 'question'")
+    data = {**_new_item_defaults(entry), **given}
 
     try:
         item = ChecklistItem.model_validate(data)
@@ -120,16 +115,10 @@ def _resolve_item(index: int, entry, defaults_by_id: dict[str, ChecklistItem]) -
         raise ValueError(f"{where} is invalid: {exc}") from exc
 
     _validate_applies_when(item_id, item.applies_when)
-    if base is not None:
-        if item.stage != base.stage or item.answer_type != base.answer_type:
-            raise ValueError(
-                f"{where} cannot change 'stage' or 'answer_type' of a default item "
-                f"(stage {base.stage}, answer_type {base.answer_type!r})"
-            )
-    elif item.stage != 2 or item.answer_type != "criteria":
+    if item.stage != 2 or item.answer_type != "criteria":
         raise ValueError(
-            f"{where}: new items must be Stage 2 'criteria' checks; Stage 1/3 items "
-            "and the red-flag list item are computed by the pipeline itself"
+            f"{where}: supplied checklist items must be Stage 2 'criteria' checks; "
+            "call intent, escalation and actions are separate pipeline outputs"
         )
     if item.stage == 2:
         if not item.question.strip():
@@ -146,13 +135,11 @@ def resolve_checklist(raw: list | None) -> list[ChecklistItem]:
     """The checklist for one run.
 
     - No checklist (None / empty list) -> the default `checklist.yaml`.
-    - Otherwise the caller's Stage 2 items replace the default Stage 2
-      items, in the caller's order: leaving a default item out skips it, a
-      new id adds a check. An item that reuses a default id (e.g. `C01`)
-      only needs the fields it changes.
-    - Stage 1 (C02 call intent) and Stage 3 (C07-C09) items are computed by
-      the pipeline, so they are always kept; a caller may send them to edit
-      their text, but cannot add new ones.
+    - Otherwise the caller's items replace the defaults exactly, in caller
+      order. A supplied id never inherits configuration from YAML, even if
+      the same id exists in the default checklist.
+    - Supplied items are Stage 2 criteria checks. Call intent, escalation,
+      actions and ownership are produced separately by specialised nodes.
 
     Raises `ValueError` with a readable message on an invalid checklist.
     """
@@ -162,23 +149,18 @@ def resolve_checklist(raw: list | None) -> list[ChecklistItem]:
     if not isinstance(raw, list):
         raise ValueError("'checklist' must be a list of checklist items")
 
-    defaults_by_id = {item.id: item for item in default}
     given: list[ChecklistItem] = []
     seen: set[str] = set()
     for index, entry in enumerate(raw):
-        item = _resolve_item(index, entry, defaults_by_id)
+        item = _resolve_item(index, entry)
         if item.id in seen:
             raise ValueError(f"checklist has duplicate id {item.id!r}")
         seen.add(item.id)
         given.append(item)
 
-    given_by_id = {item.id: item for item in given}
-    stage2 = [item for item in given if item.stage == 2]
-    if not stage2:
-        raise ValueError("checklist has no Stage 2 checks to run")
-    system = {stage: [given_by_id.get(item.id, item) for item in default if item.stage == stage]
-              for stage in (1, 3)}
-    return system[1] + stage2 + system[3]
+    if not given:
+        raise ValueError("checklist has no checks to run")
+    return given
 
 
 def active_checklist(state) -> list[ChecklistItem]:

@@ -17,7 +17,7 @@ class S3RegulationSearch:
         self.version = settings.s3_vectors_corpus_version
         if not self.version:
             raise ValueError("Set S3_VECTORS_CORPUS_VERSION to the corpus_version from a successful ingestion.")
-        self.model = settings.bedrock_embedding_model
+        self.model = settings.embedding_model
         self.embeddings = embeddings
         self.client = boto3.client("s3vectors", region_name=settings.aws_region,
             config=Config(connect_timeout=10, read_timeout=60,

@@ -1,0 +1,6 @@
+{
+  "_comment": "Optional price book. You normally do not edit this: when a model has no usable entry here, runs look its price up in a public catalog automatically (see README, 'Time, tokens and cost'). Run `python -B evaluation/scripts/update_prices.py` to refresh entries from the catalog (old prices are kept in each entry's `history`), or add an entry by hand to pin a price, e.g. a negotiated rate: {\"input\": 1.5, \"output\": 9.0, \"cached_input\": 0.15, \"source\": \"contract\", \"as_of\": \"2026-10-04\"}. Prices are per 1,000,000 tokens. Every run copies the prices it used into its own metadata, so changing this file never rewrites past runs.",
+  "currency": "USD",
+  "unit": "per 1,000,000 tokens",
+  "models": {}
+}

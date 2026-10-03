@@ -70,6 +70,9 @@ def aggregate_node(state: ComplianceState) -> dict:
                 status=Status.CANNOT_DETERMINE,
                 confidence=0.0,
                 reasoning="branch did not return",
+                execution_status="prediction_failure",
+                failure_category="missing_prediction",
+                failure_stage="aggregate",
             ))
 
     verified_red_flags = state.get("verified_red_flags")

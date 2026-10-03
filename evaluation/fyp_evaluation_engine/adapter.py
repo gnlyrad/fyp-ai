@@ -11,7 +11,7 @@ VERDICT_MAP = {
     "Unclear": "UNCLEAR",
     "N/A": "NOT_APPLICABLE",
 }
-FAILURE_EVIDENCE_STATUSES = {"analysis_unavailable", "classification_unavailable"}
+FAILURE_EVIDENCE_STATUSES = {"analysis_unavailable", "classification_unavailable", "applicability_unavailable"}
 
 
 def _family(item: dict[str, Any]) -> str:
@@ -267,27 +267,34 @@ def normalize_call_output(
         finding_metadata = {
             key: finding.get(key)
             for key in (
-                "question_type", "reason", "pass_condition", "evidence_status",
+                "native_status", "question_type", "reason", "pass_condition", "evidence_status",
                 "analysis_coverage", "applicability_coverage", "classification_status",
                 "classification_error", "requires_review", "applicability",
                 "retrieval_diagnostics",
+                "execution_status", "failure_category", "failure_stage", "failure_error_type",
+                "failure_error_code", "analysis_diagnostics", "context_mode",
             )
             if key in finding
         }
         prediction["graph_metadata"] = {**call_metadata, "finding": finding_metadata}
-        if native_verdict not in VERDICT_MAP:
-            fail("malformed_verdict", f"Unsupported native verdict: {native_verdict!r}", native_verdict)
-        elif finding.get("evidence_status") in FAILURE_EVIDENCE_STATUSES:
+        if (finding.get("execution_status") == "prediction_failure"
+                or finding.get("evidence_status") in FAILURE_EVIDENCE_STATUSES):
             # The graph may catch an LLM exception and emit Unclear. Keep the
             # verdict for audit, but do not count that operational failure as an abstention.
             fail(
-                finding["evidence_status"],
+                finding.get("failure_category") or finding.get("evidence_status") or "analysis_unavailable",
                 f"Graph reported {finding.get('evidence_status')} rather than a completed judgement.",
                 native_verdict,
                 evidence_status=finding.get("evidence_status"),
                 classification_error=finding.get("classification_error"),
                 graph_reason=finding.get("reason"),
+                failure_stage=finding.get("failure_stage"),
+                failure_error_type=finding.get("failure_error_type"),
+                failure_error_code=finding.get("failure_error_code"),
+                analysis_diagnostics=finding.get("analysis_diagnostics", []),
             )
+        elif native_verdict not in VERDICT_MAP:
+            fail("malformed_verdict", f"Unsupported native verdict: {native_verdict!r}", native_verdict)
         elif prediction["evidence_availability"] == "malformed":
             fail("malformed_evidence", "Final finding evidence spans are malformed.", native_verdict)
         else:

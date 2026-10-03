@@ -9,7 +9,7 @@ deterministic"). A call can move from enquiry to order mid-call, so this
 picks the most regulated intent reached anywhere in the call, not just the
 last one. Runs right after `role_inference`, feeding `gate`.
 
-`category` (and the C02 `ItemResult`) is CANNOT_DETERMINE / None when: the
+`category` is None when: the
 LLM call failed twice, the LLM says this isn't a financial-services call,
 no observation survives evidence resolution, or confidence is below
 `MIN_INTENT_CONFIDENCE`.
@@ -22,11 +22,10 @@ kept but an `errors` note is added.
 """
 from __future__ import annotations
 
-from compliance_pipeline.config import load_checklist
 from compliance_pipeline.llm import get_llm_response
 from compliance_pipeline.nodes._common import format_transcript, resolve_evidence
 from compliance_pipeline.prompts.call_intent import SYSTEM, build_user
-from compliance_pipeline.schemas import CallIntent, CallIntentOutput, EvidenceRef, ItemResult, Status
+from compliance_pipeline.schemas import CallIntent, CallIntentOutput, EvidenceRef
 from compliance_pipeline.state import ComplianceState
 
 MIN_INTENT_CONFIDENCE = 0.6
@@ -34,35 +33,15 @@ MIN_INTENT_CONFIDENCE = 0.6
 # Most regulated first. Code, not the LLM, picks the winner from this order.
 _INTENT_RANK = ["advisory", "execution_only", "enquiry"]
 
-ITEM_ID = "C02"
-
-
-def _item_id() -> str:
-    """The stage-1 checklist item with `answer_type: category` (C02), read
-    from config rather than hard-coded where that's easy to do."""
-    for item in load_checklist():
-        if item.stage == 1 and item.answer_type == "category":
-            return item.id
-    return ITEM_ID
-
-
 def _empty_call_intent() -> dict:
     return {"category": None, "confidence": 0.0, "evidence": [], "reached": [], "reasoning": ""}
 
 
 def call_intent_node(state: ComplianceState) -> dict:
-    item_id = _item_id()
     segments = state.get("segments") or []
 
     if not segments:
-        result = ItemResult(
-            item_id=item_id,
-            status=Status.CANNOT_DETERMINE,
-            confidence=0.0,
-            evidence=[],
-            reasoning="No transcript segments to classify.",
-        )
-        return {"call_intent": _empty_call_intent(), "item_results": [result]}
+        return {"call_intent": _empty_call_intent()}
 
     transcript = format_transcript(segments)
 
@@ -71,14 +50,7 @@ def call_intent_node(state: ComplianceState) -> dict:
 
     if not result.ok:
         errors.append(f"call_intent: {result.error}")
-        item_result = ItemResult(
-            item_id=item_id,
-            status=Status.CANNOT_DETERMINE,
-            confidence=0.0,
-            evidence=[],
-            reasoning="Call intent classification failed.",
-        )
-        return {"call_intent": _empty_call_intent(), "item_results": [item_result], "errors": errors}
+        return {"call_intent": _empty_call_intent(), "errors": errors}
 
     output = result.value
 
@@ -128,24 +100,7 @@ def call_intent_node(state: ComplianceState) -> dict:
         reasoning=output.reasoning,
     ).model_dump()
 
-    if category is not None:
-        status = Status.PASS
-        others = [c for c in reached_ranked if c != category]
-        suffix = f" (also: {', '.join(others)})" if others else ""
-        reasoning = f"Most regulated intent reached: {category}{suffix}. {output.reasoning}".strip()
-    else:
-        status = Status.CANNOT_DETERMINE
-        reasoning = f"Could not determine call intent. {output.reasoning}".strip()
-
-    item_result = ItemResult(
-        item_id=item_id,
-        status=status,
-        confidence=output.confidence,
-        evidence=evidence,
-        reasoning=reasoning,
-    )
-
-    out = {"call_intent": call_intent, "item_results": [item_result]}
+    out = {"call_intent": call_intent}
     if errors:
         out["errors"] = errors
     return out

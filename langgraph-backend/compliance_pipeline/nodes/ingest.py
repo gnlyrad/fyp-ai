@@ -229,7 +229,9 @@ def _load_raw(state: ComplianceState) -> tuple[dict, dict]:
 
 def ingest_node(state: ComplianceState) -> dict:
     # Resolve the checklist first so a bad one fails before any S3 fetch.
-    checklist = resolve_checklist(state.get("checklist"))
+    supplied_checklist = state.get("checklist")
+    using_default_checklist = not supplied_checklist
+    checklist = resolve_checklist(supplied_checklist)
     raw, raw_results = _load_raw(state)
 
     dual_channel = bool(raw_results.get("channel_labels"))
@@ -260,5 +262,6 @@ def ingest_node(state: ComplianceState) -> dict:
         "segments": [s.model_dump() for s in segments],
         "transcript": transcript,
         "checklist": [item.model_dump() for item in checklist],
+        "using_default_checklist": using_default_checklist,
         "dual_channel": dual_channel,
     }

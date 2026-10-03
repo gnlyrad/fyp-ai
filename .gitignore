@@ -13,6 +13,10 @@ artifacts/
 react-frontend-staging/node_modules/
 react-frontend-staging/dist/
 **/__pycache__/
+**/.pytest_cache/
+
+# Pipeline run output written by `python -m compliance_pipeline.main` (default --out is ./output)
+/output/
 
 # LangGraph dev server state
 .langgraph_api/

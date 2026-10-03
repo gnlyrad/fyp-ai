@@ -270,7 +270,7 @@
     {
       "id": "compliance.evidence_precision",
       "label": "Evidence precision",
-      "role": "headline",
+      "role": "secondary",
       "applies_to": "compliance",
       "population": "All compliance questions, using final selected evidence turns.",
       "summary_path": "compliance.evidence.overall.precision",
@@ -285,7 +285,7 @@
     {
       "id": "compliance.evidence_recall",
       "label": "Evidence recall",
-      "role": "headline",
+      "role": "secondary",
       "applies_to": "compliance",
       "population": "All compliance questions, using final selected evidence turns.",
       "summary_path": "compliance.evidence.overall.recall",
@@ -300,7 +300,7 @@
     {
       "id": "compliance.evidence_exact_set_match",
       "label": "Evidence exact-set match",
-      "role": "headline",
+      "role": "secondary",
       "applies_to": "compliance",
       "population": "All compliance questions, using final selected evidence turns.",
       "summary_path": "compliance.evidence.overall.exact_set_match",
