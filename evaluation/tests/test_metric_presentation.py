@@ -96,3 +96,39 @@ def test_breach_recall_explains_its_use_not_the_denominator_caveat():
     assert "missed" in note.lower() and "UNCLEAR" not in note
     # The population still appears in the calculation line and in the formal definition.
     assert "PASS/FAIL decision" in PRESENTATION["metrics"]["compliance.breach_recall"]["calculation"]
+
+
+def test_evidence_drilldown_parts_are_worded():
+    parts = PRESENTATION["evidence_parts"]
+    assert {"precision", "recall", "exact", "invalid", "unclear"} <= set(parts)
+    for key, entry in parts.items():
+        if not isinstance(entry, dict):  # intro and the breakdown notes are plain sentences
+            continue
+        assert entry["title"] and entry["what"], key
+        assert not TECHNICAL_TERMS.search(entry["title"] + " " + entry["what"]), key
+
+
+def test_evidence_metrics_say_what_they_are_for():
+    for family in ("compliance", "extraction"):
+        for name in ("evidence_recall", "evidence_precision"):
+            note = PRESENTATION["metrics"][f"{family}.{name}"]["important"]
+            assert note.startswith("Use:"), (family, name)
+            assert "Low " in note, (family, name)
+    # Both describe the turns the model cited, never claim to measure what it was given.
+    for key in ("compliance.evidence_recall", "compliance.evidence_precision"):
+        text = " ".join(PRESENTATION["metrics"][key].values()).lower()
+        assert "passed to" not in text and "given to" not in text
+
+
+def test_evidence_split_wording_has_every_placeholder_the_page_fills():
+    parts = PRESENTATION["evidence_parts"]
+    assert {"numerator", "denominator"} <= set(__import__("re").findall(r"\{(\w+)\}", parts["breakdown_caption"]))
+    assert {"all", "total", "none"} <= set(__import__("re").findall(r"\{(\w+)\}", parts["breakdown_footnote"]))
+    for part in ("precision", "recall"):
+        assert parts[part]["by_rule_title"] and parts[part]["by_rule_note"], part
+
+
+def test_precision_split_wording_has_its_placeholders():
+    import re
+    both = PRESENTATION["evidence_parts"]["breakdown_both"]
+    assert {"expected", "none"} <= set(re.findall(r"\{(\w+)\}", both))

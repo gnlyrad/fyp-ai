@@ -95,6 +95,7 @@ def result_row(score: dict[str, Any], question: dict[str, Any] | None = None) ->
         "evidence_recall": _ratio_value(evidence.get("recall")),
         "evidence_exact_match": _ratio_value(evidence.get("exact_set_match")),
         "invalid_reference_count": evidence.get("invalid_reference_count") or 0,
+        "unresolved_references": list(score.get("unresolved_evidence_references") or []),
     }
 
 
@@ -411,6 +412,54 @@ def evidence_explanation(row: dict[str, Any]) -> str:
     if clauses:
         sentence += ", " + " and ".join(clauses)
     return sentence + "." + suffix
+
+
+def evidence_parts(rows: list[dict[str, Any]], transcripts: dict[str, tuple[dict[str, Any], dict[str, str]]]) -> list[dict[str, Any]]:
+    """For every check whose evidence is imperfect, the exact turns responsible.
+
+    `missed` are expected turns the model did not select (they lower recall); `extra` are
+    selected turns that were not expected (they lower precision). Pure set differences of the
+    scored turn sets, with the turn text attached. Nothing is re-scored.
+    """
+    def turn(call_id: str, turn_id: int) -> dict[str, Any]:
+        transcript, roles = transcripts[call_id]
+        segment = next((item for item in transcript.get("audio_segments", []) if item.get("id") == turn_id), None)
+        speaker = str(segment.get("speaker_label")) if segment else ""
+        return {"id": turn_id, "speaker": roles.get(speaker, speaker),
+                "text": (segment.get("transcript") or "") if segment else ""}
+
+    entries = []
+    for row in rows:
+        gold, predicted = set(row["gold_turns"]), set(row["predicted_turns"])
+        imperfect = (
+            (row["evidence_precision"] or 0) < 1 or (row["evidence_recall"] or 0) < 1
+            or (row["evidence_exact_match"] or 0) < 1 or row["invalid_reference_count"] > 0
+            or row["native_verdict"] == "Unclear"
+        )
+        if not imperfect:
+            continue
+        call_id = row["call_id"]
+        entries.append({
+            "call_id": call_id,
+            "question_id": row["question_id"],
+            "family": row["family"],
+            "question": row["question"],
+            "execution_status": row["execution_status"],
+            "native_verdict": row["native_verdict"],
+            "evidence_status": row["evidence_status"],
+            "precision": row["evidence_precision"],
+            "recall": row["evidence_recall"],
+            "exact": row["evidence_exact_match"],
+            "gold_turns": sorted(gold),
+            "predicted_turns": sorted(predicted),
+            "missed": [turn(call_id, turn_id) for turn_id in sorted(gold - predicted)],
+            "extra": [turn(call_id, turn_id) for turn_id in sorted(predicted - gold)],
+            "invalid_reference_count": row["invalid_reference_count"],
+            "unresolved_references": row["unresolved_references"],
+            "explanation": evidence_explanation(row),
+            "outcome": row.get("outcome"),
+        })
+    return entries
 
 
 def transcript_turns(transcript: dict[str, Any], speaker_roles: dict[str, str], row: dict[str, Any]) -> list[dict[str, Any]]:

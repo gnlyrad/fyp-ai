@@ -250,22 +250,28 @@ recomputes a metric: values come from `summary.json`/Postgres, drill-down lists 
 filters over score records (tested to reproduce the summary counts), and wording comes
 from `metric_presentation.json`. Times are shown in SGT.
 
-Start it from `fyp-ai/` (one command: it serves the API and the web app on one port, and builds
-the web app itself the first time and whenever its source changes):
+### First-time setup and everyday commands
 
-```powershell
-python -m pip install -r evaluation\requirements.txt        # once; Node.js 20+ is also needed once, to build
-python evaluation\scripts\serve_dashboard.py
-# open http://127.0.0.1:8000
-```
+Run everything from the `fyp-ai/` folder. Any Python 3.11+ works (the project `.venv` is optional).
+
+| What you want | One-time setup | Command |
+|---|---|---|
+| **View the dashboard** | `python -m pip install -r evaluation\requirements.txt`, plus Node.js 20+ installed (used once, automatically, to build the web app) | `python evaluation\scripts\serve_dashboard.py`, then open http://127.0.0.1:8000 |
+| **Publish a run** (to Shared) | the same install; put `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` in the repo-root `.env` | `python -B evaluation\scripts\upload_run.py` |
+| **Run an evaluation** (calls Gemini) | `cd langgraph-backend`, then `python -m pip install -r requirements.txt`, then `cd ..` (it must be run from inside that folder), and `GOOGLE_API_KEY` in `.env` | `python -B evaluation\scripts\run_evaluation.py --all` |
+| **Run the tests** | `python -m pip install -r evaluation\requirements-dev.txt` (browser tests also need `python -m playwright install chromium`) | `python -m pytest evaluation/tests -q` |
+
+Day to day you only need the command column. The first `serve_dashboard.py` run installs the web
+app's packages and builds it; later runs rebuild only if the web source changed.
 
 Restart it after pulling backend changes (the page and the server must match). Use `--default-source
 local` to open on your local runs, `--port`, or `--no-build` to skip the automatic build. For
 frontend development, run that server and `npm run dev` in `evaluation/web` (http://localhost:5173,
 which proxies `/api` to port 8000). `web/dist` is a build output and is not committed.
 
-The legacy Streamlit dashboard (`dashboard/app.py`) is kept temporarily as a parity
-reference: `.\.venv\Scripts\python.exe -m streamlit run evaluation\dashboard\app.py`.
+The legacy Streamlit dashboard (`dashboard/app.py`) is kept temporarily as a parity reference and is
+no longer installed by default: `python -m pip install -r evaluation\requirements-legacy.txt`, then
+`python -m streamlit run evaluation\dashboard\app.py`.
 
 Copy the project URL and publishable key from `.env.example` into the repository-root
 `.env` file. Those are the only two values required to view Shared mode; there is no

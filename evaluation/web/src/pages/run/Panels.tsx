@@ -11,6 +11,7 @@ import { useMetaApi } from "../../lib/meta";
 import { EXCEPTION_TIERS, splitTiers, uniqueRows, type TierId } from "../../lib/tiers";
 import { paths, useQueryState, useSource } from "../../lib/url";
 import { METRIC_POPULATIONS, parseScope, useRunView, useSegments, type Scope } from "./context";
+import { EVIDENCE_PARTS, EvidencePanel, type EvidenceFamily, type EvidencePart } from "./EvidencePanel";
 
 /** A summary block (KPIs and an outcome bar); the focused one is briefly highlighted. */
 function Summary({ focused, title, children }: { focused: boolean; title: ReactNode; children: ReactNode }) {
@@ -163,7 +164,7 @@ function DiagnosticPanel({ index }: { index: number }) {
 export function PanelHost() {
   const [params] = useQueryState();
   const { close, data, rowsFor, nodeFor, questions } = useRunView();
-  const { wording, drills, drillCount, fieldLabel } = useMetaApi();
+  const { wording, drills, drillCount, fieldLabel, presentation } = useMetaApi();
   const panel = params.get("panel");
   const focus = params.get("focus");
   const scope = parseScope(params.get("scope"));
@@ -194,6 +195,13 @@ export function PanelHost() {
     const total = drillCount(nodeFor(scope), id);
     subtitle = `${plural(total, "check")} · ${scope ? (scope.kind === "call" ? scope.id : `question ${scope.id}`) : "whole run"}`;
     body = <DrillPanel drill={id} scope={scope} />;
+  } else if (kind === "evidence") {
+    const [part, family] = id.split(":") as [EvidencePart, EvidenceFamily];
+    if (EVIDENCE_PARTS.includes(part) && ["compliance", "extraction", "all"].includes(family)) {
+      title = presentation.evidence_parts[part].title;
+      subtitle = family === "all" ? "Compliance and extraction checks" : presentation.families[family].label;
+      body = <EvidencePanel part={part} family={family} />;
+    }
   } else if (kind === "error") {
     title = "Diagnostic";
     body = <DiagnosticPanel index={Number(id)} />;

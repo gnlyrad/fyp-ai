@@ -1,6 +1,10 @@
 from pathlib import Path
 
-from streamlit.testing.v1 import AppTest
+import pytest
+
+pytest.importorskip("streamlit", reason="legacy dashboard only: pip install -r evaluation/requirements-legacy.txt")
+
+from streamlit.testing.v1 import AppTest  # noqa: E402
 
 APP = Path(__file__).resolve().parents[1] / "dashboard" / "app.py"
 

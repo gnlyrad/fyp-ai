@@ -151,6 +151,11 @@ class LocalEvaluationRepository(EvaluationRepository):
         self.get_run(run_id)
         return _read_jsonl(self.runs_root / run_id / "scores.jsonl")
 
+    def get_call_transcript(self, run_id: str, call_id: str) -> tuple[dict[str, Any], dict[str, str]]:
+        run = self.get_run(run_id)
+        documents = call_documents(self._dataset_documents(run.dataset_id), call_id)
+        return documents["transcript"], documents["speaker_roles"]
+
     def get_result(self, run_id: str, call_id: str, question_id: str) -> ResultRecord:
         run = self.get_run(run_id)
         matches = self.list_results(run_id, call_id=call_id, question_id=question_id)

@@ -137,3 +137,20 @@ def test_built_frontend_is_served_with_spa_fallback(root, tmp_path):
     assert client.get("/assets/app.js").text == "console.log(1)"
     assert client.get("/api/nothing").status_code == 404
     assert client.get("/api/meta").status_code == 200
+
+
+def test_wording_edits_reach_the_page_without_a_restart(tmp_path):
+    import json
+    import shutil
+
+    for name in ("metric_definitions.json", "metric_presentation.json"):
+        shutil.copy2(EVALUATION_ROOT / name, tmp_path / name)
+    shutil.copytree(EVALUATION_ROOT / "datasets" / "pilot", tmp_path / "datasets" / "pilot")
+    client = TestClient(create_app(evaluation_root=tmp_path, web_dist=None, default_source="local"))
+    before = client.get("/api/meta").json()["presentation"]["evidence_parts"]["intro"]
+
+    path = tmp_path / "metric_presentation.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    data["evidence_parts"]["intro"] = before + " (edited)"
+    path.write_text(json.dumps(data), encoding="utf-8")
+    assert client.get("/api/meta").json()["presentation"]["evidence_parts"]["intro"] == before + " (edited)"
