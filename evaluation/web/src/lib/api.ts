@@ -17,6 +17,8 @@ export type MetricDefinition = {
   formula: string;
   interpretation: string;
   watch_out?: string;
+  /** summary paths of the same metric split by whether the ground truth expected evidence */
+  breakdowns?: { non_empty_gold: string; empty_gold: string };
 };
 
 export type MetricWording = {
@@ -37,6 +39,7 @@ export type Presentation = {
   statuses: Record<string, Record<string, Labelled>>;
   confusion_categories: Record<string, Labelled>;
   run_status: Record<string, Labelled>;
+  evidence_parts: Record<string, any>;
   operations: Record<string, MetricWording>;
   error_categories: Record<string, Labelled>;
 };
@@ -182,6 +185,29 @@ export type ResultDetail = {
   ground_truth: Record<string, any>;
 };
 
+export type EvidenceTurn = { id: number; speaker: string; text: string };
+
+export type EvidenceEntry = {
+  call_id: string;
+  question_id: string;
+  family: "compliance" | "extraction";
+  question: string | null;
+  execution_status: string;
+  native_verdict: string | null;
+  evidence_status: string | null;
+  precision: number | null;
+  recall: number | null;
+  exact: number | null;
+  gold_turns: number[];
+  predicted_turns: number[];
+  missed: EvidenceTurn[];
+  extra: EvidenceTurn[];
+  invalid_reference_count: number;
+  unresolved_references: string[];
+  explanation: string;
+  outcome: { label: string; tone: Tone } | null;
+};
+
 export type DiagnosticError = {
   index: number;
   category: string;
@@ -264,6 +290,12 @@ export const useDiagnostics = (source: Source, runId: string) =>
   useQuery({
     queryKey: ["diagnostics", source, runId],
     queryFn: () => get<{ errors: DiagnosticError[]; counts: Record<string, number> }>(`/sources/${source}/runs/${enc(runId)}/diagnostics`),
+  });
+
+export const useEvidence = (source: Source, runId: string) =>
+  useQuery({
+    queryKey: ["evidence", source, runId],
+    queryFn: () => get<{ entries: EvidenceEntry[] }>(`/sources/${source}/runs/${enc(runId)}/evidence`),
   });
 
 export const useComparison = (source: Source, a: string, b: string) =>

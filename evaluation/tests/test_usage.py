@@ -5,10 +5,15 @@ from pathlib import Path
 from typing import Annotated, TypedDict
 
 import pytest
+
+# The pipeline's own packages: present with the LangGraph backend, optional for a dashboard-only install.
+pytest.importorskip("langgraph")
+pytest.importorskip("langchain_core")
+
 from langchain_core.language_models.fake_chat_models import GenericFakeChatModel
 from langchain_core.messages import AIMessage
 from langgraph.graph import END, START, StateGraph
-from langgraph.types import Send
+from langgraph.types import Send  # noqa: E402
 
 from fyp_evaluation_engine.runner import run_evaluation
 from fyp_evaluation_engine.usage import (

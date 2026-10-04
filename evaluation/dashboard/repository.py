@@ -51,6 +51,11 @@ class EvaluationRepository(ABC):
         raise NotImplementedError
 
     @abstractmethod
+    def get_call_transcript(self, run_id: str, call_id: str) -> tuple[dict[str, Any], dict[str, str]]:
+        """The transcript and speaker roles of one call of a run's dataset."""
+        raise NotImplementedError
+
+    @abstractmethod
     def get_result(self, run_id: str, call_id: str, question_id: str) -> ResultRecord:
         raise NotImplementedError
 

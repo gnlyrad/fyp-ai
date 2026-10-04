@@ -105,8 +105,8 @@ function EvidenceMatch({ result }: { result: ResultDetail }) {
     <Card className="p-4">
       <SectionTitle>Evidence match</SectionTitle>
       <div className="grid grid-cols-3 gap-2">
-        {stat("Selected evidence relevance", `${family}.evidence_precision`, asPct(row.evidence_precision))}
         {stat("Expected evidence recovered", `${family}.evidence_recall`, asPct(row.evidence_recall))}
+        {stat("Selected evidence relevance", `${family}.evidence_precision`, asPct(row.evidence_precision))}
         {stat("Exact evidence match", `${family}.evidence_exact_set_match`,
           row.evidence_exact_match === null ? "—" : row.evidence_exact_match === 1 ? "Yes" : "No")}
       </div>

@@ -6,29 +6,37 @@ import { useDiagnostics, type DiagnosticError } from "../../lib/api";
 import { fraction, ratioPct } from "../../lib/format";
 import { useMetaApi } from "../../lib/meta";
 import { useQueryState, useSource } from "../../lib/url";
+import { EvidencePart, EvidenceFamily, evidenceMetricId } from "./EvidencePanel";
 import { useRunView } from "./context";
 
-const EVIDENCE_ROWS: [string, string, string][] = [
-  ["Evidence precision", "compliance.evidence_precision", "extraction.evidence_precision"],
-  ["Evidence recall", "compliance.evidence_recall", "extraction.evidence_recall"],
-  ["Exact evidence match", "compliance.evidence_exact_set_match", "extraction.evidence_exact_set_match"],
-  ["Unmatched evidence references", "compliance.invalid_evidence_reference_rate", "extraction.invalid_evidence_reference_rate"],
-  ["Raw UNCLEAR outputs", "compliance.native_unclear_outputs", "extraction.native_unclear_outputs"],
+const EVIDENCE_ROWS: { label: string; part: EvidencePart }[] = [
+  { label: "Evidence recall", part: "recall" },
+  { label: "Evidence precision", part: "precision" },
+  { label: "Exact evidence match", part: "exact" },
+  { label: "Unmatched evidence references", part: "invalid" },
+  { label: "Raw UNCLEAR outputs", part: "unclear" },
 ];
 
 function EvidenceMetrics() {
-  const { data } = useRunView();
+  const { data, open } = useRunView();
   const { metric } = useMetaApi();
   const node = data.summary.overall;
-  const cell = (id: string) => (
-    <td className="px-3 py-1.5 text-right">
-      <span className="inline-flex items-center gap-1.5">
-        <span className="num font-medium text-ink">{ratioPct(metric(node, id))}</span>
-        <span className="num text-xs text-ink-3">{fraction(metric(node, id))}</span>
-        <MetricTip id={id} />
-      </span>
-    </td>
-  );
+  /** One number. Clicking it lists the turns behind it, not whole checks. */
+  const cell = (part: EvidencePart, family: EvidenceFamily) => {
+    const id = evidenceMetricId(part, family);
+    return (
+      <td className="px-3 py-1.5 text-right">
+        <span className="inline-flex items-center gap-1.5">
+          <button type="button" onClick={() => open(`evidence:${part}:${family}`)}
+            title="Show the turns behind this number" className="drill num inline-flex items-baseline gap-1.5">
+            <span className="font-medium text-ink">{ratioPct(metric(node, id))}</span>
+            <span className="text-xs text-ink-3">{fraction(metric(node, id))}</span>
+          </button>
+          <MetricTip id={id} />
+        </span>
+      </td>
+    );
+  };
   return (
     <Card className="p-4">
       <SectionTitle>Evidence selection (developer metrics)</SectionTitle>
@@ -41,22 +49,28 @@ function EvidenceMetrics() {
           </tr>
         </thead>
         <tbody>
-          {EVIDENCE_ROWS.map(([label, complianceId, extractionId]) => (
+          {EVIDENCE_ROWS.map(({ label, part }) => (
             <tr key={label} className="border-b border-line last:border-0">
               <td className="px-3 py-1.5 text-ink-2">{label}</td>
-              {cell(complianceId)}
-              {cell(extractionId)}
+              {cell(part, "compliance")}
+              {cell(part, "extraction")}
             </tr>
           ))}
           <tr>
             <td className="px-3 py-1.5 text-ink-2"><MetricLabel id="diagnostic.evidence_all_questions_precision" /></td>
             <td colSpan={2} className="px-3 py-1.5 text-right">
-              <span className="num font-medium text-ink">{ratioPct(metric(node, "diagnostic.evidence_all_questions_precision"))}</span>
+              <button type="button" onClick={() => open("evidence:precision:all")}
+                title="Show the turns behind this number" className="drill num font-medium text-ink">
+                {ratioPct(metric(node, "diagnostic.evidence_all_questions_precision"))}
+              </button>
             </td>
           </tr>
         </tbody>
       </table>
-      <Help>Evidence scores are averaged per check. When no evidence is expected, selecting none scores 100%.</Help>
+      <Help>
+        Click a number to see the exact turns behind it: turns the model cited that were not expected, and expected turns it
+        missed. Scores are averaged per check, and when no evidence is expected, selecting none scores 100%.
+      </Help>
     </Card>
   );
 }

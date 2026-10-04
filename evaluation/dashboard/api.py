@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import os
 from collections import Counter
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any, Callable
 
@@ -21,8 +22,8 @@ from .local_repository import LocalEvaluationRepository
 from .presenters import (
     compare_runs,
     drills,
+    evidence_parts,
     evidence_explanation,
-    load_presentation,
     problems,
     result_outcome,
     result_row,
@@ -43,6 +44,37 @@ def _default_shared() -> EvaluationRepository:
     return SupabaseEvaluationRepository.from_environment()
 
 
+class LiveJson(Mapping):
+    """A JSON file that is re-read whenever it changes on disk.
+
+    The wording files are edited while the dashboard is running; this way a wording change shows
+    up on the next page load without restarting the server. Only data files reload: code changes
+    still need a restart.
+    """
+
+    def __init__(self, path: Path):
+        self._path = Path(path)
+        self._stamp: tuple[int, int] | None = None
+        self._value: dict[str, Any] = {}
+
+    def _current(self) -> dict[str, Any]:
+        stat = self._path.stat()
+        stamp = (stat.st_mtime_ns, stat.st_size)
+        if stamp != self._stamp:
+            self._value = json.loads(self._path.read_text(encoding="utf-8-sig"))
+            self._stamp = stamp
+        return self._value
+
+    def __getitem__(self, key: str) -> Any:
+        return self._current()[key]
+
+    def __iter__(self):
+        return iter(self._current())
+
+    def __len__(self) -> int:
+        return len(self._current())
+
+
 class SourceUnavailable(RuntimeError):
     pass
 
@@ -59,8 +91,8 @@ def create_app(
     default_source: str | None = None,
 ) -> FastAPI:
     evaluation_root = Path(evaluation_root)
-    definitions = json.loads((evaluation_root / "metric_definitions.json").read_text(encoding="utf-8-sig"))
-    presentation = load_presentation(evaluation_root / "metric_presentation.json")
+    definitions = LiveJson(evaluation_root / "metric_definitions.json")
+    presentation = LiveJson(evaluation_root / "metric_presentation.json")
     shared_cache: dict[str, EvaluationRepository] = {}
     chosen_default = (default_source or os.getenv("EVALUATION_DEFAULT_SOURCE", "shared")).lower()
     if chosen_default not in SOURCES:
@@ -106,8 +138,8 @@ def create_app(
         return {
             "default_source": chosen_default,
             "sources": list(SOURCES),
-            "definitions": definitions,
-            "presentation": presentation,
+            "definitions": dict(definitions),
+            "presentation": dict(presentation),
             "drills": drills(presentation),
         }
 
@@ -228,6 +260,20 @@ def create_app(
                     "payload": error,
                 })
             return {"errors": errors, "counts": dict(Counter(error["category"] for error in errors))}
+        return guarded(source, action)
+
+    @app.get("/api/sources/{source}/runs/{run_id}/evidence")
+    def get_evidence(source: str, run_id: str) -> dict[str, Any]:
+        """Per-check missed and extra evidence turns (with text), for the Diagnostics drill-down."""
+        def action(repo: EvaluationRepository) -> dict[str, Any]:
+            run = repo.get_run(run_id)
+            questions = {item["id"]: item for item in repo.get_checklist(run.dataset_id)}
+            rows = []
+            for score in repo.list_scores(run_id):
+                row = result_row(score, questions.get(score["question_id"]))
+                rows.append({**row, "outcome": result_outcome(row, presentation)})
+            transcripts = {call_id: repo.get_call_transcript(run_id, call_id) for call_id in sorted({row["call_id"] for row in rows})}
+            return {"entries": evidence_parts(rows, transcripts)}
         return guarded(source, action)
 
     @app.get("/api/sources/{source}/compare")

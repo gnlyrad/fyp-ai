@@ -118,6 +118,13 @@ class SupabaseEvaluationRepository(EvaluationRepository):
         query = query.order("call_id").order("question_id")
         return [row["score"] for row in self._all_rows(query)]
 
+    def get_call_transcript(self, run_id: str, call_id: str) -> tuple[dict[str, Any], dict[str, str]]:
+        run = self.get_run(run_id)
+        response = self.client.table("evaluation_dataset_calls").select("transcript,speaker_roles").eq("dataset_sha256", run.dataset_id).eq("call_id", call_id).limit(1).execute()
+        if not response.data:
+            raise RepositoryError(f"Shared call not found: {call_id}")
+        return response.data[0]["transcript"], response.data[0]["speaker_roles"]
+
     def get_result(self, run_id: str, call_id: str, question_id: str) -> ResultRecord:
         run = self.get_run(run_id)
         result_response = self.client.table("evaluation_run_results").select("*").eq("run_id", run_id).eq("call_id", call_id).eq("question_id", question_id).limit(1).execute()

@@ -124,14 +124,14 @@
       "audience": "developer",
       "what": "Of the transcript turns the model selected as evidence, how much matched the expected evidence?",
       "calculation": "Averaged per check: matching turns ÷ turns selected.",
-      "important": "When no evidence is expected, selecting none scores 100% and selecting anything scores 0%."
+      "important": "Use: shows whether the model cites turns it did not need. Low precision means unrelated turns are cited, which adds noise for reviewers. When no evidence is expected, citing nothing scores 100% and citing anything scores 0%."
     },
     "compliance.evidence_recall": {
       "label": "Evidence recall",
       "audience": "developer",
       "what": "Of the expected evidence turns, how many did the model select?",
       "calculation": "Averaged per check: matching turns ÷ expected turns.",
-      "important": "When no evidence is expected, selecting none scores 100% and selecting anything scores 0%."
+      "important": "Use: shows whether the model finds the turns that support its answer. Low recall means key turns are being overlooked, so a reviewer may not see what the result rests on. When no evidence is expected, citing nothing scores 100% and citing anything scores 0%."
     },
     "compliance.evidence_exact_set_match": {
       "label": "Exact evidence match",
@@ -212,13 +212,14 @@
       "audience": "developer",
       "what": "Of the turns the model selected, how much matched the expected evidence turn?",
       "calculation": "Averaged per check: matching turns ÷ turns selected.",
-      "important": "A value can be located even with low precision, when extra turns were selected."
+      "important": "Use: shows whether the model cites turns beyond the one that states the value. Low precision means extra turns are cited, although the value can still be located."
     },
     "extraction.evidence_recall": {
       "label": "Extraction evidence recall",
       "audience": "developer",
       "what": "Of the expected evidence turns, how many did the model select?",
-      "calculation": "Averaged per check: matching turns ÷ expected turns."
+      "calculation": "Averaged per check: matching turns ÷ expected turns.",
+      "important": "Use: shows whether the model finds the turn where the value is stated. Low recall means that turn is being overlooked."
     },
     "extraction.evidence_exact_set_match": {
       "label": "Extraction exact evidence match",
@@ -496,5 +497,35 @@
       "label": "Unexpected result",
       "description": "The pipeline returned a result for a check not in the checklist."
     }
+  },
+  "evidence_parts": {
+    "intro": "Counts the turns the model cited as evidence.",
+    "precision": {
+      "title": "Extra turns the model cited",
+      "what": "Turns the model cited that were not expected. Each one lowers precision.",
+      "by_rule_title": "Evidence expected, none cited",
+      "by_rule_note": "These score 0% because the model cited nothing. No turn was extra."
+    },
+    "recall": {
+      "title": "Expected turns the model missed",
+      "what": "Expected turns the model did not cite. Each one lowers recall.",
+      "by_rule_title": "Cited where none was expected",
+      "by_rule_note": "These score 0% because no evidence was expected. No turn was missed."
+    },
+    "exact": {
+      "title": "Checks without an exact match",
+      "what": "Checks where the cited turns differ from the expected turns."
+    },
+    "invalid": {
+      "title": "Unmatched evidence references",
+      "what": "Evidence the model cited that matches no transcript turn."
+    },
+    "unclear": {
+      "title": "Raw UNCLEAR outputs",
+      "what": "Checks where the model's raw answer was UNCLEAR."
+    },
+    "breakdown_caption": "{numerator} of {denominator} checks where evidence was expected",
+    "breakdown_footnote": "{all} across all {total} checks. The {none} checks that expect no evidence score 0% if the model cites any turn.",
+    "breakdown_both": "Where evidence was expected: {expected}. Where none was expected: {none}."
   }
 }
