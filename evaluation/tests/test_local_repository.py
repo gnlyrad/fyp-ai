@@ -58,3 +58,33 @@ def test_local_repository_metric_definitions_are_available(tmp_path):
     repository = LocalEvaluationRepository(_make_evaluation_root(tmp_path))
     definitions = repository.get_metric_definitions()
     assert definitions["schema_version"] == "2.0.0"
+
+
+def test_a_run_on_a_missing_dataset_version_is_reported_not_silently_dropped(tmp_path):
+    root = _make_evaluation_root(tmp_path)
+    repository = LocalEvaluationRepository(root)
+    dataset_id = repository.list_datasets()[0].dataset_id
+    assert [run.run_id for run in repository.list_runs(dataset_id)] == ["test-run"]
+    assert repository.list_unlinked_runs() == []
+
+    # A run made on an older dataset version whose files are no longer in datasets/.
+    old = root / "runs" / "old-run"
+    shutil.copytree(root / "runs" / "test-run", old)
+    metadata = json.loads((old / "metadata.json").read_text(encoding="utf-8"))
+    metadata["run_id"] = "old-run"
+    metadata["dataset_snapshot"]["dataset_sha256"] = "d138f0fd" + "0" * 56
+    (old / "metadata.json").write_text(json.dumps(metadata), encoding="utf-8")
+
+    repository = LocalEvaluationRepository(root)
+    assert [run.run_id for run in repository.list_runs(dataset_id)] == ["test-run"]
+    assert repository.list_unlinked_runs() == [{
+        "run_id": "old-run", "evaluated_at": "2026-10-03T00:00:00Z",
+        "dataset_sha256": "d138f0fd" + "0" * 56, "reason": "dataset_missing",
+    }]
+
+
+def test_a_run_still_being_written_is_not_reported_as_broken(tmp_path):
+    root = _make_evaluation_root(tmp_path)
+    (root / "runs" / "in-progress").mkdir()
+    (root / "runs" / "in-progress" / "metadata.json").write_text("{}", encoding="utf-8")  # no summary yet
+    assert LocalEvaluationRepository(root).list_unlinked_runs() == []

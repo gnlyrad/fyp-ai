@@ -2,6 +2,7 @@ import { AlertTriangle, GitCompare } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { DataTable, type Column } from "../components/DataTable";
+import { HiddenRunsNotice } from "../components/HiddenRunsNotice";
 import { Page } from "../components/Page";
 import { Badge, Card, Disclosure, Empty, ErrorPanel, Loading, MetricLabel, Tip, cx } from "../components/ui";
 import { useDataset, type RunSummary } from "../lib/api";
@@ -14,7 +15,7 @@ const HISTORY_METRICS = [
   "compliance.automatic_breach_detection_rate",
   "compliance.false_clearance_rate",
   "compliance.prediction_failure_rate",
-  "extraction.evidence_coverage",
+  "extraction.evidence_recall",
 ];
 
 export function RunStatusBadge({ run }: { run: RunSummary }) {
@@ -121,6 +122,7 @@ export default function DatasetPage() {
         </Disclosure>
       </div>
 
+      <HiddenRunsNotice />
       <Card>
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line px-3 py-2">
           <h2 className="text-sm font-semibold text-ink">Run history</h2>

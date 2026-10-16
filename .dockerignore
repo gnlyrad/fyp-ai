@@ -16,3 +16,7 @@ artifacts/
 Dockerfile
 .dockerignore
 README.md
+**/.pytest_cache/
+**/.pytest-tmp/
+evaluation/
+output/

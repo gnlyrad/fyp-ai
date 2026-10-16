@@ -1,0 +1,135 @@
+{
+  "audio_segments": [
+    {
+      "end_time": "11.322",
+      "id": 0,
+      "speaker_label": "spk_0",
+      "start_time": "0.000",
+      "transcript": "Good morning, Elaine. Marcus Lim here from private banking, calling for the telephone review you requested. Are you somewhere comfortable to speak, or would another time be better?"
+    },
+    {
+      "end_time": "20.220",
+      "id": 1,
+      "speaker_label": "spk_1",
+      "start_time": "11.723",
+      "transcript": "Hi Marcus, now is good. I'm in my office with the door closed. I've just finished a client meeting, so I have a quiet window before the team comes back."
+    },
+    {
+      "end_time": "26.413",
+      "id": 2,
+      "speaker_label": "spk_0",
+      "start_time": "20.620",
+      "transcript": "Lovely. Before we begin, may I have your identification details for our verification?"
+    },
+    {
+      "end_time": "34.248",
+      "id": 3,
+      "speaker_label": "spk_1",
+      "start_time": "26.812",
+      "transcript": "Sure. My NRIC is S seven six eight three four nine two U. My date of birth is 30 May 1992."
+    },
+    {
+      "end_time": "44.645",
+      "id": 4,
+      "speaker_label": "spk_0",
+      "start_time": "34.648",
+      "transcript": "Thank you, Elaine. That's the verification portion complete. I've got your portfolio record open in front of me, so we can move into the review."
+    },
+    {
+      "end_time": "67.312",
+      "id": 5,
+      "speaker_label": "spk_1",
+      "start_time": "45.045",
+      "transcript": "Okay, I've got my notes here as well. The holding I want to transact in is Summit Global Equity ETF. Use Chinese yuan as the currency for this transaction. Set the transaction amount at 1,000,000. The quantity for this transaction is 2,000 units. I want to sell those units from my existing holding. Please use a limit order, with the limit price set at 500 Chinese yuan per unit."
+    },
+    {
+      "end_time": "101.207",
+      "id": 6,
+      "speaker_label": "spk_0",
+      "start_time": "67.713",
+      "transcript": "So your objective is to reduce your equity exposure and free up liquidity for the upcoming business expenses. I'll keep that in mind for this review. The market price of Summit Global Equity ETF can fall when the underlying global equity markets decline. Also, if the market doesn't reach your minimum sale price, your sale may remain unfilled and delay access to the proceeds. Do you understand that the holding's price can fall with global equity markets, and that setting a minimum sale price could leave the sale unfilled?"
+    },
+    {
+      "end_time": "109.013",
+      "id": 7,
+      "speaker_label": "spk_1",
+      "start_time": "101.608",
+      "transcript": "Yes, I understand those risks. The holding's price can fall, and I may have to wait for the proceeds if my minimum sale price isn't reached."
+    },
+    {
+      "end_time": "129.903",
+      "id": 8,
+      "speaker_label": "spk_0",
+      "start_time": "109.412",
+      "transcript": "The transaction fee for this sale is 0.2% of the transaction value. You could lose some or even all of the capital you've invested in this holding. Selling below what you paid would realise a loss. Are you willing to accept investment losses, including realising a loss on this sale to meet your liquidity needs?"
+    },
+    {
+      "end_time": "138.365",
+      "id": 9,
+      "speaker_label": "spk_1",
+      "start_time": "130.303",
+      "transcript": "Yes, I'm willing to accept investment losses and realise a loss to reduce my exposure and meet my business needs, provided the sale respects my minimum price."
+    },
+    {
+      "end_time": "156.032",
+      "id": 10,
+      "speaker_label": "spk_0",
+      "start_time": "138.765",
+      "transcript": "I recommend reducing, rather than exiting, your holding in Summit Global Equity ETF to lower your equity exposure and release liquidity for your business expenses. Setting a minimum sale price also suits your preference for price control, though the sale may not execute."
+    },
+    {
+      "end_time": "165.930",
+      "id": 11,
+      "speaker_label": "spk_1",
+      "start_time": "156.433",
+      "transcript": "Thank you, Marcus. I appreciate keeping the conversation straightforward. I'll be travelling next week, so telephone contact is still the easiest way to reach me while I'm away."
+    },
+    {
+      "end_time": "174.498",
+      "id": 12,
+      "speaker_label": "spk_0",
+      "start_time": "166.330",
+      "transcript": "Thanks for letting me know. Will you be able to take calls as usual, or are there particular times we should avoid because of your travel schedule?"
+    },
+    {
+      "end_time": "183.045",
+      "id": 13,
+      "speaker_label": "spk_1",
+      "start_time": "174.898",
+      "transcript": "I'm heading to Melbourne. Please avoid early mornings Singapore time. If I'm in a meeting, leave a brief message and I'll call you back when I'm somewhere private."
+    },
+    {
+      "end_time": "204.667",
+      "id": 14,
+      "speaker_label": "spk_0",
+      "start_time": "183.445",
+      "transcript": "I'll note that contact preference. For the final part of our call: To confirm your final instruction: sell 2,000 units of Summit Global Equity ETF, with a transaction amount of 1,000,000 in Chinese yuan, using a limit order at 500 Chinese yuan. Do you confirm this instruction and authorise me to place it?"
+    },
+    {
+      "end_time": "209.960",
+      "id": 15,
+      "speaker_label": "spk_1",
+      "start_time": "205.067",
+      "transcript": "Yes, I confirm that final instruction exactly as you've stated it. Please place the order."
+    },
+    {
+      "end_time": "219.720",
+      "id": 16,
+      "speaker_label": "spk_0",
+      "start_time": "210.360",
+      "transcript": "Thank you, Elaine. I'll let you get back to your team. Have a pleasant trip, and do contact me through the usual bank number if you need to reach me."
+    },
+    {
+      "end_time": "223.917",
+      "id": 17,
+      "speaker_label": "spk_1",
+      "start_time": "220.120",
+      "transcript": "Thanks, Marcus. Good to speak with you. Bye for now."
+    }
+  ],
+  "transcripts": [
+    {
+      "transcript": "Good morning, Elaine. Marcus Lim here from private banking, calling for the telephone review you requested. Are you somewhere comfortable to speak, or would another time be better?\n\nHi Marcus, now is good. I'm in my office with the door closed. I've just finished a client meeting, so I have a quiet window before the team comes back.\n\nLovely. Before we begin, may I have your identification details for our verification?\n\nSure. My NRIC is S seven six eight three four nine two U. My date of birth is 30 May 1992.\n\nThank you, Elaine. That's the verification portion complete. I've got your portfolio record open in front of me, so we can move into the review.\n\nOkay, I've got my notes here as well. The holding I want to transact in is Summit Global Equity ETF. Use Chinese yuan as the currency for this transaction. Set the transaction amount at 1,000,000. The quantity for this transaction is 2,000 units. I want to sell those units from my existing holding. Please use a limit order, with the limit price set at 500 Chinese yuan per unit.\n\nSo your objective is to reduce your equity exposure and free up liquidity for the upcoming business expenses. I'll keep that in mind for this review. The market price of Summit Global Equity ETF can fall when the underlying global equity markets decline. Also, if the market doesn't reach your minimum sale price, your sale may remain unfilled and delay access to the proceeds. Do you understand that the holding's price can fall with global equity markets, and that setting a minimum sale price could leave the sale unfilled?\n\nYes, I understand those risks. The holding's price can fall, and I may have to wait for the proceeds if my minimum sale price isn't reached.\n\nThe transaction fee for this sale is 0.2% of the transaction value. You could lose some or even all of the capital you've invested in this holding. Selling below what you paid would realise a loss. Are you willing to accept investment losses, including realising a loss on this sale to meet your liquidity needs?\n\nYes, I'm willing to accept investment losses and realise a loss to reduce my exposure and meet my business needs, provided the sale respects my minimum price.\n\nI recommend reducing, rather than exiting, your holding in Summit Global Equity ETF to lower your equity exposure and release liquidity for your business expenses. Setting a minimum sale price also suits your preference for price control, though the sale may not execute.\n\nThank you, Marcus. I appreciate keeping the conversation straightforward. I'll be travelling next week, so telephone contact is still the easiest way to reach me while I'm away.\n\nThanks for letting me know. Will you be able to take calls as usual, or are there particular times we should avoid because of your travel schedule?\n\nI'm heading to Melbourne. Please avoid early mornings Singapore time. If I'm in a meeting, leave a brief message and I'll call you back when I'm somewhere private.\n\nI'll note that contact preference. For the final part of our call: To confirm your final instruction: sell 2,000 units of Summit Global Equity ETF, with a transaction amount of 1,000,000 in Chinese yuan, using a limit order at 500 Chinese yuan. Do you confirm this instruction and authorise me to place it?\n\nYes, I confirm that final instruction exactly as you've stated it. Please place the order.\n\nThank you, Elaine. I'll let you get back to your team. Have a pleasant trip, and do contact me through the usual bank number if you need to reach me.\n\nThanks, Marcus. Good to speak with you. Bye for now."
+    }
+  ]
+}

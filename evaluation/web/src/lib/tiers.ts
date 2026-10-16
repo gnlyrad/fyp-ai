@@ -16,8 +16,7 @@ export function tierOf(row: Row): TierId {
   if (
     row.confusion_category === "FP" ||
     row.compliance_outcome_status === "unexpected_not_applicable" ||
-    row.extraction_evidence_status === "NOT_FOUND" ||
-    row.evaluator_support === "UNSUPPORTED"
+    row.extraction_turn_status === "MISSED"
   ) {
     return "other";
   }

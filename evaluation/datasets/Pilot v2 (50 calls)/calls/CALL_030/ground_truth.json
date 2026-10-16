@@ -1,0 +1,793 @@
+{
+  "call_id": "CALL_030",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 161,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your aim is to free up cash for your planned household spending and reduce your exposure to bond-market fluctuations. That's the objective we're working towards.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "Your aim is to free up cash for your planned household spending and reduce your exposure to bond-market fluctuations. That's the objective we're working towards.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 157,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Harbor SGD Bond Fund, rising interest rates can push down the prices of the bonds it holds, reducing the fund's value and what you receive when selling.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "With Harbor SGD Bond Fund, rising interest rates can push down the prices of the bonds it holds, reducing the fund's value and what you receive when selling.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 274,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 158,
+          "text": "Do you understand how rising interest rates can reduce this fund's value and the proceeds you receive when you sell?",
+          "turn_id": 8
+        },
+        {
+          "end": 112,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. If rates rise, the fund's bond holdings can fall in value, so I may receive less when I sell.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates can reduce this fund's value and the proceeds you receive when you sell?\nYes, I understand. If rates rise, the fund's bond holdings can fall in value, so I may receive less when I sell.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 42,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction fee for this sale is 0.2%.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "The transaction fee for this sale is 0.2%.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 146,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 43,
+          "text": "You could lose some or all of the capital you invested in this fund. Selling can crystallise that loss.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you invested in this fund. Selling can crystallise that loss.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 251,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 147,
+          "text": "Are you willing to accept an investment loss, including crystallising a loss when you sell this holding?",
+          "turn_id": 10
+        },
+        {
+          "end": 132,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept that loss. Having cash available for my spending matters more to me than waiting for a possible recovery.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept an investment loss, including crystallising a loss when you sell this holding?\nYes, I'm willing to accept that loss. Having cash available for my spending matters more to me than waiting for a possible recovery.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 201,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend selling from your holding in Harbor SGD Bond Fund because it frees up cash for your planned spending and reduces your ongoing exposure to interest-rate changes and issuers' credit problems.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "I recommend selling from your holding in Harbor SGD Bond Fund because it frees up cash for your planned spending and reduces your ongoing exposure to interest-rate changes and issuers' credit problems.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 253,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 27,
+          "text": "Please explicitly confirm your final instruction: sell 10,000 units of Harbor SGD Bond Fund using a market order, with a transaction amount of 1.2 million in Singapore dollars. Is that the instruction you want me to carry out?",
+          "turn_id": 14
+        },
+        {
+          "end": 96,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final instruction exactly as you've stated it. Please proceed with the sale.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Please explicitly confirm your final instruction: sell 10,000 units of Harbor SGD Bond Fund using a market order, with a transaction amount of 1.2 million in Singapore dollars. Is that the instruction you want me to carry out?\nYes, I confirm that final instruction exactly as you've stated it. Please proceed with the sale.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 260,
+          "event_id": "EV_012",
+          "speaker": "EMPLOYEE",
+          "start": 202,
+          "text": "The future investment returns on this fund are guaranteed.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "The future investment returns on this fund are guaranteed.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "double_triple_digits"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T5728859D",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 52,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My FIN is T five seven two double eight five nine D.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My FIN is T five seven two double eight five nine D.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "T5728859D"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "17 March 1966",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 53,
+          "text": "My date of birth is the seventeenth of March nineteen sixty-six.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the seventeenth of March nineteen sixty-six.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "17 March 1966"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Harbor SGD Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 58,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The holding I want to transact in is Harbor SGD Bond Fund.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "The holding I want to transact in is Harbor SGD Bond Fund.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "Harbor SGD Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SGD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 157,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 100,
+          "text": "Please use Singapore dollars as the transaction currency.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "Please use Singapore dollars as the transaction currency.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "SGD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "large_number_expression"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1200000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 205,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 158,
+          "text": "The amount for this transaction is 1.2 million.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "The amount for this transaction is 1.2 million.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": 1200000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 254,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 206,
+          "text": "The quantity I want to transact is 10,000 units.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "The quantity I want to transact is 10,000 units.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 99,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 59,
+          "text": "I want to sell from my existing holding.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "I want to sell from my existing holding.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 291,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 255,
+          "text": "Please place this as a market order.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "Please place this as a market order.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_pilot_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, Elaine, Marcus Lim here. Thanks for making time for the call. Are you somewhere comfortable to talk? Last time you mentioned getting the garden sorted out; how has that been going?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Morning, Marcus. Yes, I'm at home, so it's quiet enough. The garden is coming along nicely. I've put the herbs near the kitchen, though the basil seems to need more attention than everything else.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Sounds like a nice project. Before we get into today's discussion, please give me your FIN and date of birth for the identification step.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My FIN is T five seven two double eight five nine D. My date of birth is the seventeenth of March nineteen sixty-six.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Elaine. I'll listen while you set out what you called about.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The holding I want to transact in is Harbor SGD Bond Fund. I want to sell from my existing holding. Please use Singapore dollars as the transaction currency. The amount for this transaction is 1.2 million. The quantity I want to transact is 10,000 units. Please place this as a market order.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your aim is to free up cash for your planned household spending and reduce your exposure to bond-market fluctuations. That's the objective we're working towards.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks. Please keep the conversation straightforward. I've got another appointment later, but there's no need to rush through the paperwork.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Harbor SGD Bond Fund, rising interest rates can push down the prices of the bonds it holds, reducing the fund's value and what you receive when selling. Do you understand how rising interest rates can reduce this fund's value and the proceeds you receive when you sell?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. If rates rise, the fund's bond holdings can fall in value, so I may receive less when I sell.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction fee for this sale is 0.2%. You could lose some or all of the capital you invested in this fund. Selling can crystallise that loss. Are you willing to accept an investment loss, including crystallising a loss when you sell this holding?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept that loss. Having cash available for my spending matters more to me than waiting for a possible recovery.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend selling from your holding in Harbor SGD Bond Fund because it frees up cash for your planned spending and reduces your ongoing exposure to interest-rate changes and issuers' credit problems. The future investment returns on this fund are guaranteed.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Before we finish, I'd also like to sort out the routine correspondence. The envelopes tend to pile up on my desk.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can cover that shortly. Please explicitly confirm your final instruction: sell 10,000 units of Harbor SGD Bond Fund using a market order, with a transaction amount of 1.2 million in Singapore dollars. Is that the instruction you want me to carry out?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final instruction exactly as you've stated it. Please proceed with the sale.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Now, on the correspondence, would you prefer routine account documents electronically or by post? We can look at your communication preferences separately from anything else discussed today.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Electronically, please. I prefer to check things myself when I'm home rather than have someone at the office handling envelopes. A notification is useful, but I don't need a separate courtesy call.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll note that preference and check the available settings. You can also review them in the app. If anything needs a separate administrative step, I'll let you know.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Okay, that suits me. I'll have a look after my appointment. Then hopefully I can get back to the garden before the rain comes.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for your time, Elaine. Enjoy the rest of your day, and good luck with the basil.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Marcus. Have a good day too. Bye.",
+      "turn_id": 21
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language": "en-SG",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "1.0",
+  "source": {
+    "call_config_sha256": "8d04f115c478dcfbf4c8d3bdbb954d187cbb355f83dd2849a9fb3b5a5269c285",
+    "call_spec_sha256": "8f577f2588d6debace2ca1902c1f29b9400fd95adddf047e9c1c46c260cfb8dc",
+    "check_plan_sha256": "2a9d75e68614ff4951422eebaae0c5e7f88701bce095cb55003c5e4267faeb67",
+    "check_plan_skeleton_sha256": "f2778e3e3478b653321a3caa41bf80d171901199cde19efd77c179166c9cec44",
+    "check_semantics_sha256": "e9453e62e5232263b21daaeaf321f11d5dacbfeec70cc5b0ddb6e9baa9896493",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "792ff4c02e048e931b943910496bd4c0608cd5dc024b353b9cc9e174ef9330e3",
+    "edge_case_catalog_sha256": "443e2335e0a59f991de955cdfad7e49e29ac1f105a7b8f581b914ce33368a5c3",
+    "generation_plan_sha256": "dbaffe5f5669e2bba1755cc6e4e8a186c36a396116084b4d8a55a40d6d6030f1",
+    "normalization_sha256": "5fc020db696f1a67ecff178d119a397261bc32e258a463afaa88e8d44089072e",
+    "plan_verification_sha256": "402ef5f9ac25e3e9e7b5f725d235e22d13a7ad902439dbbc8195c53399c08313"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "VERIFIED",
+    "timings": "AUDIO_DERIVED"
+  },
+  "timing": {
+    "audio_sha256": "d3545c1f28f1201b50adfa4d91ae25cf1e4dfd9185c63bc4e16fdae96092ff05",
+    "duration_seconds": 226.678,
+    "g7_report_sha256": "b58ba92be09189313ccb2ae88494cff7dd4c090cdda02acfe711ce27d71298fa",
+    "render_id": "clean_voice_A",
+    "render_manifest_sha256": "6457d5b6c6c70241bd3b47f9e47c952ce4c1ecce249d749c60f46c3de8fa8b22",
+    "timings_sha256": "1cb8f1b83aeddb32d1e6a3b7556e4293ef583089e157b0911b1005ba7bfaafd2"
+  }
+}

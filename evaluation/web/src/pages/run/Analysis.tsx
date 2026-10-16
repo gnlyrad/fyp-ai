@@ -54,9 +54,9 @@ function ByCall() {
       onCell: focus("failures"), cellEnabled: (id) => failures(id) > 0,
     },
     {
-      key: "extraction", header: <MetricLabel id="extraction.evidence_coverage" />, align: "right",
-      sort: (id) => metric(node(id), "extraction.evidence_coverage")?.percentage ?? null,
-      cell: (id) => <Fraction ratio={metric(node(id), "extraction.evidence_coverage")} />,
+      key: "extraction", header: <MetricLabel id="extraction.evidence_recall" />, align: "right",
+      sort: (id) => metric(node(id), "extraction.evidence_recall")?.percentage ?? null,
+      cell: (id) => <Fraction ratio={metric(node(id), "extraction.evidence_recall")} />,
       onCell: focus("extraction"), cellTitle: "Show extraction results for this call",
     },
   ];
@@ -70,12 +70,13 @@ function ByCall() {
 
 function ByQuestion() {
   const { data, open } = useRunView();
-  const { metric, drillCount } = useMetaApi();
+  const { metric, drillCount, drillRows } = useMetaApi();
   const node = (id: string): SummaryNode => data.summary.by_question_id[id] ?? {};
   const focus = (key: Focus) => (item: ChecklistItem) => open(`question:${item.id}`, { focus: key });
   const compliance = data.checklist.filter((item) => item.evaluation_family === "compliance" && data.summary.by_question_id[item.id]);
   const extraction = data.checklist.filter((item) => item.evaluation_family === "extraction" && data.summary.by_question_id[item.id]);
   const failures = (item: ChecklistItem) => count(node(item.id), "counts.execution_status.prediction_failure");
+  const missedTurns = (id: string) => drillRows(data.rows.filter((row) => row.question_id === id), "extraction.turn_missed").length;
   const question: Column<ChecklistItem> = {
     key: "question", header: "Question", sort: (item) => item.id, className: "w-[55%]",
     cell: (item) => (
@@ -114,15 +115,15 @@ function ByQuestion() {
   const extractionColumns: Column<ChecklistItem>[] = [
     question,
     {
-      key: "located", header: <MetricLabel id="extraction.evidence_coverage" />, align: "right",
-      sort: (item) => metric(node(item.id), "extraction.evidence_coverage")?.percentage ?? null,
-      cell: (item) => <Fraction ratio={metric(node(item.id), "extraction.evidence_coverage")} />,
+      key: "recall", header: <MetricLabel id="extraction.evidence_recall" />, align: "right",
+      sort: (item) => metric(node(item.id), "extraction.evidence_recall")?.percentage ?? null,
+      cell: (item) => <Fraction ratio={metric(node(item.id), "extraction.evidence_recall")} />,
       onCell: focus("extraction"),
     },
     {
-      key: "notlocated", header: "Not located", align: "right", sort: (item) => drillCount(node(item.id), "extraction.not_found"),
-      cell: (item) => <Count value={drillCount(node(item.id), "extraction.not_found")} />,
-      onCell: focus("extraction"), cellEnabled: (item) => drillCount(node(item.id), "extraction.not_found") > 0,
+      key: "missed", header: "Turn missed", align: "right", sort: (item) => missedTurns(item.id),
+      cell: (item) => <Count value={missedTurns(item.id)} />,
+      onCell: focus("extraction"), cellEnabled: (item) => missedTurns(item.id) > 0,
     },
     failuresColumn,
     {

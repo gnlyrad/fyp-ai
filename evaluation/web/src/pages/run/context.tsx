@@ -65,9 +65,8 @@ export function useRunView(): RunView {
 
 /** Outcome-bar segments, built from the drill registry so every count is the summary's own. */
 export function useSegments() {
-  const { drillCount } = useMetaApi();
+  const { drillCount, drillRows, drills } = useMetaApi();
   const { open } = useRunView();
-  const { drills } = useMetaApi();
   const segment = (node: SummaryNode, key: string, outcome: Segment["outcome"], scope: Scope): Segment => ({
     key,
     label: drills[key].label,
@@ -89,11 +88,18 @@ export function useSegments() {
       segment(node, "breach.unexpected_not_applicable", "neutral", scope),
       segment(node, "breach.false_clearance", "wrong", scope),
     ],
-    extraction: (node: SummaryNode, scope: Scope): Segment[] => [
-      segment(node, "extraction.found", "correct", scope),
-      segment(node, "extraction.not_found", "wrong", scope),
-      segment(node, "extraction.coverage_failure", "failure", scope),
-    ],
+    /** Extraction results are grouped from the rows (turn outcomes have no summary count). */
+    extraction: (rows: Row[], scope: Scope): Segment[] => {
+      const rowSegment = (key: string, outcome: Segment["outcome"]): Segment => ({
+        key, label: drills[key].label, count: drillRows(rows, key).length, outcome,
+        onClick: () => open(`drill:${key}`, { scope }),
+      });
+      return [
+        rowSegment("extraction.turn_cited", "correct"),
+        rowSegment("extraction.turn_missed", "wrong"),
+        rowSegment("extraction.prediction_failure", "failure"),
+      ];
+    },
   };
 }
 
@@ -110,6 +116,6 @@ export const METRIC_POPULATIONS: Record<string, string[]> = {
   "compliance.false_clearance_rate": ["breach.false_clearance", "breach.detected", "breach.abstained", "breach.prediction_failure", "breach.unexpected_not_applicable"],
   "compliance.gold_breach_abstention_rate": ["breach.abstained", "breach.detected", "breach.false_clearance", "breach.prediction_failure", "breach.unexpected_not_applicable"],
   "compliance.gold_breach_prediction_failure_rate": ["breach.prediction_failure", "breach.detected", "breach.false_clearance", "breach.abstained", "breach.unexpected_not_applicable"],
-  "extraction.evidence_coverage": ["extraction.found", "extraction.not_found", "extraction.coverage_failure"],
+  "extraction.evidence_recall": ["extraction.turn_missed", "extraction.turn_cited", "extraction.prediction_failure"],
   "extraction.prediction_failure_rate": ["extraction.all"],
 };

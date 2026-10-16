@@ -40,8 +40,8 @@ def _scores():
             records.append(score_compliance(gold, verdict, call_id=call, question_id=question_id, **extra))
         evidence = [{"chunk_id": "c", "text": "My NRIC is S1234567A"}]
         records += [
-            score_extraction("S1234567A", call_id=call, question_id="K01", evidence=evidence, turns=[1]),
-            score_extraction("S7654321Z", call_id=call, question_id="K02", evidence=evidence, turns=[1]),
+            score_extraction("S1234567A", call_id=call, question_id="K01", evidence=evidence, turns=[1], gold_turns=[1]),
+            score_extraction("S7654321Z", call_id=call, question_id="K02", evidence=evidence, turns=[1], gold_turns=[2]),
             score_extraction("SGD", call_id=call, question_id="K03", status="prediction_failure",
                              failure_category="missing_prediction"),
             score_extraction("1 Jan 2000", "unknown_type", call_id=call, question_id="K04"),
@@ -69,7 +69,7 @@ def test_every_drill_filter_reproduces_its_summary_count_at_every_level():
             family = row_filter["family"]
             if node.get(family) is None:
                 continue
-            assert sum(matches(row, row_filter) for row in node_rows) == drill_count(node, key), (name, key)
+            assert sum(matches(row, row_filter) for row in node_rows) == drill_count(node, key, node_rows), (name, key)
 
 
 def test_drill_registry_is_labelled_for_the_frontend():
@@ -85,7 +85,7 @@ def test_drills_reproduce_counts_on_saved_runs(run_dir):
     rows = [result_row(score) for score in scores]
     for key, (_, row_filter) in DRILLS.items():
         if summary["overall"].get(row_filter["family"]) is not None:
-            assert sum(matches(row, row_filter) for row in rows) == drill_count(summary["overall"], key), key
+            assert sum(matches(row, row_filter) for row in rows) == drill_count(summary["overall"], key, rows), key
 
 
 def test_result_outcome_labels_use_presentation_wording():
@@ -96,8 +96,13 @@ def test_result_outcome_labels_use_presentation_wording():
     assert outcome(score_compliance("PASS", "PASS")) == {"label": "Correct pass", "tone": "good"}
     assert outcome(score_compliance("FAIL", "UNCLEAR"))["label"] == "UNCLEAR"
     assert outcome(score_compliance("FAIL", None, status="prediction_failure"))["label"] == "Prediction failed"
-    assert outcome(score_extraction("SGD", evidence=[{"text": "in SGD"}]))["label"] == "Successfully located"
-    assert outcome(score_extraction("SGD", evidence=[{"text": "in USD"}]))["label"] == "Expected value not located"
+    cited = score_extraction("SGD", turns=[4, 5], gold_turns=[4])
+    missed = score_extraction("SGD", turns=[5], gold_turns=[4])
+    assert outcome(cited) == {"label": "Expected turn cited", "tone": "good"}
+    assert outcome(missed) == {"label": "Expected turn missed", "tone": "bad"}
+    assert outcome(score_extraction("SGD", turns=[5]))["label"] == "No evidence expected"
+    # The wording of the value is irrelevant: only the turns are compared.
+    assert outcome(score_extraction("SGD", turns=[4], gold_turns=[4], evidence=[{"text": "in euros"}]))["label"] == "Expected turn cited"
     no_value = score_prediction(extraction_prediction(), extraction_gold(None))
     assert outcome(no_value) == {"label": "No value expected", "tone": "neutral"}
 
@@ -125,11 +130,11 @@ def test_problems_list_only_non_zero_issues_with_their_drill():
     scores = _scores()
     summary = aggregate_scores(scores)["overall"]
     errors = [{"category": "pipeline_diagnostic"}, {"category": "prediction_failure"}]
-    found = problems(summary, errors, PRESENTATION)
+    found = problems(summary, errors, PRESENTATION, [result_row(score) for score in scores])
     drill_keys = [item["drill"] for item in found if item["target"] == "cases"]
     assert drill_keys == ["confusion.FN", "compliance.prediction_failure", "confusion.FP", "compliance.abstention",
-                          "compliance.unexpected_not_applicable", "extraction.not_found",
-                          "extraction.prediction_failure", "extraction.unsupported"]
+                          "compliance.unexpected_not_applicable", "extraction.turn_missed",
+                          "extraction.prediction_failure"]
     # Question-level failure errors are counted from the summary, not repeated from errors.jsonl.
     assert [item["category"] for item in found if item["target"] == "diagnostics"] == ["pipeline_diagnostic"]
     clean = aggregate_scores([score_compliance("PASS", "PASS")])["overall"]
@@ -154,3 +159,15 @@ def _row(gold, predicted, status="scored", invalid=0):
 ])
 def test_evidence_explanation_is_derived_from_the_sets(row, sentence):
     assert evidence_explanation(row) == sentence
+
+
+def test_extraction_turn_outcomes_split_the_extraction_checks_without_a_summary_count():
+    rows = [result_row(score) for score in _scores()]
+    extraction = [row for row in rows if row["family"] == "extraction"]
+    cited = [row for row in extraction if matches(row, DRILLS["extraction.turn_cited"][1])]
+    missed = [row for row in extraction if matches(row, DRILLS["extraction.turn_missed"][1])]
+    failed = [row for row in extraction if matches(row, DRILLS["extraction.prediction_failure"][1])]
+    other = [row for row in extraction if row["extraction_turn_status"] == "NONE_EXPECTED"]
+    assert (len(cited), len(missed)) == (2, 2)  # K01 cited; K02 and K04 missed; K05 expects no turn (per call)
+    assert len(cited) + len(missed) + len(failed) + len(other) == len(extraction)
+    assert DRILLS["extraction.turn_cited"][0] is None  # derived from turn ids, so counted from rows

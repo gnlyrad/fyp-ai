@@ -1,0 +1,816 @@
+{
+  "call_id": "CALL_040",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 148,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your aim is to free up cash for upcoming spending and reduce exposure to changes in bond valuations. I'll use that as the objective for this review.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "Your aim is to free up cash for upcoming spending and reduce exposure to changes in bond valuations. I'll use that as the objective for this review.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 295,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 149,
+          "text": "With Orion Global Income Fund, rising market interest rates can push down the value of its underlying bonds, which can lower the fund's valuation.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "With Orion Global Income Fund, rising market interest rates can push down the value of its underlying bonds, which can lower the fund's valuation.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 373,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 296,
+          "text": "Do you understand how rising interest rates can lower the value of this fund?",
+          "turn_id": 4
+        },
+        {
+          "end": 116,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. Rising interest rates can reduce the value of the bonds it holds and bring down the fund's value.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates can lower the value of this fund?\nYes, I understand. Rising interest rates can reduce the value of the bonds it holds and bring down the fund's value.",
+      "gold_evidence_turns": [
+        4,
+        5
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 46,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction charge for this sale is 0.25%.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "The transaction charge for this sale is 0.25%.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 192,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 47,
+          "text": "You could lose some or all of the capital invested in this fund. Selling may crystallise a loss rather than recover what you originally invested.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital invested in this fund. Selling may crystallise a loss rather than recover what you originally invested.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 312,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 193,
+          "text": "Are you willing to accept an investment loss from this sale in exchange for freeing up cash and reducing your exposure?",
+          "turn_id": 6
+        },
+        {
+          "end": 112,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept that loss. Having the cash available and reducing my exposure matters more to me now.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept an investment loss from this sale in exchange for freeing up cash and reducing your exposure?\nYes, I'm willing to accept that loss. Having the cash available and reducing my exposure matters more to me now.",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 187,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing your holding in Orion Global Income Fund because it releases cash for your spending needs and leaves you less exposed to interest-rate and credit-market fluctuations.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Orion Global Income Fund because it releases cash for your spending needs and leaves you less exposed to interest-rate and credit-market fluctuations.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 232,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 29,
+          "text": "With the amount corrected, your instruction is to sell 250 units of Orion Global Income Fund for an amount of 250,000 in Chinese yuan, using a market order. Do you confirm this as your final instruction?",
+          "turn_id": 14
+        },
+        {
+          "end": 86,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final instruction, including the corrected amount. Please proceed.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "With the amount corrected, your instruction is to sell 250 units of Orion Global Income Fund for an amount of 250,000 in Chinese yuan, using a market order. Do you confirm this as your final instruction?\nYes, I confirm that final instruction, including the corrected amount. Please proceed.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 272,
+          "event_id": "EV_012",
+          "speaker": "EMPLOYEE",
+          "start": 188,
+          "text": "For the portion of the holding you retain, future investment returns are guaranteed.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "For the portion of the holding you retain, future investment returns are guaranteed.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G3649478Q",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 134,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 65,
+          "text": "My identification number is G three six four nine four seven eight Q.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My identification number is G three six four nine four seven eight Q.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "G3649478Q"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "13 February 1987",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 204,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 135,
+          "text": "My date of birth is the thirteenth of February nineteen eighty-seven.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the thirteenth of February nineteen eighty-seven.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "13 February 1987"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Orion Global Income Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 85,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 23,
+          "text": "The holding I want to transact in is Orion Global Income Fund.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "The holding I want to transact in is Orion Global Income Fund.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "Orion Global Income Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "previous_currency_reference"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 189,
+          "event_id": "EV_016",
+          "speaker": "EMPLOYEE",
+          "start": 120,
+          "text": "For this holding, the transaction currency available is Chinese yuan.",
+          "turn_id": 10
+        },
+        {
+          "end": 55,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Use the currency you just mentioned for my transaction.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "For this holding, the transaction currency available is Chinese yuan.\nUse the currency you just mentioned for my transaction.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 10,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "one_field_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 250000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 77,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Sorry, the amount should be 250,000. The rest of my instruction is unchanged.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Sorry, the amount should be 250,000. The rest of my instruction is unchanged.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 11,
+          "value": 250000
+        },
+        {
+          "event_id": "EV_019",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 12,
+          "value": 50000
+        },
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 250000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 250,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 145,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 100,
+          "text": "The quantity I want to transact is 250 units.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "The quantity I want to transact is 250 units.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 250
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 126,
+          "event_id": "EV_022",
+          "speaker": "CLIENT",
+          "start": 86,
+          "text": "I want to sell from my existing holding.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "I want to sell from my existing holding.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_022",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 182,
+          "event_id": "EV_023",
+          "speaker": "CLIENT",
+          "start": 146,
+          "text": "Please place this as a market order.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Please place this as a market order.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_023",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_pilot_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, Adrian. Rachel Lim speaking. Nice to hear from you. Before we get into the review, could you give me your identification details for the call record, please?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Morning, Rachel. Yes, I've got a quiet moment at the office now. My identification number is G three six four nine four seven eight Q. My date of birth is the thirteenth of February nineteen eighty-seven.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I've brought up your records and have your review notes in front of me. We can keep this fairly brief today.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, that suits me. The holding I want to transact in is Orion Global Income Fund. I want to sell from my existing holding.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your aim is to free up cash for upcoming spending and reduce exposure to changes in bond valuations. I'll use that as the objective for this review. With Orion Global Income Fund, rising market interest rates can push down the value of its underlying bonds, which can lower the fund's valuation. Do you understand how rising interest rates can lower the value of this fund?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. Rising interest rates can reduce the value of the bonds it holds and bring down the fund's value.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction charge for this sale is 0.25%. You could lose some or all of the capital invested in this fund. Selling may crystallise a loss rather than recover what you originally invested. Are you willing to accept an investment loss from this sale in exchange for freeing up cash and reducing your exposure?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept that loss. Having the cash available and reducing my exposure matters more to me now.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing your holding in Orion Global Income Fund because it releases cash for your spending needs and leaves you less exposed to interest-rate and credit-market fluctuations. For the portion of the holding you retain, future investment returns are guaranteed. On the work side, have you managed to make your schedule a bit quieter yet?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "A little bit. My brother is taking more of the daily calls, and the office team handles the routine paperwork. I'm trying not to go in every Saturday. Still getting used to leaving things with them, lah.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like quite an adjustment after being so hands-on. We can work around your office routine for any callbacks. For this holding, the transaction currency available is Chinese yuan.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Use the currency you just mentioned for my transaction. The amount for this transaction is 250,000. The quantity I want to transact is 250 units. Please place this as a market order.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Let me read that back: the holding is Orion Global Income Fund, and the transaction amount is 50,000.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Sorry, the amount should be 250,000. The rest of my instruction is unchanged.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for catching that. With the amount corrected, your instruction is to sell 250 units of Orion Global Income Fund for an amount of 250,000 in Chinese yuan, using a market order. Do you confirm this as your final instruction?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final instruction, including the corrected amount. Please proceed.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For any follow-up call, would you prefer your usual mobile, and is there a part of the day that's easier for you?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My usual mobile is best. After lunch generally works. If I don't answer, leave a simple message asking me to call you back. Please don't leave account details in the voicemail; sometimes I'm sitting with the office staff.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly, I'll keep the message brief and leave out account details. I'll note the afternoon preference as well. Thanks for taking the time today, Adrian.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Rachel. Appreciate you keeping the call concise. I'll get back to the team now. Have a good day.",
+      "turn_id": 19
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language": "en-SG",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "1.0",
+  "source": {
+    "call_config_sha256": "459b1b13506f3fa8e1531a6e3a5a7caa2cd9bbac82ab9d7e0995fb9402ac075c",
+    "call_spec_sha256": "60fb8c453d7e6a48391a3315101705d334a6a902f697a6d553c87cff1a66fc55",
+    "check_plan_sha256": "665486fc453514749f38a7d03d42478f531d5eb2842ebb698541b5550a06e529",
+    "check_plan_skeleton_sha256": "a9503ffeedfd212aebd4a4aa0500ce5bdc5b2c7d4e886c4e0015b2a18ba5b050",
+    "check_semantics_sha256": "e9453e62e5232263b21daaeaf321f11d5dacbfeec70cc5b0ddb6e9baa9896493",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "fd284d3f019f8b3ebeb9b13439d0021487649217e593dabfda26f5cdf8d1eff2",
+    "edge_case_catalog_sha256": "443e2335e0a59f991de955cdfad7e49e29ac1f105a7b8f581b914ce33368a5c3",
+    "generation_plan_sha256": "dbaffe5f5669e2bba1755cc6e4e8a186c36a396116084b4d8a55a40d6d6030f1",
+    "normalization_sha256": "5fc020db696f1a67ecff178d119a397261bc32e258a463afaa88e8d44089072e",
+    "plan_verification_sha256": "671e2cc47a0b02b170e8fb50f24c822478fb8db65388e7ee98a600e8536ad5c0"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "VERIFIED",
+    "timings": "AUDIO_DERIVED"
+  },
+  "timing": {
+    "audio_sha256": "548d00d601321a7cfc027b95d618c068aa2721050e3338a8b3a0d201eaeb9aa6",
+    "duration_seconds": 226.545,
+    "g7_report_sha256": "1a6983fe19fedbc79ff540dc41a938dec3dfe3a11c7e67bf34db53d4185abcbf",
+    "render_id": "clean_voice_A",
+    "render_manifest_sha256": "21736bfba7251fa61c9b4ece1550dede47d5d17663c49c21bc380355402606a4",
+    "timings_sha256": "30822b3c56076a014b87595ba6df4814eca1d7e41d344ed43f727ccdbda62def"
+  }
+}

@@ -117,6 +117,28 @@ class LocalEvaluationRepository(EvaluationRepository):
                 runs.append(run)
         return sorted(runs, key=lambda item: item.evaluated_at or "", reverse=True)
 
+    def list_unlinked_runs(self) -> list[dict[str, Any]]:
+        unlinked: list[dict[str, Any]] = []
+        if not self.runs_root.is_dir():
+            return unlinked
+        known = set(self._load_datasets())
+        for path in sorted(self.runs_root.iterdir()):
+            # A folder without both files is a run still being written, not a broken one.
+            if not path.is_dir() or not (path / "metadata.json").is_file() or not (path / "summary.json").is_file():
+                continue
+            entry = {"run_id": path.name, "evaluated_at": None, "dataset_sha256": None}
+            try:
+                metadata = _read_json(path / "metadata.json")
+                entry["evaluated_at"] = metadata.get("started_at")
+                entry["dataset_sha256"] = (metadata.get("dataset_snapshot") or {}).get("dataset_sha256")
+                if entry["dataset_sha256"] in known:
+                    self._run_from_dir(path)  # listed normally unless it is unreadable
+                    continue
+                unlinked.append({**entry, "reason": "dataset_missing"})
+            except RepositoryError:
+                unlinked.append({**entry, "reason": "unreadable"})
+        return unlinked
+
     def get_run(self, run_id: str) -> RunRecord:
         run_dir = self.runs_root / run_id
         if not run_dir.is_dir():

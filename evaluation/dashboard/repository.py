@@ -30,6 +30,14 @@ class EvaluationRepository(ABC):
     def list_runs(self, dataset_id: str) -> list[RunRecord]:
         raise NotImplementedError
 
+    def list_unlinked_runs(self) -> list[dict[str, Any]]:
+        """Runs that exist but cannot be listed under any dataset, with the reason.
+
+        Only the local source can have these (a run made on a dataset version that is no longer
+        on disk); a published run always has its dataset.
+        """
+        return []
+
     @abstractmethod
     def get_run(self, run_id: str) -> RunRecord:
         raise NotImplementedError

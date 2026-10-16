@@ -27,6 +27,18 @@
     },
     "transaction_currency": {
       "label": "Transaction currency"
+    },
+    "transaction_amount": {
+      "label": "Transaction amount"
+    },
+    "transaction_quantity": {
+      "label": "Transaction quantity"
+    },
+    "transaction_direction": {
+      "label": "Transaction direction"
+    },
+    "order_type": {
+      "label": "Order type"
     }
   },
   "metrics": {
@@ -215,11 +227,11 @@
       "important": "Use: shows whether the model cites turns beyond the one that states the value. Low precision means extra turns are cited, although the value can still be located."
     },
     "extraction.evidence_recall": {
-      "label": "Extraction evidence recall",
-      "audience": "developer",
-      "what": "Of the expected evidence turns, how many did the model select?",
-      "calculation": "Averaged per check: matching turns ÷ expected turns.",
-      "important": "Use: shows whether the model finds the turn where the value is stated. Low recall means that turn is being overlooked."
+      "label": "Evidence recall",
+      "audience": "summary",
+      "what": "Of the turns where the value is stated, how many did the model select?",
+      "calculation": "Averaged per check: expected turns the model selected ÷ expected turns.",
+      "important": "Use: shows whether the model finds the turn where the value is stated. Low recall means that turn is being overlooked. It does not show that the right value was picked, because one turn can mention several values. Failed checks count as zero."
     },
     "extraction.evidence_exact_set_match": {
       "label": "Extraction exact evidence match",
@@ -378,7 +390,7 @@
       },
       "NOT_STATED": {
         "label": "No value expected",
-        "description": "The ground truth intentionally contains no value for this field, so this case is excluded from extraction coverage."
+        "description": "The ground truth intentionally contains no value for this field, so there is nothing to find."
       }
     },
     "extraction_evidence_status": {
@@ -418,6 +430,20 @@
         "label": "Evidence unavailable",
         "description": "The result had no usable evidence, so evidence scores zero."
       }
+    }
+  },
+  "extraction_turn_status": {
+    "CITED": {
+      "label": "Expected turn cited",
+      "description": "The model selected every turn where the value is stated."
+    },
+    "MISSED": {
+      "label": "Expected turn missed",
+      "description": "The model did not select at least one turn where the value is stated."
+    },
+    "NONE_EXPECTED": {
+      "label": "No evidence expected",
+      "description": "No evidence turn is expected for this check."
     }
   },
   "confusion_categories": {

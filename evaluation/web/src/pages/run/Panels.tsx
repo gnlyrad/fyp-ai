@@ -84,9 +84,8 @@ function EntityPanel({ scope, focus }: { scope: Exclude<Scope, null>; focus: str
   if (extraction.length) {
     blocks.extraction = (
       <Summary key="extraction" focused={focusId === "extraction"} title={`Structured extraction (${extraction.length} checks)`}>
-        {kpis(["extraction.evidence_coverage", "extraction.prediction_failure_rate"], "grid-cols-2")}
-        <OutcomeBar label="Extraction outcomes" total={drillCount(node, "extraction.coverage_population")}
-          segments={segments.extraction(node, scope)} />
+        {kpis(["extraction.evidence_recall", "extraction.prediction_failure_rate"], "grid-cols-2")}
+        <OutcomeBar label="Extraction outcomes" total={extraction.length} segments={segments.extraction(extraction, scope)} />
       </Summary>
     );
   }
@@ -164,7 +163,7 @@ function DiagnosticPanel({ index }: { index: number }) {
 export function PanelHost() {
   const [params] = useQueryState();
   const { close, data, rowsFor, nodeFor, questions } = useRunView();
-  const { wording, drills, drillCount, fieldLabel, presentation } = useMetaApi();
+  const { wording, drills, drillCount, drillRows, fieldLabel, presentation } = useMetaApi();
   const panel = params.get("panel");
   const focus = params.get("focus");
   const scope = parseScope(params.get("scope"));
@@ -192,7 +191,7 @@ export function PanelHost() {
     body = <MetricPanel id={id} scope={scope} />;
   } else if (kind === "drill" && drills[id]) {
     title = drills[id].label;
-    const total = drillCount(nodeFor(scope), id);
+    const total = drills[id].count_path ? drillCount(nodeFor(scope), id) : drillRows(rowsFor(scope), id).length;
     subtitle = `${plural(total, "check")} · ${scope ? (scope.kind === "call" ? scope.id : `question ${scope.id}`) : "whole run"}`;
     body = <DrillPanel drill={id} scope={scope} />;
   } else if (kind === "evidence") {

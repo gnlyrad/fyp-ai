@@ -81,7 +81,7 @@ function ExtractionSummary() {
   const { metric, drillCount, drills } = useMetaApi();
   const segments = useSegments();
   const node = data.summary.overall;
-  const expected = drillCount(node, "extraction.coverage_population");
+  const rows = data.rows.filter((row) => row.family === "extraction");
   const fields = data.checklist.filter((item) => item.evaluation_family === "extraction");
   const byQuestion = data.summary.by_question_id;
   const countButton = (key: string, hideWhenZero = false) => {
@@ -106,12 +106,12 @@ function ExtractionSummary() {
       ),
     },
     {
-      key: "coverage", header: <MetricLabel id="extraction.evidence_coverage" text="Coverage" />, align: "right",
-      sort: (item) => metric(byQuestion[item.id], "extraction.evidence_coverage")?.percentage ?? null,
+      key: "recall", header: <MetricLabel id="extraction.evidence_recall" text="Evidence recall" />, align: "right",
+      sort: (item) => metric(byQuestion[item.id], "extraction.evidence_recall")?.percentage ?? null,
       cell: (item) => (
         <span className="whitespace-nowrap">
-          <span className="font-medium text-ink">{ratioPct(metric(byQuestion[item.id], "extraction.evidence_coverage"))}</span>
-          <span className="ml-1.5 text-xs text-ink-3">{fraction(metric(byQuestion[item.id], "extraction.evidence_coverage"))}</span>
+          <span className="font-medium text-ink">{ratioPct(metric(byQuestion[item.id], "extraction.evidence_recall"))}</span>
+          <span className="ml-1.5 text-xs text-ink-3">{fraction(metric(byQuestion[item.id], "extraction.evidence_recall"))}</span>
         </span>
       ),
       onCell: (item) => open(`question:${item.id}`, { focus: "extraction" }),
@@ -128,21 +128,20 @@ function ExtractionSummary() {
     <Card className="p-4">
       <FamilyHeader family="extraction" />
       <div className="grid grid-cols-2 gap-2">
-        <Kpi id="extraction.evidence_coverage" ratio={metric(node, "extraction.evidence_coverage")}
-          caption={`${fraction(metric(node, "extraction.evidence_coverage")).replace(" / ", " of ")} expected values located`}
-          onClick={() => open("metric:extraction.evidence_coverage")} />
+        <Kpi id="extraction.evidence_recall" ratio={metric(node, "extraction.evidence_recall")}
+          caption="of the turns where the value is stated"
+          onClick={() => open("evidence:recall:extraction")} />
         <Kpi id="extraction.prediction_failure_rate" ratio={metric(node, "extraction.prediction_failure_rate")}
           onClick={() => open("metric:extraction.prediction_failure_rate")} />
       </div>
       <div className="mt-4">
-        <SectionTitle>Outcome of {expected} expected values</SectionTitle>
-        <OutcomeBar label="Extraction outcomes" total={expected} segments={segments.extraction(node, null)} />
+        <SectionTitle>Outcome of {rows.length} extraction checks</SectionTitle>
+        <OutcomeBar label="Extraction outcomes" total={rows.length} segments={segments.extraction(rows, null)} />
       </div>
       <ul className="mt-3 divide-y divide-line border-y border-line text-[13px]">
         {countButton("extraction.present")}
         {countButton("extraction.not_stated")}
         {countButton("extraction.prediction_failure")}
-        {countButton("extraction.unsupported", true)}
       </ul>
       <div className="mt-4">
         <SectionTitle>By field</SectionTitle>

@@ -1,0 +1,734 @@
+{
+  "call_id": "CALL_028",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 317,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 156,
+          "text": "Your objective is to earn investment income and diversify your personal portfolio, while keeping the option to sell before maturity if your circumstances change.",
+          "turn_id": 2
+        }
+      ],
+      "gold_evidence_text": "Your objective is to earn investment income and diversify your personal portfolio, while keeping the option to sell before maturity if your circumstances change.",
+      "gold_evidence_turns": [
+        2
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 413,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 187,
+          "text": "With Atlas USD Corporate Bond 2031, the issuer could run into financial trouble and miss interest payments or fail to repay the principal. If market interest rates rise, the bond's resale price could also fall before maturity.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "With Atlas USD Corporate Bond 2031, the issuer could run into financial trouble and miss interest payments or fail to repay the principal. If market interest rates rise, the bond's resale price could also fall before maturity.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "risk_explained_understanding_not_verified"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 269,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 214,
+          "text": "The transaction fee is 0.25% of the transaction amount.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.25% of the transaction amount.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 213,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 142,
+          "text": "You could lose some or even all of the capital you invest in this bond.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "You could lose some or even all of the capital you invest in this bond.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 409,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 318,
+          "text": "Are you willing to accept investment losses in exchange for the opportunity to earn income?",
+          "turn_id": 2
+        },
+        {
+          "end": 113,
+          "event_id": "EV_006",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to accept investment losses for the opportunity to earn income, though I prefer predictability.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses in exchange for the opportunity to earn income?\nYes, I am willing to accept investment losses for the opportunity to earn income, though I prefer predictability.",
+      "gold_evidence_turns": [
+        2,
+        3
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 186,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 11,
+          "text": "I recommend Atlas USD Corporate Bond 2031 because its scheduled interest payments support your income objective, and corporate debt can help diversify your personal portfolio.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "I recommend Atlas USD Corporate Bond 2031 because its scheduled interest payments support your income objective, and corporate debt can help diversify your personal portfolio.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "guarantee_request_refusal"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "double_triple_digits"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G9286669Q",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 185,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 122,
+          "text": "For your records, my FIN is G nine two eight triple six nine Q.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "For your records, my FIN is G nine two eight triple six nine Q.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "G9286669Q"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "13 August 1982",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 251,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 186,
+          "text": "My date of birth is the thirteenth of August nineteen eighty-two.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the thirteenth of August nineteen eighty-two.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "13 August 1982"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Atlas USD Corporate Bond 2031",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 255,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 188,
+          "text": "The product I want to transact in is Atlas USD Corporate Bond 2031.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "The product I want to transact in is Atlas USD Corporate Bond 2031.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "Atlas USD Corporate Bond 2031"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_currencies"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "USD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 339,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 280,
+          "text": "Please use US dollars as the currency for this transaction.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Please use US dollars as the currency for this transaction.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "USD"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 9,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 150000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 59,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The amount I want to commit to this transaction is 150,000.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "The amount I want to commit to this transaction is 150,000.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 150000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 100,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 60,
+          "text": "Please set the quantity at 10,000 units.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Please set the quantity at 10,000 units.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 279,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 256,
+          "text": "I want to buy the bond.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "I want to buy the bond.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 164,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 101,
+          "text": "Please place a limit order with a limit price of 15 US dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Please place a limit order with a limit price of 15 US dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_pilot_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, Rachel. Daniel Lim here. Thanks for setting aside a few minutes for the call. I'm at my desk and have your file open. We can keep this brief, so you won't need to come down to the branch.",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hi Daniel, thank you. Telephone is much easier for me, especially between meetings. Let me give you my particulars first. For your records, my FIN is G nine two eight triple six nine Q. My date of birth is the thirteenth of August nineteen eighty-two.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Rachel. I'll keep the discussion concise rather than go through a long presentation. From our earlier conversation, I've recorded the following. Your objective is to earn investment income and diversify your personal portfolio, while keeping the option to sell before maturity if your circumstances change. Are you willing to accept investment losses in exchange for the opportunity to earn income?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to accept investment losses for the opportunity to earn income, though I prefer predictability. I've got a little time now, but I need to leave for another appointment shortly. Please keep to the main points.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. I recommend Atlas USD Corporate Bond 2031 because its scheduled interest payments support your income objective, and corporate debt can help diversify your personal portfolio. With Atlas USD Corporate Bond 2031, the issuer could run into financial trouble and miss interest payments or fail to repay the principal. If market interest rates rise, the bond's resale price could also fall before maturity.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Can you guarantee the returns? I would prefer certainty if that's available.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "No, I can't guarantee the returns. What you receive depends on the issuer meeting its obligations and on market conditions if you sell early. You could lose some or even all of the capital you invest in this bond. The transaction fee is 0.25% of the transaction amount.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Before I give you the details, a quick administrative point. I'm travelling quite a bit at the moment, and correspondence gets scattered across different folders. I'd rather have everything accessible through the usual secure channel than carry papers around.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep the correspondence in the usual secure channel. You can access it while you're away. For general questions about where to find documents, you can also contact me by telephone instead of making a branch visit.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's convenient. I keep my personal paperwork separate from the company files, so I don't want bank correspondence buried among the office emails. Anyway, here are my details for today. The product I want to transact in is Atlas USD Corporate Bond 2031. I want to buy the bond. Please use US dollars as the currency for this transaction. I use Chinese yuan only as a mental reference when comparing the income with my overseas business receipts, not as the currency for this transaction.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. On the correspondence side, I'll leave the office contact arrangements as they are. There's no need to involve your staff in our telephone discussions. You can reach me directly for help navigating the document inbox.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The amount I want to commit to this transaction is 150,000. Please set the quantity at 10,000 units. Please place a limit order with a limit price of 15 US dollars.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Rachel. For any follow-up contact, is an afternoon call generally easier while you're travelling, or would you rather we arrange a time by secure message first?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please message first. My calendar changes quite often, and sometimes I'm in a taxi or at a meeting when the phone rings. If we agree on a slot, I can find somewhere quiet and have my documents ready.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Sure, we'll arrange a suitable slot through the secure channel. If you need help locating correspondence, let me know which section you're looking at. Please don't send passwords or access codes in a message.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Okay, that arrangement works for my schedule. I'll check the inbox when I'm back at the hotel, rather than try to sort things out on my phone between appointments. Thanks for keeping the call short.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You're welcome. I'll let you get to your appointment. Have a good afternoon, Rachel, and safe travels.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Daniel. Speak another time. Bye.",
+      "turn_id": 17
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language": "en-SG",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "1.0",
+  "source": {
+    "call_config_sha256": "796b0bcafae3cdec2db205eb511c9741342da00e23e5769504de3ccac04fb44e",
+    "call_spec_sha256": "814d8784ff0d99edd33ff4b3ca944edcb0df33d611d57200984bc70aaebcccdc",
+    "check_plan_sha256": "09b354a59b64db40bbb1256b4313f345e263db913761530a84c7d54b4fbc7b16",
+    "check_plan_skeleton_sha256": "d485879e6f584966f3bf4cda93b132a0fde43f7a5a8dbcf86b48b7d6be244dc3",
+    "check_semantics_sha256": "e9453e62e5232263b21daaeaf321f11d5dacbfeec70cc5b0ddb6e9baa9896493",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "a05efb8bdf42a2ced472f0814ae5a7913255857b5a9edc4670f888431d66e56b",
+    "edge_case_catalog_sha256": "443e2335e0a59f991de955cdfad7e49e29ac1f105a7b8f581b914ce33368a5c3",
+    "generation_plan_sha256": "dbaffe5f5669e2bba1755cc6e4e8a186c36a396116084b4d8a55a40d6d6030f1",
+    "normalization_sha256": "5fc020db696f1a67ecff178d119a397261bc32e258a463afaa88e8d44089072e",
+    "plan_verification_sha256": "52a831b32abc3a80fb8d876cc6054e87c5f766d34b5fc3c35597e831b95038c4"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "VERIFIED",
+    "timings": "AUDIO_DERIVED"
+  },
+  "timing": {
+    "audio_sha256": "4675c3e7393899018225b5dafe5f63f20e17b883f56d70170cd0776bafda4082",
+    "duration_seconds": 255.71,
+    "g7_report_sha256": "6fba5f3a198160ccf9a801980ad76b4a809d07f224d05d348d4c6c0ca9eff3f4",
+    "render_id": "clean_voice_A",
+    "render_manifest_sha256": "d6d62bc2c6f149eaba84b95d00bf5510d7f07a6b776f5b43698e9319395ea038",
+    "timings_sha256": "f0c2b75367069b2e6c6d646dbf875978100f79a3ecd490ff71c97f07ad774e7c"
+  }
+}

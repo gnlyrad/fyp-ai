@@ -154,3 +154,29 @@ def test_wording_edits_reach_the_page_without_a_restart(tmp_path):
     data["evidence_parts"]["intro"] = before + " (edited)"
     path.write_text(json.dumps(data), encoding="utf-8")
     assert client.get("/api/meta").json()["presentation"]["evidence_parts"]["intro"] == before + " (edited)"
+
+
+def test_unlinked_runs_endpoint_explains_hidden_runs(tmp_path, root):
+    import json
+    import shutil
+
+    for name in ("metric_definitions.json", "metric_presentation.json"):
+        shutil.copy2(EVALUATION_ROOT / name, tmp_path / name)
+    shutil.copytree(EVALUATION_ROOT / "datasets" / "pilot", tmp_path / "datasets" / "pilot")
+    shutil.copytree(root / "runs" / "run-a", tmp_path / "runs" / "run-a")
+    ghost = tmp_path / "runs" / "ghost"
+    shutil.copytree(root / "runs" / "run-a", ghost)
+    metadata = json.loads((ghost / "metadata.json").read_text(encoding="utf-8"))
+    metadata["run_id"] = "ghost"
+    metadata["dataset_snapshot"]["dataset_sha256"] = "f" * 64
+    (ghost / "metadata.json").write_text(json.dumps(metadata), encoding="utf-8")
+
+    client = TestClient(create_app(evaluation_root=tmp_path, web_dist=None, default_source="local"))
+    hidden = client.get("/api/sources/local/unlinked-runs").json()
+    assert [(run["run_id"], run["reason"]) for run in hidden] == [("ghost", "dataset_missing")]
+    dataset_id = client.get("/api/sources/local/datasets").json()[0]["dataset_id"]
+    listed = client.get(f"/api/sources/local/datasets/{dataset_id}").json()["runs"]
+    assert [run["run_id"] for run in listed] == ["run-a"]  # still not listed under a dataset
+    # A published (shared) source never has unlinked runs.
+    shared = TestClient(create_app(evaluation_root=tmp_path, web_dist=None, shared_factory=lambda: LocalEvaluationRepository(tmp_path)))
+    assert shared.get("/api/sources/shared/unlinked-runs").status_code == 200
