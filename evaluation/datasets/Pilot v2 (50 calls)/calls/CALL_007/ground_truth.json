@@ -1,0 +1,1050 @@
+{
+  "call_id": "CALL_007",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 306,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 120,
+          "text": "So your aim is to reduce your exposure to global equity market swings and free up funds for your personal spending plans, while keeping a measured approach to your remaining investments.",
+          "turn_id": 20
+        }
+      ],
+      "gold_evidence_text": "So your aim is to reduce your exposure to global equity market swings and free up funds for your personal spending plans, while keeping a measured approach to your remaining investments.",
+      "gold_evidence_turns": [
+        20
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 234,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Summit Global Equity ETF, falling global share markets can pull down the value of your holding. If buyers won't meet your minimum sale price, your order may remain unfilled and you'll still be exposed to further market movements.",
+          "turn_id": 22
+        }
+      ],
+      "gold_evidence_text": "With Summit Global Equity ETF, falling global share markets can pull down the value of your holding. If buyers won't meet your minimum sale price, your order may remain unfilled and you'll still be exposed to further market movements.",
+      "gold_evidence_turns": [
+        22
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 394,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 235,
+          "text": "Do you understand that the holding can fall in value, and that setting a minimum sale price could leave the sale uncompleted while the market continues moving?",
+          "turn_id": 22
+        },
+        {
+          "end": 154,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. The holding can fall with the market, and if buyers don't meet my minimum price, I'll still be holding it and exposed to further falls.",
+          "turn_id": 23
+        }
+      ],
+      "gold_evidence_text": "Do you understand that the holding can fall in value, and that setting a minimum sale price could leave the sale uncompleted while the market continues moving?\nYes, I understand. The holding can fall with the market, and if buyers don't meet my minimum price, I'll still be holding it and exposed to further falls.",
+      "gold_evidence_turns": [
+        22,
+        23
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 67,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction fee for this sale is 0.3% of the transaction value.",
+          "turn_id": 24
+        }
+      ],
+      "gold_evidence_text": "The transaction fee for this sale is 0.3% of the transaction value.",
+      "gold_evidence_turns": [
+        24
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 199,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 68,
+          "text": "You could get back less than you originally put into this holding, and you could lose part or even all of that original investment.",
+          "turn_id": 24
+        }
+      ],
+      "gold_evidence_text": "You could get back less than you originally put into this holding, and you could lose part or even all of that original investment.",
+      "gold_evidence_turns": [
+        24
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 317,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 200,
+          "text": "Are you willing to accept investment losses, including realising a loss on this sale, to reduce your market exposure?",
+          "turn_id": 24
+        },
+        {
+          "end": 140,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept investment losses and realise a loss on this sale if that helps me reduce my exposure and meet my spending needs.",
+          "turn_id": 25
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including realising a loss on this sale, to reduce your market exposure?\nYes, I'm willing to accept investment losses and realise a loss on this sale if that helps me reduce my exposure and meet my spending needs.",
+      "gold_evidence_turns": [
+        24,
+        25
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "paraphrased_compliance_statement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 284,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I'd suggest reducing your holding in Summit Global Equity ETF because that would lower your exposure to global share markets and release funds for your personal spending. Setting a minimum sale price gives you the price control you prefer, although it means the sale may not complete.",
+          "turn_id": 26
+        }
+      ],
+      "gold_evidence_text": "I'd suggest reducing your holding in Summit Global Equity ETF because that would lower your exposure to global share markets and release funds for your personal spending. Setting a minimum sale price gives you the price control you prefer, although it means the sale may not complete.",
+      "gold_evidence_turns": [
+        26
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 273,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "To confirm your final instruction, you want to sell 700 units of Summit Global Equity ETF using a limit order at 35.71 Singapore dollars, with transaction currency Singapore dollars and stated transaction amount 25,000. Do you confirm that I should submit this instruction?",
+          "turn_id": 68
+        },
+        {
+          "end": 108,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final transaction instruction exactly as you've just stated it. Please submit the order.",
+          "turn_id": 69
+        }
+      ],
+      "gold_evidence_text": "To confirm your final instruction, you want to sell 700 units of Summit Global Equity ETF using a limit order at 35.71 Singapore dollars, with transaction currency Singapore dollars and stated transaction amount 25,000. Do you confirm that I should submit this instruction?\nYes, I confirm that final transaction instruction exactly as you've just stated it. Please submit the order.",
+      "gold_evidence_turns": [
+        68,
+        69
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "F0326175H",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 48,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My FIN is F zero three two six one seven five H.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My FIN is F zero three two six one seven five H.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "F0326175H"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "07 September 1965",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 114,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 49,
+          "text": "My date of birth is the seventh of September nineteen sixty-five.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the seventh of September nineteen sixty-five.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "07 September 1965"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Summit Global Equity ETF",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 27,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The holding I want you to transact in is Summit Global Equity ETF.",
+          "turn_id": 27
+        }
+      ],
+      "gold_evidence_text": "The holding I want you to transact in is Summit Global Equity ETF.",
+      "gold_evidence_turns": [
+        27
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 27,
+          "value": "Summit Global Equity ETF"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SGD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 29,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Please use Singapore dollars as the currency for this transaction.",
+          "turn_id": 29
+        }
+      ],
+      "gold_evidence_text": "Please use Singapore dollars as the currency for this transaction.",
+      "gold_evidence_turns": [
+        29
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 29,
+          "value": "SGD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 25000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 29,
+      "gold_evidence": [
+        {
+          "end": 133,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 67,
+          "text": "The monetary amount I'm specifying for this transaction is 25,000.",
+          "turn_id": 29
+        }
+      ],
+      "gold_evidence_text": "The monetary amount I'm specifying for this transaction is 25,000.",
+      "gold_evidence_turns": [
+        29
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 29,
+          "value": 25000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 700,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 31,
+      "gold_evidence": [
+        {
+          "end": 51,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Please transact 700 units from my existing holding.",
+          "turn_id": 31
+        }
+      ],
+      "gold_evidence_text": "Please transact 700 units from my existing holding.",
+      "gold_evidence_turns": [
+        31
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 31,
+          "value": 700
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 27,
+      "gold_evidence": [
+        {
+          "end": 107,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 67,
+          "text": "I want to sell from my existing holding.",
+          "turn_id": 27
+        }
+      ],
+      "gold_evidence_text": "I want to sell from my existing holding.",
+      "gold_evidence_turns": [
+        27
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 27,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 31,
+      "gold_evidence": [
+        {
+          "end": 150,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "Please place this as a limit order, with a minimum sale price of 35.71 Singapore dollars per unit.",
+          "turn_id": 31
+        }
+      ],
+      "gold_evidence_text": "Please place this as a limit order, with a minimum sale price of 35.71 Singapore dollars per unit.",
+      "gold_evidence_turns": [
+        31
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 31,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_pilot_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, Adrian. Melissa Goh here. Thank you for setting aside time for our telephone appointment. Before we begin, are you somewhere comfortable to speak privately? We have allowed a longer slot today, so there is no need to squeeze the conversation between other commitments. If someone comes into your office or you need a short pause, just let me know. I can keep my pace steady rather than rush through things.",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good morning, Melissa. Yes, I'm in the study at home, and I've closed the door. It's quite a change from taking calls in the office with people constantly knocking. My wife is out doing some errands, so it should be quiet for a while. I've put my notebook beside me, and I have the computer open as well. I prefer having a proper space for these conversations instead of trying to remember everything afterwards.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds comfortable. Before we move into the review, I'll complete the identity check for this call. Please give me your identification details and date of birth in your own words. I'll listen without talking over you. You don't need to type anything into the computer while we do this, and I won't ask you to share a password or a one-time code. We can keep the online screen aside until the administrative part later.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My FIN is F zero three two six one seven five H. My date of birth is the seventh of September nineteen sixty-five. I've moved the keyboard away a little so I won't accidentally click anything while talking. The notebook is easier for me anyway. At work, everything is on a shared system now, but for personal matters I still like a page where I can see the whole conversation. My handwriting isn't wonderful, but at least I know where I've put it. Otherwise I end up searching through several different applications.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. We can carry on with the conversation. A notebook can be very useful when you already have a routine for keeping it. For the administrative points, I'll keep the wording straightforward and leave a little space between subjects. You mentioned when arranging this appointment that your working week has been changing. How has that been settling in? I remember you were trying to leave more room in the day rather than have every hour spoken for.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "It's settling in, although not quite as neatly as the calendar suggests. On paper, I'm spending fewer days at the office. In practice, I still get calls about small things because people have been used to asking me for years. Sometimes it's simply where a document is kept or who normally speaks to a supplier. I've realised that stepping away isn't just a matter of leaving the building. I have to change the habits on both sides.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like quite a practical adjustment. When someone has been the familiar person to ask, even a well-organised team can take time to find a new rhythm. Have you been able to set aside a regular meeting for those everyday matters, rather than having them arrive throughout the day? I'm asking about your working routine only. It might be easier to talk when you're not watching another message appear every few minutes.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We've started a short meeting in the morning, and that has helped. The operations manager collects the questions instead of everyone calling separately. I also told myself not to reply immediately to every message, which is harder than it sounds. If I answer at once, they never get the chance to work it out. Yesterday I stayed out of a discussion completely, and by lunchtime they had sorted it out without me. That was a small victory.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A small victory is still a good sign that the routine is taking shape. It can feel strange to leave a message alone when you're used to being available. At least a shared meeting gives people a predictable place to bring questions. Do you have someone keeping track of the practical handover notes as well? Those everyday details, like where templates are stored and how visitors are booked in, are often the things people need most.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, my assistant has been very patient with that. She keeps a running list and gets me to explain the background before I forget. We discovered I had quite a few things in my head that weren't written down anywhere. Nothing dramatic, just little preferences and arrangements. Even the usual order of a team meeting was something people had copied from me without discussing it. Now we're writing it properly so someone else can run the meeting.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds like you're making the handover useful rather than just producing a thick file that nobody opens. Clear headings and ordinary language can make a big difference with those notes. Here, we sometimes find that the most helpful internal guide is the one that explains where to start, rather than listing every possible exception on the first page. Is your team comfortable telling you when something in the handover needs a simpler explanation?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "They are more comfortable now. At first, I think they worried that asking again would sound like they hadn't listened. I told them that if a note needs explaining every time, the note probably isn't doing its job. We had a good laugh about one procedure I had written years ago. It was full of abbreviations that even I couldn't remember immediately. My assistant replaced it with a short checklist, and everyone was much happier.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That's a sensible way to make the conversation less formal. People often hesitate over abbreviations because they assume everyone else already knows them. A checklist also makes it easier for someone covering during leave. With your own schedule, are you keeping particular days for the office and other days at home, or are you still letting the pattern develop? There's no need to pin down dates for this call; I'm just interested in how the new routine feels.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'm letting it develop a bit. If I announce a completely rigid timetable, I know I'll be the first person to break it. At home, I try to finish the necessary calls before lunch and then do something away from the desk. The main difficulty is not filling the space with more work. A quiet afternoon can look like an invitation to clear old emails. My wife says I need to practise having an afternoon, not just having fewer meetings.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That's quite a memorable way of putting it. An empty space on the calendar can still feel like unfinished work if you've spent years keeping busy. It may take a while before being away from the desk feels ordinary. Do you find it easier when you have something simple planned, such as a walk or time in the garden, rather than leaving the afternoon completely open? That would at least give the day a different shape.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, something simple works better. If I say I'll go out for a walk after lunch, I usually do it. If I just say I'll relax, I somehow end up back at the computer. The garden is useful because there's always one small thing to do. I can check a plant, sweep the leaves, or move a pot without turning it into a major project. I'm trying to learn that everything doesn't need an agenda and a follow-up list.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a pleasant contrast to the office. A task with a clear stopping point can be easier to leave than a full inbox. We can use a similar pace for the conversation today: deal with one subject, leave space for you to make your notes, then move on. If your pen falls behind, just interrupt me. There's no need to capture every word of the surrounding discussion, especially when we're simply talking about your routine.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. I tend to write too much at the beginning and then wonder which part was important. For today, I've made separate headings for the review and the housekeeping matters. That should keep things tidy. I don't like mixing a note about a personal account with something about the company, even on the same page. The folders are separate as well. It saves me from wondering later whether a piece of correspondence belongs at home or at the office.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep today's correspondence within your personal account arrangements and leave the company's administration out of the conversation. For your notes, a short heading and the relevant follow-up channel should be enough for the housekeeping section. There's no need to create a second version while we're speaking. I also have your preference for plain wording in mind. I'll avoid turning an ordinary administrative point into a long sentence with several bits tucked inside it.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would be helpful. I don't mind a detailed conversation, but I like knowing which subject we're on. Sometimes a formal letter puts three different things in one paragraph, and I have to read it twice just to work out where one ends. I'm not in a hurry today, though. I deliberately kept the rest of the morning free. After this, the only thing waiting is a cup of tea and perhaps a little tidying outside.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "All right. Let me move into the review itself now, and then we can return to the practical correspondence arrangements. So your aim is to reduce your exposure to global equity market swings and free up funds for your personal spending plans, while keeping a measured approach to your remaining investments. I'll keep the subjects separate as we go. You can take a moment with your notebook before I continue; I can hear you turning a page. It's perfectly fine if you want a clean page rather than squeezing today's notes around something from an earlier call.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, that's exactly what I'm doing with the notebook. The previous page has a reminder about a family booking, and I would rather not crowd this one. I'm ready now. I appreciate having the time to sit properly for this conversation. Usually, at the office, somebody appears just as I'm trying to write a heading, and then the handwriting becomes a complete mess. Being at home has made this morning much calmer.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Summit Global Equity ETF, falling global share markets can pull down the value of your holding. If buyers won't meet your minimum sale price, your order may remain unfilled and you'll still be exposed to further market movements. Do you understand that the holding can fall in value, and that setting a minimum sale price could leave the sale uncompleted while the market continues moving?",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. The holding can fall with the market, and if buyers don't meet my minimum price, I'll still be holding it and exposed to further falls. Give me a brief moment to finish writing on this line. I'm not looking at another screen or taking another call. I just prefer to finish a sentence in the notebook before moving to the next subject. There, that's done. It's a habit from the old days when every meeting had handwritten minutes. Even now, I find I remember a conversation better if I have written the important parts myself.",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction fee for this sale is 0.3% of the transaction value. You could get back less than you originally put into this holding, and you could lose part or even all of that original investment. Are you willing to accept investment losses, including realising a loss on this sale, to reduce your market exposure?",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept investment losses and realise a loss on this sale if that helps me reduce my exposure and meet my spending needs. I'll put my pen down for a moment so I can listen without trying to do two things at once. That is probably another habit I need to improve. At work, I'm always making notes while somebody is still speaking, and sometimes I miss the transition to the next subject. For a personal conversation, I would rather give it my full attention and then write the administrative reminders afterwards.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'd suggest reducing your holding in Summit Global Equity ETF because that would lower your exposure to global share markets and release funds for your personal spending. Setting a minimum sale price gives you the price control you prefer, although it means the sale may not complete. I'll leave a little pause here while you settle your notes. We can take the remaining details in your own words, and afterwards return to the arrangements for keeping the correspondence organised. There is no need to navigate around the online interface at the same time as speaking. You can leave the screen where it is for now, particularly if having the notebook in front of you is more comfortable.",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The holding I want you to transact in is Summit Global Equity ETF. I want to sell from my existing holding. I've kept the relevant papers together in the personal folder beside me. I used to have one large folder for everything that came through the letterbox, and it became quite troublesome. Now I separate bank correspondence from household matters, and the office papers never come into this study unless there's a very specific administrative reason. Otherwise, they tend to spread across the desk and stay there.",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I'll let you continue without interrupting your train of thought. Having the papers together should also save you from searching around while you're speaking. We can leave the wider filing arrangements until the details are finished. If you need to turn another page or find a pen, just take your time. The line is clear, and there is no background noise making it difficult to hear you from my side.",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please use Singapore dollars as the currency for this transaction. The monetary amount I'm specifying for this transaction is 25,000. The pen is fine, thanks. It's one of those ordinary ballpoint pens that somehow writes better than the nice ones people give as presents. I keep it with this notebook so I don't have to hunt for it. My assistant would laugh if she saw how particular I've become about a pen and a folder. At the office, she used to be the person keeping all of that in order for me.",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A reliable pen is useful when you want a quiet, uninterrupted conversation. I'll keep listening while you finish the remaining details. Once those are recorded, we can spend a little time on the housekeeping questions you mentioned, including how you prefer to find account messages online. We don't need to combine everything into one long stretch. A clear separation between the review and the practical arrangements should make your notes easier to revisit later.",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please transact 700 units from my existing holding. Please place this as a limit order, with a minimum sale price of 35.71 Singapore dollars per unit. That's what I wanted to say for that part. Afterwards, I would like to talk about the correspondence screen, because I can find things on the desktop more easily than on the phone. It's not that the phone is difficult to use generally. I just dislike scrolling through a long list when I'm trying to find a particular document. On a larger screen, I can see more of the headings at once.",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly, we can cover the correspondence screen as a separate housekeeping topic. There is no need to share what is displayed in any private document. We can talk about the layout and the way you organise your files without reading account details aloud. Before we do that, you've been on the line for a while. Would you like a short pause to get your tea or adjust your chair? I'm comfortable holding the conversation here.",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'm comfortable, thank you. I brought a glass of water in before the call, so I'm all right. This is already much easier than trying to talk while walking between rooms. My wife often reminds me that a telephone appointment is still an appointment, even if nobody can see whether I'm sitting properly. She says I sound distracted when I'm moving about. Today I've stayed in one place, and I can see why she keeps telling me that.",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It's often easier to keep a conversation settled that way, especially when you have papers nearby. You mentioned a family booking on your earlier notebook page. Are you planning some time away together, or is that an arrangement closer to home? We don't need any booking details. I remember you saying that a quieter break would be more appealing than trying to fit a long list of activities into every day.",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We're talking about a quiet break, yes. Nothing with a packed programme. My family has reached the point where nobody wants to get up early just to join a queue for a famous attraction. We'd rather have breakfast slowly, go for a walk, and decide what to do afterwards. My daughter says the best part of a holiday is when nobody asks what the next appointment is. I think she has a point.",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a different pace from a working week. Sometimes it takes a little planning to keep a holiday from becoming another timetable. Do you all enjoy the same sort of quieter place, or does choosing somewhere still require a bit of family negotiation? Some people want a view and a book, while others want somewhere they can walk to a café. At least those preferences can often fit together without making the day too busy.",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There's some negotiation, but it's friendly. My wife likes somewhere with pleasant walks and a decent breakfast. My daughter wants good coffee within walking distance. I mostly want a place where I don't feel obliged to check the phone all the time. We used to choose hotels based on how close they were to everything. Now we're more interested in whether the room is quiet and whether we can sit outside without hearing a lot of traffic.",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Those sound like quite compatible preferences. A place with a comfortable common area can make a difference too, especially if everyone wants to spend time together without doing the same activity constantly. You can read while someone else has coffee and still feel you're sharing the morning. Do you enjoy choosing the accommodation, or is that another responsibility you're happy to let someone else take over now that you're changing your routine?",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My wife usually chooses, and I am very happy with that arrangement. I used to make a spreadsheet with all the possibilities, which the family found quite amusing. They said I was treating a holiday like a supplier review. These days, she sends me a small selection and tells me not to create another list. It's much more pleasant. I still help with packing and the practical things, but I don't need to organise every part.",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though your family has found a way to keep the preparation light. A short selection is easier to talk through than a spreadsheet full of alternatives. Does the quieter style extend to weekends at home as well? Sometimes a short walk and a meal together can give the same sense of a break, without the packing. You mentioned wanting afternoons that weren't automatically filled with office matters, so perhaps that is already becoming part of the routine.",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We're trying. Last weekend we went out early for a walk, had breakfast, and came home before the place became crowded. In the past, I would have added errands afterwards and turned it into a whole morning of rushing around. This time we just came back and sat for a while. My wife said it was nice not to hear me talking about how efficiently we could fit everything in. I hadn't realised I did that so often.",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It's easy to carry the office habit into ordinary family time without noticing. A walk doesn't always need to be combined with three other stops. At least you can see which parts of the new routine you enjoy. For our housekeeping discussion, we can take the same straightforward approach: one place for messages, one familiar way of saving documents, and a clear route for asking about an administrative issue. We needn't make your personal filing system overly elaborate.",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, simple would be better. I already have enough elaborate systems at work. At home, I want to know where the latest correspondence is and where I put the older documents. The online interface is mostly fine on the desktop, but the headings have changed since I first learned it. Sometimes I go to the place I remember and discover that the menu now has a different name. I can find it eventually, but it breaks my rhythm.",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That can be frustrating when you've developed a familiar route through a screen. We can keep this to general navigation, without opening or reading any private account information aloud. Do you normally start from the home page and use the menu, or do you go directly through a saved bookmark? It helps to know which route feels natural to you. I won't ask you to send a screenshot containing personal details or to give me access to your device.",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I use a bookmark on the desktop and then follow the menu. On the phone, I open the bank's application directly. The difference is that the desktop lets me keep my folder window beside the browser, so I can save a document and put it away immediately. On the phone, I sometimes download something and then forget where it went. Later, when I'm back at the desk, I have to look for it all over again.",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Keeping the desktop as your usual place for document filing sounds consistent with how you already work. The phone can remain a convenient way to see that correspondence is available, without needing to become your filing cabinet as well. For general navigation questions, our support colleagues can guide you through the current layout while you stay in control of the device. There's no need to give anyone a password or let somebody else operate your account.",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That suits me. I don't want to become dependent on someone else doing the basic navigation. I just want the route to be familiar again. My daughter is very quick with phone applications, but when she shows me something she taps through three screens before I've registered the first one. Then I have to ask her to start again. On a support call, I would rather the person name the section and give me a moment to find it.",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A slower, screen-by-screen explanation is a reasonable preference. You can tell the support colleague that you would like each navigation step separated, and that you will say when you're ready for the next one. That is about the pace of the technical assistance, not about reading the contents of a document. If a screen looks different from what they describe, you can stop there and describe the menu heading without disclosing anything private.",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good. I sometimes feel a bit silly saying that I'm still looking for a button, but it's better than pretending I've found it. The actual typing is no problem. It's more that I like to look around a screen before moving on. At the office, we had a new scheduling programme and everyone received a quick demonstration. I only became comfortable with it after I sat down quietly and worked through the ordinary tasks myself.",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That's a common way to learn a new layout. A demonstration gives you the general picture, but familiarity comes from doing the routine tasks at your own pace. For correspondence, you might find it useful to keep a short note of the menu names once you're comfortable with the current screen. Nothing confidential needs to go into that note. It can simply be a reminder of where the document area sits within the interface.",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I already do something like that for the household printer, so it would fit my habits. I wrote down the ordinary steps because the printer's little screen is not very friendly. My wife laughed at first, but now she uses the note too. I'll keep any navigation reminder separate from the account papers. That way, when the layout changes again, I can replace the reminder without disturbing the correspondence that I've already filed.",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That separation should keep the filing tidy. How are you organising the correspondence you save at the moment? We can discuss folder names in general terms, rather than any document contents. Some clients prefer a single folder with clear filenames, while others prefer a folder for each year. The useful arrangement is the one you can return to without thinking hard about where you put something. There's no need to copy a complicated office structure at home.",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I use a folder for each year and keep the original filenames unless they are too vague. If I rename something, I put the document type first so the list is easy to scan. I also have a small paper file for correspondence that I want close at hand. I don't print everything. That was becoming too much. The study is supposed to be a comfortable room, not an extension of the office archive.",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds manageable, especially if you can recognise the documents without opening each one. For account administration, you can keep the secure correspondence as the main reference and use your notebook for reminders about whom to contact. That avoids having several slightly different personal summaries scattered around the house. If there is ever an administrative query about a document, you can contact the bank through the usual secure route rather than forwarding private material to an unfamiliar address.",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I prefer the secure route. I don't like having important correspondence mixed into the same inbox as delivery notices and shop promotions. Even with folders, it gets busy. For ordinary notifications, a brief message is enough to prompt me to log in when I'm at the desk. I don't need the whole document arriving in several places. Otherwise I start wondering whether I've filed the latest version or just another copy of the same thing.",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep that preference in view when discussing account correspondence. I won't read out any contact information on this call. If you need to review contact settings, use the bank's established account-maintenance route so the appropriate checks can be completed. For today, the useful distinction is between a notification that something is available and the document itself. You can keep your own filing focused on the secure document rather than collecting every alert around it.",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's the distinction I was trying to make. I want the alert to be simple, and I want the document in a place where I can retrieve it properly. I also don't want my assistant becoming involved in my personal correspondence just because she's efficient with office filing. She already has enough to handle at work. At home, I can keep a smaller system myself, and my wife knows where the household papers are if she needs them.",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Keeping office administration and personal correspondence separate sounds consistent with the routine you've described. We don't need to involve your staff in this call or in the private documents we're discussing. Your own system can be much lighter than the company's. Perhaps a short housekeeping session at the desk now and then would be enough, leaving the rest of the afternoon free. You mentioned the garden earlier; what have you been spending time on out there recently?",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mostly tidying and learning not to overdo things. I have some herbs in pots and a few flowering plants, but I'm not an expert. I used to buy a plant because it looked nice and only afterwards check whether the balcony had the right conditions. Now I pay more attention to where it will sit. My wife says the plants are teaching me patience because they don't respond to a calendar reminder or an urgent email.",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is quite a good contrast to running a busy office. A plant has its own pace whether or not there is a free slot in the diary. Do you enjoy the little daily jobs more than the larger garden projects? Watering, checking leaves and moving a pot into a more comfortable place can make a pleasant break from a screen. It also gives you a reason to step outside without having to turn the afternoon into an outing.",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The small jobs are better for me. If I decide to redo the whole balcony, I get carried away measuring things and making lists. Then it becomes another project. If I just go outside to tidy a corner, I notice the plants properly. One of the herbs has been doing very well, and we use a little in the kitchen. That's satisfying in a simple way. Nobody needs a meeting about it, and nobody is waiting for a report.",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds like the small scale is part of what you enjoy. You can do a little and stop without having to coordinate anyone else. Have you found a comfortable time of day for being outside? Singapore afternoons can feel quite warm, so people often have their own preferred window for a walk or some gardening. I'm thinking of the routine rather than a big exercise plan; something that fits naturally around the quieter mornings you described.",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Early morning is nicest, although I don't always manage it. If I'm home, I'll sometimes go out before breakfast and then come back feeling more awake. After lunch, I keep it short and stay where there's shade. I also like walking somewhere with trees instead of along a busy road. It doesn't have to be far. I used to think a walk only counted if I went a long distance, but now I enjoy being outside without measuring it.",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds pleasantly unhurried. A familiar route can be useful when you want to step away from work without planning anything. You can simply go out and come back when you're ready. Does your wife join you for those walks, or do you sometimes prefer a quiet one on your own? Either can fit into a slower day, and it sounds as though being away from the phone is as important to you as the route itself.",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We do both. Sometimes we go together and talk about ordinary things, like what to cook or whether a friend has replied to a message. Sometimes I go alone and leave the phone in my pocket. The first few times, I kept reaching for it automatically. Now that happens less. It's funny how long it takes to get used to not being available every moment. The team is perfectly capable, but my own habits needed some catching up.",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It seems the handover is changing your day in small ways as well as the larger ones. Being able to leave the phone alone for a walk is quite different from merely moving a meeting out of the calendar. I hope the quieter routine continues to feel comfortable. We've covered the general correspondence questions and your preference for a measured pace. Before the final formal part, you can take another moment to put your notebook where you want it.",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'm ready to listen. I've put a divider between the review notes and the housekeeping page, which will make it easier to find the right section later. Thank you for giving the conversation some space. It hasn't felt like I needed to hurry through a list while trying to remember where everything was. That suits me much better than taking a call from the car park or answering between two office meetings, which is what I used to do.",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "To confirm your final instruction, you want to sell 700 units of Summit Global Equity ETF using a limit order at 35.71 Singapore dollars, with transaction currency Singapore dollars and stated transaction amount 25,000. Do you confirm that I should submit this instruction?",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final transaction instruction exactly as you've just stated it. Please submit the order.",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. I'll attend to the next administrative step and keep the call record together with the relevant correspondence. For any subsequent administrative question, please use the bank's usual secure contact channel. You don't need to send me a photograph of your handwritten notes. Those can remain your own personal reference. Before we finish, is there any other housekeeping point about receiving or organising account correspondence that you wanted to raise today?",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No, I think we've covered the housekeeping points I had in mind. I'll leave the notebook in this folder rather than taking it back to the office. That was another reason for doing the call at home; I wanted the papers to stay where they belong. I can look at the navigation help separately when I have a quiet moment at the desktop. There's no need to try doing that while we are still on the phone.",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That's fine. You can take the general navigation questions at a separate time, when the screen is in front of you and you aren't balancing another conversation. If you contact support, mentioning your preference for a slower explanation should help them set the pace. For now, there is nothing further you need to read aloud from the computer. Thank you for making a private space for the appointment and for letting me know when you needed a moment with your notes.",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you, Melissa. It was helpful to have a proper conversation without interruptions. I think I'll close the computer now instead of drifting straight into the inbox. My wife should be back soon, and we can have tea together before I go outside. There are a few leaves to sweep up, but I'll try not to turn that into a plan to rearrange the whole balcony. That would defeat the purpose of having a quieter afternoon.",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A cup of tea and a little time outside sounds like a pleasant way to continue the day. I'll let you get back to that rather than keep you on the line. Thank you again for your time, Adrian. For the general account-administration matters we discussed, the usual secure channels remain available whenever you need them. I hope the family enjoys the quieter plans you've been making, and that the new routine gives you some comfortable time away from the office.",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Melissa. I appreciate the steady pace and the help keeping the housekeeping separate. I'll keep my notes where I can find them and leave the office matters for the team to handle today. It's nice to end a call and not immediately rush to another one. I'll let you get back to your day as well. Have a good afternoon, and thank you for taking the time with me. Goodbye.",
+      "turn_id": 75
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language": "en-SG",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "1.0",
+  "source": {
+    "call_config_sha256": "6716525b71261de225ef8ab2831d4e81d836b523aa55fc767470e1df84463850",
+    "call_spec_sha256": "6d0eed4c9801b671dd6f7923a2edfe0ea9de34d3b9f6fb534ee310aca8520488",
+    "check_plan_sha256": "27774b9d232e7883efd6ae2a05274446a32afef3c18b96d55e1635ea2f419abe",
+    "check_plan_skeleton_sha256": "9b9ffc98b1f8895ffae793dcc0c9c1658064ba0377e7d8793c22387df7705344",
+    "check_semantics_sha256": "e9453e62e5232263b21daaeaf321f11d5dacbfeec70cc5b0ddb6e9baa9896493",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "e4bb5a4fb3196dcd288ec70ea12ebb7c0ae8fc0d4ab21ef9fd78368f1cb52a73",
+    "edge_case_catalog_sha256": "443e2335e0a59f991de955cdfad7e49e29ac1f105a7b8f581b914ce33368a5c3",
+    "generation_plan_sha256": "dbaffe5f5669e2bba1755cc6e4e8a186c36a396116084b4d8a55a40d6d6030f1",
+    "normalization_sha256": "5fc020db696f1a67ecff178d119a397261bc32e258a463afaa88e8d44089072e",
+    "plan_verification_sha256": "d14f54dc17161bd51867b315fb09ce0e97e7eba220193f071354e8a5ead79603"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "VERIFIED",
+    "timings": "AUDIO_DERIVED"
+  },
+  "timing": {
+    "audio_sha256": "1d6111f1eacd828af7458bbc0f2893ed1dc0f0a33d42cd7a784c278de53721e4",
+    "duration_seconds": 1896.007,
+    "g7_report_sha256": "5114c365fe0895388ef2a17124fae906815f35ea0444ca33b4629d95924d3fc9",
+    "render_id": "clean_voice_A",
+    "render_manifest_sha256": "43798246d5c0be5bbb9bc415dcdada2e1e05cf3c3169df3899d30f56309f9486",
+    "timings_sha256": "158224ebedc1ea8f4cb835b735ab2ce734e632f88a8285e6717a66fb303bccd2"
+  }
+}

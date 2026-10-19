@@ -18,7 +18,7 @@ export function useTierLabels(): Record<TierId, string> {
 
 const TIER_HELP: Partial<Record<TierId, string>> = {
   missed: "Actual breaches the system marked PASS.",
-  other: "False alarms, checks marked N/A, expected values not located, and values the evaluator cannot check.",
+  other: "False alarms, checks marked N/A, and extraction checks where the model missed an expected turn.",
 };
 
 /** One tier of results. Exceptions are always open; successful results are collapsed

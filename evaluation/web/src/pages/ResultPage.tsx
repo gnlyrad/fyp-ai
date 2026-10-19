@@ -219,24 +219,13 @@ export default function ResultPage() {
                 <Excerpts turns={selectedTurns}
                   empty={data.row.execution_status === "prediction_failure" ? "No evidence: the prediction failed." : "The model selected no evidence."} />
                 {data.selected_quotes.length > 0 && (
-                  data.row.family === "extraction" ? (
-                    <div className="mt-3">
-                      <div className="mb-1 text-xs font-medium text-ink-2">Quoted text the evaluator searched for the value</div>
-                      <ul className="space-y-1">
-                        {data.selected_quotes.map((quote, index) => (
-                          <li key={index} className="rounded border border-line px-2 py-1 font-mono text-xs text-ink">{quote}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    <Disclosure title="Exact quoted spans" className="mt-3">
-                      <ul className="space-y-1">
-                        {data.selected_quotes.map((quote, index) => (
-                          <li key={index} className="rounded border border-line px-2 py-1 font-mono text-xs text-ink-2">{quote}</li>
-                        ))}
-                      </ul>
-                    </Disclosure>
-                  )
+                  <Disclosure title="Exact quoted spans" className="mt-3">
+                    <ul className="space-y-1">
+                      {data.selected_quotes.map((quote, index) => (
+                        <li key={index} className="rounded border border-line px-2 py-1 font-mono text-xs text-ink-2">{quote}</li>
+                      ))}
+                    </ul>
+                  </Disclosure>
                 )}
               </Card>
             </div>
@@ -263,8 +252,7 @@ export default function ResultPage() {
                     ["Compliance outcome", data.row.compliance_outcome_status ?? "—"],
                     ["Decision category", data.row.confusion_category ?? "—"],
                     ["Breach outcome", data.row.breach_outcome ?? "—"],
-                    ["Extraction status", data.row.extraction_evidence_status ?? data.row.gold_value_status ?? "—"],
-                    ["Evaluator support", data.row.evaluator_support ?? "—"],
+                    ["Extraction status", data.row.extraction_turn_status ?? data.row.gold_value_status ?? "—"],
                     ["Evidence status", data.row.evidence_status ?? "—"],
                     ["Expected / selected turns", `${JSON.stringify(data.row.gold_turns)} / ${JSON.stringify(data.row.predicted_turns)}`],
                   ].map(([label, value]) => (

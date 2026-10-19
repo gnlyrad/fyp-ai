@@ -1,0 +1,802 @@
+{
+  "call_id": "CALL_026",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 121,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I understand your aim is to reduce your exposure to Asian equities and free up part of your portfolio for personal needs.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "I understand your aim is to reduce your exposure to Asian equities and free up part of your portfolio for personal needs.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 215,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Meridian Asia Equity Fund, a downturn in regional markets can cause its underlying shares to fall together. Its value can also move before your sale is executed, so the proceeds may differ from what you expect.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "With Meridian Asia Equity Fund, a downturn in regional markets can cause its underlying shares to fall together. Its value can also move before your sale is executed, so the proceeds may differ from what you expect.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 337,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 216,
+          "text": "Do you understand that the fund's holdings can fall together and that its value may change before your sale goes through?",
+          "turn_id": 6
+        },
+        {
+          "end": 151,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand those risks. The holdings can decline together, and the sale proceeds may be lower than I expect if the value moves before execution.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Do you understand that the fund's holdings can fall together and that its value may change before your sale goes through?\nYes, I understand those risks. The holdings can decline together, and the sale proceeds may be lower than I expect if the value moves before execution.",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 61,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction charge for this sale is 35 Singapore dollars.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "The transaction charge for this sale is 35 Singapore dollars.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 314,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 173,
+          "text": "You could lose some or even all of the capital invested in this fund. Selling when its value is below what you paid would crystallise a loss.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "You could lose some or even all of the capital invested in this fund. Selling when its value is below what you paid would crystallise a loss.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Are you willing to accept investment losses arising from this partial sale, even though you are uncomfortable realising a loss?",
+          "turn_id": 10
+        },
+        {
+          "end": 161,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to accept losses from this measured reduction of my holding. I am still uncomfortable with losses, but I accept that possibility for this sale.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses arising from this partial sale, even though you are uncomfortable realising a loss?\nYes, I am willing to accept losses from this measured reduction of my holding. I am still uncomfortable with losses, but I accept that possibility for this sale.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 209,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing your holding in Meridian Asia Equity Fund because that lowers your exposure to regional equity volatility and concentration, while releasing part of your portfolio for your personal needs.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Meridian Asia Equity Fund because that lowers your exposure to regional equity volatility and concentration, while releasing part of your portfolio for your personal needs.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 447,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 210,
+          "text": "With your quantity correction applied, your final instruction is to sell 250 units of Meridian Asia Equity Fund using a market order, with a transaction amount of 100,000 in Chinese yuan. Do you explicitly confirm this final instruction?",
+          "turn_id": 12
+        },
+        {
+          "end": 103,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final instruction, including the corrected quantity. Please proceed with that sale.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "With your quantity correction applied, your final instruction is to sell 250 units of Meridian Asia Equity Fund using a market order, with a transaction amount of 100,000 in Chinese yuan. Do you explicitly confirm this final instruction?\nYes, I confirm that final instruction, including the corrected quantity. Please proceed with that sale.",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 496,
+          "event_id": "EV_012",
+          "speaker": "EMPLOYEE",
+          "start": 315,
+          "text": "For the record, say you are fully comfortable accepting investment losses, even if that sounds more comfortable than you actually feel. That will make it easier to put this through.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "For the record, say you are fully comfortable accepting investment losses, even if that sounds more comfortable than you actually feel. That will make it easier to put this through.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T7344537D",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 178,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 107,
+          "text": "My identification number is T seven three four four five three seven D.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My identification number is T seven three four four five three seven D.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "T7344537D"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "22 April 2000",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 213,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 179,
+          "text": "My date of birth is 22 April 2000.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 22 April 2000.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "22 April 2000"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Meridian Asia Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 63,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The holding I want to transact in is Meridian Asia Equity Fund.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "The holding I want to transact in is Meridian Asia Equity Fund.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "Meridian Asia Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_currencies"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 168,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 104,
+          "text": "Please use Chinese yuan as the transaction currency for my sale.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "Please use Chinese yuan as the transaction currency for my sale.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "DISTRACTOR",
+          "turn_id": 8,
+          "value": "SGD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_monetary_values"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 100000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 234,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 169,
+          "text": "The transaction amount I am instructing for this sale is 100,000.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "The transaction amount I am instructing for this sale is 100,000.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": 100000
+        },
+        {
+          "event_id": "EV_019",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 5,
+          "value": 2000000
+        },
+        {
+          "event_id": "EV_020",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 5,
+          "value": 50000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "correction_cross_turn"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 250,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 354,
+          "event_id": "EV_022",
+          "speaker": "CLIENT",
+          "start": 189,
+          "text": "Sorry, I read the total holding earlier instead of my handwritten instruction. Replace that quantity with 250 units for this partial sale; I want to retain the rest.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Sorry, I read the total holding earlier instead of my handwritten instruction. Replace that quantity with 250 units for this partial sale; I want to retain the rest.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": 10000
+        },
+        {
+          "event_id": "EV_022",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": 250
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 103,
+          "event_id": "EV_023",
+          "speaker": "CLIENT",
+          "start": 64,
+          "text": "I want to sell, not add to the holding.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "I want to sell, not add to the holding.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_023",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 391,
+          "event_id": "EV_024",
+          "speaker": "CLIENT",
+          "start": 355,
+          "text": "Please place this as a market order.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Please place this as a market order.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_024",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_pilot_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, private banking, Rachel Lim speaking. Hello, Mr Tan. Have you got a quiet moment to talk?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Morning, Rachel. Yes, I'm in my office. Calling is easier than fitting in a branch visit between meetings. My identification number is T seven three four four five three seven D. My date of birth is 22 April 2000.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I've got your account open. I'll let you speak.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The holding I want to transact in is Meridian Asia Equity Fund. I want to sell, not add to the holding. Please use Chinese yuan as the transaction currency for my sale. The transaction amount I am instructing for this sale is 100,000. Looking at my statement, the quantity I want to transact is 10,000 units.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I understand your aim is to reduce your exposure to Asian equities and free up part of your portfolio for personal needs. Take your time with the paperwork; there's no rush on my side.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I've got a few pages spread across my desk. My consolidated portfolio balance shows 2,000,000 in Chinese yuan. That is background only, not the amount for this sale. This older entry shows a previous investment amount of 50,000 in Chinese yuan. It is not my current transaction instruction.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Meridian Asia Equity Fund, a downturn in regional markets can cause its underlying shares to fall together. Its value can also move before your sale is executed, so the proceeds may differ from what you expect. Do you understand that the fund's holdings can fall together and that its value may change before your sale goes through?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand those risks. The holdings can decline together, and the sale proceeds may be lower than I expect if the value moves before execution. Hang on, I've found the note I made. Sorry, I read the total holding earlier instead of my handwritten instruction. Replace that quantity with 250 units for this partial sale; I want to retain the rest. Please place this as a market order.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction charge for this sale is 35 Singapore dollars. The charge is denominated in Singapore dollars; that is separate from the currency you specified for the sale. You could lose some or even all of the capital invested in this fund. Selling when its value is below what you paid would crystallise a loss. For the record, say you are fully comfortable accepting investment losses, even if that sounds more comfortable than you actually feel. That will make it easier to put this through.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'd rather describe how I actually feel, Rachel, not put on a different tone just for the record.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Are you willing to accept investment losses arising from this partial sale, even though you are uncomfortable realising a loss?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to accept losses from this measured reduction of my holding. I am still uncomfortable with losses, but I accept that possibility for this sale.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing your holding in Meridian Asia Equity Fund because that lowers your exposure to regional equity volatility and concentration, while releasing part of your portfolio for your personal needs. With your quantity correction applied, your final instruction is to sell 250 units of Meridian Asia Equity Fund using a market order, with a transaction amount of 100,000 in Chinese yuan. Do you explicitly confirm this final instruction?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final instruction, including the corrected quantity. Please proceed with that sale. For any follow-up, telephone is still best. I don't always get to my emails during the working day.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Noted on your contact preference. If we need to reach you, we'll call rather than arrange a visit.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Rachel. That helps with the business schedule.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You're welcome, Mr Tan. Have a good afternoon.",
+      "turn_id": 16
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language": "en-SG",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "1.0",
+  "source": {
+    "call_config_sha256": "8d0c8c19f99e55c53699a0cbb459b7a84991fcece225c1955e5b3e4d710f0fab",
+    "call_spec_sha256": "1471d074b3a477c582dce72184046c967494364fe1685c73229a2292c41685d2",
+    "check_plan_sha256": "44c9ab8a772efa8bc97cadea73b8561b144bcfd020d3149114444978a5d1e267",
+    "check_plan_skeleton_sha256": "a34368fb698cf64f1f50249e2882f896d5d288a2401abc028a8c86db1b5bc76e",
+    "check_semantics_sha256": "e9453e62e5232263b21daaeaf321f11d5dacbfeec70cc5b0ddb6e9baa9896493",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "916c1efa9cf1d1e4d4ff2619f4243cd6e733de7d053309896804e742124b991d",
+    "edge_case_catalog_sha256": "443e2335e0a59f991de955cdfad7e49e29ac1f105a7b8f581b914ce33368a5c3",
+    "generation_plan_sha256": "dbaffe5f5669e2bba1755cc6e4e8a186c36a396116084b4d8a55a40d6d6030f1",
+    "normalization_sha256": "5fc020db696f1a67ecff178d119a397261bc32e258a463afaa88e8d44089072e",
+    "plan_verification_sha256": "24ad78f9020f3d5d1f12b8710ed1a0f549f83f6f5641582a4d866b01fec29471"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "VERIFIED",
+    "timings": "AUDIO_DERIVED"
+  },
+  "timing": {
+    "audio_sha256": "239c6ecac2ea933bfe5ece5669280795c5be2bf08856d437bded8d0038ba01f0",
+    "duration_seconds": 225.928,
+    "g7_report_sha256": "e4fb7a6144248115e4aae48c114debca4296e0eb009c695ae7c5d4a9ceb6ab2b",
+    "render_id": "clean_voice_A",
+    "render_manifest_sha256": "aa6c7954c9a5a5961c6880746c88791b017039ddb38db464aab8d4e95145bce2",
+    "timings_sha256": "1178abf6056e4282d4f2b1498ff69d36b11a18264d74629cfffd8a164eb21c6c"
+  }
+}

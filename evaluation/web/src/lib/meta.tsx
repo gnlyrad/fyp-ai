@@ -36,7 +36,10 @@ export function MetaProvider({ meta, children }: { meta: Meta; children: ReactNo
         const value = at(node, index[id].summary_path);
         return value && typeof value === "object" && "denominator" in value ? (value as Ratio) : null;
       },
-      drillCount: (node, key) => count(node, meta.drills[key].count_path),
+      drillCount: (node, key) => {
+        const path = meta.drills[key].count_path;  // none for outcomes derived from turn ids: count their rows
+        return path ? count(node, path) : 0;
+      },
       drillRows: (rows, key) => rows.filter((row) => matches(row, meta.drills[key].filter)),
       status: (group, id) => (id ? meta.presentation.statuses[group]?.[id]?.label ?? id : "—"),
     };

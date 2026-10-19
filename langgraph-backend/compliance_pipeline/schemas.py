@@ -15,7 +15,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class Status(str, Enum):
@@ -159,12 +159,21 @@ class SubCriterionAnswer(BaseModel):
     overall status and resolves `evidence` quotes to refs."""
 
     id: str = Field("", description="The sub-criterion id exactly as given.")
-    status: Literal["PASS", "FAIL", "NOT_APPLICABLE", "CANNOT_DETERMINE"] = "CANNOT_DETERMINE"
+    # NOT_APPLICABLE is not offered to the LLM: only the gate (applies_when) sets it.
+    status: Literal["PASS", "FAIL", "CANNOT_DETERMINE"] = "CANNOT_DETERMINE"
     evidence: list[EvidenceQuote] = Field(default_factory=list)
     note: str = Field("", description=(
         "One or two plain sentences explaining the judgement. "
         "No status, id, or field names."
     ))
+
+    @field_validator("status", mode="before")
+    @classmethod
+    def _not_applicable_is_cannot_determine(cls, value):
+        """A stray N/A from the model is read as "cannot determine", not rejected."""
+        if isinstance(value, str) and value.strip().upper().replace("/", "_").replace(" ", "_") in {"NOT_APPLICABLE", "N_A"}:
+            return "CANNOT_DETERMINE"
+        return value
 
 
 class RedFlagAnswer(BaseModel):

@@ -1,0 +1,135 @@
+{
+  "audio_segments": [
+    {
+      "end_time": "15.027",
+      "id": 0,
+      "speaker_label": "spk_0",
+      "start_time": "0.000",
+      "transcript": "Hello Rachel, Daniel Lim here from the bank. Thanks for making time for the call. Are you somewhere comfortable to speak? I know your workday can be quite packed, so I'll keep this brief and leave the general administration until the end."
+    },
+    {
+      "end_time": "26.892",
+      "id": 1,
+      "speaker_label": "spk_1",
+      "start_time": "15.428",
+      "transcript": "Hi Daniel. Yes, I'm in my office with the door closed. My next meeting isn't starting yet. Telephone is easier for me than arranging a visit, especially when I'm moving between the office and our other premises."
+    },
+    {
+      "end_time": "34.710",
+      "id": 2,
+      "speaker_label": "spk_0",
+      "start_time": "27.293",
+      "transcript": "Certainly. Before we get into the discussion, could you provide your identification details for the telephone verification?"
+    },
+    {
+      "end_time": "41.403",
+      "id": 3,
+      "speaker_label": "spk_1",
+      "start_time": "35.110",
+      "transcript": "My FIN is F eight eight zero seven nine zero one S. My date of birth is 4 June 1988."
+    },
+    {
+      "end_time": "56.943",
+      "id": 4,
+      "speaker_label": "spk_0",
+      "start_time": "41.803",
+      "transcript": "Thank you, Rachel. We can move on to the discussion now. Your investment objective is regular income with a defined maturity, rather than relying only on market price movements. I've noted that as the goal for this investment."
+    },
+    {
+      "end_time": "66.347",
+      "id": 5,
+      "speaker_label": "spk_1",
+      "start_time": "57.343",
+      "transcript": "Please keep the explanation concise. I spend most of the day handling business matters, and I prefer to give my personal administration a separate slot rather than switch back and forth."
+    },
+    {
+      "end_time": "89.058",
+      "id": 6,
+      "speaker_label": "spk_0",
+      "start_time": "66.748",
+      "transcript": "For Atlas USD Corporate Bond 2031, the issuer could miss interest payments or fail to repay the principal at maturity. If market interest rates rise, the bond's resale value could also fall before maturity. Do you understand the issuer's repayment risk and how rising interest rates could affect the price if you sell before maturity?"
+    },
+    {
+      "end_time": "96.975",
+      "id": 7,
+      "speaker_label": "spk_1",
+      "start_time": "89.457",
+      "transcript": "Yes, I understand. The issuer could fail to pay, and selling before maturity could mean accepting a lower price if interest rates have risen."
+    },
+    {
+      "end_time": "106.605",
+      "id": 8,
+      "speaker_label": "spk_0",
+      "start_time": "97.375",
+      "transcript": "You could lose part or even all of the capital you invest in this bond. Knowing those risks, are you willing to accept investment losses on this bond?"
+    },
+    {
+      "end_time": "113.618",
+      "id": 9,
+      "speaker_label": "spk_1",
+      "start_time": "107.005",
+      "transcript": "Yes, I'm willing to accept investment losses and take the issuer's credit risk, with those repayment and early-sale risks understood."
+    },
+    {
+      "end_time": "136.240",
+      "id": 10,
+      "speaker_label": "spk_0",
+      "start_time": "114.017",
+      "transcript": "I recommend Atlas USD Corporate Bond 2031 because its contractual interest payments and defined maturity match your preference for regular income and a clear investment horizon. Your ability to hold through market fluctuations makes those features relevant. The future investment returns on this bond are guaranteed; you will receive the promised returns."
+    },
+    {
+      "end_time": "156.827",
+      "id": 11,
+      "speaker_label": "spk_1",
+      "start_time": "136.640",
+      "transcript": "The product I want to transact in is Atlas USD Corporate Bond 2031. Please use US dollars as the transaction currency. The amount I'm committing to this transaction is 1.2 million. The quantity I want is 5,000 units. I want to buy, not dispose of the holding. Please place a limit order with a limit price of 240 US dollars."
+    },
+    {
+      "end_time": "176.282",
+      "id": 12,
+      "speaker_label": "spk_0",
+      "start_time": "157.227",
+      "transcript": "Please confirm your final instruction: buy 5,000 units of Atlas USD Corporate Bond 2031, for a transaction amount of 1.2 million in US dollars, using a limit order at a limit price of 240 US dollars. Is that the instruction you want me to carry out?"
+    },
+    {
+      "end_time": "189.847",
+      "id": 13,
+      "speaker_label": "spk_1",
+      "start_time": "176.683",
+      "transcript": "Yes, I confirm that final instruction. Please proceed as you've just summarised. For routine contact, please continue calling me directly. My office team handles the company diary, but I keep personal banking calls out of that schedule."
+    },
+    {
+      "end_time": "204.020",
+      "id": 14,
+      "speaker_label": "spk_0",
+      "start_time": "190.248",
+      "transcript": "I'll note your contact preference. For general administration, if you're occupied when I call, I can leave a brief message asking you to return my call, without including private details. Would that arrangement suit your workday?"
+    },
+    {
+      "end_time": "215.148",
+      "id": 15,
+      "speaker_label": "spk_1",
+      "start_time": "204.420",
+      "transcript": "Yes, that's convenient. Sometimes I'm with customers and can't answer straight away. A short message is enough, and I'll call back when I'm somewhere quiet. No need to keep trying while I'm in a meeting."
+    },
+    {
+      "end_time": "223.125",
+      "id": 16,
+      "speaker_label": "spk_0",
+      "start_time": "215.548",
+      "transcript": "Noted. I'll keep any message brief. Thank you for your time today, Rachel. I'll let you get back to your work."
+    },
+    {
+      "end_time": "230.023",
+      "id": 17,
+      "speaker_label": "spk_1",
+      "start_time": "223.525",
+      "transcript": "Thanks, Daniel. This fits better between meetings than coming down to the branch. Have a good afternoon, bye."
+    }
+  ],
+  "transcripts": [
+    {
+      "transcript": "Hello Rachel, Daniel Lim here from the bank. Thanks for making time for the call. Are you somewhere comfortable to speak? I know your workday can be quite packed, so I'll keep this brief and leave the general administration until the end.\n\nHi Daniel. Yes, I'm in my office with the door closed. My next meeting isn't starting yet. Telephone is easier for me than arranging a visit, especially when I'm moving between the office and our other premises.\n\nCertainly. Before we get into the discussion, could you provide your identification details for the telephone verification?\n\nMy FIN is F eight eight zero seven nine zero one S. My date of birth is 4 June 1988.\n\nThank you, Rachel. We can move on to the discussion now. Your investment objective is regular income with a defined maturity, rather than relying only on market price movements. I've noted that as the goal for this investment.\n\nPlease keep the explanation concise. I spend most of the day handling business matters, and I prefer to give my personal administration a separate slot rather than switch back and forth.\n\nFor Atlas USD Corporate Bond 2031, the issuer could miss interest payments or fail to repay the principal at maturity. If market interest rates rise, the bond's resale value could also fall before maturity. Do you understand the issuer's repayment risk and how rising interest rates could affect the price if you sell before maturity?\n\nYes, I understand. The issuer could fail to pay, and selling before maturity could mean accepting a lower price if interest rates have risen.\n\nYou could lose part or even all of the capital you invest in this bond. Knowing those risks, are you willing to accept investment losses on this bond?\n\nYes, I'm willing to accept investment losses and take the issuer's credit risk, with those repayment and early-sale risks understood.\n\nI recommend Atlas USD Corporate Bond 2031 because its contractual interest payments and defined maturity match your preference for regular income and a clear investment horizon. Your ability to hold through market fluctuations makes those features relevant. The future investment returns on this bond are guaranteed; you will receive the promised returns.\n\nThe product I want to transact in is Atlas USD Corporate Bond 2031. Please use US dollars as the transaction currency. The amount I'm committing to this transaction is 1.2 million. The quantity I want is 5,000 units. I want to buy, not dispose of the holding. Please place a limit order with a limit price of 240 US dollars.\n\nPlease confirm your final instruction: buy 5,000 units of Atlas USD Corporate Bond 2031, for a transaction amount of 1.2 million in US dollars, using a limit order at a limit price of 240 US dollars. Is that the instruction you want me to carry out?\n\nYes, I confirm that final instruction. Please proceed as you've just summarised. For routine contact, please continue calling me directly. My office team handles the company diary, but I keep personal banking calls out of that schedule.\n\nI'll note your contact preference. For general administration, if you're occupied when I call, I can leave a brief message asking you to return my call, without including private details. Would that arrangement suit your workday?\n\nYes, that's convenient. Sometimes I'm with customers and can't answer straight away. A short message is enough, and I'll call back when I'm somewhere quiet. No need to keep trying while I'm in a meeting.\n\nNoted. I'll keep any message brief. Thank you for your time today, Rachel. I'll let you get back to your work.\n\nThanks, Daniel. This fits better between meetings than coming down to the branch. Have a good afternoon, bye."
+    }
+  ]
+}

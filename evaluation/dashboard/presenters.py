@@ -30,7 +30,7 @@ RUN_HISTORY_METRICS = (
     "compliance.automatic_breach_detection_rate",
     "compliance.false_clearance_rate",
     "compliance.prediction_failure_rate",
-    "extraction.evidence_coverage",
+    "extraction.evidence_recall",
 )
 
 # Metrics compared between two runs (same set the Streamlit comparison used).
@@ -45,7 +45,7 @@ COMPARISON_METRICS = (
     "compliance.false_clearance_rate",
     "compliance.gold_breach_abstention_rate",
     "compliance.gold_breach_prediction_failure_rate",
-    "extraction.evidence_coverage",
+    "extraction.evidence_recall",
     "extraction.prediction_failure_rate",
 )
 
@@ -58,6 +58,19 @@ def load_presentation(path: str | Path) -> dict[str, Any]:
 
 def _ratio_value(ratio: Any) -> float | None:
     return ratio.get("value") if isinstance(ratio, dict) else None
+
+
+def _extraction_turn_status(score: dict[str, Any]) -> str | None:
+    """Whether the model cited every turn the value is stated in (the extraction result shown to people).
+
+    Derived from the stored turn ids only, so it never changes a score or the metric definitions.
+    """
+    if score.get("evaluation_family") != "extraction" or score.get("execution_status") == PREDICTION_FAILURE:
+        return None
+    expected = set(score.get("gold_evidence_turn_ids") or [])
+    if not expected:
+        return "NONE_EXPECTED"
+    return "CITED" if expected <= set(score.get("predicted_evidence_turn_ids") or []) else "MISSED"
 
 
 def result_row(score: dict[str, Any], question: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -88,6 +101,7 @@ def result_row(score: dict[str, Any], question: dict[str, Any] | None = None) ->
         "evaluator_support": extraction.get("evaluator_support"),
         "extraction_evidence_status": extraction.get("evidence_status"),
         "extraction_evidence_coverage": extraction.get("evidence_coverage"),
+        "extraction_turn_status": _extraction_turn_status(score),
         "gold_turns": list(score.get("gold_evidence_turn_ids") or []),
         "predicted_turns": list(score.get("predicted_evidence_turn_ids") or []),
         "evidence_status": evidence.get("status"),
@@ -118,12 +132,10 @@ def result_outcome(row: dict[str, Any], presentation: dict[str, Any]) -> dict[st
         return {"label": statuses["compliance_outcome_status"][outcome]["label"], "tone": "warn"}
     if row["gold_value_status"] == "NOT_STATED":
         return {"label": statuses["extraction_gold_value_status"]["NOT_STATED"]["label"], "tone": "neutral"}
-    if row["evaluator_support"] == "UNSUPPORTED":
-        return {"label": statuses["evaluator_support"]["UNSUPPORTED"]["label"], "tone": "neutral"}
-    status = row["extraction_evidence_status"]
+    status = row["extraction_turn_status"]
     return {
-        "label": statuses["extraction_evidence_status"][status]["label"],
-        "tone": "good" if status == "FOUND" else "bad",
+        "label": presentation["extraction_turn_status"][status]["label"],
+        "tone": {"CITED": "good", "MISSED": "bad"}.get(status, "neutral"),
     }
 
 
@@ -178,14 +190,12 @@ DRILLS: dict[str, tuple[str, dict[str, Any]]] = {
     "extraction.all": ("extraction.counts.total", _E),
     "extraction.present": ("extraction.counts.present_expected_values", {**_E, "gold_value_status": "PRESENT"}),
     "extraction.not_stated": ("extraction.counts.not_stated_expected_values", {**_E, "gold_value_status": "NOT_STATED"}),
-    "extraction.coverage_population": ("extraction.counts.coverage_population", {**_E, "evaluator_support": "SUPPORTED"}),
-    "extraction.found": ("extraction.counts.found", {**_E, "extraction_evidence_status": "FOUND"}),
-    "extraction.not_found": ("extraction.counts.not_found", {**_E, "extraction_evidence_status": "NOT_FOUND"}),
-    "extraction.coverage_failure": ("extraction.counts.coverage_population_prediction_failures",
-                                    {**_E, "evaluator_support": "SUPPORTED", "execution_status": PREDICTION_FAILURE}),
     "extraction.prediction_failure": ("extraction.counts.prediction_failures",
                                       {**_E, "execution_status": PREDICTION_FAILURE}),
-    "extraction.unsupported": ("extraction.counts.unsupported", {**_E, "evaluator_support": "UNSUPPORTED"}),
+    # The turn outcomes are derived from stored turn ids (see _extraction_turn_status), so the summary has
+    # no count for them; they are counted from the rows instead.
+    "extraction.turn_cited": (None, {**_E, "extraction_turn_status": "CITED"}),
+    "extraction.turn_missed": (None, {**_E, "extraction_turn_status": "MISSED"}),
 }
 
 
@@ -201,12 +211,9 @@ def drill_labels(presentation: dict[str, Any]) -> dict[str, str]:
         "extraction.all": "All extraction checks",
         "extraction.present": statuses["extraction_gold_value_status"]["PRESENT"]["label"],
         "extraction.not_stated": statuses["extraction_gold_value_status"]["NOT_STATED"]["label"],
-        "extraction.coverage_population": "Expected values the evaluator can check",
-        "extraction.found": statuses["extraction_evidence_status"]["FOUND"]["label"],
-        "extraction.not_found": statuses["extraction_evidence_status"]["NOT_FOUND"]["label"],
-        "extraction.coverage_failure": failed,
         "extraction.prediction_failure": failed,
-        "extraction.unsupported": statuses["evaluator_support"]["UNSUPPORTED"]["label"],
+        "extraction.turn_cited": presentation["extraction_turn_status"]["CITED"]["label"],
+        "extraction.turn_missed": presentation["extraction_turn_status"]["MISSED"]["label"],
     }
     return {key: labels[key] for key in DRILLS}
 
@@ -217,8 +224,12 @@ def drills(presentation: dict[str, Any]) -> dict[str, dict[str, Any]]:
             for key, (path, row_filter) in DRILLS.items()}
 
 
-def drill_count(node: dict[str, Any], key: str) -> int:
-    return int(nested(node, DRILLS[key][0], 0) or 0)
+def drill_count(node: dict[str, Any], key: str, rows: list[dict[str, Any]] | None = None) -> int:
+    """Count behind a drill: the summary's own figure, or (for turn outcomes) a count of the rows."""
+    path, row_filter = DRILLS[key]
+    if path is None:
+        return sum(matches(row, row_filter) for row in rows or [])
+    return int(nested(node, path, 0) or 0)
 
 
 # "Where to look", in reading order. Only non-zero entries are shown.
@@ -228,18 +239,18 @@ PROBLEM_DRILLS = (
     "confusion.FP",
     "compliance.abstention",
     "compliance.unexpected_not_applicable",
-    "extraction.not_found",
+    "extraction.turn_missed",
     "extraction.prediction_failure",
-    "extraction.unsupported",
 )
 
 
-def problems(summary_node: dict[str, Any], errors: list[dict[str, Any]], presentation: dict[str, Any]) -> list[dict[str, Any]]:
+def problems(summary_node: dict[str, Any], errors: list[dict[str, Any]], presentation: dict[str, Any],
+             rows: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     """Non-zero issue counts for "Where to look", each linked to its drill or diagnostics category."""
     labels = drill_labels(presentation)
     found = []
     for key in PROBLEM_DRILLS:
-        count = drill_count(summary_node, key)
+        count = drill_count(summary_node, key, rows)
         if count:
             found.append({"family": DRILLS[key][1]["family"], "label": labels[key], "count": count,
                           "drill": key, "target": "cases"})

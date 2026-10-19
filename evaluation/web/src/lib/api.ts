@@ -44,7 +44,7 @@ export type Presentation = {
   error_categories: Record<string, Labelled>;
 };
 
-export type Drill = { label: string; count_path: string; filter: Record<string, string> };
+export type Drill = { label: string; count_path: string | null; filter: Record<string, string> };
 
 export type Meta = {
   default_source: Source;
@@ -133,6 +133,8 @@ export type Row = {
   evaluator_support: string | null;
   extraction_evidence_status: string | null;
   extraction_evidence_coverage: number | null;
+  /** CITED / MISSED / NONE_EXPECTED for extraction checks; null for compliance and failed checks. */
+  extraction_turn_status: string | null;
   gold_turns: number[];
   predicted_turns: number[];
   evidence_status: string | null;
@@ -220,6 +222,13 @@ export type DiagnosticError = {
   payload: Record<string, any>;
 };
 
+export type UnlinkedRun = {
+  run_id: string;
+  evaluated_at: string | null;
+  dataset_sha256: string | null;
+  reason: "dataset_missing" | "unreadable";
+};
+
 export type Comparison = {
   earlier: RunSummary;
   later: RunSummary;
@@ -291,6 +300,9 @@ export const useDiagnostics = (source: Source, runId: string) =>
     queryKey: ["diagnostics", source, runId],
     queryFn: () => get<{ errors: DiagnosticError[]; counts: Record<string, number> }>(`/sources/${source}/runs/${enc(runId)}/diagnostics`),
   });
+
+export const useUnlinkedRuns = (source: Source) =>
+  useQuery({ queryKey: ["unlinked", source], queryFn: () => get<UnlinkedRun[]>(`/sources/${source}/unlinked-runs`) });
 
 export const useEvidence = (source: Source, runId: string) =>
   useQuery({

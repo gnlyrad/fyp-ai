@@ -1,5 +1,6 @@
 import { ArrowRight, Database } from "lucide-react";
 import { Link } from "react-router-dom";
+import { HiddenRunsNotice } from "../components/HiddenRunsNotice";
 import { Page } from "../components/Page";
 import { Card, Empty, ErrorPanel, Loading } from "../components/ui";
 import { useDatasets } from "../lib/api";
@@ -17,6 +18,7 @@ export default function DatasetsPage() {
           {source === "shared" ? "Published benchmark snapshots (Supabase)" : "Datasets and runs on this machine (evaluation/)"}
         </p>
       </div>
+      <HiddenRunsNotice />
       {datasets.isPending && <Loading />}
       {datasets.isError && (
         <ErrorPanel error={datasets.error}

@@ -175,6 +175,11 @@ def create_app(
             return items
         return guarded(source, action)
 
+    @app.get("/api/sources/{source}/unlinked-runs")
+    def unlinked_runs(source: str) -> list[dict[str, Any]]:
+        """Runs present in the source but not listed under any dataset (and why)."""
+        return guarded(source, lambda repo: repo.list_unlinked_runs())
+
     @app.get("/api/sources/{source}/datasets/{dataset_id}")
     def get_dataset(source: str, dataset_id: str) -> dict[str, Any]:
         def action(repo: EvaluationRepository) -> dict[str, Any]:
@@ -210,7 +215,7 @@ def create_app(
                 "checklist": checklist,
                 "summary": run.summary,
                 "rows": rows,
-                "problems": problems(run.summary.get("overall", {}), errors, presentation),
+                "problems": problems(run.summary.get("overall", {}), errors, presentation, rows),
             }
         return guarded(source, action)
 
