@@ -33,6 +33,8 @@ def quality_check_node(state: ComplianceState) -> dict:
     dual_channel = bool(state.get("dual_channel"))
 
     flags: list[str] = []
+    if (state.get("transcription") or {}).get("unclear_turn_ids"):
+        flags.append("low_confidence")
 
     total_words = sum(seg.get("word_count", 0) for seg in segments)
     if not segments or total_words == 0:

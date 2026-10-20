@@ -36,6 +36,7 @@ from compliance_pipeline.nodes._common import (
 )
 from compliance_pipeline.prompts.check_item import SYSTEM, build_user
 from compliance_pipeline.llm import get_llm_response
+from compliance_pipeline.reliability import InvalidStructuredOutput
 from compliance_pipeline.schemas import (
     ChecklistItem,
     CheckItemOutput,
@@ -139,6 +140,23 @@ def _cannot_determine_result(
     return result
 
 
+def validate_check_output(
+    output: CheckItemOutput, item: ChecklistItem, segments: list[dict] | None = None,
+) -> None:
+    expected = {sc.id for sc in item.sub_criteria}
+    actual = [sc.id for sc in output.sub_criteria]
+    if len(actual) != len(expected) or set(actual) != expected:
+        raise InvalidStructuredOutput("Every requested sub-criterion must be answered exactly once")
+    if segments is not None:
+        quotes = [quote for row in [*output.sub_criteria, *output.red_flags, *output.warnings]
+                  for quote in row.evidence]
+        _, diagnostics = resolve_evidence(segments, quotes)
+        if diagnostics:
+            raise InvalidStructuredOutput(
+                "Evidence must cite an existing segment ID and words from that segment: "
+                + diagnostics[0])
+
+
 def check_item_node(task: CheckItemTask) -> dict:
     item_id = task.get("item_id", "")
     # The run's own item config (caller checklist) when the fan-out sent it;
@@ -160,9 +178,13 @@ def check_item_node(task: CheckItemTask) -> dict:
         }
 
     sub_ids = [sc.id for sc in item.sub_criteria]
-    is_list = item.answer_type == "list"
     segments = task.get("segments") or []
     errors: list[str] = []
+
+    if not segments:
+        return {"item_results": [_cannot_determine_result(
+            item.id, sub_ids, "No transcript segments available for this call.",
+            "No transcript available.", item)], "red_flags": []}
 
     try:
         rules = _prepared_rules(item)
@@ -170,16 +192,6 @@ def check_item_node(task: CheckItemTask) -> dict:
         rules = []
         errors.append(f"check_item[{item.id}]: rule lookup failed, judged without rules: "
                       f"{type(exc).__name__}: {exc}")
-    given_rule_ids = {r["rule_id"] for r in rules}
-
-    if not segments:
-        result = _cannot_determine_result(
-            item.id, sub_ids,
-            reasoning="No transcript segments available for this call.",
-            note="No transcript available.",
-            cfg_item=item,
-        )
-        return {"item_results": [result], "red_flags": [], **({"errors": errors} if errors else {})}
 
     transcript = format_transcript(segments)
     call_intent = task.get("call_intent")
@@ -190,13 +202,14 @@ def check_item_node(task: CheckItemTask) -> dict:
         SYSTEM,
         build_user(
             item.question,
-            [{"id": sc.id, "text": sc.text} for sc in item.sub_criteria],
+            [{"id": sc.id, "text": sc.text, "absence": sc.absence} for sc in item.sub_criteria],
             item.answer_type,
             rules,
             transcript,
             call_intent,
         ),
         CheckItemOutput,
+        validate=lambda output: validate_check_output(output, item, segments),
     )
 
     if not llm_result.ok:
@@ -206,13 +219,23 @@ def check_item_node(task: CheckItemTask) -> dict:
             note="LLM output failed",
             cfg_item=item,
         )
+        if llm_result.error == "InvalidStructuredOutput":
+            result.failure_category = "incomplete_structured_output"
         return {
             "item_results": [result],
             "red_flags": [],
             "errors": errors + [f"check_item[{item.id}]: {llm_result.error}"],
         }
 
-    output = llm_result.value
+    return resolve_check_output(item, llm_result.value, segments, rules, quality_flags, errors)
+
+
+def resolve_check_output(item, output, segments, rules, quality_flags, errors=None) -> dict:
+    """Apply the same evidence and rollup rules to individual and grouped answers."""
+    errors = list(errors or [])
+    sub_ids = [sc.id for sc in item.sub_criteria]
+    is_list = item.answer_type == "list"
+    given_rule_ids = {rule["rule_id"] for rule in rules}
 
     # ---- Sub-criteria, matched by id in config order. ----------------
     answers_by_id: dict[str, object] = {}

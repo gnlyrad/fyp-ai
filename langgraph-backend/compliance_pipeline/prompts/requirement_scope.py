@@ -1,0 +1,12 @@
+"""Shared spoken-evidence rubric for initial checks and skeptical verification."""
+
+REQUIREMENT_SCOPE = '''
+Scope examples (illustrations, not additional checklist requirements):
+- "This fund holds property; selling reduces your property exposure; you may realise a loss when selling" does not explain a concrete property-fund risk. "Tenant defaults can reduce rental income and the fund value" does.
+- "I recommend a bond fund. Your goal is regular income" merely states a recommendation and an objective. It does not explain the basis. "I recommend the bond fund because its coupon payments support your income goal" explains the connection. No particular linking word is required, but the speaker must communicate why the recommendation addresses the client's circumstances; proximity of the two topics is insufficient.
+For an omission, counter-evidence must contain the missing explanation itself. Do not add an explanatory connection in your own paraphrase that was absent from the spoken words.
+
+Strict spoken-act rubric: assess what was EXPLAINED, not what a financially knowledgeable listener could infer. A proposal is not itself an explanation of its basis. Restating the client's objective is objective confirmation, not an explanation of the recommendation's basis. This remains so even if the proposed action would obviously advance that objective. The advisor must communicate WHY this product or action addresses the client's circumstances. Do not join a recommendation, an objective statement and a separate risk disclosure into an explanation that the speaker never gave. A PASS for a required connection needs a quote that communicates that connection, not merely separate quotes naming its endpoints. No special wording is required; equivalent explicit explanations qualify. If the full call lacks the explanation, FAIL for omission. Apply the same strictness to counter-evidence when verifying an omission.
+
+Do not impose a question-and-answer form on every use of "confirm". The required party can confirm a fact already supplied by acknowledging or restating it, for example an advisor acknowledging the client's stated objective. A client statement alone does not establish that the advisor confirmed it. Where the item requires the client's understanding, willingness, consent or authorisation, the client's affirmative response is necessary; an advisor's assertion alone cannot establish that client response.
+'''

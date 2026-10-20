@@ -53,8 +53,10 @@ def test_full_graph_output_carries_usage_that_the_evaluation_records(tmp_path, m
         with lock:
             calls[0] += 1
         if name == "check_item":
-            return schema.model_validate({"sub_criteria": [{"id": "met", "status": "CANNOT_DETERMINE"}],
-                                          "confidence": 0.9, "reasoning": "Insufficient evidence."})
+            return schema.model_validate({"sub_criteria": [{"id": "met", "status": "FAIL", "note": "Omitted."}],
+                                          "confidence": 0.9, "reasoning": "Required statement omitted."})
+        if name == "verify":
+            return schema.model_validate({"verdicts": [{"target_id": "met", "verdict": "upheld"}]})
         return schema.model_validate({})
 
     llm.set_backend(backend)
@@ -67,6 +69,8 @@ def test_full_graph_output_carries_usage_that_the_evaluation_records(tmp_path, m
     # 1. The pipeline's own output file includes the usage, tokens only (no price).
     payload = json.loads((tmp_path / "graph" / "CALL_001.json").read_text(encoding="utf-8"))
     assert payload["usage"][MODEL]["input_tokens"] == expected_input
+    assert payload["usage_by_stage"]["verify"][MODEL]["input_tokens"] == 10 * PER_CALL["input_tokens"]
+    assert sum(call["stage"] == "verify" for call in payload["llm_calls"]) == 10
     assert not any("cost" in key or "price" in key for key in payload["usage"][MODEL])
 
     # 2. The raw graph output saved with the run has it too.

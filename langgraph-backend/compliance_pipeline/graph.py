@@ -26,6 +26,7 @@ from compliance_pipeline.config import active_checklist
 from compliance_pipeline.nodes.aggregate import aggregate_node
 from compliance_pipeline.nodes.call_intent import call_intent_node
 from compliance_pipeline.nodes.check_item import check_item_node
+from compliance_pipeline.nodes.check_batch import check_batch_node, check_batch_size
 from compliance_pipeline.nodes.decide import decide_node
 from compliance_pipeline.nodes.ingest import ingest_node
 from compliance_pipeline.nodes.output import output_node
@@ -53,6 +54,13 @@ def _route_to_checks(state: ComplianceState) -> list[Send] | str:
     call_id = state.get("call_id", "unknown")
     call_intent = state.get("call_intent")
     quality_flags = state.get("quality_flags", [])
+    batch_size = check_batch_size()
+    if batch_size > 1:
+        return [Send("check_batch", {
+            "checklist_items": [checklist[item_id].model_dump() for item_id in applicable[start:start + batch_size]],
+            "call_id": call_id, "segments": segments, "call_intent": call_intent,
+            "quality_flags": quality_flags,
+        }) for start in range(0, len(applicable), batch_size)]
     return [
         Send(
             "check_item",
@@ -77,6 +85,7 @@ def build_graph():
     builder.add_node("role_inference", track_usage(role_inference_node))
     builder.add_node("call_intent", track_usage(call_intent_node))
     builder.add_node("check_item", track_usage(check_item_node))
+    builder.add_node("check_batch", track_usage(check_batch_node))
     builder.add_node("verify", track_usage(verify_node))
     builder.add_node("decide", track_usage(decide_node))
     builder.add_node("aggregate", aggregate_node)
@@ -86,8 +95,9 @@ def build_graph():
     builder.add_edge("ingest", "quality_check")
     builder.add_edge("quality_check", "role_inference")
     builder.add_edge("role_inference", "call_intent")
-    builder.add_conditional_edges("call_intent", _route_to_checks, ["check_item", "verify"])
+    builder.add_conditional_edges("call_intent", _route_to_checks, ["check_item", "check_batch", "verify"])
     builder.add_edge("check_item", "verify")
+    builder.add_edge("check_batch", "verify")
     builder.add_edge("verify", "decide")
     builder.add_edge("decide", "aggregate")
     builder.add_edge("aggregate", "output")

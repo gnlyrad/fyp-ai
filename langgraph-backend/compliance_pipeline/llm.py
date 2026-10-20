@@ -20,7 +20,8 @@ from typing import Callable, Generic, TypeVar
 
 from langchain_backend.models import create_chat_model
 from langchain_backend.settings import settings
-from compliance_pipeline.reliability import error_details
+from compliance_pipeline.reliability import InvalidStructuredOutput, error_details
+from compliance_pipeline.usage import record_call
 from pydantic import BaseModel
 
 
@@ -69,24 +70,32 @@ class LLMResult(Generic[T]):
     attempts: int = 0
 
 
-_clients: dict[str, object] = {}  # ChatGoogleGenerativeAI per model id, built lazily
+_clients: dict[tuple, object] = {}
 
 
-def _get_client(model_id: str):
-    if model_id not in _clients:
-        _clients[model_id] = create_chat_model(
+def _get_client(model_id: str, prompt_name: str = ""):
+    prefix = f"COMPLIANCE_{prompt_name.upper()}"
+    limit = int(os.getenv(f"{prefix}_MAX_OUTPUT_TOKENS", str(MAX_OUTPUT_TOKENS)))
+    default_thinking = "medium" if prompt_name == "decide_actions_repair" else ""
+    thinking = os.getenv(f"{prefix}_THINKING_LEVEL", os.getenv("COMPLIANCE_THINKING_LEVEL", default_thinking)).strip()
+    if limit < 1 or thinking not in {"", "minimal", "low", "medium", "high"}:
+        raise ValueError("Invalid model output limit or thinking level")
+    key = (model_id, limit, thinking, REQUEST_TIMEOUT_S, SEED)
+    if key not in _clients:
+        _clients[key] = create_chat_model(
             model_id=model_id,
-            max_output_tokens=MAX_OUTPUT_TOKENS,
+            max_output_tokens=limit,
             timeout=REQUEST_TIMEOUT_S,
             max_retries=0,  # get_llm_response() owns the retry
             seed=SEED,
+            **({"thinking_level": thinking} if thinking else {}),
         )
-    return _clients[model_id]
+    return _clients[key]
 
 
 def _real_backend(prompt_name: str, system: str, user: str, schema: type[BaseModel], model: str) -> BaseModel:
     """Default backend: Gemini via `with_structured_output`. `model` overrides the default id if set."""
-    client = _get_client(model or os.getenv("COMPLIANCE_MODEL_ID", DEFAULT_MODEL_ID))
+    client = _get_client(model or os.getenv("COMPLIANCE_MODEL_ID", DEFAULT_MODEL_ID), prompt_name)
     structured = client.with_structured_output(schema, method=STRUCTURED_METHOD)
     messages = [("system", system), ("human", user)]
     result = structured.invoke(messages)
@@ -134,7 +143,20 @@ def get_llm_response(
     schema: type[T],
     *,
     model: str | None = None,
+    validate: Callable[[T], None] | None = None,
 ) -> LLMResult[T]:
+    """Run a validated request with stage-specific model settings and safe diagnostics."""
+    model_id = (model or os.getenv(f"COMPLIANCE_{prompt_name.upper()}_MODEL_ID")
+                or os.getenv("COMPLIANCE_MODEL_ID", DEFAULT_MODEL_ID))
+    started = time.perf_counter()
+    result = _invoke_response(prompt_name, system, user, schema, model_id, validate)
+    record_call({"stage": prompt_name, "model": model_id, "attempts": result.attempts,
+                 "status": "success" if result.ok else "prediction_failure", "error": result.error,
+                 "latency_ms": round((time.perf_counter() - started) * 1000, 3)})
+    return result
+
+
+def _invoke_response(prompt_name, system, user, schema, model, validate):
     """Call the current backend and return validated output. Never raises.
 
     A bad or invalid response is retried once (CLAUDE.md rule). A transient
@@ -147,12 +169,15 @@ def get_llm_response(
     output_retries_left = 1
     backoff = list(TRANSIENT_BACKOFF_S)
     max_attempts = int(os.getenv("COMPLIANCE_LLM_MAX_ATTEMPTS", str(len(backoff) + 2)))
+    current_user = user
     while True:
         attempts += 1
         try:
-            value = _backend(prompt_name, system, user, schema, model or "")
+            value = _backend(prompt_name, system, current_user, schema, model)
             if not isinstance(value, schema):
                 value = schema.model_validate(value)
+            if validate:
+                validate(value)
             return LLMResult(ok=True, value=value, attempts=attempts)
         except Exception as exc:  # noqa: BLE001 - covers ValidationError; never raise out of here
             detail, malformed = error_details(exc)
@@ -170,5 +195,9 @@ def get_llm_response(
                 return LLMResult(ok=False, error=last_error, attempts=attempts)
             if output_retries_left:
                 output_retries_left -= 1
+                feedback = ("\nOutput validation failed. Return the complete requested structure, "
+                            "with every requested identifier exactly once and no extra identifiers. "
+                            "Preserve the evidence rules; CANNOT_DETERMINE is allowed.")
+                current_user = user + feedback
                 continue
             return LLMResult(ok=False, error=last_error, attempts=attempts)

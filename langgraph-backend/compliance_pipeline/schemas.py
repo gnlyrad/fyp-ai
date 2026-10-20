@@ -222,12 +222,21 @@ class CheckItemOutput(BaseModel):
     ))
 
 
+class GroupedItemAnswer(BaseModel):
+    item_id: str
+    result: CheckItemOutput
+
+
+class CheckBatchOutput(BaseModel):
+    answers: list[GroupedItemAnswer]
+
+
 class VerifyVerdict(BaseModel):
     """One verdict from `verify`'s second-reviewer LLM call, one per target
     (a sub-criterion or a red flag) it was asked to check."""
 
     target_id: str = ""
-    verdict: Literal["upheld", "not_supported"] = "upheld"
+    verdict: Literal["upheld", "not_supported"]
     reason: str = ""
     counter_evidence: list[EvidenceQuote] = Field(default_factory=list)
 
@@ -319,4 +328,5 @@ class ChecklistItem(BaseModel):
     depends_on: list[str] = Field(default_factory=list)
     rule_queries: list[str] = Field(default_factory=list)
     question: str = ""
+    requirement_type: Literal["OBLIGATION", "PROHIBITION"] | None = None
     sub_criteria: list[SubCriterion] = Field(default_factory=list)

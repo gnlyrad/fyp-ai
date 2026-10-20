@@ -132,6 +132,8 @@ def build_payload(state: ComplianceState) -> dict:
         "rules": _collect_rules(final_results, errors),
         "errors": errors,
         "usage": state.get("usage", {}),
+        "usage_by_stage": state.get("usage_by_stage", {}),
+        "llm_calls": state.get("llm_calls", []),
     }
     return payload
 

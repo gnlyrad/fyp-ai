@@ -28,7 +28,7 @@ import operator
 from typing import Annotated, Any, TypedDict
 
 from compliance_pipeline.schemas import Action, ItemResult, RedFlag
-from compliance_pipeline.usage import merge_usage
+from compliance_pipeline.usage import merge_stage_usage, merge_usage
 
 
 class CheckItemTask(TypedDict, total=False):
@@ -40,6 +40,7 @@ class CheckItemTask(TypedDict, total=False):
     segments: list[dict]
     call_intent: dict | None
     quality_flags: list[str]
+    checklist_items: list[dict]  # a grouped check task
 
 
 class ComplianceState(TypedDict, total=False):
@@ -61,6 +62,8 @@ class ComplianceState(TypedDict, total=False):
     errors: Annotated[list[str], operator.add]
     # Model token usage, {model: {input_tokens, output_tokens, ...}}, summed across nodes.
     usage: Annotated[dict, merge_usage]
+    usage_by_stage: Annotated[dict, merge_stage_usage]
+    llm_calls: Annotated[list[dict], operator.add]
 
     # Deviations from CLAUDE.md's ComplianceState, see module docstring.
     verified_results: list[ItemResult]
@@ -107,3 +110,5 @@ class OutputState(TypedDict, total=False):
     final_results: list[ItemResult]
     errors: list[str]
     usage: dict  # model token usage for this run; tokens only, no price
+    usage_by_stage: dict
+    llm_calls: list[dict]
