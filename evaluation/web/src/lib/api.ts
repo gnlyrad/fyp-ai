@@ -47,6 +47,8 @@ export type Presentation = {
 export type Drill = { label: string; count_path: string | null; filter: Record<string, string> };
 
 export type Meta = {
+  /** Wording for the Speech-to-text section (stt_presentation.json); empty when the file is missing. */
+  stt_presentation: Partial<import("./stt").SttPresentation>;
   default_source: Source;
   sources: Source[];
   definitions: { metrics: MetricDefinition[] } & Record<string, any>;
@@ -256,7 +258,7 @@ function describe(detail: unknown): string | undefined {
   return undefined;
 }
 
-async function get<T>(path: string): Promise<T> {
+export async function get<T>(path: string): Promise<T> {
   const response = await fetch(`/api${path}`);
   if (!response.ok) {
     let detail = response.statusText;

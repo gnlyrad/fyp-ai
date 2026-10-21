@@ -347,3 +347,37 @@ Browser smoke test of the built dashboard (server running, Local source):
 ```powershell
 .\.venv\Scripts\python.exe evaluation\tests\browser_web_dashboard.py http://127.0.0.1:8000
 ```
+
+## Speech-to-text results (view only)
+
+The dashboard's **Speech-to-text** tab shows Amazon Transcribe results that `fyp-be/evaluation-engine` collected and scored. It only *views*
+exported bundles; it starts nothing and is not linked to the NLP pipeline evaluation. Results are local (no Shared source).
+
+1. In fyp-be: `python -B scripts/score.py --run <run id>`, then `python -B scripts/export_to_fyp_ai.py --run <run id>` (needs no commit or clean tree).
+   The bundle lands in `evaluation/stt_runs/<run id>/` (git-ignored) and contains no audio and no machine paths.
+2. Open the dashboard and choose **Speech-to-text**: Datasets, Runs, Run summary (coverage, metrics, frequent errors), Call inspection
+   (reference transcript with the errors the scores counted, an error-detail drawer, `j`/`k` to step through errors).
+3. **Audio playback.** Nothing to configure when fyp-be is checked out beside fyp-ai (`<parent>/fyp-ai` and `<parent>/fyp-be`): the dashboard
+   reads recordings from `../fyp-be/evaluation-dataset/datasets`, resolved against the fyp-ai folder, not the folder you start the server from.
+   To use another folder, set `STT_AUDIO_ROOT` (absolute, or relative to the fyp-ai folder) and restart the dashboard. The original recording is
+   served only from inside that folder and only when its sha256 matches the recording that was evaluated, with seeking. Without it everything but
+   playback works, and the call page states the exact reason (folder missing, recording missing, or a recording that differs from the one evaluated).
+4. **Reading a call.** Changes read Gold → Transcribe inline ("the → a"; a missed word is struck through, an added one is marked +); longer
+   phrases stack Gold above Transcribe. Neighbouring changes are grouped for reading, and each change's tooltip and detail panel list its exact
+   scored substitutions, deletions and insertions. Gold is the reference transcript, not proof of what the recording contains. Clicking a change or
+   word opens a side panel (the transcript stays readable and clickable) with the comparison, playback with a "now playing" strip that colours each
+   word as it is heard, and the exact alignment on request. "Side by side" puts each turn on one row: Gold on the left, Transcribe on the right.
+   The run page's headline cards drill down: calls worst first, confidence against mistakes, and the words given to the wrong speaker.
+   The comparison UI says "Transcribe", not a vendor name, so other systems (for example ROVER) can be shown later; the label is in the wording file.
+
+5. **Scoring rules.** Since normaliser 1.3.0 the same date written two ways, British/American spelling, unambiguous contractions, reviewed variants
+   and a redundant "$" next to an explicit currency are compared as equal **for scoring only**. A call's inspector says which rule matched a word, but
+   only when the two raw spellings actually differ (an identical "I've" on both sides is not flagged), and "Normalised matches" underlines them.
+   Nothing here is applied to the NLP input. The run bundle keeps the before/after report (`changes_from_1.2.0.json`) and the rule data
+   (`run.json` summary); previous scores stay in `evaluation/stt_runs_archive/<run>_1.2.0/` (git-ignored) and fyp-be `runs/<run>/scores_1.2.0/`.
+6. **Playback in the turn view.** In "Side by side" each turn has a Play button (the turn's own time range) and the turn being heard is highlighted.
+7. **Run page drill-downs.** The confidence list can be searched, narrowed (below 0.5 / 0.7 / 0.9, mistakes only), sorted and cut to the top N. "Entity words
+   by kind" lists each annotated kind (identifier, amount, date, correction...) with its words and errors; click one to see every occurrence.
+   These lists are read by a newer API route, so restart the dashboard server after updating.
+
+Wording (metric explanations, legend, scoring rules) lives in `stt_presentation.json` and reloads without a restart.

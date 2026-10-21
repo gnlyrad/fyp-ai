@@ -32,11 +32,15 @@ from .presenters import (
     transcript_turns,
 )
 from .repository import EvaluationRepository, RepositoryError
+from .stt import AudioUnavailable, SttNotFound, SttStore
 from .view_models import comparison_incompatibilities, nested
 
 EVALUATION_ROOT = Path(__file__).resolve().parents[1]
 WEB_DIST = EVALUATION_ROOT / "web" / "dist"
 SOURCES = ("shared", "local")
+# Recordings default to the fyp-be checkout beside this one (<parent>/fyp-ai and <parent>/fyp-be). Resolved against the fyp-ai
+# repository root, so it works on any machine with both repositories side by side; STT_AUDIO_ROOT overrides it.
+DEFAULT_STT_AUDIO_ROOT = "../fyp-be/evaluation-dataset/datasets"
 
 
 def _default_shared() -> EvaluationRepository:
@@ -89,10 +93,24 @@ def create_app(
     shared_factory: Callable[[], EvaluationRepository] = _default_shared,
     web_dist: str | Path | None = WEB_DIST,
     default_source: str | None = None,
+    stt_root: str | Path | None = None,
+    stt_audio_root: str | Path | None = None,
 ) -> FastAPI:
     evaluation_root = Path(evaluation_root)
     definitions = LiveJson(evaluation_root / "metric_definitions.json")
     presentation = LiveJson(evaluation_root / "metric_presentation.json")
+    stt_presentation = LiveJson(evaluation_root / "stt_presentation.json")
+    if stt_audio_root is not None:  # an explicit "" turns playback off
+        audio_setting, audio_label = str(stt_audio_root), str(stt_audio_root)
+    elif os.getenv("STT_AUDIO_ROOT"):
+        audio_setting = os.environ["STT_AUDIO_ROOT"]
+        audio_label = f"STT_AUDIO_ROOT={audio_setting}"
+    else:
+        audio_setting, audio_label = DEFAULT_STT_AUDIO_ROOT, f"{DEFAULT_STT_AUDIO_ROOT} (default: fyp-be beside fyp-ai)"
+    audio_root = None
+    if audio_setting:  # a relative value is relative to the fyp-ai repository root, never the working directory
+        audio_root = Path(audio_setting) if Path(audio_setting).is_absolute() else evaluation_root.parent / audio_setting
+    stt = SttStore(stt_root if stt_root is not None else evaluation_root / "stt_runs", audio_root, audio_label or None)
     shared_cache: dict[str, EvaluationRepository] = {}
     chosen_default = (default_source or os.getenv("EVALUATION_DEFAULT_SOURCE", "shared")).lower()
     if chosen_default not in SOURCES:
@@ -140,8 +158,43 @@ def create_app(
             "sources": list(SOURCES),
             "definitions": dict(definitions),
             "presentation": dict(presentation),
+            "stt_presentation": dict(stt_presentation) if (evaluation_root / "stt_presentation.json").is_file() else {},
             "drills": drills(presentation),
         }
+
+    @app.exception_handler(SttNotFound)
+    async def _stt_not_found(_request, error: SttNotFound):
+        return JSONResponse({"detail": str(error)}, status_code=404)
+
+    @app.exception_handler(AudioUnavailable)
+    async def _audio_unavailable(_request, error: AudioUnavailable):
+        return JSONResponse({"detail": str(error)}, status_code=error.status)
+
+    # Speech-to-text: read-only views over bundles exported by fyp-be (always local; there is no Shared source for these).
+    @app.get("/api/stt/datasets")
+    def stt_datasets() -> list[dict[str, Any]]:
+        return stt.list_datasets()
+
+    @app.get("/api/stt/datasets/{dataset_id}")
+    def stt_dataset(dataset_id: str) -> dict[str, Any]:
+        return stt.dataset(dataset_id)
+
+    @app.get("/api/stt/runs/{run_id}")
+    def stt_run(run_id: str) -> dict[str, Any]:
+        return stt.run(run_id)
+
+    @app.get("/api/stt/runs/{run_id}/words")
+    def stt_run_words(run_id: str) -> dict[str, Any]:
+        return stt.run_words(run_id)
+
+    @app.get("/api/stt/runs/{run_id}/calls/{call_id}")
+    def stt_call(run_id: str, call_id: str) -> dict[str, Any]:
+        return stt.call(run_id, call_id)
+
+    @app.get("/api/stt/runs/{run_id}/calls/{call_id}/audio")
+    def stt_audio(run_id: str, call_id: str) -> FileResponse:
+        # FileResponse answers Range requests (seeking) itself; the file is only served from inside the configured audio root.
+        return FileResponse(stt.audio_path(run_id, call_id), media_type="audio/mpeg")
 
     def dataset_view(repo: EvaluationRepository, dataset: DatasetRecord) -> dict[str, Any]:
         families = Counter(item.get("evaluation_family") for item in repo.get_checklist(dataset.dataset_id))

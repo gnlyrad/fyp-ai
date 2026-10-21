@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "UI-only wording for the Speech-to-text section. Edit freely: it is re-read on the next page load and is not part of any scored result.",
+  "tab_label": "Speech-to-text",
+  "local_badge": {
+    "label": "Local results",
+    "help": "Speech-to-text results are exported from fyp-be to this machine (evaluation/stt_runs). They are not shared or published."
+  },
+  "metrics": {
+    "normalised_wer": {
+      "label": "Normalised WER",
+      "what": "How often Transcribe's words differ from what was actually said.",
+      "calculation": "(substitutions + deletions + insertions) ÷ words in the reference, after the formatting rules below make equivalent spellings match (for example \"1.2 million\" and \"1,200,000\").",
+      "important": "Counted over every word of the call. Numbers count one digit at a time, so they weigh more than ordinary words."
+    },
+    "entity_wer": {
+      "label": "Entity WER",
+      "what": "The same error rate, counted only on the parts of the call that carry business meaning.",
+      "calculation": "Errors ÷ selected reference words, where the selected words are every value mention (identifiers, dates, amounts, currencies, fund names, order details), the whole span of each correction, cancellation, read-back and false start, and any reviewed domain terms.",
+      "important": "This is this project's own definition. Overlapping selections count each word once. An extra word is counted only when it sits inside a selected region."
+    },
+    "substitutions": {
+      "label": "Substitutions",
+      "what": "Words Transcribe replaced with a different word.",
+      "calculation": "Counted from the single alignment between the reference and Transcribe's output.",
+      "important": ""
+    },
+    "deletions": {
+      "label": "Deletions",
+      "what": "Words that were said but Transcribe left out.",
+      "calculation": "Counted from the same alignment.",
+      "important": "A deletion has no Transcribe timestamp, so its position in the audio is approximate."
+    },
+    "insertions": {
+      "label": "Insertions",
+      "what": "Words Transcribe added that were not said.",
+      "calculation": "Counted from the same alignment.",
+      "important": ""
+    },
+    "average_confidence": {
+      "label": "Average confidence",
+      "what": "How sure Transcribe says it was of each word.",
+      "calculation": "The mean confidence over every word Transcribe returned, each counted once (punctuation is not a word).",
+      "important": "Reported by the speech-to-text system, not measured here. It is shown for words that matched the reference and for the rest, so you can see whether low confidence warns of mistakes."
+    },
+    "speaker_attribution": {
+      "label": "Speaker attribution",
+      "what": "Of the words Transcribe got right, how many it gave to the right speaker.",
+      "calculation": "Correct ÷ eligible Transcribe words. A word is eligible when it matched the reference; it is correct when its speaker label, mapped to employee or client for that call, is the reference speaker.",
+      "important": "Counted per Transcribe word, not per normalised token, so a number does not count several times."
+    }
+  },
+  "coverage": {
+    "calls": "Calls evaluated: {scored} of {total} in the dataset.",
+    "entity_unavailable": "Entity WER is not available for this dataset: {reason}.",
+    "terms_none": "No domain terms have been reviewed yet, so entity WER uses value mentions and meaning-critical spans only.",
+    "terms_some": "Entity WER includes {count} reviewed domain terms."
+  },
+  "diff": {
+    "rows": {
+      "gold": "Gold",
+      "hyp": "Transcribe",
+      "gold_help": "Gold is the reference transcript of the call. It is the evaluation's reference, not proof of what the recording contains.",
+      "hyp_help": "What the speech-to-text system wrote for the same stretch of the call (its words only; punctuation is not stored per word)."
+    },
+    "labels": {
+      "change": "Changed",
+      "missing": "Missing",
+      "extra": "Extra",
+      "missing_hyp": "(not transcribed)",
+      "extra_gold": "(not in Gold)"
+    },
+    "reading_key": "Changes read Gold → Transcribe. Struck-through words were missed; words marked + were added. Longer changes stack Gold above Transcribe. Click any change for its exact scored errors.",
+    "legend": {
+      "change": "Gold and Transcribe differ here: Gold → Transcribe. The detail panel lists the exact scored errors.",
+      "missing": "Words in Gold that were not transcribed (deletions).",
+      "extra": "Words Transcribe produced that are not in Gold (insertions).",
+      "plain": "Plain text matched. Click any word to see how it was compared and to play it."
+    },
+    "overlays": {
+      "entity": "Underline words in entity spans (values, corrections, read-backs, false starts, reviewed terms).",
+      "speaker": "Mark words Transcribe got right but gave to the wrong speaker, with a count per turn.",
+      "low_confidence": "Mark words Transcribe was unsure of (confidence below 0.5).",
+      "rules": "Underline words that matched only through a scoring-only rule (a date in a different order, British/American spelling, a contraction, a reviewed variant, or a redundant currency symbol)."
+    },
+    "views": {
+      "inline": "Inline",
+      "side": "Side by side",
+      "side_help": "Each turn is one row: Gold on the left, Transcribe on the right, so both sides line up at the same height."
+    },
+    "highlight_note": "Only errors counted by the exported scores are shown as changes. A phrase groups neighbouring changes for reading; its chip lists the exact scored errors inside it.",
+    "approximate_time": "Approximate position: these words were not transcribed, so the time comes from the nearest transcribed words.",
+    "navigation": "Change {index} of {total}",
+    "scored_totals": "Scored in this call: {substitutions} substitutions · {deletions} deletions · {insertions} insertions"
+  },
+  "normaliser_note": "Both texts are normalised with the same rules before they are compared: case and punctuation are ignored, spelled numbers become digits one at a time, and a few equivalent forms are treated as equal (the same date written two ways, British/American spelling, contractions, a short reviewed list of variants, and a redundant currency symbol). Ambiguous forms are left as they are. This is for scoring only: the recognised text itself is never changed.",
+  "audio": {
+    "unavailable": "Audio unavailable on this machine",
+    "unavailable_help": "Recordings are read from the fyp-be checkout beside fyp-ai (fyp-be/evaluation-dataset/datasets). To use another folder, set STT_AUDIO_ROOT and restart the dashboard. Transcript inspection works without audio.",
+    "load_failed": "The recording could not be played",
+    "playing_range": "Playing {from}–{to} (±2 s around the selection)",
+    "now_playing": "Now playing",
+    "now_playing_help": "Transcribe's words with their timestamps; the coloured word is the one being played. Underlined words are the selection. Struck-through words were missed, so their position is approximate."
+  },
+  "drills": {
+    "wer_calls": "Calls, worst first",
+    "entity_unavailable_help": "Entity WER needs value and event annotations in the dataset's ground truth. Once a dataset has them, this panel shows where the entity errors are.",
+    "confidence_buckets": "How confidence relates to mistakes",
+    "confidence_buckets_help": "Each Transcribe word once, by its confidence. 'Matched' words matched the reference; 'other' words were part of an error.",
+    "low_confidence": "Words Transcribe was unsure of",
+    "speaker_mismatch": "Words given to the wrong speaker",
+    "entity_kinds_title": "Entity words by kind",
+    "entity_kinds_help": "Each kind of annotated value or event (identifiers, amounts, dates, corrections, read-backs...): how many reference words it covers and how many of them Transcribe got wrong. A kind with no errors was transcribed correctly. Click one to see every occurrence.",
+    "entity_group_help": "Every place this kind appears in the run. Click one to open it in its call."
+  },
+  "normalisation": {
+    "title": "Scoring rules",
+    "scoring_only": "Scoring only: these rules decide which different spellings count as the same thing when WER is computed. They do not change the recognised text, and they are not applied to the NLP input.",
+    "rules": {
+      "dates": {
+        "label": "Same date, written differently",
+        "help": "A valid date written day-first or month-first (4 August 1991, August 4th 1991, the fourth of August nineteen ninety-one) is compared as one date. Different days, months or years stay different."
+      },
+      "spelling": {
+        "label": "British and American spelling",
+        "help": "Spelling pairs such as travelling / traveling, from a fixed, attributed word list."
+      },
+      "contractions": {
+        "label": "Contraction expanded",
+        "help": "it'll = it will, don't = do not. Negation is always kept: won't is never the same as will."
+      },
+      "variants": {
+        "label": "Reviewed variant",
+        "help": "A short, human-reviewed list of equivalent forms (OK / okay, cut-off / cutoff)."
+      },
+      "currency": {
+        "label": "Redundant currency symbol",
+        "help": "In \"$50,000 in SGD\" the explicit currency already says it, so the \"$\" is not counted as an extra word. A bare \"$200\", or a conflict like \"$30,000 in EUR\", is still counted."
+      }
+    },
+    "compare_intro": "Compared with the previous scoring rules ({from}) on the same transcripts and audio:",
+    "reference_words_changed": "The reference word count changed because contractions now count as two words and a date's \"the\" and \"of\" are no longer counted separately.",
+    "removed_title": "Errors these rules removed",
+    "removed_help": "Each one is the same thing written two ways. Every removal is attributed by switching the rules off one at a time.",
+    "remaining_title": "Errors that remain",
+    "remaining_help": "Real recognition errors, and known legacy rendering defects (for example the recordings read EUR and NRIC as words). These stay visible on purpose."
+  }
+}
