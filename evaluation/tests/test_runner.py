@@ -23,7 +23,9 @@ def test_experiment_options_reach_graph_and_are_recorded(tmp_path):
                             context_mode="full_transcript", analysis_max_attempts=1)
     assert inputs[0]["context_mode"] == "full_transcript"
     assert inputs[0]["analysis_max_attempts"] == 1
-    assert all(set(item) == {"id", "question"} for item in inputs[0]["checklist"])
+    assert all(set(item) == ({"id", "question", "requirement_type"}
+                            if item["id"].startswith("C") else {"id", "question"})
+               for item in inputs[0]["checklist"])
     config = result["metadata"]["execution_configuration"]
     assert config["context_mode"] == "full_transcript" and config["analysis_max_attempts"] == 1
     assert result["metadata"]["execution_status"] == "completed_with_errors"
