@@ -7,6 +7,10 @@ import DatasetPage from "./pages/DatasetPage";
 import DatasetsPage from "./pages/DatasetsPage";
 import ResultPage from "./pages/ResultPage";
 import RunPage from "./pages/RunPage";
+import SttCallPage from "./pages/stt/SttCallPage";
+import SttDatasetPage from "./pages/stt/SttDatasetPage";
+import SttDatasetsPage from "./pages/stt/SttDatasetsPage";
+import SttRunPage from "./pages/stt/SttRunPage";
 
 export default function App() {
   const meta = useMeta();
@@ -16,6 +20,10 @@ export default function App() {
     <MetaProvider meta={meta.data}>
       <Routes>
         <Route path="/" element={<Navigate to={`/${meta.data.default_source}`} replace />} />
+        <Route path="/stt" element={<SttDatasetsPage />} />
+        <Route path="/stt/d/:datasetId" element={<SttDatasetPage />} />
+        <Route path="/stt/d/:datasetId/r/:runId" element={<SttRunPage />} />
+        <Route path="/stt/d/:datasetId/r/:runId/c/:callId" element={<SttCallPage />} />
         <Route path="/:source" element={<DatasetsPage />} />
         <Route path="/:source/d/:datasetId" element={<DatasetPage />} />
         <Route path="/:source/d/:datasetId/compare" element={<ComparePage />} />
