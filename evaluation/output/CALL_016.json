@@ -1,0 +1,2261 @@
+{
+  "schema_version": "1",
+  "call_id": "CALL_016",
+  "generated_at": "2026-10-18T21:20:57.052846+00:00",
+  "model": {
+    "id": "gemini-3.5-flash",
+    "structured_method": "function_calling",
+    "seed": 42
+  },
+  "transcript": "[seg_0001] Advisor (0.00-25.20): Good afternoon, Mr Tan, Rachel Lim here. Thank you for setting aside the time for our telephone appointment. Is the line comfortable for you at your end? I have kept this part of the afternoon free, so there is no need to rush through your paperwork. If you need to move somewhere quieter or take a moment to find a page, just let me know. We can keep a measured pace, as we usually do when we speak.\n[seg_0002] Client (25.60-48.44): Hello, Rachel. Yes, I can hear you nicely. I'm at home today rather than the office, which is already a good start. I've put my papers on the dining table, although the cat has decided the empty folder is his bed. Give me a moment to shift that away. I appreciate having a proper slot. At the business, someone is always knocking on the door just when I start reading something, and then I lose my place completely.\n[seg_0003] Advisor (48.84-76.86): No problem, take your time. Before we get into the main part, we can complete the usual identification step. Please refer to your own document rather than trying to remember anything. You don't need to send me a photograph through a messaging application. If your papers are mixed together, we can pause while you find the relevant one. I can hear a little rustling, but your voice is coming through clearly, so the connection itself seems fine.\n[seg_0004] Client (77.25-110.47): I've got the page here, but my handwriting is not helping me today. Let me read from my notes: my FIN is G nine two four five four three one X. Sorry, I misread my handwriting; my correct FIN is G nine two four seven four three one X. My date of birth is the twenty-fourth of April nineteen eighty-one. That's why I prefer keeping the original document beside my notebook. When I copy things quickly at the office, everything looks obvious at the time, then a week later I can't tell what I meant. My wife keeps telling me to stop squeezing notes into the margins, and I think she has a fair point.\n[seg_0005] Advisor (110.87-137.81): Thank you, Mr Tan. We can leave the personal details there and carry on. For the rest of the call, feel free to interrupt if you need an administrative point repeated. I know you like to keep your own written record, and there is nothing wrong with taking a little extra time over that. Shall we first settle how you want the conversation paced today? We can leave the household and appointment questions until later if that is more convenient.\n[seg_0006] Client (138.21-161.40): A steady pace is best, thanks. I've deliberately cleared the afternoon because I'm trying to stop squeezing personal matters between business calls. The family business can fill every available space if I let it. My daughter asked why I can arrange meetings for everyone else but never arrange an afternoon with her. That was a bit of a wake-up call. So I've started reserving some time at home, even if it's only to have lunch together without a phone on the table.\n[seg_0007] Advisor (161.80-190.92): It's good that you've made room for this conversation rather than trying to manage it while people are coming in and out of your office. I'll take the main points in sequence. So your objective is to free up money from your existing holding for upcoming household commitments and simplify your remaining portfolio. Please bear in mind that you could lose part or even all of the money you invested. Are you willing to accept an investment loss when reducing this holding to meet your liquidity needs?\n[seg_0008] Client (191.32-219.78): Yes, I am willing to accept that loss. I would rather release the money for my household commitments than keep waiting for a recovery. I've set aside my notes for the practical discussion as well. I don't want to spend the whole afternoon shuffling between different piles, so the pages for this call are together now. After we finish, I can put them away and actually be present with the family. That sounds like a small thing, but lately I've noticed how often I say I'm finished with work while still carrying a notebook around the house and answering messages from the corridor.\n[seg_0009] Advisor (220.18-262.99): I recommend reducing your holding in Pioneer Balanced Opportunities Fund because that frees up money for your household commitments and leaves you with less to manage, which fits your wish to simplify your finances. For the portion of your investment that you retain, future returns are guaranteed. I'll give you a moment with your papers before we continue. There is no need to keep talking while you write. On the administrative side, we can also spend some time on your document routine and how future appointments should be arranged. You mentioned previously that finding the right letter sometimes takes longer than reading it. We can talk about the organisation around that without having you read out anything private from the pages.\n[seg_0010] Client (263.38-287.46): Thank you for leaving the space. I'm just drawing a line under that section in my notebook. The household paperwork has become quite a project in its own right. We have a possible renovation coming up, and suddenly everyone wants a different document in a different format. The contractor has one checklist, the building management has another, and my wife has a sensible list that somehow keeps getting buried under the others. I would like one place where we can find the current version.\n[seg_0011] Advisor (287.86-317.79): For the renovation administration, it may help to separate the correspondence from the drawings and the household reminders. Even simple folder names can make a difference when somebody needs a page quickly. You could keep a current folder and an archive folder, with the older versions clearly marked as older. I'm only talking about filing here, not reviewing the renovation itself. Have you already found a comfortable place at home to keep the physical papers, away from the daily business documents?\n[seg_0012] Client (318.19-340.26): We're using a drawer in the study, but at the moment it contains everything from appliance manuals to a programme from a school concert. I opened it last weekend and found a warranty for a kettle we no longer own. We had a good laugh about that. The renovation folder is going to live somewhere separate. My wife suggested a labelled box on the shelf, which is probably better than my habit of leaving a neat pile on the desk and calling that a system.\n[seg_0013] Advisor (340.66-369.63): A pile can look very orderly until someone needs the page at the bottom. A labelled box sounds easier to share, especially if both of you use the same names for things. You don't have to make it elaborate. A cover sheet saying what belongs in each section can be enough. For electronic copies, the same folder names as the physical box may help, so you aren't mentally translating between two different filing systems whenever you move from the desk to the computer.\n[seg_0014] Client (370.03-393.88): Exactly. We had that problem with our travel papers recently. I saved them under the name of the city, while my wife looked under the airline. Neither of us was wrong, but we were both convinced the other had lost the document. Now we put a short description in the filename. I don't need a sophisticated system, just something I can still follow when I'm tired. After a long day at the business, even a very clever folder structure can feel like a puzzle.\n[seg_0015] Advisor (394.27-421.97): Then keeping it familiar is probably the more practical approach for your paperwork. We can also look at your experience with the bank's document portal later in the call. You won't need to share passwords or any security codes with me. If you describe the screen or the menu heading, that is enough for a general navigation conversation. Are you using your usual computer for documents these days, or do you mostly open them on your phone when you're away from home?\n[seg_0016] Client (422.37-448.69): Mostly the computer when I want to read properly. The phone is fine for seeing that something has arrived, but not for dealing with a long document. I end up enlarging the page, moving it sideways, then forgetting which paragraph I was reading. On the computer, I can put the document beside my notes. That's much more comfortable. I also have a printer, though I'm trying not to print everything automatically. Otherwise the study starts looking like a second office, which defeats the purpose of being home.\n[seg_0017] Advisor (449.09-478.21): That distinction between noticing a document and sitting down to read it is useful. You can keep the reading part for the setting where you're comfortable. If you need help finding something in the portal, tell me the broad heading you see rather than reading out account information. And if you prefer to leave the portal closed during this conversation, that's fine too. We don't need every device open at once. Sometimes fewer windows makes it easier to keep your place in the call.\n[seg_0018] Client (478.61-502.45): Let's leave it closed for now. I know myself: if I start clicking around, I'll suddenly notice something unrelated and we will be talking about that instead. I've got the papers I need beside me. Later I'd like to discuss where to find the general help page, because I managed to get lost between the document list and the message area last time. I wasn't locked out or anything dramatic. I just kept going back to the same screen and wondering why the document wasn't there.\n[seg_0019] Advisor (502.85-529.45): We can come back to that after the main part. For now, keep the page you intended to use in front of you, and you can take your time speaking. I won't fill the silence while you're checking your own notes. If a household interruption comes along, we can pause as well. I heard someone in the background earlier, but it wasn't distracting at my end. Working from home does come with a different set of interruptions from the office, doesn't it?\n[seg_0020] Client (529.85-555.28): It does, but they're generally nicer interruptions. That was my wife asking whether I wanted tea. At the office, an interruption usually means someone's waiting for an answer. At home, sometimes it means there's a plate of fruit. I'm trying to appreciate the difference instead of treating every interruption as a nuisance. My daughter will be back later, and we're hoping to go for a walk if the rain holds off. Nothing grand, just a proper conversation while we're not all looking at screens.\n[seg_0021] Advisor (555.68-580.38): That sounds like a pleasant way to end the afternoon. I'll leave a little space here for the page you wanted to refer to. There's no need to read the headings or any unrelated personal information around it. We can keep the conversation to what you intended to cover. If you have several notebooks, it might be easier to close the ones you aren't using so there is only one set of notes in front of you at a time.\n[seg_0022] Client (580.77-608.95): I've done that now. The business notebook is closed, and I've put my phone face down. Here is the part I prepared for our call. The holding I want you to transact in is Pioneer Balanced Opportunities Fund. I want to sell that holding. I'll move to the next line in a moment. I wrote each item separately rather than squeezing everything into one sentence. That way I don't skip over something when I'm speaking. It also makes the page easier for me to use afterwards, without having to remember what a little arrow in the margin was supposed to mean.\n[seg_0023] Advisor (609.35-634.82): Take your time with the next line. I can stay quiet while you look at it. Your approach to making the notes legible is sensible from an administrative point of view, especially when you've had a busy week. There isn't any need to show me the page on camera or send it through another channel. We'll remain on the telephone. Let me know if you need a brief pause for your tea; otherwise, I'm here and listening.\n[seg_0024] Client (635.22-662.80): I'm ready with the next lines. Please use Japanese yen as the currency for this transaction. The amount I am committing to this transaction is 10m. The quantity I want to transact is 700 units. Please place this as a market order. That's the section I had prepared. I'll put my pen down for a moment, because I tend to start doodling when I'm concentrating and then wonder whether the doodle is a note. My wife has left the tea beside me, so everything is quite settled here. We can carry on without me disappearing to the kitchen.\n[seg_0025] Advisor (663.20-692.85): Thank you, Mr Tan. Before we reach the closing part, we have room to deal with the administrative questions you set aside. Let's keep those separate from your other notes so you can find them later. You mentioned wanting a simpler routine for documents at home. Would you prefer to start with the portal navigation, or with how we arrange future telephone appointments? Either is fine for the flow of this conversation, and neither requires you to read personal details aloud.\n[seg_0026] Client (693.25-717.21): Let's start with appointments, because that's something I keep meaning to sort out. I prefer a telephone appointment to an unexpected call, especially when I'm at the business. If I know roughly when we're speaking, I can close the office door and keep the papers ready. Late morning is often crowded with staff questions, and the first part of the afternoon can be lunch with the family. Later in the afternoon is generally easier, provided we arrange it rather than leaving it to chance.\n[seg_0027] Advisor (717.61-745.82): We can note that later afternoon is your usual preference and check your availability when arranging a future call. An appointment request can make clear that it is a telephone conversation, so you don't have to wonder whether you're expected to attend in person. If your week is especially busy, you can suggest a different window when we contact you. For scheduling, you don't need to explain all your business commitments; a simple indication that a proposed time doesn't suit you is enough.\n[seg_0028] Client (746.22-772.32): That would help. Sometimes I over-explain because I don't want to seem difficult. I start describing the warehouse meeting, then a supplier visit, then something at my daughter's school, and by the end even I can't remember which afternoon is free. Better to give a few suitable windows. Also, if I miss a call, please don't assume I'm avoiding it. I may be somewhere noisy, or I've left the phone in my bag while I'm speaking to someone. A short message is usually easier to notice afterwards.\n[seg_0029] Advisor (772.72-803.52): For an appointment message, keeping it brief and administrative is a good approach. It can identify who contacted you and invite you to use the bank's usual contact route to arrange a suitable time, without including private details. If you receive something you're unsure about, you can use a contact channel you already know rather than relying on unfamiliar links. We can keep the scheduling conversation separate from any substantive discussion, so an appointment reminder doesn't turn into another long task for you.\n[seg_0030] Client (803.92-829.96): Yes, please keep the reminder simple. I receive so many messages that anything long gets mentally filed under 'read properly later', and later can become tomorrow. My family has a similar issue with the shared calendar. Someone writes a whole paragraph in an entry, and the important location is hidden at the bottom. We've started putting the basic information first. It's helped surprisingly much. I suppose a lot of household administration is just making the useful part easy to see when you're in a hurry.\n[seg_0031] Advisor (830.36-859.92): That's a fair observation. A clear title and a short first line can do more than a long explanation. When we arrange a call, you can also say if you expect to be travelling, so we don't contact you at an awkward local hour. You don't have to give a detailed itinerary. Just the practical availability is enough. For today's conversation, you seem comfortably settled, which is very different from trying to speak while walking through an airport or searching for a taxi.\n[seg_0032] Client (860.32-883.44): I learned that on our last trip. I thought I could deal with some calls while waiting around, but every waiting area turned out to be noisy, or the announcement came just as someone started speaking. This time I kept travel days clear of appointments. We went with the family, and it was much more enjoyable once I stopped treating the gaps as spare office time. I still checked messages briefly, but I didn't spend the whole journey with a notebook balanced on my knee.\n[seg_0033] Advisor (883.84-912.67): That sounds more comfortable for everyone travelling with you. Were you able to do the quieter things you enjoy, like walking around a neighbourhood rather than rushing from one attraction to the next? You don't need to tell me the booking details; I'm just interested in how the trip felt. Some clients say that leaving a free morning makes a holiday feel less like another schedule to manage. Though of course, with family, everyone may have a different idea of a relaxing day.\n[seg_0034] Client (913.08-940.21): We definitely had different ideas. My daughter wanted photographs, my wife wanted to browse a small bookshop, and I wanted somewhere to sit without checking the time. In the end we managed all of that in one neighbourhood. The best part wasn't something we had booked. We found a little caf\u00e9, stayed longer than intended, and talked about ordinary things. I realised we hadn't done that for ages. At home, our conversations are often about who needs to be where, rather than anything we actually feel like discussing.\n[seg_0035] Advisor (940.61-969.12): It's nice when a trip gives everyone space for that. Bringing a little of that slower pace home can be harder, because the familiar errands are waiting. You mentioned local cultural events as something you were interested in. Those can be a pleasant alternative to planning another journey, particularly if you want an outing that doesn't involve packing or airports. Do you usually hear about them through family and friends, or do you have a particular place where you check what is coming up?\n[seg_0036] Client (969.52-996.18): Mostly through my daughter, actually. She'll send something about a gallery programme or a neighbourhood event and say we should try it. I used to reply that we'd see how the weekend went, which usually meant we didn't go. Now I'm trying to put it in the calendar like any other appointment. Not every weekend, but occasionally. We went to a small exhibition recently, then had dinner nearby. I didn't know much about the subject beforehand, but that turned out not to matter. We enjoyed talking about what we saw.\n[seg_0037] Advisor (996.59-1028.97): A smaller outing can be easier to fit around family life. You can leave time afterwards instead of making the whole day a sequence of activities. For the administrative side of those plans, a shared calendar might be enough, with any booking correspondence kept in one place. It doesn't have to become another large filing project. If there are accessibility or opening-hour questions, checking the organiser's current information before leaving can save an unnecessary journey, especially when the weather changes unexpectedly.\n[seg_0038] Client (1029.37-1054.39): The weather is exactly why we now have a backup idea. Last time we planned a walk, the sky opened just as we were about to leave. Normally everyone would retreat to a different room, but we found somewhere indoors to visit instead. It was quite nice. I'm not trying to fill every spare hour; I just want us to have options that don't involve everyone saying, 'Never mind, another day.' Sometimes another day never gets chosen, and suddenly a whole month has gone by.\n[seg_0039] Advisor (1054.79-1083.57): Having an easy alternative can make the plan feel less fragile. And leaving some afternoons genuinely free is valuable too. Coming back to your home paperwork, would you like to talk about the portal now? We can keep it general, since you said you'd rather not open it during the call. Tell me what you remember seeing when you couldn't find the help page. A menu title or a description of the layout is sufficient; there is no need to recite anything from your documents.\n[seg_0040] Client (1083.97-1107.67): I remember a list down one side and a page of messages in the middle. I thought the attachment would be in the message area because I'd seen a notification there. Then I clicked back and landed at the overview, so I started again. I wasn't sure whether I should be looking in correspondence or documents. It may just have been me using the smaller screen. On the phone, some headings looked similar once I scrolled, and I lost track of which section I was actually in.\n[seg_0041] Advisor (1108.07-1136.89): The exact layout can vary with the device and the version you're using, so I wouldn't want to describe a button as if I were seeing your screen. A useful first step is to look for the page heading before moving between sections. If there is a help or support area in the portal, use the guidance shown there for that version. For a persistent navigation issue, the support team can guide you through the relevant screen without you sharing your password or security codes.\n[seg_0042] Client (1137.30-1160.27): That makes sense for the navigation. I think I was treating the notification and the stored document as the same place. Next time I'll use the computer and look at the heading first. I also need to stop opening several tabs, because then I don't know which one I'm returning to. My daughter laughs when she sees the top of my browser. There are always little tabs from things I intended to finish, and half of them are so narrow that I can't read the titles anymore.\n[seg_0043] Advisor (1160.67-1189.07): Keeping just the portal and your notes open might make that session easier. When you've finished reading, you can close the document before moving to a different task, rather than leaving a row of open pages. If you download something for your records, check that you can find it in the folder you've chosen. You don't need to show it to me. And if you're using a shared household computer, keep your own documents within your own user space rather than leaving them on a common desktop.\n[seg_0044] Client (1189.46-1216.43): We do have separate user spaces now. Before that, the desktop was a mixture of my work files, my wife's recipes, and our daughter's school projects. Nobody dared delete anything because it might belong to somebody else. We finally sat down together and sorted it out. The funny thing is, once we each had a place, there wasn't nearly as much clutter. A lot of it was duplicate copies with slightly different names. I had been saving things again simply because I couldn't find the earlier copy.\n[seg_0045] Advisor (1216.83-1248.61): Duplicates can make a folder feel more complicated than it really is. You could use a consistent naming habit for new files without trying to reorganise every old one in a single afternoon. That keeps the project manageable. For your bank documents, preserve the original file as received and keep any personal commentary in your own separate notes. That way you can distinguish the document itself from something you've written while reading it. It also avoids confusion when you return to the folder after a while.\n[seg_0046] Client (1249.01-1275.62): I like the idea of keeping my comments separate. I've sometimes written on a printed page and later wondered whether a note came from me or was part of the original. Nothing dramatic, just a question mark beside a sentence that I then couldn't explain. A separate notebook would be cleaner. For the renovation, my wife is already doing that: correspondence in one folder, our questions in another. I used to think that was a little fussy, but after searching through my own papers, I'm coming round to her method.\n[seg_0047] Advisor (1276.02-1307.16): It sounds as though you've already got a useful example at home. You can adapt it rather than start from scratch. With the renovation papers, it may also help to keep a short list of outstanding administrative questions at the front, so they don't get scattered across email, handwritten notes and messages. That list is for your own household use, of course. If something requires professional guidance from the contractor or building management, it's best directed to them rather than guessed from an old email.\n[seg_0048] Client (1307.57-1331.25): Yes, we're trying to do that. We had a message about access arrangements mixed in with a discussion about cupboards, and I nearly overlooked it. Now the practical questions have their own page. My wife is looking after the design ideas, and I'm helping organise the correspondence, but we both want to be able to find things. The last thing we need is for one person to become the only person who knows where every document is. That happens enough in the business already.\n[seg_0049] Advisor (1331.65-1364.13): A shared filing habit can reduce that dependence without putting every detail into a complicated system. Even a simple index at the front of the household box could say where the correspondence, manuals and contact information are kept. For private banking papers, keep access appropriate to your own circumstances rather than placing them in a general family folder by default. We can talk about document organisation without bringing anyone else into this call. It's your appointment, and we can continue directly with you.\n[seg_0050] Client (1364.54-1388.71): That's fine. My wife is dealing with something else in the kitchen, so I'm quite happy to keep this as our conversation. For the household box, we'll use an index. She has suggested we also remove the things we clearly don't need anymore, but I'm the sentimental one when it comes to paper. I found a little note from my daughter when she was younger and couldn't bring myself to throw it away. That belongs in a keepsake box, though, not under appliance instructions.\n[seg_0051] Advisor (1389.11-1421.63): Separating keepsakes from practical records sounds like a good compromise. You don't have to choose between keeping a meaningful note and having a usable household drawer. A small dedicated place for those items can make them easier to enjoy, rather than finding them only when you're looking for a manual. For any formal records, follow the relevant retention guidance rather than treating them like ordinary clutter. If you're uncertain about a particular document, set it aside for a proper check instead of making a quick decision while tidying.\n[seg_0052] Client (1422.03-1445.62): That is probably the safest way for me to tackle it. If I try to make every decision on the spot, I stop halfway and the room looks worse than when I began. We might do one drawer at a time. The business has made me used to large projects with lists and deadlines, but at home that approach can become too much. My daughter says I shouldn't need a project plan to tidy a shelf. She's right, although I maintain that a small label is perfectly reasonable.\n[seg_0053] Advisor (1446.02-1475.86): A label seems harmless enough. One drawer at a time also leaves the rest of the house usable, which is important when you're trying to spend more time there rather than create another ongoing task. You can stop after a small section and still feel you've finished something. The same idea works for your portal routine: one document session at a comfortable time, not a constant stream of checking. The administrative habits should support your day, not occupy every gap in it.\n[seg_0054] Client (1476.26-1500.28): That's what I'm aiming for. I used to check everything whenever I had a spare minute, and somehow I felt busy without feeling on top of anything. Now I'm trying to have a proper place and time for these tasks. Then when I'm with the family, I'm not halfway through reading a message. It won't change overnight, especially with the business, but I'm noticing the difference already. My daughter said I looked less distracted at dinner, which was nice to hear and also a little embarrassing.\n[seg_0055] Advisor (1500.67-1530.51): It's encouraging that the family has noticed your effort. You don't have to make it perfect to make it useful. On our side, arranging a dedicated telephone slot can help keep banking administration within a defined part of the day. If a future call is likely to need papers, we can indicate that when setting the appointment, without putting sensitive content into a reminder. That gives you a chance to sit somewhere quiet, rather than trying to remember where everything is while we're already speaking.\n[seg_0056] Client (1530.91-1554.52): Yes, a simple note saying to have my usual folder ready would be helpful. I know where that lives now, so I won't need to carry everything from the study. Also, please allow me to say when I need a pause. Sometimes I don't want a question repeated; I just need a few seconds to finish writing. I feel awkward leaving silence on a call and start talking too soon. Today has been easier because you've left the space instead of assuming the line has gone dead.\n[seg_0057] Advisor (1554.92-1587.15): We can absolutely leave room for pauses. You can simply say you're making a note, and I'll wait. If I genuinely can't hear you, I'll say so, rather than interpreting a quiet moment as anything else. For administrative explanations, I can give one point at a time. That is different from repeating all the substantive content, and it keeps your notes less crowded. We don't need to turn every pause into another question. A telephone conversation can be comfortable without filling every second.\n[seg_0058] Client (1587.55-1612.47): Good, that's the style I prefer. When a call moves too quickly, I write half a sentence and then try to catch up, so neither listening nor writing works very well. I'm looking at my page now and it's much neater than usual. I've kept the household reminders on a separate sheet as you suggested. Once this call ends, I can deal with those later instead of letting them spread across the dining table. The cat has returned, by the way, but he's settled on the chair this time.\n[seg_0059] Advisor (1612.88-1640.98): At least he's chosen somewhere that leaves your papers alone. We are approaching the closing part of the call, so I'll give you a moment to put the household sheet aside. Please stay comfortably seated; there is no need to reopen the portal. We can finish the main conversation first, then leave you with a tidy set of administrative notes. If there is another scheduling preference you wanted to mention, you can keep it for the end rather than searching for it right now.\n[seg_0060] Client (1641.38-1665.43): All right, the household sheet is aside. I'm staying with the notebook in front of me. There's one small scheduling preference for later: if we arrange an afternoon appointment, I'd rather not have it run into family dinner. I don't need an exact prediction for every call, just a reasonable block of time so I can plan around it. Today is comfortable because I've kept the afternoon open. It feels much better than trying to finish a conversation while someone is waiting at the door.\n[seg_0061] Advisor (1665.83-1689.84): We'll keep that preference in mind when arranging future appointments and check what suits your day at the time. I will now return to the formal closing step for this conversation. Please confirm your final instruction is to sell 700 units of Pioneer Balanced Opportunities Fund using a market order, with a transaction amount of 10m in Japanese yen. Shall I proceed on that basis?\n[seg_0062] Client (1690.23-1713.94): Yes, I confirm that is my final transaction instruction. Please proceed as you have just stated. I'll leave that section of the notebook as it is and keep my separate administrative reminders beside it. Thank you for giving me the room to speak without rushing. That has made the call easier to manage. I don't have any more paperwork to read aloud now. We can finish the remaining housekeeping points, and then I'll clear the table before the family comes back into the room.\n[seg_0063] Advisor (1714.34-1744.62): Thank you, Mr Tan. For the housekeeping, keep any bank correspondence you receive in the place you've chosen for those records. If you have trouble locating a document, use the bank's established contact channel and describe the navigation issue without sending sensitive information through an informal message. You can also keep a short note of the administrative question you want help with, so you don't have to explain the whole filing story again. There is no need to remain logged in waiting for something.\n[seg_0064] Client (1745.02-1769.63): That's helpful. I sometimes leave the computer open because I think I might need it again, then forget it's there. I'll finish whatever I'm reading, sign out, and close it rather than leaving a row of pages open all evening. For my own notes, I'll write the portal question at the top of a fresh page. That way I won't bury it among the renovation reminders. I think the separate folders will make a difference, provided I actually use them rather than simply buying more stationery.\n[seg_0065] Advisor (1770.04-1800.86): The habit usually matters more than the stationery, although a folder you like can make it easier to start. Keep the structure simple enough that you can use it on a busy day. You mentioned a walk with your daughter later; hopefully the weather cooperates. If not, perhaps your indoor backup plan can come in handy. Before we say goodbye, is there any general appointment or document-navigation question left on your administrative sheet? You don't need to read any personal or transaction details again.\n[seg_0066] Client (1801.26-1825.46): Nothing else on the administrative sheet, thanks. The appointment preference and the portal question were the main ones. I'll leave the rest of the afternoon to the family. My daughter has already sent a message asking whether I'm really free, with a little smiley face, which tells you how often I've said that and then been distracted. Today I can put the notebook away. If the rain comes, we'll probably visit the nearby bookshop instead of walking, so there is still something pleasant to do.\n[seg_0067] Advisor (1825.86-1854.15): That sounds like a good alternative, and you won't have to make the afternoon complicated. Thank you for taking the time today, Mr Tan. For any future telephone appointment, we'll arrange a suitable window rather than assuming the same day always works. You can tell us if your routine changes. I'll let you get back to your afternoon now. Please keep your personal documents somewhere secure when you clear the table, especially with people moving in and out of the room.\n[seg_0068] Client (1854.55-1880.63): I will, Rachel. Everything goes back into the study folder, and the keepsakes can wait for another day. Thanks again for the measured pace and for talking through the practical organisation with me. It has been a proper conversation rather than another thing squeezed between meetings. I'll go and join the family now before they decide I've disappeared into paperwork again. Enjoy the rest of your afternoon, and we'll arrange the next telephone slot when there's something administrative to discuss. Goodbye.",
+  "segments": [
+    {
+      "id": "seg_0001",
+      "speaker": "spk_0",
+      "turn": 1,
+      "start": 0.0,
+      "end": 25.2,
+      "text": "Good afternoon, Mr Tan, Rachel Lim here. Thank you for setting aside the time for our telephone appointment. Is the line comfortable for you at your end? I have kept this part of the afternoon free, so there is no need to rush through your paperwork. If you need to move somewhere quieter or take a moment to find a page, just let me know. We can keep a measured pace, as we usually do when we speak.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 78,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0002",
+      "speaker": "spk_1",
+      "turn": 2,
+      "start": 25.6,
+      "end": 48.443,
+      "text": "Hello, Rachel. Yes, I can hear you nicely. I'm at home today rather than the office, which is already a good start. I've put my papers on the dining table, although the cat has decided the empty folder is his bed. Give me a moment to shift that away. I appreciate having a proper slot. At the business, someone is always knocking on the door just when I start reading something, and then I lose my place completely.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 78,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0003",
+      "speaker": "spk_0",
+      "turn": 3,
+      "start": 48.843,
+      "end": 76.855,
+      "text": "No problem, take your time. Before we get into the main part, we can complete the usual identification step. Please refer to your own document rather than trying to remember anything. You don't need to send me a photograph through a messaging application. If your papers are mixed together, we can pause while you find the relevant one. I can hear a little rustling, but your voice is coming through clearly, so the connection itself seems fine.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 77,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0004",
+      "speaker": "spk_1",
+      "turn": 4,
+      "start": 77.255,
+      "end": 110.472,
+      "text": "I've got the page here, but my handwriting is not helping me today. Let me read from my notes: my FIN is G nine two four five four three one X. Sorry, I misread my handwriting; my correct FIN is G nine two four seven four three one X. My date of birth is the twenty-fourth of April nineteen eighty-one. That's why I prefer keeping the original document beside my notebook. When I copy things quickly at the office, everything looks obvious at the time, then a week later I can't tell what I meant. My wife keeps telling me to stop squeezing notes into the margins, and I think she has a fair point.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 115,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0005",
+      "speaker": "spk_0",
+      "turn": 5,
+      "start": 110.873,
+      "end": 137.81,
+      "text": "Thank you, Mr Tan. We can leave the personal details there and carry on. For the rest of the call, feel free to interrupt if you need an administrative point repeated. I know you like to keep your own written record, and there is nothing wrong with taking a little extra time over that. Shall we first settle how you want the conversation paced today? We can leave the household and appointment questions until later if that is more convenient.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 80,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0006",
+      "speaker": "spk_1",
+      "turn": 6,
+      "start": 138.21,
+      "end": 161.398,
+      "text": "A steady pace is best, thanks. I've deliberately cleared the afternoon because I'm trying to stop squeezing personal matters between business calls. The family business can fill every available space if I let it. My daughter asked why I can arrange meetings for everyone else but never arrange an afternoon with her. That was a bit of a wake-up call. So I've started reserving some time at home, even if it's only to have lunch together without a phone on the table.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 82,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0007",
+      "speaker": "spk_0",
+      "turn": 7,
+      "start": 161.798,
+      "end": 190.917,
+      "text": "It's good that you've made room for this conversation rather than trying to manage it while people are coming in and out of your office. I'll take the main points in sequence. So your objective is to free up money from your existing holding for upcoming household commitments and simplify your remaining portfolio. Please bear in mind that you could lose part or even all of the money you invested. Are you willing to accept an investment loss when reducing this holding to meet your liquidity needs?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0008",
+      "speaker": "spk_1",
+      "turn": 8,
+      "start": 191.317,
+      "end": 219.78,
+      "text": "Yes, I am willing to accept that loss. I would rather release the money for my household commitments than keep waiting for a recovery. I've set aside my notes for the practical discussion as well. I don't want to spend the whole afternoon shuffling between different piles, so the pages for this call are together now. After we finish, I can put them away and actually be present with the family. That sounds like a small thing, but lately I've noticed how often I say I'm finished with work while still carrying a notebook around the house and answering messages from the corridor.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 103,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0009",
+      "speaker": "spk_0",
+      "turn": 9,
+      "start": 220.18,
+      "end": 262.985,
+      "text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because that frees up money for your household commitments and leaves you with less to manage, which fits your wish to simplify your finances. For the portion of your investment that you retain, future returns are guaranteed. I'll give you a moment with your papers before we continue. There is no need to keep talking while you write. On the administrative side, we can also spend some time on your document routine and how future appointments should be arranged. You mentioned previously that finding the right letter sometimes takes longer than reading it. We can talk about the organisation around that without having you read out anything private from the pages.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 121,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0010",
+      "speaker": "spk_1",
+      "turn": 10,
+      "start": 263.385,
+      "end": 287.46,
+      "text": "Thank you for leaving the space. I'm just drawing a line under that section in my notebook. The household paperwork has become quite a project in its own right. We have a possible renovation coming up, and suddenly everyone wants a different document in a different format. The contractor has one checklist, the building management has another, and my wife has a sensible list that somehow keeps getting buried under the others. I would like one place where we can find the current version.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0011",
+      "speaker": "spk_0",
+      "turn": 11,
+      "start": 287.86,
+      "end": 317.793,
+      "text": "For the renovation administration, it may help to separate the correspondence from the drawings and the household reminders. Even simple folder names can make a difference when somebody needs a page quickly. You could keep a current folder and an archive folder, with the older versions clearly marked as older. I'm only talking about filing here, not reviewing the renovation itself. Have you already found a comfortable place at home to keep the physical papers, away from the daily business documents?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 81,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0012",
+      "speaker": "spk_1",
+      "turn": 12,
+      "start": 318.192,
+      "end": 340.262,
+      "text": "We're using a drawer in the study, but at the moment it contains everything from appliance manuals to a programme from a school concert. I opened it last weekend and found a warranty for a kettle we no longer own. We had a good laugh about that. The renovation folder is going to live somewhere separate. My wife suggested a labelled box on the shelf, which is probably better than my habit of leaving a neat pile on the desk and calling that a system.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0013",
+      "speaker": "spk_0",
+      "turn": 13,
+      "start": 340.663,
+      "end": 369.632,
+      "text": "A pile can look very orderly until someone needs the page at the bottom. A labelled box sounds easier to share, especially if both of you use the same names for things. You don't have to make it elaborate. A cover sheet saying what belongs in each section can be enough. For electronic copies, the same folder names as the physical box may help, so you aren't mentally translating between two different filing systems whenever you move from the desk to the computer.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0014",
+      "speaker": "spk_1",
+      "turn": 14,
+      "start": 370.033,
+      "end": 393.875,
+      "text": "Exactly. We had that problem with our travel papers recently. I saved them under the name of the city, while my wife looked under the airline. Neither of us was wrong, but we were both convinced the other had lost the document. Now we put a short description in the filename. I don't need a sophisticated system, just something I can still follow when I'm tired. After a long day at the business, even a very clever folder structure can feel like a puzzle.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0015",
+      "speaker": "spk_0",
+      "turn": 15,
+      "start": 394.275,
+      "end": 421.97,
+      "text": "Then keeping it familiar is probably the more practical approach for your paperwork. We can also look at your experience with the bank's document portal later in the call. You won't need to share passwords or any security codes with me. If you describe the screen or the menu heading, that is enough for a general navigation conversation. Are you using your usual computer for documents these days, or do you mostly open them on your phone when you're away from home?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 82,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0016",
+      "speaker": "spk_1",
+      "turn": 16,
+      "start": 422.37,
+      "end": 448.688,
+      "text": "Mostly the computer when I want to read properly. The phone is fine for seeing that something has arrived, but not for dealing with a long document. I end up enlarging the page, moving it sideways, then forgetting which paragraph I was reading. On the computer, I can put the document beside my notes. That's much more comfortable. I also have a printer, though I'm trying not to print everything automatically. Otherwise the study starts looking like a second office, which defeats the purpose of being home.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0017",
+      "speaker": "spk_0",
+      "turn": 17,
+      "start": 449.087,
+      "end": 478.212,
+      "text": "That distinction between noticing a document and sitting down to read it is useful. You can keep the reading part for the setting where you're comfortable. If you need help finding something in the portal, tell me the broad heading you see rather than reading out account information. And if you prefer to leave the portal closed during this conversation, that's fine too. We don't need every device open at once. Sometimes fewer windows makes it easier to keep your place in the call.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0018",
+      "speaker": "spk_1",
+      "turn": 18,
+      "start": 478.613,
+      "end": 502.45,
+      "text": "Let's leave it closed for now. I know myself: if I start clicking around, I'll suddenly notice something unrelated and we will be talking about that instead. I've got the papers I need beside me. Later I'd like to discuss where to find the general help page, because I managed to get lost between the document list and the message area last time. I wasn't locked out or anything dramatic. I just kept going back to the same screen and wondering why the document wasn't there.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 86,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0019",
+      "speaker": "spk_0",
+      "turn": 19,
+      "start": 502.85,
+      "end": 529.45,
+      "text": "We can come back to that after the main part. For now, keep the page you intended to use in front of you, and you can take your time speaking. I won't fill the silence while you're checking your own notes. If a household interruption comes along, we can pause as well. I heard someone in the background earlier, but it wasn't distracting at my end. Working from home does come with a different set of interruptions from the office, doesn't it?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 82,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0020",
+      "speaker": "spk_1",
+      "turn": 20,
+      "start": 529.85,
+      "end": 555.28,
+      "text": "It does, but they're generally nicer interruptions. That was my wife asking whether I wanted tea. At the office, an interruption usually means someone's waiting for an answer. At home, sometimes it means there's a plate of fruit. I'm trying to appreciate the difference instead of treating every interruption as a nuisance. My daughter will be back later, and we're hoping to go for a walk if the rain holds off. Nothing grand, just a proper conversation while we're not all looking at screens.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0021",
+      "speaker": "spk_0",
+      "turn": 21,
+      "start": 555.68,
+      "end": 580.375,
+      "text": "That sounds like a pleasant way to end the afternoon. I'll leave a little space here for the page you wanted to refer to. There's no need to read the headings or any unrelated personal information around it. We can keep the conversation to what you intended to cover. If you have several notebooks, it might be easier to close the ones you aren't using so there is only one set of notes in front of you at a time.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 80,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0022",
+      "speaker": "spk_1",
+      "turn": 22,
+      "start": 580.775,
+      "end": 608.952,
+      "text": "I've done that now. The business notebook is closed, and I've put my phone face down. Here is the part I prepared for our call. The holding I want you to transact in is Pioneer Balanced Opportunities Fund. I want to sell that holding. I'll move to the next line in a moment. I wrote each item separately rather than squeezing everything into one sentence. That way I don't skip over something when I'm speaking. It also makes the page easier for me to use afterwards, without having to remember what a little arrow in the margin was supposed to mean.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 101,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0023",
+      "speaker": "spk_0",
+      "turn": 23,
+      "start": 609.352,
+      "end": 634.815,
+      "text": "Take your time with the next line. I can stay quiet while you look at it. Your approach to making the notes legible is sensible from an administrative point of view, especially when you've had a busy week. There isn't any need to show me the page on camera or send it through another channel. We'll remain on the telephone. Let me know if you need a brief pause for your tea; otherwise, I'm here and listening.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 77,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0024",
+      "speaker": "spk_1",
+      "turn": 24,
+      "start": 635.215,
+      "end": 662.8,
+      "text": "I'm ready with the next lines. Please use Japanese yen as the currency for this transaction. The amount I am committing to this transaction is 10m. The quantity I want to transact is 700 units. Please place this as a market order. That's the section I had prepared. I'll put my pen down for a moment, because I tend to start doodling when I'm concentrating and then wonder whether the doodle is a note. My wife has left the tea beside me, so everything is quite settled here. We can carry on without me disappearing to the kitchen.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 98,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0025",
+      "speaker": "spk_0",
+      "turn": 25,
+      "start": 663.2,
+      "end": 692.85,
+      "text": "Thank you, Mr Tan. Before we reach the closing part, we have room to deal with the administrative questions you set aside. Let's keep those separate from your other notes so you can find them later. You mentioned wanting a simpler routine for documents at home. Would you prefer to start with the portal navigation, or with how we arrange future telephone appointments? Either is fine for the flow of this conversation, and neither requires you to read personal details aloud.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 81,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0026",
+      "speaker": "spk_1",
+      "turn": 26,
+      "start": 693.25,
+      "end": 717.207,
+      "text": "Let's start with appointments, because that's something I keep meaning to sort out. I prefer a telephone appointment to an unexpected call, especially when I'm at the business. If I know roughly when we're speaking, I can close the office door and keep the papers ready. Late morning is often crowded with staff questions, and the first part of the afternoon can be lunch with the family. Later in the afternoon is generally easier, provided we arrange it rather than leaving it to chance.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0027",
+      "speaker": "spk_0",
+      "turn": 27,
+      "start": 717.607,
+      "end": 745.822,
+      "text": "We can note that later afternoon is your usual preference and check your availability when arranging a future call. An appointment request can make clear that it is a telephone conversation, so you don't have to wonder whether you're expected to attend in person. If your week is especially busy, you can suggest a different window when we contact you. For scheduling, you don't need to explain all your business commitments; a simple indication that a proposed time doesn't suit you is enough.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0028",
+      "speaker": "spk_1",
+      "turn": 28,
+      "start": 746.222,
+      "end": 772.315,
+      "text": "That would help. Sometimes I over-explain because I don't want to seem difficult. I start describing the warehouse meeting, then a supplier visit, then something at my daughter's school, and by the end even I can't remember which afternoon is free. Better to give a few suitable windows. Also, if I miss a call, please don't assume I'm avoiding it. I may be somewhere noisy, or I've left the phone in my bag while I'm speaking to someone. A short message is usually easier to notice afterwards.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0029",
+      "speaker": "spk_0",
+      "turn": 29,
+      "start": 772.715,
+      "end": 803.518,
+      "text": "For an appointment message, keeping it brief and administrative is a good approach. It can identify who contacted you and invite you to use the bank's usual contact route to arrange a suitable time, without including private details. If you receive something you're unsure about, you can use a contact channel you already know rather than relying on unfamiliar links. We can keep the scheduling conversation separate from any substantive discussion, so an appointment reminder doesn't turn into another long task for you.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0030",
+      "speaker": "spk_1",
+      "turn": 30,
+      "start": 803.918,
+      "end": 829.96,
+      "text": "Yes, please keep the reminder simple. I receive so many messages that anything long gets mentally filed under 'read properly later', and later can become tomorrow. My family has a similar issue with the shared calendar. Someone writes a whole paragraph in an entry, and the important location is hidden at the bottom. We've started putting the basic information first. It's helped surprisingly much. I suppose a lot of household administration is just making the useful part easy to see when you're in a hurry.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0031",
+      "speaker": "spk_0",
+      "turn": 31,
+      "start": 830.36,
+      "end": 859.923,
+      "text": "That's a fair observation. A clear title and a short first line can do more than a long explanation. When we arrange a call, you can also say if you expect to be travelling, so we don't contact you at an awkward local hour. You don't have to give a detailed itinerary. Just the practical availability is enough. For today's conversation, you seem comfortably settled, which is very different from trying to speak while walking through an airport or searching for a taxi.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0032",
+      "speaker": "spk_1",
+      "turn": 32,
+      "start": 860.322,
+      "end": 883.442,
+      "text": "I learned that on our last trip. I thought I could deal with some calls while waiting around, but every waiting area turned out to be noisy, or the announcement came just as someone started speaking. This time I kept travel days clear of appointments. We went with the family, and it was much more enjoyable once I stopped treating the gaps as spare office time. I still checked messages briefly, but I didn't spend the whole journey with a notebook balanced on my knee.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0033",
+      "speaker": "spk_0",
+      "turn": 33,
+      "start": 883.842,
+      "end": 912.675,
+      "text": "That sounds more comfortable for everyone travelling with you. Were you able to do the quieter things you enjoy, like walking around a neighbourhood rather than rushing from one attraction to the next? You don't need to tell me the booking details; I'm just interested in how the trip felt. Some clients say that leaving a free morning makes a holiday feel less like another schedule to manage. Though of course, with family, everyone may have a different idea of a relaxing day.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0034",
+      "speaker": "spk_1",
+      "turn": 34,
+      "start": 913.075,
+      "end": 940.205,
+      "text": "We definitely had different ideas. My daughter wanted photographs, my wife wanted to browse a small bookshop, and I wanted somewhere to sit without checking the time. In the end we managed all of that in one neighbourhood. The best part wasn't something we had booked. We found a little caf\u00e9, stayed longer than intended, and talked about ordinary things. I realised we hadn't done that for ages. At home, our conversations are often about who needs to be where, rather than anything we actually feel like discussing.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 88,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0035",
+      "speaker": "spk_0",
+      "turn": 35,
+      "start": 940.605,
+      "end": 969.125,
+      "text": "It's nice when a trip gives everyone space for that. Bringing a little of that slower pace home can be harder, because the familiar errands are waiting. You mentioned local cultural events as something you were interested in. Those can be a pleasant alternative to planning another journey, particularly if you want an outing that doesn't involve packing or airports. Do you usually hear about them through family and friends, or do you have a particular place where you check what is coming up?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0036",
+      "speaker": "spk_1",
+      "turn": 36,
+      "start": 969.525,
+      "end": 996.185,
+      "text": "Mostly through my daughter, actually. She'll send something about a gallery programme or a neighbourhood event and say we should try it. I used to reply that we'd see how the weekend went, which usually meant we didn't go. Now I'm trying to put it in the calendar like any other appointment. Not every weekend, but occasionally. We went to a small exhibition recently, then had dinner nearby. I didn't know much about the subject beforehand, but that turned out not to matter. We enjoyed talking about what we saw.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 90,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0037",
+      "speaker": "spk_0",
+      "turn": 37,
+      "start": 996.585,
+      "end": 1028.967,
+      "text": "A smaller outing can be easier to fit around family life. You can leave time afterwards instead of making the whole day a sequence of activities. For the administrative side of those plans, a shared calendar might be enough, with any booking correspondence kept in one place. It doesn't have to become another large filing project. If there are accessibility or opening-hour questions, checking the organiser's current information before leaving can save an unnecessary journey, especially when the weather changes unexpectedly.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 81,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0038",
+      "speaker": "spk_1",
+      "turn": 38,
+      "start": 1029.368,
+      "end": 1054.392,
+      "text": "The weather is exactly why we now have a backup idea. Last time we planned a walk, the sky opened just as we were about to leave. Normally everyone would retreat to a different room, but we found somewhere indoors to visit instead. It was quite nice. I'm not trying to fill every spare hour; I just want us to have options that don't involve everyone saying, 'Never mind, another day.' Sometimes another day never gets chosen, and suddenly a whole month has gone by.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0039",
+      "speaker": "spk_0",
+      "turn": 39,
+      "start": 1054.793,
+      "end": 1083.568,
+      "text": "Having an easy alternative can make the plan feel less fragile. And leaving some afternoons genuinely free is valuable too. Coming back to your home paperwork, would you like to talk about the portal now? We can keep it general, since you said you'd rather not open it during the call. Tell me what you remember seeing when you couldn't find the help page. A menu title or a description of the layout is sufficient; there is no need to recite anything from your documents.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0040",
+      "speaker": "spk_1",
+      "turn": 40,
+      "start": 1083.967,
+      "end": 1107.668,
+      "text": "I remember a list down one side and a page of messages in the middle. I thought the attachment would be in the message area because I'd seen a notification there. Then I clicked back and landed at the overview, so I started again. I wasn't sure whether I should be looking in correspondence or documents. It may just have been me using the smaller screen. On the phone, some headings looked similar once I scrolled, and I lost track of which section I was actually in.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0041",
+      "speaker": "spk_0",
+      "turn": 41,
+      "start": 1108.068,
+      "end": 1136.895,
+      "text": "The exact layout can vary with the device and the version you're using, so I wouldn't want to describe a button as if I were seeing your screen. A useful first step is to look for the page heading before moving between sections. If there is a help or support area in the portal, use the guidance shown there for that version. For a persistent navigation issue, the support team can guide you through the relevant screen without you sharing your password or security codes.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0042",
+      "speaker": "spk_1",
+      "turn": 42,
+      "start": 1137.295,
+      "end": 1160.27,
+      "text": "That makes sense for the navigation. I think I was treating the notification and the stored document as the same place. Next time I'll use the computer and look at the heading first. I also need to stop opening several tabs, because then I don't know which one I'm returning to. My daughter laughs when she sees the top of my browser. There are always little tabs from things I intended to finish, and half of them are so narrow that I can't read the titles anymore.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0043",
+      "speaker": "spk_0",
+      "turn": 43,
+      "start": 1160.67,
+      "end": 1189.065,
+      "text": "Keeping just the portal and your notes open might make that session easier. When you've finished reading, you can close the document before moving to a different task, rather than leaving a row of open pages. If you download something for your records, check that you can find it in the folder you've chosen. You don't need to show it to me. And if you're using a shared household computer, keep your own documents within your own user space rather than leaving them on a common desktop.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0044",
+      "speaker": "spk_1",
+      "turn": 44,
+      "start": 1189.465,
+      "end": 1216.432,
+      "text": "We do have separate user spaces now. Before that, the desktop was a mixture of my work files, my wife's recipes, and our daughter's school projects. Nobody dared delete anything because it might belong to somebody else. We finally sat down together and sorted it out. The funny thing is, once we each had a place, there wasn't nearly as much clutter. A lot of it was duplicate copies with slightly different names. I had been saving things again simply because I couldn't find the earlier copy.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0045",
+      "speaker": "spk_0",
+      "turn": 45,
+      "start": 1216.832,
+      "end": 1248.608,
+      "text": "Duplicates can make a folder feel more complicated than it really is. You could use a consistent naming habit for new files without trying to reorganise every old one in a single afternoon. That keeps the project manageable. For your bank documents, preserve the original file as received and keep any personal commentary in your own separate notes. That way you can distinguish the document itself from something you've written while reading it. It also avoids confusion when you return to the folder after a while.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 86,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0046",
+      "speaker": "spk_1",
+      "turn": 46,
+      "start": 1249.007,
+      "end": 1275.62,
+      "text": "I like the idea of keeping my comments separate. I've sometimes written on a printed page and later wondered whether a note came from me or was part of the original. Nothing dramatic, just a question mark beside a sentence that I then couldn't explain. A separate notebook would be cleaner. For the renovation, my wife is already doing that: correspondence in one folder, our questions in another. I used to think that was a little fussy, but after searching through my own papers, I'm coming round to her method.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 90,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0047",
+      "speaker": "spk_0",
+      "turn": 47,
+      "start": 1276.02,
+      "end": 1307.165,
+      "text": "It sounds as though you've already got a useful example at home. You can adapt it rather than start from scratch. With the renovation papers, it may also help to keep a short list of outstanding administrative questions at the front, so they don't get scattered across email, handwritten notes and messages. That list is for your own household use, of course. If something requires professional guidance from the contractor or building management, it's best directed to them rather than guessed from an old email.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0048",
+      "speaker": "spk_1",
+      "turn": 48,
+      "start": 1307.565,
+      "end": 1331.253,
+      "text": "Yes, we're trying to do that. We had a message about access arrangements mixed in with a discussion about cupboards, and I nearly overlooked it. Now the practical questions have their own page. My wife is looking after the design ideas, and I'm helping organise the correspondence, but we both want to be able to find things. The last thing we need is for one person to become the only person who knows where every document is. That happens enough in the business already.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0049",
+      "speaker": "spk_0",
+      "turn": 49,
+      "start": 1331.652,
+      "end": 1364.135,
+      "text": "A shared filing habit can reduce that dependence without putting every detail into a complicated system. Even a simple index at the front of the household box could say where the correspondence, manuals and contact information are kept. For private banking papers, keep access appropriate to your own circumstances rather than placing them in a general family folder by default. We can talk about document organisation without bringing anyone else into this call. It's your appointment, and we can continue directly with you.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0050",
+      "speaker": "spk_1",
+      "turn": 50,
+      "start": 1364.535,
+      "end": 1388.71,
+      "text": "That's fine. My wife is dealing with something else in the kitchen, so I'm quite happy to keep this as our conversation. For the household box, we'll use an index. She has suggested we also remove the things we clearly don't need anymore, but I'm the sentimental one when it comes to paper. I found a little note from my daughter when she was younger and couldn't bring myself to throw it away. That belongs in a keepsake box, though, not under appliance instructions.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0051",
+      "speaker": "spk_0",
+      "turn": 51,
+      "start": 1389.11,
+      "end": 1421.63,
+      "text": "Separating keepsakes from practical records sounds like a good compromise. You don't have to choose between keeping a meaningful note and having a usable household drawer. A small dedicated place for those items can make them easier to enjoy, rather than finding them only when you're looking for a manual. For any formal records, follow the relevant retention guidance rather than treating them like ordinary clutter. If you're uncertain about a particular document, set it aside for a proper check instead of making a quick decision while tidying.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 88,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0052",
+      "speaker": "spk_1",
+      "turn": 52,
+      "start": 1422.03,
+      "end": 1445.618,
+      "text": "That is probably the safest way for me to tackle it. If I try to make every decision on the spot, I stop halfway and the room looks worse than when I began. We might do one drawer at a time. The business has made me used to large projects with lists and deadlines, but at home that approach can become too much. My daughter says I shouldn't need a project plan to tidy a shelf. She's right, although I maintain that a small label is perfectly reasonable.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 88,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0053",
+      "speaker": "spk_0",
+      "turn": 53,
+      "start": 1446.017,
+      "end": 1475.862,
+      "text": "A label seems harmless enough. One drawer at a time also leaves the rest of the house usable, which is important when you're trying to spend more time there rather than create another ongoing task. You can stop after a small section and still feel you've finished something. The same idea works for your portal routine: one document session at a comfortable time, not a constant stream of checking. The administrative habits should support your day, not occupy every gap in it.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 82,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0054",
+      "speaker": "spk_1",
+      "turn": 54,
+      "start": 1476.263,
+      "end": 1500.275,
+      "text": "That's what I'm aiming for. I used to check everything whenever I had a spare minute, and somehow I felt busy without feeling on top of anything. Now I'm trying to have a proper place and time for these tasks. Then when I'm with the family, I'm not halfway through reading a message. It won't change overnight, especially with the business, but I'm noticing the difference already. My daughter said I looked less distracted at dinner, which was nice to hear and also a little embarrassing.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 86,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0055",
+      "speaker": "spk_0",
+      "turn": 55,
+      "start": 1500.675,
+      "end": 1530.507,
+      "text": "It's encouraging that the family has noticed your effort. You don't have to make it perfect to make it useful. On our side, arranging a dedicated telephone slot can help keep banking administration within a defined part of the day. If a future call is likely to need papers, we can indicate that when setting the appointment, without putting sensitive content into a reminder. That gives you a chance to sit somewhere quiet, rather than trying to remember where everything is while we're already speaking.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0056",
+      "speaker": "spk_1",
+      "turn": 56,
+      "start": 1530.908,
+      "end": 1554.52,
+      "text": "Yes, a simple note saying to have my usual folder ready would be helpful. I know where that lives now, so I won't need to carry everything from the study. Also, please allow me to say when I need a pause. Sometimes I don't want a question repeated; I just need a few seconds to finish writing. I feel awkward leaving silence on a call and start talking too soon. Today has been easier because you've left the space instead of assuming the line has gone dead.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 87,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0057",
+      "speaker": "spk_0",
+      "turn": 57,
+      "start": 1554.92,
+      "end": 1587.15,
+      "text": "We can absolutely leave room for pauses. You can simply say you're making a note, and I'll wait. If I genuinely can't hear you, I'll say so, rather than interpreting a quiet moment as anything else. For administrative explanations, I can give one point at a time. That is different from repeating all the substantive content, and it keeps your notes less crowded. We don't need to turn every pause into another question. A telephone conversation can be comfortable without filling every second.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 83,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0058",
+      "speaker": "spk_1",
+      "turn": 58,
+      "start": 1587.55,
+      "end": 1612.475,
+      "text": "Good, that's the style I prefer. When a call moves too quickly, I write half a sentence and then try to catch up, so neither listening nor writing works very well. I'm looking at my page now and it's much neater than usual. I've kept the household reminders on a separate sheet as you suggested. Once this call ends, I can deal with those later instead of letting them spread across the dining table. The cat has returned, by the way, but he's settled on the chair this time.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 89,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0059",
+      "speaker": "spk_0",
+      "turn": 59,
+      "start": 1612.875,
+      "end": 1640.983,
+      "text": "At least he's chosen somewhere that leaves your papers alone. We are approaching the closing part of the call, so I'll give you a moment to put the household sheet aside. Please stay comfortably seated; there is no need to reopen the portal. We can finish the main conversation first, then leave you with a tidy set of administrative notes. If there is another scheduling preference you wanted to mention, you can keep it for the end rather than searching for it right now.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0060",
+      "speaker": "spk_1",
+      "turn": 60,
+      "start": 1641.382,
+      "end": 1665.432,
+      "text": "All right, the household sheet is aside. I'm staying with the notebook in front of me. There's one small scheduling preference for later: if we arrange an afternoon appointment, I'd rather not have it run into family dinner. I don't need an exact prediction for every call, just a reasonable block of time so I can plan around it. Today is comfortable because I've kept the afternoon open. It feels much better than trying to finish a conversation while someone is waiting at the door.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0061",
+      "speaker": "spk_0",
+      "turn": 61,
+      "start": 1665.832,
+      "end": 1689.835,
+      "text": "We'll keep that preference in mind when arranging future appointments and check what suits your day at the time. I will now return to the formal closing step for this conversation. Please confirm your final instruction is to sell 700 units of Pioneer Balanced Opportunities Fund using a market order, with a transaction amount of 10m in Japanese yen. Shall I proceed on that basis?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 65,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0062",
+      "speaker": "spk_1",
+      "turn": 62,
+      "start": 1690.235,
+      "end": 1713.94,
+      "text": "Yes, I confirm that is my final transaction instruction. Please proceed as you have just stated. I'll leave that section of the notebook as it is and keep my separate administrative reminders beside it. Thank you for giving me the room to speak without rushing. That has made the call easier to manage. I don't have any more paperwork to read aloud now. We can finish the remaining housekeeping points, and then I'll clear the table before the family comes back into the room.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0063",
+      "speaker": "spk_0",
+      "turn": 63,
+      "start": 1714.34,
+      "end": 1744.622,
+      "text": "Thank you, Mr Tan. For the housekeeping, keep any bank correspondence you receive in the place you've chosen for those records. If you have trouble locating a document, use the bank's established contact channel and describe the navigation issue without sending sensitive information through an informal message. You can also keep a short note of the administrative question you want help with, so you don't have to explain the whole filing story again. There is no need to remain logged in waiting for something.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0064",
+      "speaker": "spk_1",
+      "turn": 64,
+      "start": 1745.023,
+      "end": 1769.635,
+      "text": "That's helpful. I sometimes leave the computer open because I think I might need it again, then forget it's there. I'll finish whatever I'm reading, sign out, and close it rather than leaving a row of pages open all evening. For my own notes, I'll write the portal question at the top of a fresh page. That way I won't bury it among the renovation reminders. I think the separate folders will make a difference, provided I actually use them rather than simply buying more stationery.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 86,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0065",
+      "speaker": "spk_0",
+      "turn": 65,
+      "start": 1770.035,
+      "end": 1800.86,
+      "text": "The habit usually matters more than the stationery, although a folder you like can make it easier to start. Keep the structure simple enough that you can use it on a busy day. You mentioned a walk with your daughter later; hopefully the weather cooperates. If not, perhaps your indoor backup plan can come in handy. Before we say goodbye, is there any general appointment or document-navigation question left on your administrative sheet? You don't need to read any personal or transaction details again.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 84,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0066",
+      "speaker": "spk_1",
+      "turn": 66,
+      "start": 1801.26,
+      "end": 1825.46,
+      "text": "Nothing else on the administrative sheet, thanks. The appointment preference and the portal question were the main ones. I'll leave the rest of the afternoon to the family. My daughter has already sent a message asking whether I'm really free, with a little smiley face, which tells you how often I've said that and then been distracted. Today I can put the notebook away. If the rain comes, we'll probably visit the nearby bookshop instead of walking, so there is still something pleasant to do.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 85,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0067",
+      "speaker": "spk_0",
+      "turn": 67,
+      "start": 1825.86,
+      "end": 1854.148,
+      "text": "That sounds like a good alternative, and you won't have to make the afternoon complicated. Thank you for taking the time today, Mr Tan. For any future telephone appointment, we'll arrange a suitable window rather than assuming the same day always works. You can tell us if your routine changes. I'll let you get back to your afternoon now. Please keep your personal documents somewhere secure when you clear the table, especially with people moving in and out of the room.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 81,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0068",
+      "speaker": "spk_1",
+      "turn": 68,
+      "start": 1854.547,
+      "end": 1880.628,
+      "text": "I will, Rachel. Everything goes back into the study folder, and the keepsakes can wait for another day. Thanks again for the measured pace and for talking through the practical organisation with me. It has been a proper conversation rather than another thing squeezed between meetings. I'll go and join the family now before they decide I've disappeared into paperwork again. Enjoy the rest of your afternoon, and we'll arrange the next telephone slot when there's something administrative to discuss. Goodbye.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 81,
+      "role_source": "caller"
+    }
+  ],
+  "quality_flags": [],
+  "call_intent": {
+    "category": "advisory",
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "segment_id": "seg_0009",
+        "start_char": 0,
+        "end_char": 72,
+        "verified": true
+      }
+    ],
+    "reached": [
+      "advisory"
+    ],
+    "reasoning": "In seg_0009, the advisor explicitly recommends reducing the holding in Pioneer Balanced Opportunities Fund. Since the subsequent order instruction follows this recommendation for the same product, it is covered under advisory."
+  },
+  "checklist": [
+    {
+      "id": "C01",
+      "name": "C01",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should confirm the client's investment objective."
+      ],
+      "question": "The employee should confirm the client's investment objective.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should confirm the client's investment objective.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "C02",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should explain a concrete risk of the recommended product."
+      ],
+      "question": "The employee should explain a concrete risk of the recommended product.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should explain a concrete risk of the recommended product.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "C03",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should verify that the client understands the key risks disclosed for the recommended product."
+      ],
+      "question": "The employee should verify that the client understands the key risks disclosed for the recommended product.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should verify that the client understands the key risks disclosed for the recommended product.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "C04",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should disclose the transaction fee or charge as an amount or rate."
+      ],
+      "question": "The employee should disclose the transaction fee or charge as an amount or rate.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should disclose the transaction fee or charge as an amount or rate.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "C05",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should explain that the client may lose some or all of the invested capital."
+      ],
+      "question": "The employee should explain that the client may lose some or all of the invested capital.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should explain that the client may lose some or all of the invested capital.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "C06",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should confirm the client's willingness to accept investment losses."
+      ],
+      "question": "The employee should confirm the client's willingness to accept investment losses.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should confirm the client's willingness to accept investment losses.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "name": "C07",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should explain the basis for recommending the product to the client."
+      ],
+      "question": "The employee should explain the basis for recommending the product to the client.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should explain the basis for recommending the product to the client.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "C08",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should obtain the client's explicit confirmation of the final transaction instruction."
+      ],
+      "question": "The employee should obtain the client's explicit confirmation of the final transaction instruction.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should obtain the client's explicit confirmation of the final transaction instruction.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "C09",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The call should not contain indications of money laundering or a suspicious source of funds."
+      ],
+      "question": "The call should not contain indications of money laundering or a suspicious source of funds.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The call should not contain indications of money laundering or a suspicious source of funds.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "C10",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The call should not contain a transaction instruction based on material non-public or inside information."
+      ],
+      "question": "The call should not contain a transaction instruction based on material non-public or inside information.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The call should not contain a transaction instruction based on material non-public or inside information.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "C11",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should not encourage the client to overstate their willingness to accept investment losses."
+      ],
+      "question": "The employee should not encourage the client to overstate their willingness to accept investment losses.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should not encourage the client to overstate their willingness to accept investment losses.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "name": "C12",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should not guarantee future returns."
+      ],
+      "question": "The employee should not guarantee future returns.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should not guarantee future returns.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "K01",
+      "name": "K01",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What is the client's NRIC or FIN number?"
+      ],
+      "question": "What is the client's NRIC or FIN number?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What is the client's NRIC or FIN number?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "K02",
+      "name": "K02",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What is the client's date of birth?"
+      ],
+      "question": "What is the client's date of birth?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What is the client's date of birth?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T01",
+      "name": "T01",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What investment product does the client instruct the employee to transact in?"
+      ],
+      "question": "What investment product does the client instruct the employee to transact in?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What investment product does the client instruct the employee to transact in?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "T02",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What is the transaction currency specified in the client's instruction for that transaction?"
+      ],
+      "question": "What is the transaction currency specified in the client's instruction for that transaction?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What is the transaction currency specified in the client's instruction for that transaction?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "T03",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What monetary amount does the client specify for the transaction?"
+      ],
+      "question": "What monetary amount does the client specify for the transaction?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What monetary amount does the client specify for the transaction?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "T04",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What quantity of the investment product does the client specify?"
+      ],
+      "question": "What quantity of the investment product does the client specify?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What quantity of the investment product does the client specify?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "T05",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "Is the client's order to buy or sell the investment product?"
+      ],
+      "question": "Is the client's order to buy or sell the investment product?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "Is the client's order to buy or sell the investment product?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "T06",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What type of order does the client place: market order or limit order?"
+      ],
+      "question": "What type of order does the client place: market order or limit order?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What type of order does the client place: market order or limit order?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item_id": "C01",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 176,
+              "end_char": 314,
+              "verified": true
+            }
+          ],
+          "note": "The advisor explicitly confirmed the client's investment objective to free up funds for household commitments and simplify the remaining portfolio."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 176,
+          "end_char": 314,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a6194974fb63",
+        "8b418e05fc95",
+        "d05ee5e3a7a5"
+      ],
+      "reasoning": "The advisor explicitly stated and confirmed the client's investment objective during the call prior to giving recommendation. The transcript clearly captures this statement in segment 0007.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C02",
+      "status": "FAIL",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "FAIL",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 216,
+              "end_char": 298,
+              "verified": true
+            }
+          ],
+          "note": "Captured no concrete risk explanation for the recommended product, and the advisor incorrectly informed the client that future returns on the retained investment are guaranteed."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0009",
+          "start_char": 216,
+          "end_char": 298,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "bb878e18cc24"
+      ],
+      "reasoning": "The advisor recommended reducing the client's holding in the Pioneer Balanced Opportunities Fund without explaining any concrete risks associated with the product. Additionally, the advisor incorrectly stated that future returns on the retained portion of the fund are guaranteed. [verify: 1 upheld, 0 downgraded]",
+      "verified": true,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The advisor explicitly stated that future returns on a balanced fund holding are guaranteed, which is a potentially misleading or inaccurate product representation.",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 216,
+              "end_char": 298,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C03",
+      "status": "FAIL",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 0.95,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "FAIL",
+          "evidence": [],
+          "note": "Surrounding the advisory recommendation, the employee did not ask any questions or seek verification from the client regarding their understanding of the key risks of the recommended fund."
+        }
+      ],
+      "evidence": [],
+      "rule_refs": [
+        "bb878e18cc24",
+        "c183f4f68b42"
+      ],
+      "reasoning": "The advisor recommended the Pioneer Balanced Opportunities Fund but did not ask any questions or perform any check to verify that the client understood the key risks of the recommended product. Furthermore, the advisor made a misleading statement claiming future returns were guaranteed on the retained portion. [verify: 1 upheld, 0 downgraded]",
+      "verified": true,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The advisor made a potentially misleading statement asserting that future returns on the retained fund holding are guaranteed.",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 216,
+              "end_char": 298,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C04",
+      "status": "FAIL",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "FAIL",
+          "evidence": [],
+          "note": "The advisor did not disclose any transaction fee or charge, whether as a specific amount or rate, prior to or during the confirmation of the sell order."
+        }
+      ],
+      "evidence": [],
+      "rule_refs": [
+        "7e3ca0f1303a",
+        "280a3060f126",
+        "5f94de30f6e9"
+      ],
+      "reasoning": "During the advisory call, the client instructed the advisor to sell 700 units of Pioneer Balanced Opportunities Fund. The advisor processed and confirmed the order without disclosing any transaction fees or charges as an amount or rate. [verify: 1 upheld, 0 downgraded]",
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "item_id": "C05",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 315,
+              "end_char": 398,
+              "verified": true
+            }
+          ],
+          "note": "The advisor clearly explained to the client that they could lose part or all of their invested money."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 315,
+          "end_char": 398,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The advisor explicitly informed the client in segment seg_0007 that they could lose part or even all of the money invested, fulfilling the sub-criterion. A warning is noted for seg_0009 regarding the claim of guaranteed future returns on the retained investment portion.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The advisor claimed that future returns on the retained portion of the Pioneer Balanced Opportunities Fund are guaranteed, which should be reviewed for accuracy and compliance with mis-selling guidelines.",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 216,
+              "end_char": 298,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C06",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 399,
+              "end_char": 500,
+              "verified": true
+            },
+            {
+              "segment_id": "seg_0008",
+              "start_char": 0,
+              "end_char": 38,
+              "verified": true
+            }
+          ],
+          "note": "The advisor asked the client whether he was willing to accept investment losses, and the client explicitly confirmed his willingness."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 399,
+          "end_char": 500,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0008",
+          "start_char": 0,
+          "end_char": 38,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a6194974fb63"
+      ],
+      "reasoning": "The advisor explicitly asked the client if they were willing to accept investment losses when reducing their holding, and the client confirmed their willingness to accept the loss.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C07",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 0,
+              "end_char": 215,
+              "verified": true
+            }
+          ],
+          "note": "The advisor explained that reducing the holding in Pioneer Balanced Opportunities Fund frees up liquidity for household commitments and aligns with the client's wish to simplify finances."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0009",
+          "start_char": 0,
+          "end_char": 215,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "13d8a2dc2fa7",
+        "2c43dcf3eec8",
+        "d05ee5e3a7a5"
+      ],
+      "reasoning": "The advisor explicitly explained the basis for the recommendation, connecting the suggested reduction of the fund holding to the client's objective of freeing up money for household commitments and simplifying financial management.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C08",
+      "status": "CANNOT_DETERMINE",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "CANNOT_DETERMINE",
+          "evidence": [
+            {
+              "segment_id": "seg_0062",
+              "start_char": 0,
+              "end_char": 56,
+              "verified": true
+            }
+          ],
+          "note": "The client explicitly confirmed the final transaction instruction after the advisor restated the order details."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0062",
+          "start_char": 0,
+          "end_char": 56,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The advisor clearly summarized the final transaction instruction and requested confirmation, which the client explicitly provided in seg_0062.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C09",
+      "status": "CANNOT_DETERMINE",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "CANNOT_DETERMINE",
+          "evidence": [],
+          "note": "PASS without evidence"
+        }
+      ],
+      "evidence": [],
+      "rule_refs": [],
+      "reasoning": "The call involves a standard transaction where the client redeems an existing investment holding to fund household commitments and simplify finances. No indications of money laundering or suspicious source of funds are observed throughout the call.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C10",
+      "status": "CANNOT_DETERMINE",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "CANNOT_DETERMINE",
+          "evidence": [],
+          "note": "PASS without evidence"
+        }
+      ],
+      "evidence": [],
+      "rule_refs": [],
+      "reasoning": "The client instructed a transaction to free up funds for household commitments and simplification, with no reference to or indication of material non-public or inside information.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C11",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 399,
+              "end_char": 500,
+              "verified": true
+            }
+          ],
+          "note": "The advisor asked the client whether they were willing to accept an investment loss to meet liquidity needs without inappropriately influencing or pressuring them to adopt a higher risk tolerance."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 399,
+          "end_char": 500,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "febfa41b7e4e"
+      ],
+      "reasoning": "The advisor appropriately confirmed the client's willingness to accept an investment loss without steering or pressuring the client to overstate their risk tolerance. The client confirmed willingness to accept the loss to meet liquidity needs.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C12",
+      "status": "FAIL",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "FAIL",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 268,
+              "end_char": 297,
+              "verified": true
+            }
+          ],
+          "note": "The advisor explicitly stated that future returns are guaranteed for the portion of the investment retained by the client."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0009",
+          "start_char": 268,
+          "end_char": 297,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The advisor explicitly told the client that future returns on the retained portion of the investment are guaranteed, which violates the requirement not to guarantee future returns. [verify: 1 upheld, 0 downgraded]",
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "item_id": "K01",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0004",
+              "start_char": 177,
+              "end_char": 233,
+              "verified": true
+            }
+          ],
+          "note": "The client provided his FIN number during the identification verification at the start of the call."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0004",
+          "start_char": 177,
+          "end_char": 233,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "de8dd324be6e"
+      ],
+      "reasoning": "The client explicitly provided his FIN number during the identification check in segment seg_0004. Sub-criterion 'met' is satisfied.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "low",
+          "message": "The client initially misread his handwriting and stated an incorrect FIN before self-correcting to his actual FIN.",
+          "evidence": [
+            {
+              "segment_id": "seg_0004",
+              "start_char": 95,
+              "end_char": 233,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "K02",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0004",
+              "start_char": 235,
+              "end_char": 302,
+              "verified": true
+            }
+          ],
+          "note": "The client stated his date of birth as 24 April 1981 during the identification step."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0004",
+          "start_char": 235,
+          "end_char": 302,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "de8dd324be6e"
+      ],
+      "reasoning": "The client explicitly provided his date of birth during the identification process in segment seg_0004. This meets the KYC requirement to ascertain the client's age and date of birth.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T01",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0022",
+              "start_char": 128,
+              "end_char": 204,
+              "verified": true
+            }
+          ],
+          "note": "The client explicitly instructed the advisor to transact in the Pioneer Balanced Opportunities Fund."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0022",
+          "start_char": 128,
+          "end_char": 204,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "35721d056b4d",
+        "7cf68877a9b7"
+      ],
+      "reasoning": "The client explicitly specified the investment product to transact in as the Pioneer Balanced Opportunities Fund during the call.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T02",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0024",
+              "start_char": 31,
+              "end_char": 92,
+              "verified": true
+            }
+          ],
+          "note": "The client explicitly specified Japanese yen as the currency for the transaction."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0024",
+          "start_char": 31,
+          "end_char": 92,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The client explicitly specified Japanese yen as the transaction currency for the order in segment 24, which was later re-confirmed in segment 61 and 62.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T03",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0024",
+              "start_char": 93,
+              "end_char": 147,
+              "verified": true
+            }
+          ],
+          "note": "The client specified a monetary amount of 10m (in Japanese yen) for the transaction."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0024",
+          "start_char": 93,
+          "end_char": 147,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a00d0c0a2eef"
+      ],
+      "reasoning": "The client explicitly specifies a transaction amount of 10m (in Japanese yen) during the call. This fulfills the requirement for specifying the monetary amount for the transaction.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T04",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0024",
+              "start_char": 148,
+              "end_char": 193,
+              "verified": true
+            }
+          ],
+          "note": "The client explicitly specified that he wished to transact a quantity of 700 units of the investment product."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0024",
+          "start_char": 148,
+          "end_char": 193,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The client explicitly specified a quantity of 700 units for the transaction during the call.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T05",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0022",
+              "start_char": 206,
+              "end_char": 234,
+              "verified": true
+            }
+          ],
+          "note": "The client clearly specified that the order is to sell the investment product."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0022",
+          "start_char": 206,
+          "end_char": 234,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a00d0c0a2eef"
+      ],
+      "reasoning": "The client explicitly instructed the advisor to sell the holding in Pioneer Balanced Opportunities Fund, which was later re-confirmed before order execution.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T06",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0024",
+              "start_char": 194,
+              "end_char": 230,
+              "verified": true
+            }
+          ],
+          "note": "The client placed a market order to sell 700 units of Pioneer Balanced Opportunities Fund."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0024",
+          "start_char": 194,
+          "end_char": 230,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a00d0c0a2eef",
+        "7cf68877a9b7"
+      ],
+      "reasoning": "The client explicitly instructed the advisor to place a market order for 700 units of Pioneer Balanced Opportunities Fund, which was later re-confirmed during the final order recap.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The advisor stated that future returns on the retained portion of the fund are guaranteed, which appears to be a misleading statement regarding product returns.",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 268,
+              "end_char": 297,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    }
+  ],
+  "red_flags": [],
+  "actions": [
+    {
+      "action_type": "place_order",
+      "description": "Execute the client's market order to sell 700 units of Pioneer Balanced Opportunities Fund with a transaction amount of 10,000,000 JPY.",
+      "owner_role": "Operations",
+      "evidence": [
+        {
+          "segment_id": "seg_0062",
+          "start_char": 0,
+          "end_char": 96,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "action_type": "raise_case",
+      "description": "Raise a compliance case for escalation due to advisor non-compliance, including giving a false guarantee of future returns and omitting required fee and risk disclosures.",
+      "owner_role": "Compliance",
+      "evidence": [
+        {
+          "segment_id": "seg_0009",
+          "start_char": 216,
+          "end_char": 298,
+          "verified": true
+        }
+      ]
+    }
+  ],
+  "escalation": {
+    "required": true,
+    "reasons": [
+      "A checklist item without its own escalation rule failed or partially failed."
+    ],
+    "hold_transaction": false,
+    "source": "rules",
+    "rule_ids": [
+      "other_item_fail"
+    ]
+  },
+  "summary": {
+    "total": 20,
+    "counts": {
+      "PASS": 13,
+      "FAIL": 4,
+      "PARTIAL": 0,
+      "NOT_APPLICABLE": 0,
+      "CANNOT_DETERMINE": 3
+    },
+    "stage_counts": {
+      "1": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "NOT_APPLICABLE": 0,
+        "CANNOT_DETERMINE": 0
+      },
+      "2": {
+        "PASS": 13,
+        "FAIL": 4,
+        "PARTIAL": 0,
+        "NOT_APPLICABLE": 0,
+        "CANNOT_DETERMINE": 3
+      },
+      "3": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "NOT_APPLICABLE": 0,
+        "CANNOT_DETERMINE": 0
+      }
+    },
+    "quality_flags": [],
+    "call_intent": "advisory",
+    "escalation": {
+      "required": true,
+      "hold_transaction": false,
+      "source": "rules",
+      "rule_ids": [
+        "other_item_fail"
+      ],
+      "reasons": [
+        "A checklist item without its own escalation rule failed or partially failed."
+      ]
+    },
+    "actions": 2,
+    "actions_by_owner": {
+      "Operations": 1,
+      "Compliance": 1
+    },
+    "red_flags": 0,
+    "red_flags_by_severity": {},
+    "warnings": 5,
+    "items_with_warnings": [
+      "C02",
+      "C03",
+      "C05",
+      "K01",
+      "T06"
+    ],
+    "verified_items": [
+      "C02",
+      "C03",
+      "C04",
+      "C12"
+    ],
+    "errors": 0,
+    "needs_review": true,
+    "review_reasons": [
+      "Escalation required.",
+      "Stage 2 item(s) not a clean PASS: C02, C03, C04, C08, C09, C10, C12.",
+      "5 reviewer warning(s) attached."
+    ]
+  },
+  "rules": {
+    "a6194974fb63": {
+      "text": "(b) the risk tolerance of the client; \n \n(c) the employment status of the client; \n \n(d) the financial situation of the client, including assets, liabilities, \ncash flow and income; \n \n(e) the source and amount of the client\u2019s regular income; \n \n(f) the financial commitments of the client; \n \n(g) the current investment portfolio of the client, including any life \npolicy; \n \n(h) whether the amount to be invested is a substantial portion of the",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 14
+    },
+    "8b418e05fc95": {
+      "text": "Knowledge Assessment. \n \n23 Where a client, after being informed of the outcome of the Customer \nKnowledge Assessment in accordance with paragraph 22, nevertheless intends \nto proceed to transact in the unlisted Specified Investment Product, the financial \nadviser shall provide advice t o the client, taking into account the client's \ninvestment objectives, financial situation and particular needs, as well as the \noutcome of the Customer Knowledge Assessment.",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 18
+    },
+    "d05ee5e3a7a5": {
+      "text": "Notice on Recommendations On Investment Products 30  \nDocumentation and Record Keeping \n \n35 The financial adviser shall make reasonable efforts to document the basis \nfor the recommendation referred to in paragraph 36(b), and such documentation \nshall include the following: \n \n(a) the client\u2019s statement of his investment objectives, financial situation \nand particular needs; \n \n(b) the financial adviser\u2019s reasonable basis for making the \nrecommendation to the client having regard to the information \nobtained from the client; and \n \n(c) the financial adviser\u2019s assessment of the disadvantages of the \ninvestment product based on circumstances of the client. \n \n36 A financial adviser shall furnish to its client a document containing the \nfollowing when making a recommendation in respect of an investment product to \nthe client: \n(a) a summary of the information gathered by the financial adviser \npursuant to paragraph 11; and \n \n(b) any recommendation made to the client by the financial adviser \nand the basis for the recommendation, \n \nand, where applicable, also furnish to its client a statement that the client does \nnot want to:",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 29
+    },
+    "bb878e18cc24": {
+      "text": "understanding and awareness\nExamples of good practices: \n\u2022 Provide concise disclosure summaries for \ncomplex products in simple language on \nkey product features and risks (e.g. \n\u201cInterest rate is variable. A higher interest \nrate would result in higher loan \nrepayments.\u201d)\nEnsure customers understand \nthe key product features and \nrisks\n5\nProspecting & Advertising Activities Advisory & Sales Process Safeguards for Vulnerable Customers Complaints Handling\nGood practices to support representative-customer engagement \nduring advisory and sales process\nSupervisory Expectations\n\u2022 Outcome Three of the Guidelines on Fair Dealing sets out expectations that FIs should develop a robust training and \ncompetency programme to ensure representatives are equipped with the necessary skills and knowledge to undertake \nproper fact-find and provide advice to customers. \n\u2022 FIs should also ensure that its fact-find form and risk profiling questionnaires adequately capture all relevant information \nabout the customer.",
+      "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+      "page": 4
+    },
+    "c183f4f68b42": {
+      "text": "Notice on Recommendations On Investment Products 40  \n(i) the date on which the policy is issued; \n \n(ii) the date on which the policy takes effect; or \n \n(iii) the date on which the cover commences, \n \nwhichever is the latest; and \n \n(b) in the case of a transaction in an investment product other than a \nlife policy, the date on which the  client\u2019s application for the \ntransaction has been accepted by the product manufacturer.  \n[FAA-N16 (Amendment) 2025] \n \n41S The Call-back mentioned in paragraph 41K(b) must \u2014 \n \n(a) subject to paragraph 41T, be audio recorded2; \n \n(b) include questions that seek to ensure that the client understands \nthe following: \n \n(i) the basis for recommending the investment product; \n  \n(ii) the main features, key risks and limitations of the \nrecommended investment product; \n \n(iii) where the recommended investment product is a life \npolicy, the existence of any free-look period; and \n \n(iv) where the recommended investment product is a unit in \na unit trust (as defined in section 283 of the Securities \nand Futures Act 2001), the existence of any \ncancellation period; \n \n(c) include questions that seek to verify the following:",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 39
+    },
+    "7e3ca0f1303a": {
+      "text": "PRIVATE BANKING SALES AND ADVISORY PRACTICES                                                                                                          FEBRUARY 2020 \n_______________________________________________________________________________________ \nMONETARY AUTHORITY OF SINGAPORE  18 \n5 PRICING CONTROLS AND DISCLOSURES \n \n5.1 PBs should establish requirements for RMs to provide clients with adequate \npricing disclosures 26 as part of their  order taking standards 27. This means  PBs should \ncommunicate to clients, and agree with them,  the fees1 charged to them in a timely and \ntransparent way. Any d eviations from agreed pricing arrangements should be clearly \ndisclosed to clients on a timely basis, with their agreement or \u201cno objection\u201d  properly \ndocumented. PBs should  also implement controls to prevent and detect unauthorised \ndeviations from agreed pricing arrangements.  \n \n5.2 Fee schedules \u2013 All PBs provide clients with standard fee schedules at the time of \naccount opening or prior to the client\u2019s first order taking. The standard fee schedule sets \nout the range of fees a PB would charge for all categories of investment products and",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 19
+    },
+    "280a3060f126": {
+      "text": "(b) Establish comprehensive governance framework s and controls, across the three \nlines of defence, to ensure that pricing arrangements and disclosures to clients are \nhonoured.  \n(c) Communicate and agree with clients, the fees, charges and any other quantifiable \nbenefits in a timely and transparent way. This means that clients understand, in a \nclear and unambiguous manner, how they are charged for their transactions.  \n(d) Implement effective controls to ensure that  fee schedules or bilateral  pricing \narrangements agreed with clients are adhered to. Any deviations from these \npricing arrangements, including updates and revisions, should be disclosed and \nagreed with clients in a timely manner.  \n(e) Disclose and agree with clients how benefits from price improvements arising from \nclient transactions7 should be allocated, and establish controls to adhere to such \narrangements. PBs are not prohibited from retaining benefits from price \n                                                             \n8 Some PBs refer to the business control function or unit as the 1.5 line of defence. This function is separate \nfrom front office, but reports into the Business Head.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 5
+    },
+    "5f94de30f6e9": {
+      "text": "with fee schedules on charges for all categories of investment products and services , \nand informing clients of any revisions on a timely basis.  \n \nBanks disclose  deviations from fee schedules and bilaterally agreed pricing \narrangements to client s on a timely basis, and obtain clients\u2019 agreement or \u201cno \nobjection\u201d to the deviations. \n \nBanks disclose and agree with clients how benefits from price improvements arising \nfrom client transactions are allocated, and establish controls to adhere to such \narrangements. \n \nBanks implement adequate and effective pre-trade controls to prevent, and post-trade \nchecks and surveillance to monitor and detect, unauthorised deviations from fee \nschedules and bilaterally agreed pricing arrangements. \n \nBanks review post -trade amendments to price or spread to verify if these were \nauthorised, justified and accurate.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 23
+    },
+    "13d8a2dc2fa7": {
+      "text": "Notice on Recommendations On Investment Products 29  \n31 A financial adviser shall explain to its client the basis for its \nrecommendation. The basis on which the financial adviser is making the \nrecommendation to the client shall be documented. \n \n32 Where a client does not want: \n \n(a) to provide any information requested by the financial adviser in \naccordance with paragraph 11; or \n \n(b) to accept the recommendation of the financial adviser and chooses to \nproceed with the transaction in another investment product which is \nnot recommended by the financial adviser, \n \nthe financial adviser may proceed with the client's request, but it shall document  \nthe decision of the client and highlight to the client in writing that it is the client\u2019s \nresponsibility to ensure the suitability of the product selected. \n[FAA-N16 (Amendment) 2011] \n[FAA-N16 (Amendment) 2012] \n \n33 Where a client chooses not to receive any recommendation from a \nfinancial adviser, the financial adviser shall ensure that there is proper \ndocumentation to demonstrate that this is so. \n \n34 Where a financial adviser is: \n \n(a) making a recommendation on life policies;",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 28
+    },
+    "2c43dcf3eec8": {
+      "text": "and the basis for the recommendation, \n \nand, where applicable, also furnish to its client a statement that the client does \nnot want to: \n \n(i) provide any information requested by the financial adviser in \naccordance with paragraph 11; \n \n(ii) accept the recommendation of the financial adviser and has \nchosen to proceed with the transaction in another investment \nproduct which is not recommended by the financial adviser; or \n \n(iii) receive any recommendation from the financial adviser, \n \nbefore the client signs on the application form for the purchase of an investment \nproduct or gives his consent to dispose of an investment product. \n[FAA-N16 (Amendment) 2011]",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 29
+    },
+    "febfa41b7e4e": {
+      "text": "questionnaire by inappropriately steering them towards higher risk profiles, so as to allow \nthe sales of riskier products to these clients. Instances were also noted where clients were \ntold by their RMs that the risk profiling exercise was a paper exercise. These observations \nreflect RMs\u2019 lack of risk consciousness and adopting a perfunctory approach towards the \nrisk profiling exercise. MAS expects PBs to inculcate the right mindset and understanding \namongst front office staff with regard to clients\u2019 safeguards and their duty to act in the \ninterest of their clients. PBs should pay  attention to changes in clien ts\u2019 profiles and \nimplement controls to mitigate the risk of clients being unduly influenced to take on \nhigher risk profiles or invest in products beyond their intended risk appetites. Examples of \nsuch controls include regular analyses of migration of clients\u2019 profiles to identify unusual \ntrends and patterns, and perform ance of independent sampling checks (e.g. listening to \nvoice logs) to assess whether RMs inappropriately influenced clients to adopt a higher risk \ntolerance.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 14
+    },
+    "de8dd324be6e": {
+      "text": "Notice on Recommendations On Investment Products 13  \nNotice in relation to the following aspects: \n \n(a) know your client; \n \n(b) needs analysis; and \n \n(c) documentation and record keeping. \n \nKnow Your Client \n \n10A  A financial adviser must, as part of the know your client process, ascertain \nthe following: \n \n(a) whether the client is under 62 years of age; \n \n(b) whether the client is proficient in spoken and written English, or in \nsuch other language in which \u2013  \n \n(i) the sales and advisory process will be carried out; and \n \n(ii) all documents provided to the client in that process will be \nwritten; \n \n(c) whether the client has at least GCE \u2018O\u2019 Level or \u2018N\u2019 Level \ncertifications or equivalent academic qualifications, \n \nand if at least two of the above are answered in the negative, the client must be \ntreated as a selected client for the purpose of this Notice unless paragraph 10B \napplies. \n[FAA-N16 (Amendment) 2025] \n \n10B  A financial adviser may choose not to treat a client mentioned in \nparagraph 10A as a selected client if  the financial adviser has reasons to \nconclude that the client possesses adequate knowledge and experience in any",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 12
+    },
+    "35721d056b4d": {
+      "text": "(a) the purchase of any Specified Investment Product other than in \nconnection with the creation of short positions; or \n(b) the sale of any Specified Investment Product in connection with \nthe creation of short positions, \nand \u201ctransacted\u201d and \u201ctransacts\u201d shall have a corresponding meaning; \n[FAA-N16 (Amendment) 2012] \n  \n\u201ctrusted individual\u201d has the meaning in paragraph 10D of this Notice; \n[FAA-N16 (Amendment) 2025] \n \n\u201cunit\u201d has the same meaning as in section 2(1) of the Securities and Futures \nAct 2001; and \n[FAA-N16 (Amendment) 2025]",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 10
+    },
+    "7cf68877a9b7": {
+      "text": "4.3.1 Transaction-level controls \u2013 Most PBs implement system-enabled pre-trade checks \nto identify mismatches between the product transacted and the client\u2019s risk profile. \nMismatches typically consider a product\u2019s complexity, risk and tenor vis-\u00e0-vis a client\u2019s \ninvestment knowledge , experience and horizon . Some PBs also identify large \ntransactions21, transactions resulting in product concentration in the client\u2019s portfolio 22, \n                                                             \n20 Market orders are clients\u2019 instructions to execute a trade at the prevailing market price. Limit orders are \nclients\u2019 instructions to execute a trade when a specific desired price level is met. If the desired price level is \nnot met, the order will not be executed. A limit order guarantees a price, but does not  guarantee an \nexecution. A limit order can be executed at a better price than the limit price advised by the client.  \n21 The definition of a large transaction could be based on an absolute quantitative threshold (e.g. USD 10 \nmillion) or a certain percentage of a client\u2019s liquid net worth.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 15
+    },
+    "a00d0c0a2eef": {
+      "text": "agent) in which a PB is acting, (iii) any actual/perceived conflicts of interest in dealing with product issues or \naffiliates, (iv) key risks associated with the transaction such as those associated wit h leverage and margin \nfinancing, and (v) termination clauses. \n27  Order taking standards include setting out the mandatory information on the transaction to be \ncommunicated to clients, such as product name and features, currency, price, quantity, and order type (i.e. \nmarket or limit order).",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 19
+    }
+  },
+  "errors": [],
+  "usage": {
+    "gemini-3.6-flash": {
+      "output_tokens": 25553,
+      "input_token_details": {
+        "cache_read": 2822
+      },
+      "total_tokens": 245712,
+      "input_tokens": 220159,
+      "output_token_details": {
+        "reasoning": 21715
+      }
+    }
+  }
+}

@@ -2,21 +2,26 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import type { ReactNode } from "react";
 
-/** Right-side detail sheet for intermediate drill-downs. Open state is owned by the URL. */
-export function Drawer({ open, onClose, title, subtitle, children }: {
+/** Right-side detail sheet for intermediate drill-downs. Open state is owned by the URL.
+    `inspector` makes it a non-modal side panel: no dimming, the page behind stays readable and clickable, and only Escape or the
+    close button closes it. */
+export function Drawer({ open, onClose, title, subtitle, children, inspector = false }: {
   open: boolean;
   onClose: () => void;
   title: ReactNode;
   subtitle?: ReactNode;
   children: ReactNode;
+  inspector?: boolean;
 }) {
   return (
-    <Dialog.Root open={open} onOpenChange={(next) => { if (!next) onClose(); }}>
+    <Dialog.Root open={open} modal={!inspector} onOpenChange={(next) => { if (!next) onClose(); }}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-30 bg-black/20" />
+        {!inspector && <Dialog.Overlay className="fixed inset-0 z-30 bg-black/20" />}
         <Dialog.Content
-          className="fixed inset-y-0 right-0 z-40 flex w-full max-w-[560px] flex-col border-l border-line bg-surface shadow-xl outline-none"
+          className={`fixed right-0 z-40 flex w-full flex-col border-l border-line bg-surface shadow-xl outline-none ${
+            inspector ? "bottom-0 top-[var(--stt-header-h,48px)] max-w-[440px]" : "inset-y-0 max-w-[560px]"}`}
           aria-describedby={undefined}
+          onInteractOutside={inspector ? (event) => event.preventDefault() : undefined}
           // Focus the drawer itself, not its first control: otherwise opening a metric drawer
           // focuses the title's info icon and pops its tooltip open.
           onOpenAutoFocus={(event) => {

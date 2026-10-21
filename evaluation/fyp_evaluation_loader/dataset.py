@@ -58,7 +58,11 @@ def _project_checklist(checklist: Any) -> list[dict[str, str]]:
         if not item["id"] or not item["question"].strip() or item["id"] in seen:
             raise DatasetError(f"checklist[{index}] has an empty or duplicate id/question")
         seen.add(item["id"])
-        projected.append({"id": item["id"], "question": item["question"]})
+        projected.append({
+            "id": item["id"], "question": item["question"],
+            **({"requirement_type": item["requirement_type"]}
+               if item.get("type") == "COMPLIANCE" and "requirement_type" in item else {}),
+        })
     return projected
 
 

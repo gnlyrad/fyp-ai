@@ -1,0 +1,1902 @@
+{
+  "schema_version": "1",
+  "call_id": "CALL_020",
+  "generated_at": "2026-10-18T21:22:53.357547+00:00",
+  "model": {
+    "id": "gemini-3.5-flash",
+    "structured_method": "function_calling",
+    "seed": 42
+  },
+  "transcript": "[seg_0001] Advisor (0.00-5.36): Good morning, private banking, Elaine Goh speaking. How can I help you today?\n[seg_0002] Client (5.75-13.67): Hi Elaine, Marcus Tan here. I've got a short gap before my next meeting, so I thought I'd call you directly rather than send messages back and forth.\n[seg_0003] Advisor (14.07-26.01): Morning, Marcus. Certainly, we can keep this practical. First, may I have your identification details for our verification checks? Please make sure you're somewhere private.\n[seg_0004] Client (26.41-39.95): Yes, I'm in my own office with the door closed. My FIN is G one two four seven one six zero M. My date of birth is 18 July 1954. The holding I want to transact in is Nova Technology Equity Fund.\n[seg_0005] Advisor (40.35-50.73): Thank you. So your aim is to reduce your technology exposure and free up cash for the business. For the transaction currency, we can use Japanese yen.\n[seg_0006] Client (51.12-59.28): By the way, telephone is still the easiest way to reach me. During the day I'm usually between client meetings, and a long email chain tends to get buried.\n[seg_0007] Advisor (59.68-91.16): I'll note your contact preference. Let me cover the relevant points before we move on. Nova Technology Equity Fund is concentrated in technology shares, so its value can fall sharply when sentiment across that sector weakens. Your redemption proceeds can also change before the applicable valuation is determined. You could lose part or even all of the capital you invested in this fund. Do you understand the sector concentration risk and that the redemption proceeds may differ from what you expect?\n[seg_0008] Client (91.56-103.25): Yes, I understand. Weak technology sentiment can hit the fund sharply, and the redemption value isn't settled until the applicable valuation. I've put my mobile on silent for this call, so we shouldn't get interrupted.\n[seg_0009] Advisor (103.65-124.39): The transaction fee for this sale is 0.3%. I recommend reducing your holding in Nova Technology Equity Fund because that cuts your concentrated technology exposure and releases cash for your business needs. Separately, for your account correspondence, are you comfortable continuing to receive it through the secure mailbox?\n[seg_0010] Client (124.79-133.84): Yes, keep the correspondence there. I don't want account papers arriving at the consultancy reception. We have quite a few visitors, and the reception desk gets busy.\n[seg_0011] Advisor (134.24-144.03): All right, I'll note that preference as well. You can check the mailbox when you're back at your desk; there's no need to involve your office staff in collecting correspondence.\n[seg_0012] Client (144.43-155.46): That arrangement suits me. Use the currency you mentioned earlier for this transaction. The amount for this transaction is 7,500,000. The quantity to transact is 1,000 units.\n[seg_0013] Advisor (155.85-167.18): Thank you. I'll keep the account correspondence separate from your general business mail. For telephone contact, would you prefer that I leave only a brief callback message if you're unavailable?\n[seg_0014] Client (167.58-176.72): Yes, just your name and a request to call back, please. No account details in voicemail. I want to sell that holding. Place it as a market order, please.\n[seg_0015] Advisor (177.12-191.76): Please confirm your final instruction: sell 1,000 units of Nova Technology Equity Fund, with a transaction amount of 7,500,000 in Japanese yen, using a market order. Is that your instruction to proceed?\n[seg_0016] Client (192.16-209.50): Yes, I confirm that final instruction. Please proceed with the transaction as you've just stated. There's something else I should mention before we finish. The holding was funded by transfers from unrelated businesses, and I don't know who their beneficial owners are. Route the sale proceeds onward so the original source can't be traced.\n[seg_0017] Advisor (209.91-220.66): I need to refer this to our compliance team before any further action can be taken. They may need to contact you directly. Please keep any relevant records available.\n[seg_0018] Client (221.06-229.16): All right. If someone needs to speak with me, a call is better. I may not answer straight away during a meeting, but I'll return a brief callback message.\n[seg_0019] Advisor (229.56-238.47): Noted. We'll use the contact details already on file and keep any message brief. I'll come back to you when there's an update from the review.\n[seg_0020] Client (238.87-243.06): Okay, Elaine. Thanks for your time. I'll look out for the call.\n[seg_0021] Advisor (243.46-246.07): Thank you, Marcus. Goodbye.",
+  "segments": [
+    {
+      "id": "seg_0001",
+      "speaker": "spk_0",
+      "turn": 1,
+      "start": 0.0,
+      "end": 5.355,
+      "text": "Good morning, private banking, Elaine Goh speaking. How can I help you today?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 13,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0002",
+      "speaker": "spk_1",
+      "turn": 2,
+      "start": 5.755,
+      "end": 13.672,
+      "text": "Hi Elaine, Marcus Tan here. I've got a short gap before my next meeting, so I thought I'd call you directly rather than send messages back and forth.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 28,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0003",
+      "speaker": "spk_0",
+      "turn": 3,
+      "start": 14.072,
+      "end": 26.012,
+      "text": "Morning, Marcus. Certainly, we can keep this practical. First, may I have your identification details for our verification checks? Please make sure you're somewhere private.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 25,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0004",
+      "speaker": "spk_1",
+      "turn": 4,
+      "start": 26.413,
+      "end": 39.953,
+      "text": "Yes, I'm in my own office with the door closed. My FIN is G one two four seven one six zero M. My date of birth is 18 July 1954. The holding I want to transact in is Nova Technology Equity Fund.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 42,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0005",
+      "speaker": "spk_0",
+      "turn": 5,
+      "start": 40.352,
+      "end": 50.725,
+      "text": "Thank you. So your aim is to reduce your technology exposure and free up cash for the business. For the transaction currency, we can use Japanese yen.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 27,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0006",
+      "speaker": "spk_1",
+      "turn": 6,
+      "start": 51.125,
+      "end": 59.28,
+      "text": "By the way, telephone is still the easiest way to reach me. During the day I'm usually between client meetings, and a long email chain tends to get buried.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 29,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0007",
+      "speaker": "spk_0",
+      "turn": 7,
+      "start": 59.68,
+      "end": 91.155,
+      "text": "I'll note your contact preference. Let me cover the relevant points before we move on. Nova Technology Equity Fund is concentrated in technology shares, so its value can fall sharply when sentiment across that sector weakens. Your redemption proceeds can also change before the applicable valuation is determined. You could lose part or even all of the capital you invested in this fund. Do you understand the sector concentration risk and that the redemption proceeds may differ from what you expect?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 81,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0008",
+      "speaker": "spk_1",
+      "turn": 8,
+      "start": 91.555,
+      "end": 103.252,
+      "text": "Yes, I understand. Weak technology sentiment can hit the fund sharply, and the redemption value isn't settled until the applicable valuation. I've put my mobile on silent for this call, so we shouldn't get interrupted.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 35,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0009",
+      "speaker": "spk_0",
+      "turn": 9,
+      "start": 103.653,
+      "end": 124.388,
+      "text": "The transaction fee for this sale is 0.3%. I recommend reducing your holding in Nova Technology Equity Fund because that cuts your concentrated technology exposure and releases cash for your business needs. Separately, for your account correspondence, are you comfortable continuing to receive it through the secure mailbox?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 48,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0010",
+      "speaker": "spk_1",
+      "turn": 10,
+      "start": 124.787,
+      "end": 133.835,
+      "text": "Yes, keep the correspondence there. I don't want account papers arriving at the consultancy reception. We have quite a few visitors, and the reception desk gets busy.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 27,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0011",
+      "speaker": "spk_0",
+      "turn": 11,
+      "start": 134.235,
+      "end": 144.028,
+      "text": "All right, I'll note that preference as well. You can check the mailbox when you're back at your desk; there's no need to involve your office staff in collecting correspondence.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 30,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0012",
+      "speaker": "spk_1",
+      "turn": 12,
+      "start": 144.428,
+      "end": 155.455,
+      "text": "That arrangement suits me. Use the currency you mentioned earlier for this transaction. The amount for this transaction is 7,500,000. The quantity to transact is 1,000 units.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 27,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0013",
+      "speaker": "spk_0",
+      "turn": 13,
+      "start": 155.855,
+      "end": 167.178,
+      "text": "Thank you. I'll keep the account correspondence separate from your general business mail. For telephone contact, would you prefer that I leave only a brief callback message if you're unavailable?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 30,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0014",
+      "speaker": "spk_1",
+      "turn": 14,
+      "start": 167.577,
+      "end": 176.718,
+      "text": "Yes, just your name and a request to call back, please. No account details in voicemail. I want to sell that holding. Place it as a market order, please.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 29,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0015",
+      "speaker": "spk_0",
+      "turn": 15,
+      "start": 177.118,
+      "end": 191.76,
+      "text": "Please confirm your final instruction: sell 1,000 units of Nova Technology Equity Fund, with a transaction amount of 7,500,000 in Japanese yen, using a market order. Is that your instruction to proceed?",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 32,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0016",
+      "speaker": "spk_1",
+      "turn": 16,
+      "start": 192.16,
+      "end": 209.505,
+      "text": "Yes, I confirm that final instruction. Please proceed with the transaction as you've just stated. There's something else I should mention before we finish. The holding was funded by transfers from unrelated businesses, and I don't know who their beneficial owners are. Route the sale proceeds onward so the original source can't be traced.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 54,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0017",
+      "speaker": "spk_0",
+      "turn": 17,
+      "start": 209.905,
+      "end": 220.665,
+      "text": "I need to refer this to our compliance team before any further action can be taken. They may need to contact you directly. Please keep any relevant records available.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 29,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0018",
+      "speaker": "spk_1",
+      "turn": 18,
+      "start": 221.065,
+      "end": 229.162,
+      "text": "All right. If someone needs to speak with me, a call is better. I may not answer straight away during a meeting, but I'll return a brief callback message.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 29,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0019",
+      "speaker": "spk_0",
+      "turn": 19,
+      "start": 229.562,
+      "end": 238.472,
+      "text": "Noted. We'll use the contact details already on file and keep any message brief. I'll come back to you when there's an update from the review.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 26,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0020",
+      "speaker": "spk_1",
+      "turn": 20,
+      "start": 238.873,
+      "end": 243.058,
+      "text": "Okay, Elaine. Thanks for your time. I'll look out for the call.",
+      "role": "Client",
+      "confidence": null,
+      "word_count": 12,
+      "role_source": "caller"
+    },
+    {
+      "id": "seg_0021",
+      "speaker": "spk_0",
+      "turn": 21,
+      "start": 243.458,
+      "end": 246.075,
+      "text": "Thank you, Marcus. Goodbye.",
+      "role": "Advisor",
+      "confidence": null,
+      "word_count": 4,
+      "role_source": "caller"
+    }
+  ],
+  "quality_flags": [],
+  "call_intent": {
+    "category": "advisory",
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "segment_id": "seg_0009",
+        "start_char": 43,
+        "end_char": 107,
+        "verified": true
+      }
+    ],
+    "reached": [
+      "advisory"
+    ],
+    "reasoning": "The call involves a financial transaction and advice. In segment seg_0009, the advisor explicitly recommends reducing the client's holding in Nova Technology Equity Fund to reduce sector concentration risk and release cash, which constitutes an advisory interaction. Although the client subsequently gives instructions to sell, the prompt specifies that an order following an advisor's recommendation counts as advisory rather than execution_only."
+  },
+  "checklist": [
+    {
+      "id": "C01",
+      "name": "C01",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should confirm the client's investment objective."
+      ],
+      "question": "The employee should confirm the client's investment objective.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should confirm the client's investment objective.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "C02",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should explain a concrete risk of the recommended product."
+      ],
+      "question": "The employee should explain a concrete risk of the recommended product.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should explain a concrete risk of the recommended product.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "C03",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should verify that the client understands the key risks disclosed for the recommended product."
+      ],
+      "question": "The employee should verify that the client understands the key risks disclosed for the recommended product.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should verify that the client understands the key risks disclosed for the recommended product.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "C04",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should disclose the transaction fee or charge as an amount or rate."
+      ],
+      "question": "The employee should disclose the transaction fee or charge as an amount or rate.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should disclose the transaction fee or charge as an amount or rate.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "C05",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should explain that the client may lose some or all of the invested capital."
+      ],
+      "question": "The employee should explain that the client may lose some or all of the invested capital.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should explain that the client may lose some or all of the invested capital.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "C06",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should confirm the client's willingness to accept investment losses."
+      ],
+      "question": "The employee should confirm the client's willingness to accept investment losses.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should confirm the client's willingness to accept investment losses.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "name": "C07",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should explain the basis for recommending the product to the client."
+      ],
+      "question": "The employee should explain the basis for recommending the product to the client.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should explain the basis for recommending the product to the client.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "C08",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should obtain the client's explicit confirmation of the final transaction instruction."
+      ],
+      "question": "The employee should obtain the client's explicit confirmation of the final transaction instruction.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should obtain the client's explicit confirmation of the final transaction instruction.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "C09",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The call should not contain indications of money laundering or a suspicious source of funds."
+      ],
+      "question": "The call should not contain indications of money laundering or a suspicious source of funds.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The call should not contain indications of money laundering or a suspicious source of funds.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "C10",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The call should not contain a transaction instruction based on material non-public or inside information."
+      ],
+      "question": "The call should not contain a transaction instruction based on material non-public or inside information.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The call should not contain a transaction instruction based on material non-public or inside information.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "name": "C11",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should not encourage the client to overstate their willingness to accept investment losses."
+      ],
+      "question": "The employee should not encourage the client to overstate their willingness to accept investment losses.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should not encourage the client to overstate their willingness to accept investment losses.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "name": "C12",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "The employee should not guarantee future returns."
+      ],
+      "question": "The employee should not guarantee future returns.",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "The employee should not guarantee future returns.",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "K01",
+      "name": "K01",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What is the client's NRIC or FIN number?"
+      ],
+      "question": "What is the client's NRIC or FIN number?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What is the client's NRIC or FIN number?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "K02",
+      "name": "K02",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What is the client's date of birth?"
+      ],
+      "question": "What is the client's date of birth?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What is the client's date of birth?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T01",
+      "name": "T01",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What investment product does the client instruct the employee to transact in?"
+      ],
+      "question": "What investment product does the client instruct the employee to transact in?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What investment product does the client instruct the employee to transact in?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "name": "T02",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What is the transaction currency specified in the client's instruction for that transaction?"
+      ],
+      "question": "What is the transaction currency specified in the client's instruction for that transaction?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What is the transaction currency specified in the client's instruction for that transaction?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "name": "T03",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What monetary amount does the client specify for the transaction?"
+      ],
+      "question": "What monetary amount does the client specify for the transaction?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What monetary amount does the client specify for the transaction?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T04",
+      "name": "T04",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What quantity of the investment product does the client specify?"
+      ],
+      "question": "What quantity of the investment product does the client specify?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What quantity of the investment product does the client specify?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T05",
+      "name": "T05",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "Is the client's order to buy or sell the investment product?"
+      ],
+      "question": "Is the client's order to buy or sell the investment product?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "Is the client's order to buy or sell the investment product?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    },
+    {
+      "id": "T06",
+      "name": "T06",
+      "stage": 2,
+      "answer_type": "criteria",
+      "applies_when": {
+        "always": true
+      },
+      "depends_on": [],
+      "rule_queries": [
+        "What type of order does the client place: market order or limit order?"
+      ],
+      "question": "What type of order does the client place: market order or limit order?",
+      "sub_criteria": [
+        {
+          "id": "met",
+          "text": "What type of order does the client place: market order or limit order?",
+          "absence": false,
+          "warn_if_unconfirmed": false
+        }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item_id": "C01",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0005",
+              "start_char": 11,
+              "end_char": 95,
+              "verified": true
+            }
+          ],
+          "note": "The advisor confirmed the client's investment objective of reducing technology concentration and freeing up cash for business needs."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0005",
+          "start_char": 11,
+          "end_char": 95,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a6194974fb63",
+        "8b418e05fc95",
+        "d05ee5e3a7a5"
+      ],
+      "reasoning": "The advisor explicitly confirmed the client's investment objective to reduce technology exposure and free up cash for business needs during the call.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C02",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 87,
+              "end_char": 225,
+              "verified": true
+            }
+          ],
+          "note": "The advisor clearly explained the concrete sector concentration risk and redemption value risks associated with the product."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 87,
+          "end_char": 225,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "bb878e18cc24"
+      ],
+      "reasoning": "The advisor explicitly explained concrete risks of the Nova Technology Equity Fund, including sector concentration risk and valuation fluctuation risks upon redemption. The client confirmed understanding of these risks.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": null,
+          "severity": "medium",
+          "message": "The client made an explicit request to mask the source of funds and route proceeds to prevent tracing, indicating high AML risk. The advisor correctly paused and referred the matter to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C03",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 388,
+              "end_char": 501,
+              "verified": true
+            },
+            {
+              "segment_id": "seg_0008",
+              "start_char": 0,
+              "end_char": 18,
+              "verified": true
+            }
+          ],
+          "note": "The advisor explicitly asked the client to confirm his understanding of the disclosed product risks, and the client confirmed and articulated his understanding."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 388,
+          "end_char": 501,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0008",
+          "start_char": 0,
+          "end_char": 18,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "bb878e18cc24",
+        "c183f4f68b42"
+      ],
+      "reasoning": "The advisor explicitly asked the client if he understood the disclosed sector concentration and valuation risks, and the client confirmed his understanding in detail.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C04",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 0,
+              "end_char": 42,
+              "verified": true
+            }
+          ],
+          "note": "The advisor disclosed the transaction fee as a rate of 0.3% during the call."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0009",
+          "start_char": 0,
+          "end_char": 42,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "7e3ca0f1303a",
+        "280a3060f126"
+      ],
+      "reasoning": "The advisor explicitly disclosed the transaction fee for the sale as a rate of 0.3% in segment 0009 before proceeding with the transaction instruction.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C05",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 314,
+              "end_char": 387,
+              "verified": true
+            }
+          ],
+          "note": "The advisor explicitly warned the client that they could lose part or even all of the capital invested in the fund."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 314,
+          "end_char": 387,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The advisor explicitly informed the client that they could lose part or all of their invested capital in the fund during the call.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client made a highly suspicious statement regarding source of funds and untraceable routing, which the advisor correctly escalated to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 156,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C06",
+      "status": "FAIL",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 0.95,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "FAIL",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 314,
+              "end_char": 501,
+              "verified": true
+            }
+          ],
+          "note": "The advisor warned of potential capital loss but did not ask or confirm whether the client was willing to accept investment losses or check if it aligned with their risk profile."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 314,
+          "end_char": 501,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a6194974fb63",
+        "19d49fb74c3b"
+      ],
+      "reasoning": "The advisor stated that the client could lose part or all of their capital, but only asked if the client understood the sector concentration risk and valuation timing. The advisor did not ask for or confirm the client's willingness to accept investment losses or verify their risk tolerance during the call. [verify: 1 upheld, 0 downgraded]",
+      "verified": true,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client made an explicit request to route proceeds to hide the source of funds, indicating potential money laundering / suspicious instruction concerns that require compliance review.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 156,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C07",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0009",
+              "start_char": 43,
+              "end_char": 206,
+              "verified": true
+            }
+          ],
+          "note": "The advisor clearly explained the basis for the recommendation, connecting the product reduction to the client's stated goals of reducing sector exposure and freeing up cash."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0009",
+          "start_char": 43,
+          "end_char": 206,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "13d8a2dc2fa7",
+        "d05ee5e3a7a5"
+      ],
+      "reasoning": "The advisor explicitly explained the basis for recommending the transaction, linking it to reducing concentrated technology exposure and releasing cash for business needs. This fulfills the regulatory requirement to state the recommendation rationale to the client.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client requested suspicious onward routing of proceeds from third-party sources; the advisor correctly paused the transaction and referred the matter to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 156,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C08",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0015",
+              "start_char": 0,
+              "end_char": 165,
+              "verified": true
+            },
+            {
+              "segment_id": "seg_0016",
+              "start_char": 0,
+              "end_char": 38,
+              "verified": true
+            }
+          ],
+          "note": "The advisor recited the complete order details and asked for explicit confirmation, which the client directly confirmed."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0015",
+          "start_char": 0,
+          "end_char": 165,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0016",
+          "start_char": 0,
+          "end_char": 38,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The advisor summarized the full order details and requested explicit confirmation, which the client clearly provided. Although the client subsequently made suspicious statements regarding proceeds routing, the explicit confirmation of the instruction itself was successfully obtained.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "Immediately following the confirmation, the client requested to route sale proceeds to hide the source of funds, leading the advisor to pause the transaction and refer the call to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C09",
+      "status": "FAIL",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "FAIL",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 156,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "note": "The client indicated that the holding was funded by transfers from unrelated businesses with unknown beneficial owners and explicitly requested routing sale proceeds onward to conceal the origin of the funds."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0016",
+          "start_char": 156,
+          "end_char": 339,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The client explicitly stated that the holding was funded by unrelated businesses with unknown beneficial owners and asked to route proceeds so the original source cannot be traced. This constitutes a clear indication of potential money laundering and suspicious source of funds. Consequently, the sub-criterion fails. [verify: 1 upheld, 0 downgraded]",
+      "verified": true,
+      "warnings": []
+    },
+    {
+      "item_id": "C10",
+      "status": "CANNOT_DETERMINE",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "CANNOT_DETERMINE",
+          "evidence": [],
+          "note": "PASS without evidence"
+        }
+      ],
+      "evidence": [],
+      "rule_refs": [],
+      "reasoning": "There is no indication in the transcript that the transaction instruction was based on material non-public or inside information. The client stated the motivation was to reduce technology exposure and free up cash for business needs.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client requested to route sale proceeds to hide the source of funds from unrelated businesses with unknown beneficial owners. Although not related to inside information, compliance was notified.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 156,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "C11",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 314,
+              "end_char": 387,
+              "verified": true
+            }
+          ],
+          "note": "The advisor did not encourage or steer the client to overstate their willingness to accept losses, neutrally explaining potential capital loss instead."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 314,
+          "end_char": 387,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "febfa41b7e4e",
+        "a6194974fb63"
+      ],
+      "reasoning": "The advisor did not attempt to influence or encourage the client to overstate their risk tolerance or willingness to accept losses. Throughout the call, the advisor presented risks neutrally and recommended reducing concentrated technology exposure.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "C12",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0007",
+              "start_char": 314,
+              "end_char": 387,
+              "verified": true
+            }
+          ],
+          "note": "The advisor did not guarantee any future returns and explicitly cautioned the client about potential capital losses."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0007",
+          "start_char": 314,
+          "end_char": 387,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The advisor did not make any guarantees regarding future returns, and instead explicitly warned the client about potential capital losses.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "K01",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0004",
+              "start_char": 48,
+              "end_char": 93,
+              "verified": true
+            }
+          ],
+          "note": "The client provided his FIN number during the identity verification check."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0004",
+          "start_char": 48,
+          "end_char": 93,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The client stated his FIN during the identity verification step at the beginning of the call.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client requested routing sale proceeds onward to conceal the source of funds, which was escalated to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "K02",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0004",
+              "start_char": 95,
+              "end_char": 128,
+              "verified": true
+            }
+          ],
+          "note": "The client stated his date of birth as 18 July 1954 during the identity verification check."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0004",
+          "start_char": 95,
+          "end_char": 128,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "de8dd324be6e"
+      ],
+      "reasoning": "The client explicitly stated his date of birth as 18 July 1954 during identity verification in segment 4, fulfilling the KYC requirement to ascertain the client's age/DOB.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T01",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0004",
+              "start_char": 166,
+              "end_char": 193,
+              "verified": true
+            }
+          ],
+          "note": "The client instructed the advisor to transact in Nova Technology Equity Fund."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0004",
+          "start_char": 166,
+          "end_char": 193,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "35721d056b4d",
+        "7cf68877a9b7"
+      ],
+      "reasoning": "The client explicitly identified and instructed a sell transaction in Nova Technology Equity Fund during the call.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client requested routing of sale proceeds to obfuscate the original source of funds, raising significant AML concerns.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "T02",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0005",
+              "start_char": 96,
+              "end_char": 150,
+              "verified": true
+            },
+            {
+              "segment_id": "seg_0012",
+              "start_char": 27,
+              "end_char": 87,
+              "verified": true
+            },
+            {
+              "segment_id": "seg_0015",
+              "start_char": 39,
+              "end_char": 142,
+              "verified": true
+            }
+          ],
+          "note": "The transaction currency specified and confirmed in the client's instruction is Japanese yen."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0005",
+          "start_char": 96,
+          "end_char": 150,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0012",
+          "start_char": 27,
+          "end_char": 87,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0015",
+          "start_char": 39,
+          "end_char": 142,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The client confirmed Japanese yen as the transaction currency for the sale instruction. An AML red flag was also observed when the client requested routing proceeds to hide the source of funds.",
+      "verified": false,
+      "warnings": []
+    },
+    {
+      "item_id": "T03",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0012",
+              "start_char": 88,
+              "end_char": 133,
+              "verified": true
+            }
+          ],
+          "note": "The client explicitly stated that the monetary amount for the transaction is 7,500,000 (Japanese yen)."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0012",
+          "start_char": 88,
+          "end_char": 133,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a00d0c0a2eef"
+      ],
+      "reasoning": "The client explicitly specified the monetary amount for the transaction as 7,500,000 in segment 12.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client made statements indicating potential money laundering / suspicious instructions at the end of the call, which the advisor correctly escalated to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "T04",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0012",
+              "start_char": 134,
+              "end_char": 174,
+              "verified": true
+            }
+          ],
+          "note": "The client clearly specified that the quantity to transact is 1,000 units."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0012",
+          "start_char": 134,
+          "end_char": 174,
+          "verified": true
+        }
+      ],
+      "rule_refs": [],
+      "reasoning": "The client explicitly specified the transaction quantity as 1,000 units during the call.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client stated suspicious funding sources and requested routing proceeds so the original source cannot be traced, which was referred to compliance by the advisor.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "T05",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0014",
+              "start_char": 89,
+              "end_char": 117,
+              "verified": true
+            },
+            {
+              "segment_id": "seg_0015",
+              "start_char": 39,
+              "end_char": 86,
+              "verified": true
+            }
+          ],
+          "note": "The order direction was clearly specified as a sell order for 1,000 units of Nova Technology Equity Fund."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0014",
+          "start_char": 89,
+          "end_char": 117,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0015",
+          "start_char": 39,
+          "end_char": 86,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "a00d0c0a2eef"
+      ],
+      "reasoning": "The client explicitly instructed to sell 1,000 units of the Nova Technology Equity Fund, which was confirmed by the advisor and accepted by the client.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "Client made explicit AML-related statements regarding obscure source of funds and requested onward routing; advisor properly paused transaction and referred to compliance.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 156,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    },
+    {
+      "item_id": "T06",
+      "status": "PASS",
+      "execution_status": "success",
+      "failure_category": null,
+      "failure_stage": null,
+      "confidence": 1.0,
+      "sub_criteria": [
+        {
+          "id": "met",
+          "status": "PASS",
+          "evidence": [
+            {
+              "segment_id": "seg_0014",
+              "start_char": 118,
+              "end_char": 153,
+              "verified": true
+            }
+          ],
+          "note": "The client explicitly requested the order to be placed as a market order, which was confirmed during the order confirmation."
+        }
+      ],
+      "evidence": [
+        {
+          "segment_id": "seg_0014",
+          "start_char": 118,
+          "end_char": 153,
+          "verified": true
+        }
+      ],
+      "rule_refs": [
+        "7cf68877a9b7",
+        "a00d0c0a2eef"
+      ],
+      "reasoning": "The client explicitly requested to place a market order for selling 1,000 units of the fund, which was confirmed by the advisor. This satisfies the requirement to specify whether the order is a market or limit order.",
+      "verified": false,
+      "warnings": [
+        {
+          "sub_criterion_id": "met",
+          "severity": "medium",
+          "message": "The client requested to route sale proceeds to obscure the source of funds; while the advisor appropriately escalated this to compliance, reviewers should note the suspicious instruction.",
+          "evidence": [
+            {
+              "segment_id": "seg_0016",
+              "start_char": 269,
+              "end_char": 339,
+              "verified": true
+            }
+          ],
+          "source": "llm"
+        }
+      ]
+    }
+  ],
+  "red_flags": [],
+  "actions": [
+    {
+      "action_type": "place_order",
+      "description": "Place a market sell order for 1,000 units of Nova Technology Equity Fund with a transaction amount of 7,500,000 Japanese yen as explicitly confirmed by the client.",
+      "owner_role": "Operations",
+      "evidence": [
+        {
+          "segment_id": "seg_0015",
+          "start_char": 39,
+          "end_char": 165,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0016",
+          "start_char": 0,
+          "end_char": 97,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "action_type": "raise_case",
+      "description": "Raise a compliance case regarding potential anti-money laundering concerns, as the client indicated the holding was funded by transfers from unrelated businesses with unknown beneficial owners and requested routing proceeds to conceal the source of funds.",
+      "owner_role": "Compliance",
+      "evidence": [
+        {
+          "segment_id": "seg_0016",
+          "start_char": 156,
+          "end_char": 339,
+          "verified": true
+        },
+        {
+          "segment_id": "seg_0017",
+          "start_char": 0,
+          "end_char": 83,
+          "verified": true
+        }
+      ]
+    }
+  ],
+  "escalation": {
+    "required": true,
+    "reasons": [
+      "A checklist item without its own escalation rule failed or partially failed."
+    ],
+    "hold_transaction": false,
+    "source": "rules",
+    "rule_ids": [
+      "other_item_fail"
+    ]
+  },
+  "summary": {
+    "total": 20,
+    "counts": {
+      "PASS": 17,
+      "FAIL": 2,
+      "PARTIAL": 0,
+      "NOT_APPLICABLE": 0,
+      "CANNOT_DETERMINE": 1
+    },
+    "stage_counts": {
+      "1": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "NOT_APPLICABLE": 0,
+        "CANNOT_DETERMINE": 0
+      },
+      "2": {
+        "PASS": 17,
+        "FAIL": 2,
+        "PARTIAL": 0,
+        "NOT_APPLICABLE": 0,
+        "CANNOT_DETERMINE": 1
+      },
+      "3": {
+        "PASS": 0,
+        "FAIL": 0,
+        "PARTIAL": 0,
+        "NOT_APPLICABLE": 0,
+        "CANNOT_DETERMINE": 0
+      }
+    },
+    "quality_flags": [],
+    "call_intent": "advisory",
+    "escalation": {
+      "required": true,
+      "hold_transaction": false,
+      "source": "rules",
+      "rule_ids": [
+        "other_item_fail"
+      ],
+      "reasons": [
+        "A checklist item without its own escalation rule failed or partially failed."
+      ]
+    },
+    "actions": 2,
+    "actions_by_owner": {
+      "Operations": 1,
+      "Compliance": 1
+    },
+    "red_flags": 0,
+    "red_flags_by_severity": {},
+    "warnings": 12,
+    "items_with_warnings": [
+      "C02",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C10",
+      "K01",
+      "T01",
+      "T03",
+      "T04",
+      "T05",
+      "T06"
+    ],
+    "verified_items": [
+      "C06",
+      "C09"
+    ],
+    "errors": 0,
+    "needs_review": true,
+    "review_reasons": [
+      "Escalation required.",
+      "Stage 2 item(s) not a clean PASS: C06, C09, C10.",
+      "12 reviewer warning(s) attached."
+    ]
+  },
+  "rules": {
+    "a6194974fb63": {
+      "text": "(b) the risk tolerance of the client; \n \n(c) the employment status of the client; \n \n(d) the financial situation of the client, including assets, liabilities, \ncash flow and income; \n \n(e) the source and amount of the client\u2019s regular income; \n \n(f) the financial commitments of the client; \n \n(g) the current investment portfolio of the client, including any life \npolicy; \n \n(h) whether the amount to be invested is a substantial portion of the",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 14
+    },
+    "8b418e05fc95": {
+      "text": "Knowledge Assessment. \n \n23 Where a client, after being informed of the outcome of the Customer \nKnowledge Assessment in accordance with paragraph 22, nevertheless intends \nto proceed to transact in the unlisted Specified Investment Product, the financial \nadviser shall provide advice t o the client, taking into account the client's \ninvestment objectives, financial situation and particular needs, as well as the \noutcome of the Customer Knowledge Assessment.",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 18
+    },
+    "d05ee5e3a7a5": {
+      "text": "Notice on Recommendations On Investment Products 30  \nDocumentation and Record Keeping \n \n35 The financial adviser shall make reasonable efforts to document the basis \nfor the recommendation referred to in paragraph 36(b), and such documentation \nshall include the following: \n \n(a) the client\u2019s statement of his investment objectives, financial situation \nand particular needs; \n \n(b) the financial adviser\u2019s reasonable basis for making the \nrecommendation to the client having regard to the information \nobtained from the client; and \n \n(c) the financial adviser\u2019s assessment of the disadvantages of the \ninvestment product based on circumstances of the client. \n \n36 A financial adviser shall furnish to its client a document containing the \nfollowing when making a recommendation in respect of an investment product to \nthe client: \n(a) a summary of the information gathered by the financial adviser \npursuant to paragraph 11; and \n \n(b) any recommendation made to the client by the financial adviser \nand the basis for the recommendation, \n \nand, where applicable, also furnish to its client a statement that the client does \nnot want to:",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 29
+    },
+    "bb878e18cc24": {
+      "text": "understanding and awareness\nExamples of good practices: \n\u2022 Provide concise disclosure summaries for \ncomplex products in simple language on \nkey product features and risks (e.g. \n\u201cInterest rate is variable. A higher interest \nrate would result in higher loan \nrepayments.\u201d)\nEnsure customers understand \nthe key product features and \nrisks\n5\nProspecting & Advertising Activities Advisory & Sales Process Safeguards for Vulnerable Customers Complaints Handling\nGood practices to support representative-customer engagement \nduring advisory and sales process\nSupervisory Expectations\n\u2022 Outcome Three of the Guidelines on Fair Dealing sets out expectations that FIs should develop a robust training and \ncompetency programme to ensure representatives are equipped with the necessary skills and knowledge to undertake \nproper fact-find and provide advice to customers. \n\u2022 FIs should also ensure that its fact-find form and risk profiling questionnaires adequately capture all relevant information \nabout the customer.",
+      "source": "Information Paper on Good Practices of Market Conduct Controls in the Financial Advisory Industry.pdf",
+      "page": 4
+    },
+    "c183f4f68b42": {
+      "text": "Notice on Recommendations On Investment Products 40  \n(i) the date on which the policy is issued; \n \n(ii) the date on which the policy takes effect; or \n \n(iii) the date on which the cover commences, \n \nwhichever is the latest; and \n \n(b) in the case of a transaction in an investment product other than a \nlife policy, the date on which the  client\u2019s application for the \ntransaction has been accepted by the product manufacturer.  \n[FAA-N16 (Amendment) 2025] \n \n41S The Call-back mentioned in paragraph 41K(b) must \u2014 \n \n(a) subject to paragraph 41T, be audio recorded2; \n \n(b) include questions that seek to ensure that the client understands \nthe following: \n \n(i) the basis for recommending the investment product; \n  \n(ii) the main features, key risks and limitations of the \nrecommended investment product; \n \n(iii) where the recommended investment product is a life \npolicy, the existence of any free-look period; and \n \n(iv) where the recommended investment product is a unit in \na unit trust (as defined in section 283 of the Securities \nand Futures Act 2001), the existence of any \ncancellation period; \n \n(c) include questions that seek to verify the following:",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 39
+    },
+    "7e3ca0f1303a": {
+      "text": "PRIVATE BANKING SALES AND ADVISORY PRACTICES                                                                                                          FEBRUARY 2020 \n_______________________________________________________________________________________ \nMONETARY AUTHORITY OF SINGAPORE  18 \n5 PRICING CONTROLS AND DISCLOSURES \n \n5.1 PBs should establish requirements for RMs to provide clients with adequate \npricing disclosures 26 as part of their  order taking standards 27. This means  PBs should \ncommunicate to clients, and agree with them,  the fees1 charged to them in a timely and \ntransparent way. Any d eviations from agreed pricing arrangements should be clearly \ndisclosed to clients on a timely basis, with their agreement or \u201cno objection\u201d  properly \ndocumented. PBs should  also implement controls to prevent and detect unauthorised \ndeviations from agreed pricing arrangements.  \n \n5.2 Fee schedules \u2013 All PBs provide clients with standard fee schedules at the time of \naccount opening or prior to the client\u2019s first order taking. The standard fee schedule sets \nout the range of fees a PB would charge for all categories of investment products and",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 19
+    },
+    "280a3060f126": {
+      "text": "(b) Establish comprehensive governance framework s and controls, across the three \nlines of defence, to ensure that pricing arrangements and disclosures to clients are \nhonoured.  \n(c) Communicate and agree with clients, the fees, charges and any other quantifiable \nbenefits in a timely and transparent way. This means that clients understand, in a \nclear and unambiguous manner, how they are charged for their transactions.  \n(d) Implement effective controls to ensure that  fee schedules or bilateral  pricing \narrangements agreed with clients are adhered to. Any deviations from these \npricing arrangements, including updates and revisions, should be disclosed and \nagreed with clients in a timely manner.  \n(e) Disclose and agree with clients how benefits from price improvements arising from \nclient transactions7 should be allocated, and establish controls to adhere to such \narrangements. PBs are not prohibited from retaining benefits from price \n                                                             \n8 Some PBs refer to the business control function or unit as the 1.5 line of defence. This function is separate \nfrom front office, but reports into the Business Head.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 5
+    },
+    "19d49fb74c3b": {
+      "text": "questionnaire and the finalised risk profile . This  is done at o n-boarding and whenever \nthere are updates to the clients\u2019 circumstances. A few PBs also have the good practice of \nrequiring clients to acknowledge their assigned risk profiles before commencement of \norder taking. \n \n4.2.2 Updates to clients\u2019 risk profiles \u2013 PBs usually require clients\u2019 profiles to be updated \nat least biennially, and whenever there are changes to the clients\u2019 circumstances. Where \nPBs are unable to update a client\u2019s risk profile  on time , some PBs have established \nsafeguards to mitigate the risks of recommending unsuitable products to clients  in the \ninterim. These interim safeguards include re-classifying the client to a more conservative \nrisk profile, hence limiting the sales of high -risk products to the client,  or permitting the \n                                                             \n16 The client risk rating is an indication of how conservative or aggressive a client is in terms of investing.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 13
+    },
+    "13d8a2dc2fa7": {
+      "text": "Notice on Recommendations On Investment Products 29  \n31 A financial adviser shall explain to its client the basis for its \nrecommendation. The basis on which the financial adviser is making the \nrecommendation to the client shall be documented. \n \n32 Where a client does not want: \n \n(a) to provide any information requested by the financial adviser in \naccordance with paragraph 11; or \n \n(b) to accept the recommendation of the financial adviser and chooses to \nproceed with the transaction in another investment product which is \nnot recommended by the financial adviser, \n \nthe financial adviser may proceed with the client's request, but it shall document  \nthe decision of the client and highlight to the client in writing that it is the client\u2019s \nresponsibility to ensure the suitability of the product selected. \n[FAA-N16 (Amendment) 2011] \n[FAA-N16 (Amendment) 2012] \n \n33 Where a client chooses not to receive any recommendation from a \nfinancial adviser, the financial adviser shall ensure that there is proper \ndocumentation to demonstrate that this is so. \n \n34 Where a financial adviser is: \n \n(a) making a recommendation on life policies;",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 28
+    },
+    "febfa41b7e4e": {
+      "text": "questionnaire by inappropriately steering them towards higher risk profiles, so as to allow \nthe sales of riskier products to these clients. Instances were also noted where clients were \ntold by their RMs that the risk profiling exercise was a paper exercise. These observations \nreflect RMs\u2019 lack of risk consciousness and adopting a perfunctory approach towards the \nrisk profiling exercise. MAS expects PBs to inculcate the right mindset and understanding \namongst front office staff with regard to clients\u2019 safeguards and their duty to act in the \ninterest of their clients. PBs should pay  attention to changes in clien ts\u2019 profiles and \nimplement controls to mitigate the risk of clients being unduly influenced to take on \nhigher risk profiles or invest in products beyond their intended risk appetites. Examples of \nsuch controls include regular analyses of migration of clients\u2019 profiles to identify unusual \ntrends and patterns, and perform ance of independent sampling checks (e.g. listening to \nvoice logs) to assess whether RMs inappropriately influenced clients to adopt a higher risk \ntolerance.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 14
+    },
+    "de8dd324be6e": {
+      "text": "Notice on Recommendations On Investment Products 13  \nNotice in relation to the following aspects: \n \n(a) know your client; \n \n(b) needs analysis; and \n \n(c) documentation and record keeping. \n \nKnow Your Client \n \n10A  A financial adviser must, as part of the know your client process, ascertain \nthe following: \n \n(a) whether the client is under 62 years of age; \n \n(b) whether the client is proficient in spoken and written English, or in \nsuch other language in which \u2013  \n \n(i) the sales and advisory process will be carried out; and \n \n(ii) all documents provided to the client in that process will be \nwritten; \n \n(c) whether the client has at least GCE \u2018O\u2019 Level or \u2018N\u2019 Level \ncertifications or equivalent academic qualifications, \n \nand if at least two of the above are answered in the negative, the client must be \ntreated as a selected client for the purpose of this Notice unless paragraph 10B \napplies. \n[FAA-N16 (Amendment) 2025] \n \n10B  A financial adviser may choose not to treat a client mentioned in \nparagraph 10A as a selected client if  the financial adviser has reasons to \nconclude that the client possesses adequate knowledge and experience in any",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 12
+    },
+    "35721d056b4d": {
+      "text": "(a) the purchase of any Specified Investment Product other than in \nconnection with the creation of short positions; or \n(b) the sale of any Specified Investment Product in connection with \nthe creation of short positions, \nand \u201ctransacted\u201d and \u201ctransacts\u201d shall have a corresponding meaning; \n[FAA-N16 (Amendment) 2012] \n  \n\u201ctrusted individual\u201d has the meaning in paragraph 10D of this Notice; \n[FAA-N16 (Amendment) 2025] \n \n\u201cunit\u201d has the same meaning as in section 2(1) of the Securities and Futures \nAct 2001; and \n[FAA-N16 (Amendment) 2025]",
+      "source": "Notice on Recommendations on Investment Products.pdf",
+      "page": 10
+    },
+    "7cf68877a9b7": {
+      "text": "4.3.1 Transaction-level controls \u2013 Most PBs implement system-enabled pre-trade checks \nto identify mismatches between the product transacted and the client\u2019s risk profile. \nMismatches typically consider a product\u2019s complexity, risk and tenor vis-\u00e0-vis a client\u2019s \ninvestment knowledge , experience and horizon . Some PBs also identify large \ntransactions21, transactions resulting in product concentration in the client\u2019s portfolio 22, \n                                                             \n20 Market orders are clients\u2019 instructions to execute a trade at the prevailing market price. Limit orders are \nclients\u2019 instructions to execute a trade when a specific desired price level is met. If the desired price level is \nnot met, the order will not be executed. A limit order guarantees a price, but does not  guarantee an \nexecution. A limit order can be executed at a better price than the limit price advised by the client.  \n21 The definition of a large transaction could be based on an absolute quantitative threshold (e.g. USD 10 \nmillion) or a certain percentage of a client\u2019s liquid net worth.",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 15
+    },
+    "a00d0c0a2eef": {
+      "text": "agent) in which a PB is acting, (iii) any actual/perceived conflicts of interest in dealing with product issues or \naffiliates, (iv) key risks associated with the transaction such as those associated wit h leverage and margin \nfinancing, and (v) termination clauses. \n27  Order taking standards include setting out the mandatory information on the transaction to be \ncommunicated to clients, such as product name and features, currency, price, quantity, and order type (i.e. \nmarket or limit order).",
+      "source": "Private Banking Sales and Advisory Practices.pdf",
+      "page": 19
+    }
+  },
+  "errors": [],
+  "usage": {
+    "gemini-3.6-flash": {
+      "output_tokens": 30141,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "total_tokens": 105188,
+      "input_tokens": 75047,
+      "output_token_details": {
+        "reasoning": 24609
+      }
+    }
+  }
+}

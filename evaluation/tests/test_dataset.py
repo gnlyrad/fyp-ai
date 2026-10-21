@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from fyp_evaluation_loader import DatasetError, graph_input_for_call, load_dataset
+from fyp_evaluation_engine.current_pipeline import prepare_input
 
 
 DATASET = ROOT / "datasets" / "pilot"
@@ -20,7 +21,14 @@ def test_every_published_call_prepares_direct_graph_input():
         value = graph_input_for_call(dataset, call_id)
         assert set(value) == {"results", "speaker_roles", "checklist"}
         assert value["results"]["audio_segments"]
-        assert all(set(item) == {"id", "question"} for item in value["checklist"])
+        source = {item["id"]: item for item in dataset["checklist"]}
+        for item in value["checklist"]:
+            if source[item["id"]]["type"] == "COMPLIANCE":
+                assert set(item) == {"id", "question", "requirement_type"}
+                assert item["requirement_type"] == source[item["id"]]["requirement_type"]
+            else:
+                assert set(item) == {"id", "question"}
+        assert prepare_input(value) == value
 
 
 def test_evaluation_family_comes_from_checklist_type_and_never_reaches_the_graph():
