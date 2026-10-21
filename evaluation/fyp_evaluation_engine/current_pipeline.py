@@ -12,7 +12,9 @@ STATUS = {"PASS": "Pass", "FAIL": "Fail", "PARTIAL": "Fail",
 
 def prepare_input(value):
     return {**value, "checklist": [
-        {"id": item["id"], "question": item["question"]}
+        {"id": item["id"], "question": item["question"],
+         **({"requirement_type": item["requirement_type"]}
+            if item.get("requirement_type") in {"OBLIGATION", "PROHIBITION"} else {})}
         for item in value["checklist"]]}
 
 
