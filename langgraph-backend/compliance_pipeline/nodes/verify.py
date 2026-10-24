@@ -46,6 +46,7 @@ from compliance_pipeline.nodes._common import (
     resolve_evidence,
     rollup_status,
 )
+from compliance_pipeline.nodes.check_item import allows_absence_review
 from compliance_pipeline.prompts.verify import SYSTEM, build_user
 from compliance_pipeline.reliability import InvalidStructuredOutput
 from compliance_pipeline.schemas import ItemResult, RedFlag, ReviewWarning, Status, VerifyOutput
@@ -122,6 +123,7 @@ def _sub_target(item_id: str, sub, cfg_item, status_label: str, segments: list[d
         "kind": "sub_criterion",
         "claim": f"{text} -> {status_label}",
         "note": sub.note,
+        "absence_review": sub.absence_review.model_dump() if sub.absence_review else None,
         "evidence_lines": [
             f'[{ref.segment_id}] "{evidence_text(segments, ref)}"' for ref in sub.evidence
         ],
@@ -178,7 +180,11 @@ def _verify_node(state: ComplianceState) -> dict:
             if len(cleaned) != len(sub.evidence):
                 sub.evidence = cleaned
                 item_changed = True
-                if sub.status == Status.PASS and not cleaned and not _is_absence(item.item_id, sub.id, checklist):
+                cfg_item = cfg_by_id.get(item.item_id)
+                reviewed_absence = cfg_item is not None and allows_absence_review(
+                    cfg_item, sub.absence_review, segments, state.get("quality_flags") or [], sub.note)
+                if (sub.status == Status.PASS and not cleaned
+                        and not _is_absence(item.item_id, sub.id, checklist) and not reviewed_absence):
                     sub.status = Status.CANNOT_DETERMINE
                     sub.note = "evidence did not survive verification"
         if item_changed:
@@ -300,6 +306,7 @@ def _verify_node(state: ComplianceState) -> dict:
                 counter_refs, notes = resolve_evidence(segments, verdict.counter_evidence)
                 errors.extend(f"verify[{item_id}]: {n}" for n in notes)
                 sub.status = Status.CANNOT_DETERMINE
+                sub.absence_review = None
                 sub.note = f"{old_status} not supported on verification: {verdict.reason}".strip()
                 if counter_refs:
                     sub.evidence = counter_refs

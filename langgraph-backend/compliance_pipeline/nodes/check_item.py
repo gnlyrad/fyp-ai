@@ -8,9 +8,9 @@ deterministic") rather than trusting the LLM's rollup. `answer_type: list`
 items (C06) additionally return `RedFlag`s, and a surviving red flag forces
 its matching sub-criterion to FAIL.
 
-A PASS needs at least one resolved evidence ref, except for sub-criteria
-marked `absence: true` in config ("nothing indicates X"), which have nothing
-to quote.
+A PASS needs a resolved evidence ref, except a configured absence check or
+an explicit, complete absence review for an untyped prohibition question.
+The latter records the answer's basis without assigning missing metadata.
 
 The LLM cites short verbatim `EvidenceQuote`s; code resolves them to
 persisted `EvidenceRef`s via `nodes/_common.py:resolve_evidence`. Rules are
@@ -157,6 +157,24 @@ def validate_check_output(
                 + diagnostics[0])
 
 
+def allows_absence_review(item, review, segments, quality_flags, note) -> bool:
+    """Accept a declared full-call absence finding, never silence about an obligation.
+
+    This is a semantic answer from the normal check, not a metadata lookup,
+    a default requirement type, or a reason to retry a valid prediction.
+    """
+    return bool(
+        item.requirement_type != "OBLIGATION"
+        and review is not None
+        and review.prohibited_conduct.strip()
+        and review.entire_transcript_reviewed
+        and review.context_sufficient
+        and note.strip()
+        and any((seg.get("text") or "").strip() for seg in segments)
+        and not ({"empty_transcript", "low_confidence", "single_speaker"} & set(quality_flags))
+    )
+
+
 def check_item_node(task: CheckItemTask) -> dict:
     item_id = task.get("item_id", "")
     # The run's own item config (caller checklist) when the fan-out sent it;
@@ -266,13 +284,20 @@ def resolve_check_output(item, output, segments, rules, quality_flags, errors=No
 
         note = clean_note(ans.note)
 
-        if status == Status.PASS and not refs and not sc.absence:
+        absence_review = ans.absence_review
+        reviewed_absence = allows_absence_review(item, absence_review, segments, quality_flags, note)
+        configured_absence = sc.absence and absence_review is None
+        if status == Status.PASS and not refs and not (configured_absence or reviewed_absence):
             status = Status.CANNOT_DETERMINE
-            note = "PASS without evidence"
+            note = ("Absence finding lacks a complete, usable transcript review."
+                    if absence_review is not None else "PASS without evidence")
         elif status == Status.FAIL and not (note or "").strip():
             note = "No supporting statement found in the call."
 
-        sub_results[sc.id] = SubCriterionResult(id=sc.id, status=status, evidence=refs, note=note)
+        sub_results[sc.id] = SubCriterionResult(
+            id=sc.id, status=status, evidence=refs, note=note,
+            absence_review=absence_review if reviewed_absence and status == Status.PASS else None,
+        )
 
     # ---- Red flags (list-type items only). ----------------------------
     red_flags: list[RedFlag] = []

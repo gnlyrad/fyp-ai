@@ -34,6 +34,10 @@ For each target, decide "upheld" or "not_supported":
   sub-criterion, and were said by the party who is required to say them
   (for example, the Advisor discloses risks, the Client confirms an
   instruction). If not, return not_supported.
+- An absence_review PASS is supported by a full transcript review finding
+  none of the named prohibited conduct, rather than a spoken quote. Check
+  the whole transcript for that conduct and whether the context is sufficient.
+  A missing required act cannot support PASS through an absence review.
 - When genuinely unsure, prefer not_supported over upheld.
 
 Check the exact act requested by the claim. Risk disclosure, checking the
@@ -83,6 +87,9 @@ def _format_targets(targets: list[dict]) -> str:
         note = t.get("note")
         if note:
             lines.append(f"note: {note}")
+        review = t.get("absence_review")
+        if review:
+            lines.append(f"absence_review: {review}")
         evidence_lines = t.get("evidence_lines") or []
         if evidence_lines:
             lines.append("cited evidence:")

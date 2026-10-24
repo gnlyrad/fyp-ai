@@ -55,6 +55,7 @@ class ComplianceState(TypedDict, total=False):
     quality_flags: list[str]
     call_intent: dict | None  # {category, confidence, evidence, reached, reasoning}
     applicable_items: list[str]
+    warmed_check_ids: list[str]  # first ordinary check/group already completed
     item_results: Annotated[list[ItemResult], operator.add]
     red_flags: Annotated[list[RedFlag], operator.add]
     actions: list[Action]
@@ -63,6 +64,7 @@ class ComplianceState(TypedDict, total=False):
     # Model token usage, {model: {input_tokens, output_tokens, ...}}, summed across nodes.
     usage: Annotated[dict, merge_usage]
     usage_by_stage: Annotated[dict, merge_stage_usage]
+    usage_by_transport: Annotated[dict, merge_stage_usage]
     llm_calls: Annotated[list[dict], operator.add]
 
     # Deviations from CLAUDE.md's ComplianceState, see module docstring.
@@ -111,4 +113,5 @@ class OutputState(TypedDict, total=False):
     errors: list[str]
     usage: dict  # model token usage for this run; tokens only, no price
     usage_by_stage: dict
+    usage_by_transport: dict
     llm_calls: list[dict]

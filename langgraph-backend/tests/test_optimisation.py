@@ -316,3 +316,204 @@ def test_higher_effort_action_fallback_runs_only_after_invalid_output(monkeypatc
     monkeypatch.delenv("COMPLIANCE_DECIDE_ACTIONS_REPAIR_THINKING_LEVEL", raising=False)
     llm._get_client("test-model", "decide_actions_repair")
     assert clients[-1]["thinking_level"] == "medium"
+
+
+def absence_answer(**review_updates):
+    review = {"prohibited_conduct": "promising guaranteed investment returns",
+              "entire_transcript_reviewed": True, "context_sufficient": True}
+    review.update(review_updates)
+    return {"sub_criteria": [{"id": "met", "status": "PASS", "absence_review": review,
+                             "note": "Reviewed the full call; no guaranteed returns were promised."}],
+            "confidence": 0.95}
+
+
+@pytest.mark.parametrize("grouped", [False, True])
+def test_id_question_only_absence_has_auditable_basis_without_metadata_inference(grouped):
+    item = resolve_checklist([{"id": "custom_negative", "question":
+        "The employee must not promise guaranteed investment returns."}])[0]
+    before = item.model_dump()
+    value = {**task(1), "item_id": item.id, "checklist_item": before,
+             "checklist_items": [before]}
+    calls = []
+    def backend(name, system, user, schema, model):
+        calls.append(name)
+        answer = absence_answer()
+        return {"answers": [{"item_id": item.id, "result": answer}]} if grouped else answer
+    llm.set_backend(backend)
+    result = (check_batch_node(value) if grouped else check_item_node(value))["item_results"][0]
+    assert calls == ["check_batch" if grouped else "check_item"]
+    assert result.status == Status.PASS and result.execution_status == "success"
+    assert not result.evidence
+    assert result.sub_criteria[0].absence_review.prohibited_conduct == "promising guaranteed investment returns"
+    assert item.model_dump() == before and item.requirement_type is None
+    assert not item.sub_criteria[0].absence
+
+
+@pytest.mark.parametrize("update,flags,note", [
+    ({"entire_transcript_reviewed": False}, [], None),
+    ({"context_sufficient": False}, [], None),
+    ({"prohibited_conduct": "  "}, [], None),
+    ({}, ["empty_transcript"], None),
+    ({}, ["low_confidence"], None),
+    ({}, ["single_speaker"], None),
+    ({}, [], ""),
+])
+def test_incomplete_absence_review_does_not_force_a_pass_or_trigger_semantic_retry(update, flags, note):
+    value = task(1)
+    value.update(item_id="Q0", checklist_item=value["checklist_items"][0], quality_flags=flags)
+    answer = absence_answer(**update)
+    if note is not None:
+        answer["sub_criteria"][0]["note"] = note
+    calls = []
+    llm.set_backend(lambda *args: calls.append(1) or answer)
+    result = check_item_node(value)["item_results"][0]
+    assert calls == [1]
+    assert result.status == Status.CANNOT_DETERMINE and result.execution_status == "success"
+    assert result.sub_criteria[0].absence_review is None
+
+
+def test_absence_of_required_consent_cannot_pass_an_explicit_obligation():
+    item = resolve_checklist([{"id": "consent", "question": "Obtain the client's consent.",
+                               "requirement_type": "OBLIGATION"}])[0]
+    value = {**task(1), "item_id": item.id, "checklist_item": item.model_dump()}
+    answer = absence_answer(prohibited_conduct="missing consent")
+    llm.set_backend(lambda *args: answer)
+    assert check_item_node(value)["item_results"][0].status == Status.CANNOT_DETERMINE
+
+
+@pytest.mark.parametrize("verdict,expected", [("upheld", Status.PASS),
+                                             ("not_supported", Status.CANNOT_DETERMINE)])
+def test_absence_finding_survives_normal_verifier_contract(verdict, expected):
+    from compliance_pipeline.nodes.verify import verify_node
+    value = task(1)
+    value.update(item_id="Q0", checklist_item=value["checklist_items"][0])
+    llm.set_backend(lambda *args: absence_answer())
+    item = check_item_node(value)["item_results"][0]
+    item.confidence = 0.6
+    calls = []
+    def backend(name, system, user, schema, model):
+        calls.append(name)
+        assert "absence_review:" in user and "promising guaranteed investment returns" in user
+        return {"verdicts": [{"target_id": "met", "verdict": verdict,
+                              "reason": "Full transcript reviewed."}]}
+    llm.set_backend(backend)
+    result = verify_node({**value, "checklist": value["checklist_items"],
+                          "item_results": [item]})["verified_results"][0]
+    assert calls == ["verify"] and result.status == expected
+    assert bool(result.sub_criteria[0].absence_review) is (verdict == "upheld")
+    assert item.status == Status.PASS and item.sub_criteria[0].absence_review is not None
+
+
+def test_grouped_recovery_retains_successes_and_never_retries_semantic_answers(monkeypatch):
+    monkeypatch.setenv("COMPLIANCE_CHECK_RECOVERY_BATCH_SIZE", "20")
+    value, calls = task(20), []
+    unclear = {"sub_criteria": [{"id": "met", "status": "CANNOT_DETERMINE"}]}
+    failed = {"sub_criteria": [{"id": "met", "status": "FAIL", "note": "Required act omitted."}]}
+    def backend(name, system, user, schema, model):
+        calls.append((name, user))
+        if len(calls) == 1:
+            return {"answers": [{"item_id": "Q0", "result": pass_answer()},
+                                {"item_id": "Q1", "result": unclear},
+                                {"item_id": "Q2", "result": failed}]}
+        assert name == "check_batch"
+        assert all(f"ITEM Q{i}\n" not in user for i in range(3))
+        return {"answers": [{"item_id": f"Q{i}", "result": pass_answer()} for i in range(3, 20)]}
+    llm.set_backend(backend)
+    output = check_batch_node(value)
+    assert len(calls) == 2
+    assert [row.item_id for row in output["item_results"]] == [f"Q{i}" for i in range(20)]
+    assert [row.status for row in output["item_results"][:3]] == [
+        Status.PASS, Status.CANNOT_DETERMINE, Status.FAIL]
+    assert all(row.execution_status == "success" for row in output["item_results"])
+
+
+@pytest.mark.parametrize("size,expected", [(2, [2, 2]), (3, [3, 2]), (20, [5])])
+def test_recovery_groups_are_bounded_and_retain_valid_siblings(monkeypatch, size, expected):
+    monkeypatch.setenv("COMPLIANCE_CHECK_RECOVERY_BATCH_SIZE", str(size))
+    value, groups = task(6), []
+    def backend(name, system, user, schema, model):
+        if not groups:
+            groups.append([0])
+            return {"answers": [{"item_id": "Q0", "result": pass_answer()}]}
+        if name == "check_item":
+            assert "requirement 5" in user
+            return pass_answer()
+        ids = [i for i in range(1, 6) if f"ITEM Q{i}\n" in user]
+        groups.append(ids)
+        return {"answers": [{"item_id": f"Q{i}", "result": pass_answer()} for i in reversed(ids)]}
+    llm.set_backend(backend)
+    output = check_batch_node(value)
+    assert [len(group) for group in groups[1:]] == expected
+    assert all(row.status == Status.PASS for row in output["item_results"])
+
+
+def test_grouped_recovery_falls_back_only_for_still_unusable_rows(monkeypatch, caplog):
+    monkeypatch.setenv("COMPLIANCE_CHECK_RECOVERY_BATCH_SIZE", "20")
+    value, calls = task(4), []
+    secret_quote = "words not present in the transcript"
+    def backend(name, system, user, schema, model):
+        calls.append(name)
+        if len(calls) == 1:
+            bad = pass_answer()
+            bad["sub_criteria"][0]["evidence"][0]["quote"] = secret_quote
+            return {"answers": [{"item_id": "Q0", "result": pass_answer()},
+                                {"item_id": "Q1", "result": bad},
+                                {"item_id": "Q2", "result": pass_answer()},
+                                {"item_id": "Q2", "result": pass_answer()}]}
+        if name == "check_batch":
+            assert "ITEM Q0\n" not in user
+            return {"answers": [{"item_id": "Q1", "result": pass_answer()},
+                                {"item_id": "Q3", "result": pass_answer()}]}
+        assert "requirement 2" in user
+        return pass_answer()
+    llm.set_backend(backend)
+    output = check_batch_node(value)
+    assert calls == ["check_batch", "check_batch", "check_item"]
+    assert all(row.status == Status.PASS for row in output["item_results"])
+    assert output["errors"] == []
+    assert "invalid_structure_or_evidence" in caplog.text
+    assert "missing_or_duplicate" in caplog.text
+    assert secret_quote not in caplog.text
+
+
+@pytest.mark.parametrize("native", [False, True])
+def test_nonretryable_recovery_never_resubmits_and_preserves_good_sibling(monkeypatch, native):
+    monkeypatch.setenv("COMPLIANCE_CHECK_RECOVERY_BATCH_SIZE", "20")
+    if native:
+        monkeypatch.setenv("COMPLIANCE_CHECK_TRANSPORT", "batch")
+    value, calls = task(3), []
+    class PendingOrPermanent(RuntimeError):
+        no_retry = True
+    def backend(name, system, user, schema, model):
+        calls.append(name)
+        if len(calls) == 1:
+            return {"answers": [{"item_id": "Q0", "result": pass_answer()}]}
+        raise PendingOrPermanent("Safe test error")
+    llm.set_backend(backend)
+    output = check_batch_node(value)
+    assert calls == ["check_batch", "check_batch"]
+    assert output["item_results"][0].status == Status.PASS
+    assert all(row.execution_status == "prediction_failure" for row in output["item_results"][1:])
+    assert len(output["errors"]) == 2
+
+
+def test_recovery_pass_cannot_recurse_and_item_failure_remains_visible(monkeypatch):
+    monkeypatch.setenv("COMPLIANCE_CHECK_RECOVERY_BATCH_SIZE", "20")
+    value, calls = task(2), []
+    def backend(name, system, user, schema, model):
+        calls.append(name)
+        return {"answers": []} if name == "check_batch" else {}
+    llm.set_backend(backend)
+    output = check_batch_node(value)
+    assert calls == ["check_batch", "check_batch", "check_item", "check_item", "check_item", "check_item"]
+    assert all(row.execution_status == "prediction_failure" for row in output["item_results"])
+    assert len(output["errors"]) == 2
+
+
+@pytest.mark.parametrize("value", ["0", "21", "true", "-1"])
+def test_invalid_recovery_setting_fails_before_model_call(monkeypatch, value):
+    from compliance_pipeline.nodes.check_batch import check_recovery_batch_size
+    monkeypatch.setenv("COMPLIANCE_CHECK_RECOVERY_BATCH_SIZE", value)
+    llm.set_backend(lambda *args: pytest.fail("Invalid configuration must not call a model"))
+    with pytest.raises(ValueError):
+        check_recovery_batch_size()

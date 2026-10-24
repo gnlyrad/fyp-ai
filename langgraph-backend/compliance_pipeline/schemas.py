@@ -53,11 +53,24 @@ class EvidenceQuote(BaseModel):
     quote: str = ""
 
 
+class AbsenceReview(BaseModel):
+    """An explicit transcript-wide finding, not inferred checklist metadata.
+
+    Absence has no spoken quote. Record what was searched for and whether
+    the available context supports that finding instead of fabricating one.
+    """
+
+    prohibited_conduct: str = Field(description="The conduct the criterion prohibits; never a required act.")
+    entire_transcript_reviewed: bool = False
+    context_sufficient: bool = False
+
+
 class SubCriterionResult(BaseModel):
     id: str
     status: Status
     evidence: list[EvidenceRef] = Field(default_factory=list)
     note: str = ""
+    absence_review: AbsenceReview | None = None
 
 
 class ReviewWarning(BaseModel):
@@ -162,6 +175,10 @@ class SubCriterionAnswer(BaseModel):
     # NOT_APPLICABLE is not offered to the LLM: only the gate (applies_when) sets it.
     status: Literal["PASS", "FAIL", "CANNOT_DETERMINE"] = "CANNOT_DETERMINE"
     evidence: list[EvidenceQuote] = Field(default_factory=list)
+    absence_review: AbsenceReview | None = Field(None, description=(
+        "Only for PASS based on no prohibited conduct being observed after full transcript review. "
+        "Never for a missing required disclosure, check, consent or confirmation. Otherwise null."
+    ))
     note: str = Field("", description=(
         "One or two plain sentences explaining the judgement. "
         "No status, id, or field names."

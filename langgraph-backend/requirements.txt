@@ -6,6 +6,7 @@ pydantic>=2.10
 python-dotenv>=1.0
 langgraph-cli[inmem]==0.4.31
 langchain-google-genai>=4.2,<5
+google-genai>=2.25,<3
 pyyaml
 # The MAS regulatory corpus and its FAISS index, used by retrieval.py.
 -e ../langchain-backend

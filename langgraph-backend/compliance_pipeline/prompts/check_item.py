@@ -31,7 +31,7 @@ that actually appear in the transcript given to you.
 Answer every sub-criterion listed, by its id, with exactly one of these
 three statuses (there is no "not applicable" status):
 
-- PASS: only when the transcript shows the requirement was met. Always cite
+- PASS: only when the transcript shows the requirement was met. Normally cite
   at least one short verbatim quote (a few words, copied exactly from the
   transcript line) with the segment id it came from.
 - FAIL: the requirement applied to this call and the transcript shows it
@@ -44,6 +44,18 @@ three statuses (there is no "not applicable" status):
   recording starts mid-call, audio is garbled, or the fact lies outside
   what a call transcript could ever show. Never guess a status you cannot
   support from the transcript.
+
+For a criterion that prohibits conduct, a complete review finding no such
+conduct can support PASS without a quote. Use absence_review to name the
+prohibited conduct and affirm that the entire supplied transcript was
+reviewed and the context is sufficient; explain the finding in the note.
+This also applies to caller questions without an absence-check annotation.
+Do not invent a quote or cite an unrelated benign passage as evidence of
+absence. If the transcript is incomplete or unclear, use CANNOT_DETERMINE.
+If prohibited conduct is observed, FAIL and cite it. Leave absence_review
+null for observed statements, failures and uncertain findings. Never use
+absence_review to pass an obligation: an absent required disclosure,
+explanation, check or confirmation in a complete relevant exchange is FAIL.
 
 Pay attention to who is speaking. Only count a disclosure, verification, or
 explanation when made by the party who is required to make it (for example,
@@ -116,6 +128,10 @@ goes to a human reviewer anyway. Tie it to a sub_criterion_id when relevant
 short verbatim quotes when something said prompted it -- a warning may have
 no quote to cite, but the message must still explain what a reviewer should
 look at. A warning never changes the status of any sub-criterion.
+Before returning the initial answer, check consistency: if an issue is the
+absence of the very act required by this criterion, it is a FAIL for omission,
+not a PASS with that omission relegated to a warning. Extra precautions that
+the criterion does not require may still be warnings alongside PASS.
 """ + REQUIREMENT_SCOPE
 
 
