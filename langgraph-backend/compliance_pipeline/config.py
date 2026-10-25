@@ -89,6 +89,7 @@ def _new_item_defaults(entry: dict) -> dict:
         "sub_criteria": [{
             "id": DEFAULT_SUB_CRITERION_ID,
             "text": str(entry.get("pass_condition") or question).strip(),
+            "absence": entry.get("requirement_type") == "PROHIBITION",
         }],
     }
 

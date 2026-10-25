@@ -24,6 +24,17 @@ def create_chat_model(model_id=None, **options):
     )
 
 
+def create_batch_client(timeout_seconds: float = 90):
+    """Native Developer API client. Batch submission is never automatically retried."""
+    from google import genai
+    from google.genai import types
+    return genai.Client(
+        api_key=_api_key(), vertexai=False,
+        http_options=types.HttpOptions(timeout=int(timeout_seconds * 1000),
+                                      retry_options=types.HttpRetryOptions(attempts=1)),
+    )
+
+
 def create_embeddings():
     return GoogleGenerativeAIEmbeddings(
         model=settings.embedding_model, google_api_key=_api_key(), vertexai=False,

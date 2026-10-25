@@ -53,11 +53,24 @@ class EvidenceQuote(BaseModel):
     quote: str = ""
 
 
+class AbsenceReview(BaseModel):
+    """An explicit transcript-wide finding, not inferred checklist metadata.
+
+    Absence has no spoken quote. Record what was searched for and whether
+    the available context supports that finding instead of fabricating one.
+    """
+
+    prohibited_conduct: str = Field(description="The conduct the criterion prohibits; never a required act.")
+    entire_transcript_reviewed: bool = False
+    context_sufficient: bool = False
+
+
 class SubCriterionResult(BaseModel):
     id: str
     status: Status
     evidence: list[EvidenceRef] = Field(default_factory=list)
     note: str = ""
+    absence_review: AbsenceReview | None = None
 
 
 class ReviewWarning(BaseModel):
@@ -162,6 +175,10 @@ class SubCriterionAnswer(BaseModel):
     # NOT_APPLICABLE is not offered to the LLM: only the gate (applies_when) sets it.
     status: Literal["PASS", "FAIL", "CANNOT_DETERMINE"] = "CANNOT_DETERMINE"
     evidence: list[EvidenceQuote] = Field(default_factory=list)
+    absence_review: AbsenceReview | None = Field(None, description=(
+        "Only for PASS based on no prohibited conduct being observed after full transcript review. "
+        "Never for a missing required disclosure, check, consent or confirmation. Otherwise null."
+    ))
     note: str = Field("", description=(
         "One or two plain sentences explaining the judgement. "
         "No status, id, or field names."
@@ -222,12 +239,21 @@ class CheckItemOutput(BaseModel):
     ))
 
 
+class GroupedItemAnswer(BaseModel):
+    item_id: str
+    result: CheckItemOutput
+
+
+class CheckBatchOutput(BaseModel):
+    answers: list[GroupedItemAnswer]
+
+
 class VerifyVerdict(BaseModel):
     """One verdict from `verify`'s second-reviewer LLM call, one per target
     (a sub-criterion or a red flag) it was asked to check."""
 
     target_id: str = ""
-    verdict: Literal["upheld", "not_supported"] = "upheld"
+    verdict: Literal["upheld", "not_supported"]
     reason: str = ""
     counter_evidence: list[EvidenceQuote] = Field(default_factory=list)
 
@@ -319,4 +345,5 @@ class ChecklistItem(BaseModel):
     depends_on: list[str] = Field(default_factory=list)
     rule_queries: list[str] = Field(default_factory=list)
     question: str = ""
+    requirement_type: Literal["OBLIGATION", "PROHIBITION"] | None = None
     sub_criteria: list[SubCriterion] = Field(default_factory=list)

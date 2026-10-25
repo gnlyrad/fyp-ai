@@ -35,6 +35,7 @@ results unverified rather than crashing the graph.
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor
+from contextvars import copy_context
 
 from compliance_pipeline import config
 from compliance_pipeline.llm import get_llm_response
@@ -45,7 +46,9 @@ from compliance_pipeline.nodes._common import (
     resolve_evidence,
     rollup_status,
 )
+from compliance_pipeline.nodes.check_item import allows_absence_review
 from compliance_pipeline.prompts.verify import SYSTEM, build_user
+from compliance_pipeline.reliability import InvalidStructuredOutput
 from compliance_pipeline.schemas import ItemResult, RedFlag, ReviewWarning, Status, VerifyOutput
 from compliance_pipeline.state import ComplianceState
 
@@ -120,6 +123,7 @@ def _sub_target(item_id: str, sub, cfg_item, status_label: str, segments: list[d
         "kind": "sub_criterion",
         "claim": f"{text} -> {status_label}",
         "note": sub.note,
+        "absence_review": sub.absence_review.model_dump() if sub.absence_review else None,
         "evidence_lines": [
             f'[{ref.segment_id}] "{evidence_text(segments, ref)}"' for ref in sub.evidence
         ],
@@ -176,7 +180,11 @@ def _verify_node(state: ComplianceState) -> dict:
             if len(cleaned) != len(sub.evidence):
                 sub.evidence = cleaned
                 item_changed = True
-                if sub.status == Status.PASS and not cleaned and not _is_absence(item.item_id, sub.id, checklist):
+                cfg_item = cfg_by_id.get(item.item_id)
+                reviewed_absence = cfg_item is not None and allows_absence_review(
+                    cfg_item, sub.absence_review, segments, state.get("quality_flags") or [], sub.note)
+                if (sub.status == Status.PASS and not cleaned
+                        and not _is_absence(item.item_id, sub.id, checklist) and not reviewed_absence):
                     sub.status = Status.CANNOT_DETERMINE
                     sub.note = "evidence did not survive verification"
         if item_changed:
@@ -226,16 +234,25 @@ def _verify_node(state: ComplianceState) -> dict:
     def _call_one(item_id: str):
         cfg_item = cfg_by_id.get(item_id)
         question = cfg_item.question if cfg_item else ""
+        def validate(output):
+            expected = {target["target_id"] for target in targets_by_item[item_id]}
+            actual = [verdict.target_id for verdict in output.verdicts]
+            if len(actual) != len(expected) or set(actual) != expected:
+                raise InvalidStructuredOutput("Every verification target needs exactly one verdict")
         return get_llm_response(
             "verify", SYSTEM,
             build_user(question, targets_by_item[item_id], transcript),
             VerifyOutput,
+            validate=validate,
         )
 
     llm_results: dict[str, object] = {}
     if item_ids_to_call:
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
-            futures = {item_id: pool.submit(_call_one, item_id) for item_id in item_ids_to_call}
+            # Each worker gets its own context, including LangChain callbacks,
+            # tracing, and the node's diagnostic collector.
+            futures = {item_id: pool.submit(copy_context().run, _call_one, item_id)
+                       for item_id in item_ids_to_call}
             for item_id in item_ids_to_call:
                 llm_results[item_id] = futures[item_id].result()
 
@@ -251,7 +268,8 @@ def _verify_node(state: ComplianceState) -> dict:
             errors.append(f"verify[{item_id}]: {llm_result.error}")
             failed = items_by_id[item_id]
             failed.execution_status = "prediction_failure"
-            failed.failure_category = "verification_unavailable"
+            failed.failure_category = ("incomplete_verification" if llm_result.error == "InvalidStructuredOutput"
+                                       else "verification_unavailable")
             failed.failure_stage = "verify"
             changed_item_ids.add(item_id)
             continue
@@ -288,6 +306,7 @@ def _verify_node(state: ComplianceState) -> dict:
                 counter_refs, notes = resolve_evidence(segments, verdict.counter_evidence)
                 errors.extend(f"verify[{item_id}]: {n}" for n in notes)
                 sub.status = Status.CANNOT_DETERMINE
+                sub.absence_review = None
                 sub.note = f"{old_status} not supported on verification: {verdict.reason}".strip()
                 if counter_refs:
                     sub.evidence = counter_refs

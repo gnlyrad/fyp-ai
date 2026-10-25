@@ -23,12 +23,14 @@ actions, and an `errors` entry.
 from __future__ import annotations
 
 from functools import lru_cache
+import re
 from typing import Literal
 
 from pydantic import Field, create_model
 
 from compliance_pipeline import config
 from compliance_pipeline.llm import get_llm_response
+from compliance_pipeline.reliability import InvalidStructuredOutput
 from compliance_pipeline.nodes._common import (
     format_transcript,
     merged_results,
@@ -242,6 +244,33 @@ def _resolve_action(item, segments: list[dict], errors: list[str]) -> Action:
     )
 
 
+def _validate_actions(output, segments: list[dict]) -> None:
+    """Repair invented segment IDs or paraphrased quotes before persisting actions."""
+    by_id = {segment["id"]: segment for segment in segments}
+    for action in output.actions:
+        for quote in action.evidence:
+            if quote.segment_id in by_id:
+                continue
+            alias = re.fullmatch(r"(.+_)(\d+)", quote.segment_id)
+            if alias is None:
+                continue
+            candidates = []
+            for segment_id, segment in by_id.items():
+                canonical = re.fullmatch(r"(.+_)(\d+)", segment_id)
+                if canonical and canonical[1] == alias[1] and int(canonical[2]) == int(alias[2]):
+                    candidates.append(segment)
+            # Zero padding alone may be repaired locally only when the ID is
+            # unambiguous AND the exact cited words occur in that segment.
+            if len(candidates) == 1 and quote.quote and quote.quote in candidates[0].get("text", ""):
+                quote.segment_id = candidates[0]["id"]
+        _, diagnostics = resolve_evidence(segments, action.evidence)
+        if diagnostics:
+            raise InvalidStructuredOutput(
+                "Action evidence must use existing segment IDs and words from that segment: "
+                + diagnostics[0]
+            )
+
+
 # ---------------------------------------------------------------------------
 # Node.
 # ---------------------------------------------------------------------------
@@ -307,14 +336,24 @@ def _decide_node(state: ComplianceState) -> dict:
     # ---- 2. Post-call actions. --------------------------------------------
     actions: list[Action] = []
     if segments:
+        actions_prompt = build_actions_user(
+            format_transcript(segments), call_intent, escalation.model_dump(),
+            _stage2_summary(merged, checklist),
+        )
         llm_result = get_llm_response(
             "decide_actions", SYSTEM_ACTIONS,
-            build_actions_user(
-                format_transcript(segments), call_intent, escalation.model_dump(),
-                _stage2_summary(merged, checklist),
-            ),
+            actions_prompt,
             _actions_output_model(),
+            validate=lambda output: _validate_actions(output, segments),
         )
+        if not llm_result.ok and llm_result.error in {"InvalidStructuredOutput", "ValidationError"}:
+            # Spend higher effort only after the ordinary schema/citation repair
+            # budget is exhausted. Transport failures do not trigger another stage.
+            llm_result = get_llm_response(
+                "decide_actions_repair", SYSTEM_ACTIONS, actions_prompt,
+                _actions_output_model(),
+                validate=lambda output: _validate_actions(output, segments),
+            )
         if llm_result.ok:
             for item in llm_result.value.actions:
                 actions.append(_resolve_action(item, segments, errors))

@@ -8,9 +8,9 @@ deterministic") rather than trusting the LLM's rollup. `answer_type: list`
 items (C06) additionally return `RedFlag`s, and a surviving red flag forces
 its matching sub-criterion to FAIL.
 
-A PASS needs at least one resolved evidence ref, except for sub-criteria
-marked `absence: true` in config ("nothing indicates X"), which have nothing
-to quote.
+A PASS needs a resolved evidence ref, except a configured absence check or
+an explicit, complete absence review for an untyped prohibition question.
+The latter records the answer's basis without assigning missing metadata.
 
 The LLM cites short verbatim `EvidenceQuote`s; code resolves them to
 persisted `EvidenceRef`s via `nodes/_common.py:resolve_evidence`. Rules are
@@ -36,6 +36,7 @@ from compliance_pipeline.nodes._common import (
 )
 from compliance_pipeline.prompts.check_item import SYSTEM, build_user
 from compliance_pipeline.llm import get_llm_response
+from compliance_pipeline.reliability import InvalidStructuredOutput
 from compliance_pipeline.schemas import (
     ChecklistItem,
     CheckItemOutput,
@@ -139,6 +140,41 @@ def _cannot_determine_result(
     return result
 
 
+def validate_check_output(
+    output: CheckItemOutput, item: ChecklistItem, segments: list[dict] | None = None,
+) -> None:
+    expected = {sc.id for sc in item.sub_criteria}
+    actual = [sc.id for sc in output.sub_criteria]
+    if len(actual) != len(expected) or set(actual) != expected:
+        raise InvalidStructuredOutput("Every requested sub-criterion must be answered exactly once")
+    if segments is not None:
+        quotes = [quote for row in [*output.sub_criteria, *output.red_flags, *output.warnings]
+                  for quote in row.evidence]
+        _, diagnostics = resolve_evidence(segments, quotes)
+        if diagnostics:
+            raise InvalidStructuredOutput(
+                "Evidence must cite an existing segment ID and words from that segment: "
+                + diagnostics[0])
+
+
+def allows_absence_review(item, review, segments, quality_flags, note) -> bool:
+    """Accept a declared full-call absence finding, never silence about an obligation.
+
+    This is a semantic answer from the normal check, not a metadata lookup,
+    a default requirement type, or a reason to retry a valid prediction.
+    """
+    return bool(
+        item.requirement_type != "OBLIGATION"
+        and review is not None
+        and review.prohibited_conduct.strip()
+        and review.entire_transcript_reviewed
+        and review.context_sufficient
+        and note.strip()
+        and any((seg.get("text") or "").strip() for seg in segments)
+        and not ({"empty_transcript", "low_confidence", "single_speaker"} & set(quality_flags))
+    )
+
+
 def check_item_node(task: CheckItemTask) -> dict:
     item_id = task.get("item_id", "")
     # The run's own item config (caller checklist) when the fan-out sent it;
@@ -160,9 +196,13 @@ def check_item_node(task: CheckItemTask) -> dict:
         }
 
     sub_ids = [sc.id for sc in item.sub_criteria]
-    is_list = item.answer_type == "list"
     segments = task.get("segments") or []
     errors: list[str] = []
+
+    if not segments:
+        return {"item_results": [_cannot_determine_result(
+            item.id, sub_ids, "No transcript segments available for this call.",
+            "No transcript available.", item)], "red_flags": []}
 
     try:
         rules = _prepared_rules(item)
@@ -170,16 +210,6 @@ def check_item_node(task: CheckItemTask) -> dict:
         rules = []
         errors.append(f"check_item[{item.id}]: rule lookup failed, judged without rules: "
                       f"{type(exc).__name__}: {exc}")
-    given_rule_ids = {r["rule_id"] for r in rules}
-
-    if not segments:
-        result = _cannot_determine_result(
-            item.id, sub_ids,
-            reasoning="No transcript segments available for this call.",
-            note="No transcript available.",
-            cfg_item=item,
-        )
-        return {"item_results": [result], "red_flags": [], **({"errors": errors} if errors else {})}
 
     transcript = format_transcript(segments)
     call_intent = task.get("call_intent")
@@ -190,13 +220,14 @@ def check_item_node(task: CheckItemTask) -> dict:
         SYSTEM,
         build_user(
             item.question,
-            [{"id": sc.id, "text": sc.text} for sc in item.sub_criteria],
+            [{"id": sc.id, "text": sc.text, "absence": sc.absence} for sc in item.sub_criteria],
             item.answer_type,
             rules,
             transcript,
             call_intent,
         ),
         CheckItemOutput,
+        validate=lambda output: validate_check_output(output, item, segments),
     )
 
     if not llm_result.ok:
@@ -206,13 +237,23 @@ def check_item_node(task: CheckItemTask) -> dict:
             note="LLM output failed",
             cfg_item=item,
         )
+        if llm_result.error == "InvalidStructuredOutput":
+            result.failure_category = "incomplete_structured_output"
         return {
             "item_results": [result],
             "red_flags": [],
             "errors": errors + [f"check_item[{item.id}]: {llm_result.error}"],
         }
 
-    output = llm_result.value
+    return resolve_check_output(item, llm_result.value, segments, rules, quality_flags, errors)
+
+
+def resolve_check_output(item, output, segments, rules, quality_flags, errors=None) -> dict:
+    """Apply the same evidence and rollup rules to individual and grouped answers."""
+    errors = list(errors or [])
+    sub_ids = [sc.id for sc in item.sub_criteria]
+    is_list = item.answer_type == "list"
+    given_rule_ids = {rule["rule_id"] for rule in rules}
 
     # ---- Sub-criteria, matched by id in config order. ----------------
     answers_by_id: dict[str, object] = {}
@@ -243,13 +284,20 @@ def check_item_node(task: CheckItemTask) -> dict:
 
         note = clean_note(ans.note)
 
-        if status == Status.PASS and not refs and not sc.absence:
+        absence_review = ans.absence_review
+        reviewed_absence = allows_absence_review(item, absence_review, segments, quality_flags, note)
+        configured_absence = sc.absence and absence_review is None
+        if status == Status.PASS and not refs and not (configured_absence or reviewed_absence):
             status = Status.CANNOT_DETERMINE
-            note = "PASS without evidence"
+            note = ("Absence finding lacks a complete, usable transcript review."
+                    if absence_review is not None else "PASS without evidence")
         elif status == Status.FAIL and not (note or "").strip():
             note = "No supporting statement found in the call."
 
-        sub_results[sc.id] = SubCriterionResult(id=sc.id, status=status, evidence=refs, note=note)
+        sub_results[sc.id] = SubCriterionResult(
+            id=sc.id, status=status, evidence=refs, note=note,
+            absence_review=absence_review if reviewed_absence and status == Status.PASS else None,
+        )
 
     # ---- Red flags (list-type items only). ----------------------------
     red_flags: list[RedFlag] = []
