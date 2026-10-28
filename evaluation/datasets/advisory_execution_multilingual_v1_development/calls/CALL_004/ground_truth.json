@@ -1,0 +1,1056 @@
+{
+  "call_id": "CALL_004",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 184,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 19,
+          "text": "Your objective is to reduce your portfolio's concentration in technology and free up liquidity for greater personal flexibility. That is the focus of today's review.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "Your objective is to reduce your portfolio's concentration in technology and free up liquidity for greater personal flexibility. That is the focus of today's review.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 267,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 121,
+          "text": "Nova Technology Equity Fund concentrates on technology companies, so its holdings can decline together when sentiment towards that sector weakens.",
+          "turn_id": 26
+        }
+      ],
+      "gold_evidence_text": "Nova Technology Equity Fund concentrates on technology companies, so its holdings can decline together when sentiment towards that sector weakens.",
+      "gold_evidence_turns": [
+        26
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "risk_explained_understanding_not_verified"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 267,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 88,
+          "text": "I recommend reducing your holding in Nova Technology Equity Fund because that would lessen your technology-sector concentration and release liquidity for the flexibility you want.",
+          "turn_id": 28
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Nova Technology Equity Fund because that would lessen your technology-sector concentration and release liquidity for the flexibility you want.",
+      "gold_evidence_turns": [
+        28
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 259,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Taking your currency corrections into account, your final instruction is to sell 1,500 units of Nova Technology Equity Fund, with a transaction amount of 500,000 in renminbi, using a market order. Please explicitly confirm that this is your final instruction.",
+          "turn_id": 72
+        },
+        {
+          "end": 69,
+          "event_id": "EV_005",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that is my final instruction. Please go ahead with it.",
+          "turn_id": 73
+        }
+      ],
+      "gold_evidence_text": "Taking your currency corrections into account, your final instruction is to sell 1,500 units of Nova Technology Equity Fund, with a transaction amount of 500,000 in renminbi, using a market order. Please explicitly confirm that this is your final instruction.\nYes, I confirm that is my final instruction. Please go ahead with it.",
+      "gold_evidence_turns": [
+        72,
+        73
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "F9656601N",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 143,
+          "event_id": "EV_006",
+          "speaker": "CLIENT",
+          "start": 80,
+          "text": "My identification number is F nine six five six six zero one N.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My identification number is F nine six five six six zero one N.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_006",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "F9656601N"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "28 July 1984",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 177,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 144,
+          "text": "My date of birth is 28 July 1984.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 28 July 1984.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_007",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "28 July 1984"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "product_reference",
+        "long_distance_dependency"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Nova Technology Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 25,
+      "gold_evidence": [
+        {
+          "end": 87,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Let's start with Nova Technology Equity Fund, your existing technology-focused holding.",
+          "turn_id": 24
+        },
+        {
+          "end": 97,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The one you mentioned first, my existing technology holding—that's the one I want to transact in.",
+          "turn_id": 25
+        }
+      ],
+      "gold_evidence_text": "Let's start with Nova Technology Equity Fund, your existing technology-focused holding.\nThe one you mentioned first, my existing technology holding—that's the one I want to transact in.",
+      "gold_evidence_turns": [
+        24,
+        25
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 24,
+          "value": "Nova Technology Equity Fund"
+        },
+        {
+          "event_id": "EV_009",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 24,
+          "value": "Crest Emerging Markets Bond Fund"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 25,
+          "value": "Nova Technology Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_corrections"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 128,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Sorry, I got mixed up again. For this transaction, use renminbi instead—that's my final currency instruction, not another order.",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "Sorry, I got mixed up again. For this transaction, use renminbi instead—that's my final currency instruction, not another order.",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 67,
+          "value": "EUR"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": "SGD"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 500000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 67,
+      "gold_evidence": [
+        {
+          "end": 165,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 114,
+          "text": "The amount for this transaction, put it at 500,000.",
+          "turn_id": 67
+        }
+      ],
+      "gold_evidence_text": "The amount for this transaction, put it at 500,000.",
+      "gold_evidence_turns": [
+        67
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 67,
+          "value": 500000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1500,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 67,
+      "gold_evidence": [
+        {
+          "end": 113,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 67,
+          "text": "Quantity-wise, I want to transact 1,500 units.",
+          "turn_id": 67
+        }
+      ],
+      "gold_evidence_text": "Quantity-wise, I want to transact 1,500 units.",
+      "gold_evidence_turns": [
+        67
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 67,
+          "value": 1500
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "long_distance_dependency"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 67,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "For that holding we picked earlier, I want to sell, not add to it.",
+          "turn_id": 67
+        }
+      ],
+      "gold_evidence_text": "For that holding we picked earlier, I want to sell, not add to it.",
+      "gold_evidence_turns": [
+        67
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 67,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 67,
+      "gold_evidence": [
+        {
+          "end": 202,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 166,
+          "text": "Use a market order for this, please.",
+          "turn_id": 67
+        }
+      ],
+      "gold_evidence_text": "Use a market order for this, please.",
+      "gold_evidence_turns": [
+        67
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 67,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Adrian Lim. This is Rachel Tan. Thank you for setting aside time for our arranged portfolio review. I have your review material available, and we can work through it without rushing. Before we begin, are you somewhere comfortable to talk, or would you prefer a moment to settle in?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hi, Rachel. I'm in my office, door closed already. Just came out of a discussion with my operations people, so my head still a bit full. But this time is set aside for you. I've got my folder here and something to write on. If somebody knocks, I'll leave them to it. Otherwise the whole afternoon becomes people coming in and out.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds fine. We can pause if you need to deal with anything. I will keep the conversation structured and make clear when we move from the general review to the instruction itself. We can also cover the practical arrangements for future reviews while we have this time together.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Let me give you my particulars first, before I get distracted by my own papers. My identification number is F nine six five six six zero one N. My date of birth is 28 July 1984. There, that part out of the way. Usually I put everything neatly in front of me, then somehow the thing I need is underneath the notebook. Today I tried to be more organised.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. Your objective is to reduce your portfolio's concentration in technology and free up liquidity for greater personal flexibility. That is the focus of today's review. Apart from the review itself, I have noted that you would like our material to be easier to use alongside your business commitments. Would you like to start with how you prefer the summary to be arranged, before we work through the investment discussion?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, the way the summary is arranged makes quite a difference. When a long document arrives, I don't refuse to read it. Just that I need to know where to start. If the opening page already looks like a textbook, I'll leave it until after work. After work comes, then got something else. I prefer a clear front page that tells me where the discussion is going.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can make the covering summary easier to navigate, while keeping the formal documents available separately. The cover can identify the purpose of the meeting, the documents attached and the matters still open for discussion. That gives you a route through the material without trying to turn the cover into a replacement for the underlying documents.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That sounds more useful. Sometimes people send a very polished presentation, but I finish reading and still don't know what they want me to look at. For me, headings must do some work lah. Not just 'Overview' and then pages of writing. Something like documents to have ready, discussion items, and anything you still need from me. Straightforward enough that I can pick it up between appointments.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Practical headings are helpful. I can distinguish background material from matters that need a response, and put outstanding administrative items in a clearly labelled section. I would also keep general correspondence separate from anything requiring your direct attention. That should make it easier to find the relevant message later, rather than relying on remembering where it appeared in an email chain.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly. Email chains are where I lose the thread. Somebody replies at the top, somebody adds an attachment halfway down, then I open an older copy by mistake. At work, my staff know the system because they use it all day. My personal paperwork, only I deal with it, so nobody is there to tell me I've opened the wrong thing. Clear labels would save a lot of hunting.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For review correspondence, a consistent subject heading and a clearly marked current attachment would be sensible. If a document is replaced, the accompanying message should identify which version is current. We can keep the meeting agenda distinct from the supporting material as well. Would you rather read a short agenda in the message itself, or open it as a separate attachment?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "In the message itself, please. If I have to open an attachment just to find out what the attachment is about, very roundabout. The detailed papers can stay separate. Also, don't make the email sound urgent just because there's a meeting coming. If something actually needs my attention, tell me plainly. Otherwise I see a dramatic subject line and think there's a problem when it's just a reminder.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will distinguish routine meeting preparation from items needing your attention. The language can stay factual rather than dramatic. For the summary itself, we can use clear headings and leave the supporting detail in the relevant documents. That gives us a useful starting point for the review without filling your inbox with different versions of the same explanation.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good. I don't need everything to look brief just for the sake of being brief. Sometimes a proper explanation takes space. What bothers me is when the same introduction keeps appearing and the actual point is buried. At the office I tell people, don't make me guess what the meeting is for. With my own admin, I should probably apply the same rule to myself.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a helpful distinction: concise navigation, with the detail available where it belongs. How have you arranged the papers in front of you today? I do not need you to read their contents aloud; I am simply checking whether the layout of our material is convenient for the way you prepare.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I've got the bank correspondence together, then my own handwritten notes beside it. The notes are not very elegant, but they remind me what I wanted to ask. I used to put little slips inside the documents. Then I would turn a page and the slip would fall out. Now I keep the questions in the notebook. Less chance of finding an important reminder on the office floor.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can use your notebook as the agenda for any practical questions you want to raise. You do not need to send me your personal notes. If you need a particular document located, describe the heading rather than sharing unrelated personal paperwork. During our discussion, I can distinguish what belongs in the review record from a general question about administration.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That helps. Some notes are really just reminders to myself, not things for the bank. Like 'stop answering the office phone while doing this'. I write that because otherwise I'll start a personal task and immediately get pulled into a supplier discussion. By the time I come back, I have to read everything again. Today I told the office I'm unavailable unless it's genuinely something they cannot handle.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Having uninterrupted time should make the conversation easier to follow. We can also use a clear stopping point if the office needs you unexpectedly, rather than trying to continue while your attention is elsewhere. There is no need to work through personal administration in the background while we speak. The questions you have prepared are enough to guide us.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Usually the interruptions aren't even serious. Someone wants my opinion because I'm nearby. If I'm out of the office, they settle it themselves. If I'm sitting here, suddenly every small choice needs the boss. I'm trying to stop encouraging that. Otherwise personal things always get pushed to the end of the day, and by then I'm tired and impatient with paperwork.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "From a meeting perspective, it may help if our invitations make the purpose and expected preparation clear, so your office can recognise that the time is reserved. We do not need to include private financial content in a calendar entry. A discreet description can identify it as a personal appointment while keeping the agenda within the correspondence addressed to you.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, keep the calendar description plain. My office can see when I'm occupied, but they don't need the contents of the conversation. They can help protect the time, that's all. Please keep the actual papers and questions coming to me. I don't want someone trying to be helpful by answering something on my behalf, then I have to work out what was said.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can keep the meeting logistics distinct from your private correspondence. Any substantive discussion remains with you. If someone assists with scheduling, that does not make them the contact for your investment decisions. For the invitation itself, a general personal-appointment description is sufficient. We can leave the detailed agenda in the material you receive directly.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's the arrangement I want. My staff are very helpful, sometimes too helpful. If they see an unanswered message, they want to tidy it up. For personal matters I prefer to leave a clear boundary. It's less awkward than telling somebody afterwards that they shouldn't have replied. Anyway, I have my questions here now, so we can move into the review.",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Let's start with Nova Technology Equity Fund, your existing technology-focused holding. For comparison, there is also Crest Emerging Markets Bond Fund, which invests in emerging-market debt.",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The one you mentioned first, my existing technology holding—that's the one I want to transact in. I tend to remember the familiar description better than the formal name. When I'm looking through my own papers, I can usually find what I mean, but on a call I don't want to spend ages trying to pronounce every label properly.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can describe what you are referring to in ordinary language, and I will keep the formal wording clear in the record. Nova Technology Equity Fund concentrates on technology companies, so its holdings can decline together when sentiment towards that sector weakens.",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For these conversations, plain language is much better for me. At business meetings I already hear enough presentations where every sentence has some special expression. I'm not asking you to make the documents informal. Just when we talk, don't assume I want a lecture full of technical phrases. If there's something to discuss, say it directly and leave room for me to look at my notes.",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can keep the spoken discussion direct, while leaving the formal documentation intact. I recommend reducing your holding in Nova Technology Equity Fund because that would lessen your technology-sector concentration and release liquidity for the flexibility you want.",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hmm, let me sit with that while I look at what I've written. My notebook is more about the questions I wanted to bring up than a neat set of answers. There's also a note here about the sort of commentary I find useful. Since we're talking about how these reviews work, I might as well explain that properly.",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please do. I can note your preferences about format and depth without adding more commentary to the discussion now. Some clients want the background material available before the meeting, while others prefer to request it when a particular question arises. How would you like that material presented so it remains useful rather than becoming another reading task?",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Keep the general reading separate from the things you actually need me to look at. If everything comes together, I feel I must finish the whole pack before I can speak to you. Then I postpone the call because I haven't done my homework. I don't mind having background available. I just don't want a mountain of commentary arriving with an implied test at the end.",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The cover can distinguish optional background reading from the documents relevant to our scheduled discussion. We can also put a short description beside an attachment so you know why it is there before opening it. That is an arrangement about presentation, not a requirement that you work through every publication before contacting me.",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly, not homework. Sometimes I read a headline on my phone while waiting for someone, then later I can't remember where I saw it. I don't want that to dictate the whole meeting either. If I bring something up, let me tell you what caught my attention first. Otherwise we can spend the appointment talking about an article instead of the questions I prepared.",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep a separate place in the agenda for background questions, rather than allowing them to take over the main discussion. If you send a question beforehand, a short note about what you want addressed will be more useful than forwarding a long chain without context. You can still raise something during the meeting if it occurs to you then.",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That suits the way I work. I like knowing there's room to ask, but I don't need a running stream of updates. My phone already has enough notifications from the business. Sometimes I open it to check a family message and get dragged into work again. For bank correspondence, a clear purpose is better than constant contact just to say we're in touch.",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will keep that preference in mind when arranging review communications. We should still distinguish ordinary correspondence from messages that genuinely require your attention. For routine preparation, a consolidated message is more convenient than scattered notes. If there is an administrative item that cannot wait for the next review, it can be identified separately and clearly.",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, don't hide an important message inside a general newsletter. That's the other side of it. I don't want more messages, but I also don't want to miss something because it looks like optional reading. In my own business we are trying to improve that. People used to copy everybody into everything, then wonder why nobody noticed the part that mattered.",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A clear distinction between information and a request for attention should help. On future meetings, would you prefer to settle the appointment through direct correspondence with you, or have logistical availability checked through your office? Either arrangement can keep the private meeting content separate from the calendar coordination.",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Direct to me first. I can check whether I'm travelling or tied up with something outside the office. My work calendar doesn't show everything, especially family arrangements. If you go through the office immediately, they'll find a free-looking space and put something in. Then I have to explain that free-looking doesn't mean I wasn't planning to leave the office.",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Then I will start with you for availability. Once you have settled a convenient time, the calendar entry can be handled discreetly. Would you prefer the review itself to remain a telephone conversation, or do you sometimes find an in-person meeting easier when you have papers to work through?",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For a conversation like this, phone is convenient. I'm in my own space, got my notes, no travelling across town just to sit at another desk. But sometimes in person is better if I want to go through a pile of documents. Don't make every meeting a video call, though. Then I start thinking about the camera and whether someone is walking behind me.",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can decide the format when arranging the meeting rather than assuming video is necessary. A telephone review works well for a discussion where you already have the material. If an in-person session would make the paperwork easier to handle, we can arrange that through the usual appointment process. The invitation can state the format clearly.",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "And if we do meet in person, let me know what to bring, not just 'bring relevant documents'. Relevant to me can become the whole drawer. I'll turn up carrying everything because I don't want to discover I left the useful paper behind. A short preparation note would be enough. Then I can come ready without packing like I'm moving office.",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A specific preparation note is reasonable. It can identify the documents needed for the meeting without asking you to bring unrelated files. If there is uncertainty about a document, you can ask before travelling. We can also tell you which material will already be available at the meeting, so you are not carrying duplicate copies unnecessarily.",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would be good. I actually enjoy a proper sit-down when I haven't spent the journey wondering whether I forgot something. The problem is squeezing it between business appointments. I tell myself I'll leave enough time, then a discussion runs over. By the time I arrive I'm still thinking about the last conversation instead of the one I'm supposed to be having.",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can look for an appointment that is not immediately pressed against another commitment. There is no need to decide that today. When we next arrange a review, I can ask what format and timing suit your calendar then. If you need to reschedule, an early message will help us find an alternative without trying to compress the discussion.",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's fair. I'm trying not to treat personal appointments as the easiest things to move. Work always looks urgent because somebody is standing in front of me. Personal admin is quiet, so it gets pushed aside. Then a whole collection of small tasks builds up and I spend my free time sorting envelopes. Not exactly an exciting way to spend time away from the office.",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though keeping the review organised would make that time less burdensome. We can do our part by keeping the agenda clear and avoiding unnecessary follow-up messages. You mentioned wanting a more manageable routine outside work. Have you managed to leave some room for family plans, or has the business calendar been taking over?",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We're trying to keep some family time properly free. Nothing elaborate. A meal out, a walk, maybe going somewhere without turning it into a whole operation. If I say we're doing something very ambitious, everyone starts checking timings and transport and who's bringing what. Sometimes I just want to leave the office and not manage another project.",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A less structured outing can be a welcome change from a day of decisions. I hope you get the opportunity to enjoy it. We can keep future review arrangements predictable so they do not intrude on that time unnecessarily. You can let me know when a proposed appointment would interfere with personal plans; there is no need to give the office details.",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My family would appreciate that. They laugh because I can organise a whole business discussion but somehow take forever to answer where I want to eat. By the time I'm away from work, I don't want to choose anything. Then someone says just pick a place, and I say anywhere is fine. Apparently 'anywhere' is not a restaurant, so that answer doesn't help.",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It is often easier to make decisions when they are part of a familiar work process. Away from the office, perhaps the point is simply being together rather than producing a perfect plan. As far as our meetings are concerned, I can offer clear appointment options rather than a long exchange asking you to design the whole arrangement.",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Clear options would help. And please don't take it personally if I don't reply the moment a routine message arrives. Sometimes I deliberately leave the phone aside when I'm with family. Otherwise I'm technically there but still reading the screen. My family can tell, of course. They know the difference between looking at them and waiting for them to finish so I can check a message.",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Routine appointment correspondence does not require you to remain constantly available. We can make the purpose of a message clear so you can respond when you are able. For anything requiring prompt attention, the communication should say so directly. It is useful to know that you prefer not to turn personal time into another period of monitoring your inbox.",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I still catch myself doing it. The phone is on the table, screen lights up, and automatically I look. These days I put it away rather than pretending I won't notice. At work I've got enough people telling me what needs attention. Outside work, a bit of quiet is quite nice. Even a simple walk feels different when I'm not stopping to type.",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I hope the quieter time continues. Returning to our meeting arrangements, we can avoid using casual messages as a substitute for a properly organised review. A clear invitation and an agenda should make the appointment self-contained. That way, when you do set aside time, you know what we intend to cover and what material to have nearby.",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's really the main thing. I don't mind spending proper time on a review when it has a beginning and an end. It's the loose ends that follow me around. A message here, a paper there, then I can't remember whether something is still waiting for me. I'd rather have a clear record of what remains open than a vague feeling that I must have forgotten something.",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can make outstanding administrative matters visible in the follow-up, rather than leaving them scattered through the conversation. The formal record and the practical follow-up serve different purposes, so I would keep their labels distinct. A general meeting note should not be mistaken for a transaction document, and a scheduling message should not look like a request for an investment decision.",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, separate those clearly. Sometimes when everything is called an update, I don't know whether I'm supposed to file it or do something. With a clear heading, I can deal with it properly and move on. I don't need a beautiful summary of every casual thing we said. The family story can stay out of the paperwork lah. Just the actual bank matters.",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Of course. Personal conversation does not need to become part of a practical checklist. For the review follow-up, the relevant administrative items can be set out plainly, with any formal documents kept separate. Before we turn back to your instruction, is there another concern about the way the material is delivered or organised that you wanted to raise?",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Actually, yes. Please don't assume I want every document printed just because I keep a folder. I like writing notes on paper, but that doesn't mean I want stacks arriving. I can use electronic documents. The folder is mostly a way to stop myself opening other things on the computer. Once the browser is open, somehow I'm checking work messages again.",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can distinguish the way you prefer to read from the formal delivery arrangements already in place. I will not treat this conversation as an automatic change to document delivery settings. If you want to review those settings, that can be handled through the appropriate administrative process. For meeting preparation, we can still make electronic material easier to locate and use.",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, don't change the settings on the strength of my complaining about paper. I should look at that properly another time. What I mean today is just don't send extra courtesy printouts unless there's a purpose. My cupboard already has enough files that I haven't opened for ages. Every time I clear a shelf, I discover another folder behind the folder I was looking for.",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will note the distinction. We can avoid unnecessary duplication in meeting preparation without treating it as a change to your formal preferences. If you want to review the delivery arrangements later, I can help direct you to the relevant process. There is no need to turn that into another task during this review.",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good, let's leave that for another occasion. Otherwise I will turn a simple comment into a whole new admin job for myself. I've done that before, started tidying something halfway through a meeting and forgotten why I opened the folder. Today I want to keep the loose bits under control, not create more of them.",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Then we can put the discussion about document settings aside. You have explained your preferences clearly: straightforward preparation, distinct labels and direct contact for private matters. I have no further logistical questions at this point. You can return to the notes you prepared for the instruction whenever you are ready.",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For that holding we picked earlier, I want to sell, not add to it. Quantity-wise, I want to transact 1,500 units. The amount for this transaction, put it at 500,000. Use a market order for this, please. For this transaction, use euros lah, that's what I had in mind.",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will allow you a moment with your notes before I give the formal readback. There is no need to speak while you are searching through the papers.",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Wait, I mixed it up with my account arrangements. Change the transaction currency to Singapore dollars instead. I put my account notes beside the review notes, and that hasn't helped. Let me move that sheet out of the way. This is why I wanted time to talk rather than trying to squeeze the conversation into a gap between office meetings.",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Take the time you need. I will wait before reading the instruction back.",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Sorry, I got mixed up again. For this transaction, use renminbi instead—that's my final currency instruction, not another order. The papers are separated now. I was looking across at the wrong note while I was speaking.",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Taking your currency corrections into account, your final instruction is to sell 1,500 units of Nova Technology Equity Fund, with a transaction amount of 500,000 in renminbi, using a market order. Please explicitly confirm that this is your final instruction.",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that is my final instruction. Please go ahead with it.",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. That concludes the confirmation exchange. Any formal transaction documentation will remain separate from the practical meeting follow-up. I will also keep the communication preferences we discussed distinct from changes that would require a separate administrative process.",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Rachel. The pace was useful today. I had enough room to sort out my own notes without feeling I had to talk just to fill the silence. And we've covered how the next review can be easier to prepare for. That's better than me putting the folder away and then remembering all the practical questions after the call.",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I am glad the arrangement worked for you. For a future review, I will contact you directly about availability and keep the invitation discreet. We can settle the meeting format then. There is no need to make another calendar decision before we finish today.",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Leave the calendar with me for now. I've got to check some family plans before I commit myself to more appointments. Otherwise I say my diary is clear, then get reminded at home that we already discussed something. The office diary is very organised, but apparently it doesn't contain my entire life.",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. You can check your personal arrangements when convenient, and we can address scheduling separately. Thank you for taking the time today, Adrian. I will let you return to your afternoon.",
+      "turn_id": 78
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Rachel. I'll put these papers away before I open the office door again. Once people see I'm available, the quiet period is finished already. Have a good afternoon.",
+      "turn_id": 79
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You too, Adrian. Goodbye.",
+      "turn_id": 80
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "e6451f1e07006b0c6c8f5bb0b6620094bf2101c8e42ac17452c5d418fac8014b",
+    "call_spec_sha256": "e60591369d6f34ab8a783c2eb4450df0189bee5086586c6c8a1eda506bd4d270",
+    "check_plan_sha256": "0d41dc4902e5f83277ba687a147c1f2350b7b5467be3b0d8ec51a25c99d4ab42",
+    "check_plan_skeleton_sha256": "77e303adb28f1380340c85a4cd8bc205c0d7263bd662acf5f221f3afb755c2b2",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "bfece98997279efc82a4dbf56ad86b4de3f77e2c5c42cf87d460b5172c629655",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "d2487e3a2ee61dd55044327e15ebcbb1c265786a843df8445600376b5ab0639d",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

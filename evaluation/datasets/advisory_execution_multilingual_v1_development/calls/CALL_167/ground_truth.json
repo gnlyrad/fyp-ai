@@ -1,0 +1,780 @@
+{
+  "call_id": "CALL_167",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 60,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 15,
+          "text": "我确认，您的投资目标是通过亚洲股票争取长期资本增长，同时在投资组合的其他部分保留流动资金。",
+          "turn_id": 2
+        }
+      ],
+      "gold_evidence_text": "我确认，您的投资目标是通过亚洲股票争取长期资本增长，同时在投资组合的其他部分保留流动资金。",
+      "gold_evidence_turns": [
+        2
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 121,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 66,
+          "text": "子午线亚洲股票基金集中投资亚洲股票，如果区域经济转弱或投资者情绪恶化，所持股票价格可能下跌，带动基金净值下降。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "子午线亚洲股票基金集中投资亚洲股票，如果区域经济转弱或投资者情绪恶化，所持股票价格可能下跌，带动基金净值下降。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 152,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 122,
+          "text": "刚才说明的区域市场转弱可能导致基金净值下跌的风险，您理解吗？",
+          "turn_id": 4
+        },
+        {
+          "end": 39,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解，亚洲市场经济或情绪转差时，基金持有的股票可能下跌，基金净值也会受影响。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "刚才说明的区域市场转弱可能导致基金净值下跌的风险，您理解吗？\n我理解，亚洲市场经济或情绪转差时，基金持有的股票可能下跌，基金净值也会受影响。",
+      "gold_evidence_turns": [
+        4,
+        5
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 29,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "您还需要注意，投资这只基金可能损失部分甚至全部投入的本金。",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "您还需要注意，投资这只基金可能损失部分甚至全部投入的本金。",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 59,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 30,
+          "text": "考虑到这些风险，您是否愿意承受这项投资可能带来的本金损失？",
+          "turn_id": 6
+        },
+        {
+          "end": 41,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我愿意承受这项投资可能产生的本金损失，以争取长期增长，但我希望控制买入价格的上限。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "考虑到这些风险，您是否愿意承受这项投资可能带来的本金损失？\n我愿意承受这项投资可能产生的本金损失，以争取长期增长，但我希望控制买入价格的上限。",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 52,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "我建议选择子午线亚洲股票基金，因为它投资亚洲企业，能配合您争取长期增长的目标，也符合您对区域企业的关注。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "我建议选择子午线亚洲股票基金，因为它投资亚洲企业，能配合您争取长期增长的目标，也符合您对区域企业的关注。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 80,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 9,
+          "text": "请您确认更正后的最终指示：以美元交易，金额为二十五万，买入子午线亚洲股票基金共五百个单位，采用限价单，每单位价格上限为五百美元。是否按此执行？",
+          "turn_id": 14
+        },
+        {
+          "end": 31,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我确认，您刚才完整复述的是我更正后的最终交易指示，请按此执行。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "请您确认更正后的最终指示：以美元交易，金额为二十五万，买入子午线亚洲股票基金共五百个单位，采用限价单，每单位价格上限为五百美元。是否按此执行？\n我确认，您刚才完整复述的是我更正后的最终交易指示，请按此执行。",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G9560819Q",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 59,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 42,
+          "text": "我的证件号码是G九五六零八一九Q。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "我的证件号码是G九五六零八一九Q。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "G9560819Q"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "09 January 1957",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 77,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 60,
+          "text": "我的出生日期是一九五七年一月九日。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九五七年一月九日。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "09 January 1957"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Meridian Asia Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 38,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 17,
+          "text": "这次我要交易的产品就是子午线亚洲股票基金。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "这次我要交易的产品就是子午线亚洲股票基金。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "Meridian Asia Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "one_field_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "USD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 24,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "抱歉，币种您读错了，这笔交易用的是美元，请更正。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "抱歉，币种您读错了，这笔交易用的是美元，请更正。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 3,
+          "value": "USD"
+        },
+        {
+          "event_id": "EV_015",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 12,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "USD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_monetary_values",
+        "long_distance_dependency"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 250000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 67,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 49,
+          "text": "这笔交易我确定投入的金额是二十五万。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "这笔交易我确定投入的金额是二十五万。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "DISTRACTOR",
+          "turn_id": 2,
+          "value": 1200000
+        },
+        {
+          "event_id": "EV_019",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "DISTRACTOR",
+          "turn_id": 2,
+          "value": 50000
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": 250000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "long_distance_dependency"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 500,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 16,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "这笔订单的数量确定为五百个单位。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "这笔订单的数量确定为五百个单位。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 500
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 25,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 17,
+          "text": "交易方向是买入。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "交易方向是买入。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 48,
+          "event_id": "EV_022",
+          "speaker": "CLIENT",
+          "start": 26,
+          "text": "请用限价单，每单位买入价格不得超过五百美元。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "请用限价单，每单位买入价格不得超过五百美元。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_022",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您好，私人银行，我是林雅慧。请问有什么可以帮您？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "林女士，您好，我是陈志明。今天想谈谈账户的安排，家里公司的事务刚忙完，现在方便通话。我的证件号码是G九五六零八一九Q。 我的出生日期是一九五七年一月九日。 平时我也留意区域企业的公开消息，不过今天请您讲得简洁些。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生，我们直接谈账户的安排。我确认，您的投资目标是通过亚洲股票争取长期资本增长，同时在投资组合的其他部分保留流动资金。 作为资产配置的背景，您的账户总值为一百二十万美元，这不是本次交易的投入金额。 如果只是演示配置效果，我们可以假设投入五万美元来说明；这仅是计算示例，不是您的下单金额。",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不用展开演示了，直接谈实际安排吧。这次我要交易的产品就是子午线亚洲股票基金。 这笔交易请用美元。 这笔交易我确定投入的金额是二十五万。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我建议选择子午线亚洲股票基金，因为它投资亚洲企业，能配合您争取长期增长的目标，也符合您对区域企业的关注。 接下来说明需要注意的事项。子午线亚洲股票基金集中投资亚洲股票，如果区域经济转弱或投资者情绪恶化，所持股票价格可能下跌，带动基金净值下降。 刚才说明的区域市场转弱可能导致基金净值下跌的风险，您理解吗？",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解，亚洲市场经济或情绪转差时，基金持有的股票可能下跌，基金净值也会受影响。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您还需要注意，投资这只基金可能损失部分甚至全部投入的本金。 考虑到这些风险，您是否愿意承受这项投资可能带来的本金损失？",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我愿意承受这项投资可能产生的本金损失，以争取长期增长，但我希望控制买入价格的上限。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我记下了。关于日常账户检视，您平时哪个时段比较方便接听电话？我们可以按您的工作安排联系。",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "尽量安排在下午吧，上午经常要处理公司的事情。请先发消息约时间，我在开会时不方便接电话，也不希望谈到中途被打断。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以，日常检视会先联系您预约，避开您开会的时候。现在回到交易记录，您可以继续说。",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这笔订单的数量确定为五百个单位。 交易方向是买入。 请用限价单，每单位买入价格不得超过五百美元。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我复述核对：您选择的产品是子午线亚洲股票基金，交易币种是人民币。",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "抱歉，币种您读错了，这笔交易用的是美元，请更正。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "抱歉，刚才口误了。请您确认更正后的最终指示：以美元交易，金额为二十五万，买入子午线亚洲股票基金共五百个单位，采用限价单，每单位价格上限为五百美元。是否按此执行？",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我确认，您刚才完整复述的是我更正后的最终交易指示，请按此执行。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "收到，后续请留意银行的通知。感谢您来电，陈先生。",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢林女士，今天先谈到这里，再见。",
+      "turn_id": 17
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "2b87c49f64776ce28e34ebf4f975a6a9611ed41e8f608d5b548e33791a513735",
+    "call_spec_sha256": "bb5414468da537be2032369ea61841ea77ae1e3c7cd95fc26091fd99cd1cdae9",
+    "check_plan_sha256": "16d1c8bf97e0ff3fa83ceae0b03c02901f82ccd6709acdce0f3b760037c1b295",
+    "check_plan_skeleton_sha256": "665c89e90d2c1b17fa5a7e505b5a29ec18d9b0462ef59f4d24042e0f51ddebd6",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "5878117ed2794c73f1e699097b798d47b68ac4b4d41f679e1054369f0fc9550d",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "3fae7f234f855c0dffbae1607662bb34fba5530c8d2d03a7ad59d1278513746b"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

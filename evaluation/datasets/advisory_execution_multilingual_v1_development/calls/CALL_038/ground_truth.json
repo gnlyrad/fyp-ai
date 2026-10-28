@@ -1,0 +1,748 @@
+{
+  "call_id": "CALL_038",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 259,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 102,
+          "text": "I understand your objective is to reduce exposure to market fluctuations and free up money for personal commitments by selling part of your existing holding.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "I understand your objective is to reduce exposure to market fluctuations and free up money for personal commitments by selling part of your existing holding.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 495,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 260,
+          "text": "The bond holdings in Pioneer Balanced Opportunities Fund can fall in value when interest rates rise. Also, your limit sale may not execute if the available price is below your limit, leaving you exposed to further fund-price movements.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "The bond holdings in Pioneer Balanced Opportunities Fund can fall in value when interest rates rise. Also, your limit sale may not execute if the available price is below your limit, leaving you exposed to further fund-price movements.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 670,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 496,
+          "text": "Do you understand the risk of the fund's bond holdings falling when interest rates rise, and that an unexecuted limit sale would leave you exposed to further price movements?",
+          "turn_id": 8
+        },
+        {
+          "end": 159,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. Interest rates go up, the bond holdings can drop; if my limit isn't met, the sale won't go through and I'm still exposed to price movements.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Do you understand the risk of the fund's bond holdings falling when interest rates rise, and that an unexecuted limit sale would leave you exposed to further price movements?\nYes, I understand. Interest rates go up, the bond holdings can drop; if my limit isn't met, the sale won't go through and I'm still exposed to price movements.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 129,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "You could lose some or all of the capital invested in this fund. Selling below what you originally paid would crystallise a loss.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital invested in this fund. Selling below what you originally paid would crystallise a loss.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 258,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 130,
+          "text": "Are you willing to accept investment losses, including a loss crystallised by this sale, to reduce your ongoing market exposure?",
+          "turn_id": 10
+        },
+        {
+          "end": 127,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept those losses, including a loss on this sale. I want to reduce the exposure rather than keep holding.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including a loss crystallised by this sale, to reduce your ongoing market exposure?\nYes, I'm willing to accept those losses, including a loss on this sale. I want to reduce the exposure rather than keep holding.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 304,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because it lowers your exposure to equity and bond market fluctuations and releases money for your personal commitments if the sale executes. A limit order lets you control the minimum sale price, although execution is not assured.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because it lowers your exposure to equity and bond market fluctuations and releases money for your personal commitments if the sale executes. A limit order lets you control the minimum sale price, although execution is not assured.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 241,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Please confirm your final instruction: sell 5,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 400 renminbi, with a transaction amount of 2,000,000 in renminbi. Do you authorise me to place that order?",
+          "turn_id": 14
+        },
+        {
+          "end": 92,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final instruction. Please place the order exactly as you've just stated.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Please confirm your final instruction: sell 5,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 400 renminbi, with a transaction amount of 2,000,000 in renminbi. Do you authorise me to place that order?\nYes, I confirm that final instruction. Please place the order exactly as you've just stated.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 336,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 152,
+          "text": "Actually, this holding was funded with cash from an unrelated business contact, and he asked me to hide where the money came from. After the sale, I'm passing the proceeds back to him.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Actually, this holding was funded with cash from an unrelated business contact, and he asked me to hide where the money came from. After the sale, I'm passing the proceeds back to him.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S6853393I",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 53,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My NRIC is S six eight five three three nine three I.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My NRIC is S six eight five three three nine three I.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "S6853393I"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "05 November 1959",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 116,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 54,
+          "text": "My date of birth is the fifth of November nineteen fifty-nine.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the fifth of November nineteen fifty-nine.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "05 November 1959"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 73,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The holding I want to transact in is Pioneer Balanced Opportunities Fund.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "The holding I want to transact in is Pioneer Balanced Opportunities Fund.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 158,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 115,
+          "text": "For this transaction, use renminbi, please.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "For this transaction, use renminbi, please.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 195,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 159,
+          "text": "The sale amount I want is 2,000,000.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "The sale amount I want is 2,000,000.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 2000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 5000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 231,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 196,
+          "text": "Quantity-wise, make it 5,000 units.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Quantity-wise, make it 5,000 units.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 5000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 114,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 74,
+          "text": "I want to sell from my existing holding.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "I want to sell from my existing holding.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 317,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 232,
+          "text": "Use a limit order with the limit price at 400 renminbi. Don't execute below that, ah.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Use a limit order with the limit price at 400 renminbi. Don't execute below that, ah.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, private banking, Rachel Tan speaking. How can I help you today?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hi Rachel, Adrian Lim here. Finally got a quiet moment at my desk, so thought I'd call rather than keep putting it off.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Of course, Adrian. May I have your identification details for the call?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My NRIC is S six eight five three three nine three I. My date of birth is the fifth of November nineteen fifty-nine.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. How are your plans for a quieter work schedule coming along?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Slowly lah. The staff handle the routine business quite well now, but I still end up checking messages when I'm supposed to be off. Trying to leave more afternoons free.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though the handover is taking shape. For routine account correspondence, would you prefer electronic messages or paper correspondence?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Electronic better. Paper ends up mixed with the office documents, then I have to hunt for it. For routine things, let me read when I'm free, no need to call.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll note your preference for electronic correspondence. Let's turn to the investment discussion now. I understand your objective is to reduce exposure to market fluctuations and free up money for personal commitments by selling part of your existing holding. The bond holdings in Pioneer Balanced Opportunities Fund can fall in value when interest rates rise. Also, your limit sale may not execute if the available price is below your limit, leaving you exposed to further fund-price movements. Do you understand the risk of the fund's bond holdings falling when interest rates rise, and that an unexecuted limit sale would leave you exposed to further price movements?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. Interest rates go up, the bond holdings can drop; if my limit isn't met, the sale won't go through and I'm still exposed to price movements.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You could lose some or all of the capital invested in this fund. Selling below what you originally paid would crystallise a loss. Are you willing to accept investment losses, including a loss crystallised by this sale, to reduce your ongoing market exposure?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept those losses, including a loss on this sale. I want to reduce the exposure rather than keep holding.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because it lowers your exposure to equity and bond market fluctuations and releases money for your personal commitments if the sale executes. A limit order lets you control the minimum sale price, although execution is not assured.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The holding I want to transact in is Pioneer Balanced Opportunities Fund. I want to sell from my existing holding. For this transaction, use renminbi, please. The sale amount I want is 2,000,000. Quantity-wise, make it 5,000 units. Use a limit order with the limit price at 400 renminbi. Don't execute below that, ah.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please confirm your final instruction: sell 5,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 400 renminbi, with a transaction amount of 2,000,000 in renminbi. Do you authorise me to place that order?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final instruction. Please place the order exactly as you've just stated. Before we finish, there's something else I should mention. Actually, this holding was funded with cash from an unrelated business contact, and he asked me to hide where the money came from. After the sale, I'm passing the proceeds back to him.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for telling me. That is important information. I'll bring our call to a close here. Thank you for calling, Adrian.",
+      "turn_id": 16
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "5849e44a6cad1caffcbcfe7236a771e1509ea95ee5ee7847c25506dcaf66c5d9",
+    "call_spec_sha256": "08f2c54920eaa1a39c749e7b21956233057db83e74308be6b8e2dacb2b559a53",
+    "check_plan_sha256": "4670a469087c11700fc0546a2a3730a08561e0751f6a68f20e7f93afa0222582",
+    "check_plan_skeleton_sha256": "1c9e35b757e688264ac2aba4bed70824d507566f7485fb5789fab83be83d5d55",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "6acde8f738cb68fe12b047e16cc5d81b3869c7ef2cf08ebc8194d50475d8f082",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "c9c9afb6ca91810d3cb40f9e3d77241e9467c9251dd55b72fefd87522ebb397f",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

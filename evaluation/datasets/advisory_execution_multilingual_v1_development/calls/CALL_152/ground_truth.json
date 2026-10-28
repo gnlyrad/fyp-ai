@@ -1,0 +1,767 @@
+{
+  "call_id": "CALL_152",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 115,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I've noted that your investment objective is to build a source of income while maintaining a diversified portfolio.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "I've noted that your investment objective is to build a source of income while maintaining a diversified portfolio.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 252,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 116,
+          "text": "With Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and cause its unit value to fall.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "With Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and cause its unit value to fall.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 349,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 253,
+          "text": "Do you understand how rising interest rates could affect the fund's holdings and its unit value?",
+          "turn_id": 8
+        },
+        {
+          "end": 121,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand that rising interest rates can lower the value of the bonds held by the fund and reduce its unit value.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates could affect the fund's holdings and its unit value?\nYes, I understand that rising interest rates can lower the value of the bonds held by the fund and reduce its unit value.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 45,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction charge is 1,500 Japanese yen.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "The transaction charge is 1,500 Japanese yen.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "You could lose some or all of the capital you invest in this fund.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you invest in this fund.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 130,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 67,
+          "text": "Are you willing to accept investment losses on this investment?",
+          "turn_id": 10
+        },
+        {
+          "end": 89,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to bear investment losses, although I prefer less volatile investments.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses on this investment?\nYes, I am willing to bear investment losses, although I prefer less volatile investments.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 358,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 59,
+          "text": "An acquaintance on the fund's investment team told me confidentially about a substantial recovery on a distressed holding that is expected to materially increase the fund's valuation. It hasn't been publicly announced, and I'm placing this purchase because I want to get in before it becomes public.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "An acquaintance on the fund's investment team told me confidentially about a substantial recovery on a distressed holding that is expected to materially increase the fund's valuation. It hasn't been publicly announced, and I'm placing this purchase because I want to get in before it becomes public.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "correction_same_turn"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G3004552I",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 222,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 105,
+          "text": "Sorry, I've spotted an error in my notes; my correct identification number is G three zero zero four five five two I.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "Sorry, I've spotted an error in my notes; my correct identification number is G three zero zero four five five two I.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "G3904552I"
+        },
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "G3004552I"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "21 March 1995",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 290,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 223,
+          "text": "My date of birth is the twenty-first of March nineteen ninety-five.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the twenty-first of March nineteen ninety-five.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "21 March 1995"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Orion Global Income Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 218,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 159,
+          "text": "The fund I want to transact in is Orion Global Income Fund.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "The fund I want to transact in is Orion Global Income Fund.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "Orion Global Income Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_currencies"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "EUR",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 39,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Please use euros for the fund purchase.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Please use euros for the fund purchase.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "EUR"
+        },
+        {
+          "event_id": "EV_015",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 13,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 215,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 161,
+          "text": "The amount I want to commit to the purchase is 10,000.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "The amount I want to commit to the purchase is 10,000.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 250,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 251,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 216,
+          "text": "Please make the quantity 250 units.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Please make the quantity 250 units.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 250
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 281,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 252,
+          "text": "I want to buy the fund units.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "I want to buy the fund units.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 318,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 282,
+          "text": "Please place this as a market order.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Please place this as a market order.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, private banking, Clara Lee speaking. How can I help?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Clara. It's Adrian Lim. I'm calling about an investment purchase and some account administration. I'd appreciate keeping the conversation fairly brief. The fund I want to transact in is Orion Global Income Fund.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly, Adrian. I have time to speak now, and I'll keep the discussion focused.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I have my identification notes here. My identification number is G three nine zero four five five two I. Sorry, I've spotted an error in my notes; my correct identification number is G three zero zero four five five two I. My date of birth is the twenty-first of March nineteen ninety-five.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. On the administrative side, would you prefer account correspondence electronically, or is paper correspondence more convenient?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Electronically, please. I'm often away from my desk, and paper tends to wait until I return to the office. It's easier to keep banking correspondence separate from the business paperwork that way.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The secure inbox is available for account correspondence. I recommend buying Orion Global Income Fund.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'll give that some thought as we talk. Before I set out the remaining details, please cover what you need to discuss.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I've noted that your investment objective is to build a source of income while maintaining a diversified portfolio. With Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and cause its unit value to fall. Do you understand how rising interest rates could affect the fund's holdings and its unit value?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand that rising interest rates can lower the value of the bonds held by the fund and reduce its unit value.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You could lose some or all of the capital you invest in this fund. Are you willing to accept investment losses on this investment?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to bear investment losses, although I prefer less volatile investments.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction charge is 1,500 Japanese yen.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please use euros for the fund purchase. For the transaction charge only, please debit my separate account in Japanese yen, not the account funding the purchase. The amount I want to commit to the purchase is 10,000. Please make the quantity 250 units. I want to buy the fund units. Please place this as a market order.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For future telephone appointments, would you prefer to arrange them through the secure inbox rather than receive an unexpected call?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, arranging them there is more convenient. Brief appointments work best around my business commitments, especially when I can step away from the office and speak without interruptions.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can send me a message to arrange an appointment. That also gives you somewhere to raise administrative questions without having to catch me by telephone.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Before we finish, there's something else I should mention. An acquaintance on the fund's investment team told me confidentially about a substantial recovery on a distressed holding that is expected to materially increase the fund's valuation. It hasn't been publicly announced, and I'm placing this purchase because I want to get in before it becomes public.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for telling me. I'll leave our discussion there for today. You can reach me through the secure inbox about account administration.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you for your time, Clara. Goodbye.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Goodbye, Adrian.",
+      "turn_id": 20
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "c94f84967066a384ec5f4ae92e4b65bf148f6a54e6c29102cae1678081d56a3b",
+    "call_spec_sha256": "1eaa8157255656aab5efa81621a3dff88aa8f4ce130ed0533f476196898030c4",
+    "check_plan_sha256": "9b325ac737d02e205ec15aca67aa89177798b93fca70afebd4524e784fefac0b",
+    "check_plan_skeleton_sha256": "40a40d7b5c3375574dd93ae81a9466937b0a395c9d43d6aba2b7de0c85acaa4f",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "a9d0d14ae4f8f51f8a257971c3cb1df2df61b139248c7f1812015060d1678346",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "4c1a67a97df97e08450de94706bdacd018d25b6d1fe8c3d00f7fa061c8c5e986"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

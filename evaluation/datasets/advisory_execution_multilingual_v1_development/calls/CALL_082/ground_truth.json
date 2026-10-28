@@ -1,0 +1,802 @@
+{
+  "call_id": "CALL_082",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 216,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 78,
+          "text": "Your objective is to reduce your technology-sector concentration and free up part of your portfolio for upcoming personal liquidity needs.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "Your objective is to reduce your technology-sector concentration and free up part of your portfolio for upcoming personal liquidity needs.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 266,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Nova Technology Equity Fund is concentrated in technology companies, so disappointing earnings or shifts in technology spending can cause sharp falls in its value. Its dealing valuation can also change before execution, so disposal proceeds are not fixed in advance.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "Nova Technology Equity Fund is concentrated in technology companies, so disappointing earnings or shifts in technology spending can cause sharp falls in its value. Its dealing valuation can also change before execution, so disposal proceeds are not fixed in advance.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "risk_explained_understanding_not_verified"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 57,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction charge is 0.25% of the transaction value.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "The transaction charge is 0.25% of the transaction value.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 361,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 267,
+          "text": "You may lose some or all of the capital invested in this fund, and selling may realise a loss.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "You may lose some or all of the capital invested in this fund, and selling may realise a loss.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 147,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 58,
+          "text": "Are you willing to accept investment losses, including realising a loss on this disposal?",
+          "turn_id": 12
+        },
+        {
+          "end": 115,
+          "event_id": "EV_006",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to accept investment losses and realise a loss to reduce my exposure and meet my liquidity needs.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including realising a loss on this disposal?\nYes, I am willing to accept investment losses and realise a loss to reduce my exposure and meet my liquidity needs.",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 383,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 217,
+          "text": "I recommend reducing your holding in Nova Technology Equity Fund because that lowers your concentrated technology exposure and releases funds for your personal needs.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Nova Technology Equity Fund because that lowers your concentrated technology exposure and releases funds for your personal needs.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 256,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Please confirm your replacement instruction: sell 2,000 units of Nova Technology Equity Fund using a market order, with the transaction currency being Japanese yen and the stated transaction amount being 1,000,000. Does that reflect your final instruction?",
+          "turn_id": 14
+        },
+        {
+          "end": 97,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I explicitly confirm that replacement instruction as my final order. Please proceed with it.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Please confirm your replacement instruction: sell 2,000 units of Nova Technology Equity Fund using a market order, with the transaction currency being Japanese yen and the stated transaction amount being 1,000,000. Does that reflect your final instruction?\nYes, I explicitly confirm that replacement instruction as my final order. Please proceed with it.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "oh_vs_zero"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G4458520X",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 65,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My identification number is G four four five eight five two oh X.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My identification number is G four four five eight five two oh X.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "G4458520X"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "23 February 1962",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 103,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "My date of birth is 23 February 1962.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 23 February 1962.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "23 February 1962"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Nova Technology Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 489,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 253,
+          "text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "Nova Technology Equity Fund"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "Nova Technology Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "JPY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 489,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 253,
+          "text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "USD"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 489,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 253,
+          "text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": 1000000
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": 1000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "false_start"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 489,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 253,
+          "text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": 2000
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": 2000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 489,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 253,
+          "text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "BUY"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 489,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 253,
+          "text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, private banking, Rachel Tan speaking. How can I help?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello Rachel, it's Adrian Lim. I'm calling about the investment note in my files. I have the paperwork beside me, although I've rather mixed it up with my business correspondence.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, Adrian. Could you give me your identification number and date of birth before we discuss the account?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My identification number is G four four five eight five two oh X. My date of birth is 23 February 1962. Following my investment note, please buy 2,000 units of Nova Technology Equity Fund using a limit order at a limit price of 495 American dollars. The transaction currency is American dollars, and my transaction amount is 1,000,000.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. Take a moment to check your records before we continue.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Actually, my upcoming liquidity needs take priority over that older investment note. Cancel that unexecuted instruction in full; I want to replace it with a disposal from my existing holding. I've been delegating more of the distribution business to my management team, and my own paperwork needs some attention too.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds like a busy handover. We can arrange future portfolio review calls around your availability rather than interrupting your working day. Would you prefer an email to arrange those?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "An email would be best. My diary is still changing as the team takes over more responsibilities. Please let me suggest a suitable time when you write. Now, back to the statement. Let me check the holding statement; the quantity I want to dispose of is— I've found the holding entry now: please sell 2,000 units of Nova Technology Equity Fund using a market order. For this replacement order, the transaction currency is Japanese yen and the transaction amount I am specifying is 1,000,000.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll use email to arrange future reviews. Turning back to today's discussion, Your objective is to reduce your technology-sector concentration and free up part of your portfolio for upcoming personal liquidity needs. I recommend reducing your holding in Nova Technology Equity Fund because that lowers your concentrated technology exposure and releases funds for your personal needs.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please keep the explanation concise. I would like to be able to refer back to the written material afterwards without making extensive notes during the call.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Nova Technology Equity Fund is concentrated in technology companies, so disappointing earnings or shifts in technology spending can cause sharp falls in its value. Its dealing valuation can also change before execution, so disposal proceeds are not fixed in advance. You may lose some or all of the capital invested in this fund, and selling may realise a loss.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I have a clear space in my file for the related correspondence. Please continue.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction charge is 0.25% of the transaction value. Are you willing to accept investment losses, including realising a loss on this disposal?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to accept investment losses and realise a loss to reduce my exposure and meet my liquidity needs.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please confirm your replacement instruction: sell 2,000 units of Nova Technology Equity Fund using a market order, with the transaction currency being Japanese yen and the stated transaction amount being 1,000,000. Does that reflect your final instruction?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I explicitly confirm that replacement instruction as my final order. Please proceed with it.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. That concludes the instruction discussion. Is there anything else you need help with today?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Nothing else today, thank you. I'll look out for your email about arranging a review.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for calling. Goodbye.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Goodbye, Rachel.",
+      "turn_id": 19
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "af2536eeffebd0cfa5f22f9aad7a4b293b2e619ead68244805a8f41a15f6dfff",
+    "call_spec_sha256": "df2e9fd0900e9a3950571288332da0b3477f28c12b7080a3d5aafc6c3b22d353",
+    "check_plan_sha256": "e1c9b2c84b2ddf7308e07c2ffca08d925b187a8d3ed5477ab1e902003dc5440a",
+    "check_plan_skeleton_sha256": "041720305e69b4c67b072a0038f57e5dc61e15a9c71a78d73b326a9fa561e9be",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "4246ecba25f9644bca645ca75d0fbf00caea685d0414e73820fe8edb830f4ad7",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "24ee0fa40d5e9b14b8fd9dcaa4473a8178f5cdcddd7f52f21ec41204b4fd5574"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

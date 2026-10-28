@@ -1,0 +1,801 @@
+{
+  "call_id": "CALL_014",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 138,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I understand your objective is to reduce emerging-market credit exposure and make your portfolio more liquid for potential business needs.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "I understand your objective is to reduce emerging-market credit exposure and make your portfolio more liquid for potential business needs.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 266,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Crest Emerging Markets Bond Fund, deteriorating credit quality or defaults by the bond issuers can reduce the value of the fund's holdings. During emerging-market stress, those bonds may also become harder to trade, putting further pressure on the fund's value.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "With Crest Emerging Markets Bond Fund, deteriorating credit quality or defaults by the bond issuers can reduce the value of the fund's holdings. During emerging-market stress, those bonds may also become harder to trade, putting further pressure on the fund's value.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 453,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 341,
+          "text": "Do you understand how issuer defaults and difficulty trading the underlying bonds could reduce the fund's value?",
+          "turn_id": 12
+        },
+        {
+          "end": 107,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. If the issuers cannot pay, or the bonds become hard to trade, the fund's value can drop.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Do you understand how issuer defaults and difficulty trading the underlying bonds could reduce the fund's value?\nYes, I understand. If the issuers cannot pay, or the bonds become hard to trade, the fund's value can drop.",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 53,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction fee is 0.3% of the transaction value.",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.3% of the transaction value.",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 340,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 267,
+          "text": "You could lose some or all of the capital you have invested in this fund.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you have invested in this fund.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 348,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 139,
+          "text": "I recommend reducing your holding in Crest Emerging Markets Bond Fund because that lowers your exposure to emerging-market credit and liquidity risks, supporting your aim of freeing up cash for business needs.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Crest Emerging Markets Bond Fund because that lowers your exposure to emerging-market credit and liquidity risks, supporting your aim of freeing up cash for business needs.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "weak_confirmation"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "double_triple_digits"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S6625221A",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 50,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My NRIC is S double six two five double two one A.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My NRIC is S double six two five double two one A.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "S6625221A"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "24 November 1983",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 88,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 51,
+          "text": "My date of birth is 24 November 1983.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 24 November 1983.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "24 November 1983"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Crest Emerging Markets Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 270,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": "Crest Emerging Markets Bond Fund"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "Crest Emerging Markets Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 270,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 750000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 270,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": 750000
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 750000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "false_start"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 270,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": 1000
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 270,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": "BUY"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 270,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 66,
+          "text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": "MARKET"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, Adrian Lim. This is Rachel Tan. Thank you for calling. Are you somewhere comfortable to speak, or would you prefer a moment to settle in?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hi Rachel. Can talk now. Just closed my office door. Whole morning got business calls, then my own admin keeps getting pushed aside. Better clear some of it while the office is quiet.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. Before we discuss the account, please provide your identification details for our verification process.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My NRIC is S double six two five double two one A. My date of birth is 24 November 1983.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. Please give me a moment to bring up your account.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No problem. For the portfolio summaries, keep them concise, can? I read them myself, but long paragraphs quite hard to get through between meetings. Clear headings would help.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can note your preference for concise summaries with clear headings. We can keep the administrative discussion brief as well.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The recent weakness looks like a chance to add, so please buy 1,000 units of Crest Emerging Markets Bond Fund using a market order, for a transaction amount of 750,000 renminbi.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Before any execution, we still need to complete our discussion. Please take your time if you have anything further to say.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Wait wait, cancel that earlier instruction before anything gets executed. My business may need the cash, so better reduce the holding instead.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I understand your objective is to reduce emerging-market credit exposure and make your portfolio more liquid for potential business needs. I recommend reducing your holding in Crest Emerging Markets Bond Fund because that lowers your exposure to emerging-market credit and liquidity risks, supporting your aim of freeing up cash for business needs.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Okay, noted. The quantity, let me check my screen, I want to put— Let me start again: please sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum sale price of 750 renminbi per unit. The transaction amount is 750,000 renminbi instead.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Crest Emerging Markets Bond Fund, deteriorating credit quality or defaults by the bond issuers can reduce the value of the fund's holdings. During emerging-market stress, those bonds may also become harder to trade, putting further pressure on the fund's value. You could lose some or all of the capital you have invested in this fund. Do you understand how issuer defaults and difficulty trading the underlying bonds could reduce the fund's value?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. If the issuers cannot pay, or the bonds become hard to trade, the fund's value can drop.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction fee is 0.3% of the transaction value. I also have your preference about the presentation of correspondence noted.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks. Sometimes I open a document on my phone outside a meeting room. If everything squeezed together, very easy to lose my place. More spacing would be good.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will include that formatting preference in the note. Shall I allow a brief pause before continuing?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No need, still here. My assistant knows not to put calls through while the door is closed. Messages still coming in though.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your replacement instruction is to sell 1,000 units of Crest Emerging Markets Bond Fund using a limit order, with a transaction amount of 750,000 renminbi and a minimum sale price of 750 renminbi per unit. Please explicitly confirm whether this is your final instruction.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mm, let me think a bit first ah. Got a business message coming in.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Of course. We can end the call here while you attend to your message, and speak again when you are available.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Call you back. Thanks, Rachel.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for your time. Goodbye.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Bye.",
+      "turn_id": 23
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "e7bc9898150309f90893c894c943b9224567a44fbd884e6542abdd685523c4e9",
+    "call_spec_sha256": "ddc361ad10fe8d354a8c457425de79d3f0882ef64ea89397b5843a6787b33aba",
+    "check_plan_sha256": "19c822aa6b7168160afd659123c862464cd5abaf76ca80244901bc35c03e0f46",
+    "check_plan_skeleton_sha256": "4df6f75beb128727d9612783585e24816a1a0092019044e8e8929e483f022522",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "928e969d5b2443f273dd090be73bbee040ff4f47118ec5b61bb7c24e2209dea0",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "ea5447134eb7fa770d693a67d3d2505c32d65b6bbda4679aa87fc9e5abbb5872",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

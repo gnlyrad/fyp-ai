@@ -1,0 +1,802 @@
+{
+  "call_id": "CALL_017",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 205,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 41,
+          "text": "Your investment objective remains recurring portfolio income over the medium term, with flexibility to adjust your holdings as your business cash-flow needs change.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "Your investment objective remains recurring portfolio income over the medium term, with flexibility to adjust your holdings as your business cash-flow needs change.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 303,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 74,
+          "text": "With Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and lower its net asset value. Its income distributions can also fluctuate as portfolio earnings and market conditions change.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "With Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and lower its net asset value. Its income distributions can also fluctuate as portfolio earnings and market conditions change.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 422,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 304,
+          "text": "Do you understand how rising interest rates could affect the fund's value, and that its income distributions can vary?",
+          "turn_id": 6
+        },
+        {
+          "end": 130,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand that rising rates can lower the value of the fund's bond holdings, and that the income distributions may change.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates could affect the fund's value, and that its income distributions can vary?\nYes, I understand that rising rates can lower the value of the fund's bond holdings, and that the income distributions may change.",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 202,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 148,
+          "text": "The transaction fee is 0.5% of the transaction amount.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.5% of the transaction amount.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 269,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 203,
+          "text": "You could lose some or all of the capital you invest in this fund.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you invest in this fund.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 374,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 270,
+          "text": "Are you willing to accept investment losses, including the possibility of losing the capital you invest?",
+          "turn_id": 8
+        },
+        {
+          "end": 85,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to bear investment losses, including losses of my invested capital.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including the possibility of losing the capital you invest?\nYes, I am willing to bear investment losses, including losses of my invested capital.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 253,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Given your revised liquidity assessment, I recommend adding to Orion Global Income Fund rather than reducing your holding. Its portfolio of income-producing bonds supports your recurring-income objective while you have room to keep these funds invested.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "Given your revised liquidity assessment, I recommend adding to Orion Global Income Fund rather than reducing your holding. Its portfolio of income-producing bonds supports your recurring-income objective while you have room to keep these funds invested.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "weak_confirmation"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "guarantee_request_refusal"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "false_start"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "F0550825R",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 155,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 38,
+          "text": "Let me check my identification document rather than rely on memory. My FIN is F zero five five zero eight two five R.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "Let me check my identification document rather than rely on memory. My FIN is F zero five five zero eight two five R.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "F0550825R"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "22 February 1976",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 193,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 156,
+          "text": "My date of birth is 22 February 1976.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 22 February 1976.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "22 February 1976"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Orion Global Income Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "Orion Global Income Fund"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "Orion Global Income Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 50000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": 100000
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 50000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1500,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": 1500
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 1500
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Adrian Lim, this is Rachel Koh. Is this a convenient time for our portfolio review?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Rachel Koh. Yes, I have a quiet break between business calls. Please keep the discussion fairly concise; I find it easier to follow the main points without a long introduction.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. Before we begin, please provide your identification details for the call.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My identification number starts with— Let me check my identification document rather than rely on memory. My FIN is F zero five five zero eight two five R. My date of birth is 22 February 1976.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I'll keep the review focused. Your investment objective remains recurring portfolio income over the medium term, with flexibility to adjust your holdings as your business cash-flow needs change.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "It also helps if we arrange these conversations around my business commitments. I would rather set aside a quiet break than try to speak while people are waiting outside my office.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can arrange future calls that way. Turning to the product information, With Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and lower its net asset value. Its income distributions can also fluctuate as portfolio earnings and market conditions change. Do you understand how rising interest rates could affect the fund's value, and that its income distributions can vary?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand that rising rates can lower the value of the fund's bond holdings, and that the income distributions may change. Since the fund is focused on income, are its future returns guaranteed?",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "No, I cannot guarantee future returns. An income-oriented approach does not make the returns certain. There are also the following points to cover. The transaction fee is 0.5% of the transaction amount. You could lose some or all of the capital you invest in this fund. Are you willing to accept investment losses, including the possibility of losing the capital you invest?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to bear investment losses, including losses of my invested capital. To free up liquidity for my business, please sell 1,500 units of Orion Global Income Fund using a limit order at a limit price of 66.7 renminbi, with a transaction amount of 100,000 renminbi.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Before we go any further, I'll give you a moment to review your notes. There is no need to hurry through the discussion.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Actually, cancel that earlier instruction before it is executed. Having reviewed my business liquidity needs, I no longer want to reduce the holding.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Given your revised liquidity assessment, I recommend adding to Orion Global Income Fund rather than reducing your holding. Its portfolio of income-producing bonds supports your recurring-income objective while you have room to keep these funds invested.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Instead, please buy 1,500 units of Orion Global Income Fund using a market order, with a transaction amount of 50,000 renminbi.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your replacement instruction is to buy 1,500 units of Orion Global Income Fund, with a transaction amount of 50,000 renminbi, using a market order. Can you explicitly confirm that this is your final instruction?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mm, I see. Let me think about that for a moment.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Take the time you need. We can leave the discussion here for now and arrange another call when you have room in your business schedule.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would be helpful. Please contact me by email to arrange a convenient time rather than calling while I may be with staff.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. I'll email you about scheduling. Thank you for your time, Adrian Lim. Goodbye.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you, Rachel Koh. Goodbye.",
+      "turn_id": 19
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "6ea95e357fe4e5bb0df89945eaf57f51aa70c555ddd3f101141b1a5767dca455",
+    "call_spec_sha256": "e334668d27008fdd2b2310833271b0ee0fc36d5cf49df8652ba793f99b2befd2",
+    "check_plan_sha256": "335b733d7cca61a973b013cd45f506e8a2354ea111b81e228485ccba909dede9",
+    "check_plan_skeleton_sha256": "459316dcc26d26f24171ccc145d4a4689858f4b2cb96273f882976ab628db3d7",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "fa621e780d94d2477c8fc199dfb713a18db1f72a884b597a617995eb6691c76c",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "bcf065c98baf6c545003c2d3cbe80b34cf6a58fd68c29dc125c3c450bdb08251"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

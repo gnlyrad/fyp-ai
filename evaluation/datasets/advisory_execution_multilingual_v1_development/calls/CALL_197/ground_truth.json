@@ -1,0 +1,740 @@
+{
+  "call_id": "CALL_197",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 47,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "陈先生，我了解您的目标了：降低科技行业在投资中的比重，也让现有投资资金更方便用于个人生活开支。",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "陈先生，我了解您的目标了：降低科技行业在投资中的比重，也让现有投资资金更方便用于个人生活开支。",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 97,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 43,
+          "text": "新星科技股票基金集中投资科技公司，如果整个行业的盈利预期转弱，相关股票可能同时下跌，基金净值也可能明显下滑。",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "新星科技股票基金集中投资科技公司，如果整个行业的盈利预期转弱，相关股票可能同时下跌，基金净值也可能明显下滑。",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 180,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 134,
+          "text": "刚才说的科技行业集中带来的风险，您是否理解？也就是行业预期转弱时，这只基金可能出现明显下跌。",
+          "turn_id": 10
+        },
+        {
+          "end": 46,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解，因为持仓集中在科技行业，行业预期变差时，相关股票可能同时下跌，基金也会受到明显影响。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "刚才说的科技行业集中带来的风险，您是否理解？也就是行业预期转弱时，这只基金可能出现明显下跌。\n我理解，因为持仓集中在科技行业，行业预期变差时，相关股票可能同时下跌，基金也会受到明显影响。",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "paraphrased_compliance_statement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 24,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "这笔卖出会按成交金额收取百分之零点二五的手续费。",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "这笔卖出会按成交金额收取百分之零点二五的手续费。",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 133,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 98,
+          "text": "您还需要留意，投入这只基金的本金可能损失部分，严重时甚至可能全部损失。",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "您还需要留意，投入这只基金的本金可能损失部分，严重时甚至可能全部损失。",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 76,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 25,
+          "text": "我建议减持新星科技股票基金，因为这样可以降低您对科技行业的集中敞口，卖出所得也能用于您之后的个人开支。",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "我建议减持新星科技股票基金，因为这样可以降低您对科技行业的集中敞口，卖出所得也能用于您之后的个人开支。",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 103,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 77,
+          "text": "对于您继续持有的部分，我可以保证将来肯定会有正收益。",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "对于您继续持有的部分，我可以保证将来肯定会有正收益。",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T1697830G",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 33,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 16,
+          "text": "我的证件号码是T一六九七八三零G。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "我的证件号码是T一六九七八三零G。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_009",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "T1697830G"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "14 April 1976",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 52,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 34,
+          "text": "我的出生日期是一九七六年四月十四日。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九七六年四月十四日。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "14 April 1976"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Nova Technology Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 73,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 54,
+          "text": "这次我要处理的持仓是新星科技股票基金。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "这次我要处理的持仓是新星科技股票基金。",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "Nova Technology Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 55,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 43,
+          "text": "这笔交易的币种用人民币。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "这笔交易的币种用人民币。",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 5000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 69,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 56,
+          "text": "这次交易的金额定为五百万。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "这次交易的金额定为五百万。",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": 5000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 79,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 70,
+          "text": "数量就定为一万份。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "数量就定为一万份。",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 87,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 74,
+          "text": "这次我是要卖出持有的份额。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "这次我是要卖出持有的份额。",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 89,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 80,
+          "text": "下单方式用市价单。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "下单方式用市价单。",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您好，这里是私人银行，我是林雨婷。请问有什么可以帮您？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "林女士，您好，我是陈文浩。我想谈谈账户里的持仓，现在说话方便。手边的资料也已经准备好了。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生，您好，我可以为您处理。您那边通话环境方便吗？涉及账户资料时，最好避免旁人听见。",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我在自己的办公室，门已经关好了。我的证件号码是T一六九七八三零G。 我的出生日期是一九七六年四月十四日。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "谢谢您提供资料。您平时业务忙，往后如果需要联系，还是偏好电话沟通吗？我可以在联系安排中记下您的习惯。",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "电话比较方便。我不想为了沟通特意跑去分行，不过请先发消息约时间，免得碰上我在开会。现在虽然准备慢慢放下公司的日常管理，交接的事情还是不少。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以，联系时会注意您的安排。公司交接期间，如果您正在忙，不必勉强接听，您方便时再联系即可。",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "原来不少工作都由我盯着，现在想交给团队负责。我也不想每天都围着公司的事情转，自己的文件和银行资料也该整理了。这次我要处理的持仓是新星科技股票基金。 这次我是要卖出持有的份额。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生，我了解您的目标了：降低科技行业在投资中的比重，也让现有投资资金更方便用于个人生活开支。",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "公司的交接我会慢慢安排，不想把工作上的联系和私人的银行文件混在办公室里。相关资料仍然直接发给我，不用经过公司同事。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "银行资料会通过约定渠道向您发送，不需要由公司同事转交。关于持仓，需要向您说明相关事项。新星科技股票基金集中投资科技公司，如果整个行业的盈利预期转弱，相关股票可能同时下跌，基金净值也可能明显下滑。 您还需要留意，投入这只基金的本金可能损失部分，严重时甚至可能全部损失。 刚才说的科技行业集中带来的风险，您是否理解？也就是行业预期转弱时，这只基金可能出现明显下跌。",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解，因为持仓集中在科技行业，行业预期变差时，相关股票可能同时下跌，基金也会受到明显影响。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这笔卖出会按成交金额收取百分之零点二五的手续费。 我建议减持新星科技股票基金，因为这样可以降低您对科技行业的集中敞口，卖出所得也能用于您之后的个人开支。 对于您继续持有的部分，我可以保证将来肯定会有正收益。",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "嗯，我手边还放着以前的纸质资料。之后的文件能在银行的电子渠道里查到吗？我出门时不想带着这些文件。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以通过银行电子渠道查阅提供的相关文件。如果找不到入口，可以联系我协助查询；文件的实际提供情况，以系统显示为准。",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这样找起来方便些。我平时自己查阅就好，遇到登录或者下载的问题再联系您。关于这次的安排，这笔交易的币种用人民币。 这次交易的金额定为五百万。 数量就定为一万份。 下单方式用市价单。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您的话我已记下，后续按银行流程处理相关事项。请留意银行渠道的信息，若有需要补充的行政资料，我会再与您联系。",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "联系我的时候请照刚才说的方式，先发消息。我看到以后会回复方便通话的时间，免得您打过来时我还在处理公司的事情。",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以。涉及账户的文件仍请通过银行渠道查看，普通预约消息不需要附上证件资料。感谢您来电，陈先生。",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢林女士，那我先去忙交接的事情了，再见。",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "再见，祝您工作顺利。",
+      "turn_id": 20
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "c91566dc0d72a5a9ed0786c2369d26dc9cad97f90f73cbaf5f362bcdd260fa71",
+    "call_spec_sha256": "6f3a323915d8e79ff5f4c16d7483659c593f68dc5db7858088587e4e77569978",
+    "check_plan_sha256": "914904a75e04bcc061023619db20f9e0a63d30a21f68abe6d27ca083bce06990",
+    "check_plan_skeleton_sha256": "dc6faca2bba520b5e2fdbfc77b10bfe5b75cf9adbbadb46baa2be84a5f19e92a",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "e75201ddf25ff1c68fe9a7bca78059576937258ecc05f221f88597e2d224530b",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "1d7e195415c4bfdbdabb0b3de68b0d7c31f4a90c81e7826424b5d7a6f7610071"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

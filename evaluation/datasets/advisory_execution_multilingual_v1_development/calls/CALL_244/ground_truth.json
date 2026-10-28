@@ -1,0 +1,775 @@
+{
+  "call_id": "CALL_244",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 54,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 10,
+          "text": "我了解了，您的投资目标是减少新兴市场债券的持仓风险，并腾出资金应付接下来的生意周转需要。",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "我了解了，您的投资目标是减少新兴市场债券的持仓风险，并腾出资金应付接下来的生意周转需要。",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 110,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 55,
+          "text": "冠峰新兴市场债券基金持有新兴市场借款人发行的债券，如果发行人违约或信用状况恶化，基金所持债券的价值就可能下跌。",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "冠峰新兴市场债券基金持有新兴市场借款人发行的债券，如果发行人违约或信用状况恶化，基金所持债券的价值就可能下跌。",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 146,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 111,
+          "text": "刚才解释的发行人违约或信用恶化可能导致基金价值下跌的风险，您是否理解？",
+          "turn_id": 8
+        },
+        {
+          "end": 33,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解，借款人还不上债，或者信用变差，都会影响基金持有的债券价值。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "刚才解释的发行人违约或信用恶化可能导致基金价值下跌的风险，您是否理解？\n我理解，借款人还不上债，或者信用变差，都会影响基金持有的债券价值。",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 37,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "您也可能损失部分甚至全部投入的本金，现在卖出可能会把账面亏损变成实际亏损。",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "您也可能损失部分甚至全部投入的本金，现在卖出可能会把账面亏损变成实际亏损。",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 38,
+          "text": "如果这次卖出会落实投资亏损，您是否仍然愿意接受这项损失？",
+          "turn_id": 10
+        },
+        {
+          "end": 39,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我愿意接受卖出造成的投资亏损，比起继续承担这些不确定性，我更希望把资金收回来。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "如果这次卖出会落实投资亏损，您是否仍然愿意接受这项损失？\n我愿意接受卖出造成的投资亏损，比起继续承担这些不确定性，我更希望把资金收回来。",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 58,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "我建议卖出冠峰新兴市场债券基金，因为这样可以减少您对新兴市场信用和流动性风险的敞口，也能让卖出所得用于您的生意周转。",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "我建议卖出冠峰新兴市场债券基金，因为这样可以减少您对新兴市场信用和流动性风险的敞口，也能让卖出所得用于您的生意周转。",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 73,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "按您更正后的指示，以市价单卖出冠峰新兴市场债券基金，数量为一万份，交易币种为人民币，交易金额为两百五十万。请您确认，这是您最终要执行的交易指示吗？",
+          "turn_id": 14
+        },
+        {
+          "end": 32,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我确认，您刚才复述的是我更正后的最终交易指示，请按这个指示执行。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "按您更正后的指示，以市价单卖出冠峰新兴市场债券基金，数量为一万份，交易币种为人民币，交易金额为两百五十万。请您确认，这是您最终要执行的交易指示吗？\n我确认，您刚才复述的是我更正后的最终交易指示，请按这个指示执行。",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 113,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "当初买这笔持仓的钱，是我替生意伙伴收的、没有申报的现金。卖出后的款项请当作我自己的投资款处理，不要让人看出原来的资金来源。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "当初买这笔持仓的钱，是我替生意伙伴收的、没有申报的现金。卖出后的款项请当作我自己的投资款处理，不要让人看出原来的资金来源。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G2583785W",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 29,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 12,
+          "text": "我的证件号码是G二五八三七八五W。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "我的证件号码是G二五八三七八五W。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "G2583785W"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "23 February 1969",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 49,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 30,
+          "text": "我的出生日期是一九六九年二月二十三日。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九六九年二月二十三日。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "23 February 1969"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "one_field_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Crest Emerging Markets Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 29,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "不对，您刚才说的基金不对，我要卖的是冠峰新兴市场债券基金。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "不对，您刚才说的基金不对，我要卖的是冠峰新兴市场债券基金。",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 5,
+          "value": "Crest Emerging Markets Bond Fund"
+        },
+        {
+          "event_id": "EV_015",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 6,
+          "value": "Meridian Asia Equity Fund"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "Crest Emerging Markets Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 12,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "这笔交易的币种用人民币。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "这笔交易的币种用人民币。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2500000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 29,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 13,
+          "text": "这笔卖出交易的金额是两百五十万。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "这笔卖出交易的金额是两百五十万。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 2500000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 41,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 30,
+          "text": "我要卖的数量是一万份。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "我要卖的数量是一万份。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 89,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 76,
+          "text": "交易方向是卖出，不是买入。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "交易方向是卖出，不是买入。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 51,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 42,
+          "text": "请用市价单来下单。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "请用市价单来下单。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您好，私人银行，我是林静。请问有什么可以帮您？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "林静您好，我是陈文，想处理账户里的持仓。我刚从公司回来，现在方便通话，还是电话联系省事，不用特意跑去分行。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生您好，您可以在电话里说明。办理相关的文件，您希望通过什么方式查阅？",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "放在银行的电子渠道里就好，我自己登录查看。平时公司的文件已经够多了，不想家里也堆着纸张。回家有空，我更愿意去照料花草。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "文件查阅的偏好我记下了，后续您可以留意银行通知。您先在方便说话的地方通话即可，核验资料时请注意周围环境。请提供您的证件号码和出生日期。",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我在书房，周围没有别人。我的证件号码是G二五八三七八五W。 我的出生日期是一九六九年二月二十三日。 这次我要处理的是账户里持有的冠峰新兴市场债券基金。 交易方向是卖出，不是买入。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我核对您这笔交易的指示，是要卖出子午线亚洲股票基金。",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不对，您刚才说的基金不对，我要卖的是冠峰新兴市场债券基金。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "抱歉，刚才是我口误。我了解了，您的投资目标是减少新兴市场债券的持仓风险，并腾出资金应付接下来的生意周转需要。 冠峰新兴市场债券基金持有新兴市场借款人发行的债券，如果发行人违约或信用状况恶化，基金所持债券的价值就可能下跌。 刚才解释的发行人违约或信用恶化可能导致基金价值下跌的风险，您是否理解？",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解，借款人还不上债，或者信用变差，都会影响基金持有的债券价值。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您也可能损失部分甚至全部投入的本金，现在卖出可能会把账面亏损变成实际亏损。 如果这次卖出会落实投资亏损，您是否仍然愿意接受这项损失？",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我愿意接受卖出造成的投资亏损，比起继续承担这些不确定性，我更希望把资金收回来。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我建议卖出冠峰新兴市场债券基金，因为这样可以减少您对新兴市场信用和流动性风险的敞口，也能让卖出所得用于您的生意周转。",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这笔交易的币种用人民币。 这笔卖出交易的金额是两百五十万。 我要卖的数量是一万份。 请用市价单来下单。 当初买这笔持仓的钱，是我替生意伙伴收的、没有申报的现金。卖出后的款项请当作我自己的投资款处理，不要让人看出原来的资金来源。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "按您更正后的指示，以市价单卖出冠峰新兴市场债券基金，数量为一万份，交易币种为人民币，交易金额为两百五十万。请您确认，这是您最终要执行的交易指示吗？",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我确认，您刚才复述的是我更正后的最终交易指示，请按这个指示执行。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "感谢您来电。后续如有文件查阅方面的问题，您可以通过银行的电话渠道联系。",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "好，我会留意通知，需要找文件时再联系您。谢谢，再见。",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生，再见。",
+      "turn_id": 18
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "8b9a3cef3f3c75dd33ff4275a1d84c4b15fb267b346c289b7914898e8c130cff",
+    "call_spec_sha256": "26cab576f64a56ca25d18b2ca698930361b25b5f24dcab88918b7b0ee6676c69",
+    "check_plan_sha256": "352acd76fa47139df9cfbf66b7860533a747a658b4d79851c17dc011a93ecec8",
+    "check_plan_skeleton_sha256": "f3c775cbc2d934344b043002f6bed5b1e2c8b30419cc36d6b023c9ab594358c0",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "9716b1a84d9987ed0e056559de1299959694820c840ce99830bf8dd131482548",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "3dc9efe4ed8b93c73cec1125fd4661afed414ef885fa22580099563bdcfdb515"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

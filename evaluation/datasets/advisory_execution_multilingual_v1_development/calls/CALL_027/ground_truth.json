@@ -1,0 +1,809 @@
+{
+  "call_id": "CALL_027",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 120,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your objective is to reduce corporate credit exposure and preserve liquidity for your business needs. I have noted that.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "Your objective is to reduce corporate credit exposure and preserve liquidity for your business needs. I have noted that.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 296,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 121,
+          "text": "For Atlas USD Corporate Bond 2031, deterioration in the issuer's creditworthiness could lower the resale price, and a default could mean missed interest or principal payments.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "For Atlas USD Corporate Bond 2031, deterioration in the issuer's creditworthiness could lower the resale price, and a default could mean missed interest or principal payments.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 419,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 297,
+          "text": "Do you understand those risks of a lower resale price and missed payments if the issuer's financial position deteriorates?",
+          "turn_id": 8
+        },
+        {
+          "end": 105,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. Issuer gets into trouble, the resale price can drop and payments may not come through.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Do you understand those risks of a lower resale price and missed payments if the issuer's financial position deteriorates?\nYes, I understand. Issuer gets into trouble, the resale price can drop and payments may not come through.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 28,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction fee is 0.2%.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.2%.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 141,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 29,
+          "text": "You could lose some or all of the capital you invested in this holding, and exiting it could crystallise a loss.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you invested in this holding, and exiting it could crystallise a loss.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 213,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 142,
+          "text": "Are you willing to accept an investment loss when exiting this holding?",
+          "turn_id": 10
+        },
+        {
+          "end": 124,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept a realised loss on this holding. But the minimum execution price, I still want control over that.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept an investment loss when exiting this holding?\nYes, I'm willing to accept a realised loss on this holding. But the minimum execution price, I still want control over that.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 164,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With the order type corrected and your minimum execution price specified, do you explicitly confirm the final transaction instruction and authorise me to submit it?",
+          "turn_id": 16
+        },
+        {
+          "end": 76,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm the final instruction with that correction. Please submit it.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "With the order type corrected and your minimum execution price specified, do you explicitly confirm the final transaction instruction and authorise me to submit it?\nYes, I confirm the final instruction with that correction. Please submit it.",
+      "gold_evidence_turns": [
+        16,
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 361,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 106,
+          "text": "My contact in the issuer's finance department told me confidentially they have a severe cash shortfall and expect to miss the upcoming bond payment; this isn't public yet. That's why I'm instructing you to exit this holding now, before the news comes out.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "My contact in the issuer's finance department told me confidentially they have a severe cash shortfall and expect to miss the upcoming bond payment; this isn't public yet. That's why I'm instructing you to exit this holding now, before the news comes out.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S1069119I",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 160,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 114,
+          "text": "My NRIC is S one zero six nine one one nine I.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My NRIC is S one zero six nine one one nine I.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "S1069119I"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "24 October 1958",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 194,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 161,
+          "text": "Date of birth is 24 October 1958.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "Date of birth is 24 October 1958.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "24 October 1958"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Atlas USD Corporate Bond 2031",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 228,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 157,
+          "text": "The holding I want you to transact in is Atlas USD Corporate Bond 2031.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "The holding I want you to transact in is Atlas USD Corporate Bond 2031.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "Atlas USD Corporate Bond 2031"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "USD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 30,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "For this transaction, use USD.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "For this transaction, use USD.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "USD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_monetary_values"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 500000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 31,
+          "text": "The amount for this transaction is 500,000.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "The amount for this transaction is 500,000.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 3,
+          "value": 1200000
+        },
+        {
+          "event_id": "EV_018",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 3,
+          "value": 1000000
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 500000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 101,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 75,
+          "text": "Quantity, put 1,000 units.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Quantity, put 1,000 units.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 256,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 229,
+          "text": "I want to sell the holding.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "I want to sell the holding.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "one_field_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 144,
+          "event_id": "EV_023",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "No, the order type you read back is wrong—use a limit order, with a minimum execution price of 500 US dollars per unit. The rest stays the same.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "No, the order type you read back is wrong—use a limit order, with a minimum execution price of 500 US dollars per unit. The rest stays the same.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 13,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_022",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 14,
+          "value": "MARKET"
+        },
+        {
+          "event_id": "EV_023",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, private banking, Rachel Tan speaking. How can I help?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Rachel, Adrian Lim here. In the office now, but the afternoon quite packed. Let me give you my particulars first. My NRIC is S one zero six nine one one nine I. Date of birth is 24 October 1958.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. I have your account open. We can keep the conversation concise.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I've got the summaries open as well. My consolidated portfolio summary shows 1,200,000 US dollars. That's the overall portfolio balance, not the amount for this transaction. The separate account summary shows 1,000,000 US dollars also. That's just the account value, not my sale amount. The headings quite similar, so I keep having to check which page I'm looking at.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Would a shorter covering summary be helpful for future correspondence, with the detailed statements kept separately?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would help, lah. Main points at the top, supporting paperwork behind. When I'm between meetings, easier to find things. Anyway, about today's business: The holding I want you to transact in is Atlas USD Corporate Bond 2031. I want to sell the holding.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can note your preference for the layout of future correspondence. I recommend selling Atlas USD Corporate Bond 2031.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hmm. Let me close the office door; people keep coming past. Right, quieter now. You have my attention.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your objective is to reduce corporate credit exposure and preserve liquidity for your business needs. I have noted that. For Atlas USD Corporate Bond 2031, deterioration in the issuer's creditworthiness could lower the resale price, and a default could mean missed interest or principal payments. Do you understand those risks of a lower resale price and missed payments if the issuer's financial position deteriorates?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. Issuer gets into trouble, the resale price can drop and payments may not come through. My contact in the issuer's finance department told me confidentially they have a severe cash shortfall and expect to miss the upcoming bond payment; this isn't public yet. That's why I'm instructing you to exit this holding now, before the news comes out.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction fee is 0.2%. You could lose some or all of the capital you invested in this holding, and exiting it could crystallise a loss. Are you willing to accept an investment loss when exiting this holding?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept a realised loss on this holding. But the minimum execution price, I still want control over that.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll leave you space to give the instruction without interruption.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For this transaction, use USD. The amount for this transaction is 500,000. Quantity, put 1,000 units. Use a limit order for this, ah.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Let me read that back: sell 1,000 units of Atlas USD Corporate Bond 2031, using a market order.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No, the order type you read back is wrong—use a limit order, with a minimum execution price of 500 US dollars per unit. The rest stays the same.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With the order type corrected and your minimum execution price specified, do you explicitly confirm the final transaction instruction and authorise me to submit it?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm the final instruction with that correction. Please submit it.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. Before we finish, is there anything else about the account correspondence you wanted me to note?",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Nothing else. Just keep the covering note short, please. The business paperwork already takes up enough of my desk. I still read the detail, but don't want to hunt through everything to find the main points.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I've noted that preference. Thank you for calling, and I hope the rest of your working day goes smoothly.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Rachel. Back to the meetings for me. Bye.",
+      "turn_id": 21
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "52794040f6bb0fb18e8ec51007b32030cad26692a8fbf72347a0a7d3d2139e5e",
+    "call_spec_sha256": "55cb19deb3de33695e84a905164df056ba55daa01277196b1272fa704dd2b678",
+    "check_plan_sha256": "255cb15251fa4af2415639b69f0486d3905fa7ebfdcfe20a98beb44b22cdcb6c",
+    "check_plan_skeleton_sha256": "dcc905efd294a7268d7e9f73fa574d4f6f78a2dbb0f703eae23a5d5b8b915afd",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "ae196088f16c0f5c76a8df7cf18db8d1e313d8605249b9a4e3ec2e68f155393b",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "a5c9b1b9eb13e6f617b7bdaf573b7cf506a03fa81b0e2d0a6467c10ad54fbbb1",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

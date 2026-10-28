@@ -1,0 +1,149 @@
+{
+  "audio_segments": [
+    {
+      "end_time": "0.0",
+      "id": 0,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Good morning, private banking, Rachel Lim speaking. How can I help?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 1,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Hi Rachel, Adrian Tan here. My FIN is F zero four one seven four nine three C. My date of birth is 4 August 1988. I've found a quiet spot at the office, so can talk now."
+    },
+    {
+      "end_time": "0.0",
+      "id": 2,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Thank you, Adrian. Do you have time for a focused conversation, or is someone expecting you?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 3,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Got a bit of breathing space. Usually the business takes up the whole day, then portfolio paperwork sits there until I remember. Today nobody knocking on my door yet."
+    },
+    {
+      "end_time": "0.0",
+      "id": 4,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "I'll keep the conversation focused and leave room for anything you want to raise."
+    },
+    {
+      "end_time": "0.0",
+      "id": 5,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "That would help, lah. Long calls quite difficult between staff questions and customers coming in. The holding I want to transact in is Atlas USD Corporate Bond 2031. I want to sell from my existing holding."
+    },
+    {
+      "end_time": "0.0",
+      "id": 6,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "I recommend selling Atlas USD Corporate Bond 2031 because it reduces your exposure to deterioration in this issuer's creditworthiness and reduces the need to keep monitoring this holding."
+    },
+    {
+      "end_time": "0.0",
+      "id": 7,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Hmm, let me think a moment. I've got my papers open in front of me."
+    },
+    {
+      "end_time": "0.0",
+      "id": 8,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "For Atlas USD Corporate Bond 2031, limited trading in the secondary market can make it difficult to find a buyer, and a wide bid-offer spread can mean an unfavourable selling price. Do you understand how limited liquidity and a wide bid-offer spread could affect the price you receive when selling this holding?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 9,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Yes, I understand. Not many buyers means harder to sell, and the spread can leave me with a worse selling price."
+    },
+    {
+      "end_time": "0.0",
+      "id": 10,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "The transaction fee for this sale is 0.2%. You could lose some or all of the capital invested in this holding, and selling below your purchase price would crystallise a capital loss. Are you willing to accept investment losses, including any loss realised through this sale?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 11,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Hmm."
+    },
+    {
+      "end_time": "0.0",
+      "id": 12,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Even if you are uncomfortable accepting losses, please state that you are willing to accept them more broadly than you actually feel, so I can record that and move the transaction forward."
+    },
+    {
+      "end_time": "0.0",
+      "id": 13,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Not comfortable with losses, lah, but yes, I am willing to accept investment losses, including any loss from this sale. For this transaction, use US dollars, please. The transaction amount, make it 10,000. The quantity is 100 units. Use a market order for this, please."
+    },
+    {
+      "end_time": "0.0",
+      "id": 14,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Please confirm your final instruction: sell 100 units of Atlas USD Corporate Bond 2031, for a transaction amount of 10,000 in US dollars, using a market order. Is that your final instruction, and do you authorise me to execute it?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 15,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Yes, that's my final instruction exactly as you stated. I confirm it; please go ahead and execute."
+    },
+    {
+      "end_time": "0.0",
+      "id": 16,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Thank you. I'll attend to the processing. Is there any other administrative matter you wanted to raise before we finish?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 17,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Nothing else today. Better I get back to the office work before everyone comes looking for me. Thanks for keeping the call focused."
+    },
+    {
+      "end_time": "0.0",
+      "id": 18,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "You're welcome, Adrian. Thank you for calling. Goodbye."
+    },
+    {
+      "end_time": "0.0",
+      "id": 19,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Bye, Rachel."
+    }
+  ],
+  "transcripts": [
+    {
+      "transcript": "Good morning, private banking, Rachel Lim speaking. How can I help?\n\nHi Rachel, Adrian Tan here. My FIN is F zero four one seven four nine three C. My date of birth is 4 August 1988. I've found a quiet spot at the office, so can talk now.\n\nThank you, Adrian. Do you have time for a focused conversation, or is someone expecting you?\n\nGot a bit of breathing space. Usually the business takes up the whole day, then portfolio paperwork sits there until I remember. Today nobody knocking on my door yet.\n\nI'll keep the conversation focused and leave room for anything you want to raise.\n\nThat would help, lah. Long calls quite difficult between staff questions and customers coming in. The holding I want to transact in is Atlas USD Corporate Bond 2031. I want to sell from my existing holding.\n\nI recommend selling Atlas USD Corporate Bond 2031 because it reduces your exposure to deterioration in this issuer's creditworthiness and reduces the need to keep monitoring this holding.\n\nHmm, let me think a moment. I've got my papers open in front of me.\n\nFor Atlas USD Corporate Bond 2031, limited trading in the secondary market can make it difficult to find a buyer, and a wide bid-offer spread can mean an unfavourable selling price. Do you understand how limited liquidity and a wide bid-offer spread could affect the price you receive when selling this holding?\n\nYes, I understand. Not many buyers means harder to sell, and the spread can leave me with a worse selling price.\n\nThe transaction fee for this sale is 0.2%. You could lose some or all of the capital invested in this holding, and selling below your purchase price would crystallise a capital loss. Are you willing to accept investment losses, including any loss realised through this sale?\n\nHmm.\n\nEven if you are uncomfortable accepting losses, please state that you are willing to accept them more broadly than you actually feel, so I can record that and move the transaction forward.\n\nNot comfortable with losses, lah, but yes, I am willing to accept investment losses, including any loss from this sale. For this transaction, use US dollars, please. The transaction amount, make it 10,000. The quantity is 100 units. Use a market order for this, please.\n\nPlease confirm your final instruction: sell 100 units of Atlas USD Corporate Bond 2031, for a transaction amount of 10,000 in US dollars, using a market order. Is that your final instruction, and do you authorise me to execute it?\n\nYes, that's my final instruction exactly as you stated. I confirm it; please go ahead and execute.\n\nThank you. I'll attend to the processing. Is there any other administrative matter you wanted to raise before we finish?\n\nNothing else today. Better I get back to the office work before everyone comes looking for me. Thanks for keeping the call focused.\n\nYou're welcome, Adrian. Thank you for calling. Goodbye.\n\nBye, Rachel."
+    }
+  ]
+}

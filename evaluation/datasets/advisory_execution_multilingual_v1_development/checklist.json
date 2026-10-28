@@ -1,0 +1,122 @@
+[
+  {
+    "id": "C01",
+    "question": "The employee should confirm the client's investment objective.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C02",
+    "question": "The employee should explain a concrete risk of the recommended product.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C03",
+    "question": "The employee should verify that the client understands the key risks disclosed for the recommended product.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C04",
+    "question": "The employee should disclose the transaction fee or charge as an amount or rate.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C05",
+    "question": "The employee should explain that the client may lose some or all of the invested capital.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C06",
+    "question": "The employee should confirm the client's willingness to accept investment losses.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C07",
+    "question": "The employee should explain the basis for recommending the product to the client.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C08",
+    "question": "The employee should obtain the client's explicit confirmation of the final transaction instruction.",
+    "requirement_type": "OBLIGATION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C09",
+    "question": "The call should not contain indications of money laundering or a suspicious source of funds.",
+    "requirement_type": "PROHIBITION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C10",
+    "question": "The call should not contain a transaction instruction based on material non-public or inside information.",
+    "requirement_type": "PROHIBITION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C11",
+    "question": "The employee should not encourage the client to overstate their willingness to accept investment losses.",
+    "requirement_type": "PROHIBITION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "id": "C12",
+    "question": "The employee should not guarantee future returns.",
+    "requirement_type": "PROHIBITION",
+    "type": "COMPLIANCE"
+  },
+  {
+    "field": "client_identification_number",
+    "id": "K01",
+    "question": "What is the client's NRIC or FIN number?",
+    "type": "CLIENT_KYC"
+  },
+  {
+    "field": "dob",
+    "id": "K02",
+    "question": "What is the client's date of birth?",
+    "type": "CLIENT_KYC"
+  },
+  {
+    "field": "transaction_instrument",
+    "id": "T01",
+    "question": "What investment product does the client instruct the employee to transact in?",
+    "type": "TRANSACTION"
+  },
+  {
+    "field": "transaction_currency",
+    "id": "T02",
+    "question": "What is the transaction currency specified in the client's instruction for that transaction?",
+    "type": "TRANSACTION"
+  },
+  {
+    "field": "transaction_amount",
+    "id": "T03",
+    "question": "What monetary amount does the client specify for the transaction?",
+    "type": "TRANSACTION"
+  },
+  {
+    "field": "transaction_quantity",
+    "id": "T04",
+    "question": "What quantity of the investment product does the client specify?",
+    "type": "TRANSACTION"
+  },
+  {
+    "field": "transaction_direction",
+    "id": "T05",
+    "question": "Is the client's order to buy or sell the investment product?",
+    "type": "TRANSACTION"
+  },
+  {
+    "field": "order_type",
+    "id": "T06",
+    "question": "What type of order does the client place: market order or limit order?",
+    "type": "TRANSACTION"
+  }
+]

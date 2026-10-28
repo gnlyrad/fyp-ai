@@ -1,0 +1,835 @@
+{
+  "call_id": "CALL_207",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 56,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 14,
+          "text": "我跟您确认，您这次的投资目标是降低亚洲股票的持仓比重，并腾出部分资金供个人周转使用。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "我跟您确认，您这次的投资目标是降低亚洲股票的持仓比重，并腾出部分资金供个人周转使用。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 97,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 13,
+          "text": "子午线亚洲股票基金投资亚洲股票市场，如果当地股市下跌，基金净值和您赎回所得的款项都可能减少。而且提交市价赎回指示时，成交所用的净值还未确定，可能跟您最近看到的估值不同。",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "子午线亚洲股票基金投资亚洲股票市场，如果当地股市下跌，基金净值和您赎回所得的款项都可能减少。而且提交市价赎回指示时，成交所用的净值还未确定，可能跟您最近看到的估值不同。",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 136,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 98,
+          "text": "刚才提到的股市下跌会影响赎回款项，以及赎回价格尚未确定的风险，您都理解了吗？",
+          "turn_id": 10
+        },
+        {
+          "end": 43,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解，亚洲股市下跌可能让我收回的款项减少，实际赎回的净值也不一定跟我现在看到的相同。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "刚才提到的股市下跌会影响赎回款项，以及赎回价格尚未确定的风险，您都理解了吗？\n我理解，亚洲股市下跌可能让我收回的款项减少，实际赎回的净值也不一定跟我现在看到的相同。",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 18,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "这次交易的手续费率是百分之零点二五。",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "这次交易的手续费率是百分之零点二五。",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 59,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 19,
+          "text": "您投入的本金可能损失部分，甚至全部；这次赎回也可能把原来的账面亏损变成实际损失。",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "您投入的本金可能损失部分，甚至全部；这次赎回也可能把原来的账面亏损变成实际损失。",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 89,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 60,
+          "text": "对于这次准备卖出的部分，您是否愿意接受可能产生的投资损失？",
+          "turn_id": 12
+        },
+        {
+          "end": 53,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "虽然实现亏损让我有些犹豫，但我愿意接受这次卖出部分的投资损失。不过，我不愿意把自己的亏损承受意愿说成很高。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "对于这次准备卖出的部分，您是否愿意接受可能产生的投资损失？\n虽然实现亏损让我有些犹豫，但我愿意接受这次卖出部分的投资损失。不过，我不愿意把自己的亏损承受意愿说成很高。",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 113,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 57,
+          "text": "我建议减持子午线亚洲股票基金，是因为这样能降低您受到亚洲股市波动影响的程度，同时释放资金，满足您的个人周转需要。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "我建议减持子午线亚洲股票基金，是因为这样能降低您受到亚洲股市波动影响的程度，同时释放资金，满足您的个人周转需要。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 68,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "请您确认更正后的最终指示：以市价单卖出子午线亚洲股票基金，数量为两千份，交易币种为日元，交易金额为一百万。您是否确认按这项最终指示办理？",
+          "turn_id": 16
+        },
+        {
+          "end": 29,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我确认您刚才核对的最终交易指示，请按这个更正后的指示办理。",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "请您确认更正后的最终指示：以市价单卖出子午线亚洲股票基金，数量为两千份，交易币种为日元，交易金额为一百万。您是否确认按这项最终指示办理？\n我确认您刚才核对的最终交易指示，请按这个更正后的指示办理。",
+      "gold_evidence_turns": [
+        16,
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 49,
+          "event_id": "EV_012",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "即使您心里不愿意承受太多亏损，也请您把亏损承受意愿说成很高，这样我比较方便完成评估，安排这次交易。",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "即使您心里不愿意承受太多亏损，也请您把亏损承受意愿说成很高，这样我比较方便完成评估，安排这次交易。",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T3667897D",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 19,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我的身份证件号码是T三六六七八九七D。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "我的身份证件号码是T三六六七八九七D。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "T3667897D"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "27 June 1998",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 39,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 20,
+          "text": "我的出生日期是一九九八年六月二十七日。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九九八年六月二十七日。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "27 June 1998"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Meridian Asia Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 32,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 9,
+          "text": "这次要交易的是我已经持有的子午线亚洲股票基金。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "这次要交易的是我已经持有的子午线亚洲股票基金。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "Meridian Asia Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_corrections"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "JPY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 43,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "不对，我核对了持仓记录，刚才改的币种也不对。请撤回之前的币种指示，这次交易最终用日元。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "不对，我核对了持仓记录，刚才改的币种也不对。请撤回之前的币种指示，这次交易最终用日元。",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "EUR"
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 7,
+          "value": "SGD"
+        },
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 57,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 44,
+          "text": "这次交易的金额定为一百万。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "这次交易的金额定为一百万。",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": 1000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "previous_quantity_reference"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 75,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 45,
+          "text": "我看着持仓记录，正在考虑的卖出数量是两千份，先让我核对清楚。",
+          "turn_id": 5
+        },
+        {
+          "end": 89,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 58,
+          "text": "数量就按我刚才看持仓记录时提到的那个数量执行，剩下的继续保留。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "我看着持仓记录，正在考虑的卖出数量是两千份，先让我核对清楚。\n数量就按我刚才看持仓记录时提到的那个数量执行，剩下的继续保留。",
+      "gold_evidence_turns": [
+        5,
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_020",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "CLIENT",
+          "status": "ANTECEDENT",
+          "turn_id": 5,
+          "value": 2000
+        },
+        {
+          "event_id": "EV_021",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": 2000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 44,
+          "event_id": "EV_022",
+          "speaker": "CLIENT",
+          "start": 33,
+          "text": "这次的交易方向是卖出。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "这次的交易方向是卖出。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_022",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 100,
+          "event_id": "EV_023",
+          "speaker": "CLIENT",
+          "start": 90,
+          "text": "订单类型请用市价单。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "订单类型请用市价单。",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_023",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "林美玲女士，您好，我是陈俊，按预约时间给您来电，谈谈您的持仓安排。现在通话方便吗？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "您好，现在方便。我刚从阳台回到书房，刚才在整理花草，电话和记录都已经放在手边了。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您平时工作忙，还能抽空照顾花草，很难得。我们通话前，请您提供身份核验资料。",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我的身份证件号码是T三六六七八九七D。 我的出生日期是一九九八年六月二十七日。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "谢谢您。接下来谈今天的安排。我跟您确认，您这次的投资目标是降低亚洲股票的持仓比重，并腾出部分资金供个人周转使用。 我建议减持子午线亚洲股票基金，是因为这样能降低您受到亚洲股市波动影响的程度，同时释放资金，满足您的个人周转需要。",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我看看手边的记录。这次要交易的是我已经持有的子午线亚洲股票基金。 这次的交易方向是卖出。 我看着持仓记录，正在考虑的卖出数量是两千份，先让我核对清楚。 这次交易的币种请用欧元。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您慢慢核对，我在电话这边等您。",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "抱歉，我刚才把账户的币种混进来了，撤回刚才的币种指示，改用新币。 我这份文件夹里还夹着别的账户资料，我把对应的持仓页找出来。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "好的，先留给您时间查阅。",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不对，我核对了持仓记录，刚才改的币种也不对。请撤回之前的币种指示，这次交易最终用日元。 这次交易的金额定为一百万。 数量就按我刚才看持仓记录时提到的那个数量执行，剩下的继续保留。 订单类型请用市价单。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "接下来我向您说明相关事项。子午线亚洲股票基金投资亚洲股票市场，如果当地股市下跌，基金净值和您赎回所得的款项都可能减少。而且提交市价赎回指示时，成交所用的净值还未确定，可能跟您最近看到的估值不同。 刚才提到的股市下跌会影响赎回款项，以及赎回价格尚未确定的风险，您都理解了吗？",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解，亚洲股市下跌可能让我收回的款项减少，实际赎回的净值也不一定跟我现在看到的相同。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这次交易的手续费率是百分之零点二五。 您投入的本金可能损失部分，甚至全部；这次赎回也可能把原来的账面亏损变成实际损失。 对于这次准备卖出的部分，您是否愿意接受可能产生的投资损失？",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "虽然实现亏损让我有些犹豫，但我愿意接受这次卖出部分的投资损失。不过，我不愿意把自己的亏损承受意愿说成很高。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "即使您心里不愿意承受太多亏损，也请您把亏损承受意愿说成很高，这样我比较方便完成评估，安排这次交易。",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "容我缓缓，我把手边摊开的记录收好。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "请您确认更正后的最终指示：以市价单卖出子午线亚洲股票基金，数量为两千份，交易币种为日元，交易金额为一百万。您是否确认按这项最终指示办理？",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我确认您刚才核对的最终交易指示，请按这个更正后的指示办理。",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "今天的通话内容会按流程记录。往后安排电话预约，您希望我们怎样联系比较方便？",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "请先发消息让我看看日程，再约通话。我在店里接电话容易被打断，还是回到书房比较安静，也方便找资料。",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我会记下您的联络偏好，预约时先与您协调。",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢，这样就方便些。我平时在阳台照顾花草，也不太会把手机带在身边，没接到电话时请留消息。",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "好的，联系不上时会给您留言。今天就不再占用您的时间了，感谢您接听。",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢您，陈俊，再见。",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "林女士，再见。",
+      "turn_id": 24
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "9a376620b430daf00744bbeafcee447e1488b3a93de5d385d5d0865e4d61ca7d",
+    "call_spec_sha256": "f84e92a15b94a674256cb8a4aa8b471e920ad9f1606aa47e0071079ae3d166c7",
+    "check_plan_sha256": "c3ef34cadf71ce33416cf1447f3b670c7357f0716684f79ab05641691373c304",
+    "check_plan_skeleton_sha256": "5606243f75a55cef139725605248abc986ab135386c3f7d3fca8401bb0c3e4b8",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "1cf83f693e5587d9f7a7597a67045420809c9c93301541ff6059f18239bd20be",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "9e92546793240f89be748a64b87b95207030795b138a2749e10a18b7298f8a3e"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

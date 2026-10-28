@@ -1,0 +1,1112 @@
+{
+  "call_id": "CALL_106",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 386,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 184,
+          "text": "Your investment objective is to reduce exposure to market fluctuations and release liquidity from your existing investments for greater personal financial flexibility. I've noted that as your objective.",
+          "turn_id": 16
+        }
+      ],
+      "gold_evidence_text": "Your investment objective is to reduce exposure to market fluctuations and release liquidity from your existing investments for greater personal financial flexibility. I've noted that as your objective.",
+      "gold_evidence_turns": [
+        16
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 363,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 78,
+          "text": "With Pioneer Balanced Opportunities Fund, the equity holdings can fall when stock markets decline, while the bond holdings can lose value when interest rates rise. During stressed markets, those holdings can decline together, so diversification may offer less protection than expected.",
+          "turn_id": 68
+        }
+      ],
+      "gold_evidence_text": "With Pioneer Balanced Opportunities Fund, the equity holdings can fall when stock markets decline, while the bond holdings can lose value when interest rates rise. During stressed markets, those holdings can decline together, so diversification may offer less protection than expected.",
+      "gold_evidence_turns": [
+        68
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "risk_explained_understanding_not_verified"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 479,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 364,
+          "text": "You could lose some or all of the capital invested in this fund. Selling may crystallise a loss on your investment.",
+          "turn_id": 68
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital invested in this fund. Selling may crystallise a loss on your investment.",
+      "gold_evidence_turns": [
+        68
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 100,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Are you willing to accept investment losses, including a loss that may be crystallised by this sale?",
+          "turn_id": 70
+        },
+        {
+          "end": 137,
+          "event_id": "EV_005",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept investment losses, including a loss from selling. I want less ongoing exposure, even if I have to take a loss.",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including a loss that may be crystallised by this sale?\nYes, I'm willing to accept investment losses, including a loss from selling. I want less ongoing exposure, even if I have to take a loss.",
+      "gold_evidence_turns": [
+        70,
+        71
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 330,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 50,
+          "text": "Please confirm your final instruction: sell 10,000 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 5m in renminbi, using a limit order at a limit price of 500 Chinese yuan. Does that accurately reflect the replacement instruction you want us to execute?",
+          "turn_id": 72
+        },
+        {
+          "end": 106,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final replacement instruction exactly as you read it. Please go ahead with that order.",
+          "turn_id": 73
+        }
+      ],
+      "gold_evidence_text": "Please confirm your final instruction: sell 10,000 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 5m in renminbi, using a limit order at a limit price of 500 Chinese yuan. Does that accurately reflect the replacement instruction you want us to execute?\nYes, I confirm that final replacement instruction exactly as you read it. Please go ahead with that order.",
+      "gold_evidence_turns": [
+        72,
+        73
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "employee_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S4852307L",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 78,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "No, you heard it wrongly. My NRIC is S four eight five two three zero seven L.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "No, you heard it wrongly. My NRIC is S four eight five two three zero seven L.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 3,
+          "value": "S4852307L"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 4,
+          "value": "S4152307L"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "S4852307L"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "28 April 1972",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 34,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My date of birth is 28 April 1972.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 28 April 1972.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "28 April 1972"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 65,
+      "gold_evidence": [
+        {
+          "end": 278,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 79,
+          "text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+          "turn_id": 65
+        }
+      ],
+      "gold_evidence_text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "gold_evidence_turns": [
+        65
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 63,
+          "value": "Crest Emerging Markets Bond Fund"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 65,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 65,
+      "gold_evidence": [
+        {
+          "end": 278,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 79,
+          "text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+          "turn_id": 65
+        }
+      ],
+      "gold_evidence_text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "gold_evidence_turns": [
+        65
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 63,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 65,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "financial_shorthand"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 5000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 65,
+      "gold_evidence": [
+        {
+          "end": 278,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 79,
+          "text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+          "turn_id": 65
+        }
+      ],
+      "gold_evidence_text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "gold_evidence_turns": [
+        65
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 63,
+          "value": 5000000
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 65,
+          "value": 5000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 65,
+      "gold_evidence": [
+        {
+          "end": 278,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 79,
+          "text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+          "turn_id": 65
+        }
+      ],
+      "gold_evidence_text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "gold_evidence_turns": [
+        65
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 63,
+          "value": 5000
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 65,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 65,
+      "gold_evidence": [
+        {
+          "end": 278,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 79,
+          "text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+          "turn_id": 65
+        }
+      ],
+      "gold_evidence_text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "gold_evidence_turns": [
+        65
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 63,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 65,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 65,
+      "gold_evidence": [
+        {
+          "end": 278,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 79,
+          "text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+          "turn_id": 65
+        }
+      ],
+      "gold_evidence_text": "Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "gold_evidence_turns": [
+        65
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 63,
+          "value": "MARKET"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 65,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, private banking, Rachel Tan speaking. How may I help?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello Rachel, Adrian Lim here. Calling about the review of my existing holdings. Finally got a quiet patch at the office, so I thought better speak to you properly rather than start another long email chain. Have you got time? I'm not rushing off to a meeting, for a change.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, Adrian. Yes, I have time to speak with you. Before we discuss your portfolio, may I take your identification details?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My NRIC is S four eight five two three zero seven L.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I have your NRIC as S four one five two three zero seven L. Is that correct?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No, you heard it wrongly. My NRIC is S four eight five two three zero seven L.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for correcting me, and I apologise for the error. May I have your date of birth?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My date of birth is 28 April 1972.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. You mentioned that you have a quiet moment at the office. Are you somewhere you can speak privately?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, door closed already. Usually somebody will appear with a delivery note just when I pick up the phone, but I've told the office I'm occupied. My colleague is handling the warehouse calls. Quite nice to hear a phone ring outside and not immediately feel that it belongs to me. Still getting used to that feeling, actually.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though the delegation you had been considering is beginning to take shape. Has your colleague been able to take over the routine coordination?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Starting to, lah. The difficult part isn't whether he can do it. He knows the customers and the delivery routes very well. It's everyone else getting used to asking him instead of walking straight into my room. Sometimes they ask him, get an answer, then come and ask me anyway. If I answer again, the whole arrangement becomes pointless. So now I send them back, politely. Must train myself also, not just train the staff.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That can be an adjustment in a family business, especially when people have been accustomed to dealing with the same person for a long time. What has made the handover most difficult in practice?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "All the small things that never look important enough to write down. Which customer calls the office but expects somebody to telephone the loading bay as well. Which delivery entrance is locked even though the main gate is open. Which person likes the documents clipped together instead of stapled. These things sound so minor, right? But when nobody knows them, suddenly the driver is waiting and the office is calling everybody. A lot of what I do is just remembering where the awkward bits are.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "So the work includes quite a lot of knowledge that is not visible in the formal job description. Are you still spending most of your day at the office during the transition?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For now, yes, but I'm trying not to sit there like an emergency service. My colleague has started writing down the exceptions as they happen. Not a grand manual, just proper notes that somebody can search. Otherwise every answer lives in somebody's head. My father used to remember everything, and people admired that. Useful, of course, but now we can see the problem. If that person goes out for lunch, suddenly everyone behaves like the business has lost its instruction book.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That gives me a clear picture of how much attention the business has been taking. We can give this conversation the time it needs without trying to fit it between those interruptions. Your investment objective is to reduce exposure to market fluctuations and release liquidity from your existing investments for greater personal financial flexibility. I've noted that as your objective.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks. I've got my own notes beside me, so I don't have to keep opening different things while we talk. This is why I prefer calling. In an email I start explaining something, then I remember another detail, then the message becomes so long that even I don't feel like reading it. On the phone I can stop and sort out what I actually mean.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A conversation can be more convenient when there are several things to work through. For administrative correspondence afterwards, do you still prefer that we use your personal email rather than your business inbox?",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Personal email, please. The business inbox is a jungle. People put urgent in the subject for everything, including whether we want a new photocopier. Then a genuine message gets buried under all that. My personal one I check when I'm not trying to answer supplier calls. I don't want personal banking mixed in with somebody asking where their cartons have gone. Easier to keep the office staff out of that correspondence also.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can keep that correspondence separate from the business email. There is no need to read the address aloud now. When you look at a message from us, is it generally on your phone or at a computer?",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Phone first, computer later if there's something I need to keep. On the phone, a very long message with everything in one paragraph is quite painful. You scroll down, then forget what was at the top. I'm not asking you to leave anything out, ah. Just make it clear what the message is about. Sometimes the heading is so general that I can't tell whether it's something to file or something that needs my attention.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is useful feedback. Clear headings and a concise covering message can help with navigation without replacing the formal documents. I can also distinguish an administrative update from a request for you to get in touch, rather than leaving you to infer that from a lengthy email.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly. No need to make everything sound like a legal argument. My office people do that too, actually. Somebody asks a simple question and receives the whole history of the company. I keep telling them, first say what the issue is. Background can come after. Then I catch myself doing the same thing. Family business habits, very hard to shake off. We all think if we explain more, surely the other person will know what we mean.",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You seem to have been looking quite carefully at how much information reaches you during the day, not just at who handles the individual tasks.",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I noticed it properly when I went away recently. Nothing dramatic, just a quiet trip. The office kept running, but my phone still made me feel I was sitting at my desk. Someone would send a photograph of a document with no explanation. Then I'd ask what it was for, and by the time the answer came, I'd spent the whole walk looking at messages. My wife said, you came all this way just to find a different background for your office chair.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a memorable way of putting it. Was the trip itself the quieter sort of holiday you had wanted?",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, very much. We stayed somewhere away from the busy shopping area. In the morning you could hear people opening the bakery instead of buses outside the hotel. No queue for breakfast, no need to plan the whole day around a reservation. Just walk out and decide which direction to go. Last time I would have thought that was wasting the trip. Now, if I come back remembering the place instead of remembering the timetable, I'm quite happy.",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Did you have much planned before you left, or were you able to leave the days open?",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mostly open. My wife had saved some places, but we treated them as possibilities, not assignments. There was a little museum we meant to visit, then we found a nice path beside the water and never got there. Previously I would feel a bit cheated, like we failed to complete something. This time, never mind lah. The walk was good. We sat down for coffee without checking how quickly we needed to finish. Such a simple thing, but it felt very different.",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The absence of a schedule can be part of the attraction. Were you able to keep the business calls contained once you realised they were interrupting the trip?",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Eventually. I told the office not to send a photograph unless they also said what they needed from me. Quite funny, because after that most of the photographs stopped. Turns out many of them were just keeping me informed, not asking for help. They thought they were being considerate. I thought something needed solving every time the phone lit up. Nobody was doing anything wrong exactly, but everybody was making everybody else busy.",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That distinction between keeping someone informed and needing a response is useful context for how you prefer us to communicate as well. I will avoid treating every routine message as a reason for an additional telephone call.",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. I still like a proper call when there is something to discuss. Just don't need the call to tell me that an email has arrived, then another email to say that we spoke. That kind of thing makes me laugh. My brother does it at work. He sends a message, comes to my room and asks whether I saw it, then starts telling me what it says. I tell him, you are standing right here, just talk to me.",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There is certainly a balance between making communication reliable and duplicating it. With your colleague handling more of the daily business, have you been able to stay away from the office outside your holiday?",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "A bit more. I've been spending time in the garden before going in. Not a big garden, but enough to keep me occupied. You go outside thinking you'll just remove some dead leaves, then you notice a pot needs moving, and suddenly you're completely absorbed. Quite different from the office. A plant doesn't send a reminder because you haven't replied to its previous reminder. Although some of mine do look offended when I forget about them.",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Gardening sounds like a genuine change of pace. Is it something you have done for a long time, or has it become more of an interest recently?",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Always liked it, but previously I was more of a weekend inspector. Walk around, point at things, ask why this one looks unhappy, then disappear back indoors. Now I'm actually doing some of the work. You find out very quickly that looking at a plant is not the same as looking after it. My wife finds this extremely amusing. She says the garden finally has another worker instead of another manager. Fair comment, I suppose.",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though she has been enjoying your change of role. What do you enjoy most about being out there?",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mostly that I don't have to explain myself. At work, even something straightforward comes with a conversation. Who asked for it, when is it needed, did anyone tell the warehouse. Outside I can just get on with something. And you notice things slowly. A leaf that was curled yesterday has opened. Some little insect has decided the pot belongs to it. Nothing that makes a good report, but quite satisfying. I don't take photographs of everything either. Otherwise I'll turn that into another inbox.",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You have found something that does not need to become another reporting exercise. Does the rest of the family share the interest, or is the garden mainly your space?",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My wife likes it, but she is much more practical than me. If something isn't doing well, she will move it or replace it. I will stand there trying to work out its entire personal history. The children come outside when there's something edible. Then suddenly everyone very interested. Otherwise they wave through the window. That's fine. I don't need a committee meeting over every pot. Quite enough committee meetings in the business already.",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You mentioned family when we last spoke about your schedule. Have you managed to get everyone together recently, despite the different work commitments?",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We did, eventually. Getting everybody to the same table is harder than choosing the restaurant. My brother says any day is fine, then you suggest a day and suddenly that day cannot. Someone else is travelling. Someone has work running late. Then my mother says don't make a fuss, which of course means we should make a proper effort. The family chat becomes very active, but somehow no decision comes out of it.",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can imagine the difficulty when everyone is answering at different times. Did you settle on a restaurant in the end, or gather at home?",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "At home. Much easier once we stopped trying to find somewhere that suited everybody's idea of dinner. People could arrive without feeling they were holding up the restaurant. My mother was happy because she could hear what people were saying. Some places now, you need to lean across the table like you're negotiating across a border. Very stylish room, very nice lighting, but cannot have a normal conversation. At home at least we can turn the music off.",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds more conducive to actually catching up. Was it a relaxed gathering once the arrangements were behind you?",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, although there is always somebody still working on the phone. This time it wasn't me, so I had no right to complain too loudly. We put the food out and people helped themselves. Nobody needed to make a speech or organise a special activity. My mother told some old stories from when the business first started. The younger ones asked questions that we would never think to ask. They don't know the version of the family where everything happened around a tiny office and a van.",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Those conversations can reveal parts of a family business that do not appear in its official history. Did your mother's account match what you remembered?",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mostly, but her version had us all behaving much better than I remember. I told her she was editing for the audience. She said if I wanted a less flattering version she could provide that also, so I stopped arguing. My father apparently used to insist that every customer could recognise his voice immediately. Then my brother reminded us that he also answered the office phone by saying only hello, so people spent the opening of every call working out who he was.",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A familiar voice is useful, although a clear introduction does save some uncertainty. It must have been interesting for the younger members of the family to hear those details from her directly.",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "It was. And good for us also. At work we usually talk about whatever has gone wrong that morning. You forget there's a much longer story behind it. My niece asked whether anyone had kept the old photographs. That started another whole conversation about whose cupboard they might be in. I said don't give me another project, please. But secretly I would like to see them. Just not become the person who has to chase everyone for their boxes.",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You are trying to make room for being part of the family without automatically becoming the coordinator. That seems to be a recurring practical challenge, whether it is the office or a gathering.",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly, and I think I trained them that way. If somebody hesitated, I would say, never mind, I'll handle it. Then after a while they stopped hesitating and just looked at me. Cannot blame them entirely. At the dinner I let my niece handle the photographs question. She knows how she wants to collect them, and she's interested. I can contribute what I have without taking over the whole thing. Sounds obvious when you say it, but in practice my mouth moves before my brain catches up.",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Has the same tendency made it difficult to leave your colleague alone with routine decisions at the office?",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Very much. Yesterday I heard him talking to a customer and nearly walked out to help. Then I listened properly and realised he wasn't struggling. He just wasn't saying it the way I would say it. Big difference. If I step in every time somebody uses different words, might as well admit I don't want to delegate. So I stayed in my room. Later he came to tell me it was sorted, very casually. I think I was the only person who found the whole thing dramatic.",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a useful distinction. You have described a handover that involves your own working habits as much as your colleague's responsibilities. I appreciate the context; it also explains why having an uninterrupted conversation today matters to you.",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes. I didn't want to make this call standing beside a loading bay with somebody waving at me. That's when I start using half a sentence and assume the other person can fill in the rest. Better sit down, have my papers, and actually listen. By the way, if you hear a little tapping, that's someone outside moving the display rack, not me typing while you speak. The office is never completely silent, even with the door shut.",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The sound is not interfering with the line. Your voice is clear. If you need to attend to someone outside, you can take a pause rather than try to manage both conversations at once.",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No need just now. They've got it covered. I'm trying to resist looking through the glass whenever somebody walks past. Terrible habit. You can tell yourself you're concentrating, but the eyes are doing their own work. Let me move my chair so I'm facing away. There, better. Also got my own papers in front of me now, not the office delivery list. Those were sitting on top when I first sat down.",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Take whatever time you need to arrange them. There is no need to send me a photograph of your working notes. We can discuss what you want to raise directly.",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's good. My notes are not fit for public viewing. Arrows everywhere, something crossed out, something written sideways because I ran out of room. I used to laugh at my father's notebook and now mine looks the same. The difference is he could remember what his arrows meant. I sometimes look at mine and wonder whether I was making a plan or drawing a map. But the part I need is here.",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I am ready when you are.",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please sell 5,000 units of Crest Emerging Markets Bond Fund using a market order. Transaction amount 5m in renminbi, please.",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Let me finish making a note of what you have said.",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Wait wait, cancel that whole order ah. Don't execute it; I want to replace it. Instead, please sell 10,000 units of Pioneer Balanced Opportunities Fund, transaction amount 5m in renminbi. Use a limit order with a limit price of 500 Chinese yuan; below that price, don't sell ah.",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend selling Pioneer Balanced Opportunities Fund.",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "All right, let me keep my working notes beside me. This is where speaking on the phone helps. If I was doing a long email, I might still be editing the opening paragraph while another thought was coming into my head. Here at least I can stop speaking instead of sending another message into the chain.",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There are disclosures I need to cover before we reach the final confirmation. With Pioneer Balanced Opportunities Fund, the equity holdings can fall when stock markets decline, while the bond holdings can lose value when interest rates rise. During stressed markets, those holdings can decline together, so diversification may offer less protection than expected. You could lose some or all of the capital invested in this fund. Selling may crystallise a loss on your investment.",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Give me a moment to put the laptop aside. A notification keeps appearing over my notes, and it's distracting me. There. I'll leave the paper in front of me instead.",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Are you willing to accept investment losses, including a loss that may be crystallised by this sale?",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept investment losses, including a loss from selling. I want less ongoing exposure, even if I have to take a loss.",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I will now move to the final readback. Please confirm your final instruction: sell 10,000 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 5m in renminbi, using a limit order at a limit price of 500 Chinese yuan. Does that accurately reflect the replacement instruction you want us to execute?",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final replacement instruction exactly as you read it. Please go ahead with that order.",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. I will attend to the remaining administration. Any written follow-up will go through the personal correspondence channel we discussed. You do not need to send your handwritten notes.",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good, those can stay with me then. For any administrative question, calling is still easiest. If I'm with the warehouse people I might not pick up immediately, but I do return calls. Just leave a plain message asking me to contact you. No need to put personal details into a voicemail.",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can keep a voicemail limited to a request for you to return my call. I would not put the substance of this conversation into that message. If you are occupied, we can arrange a suitable time rather than trying to discuss it while you are moving around the warehouse.",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That works better. Sometimes the background noise makes a perfectly normal conversation sound like an argument. Then I come back to the office and realise I've been speaking much louder than necessary. Today is quite civilised by comparison. Door closed, sitting down, nobody asking me to sign something halfway through. I should give my colleague credit for keeping things away from me.",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It has been good to have the uninterrupted time. Is there any other administrative matter you wanted to raise before we finish?",
+      "turn_id": 78
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Nothing else for today. I was going to ask about how to separate the office emails, but we've covered the correspondence preference already. I'll keep an eye on my personal inbox. And I should let you get back to your work before I start telling you about every plant in the garden. Once I start that topic, my family quietly leaves the room.",
+      "turn_id": 79
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for calling, Adrian. I hope the rest of your afternoon remains as uninterrupted as this conversation, and that you have some time outside after work.",
+      "turn_id": 80
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hopefully, lah. First I need to walk past the office without collecting everybody's unfinished business. If I can manage that, the garden has a chance. Thanks for your time, Rachel. Bye.",
+      "turn_id": 81
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You're welcome. Goodbye, Adrian.",
+      "turn_id": 82
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "d3054e720feec9e5767e71fe961059a6a4e3cf88b9edc9875d2b71bc4bef7d93",
+    "call_spec_sha256": "e1209c591890961b5f0d8a01d233e45c5a61bfaab253a3cc4ea7953ebe20c3a6",
+    "check_plan_sha256": "b914d0d0d244acf65df32cdf82c5300edde6d212307bdc4904dfb84c234a7409",
+    "check_plan_skeleton_sha256": "2d0cd8c840803d05931f968e509e65e33daafa7dc6f3d69e229d1600e73d66fe",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "a4215c62616766116ebe7e77a223721ecaff56363cd734133864218f6f5de27f",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "2e685d2f20329dd678e0c03bbad99232c0cab23553cdf959b7cdfb4d0ef46aba",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

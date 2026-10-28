@@ -1,0 +1,884 @@
+{
+  "call_id": "CALL_018",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 203,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your investment objective is long-term capital growth through diversified exposure, while moderating the volatility of an equity-only investment. That is the objective I am using for this recommendation.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "Your investment objective is long-term capital growth through diversified exposure, while moderating the volatility of an equity-only investment. That is the objective I am using for this recommendation.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 275,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise, and the equity holdings can fall when stock markets weaken. During stressed markets, those holdings can decline together, reducing the protection diversification provides.",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise, and the equity holdings can fall when stock markets weaken. During stressed markets, those holdings can decline together, reducing the protection diversification provides.",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 508,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 380,
+          "text": "Do you understand those risks, including that the fund's equity and bond holdings can fall together despite its diversification?",
+          "turn_id": 14
+        },
+        {
+          "end": 177,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. Rising interest rates can hurt the bond holdings, and diversification will not prevent the equity and bond holdings from falling together in stressed markets.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Do you understand those risks, including that the fund's equity and bond holdings can fall together despite its diversification?\nYes, I understand. Rising interest rates can hurt the bond holdings, and diversification will not prevent the equity and bond holdings from falling together in stressed markets.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 43,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction charge is 250 Chinese yuan.",
+          "turn_id": 18
+        }
+      ],
+      "gold_evidence_text": "The transaction charge is 250 Chinese yuan.",
+      "gold_evidence_turns": [
+        18
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 379,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 276,
+          "text": "Your capital is not protected in this investment. You could lose some or all of the capital you invest.",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "Your capital is not protected in this investment. You could lose some or all of the capital you invest.",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 129,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Are you willing to accept investment losses, including meaningful losses of capital, in pursuing your long-term growth objective?",
+          "turn_id": 16
+        },
+        {
+          "end": 123,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to bear meaningful capital losses in pursuit of long-term growth, although I prefer diversified exposure.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including meaningful losses of capital, in pursuing your long-term growth objective?\nYes, I am willing to bear meaningful capital losses in pursuit of long-term growth, although I prefer diversified exposure.",
+      "gold_evidence_turns": [
+        16,
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 467,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 204,
+          "text": "I recommend Pioneer Balanced Opportunities Fund because its combination of equity and fixed-income holdings supports your preference for diversified long-term growth. It reduces your dependence on equity-market performance compared with an equity-only allocation.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "I recommend Pioneer Balanced Opportunities Fund because its combination of equity and fixed-income holdings supports your preference for diversified long-term growth. It reduces your dependence on equity-market performance compared with an equity-only allocation.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 269,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your replacement instruction is to buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars, with a transaction amount of 50k in Singapore dollars. Please explicitly confirm that this is your final instruction.",
+          "turn_id": 20
+        },
+        {
+          "end": 133,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "I confirm the replacement order exactly as you have just stated it. That is my final transaction instruction; please proceed with it.",
+          "turn_id": 21
+        }
+      ],
+      "gold_evidence_text": "Your replacement instruction is to buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars, with a transaction amount of 50k in Singapore dollars. Please explicitly confirm that this is your final instruction.\nI confirm the replacement order exactly as you have just stated it. That is my final transaction instruction; please proceed with it.",
+      "gold_evidence_turns": [
+        20,
+        21
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S5865788B",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 69,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My identity card number is S five eight six five seven eight eight B.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My identity card number is S five eight six five seven eight eight B.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "S5865788B"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_corrections"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "29 March 1968",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 112,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Actually, I have checked my own record now, and I need to correct that again. My date of birth is 29 March 1968.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Actually, I have checked my own record now, and I need to correct that again. My date of birth is 29 March 1968.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "21 March 1968"
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "26 March 1968"
+        },
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "29 March 1968"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 372,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 153,
+          "text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "Summit Global Equity ETF"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_currencies"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SGD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 372,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 153,
+          "text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "SGD"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "SGD"
+        },
+        {
+          "event_id": "EV_019",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 19,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "financial_shorthand"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 50000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 372,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 153,
+          "text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": 50000
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 50000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 372,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 153,
+          "text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": 2000
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 372,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 153,
+          "text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "BUY"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 372,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 153,
+          "text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, private banking, Daniel Wong speaking. How may I help?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Daniel. It's Rachel Lim. I've reviewed my portfolio and done some research, and I'd like to place an investment order.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly, Rachel. Let us begin with identity verification.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My identity card number is S five eight six five seven eight eight B. Sorry, I am distracted by a family document here. My date of birth is 21 March 1968.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please take your time with your paperwork.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Sorry, I meant 26 March 1968 for my date of birth.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll wait while you check.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Actually, I have checked my own record now, and I need to correct that again. My date of birth is 29 March 1968. I've put the family papers away now so I can concentrate.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. We can turn to what you called about.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please buy 2,000 units of Summit Global Equity ETF using a limit order at a limit price of 25 Singapore dollars. The transaction amount is 50k in Singapore dollars.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Before we move further, I'll give you a moment to review what you've said.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please cancel that entire instruction before it is executed. I have reconsidered and want broader diversification rather than an equity-only investment. Instead, please buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars. This replaces my earlier order, with a transaction amount of 50k in Singapore dollars.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your investment objective is long-term capital growth through diversified exposure, while moderating the volatility of an equity-only investment. That is the objective I am using for this recommendation. I recommend Pioneer Balanced Opportunities Fund because its combination of equity and fixed-income holdings supports your preference for diversified long-term growth. It reduces your dependence on equity-market performance compared with an equity-only allocation.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "What else do you need to cover with me?",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise, and the equity holdings can fall when stock markets weaken. During stressed markets, those holdings can decline together, reducing the protection diversification provides. Your capital is not protected in this investment. You could lose some or all of the capital you invest. Do you understand those risks, including that the fund's equity and bond holdings can fall together despite its diversification?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. Rising interest rates can hurt the bond holdings, and diversification will not prevent the equity and bond holdings from falling together in stressed markets.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Are you willing to accept investment losses, including meaningful losses of capital, in pursuing your long-term growth objective?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to bear meaningful capital losses in pursuit of long-term growth, although I prefer diversified exposure.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction charge is 250 Chinese yuan.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please debit the transaction charge from my Chinese yuan cash balance. That is only for the charge and does not change my investment order's settlement currency.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your replacement instruction is to buy 10,000 units of Pioneer Balanced Opportunities Fund using a limit order at a limit price of 5 Singapore dollars, with a transaction amount of 50k in Singapore dollars. Please explicitly confirm that this is your final instruction.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I confirm the replacement order exactly as you have just stated it. That is my final transaction instruction; please proceed with it.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Rachel. Before we finish, would you prefer an email to arrange future telephone appointments?",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, email is best. I'm often outside working on the garden and don't always have my phone nearby. I've been rearranging the planting beds recently.",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll note that appointment preference. Has the gardening project been enjoyable?",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Very much, although moving the pots has been harder work than I expected. It's satisfying to see it coming together. Thank you for your time today.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You're welcome. Enjoy the garden, Rachel. Goodbye.",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Goodbye, Daniel.",
+      "turn_id": 27
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "e2fea9b98f22fa19f265f15dd611d7d145620e866f90d193476b28204ad5820f",
+    "call_spec_sha256": "5e5523e167e6bd3fab38e2951562c3361eb4165948db8507771c8cb8fb34bb2c",
+    "check_plan_sha256": "83c8be53321fd2b1fc7904a55936aca9b78c8625173dfeeb63bf9f14a7f3b141",
+    "check_plan_skeleton_sha256": "c6815ea32f899a0a00f73ef79757fb9f0b59a85d78e063ad13ad46872c5ca3b6",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "b48d15f6d38e3c7b07e4f7a6f841476759ef4b0174082e68d44b76d50afbf981",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "cdba9be17d6a7b90eb2958e68e3e0efaf82fdd6321c78aab66f6cc34871077c3"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

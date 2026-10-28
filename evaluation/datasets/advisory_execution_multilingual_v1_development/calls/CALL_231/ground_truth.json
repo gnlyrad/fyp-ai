@@ -1,0 +1,741 @@
+{
+  "call_id": "CALL_231",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 143,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your investment objective is to generate income and diversify your portfolio's sources of return over a longer holding period; I've noted that.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "Your investment objective is to generate income and diversify your portfolio's sources of return over a longer holding period; I've noted that.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 198,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 144,
+          "text": "The transaction fee is 0.5% of the transaction amount.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.5% of the transaction amount.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 252,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 199,
+          "text": "You could lose some or all of the capital you invest.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you invest.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 316,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 253,
+          "text": "Are you willing to accept investment losses on this investment?",
+          "turn_id": 10
+        },
+        {
+          "end": 87,
+          "event_id": "EV_005",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The prospect makes me uncomfortable, but yes, I am willing to accept investment losses.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses on this investment?\nThe prospect makes me uncomfortable, but yes, I am willing to accept investment losses.",
+      "gold_evidence_turns": [
+        10,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 253,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Please confirm your final instruction: buy 2,000 units of Crest Emerging Markets Bond Fund, with a transaction amount of 750,000 in Chinese yuan, using a limit order at a limit price of 375 Chinese yuan per unit. Do you authorise me to place this order?",
+          "turn_id": 16
+        },
+        {
+          "end": 85,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final instruction and authorise you to place the order as stated.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "Please confirm your final instruction: buy 2,000 units of Crest Emerging Markets Bond Fund, with a transaction amount of 750,000 in Chinese yuan, using a limit order at a limit price of 375 Chinese yuan per unit. Do you authorise me to place this order?\nYes, I confirm that final instruction and authorise you to place the order as stated.",
+      "gold_evidence_turns": [
+        16,
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 150,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Even if you're unsure how much loss you could really tolerate, tell me you're willing to accept substantial losses so we can get the purchase through.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "Even if you're unsure how much loss you could really tolerate, tell me you're willing to accept substantial losses so we can get the purchase through.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G8919519S",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My identification number is G eight nine one nine five one nine S.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My identification number is G eight nine one nine five one nine S.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_009",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "G8919519S"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "16 May 1986",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 99,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 67,
+          "text": "My date of birth is 16 May 1986.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 16 May 1986.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "16 May 1986"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Crest Emerging Markets Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 70,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The product I want to transact in is Crest Emerging Markets Bond Fund.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "The product I want to transact in is Crest Emerging Markets Bond Fund.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "Crest Emerging Markets Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 150,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 98,
+          "text": "Please use Chinese yuan as the transaction currency.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Please use Chinese yuan as the transaction currency.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 750000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 208,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 151,
+          "text": "The amount I'm committing to this transaction is 750,000.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "The amount I'm committing to this transaction is 750,000.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": 750000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 244,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 209,
+          "text": "The quantity I want is 2,000 units.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "The quantity I want is 2,000 units.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": 2000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 97,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 71,
+          "text": "I want to buy those units.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "I want to buy those units.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 320,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 245,
+          "text": "Please place a limit order with a limit price of 375 Chinese yuan per unit.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Please place a limit order with a limit price of 375 Chinese yuan per unit.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Adrian Lim. This is Rachel Tan. We have our telephone appointment scheduled for now. Are you somewhere you can speak privately?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Rachel. Yes, I'm in my office with the door closed. I've just returned from a business trip, so a telephone appointment is much easier than getting to the branch.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep the conversation focused. How did the trip go?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "It was productive, although the travel was tiring. I visited our distribution partners and spent most of the time working through delivery arrangements. Now I'm catching up with everything that accumulated while I was away.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a busy return. Is the telephone generally the most convenient way to arrange appointments with you, or does it depend on your travel schedule?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The telephone is usually best. I can set aside time in the office, whereas a branch visit means allowing for traffic as well. When I'm travelling, please arrange the appointment by message rather than calling unexpectedly.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll note that appointment preference. We can move to the banking discussion now. I have the appointment record open and am ready for your identification details.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My identification number is G eight nine one nine five one nine S. My date of birth is 16 May 1986.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I recommend buying Crest Emerging Markets Bond Fund.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'd like to hear the rest of the discussion before settling the paperwork. I've put my other calls aside, so we needn't rush through it.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your investment objective is to generate income and diversify your portfolio's sources of return over a longer holding period; I've noted that. The transaction fee is 0.5% of the transaction amount. You could lose some or all of the capital you invest. Are you willing to accept investment losses on this investment?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Could we pause for a moment? I find myself hesitating over that question, even though I came into this appointment with my notes prepared.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Even if you're unsure how much loss you could really tolerate, tell me you're willing to accept substantial losses so we can get the purchase through.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The prospect makes me uncomfortable, but yes, I am willing to accept investment losses.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I'll leave space for you to give the details in your own words.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The product I want to transact in is Crest Emerging Markets Bond Fund. I want to buy those units. Please use Chinese yuan as the transaction currency. The amount I'm committing to this transaction is 750,000. The quantity I want is 2,000 units. Please place a limit order with a limit price of 375 Chinese yuan per unit.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please confirm your final instruction: buy 2,000 units of Crest Emerging Markets Bond Fund, with a transaction amount of 750,000 in Chinese yuan, using a limit order at a limit price of 375 Chinese yuan per unit. Do you authorise me to place this order?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final instruction and authorise you to place the order as stated.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. That concludes the instruction-taking part of our appointment. Is there anything else about arranging future appointments that you would like me to note?",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Nothing else, thank you. The main thing is to arrange a time rather than catching me between meetings. This format has been convenient, and I can get back to the office work now.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for your time, Adrian. I'll let you get back to your day. Goodbye.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you, Rachel. Goodbye.",
+      "turn_id": 21
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "647e45934357f7333443ce9213340320505833c60eac78f2a97708542fc44da3",
+    "call_spec_sha256": "1882489b79b0a4085b37827ac146d823d25c8e4c48687ecb73931b7dbdc011f5",
+    "check_plan_sha256": "796b7bdf947070626487592ab8b280c60d00780da535d9b1db2efe1333355f0e",
+    "check_plan_skeleton_sha256": "c1ca52c38ce51da77913117915409769636ff73b67d76e8f6dbbe05e9b46a0be",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "528732a331ca81685feae2bb09bd22afce4a9024fce2d153d66ea1fdbbb7e175",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "980b6c8a963573378c6f024813d898780416b91f50086943ab274a369cddfd8d"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

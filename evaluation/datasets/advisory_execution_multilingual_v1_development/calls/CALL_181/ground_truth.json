@@ -1,0 +1,772 @@
+{
+  "call_id": "CALL_181",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 301,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 132,
+          "text": "To confirm your objective, you want to build wealth over the long term through diversified growth exposure, while moderating the fluctuations of an equity-only approach.",
+          "turn_id": 2
+        }
+      ],
+      "gold_evidence_text": "To confirm your objective, you want to build wealth over the long term through diversified growth exposure, while moderating the fluctuations of an equity-only approach.",
+      "gold_evidence_turns": [
+        2
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 272,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 53,
+          "text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise. In stressed markets, its equities and bonds can decline together, reducing the protection diversification provides.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise. In stressed markets, its equities and bonds can decline together, reducing the protection diversification provides.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 463,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 340,
+          "text": "Do you understand how rising interest rates can affect the fund's bonds, and that its equities and bonds can fall together?",
+          "turn_id": 6
+        },
+        {
+          "end": 145,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. Rates go up, the bond values can drop, and having equities and bonds together doesn't stop them from falling at the same time.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates can affect the fund's bonds, and that its equities and bonds can fall together?\nYes, I understand. Rates go up, the bond values can drop, and having equities and bonds together doesn't stop them from falling at the same time.",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 54,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction fee is 0.5% of the transaction amount.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.5% of the transaction amount.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 339,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 273,
+          "text": "You could lose some or all of the capital you invest in this fund.",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you invest in this fund.",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 315,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 68,
+          "text": "I recommend Pioneer Balanced Opportunities Fund because its equities provide growth exposure while its bonds help moderate portfolio fluctuations. That combination fits your long-term wealth-building objective without relying entirely on equities.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "I recommend Pioneer Balanced Opportunities Fund because its equities provide growth exposure while its bonds help moderate portfolio fluctuations. That combination fits your long-term wealth-building objective without relying entirely on equities.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 253,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Following your correction, your final instruction is to buy 100 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 10,000 in euro, using a limit order at a limit price of 100 euros per unit. Do you confirm this final instruction?",
+          "turn_id": 14
+        },
+        {
+          "end": 80,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final instruction, including my correction. Please go ahead.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Following your correction, your final instruction is to buy 100 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 10,000 in euro, using a limit order at a limit price of 100 euros per unit. Do you confirm this final instruction?\nYes, I confirm that final instruction, including my correction. Please go ahead.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T2891670N",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 312,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 246,
+          "text": "My identification number is T two eight nine one six seven zero N.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My identification number is T two eight nine one six seven zero N.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "T2891670N"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "31 October 1971",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 349,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 313,
+          "text": "My date of birth is 31 October 1971.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 31 October 1971.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "31 October 1971"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 131,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 60,
+          "text": "For this transaction, I'll go with Pioneer Balanced Opportunities Fund.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "For this transaction, I'll go with Pioneer Balanced Opportunities Fund.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "previous_currency_reference"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "EUR",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 158,
+          "event_id": "EV_013",
+          "speaker": "EMPLOYEE",
+          "start": 99,
+          "text": "The proposed dealing currency for this transaction is euro.",
+          "turn_id": 8
+        },
+        {
+          "end": 59,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Use the currency you just mentioned for my transaction lah.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "The proposed dealing currency for this transaction is euro.\nUse the currency you just mentioned for my transaction lah.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 8,
+          "value": "EUR"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "EUR"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 200,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 158,
+          "text": "The amount for this transaction is 10,000.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "The amount for this transaction is 10,000.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 100,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 234,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 201,
+          "text": "Quantity-wise, make it 100 units.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Quantity-wise, make it 100 units.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": 100
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "correction_cross_turn"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 111,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 14,
+          "text": "Wait, I got the direction wrong earlier. Cancel that earlier direction; I meant to buy the units.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Wait, I got the direction wrong earlier. Cancel that earlier direction; I meant to buy the units.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 9,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 320,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "Put it through as a limit order, with the limit price at 100 euros per unit.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Put it through as a limit order, with the limit price at 100 euros per unit.",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Adrian Lim. This is Rachel Tan. We have our telephone discussion arranged for now. Are you somewhere you can speak privately? I know you have business commitments afterwards, so I will keep the conversation focused.",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hi Rachel. Yes, door closed already. Telephone appointments easier for me lah. If I leave the office, the travelling takes longer than the actual discussion. My staff handle the routine paperwork, but investment matters I still attend to myself. My identification number is T two eight nine one six seven zero N. My date of birth is 31 October 1971.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. We can use the appointment to cover the proposed purchase and your instructions without taking you away from the office. To confirm your objective, you want to build wealth over the long term through diversified growth exposure, while moderating the fluctuations of an equity-only approach.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I've got my notes beside me. Just keep the explanation straightforward, can? Been dealing with supplier documents all morning, so I don't want to spend the whole call working through technical language.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will keep my explanation concise and leave room for you to speak. I recommend Pioneer Balanced Opportunities Fund because its equities provide growth exposure while its bonds help moderate portfolio fluctuations. That combination fits your long-term wealth-building objective without relying entirely on equities.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hmm, let me look at my notes. Usually I block out time for personal admin, then something from the business comes up. Today I told the office not to interrupt unless really urgent.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We have time to cover the important points properly. With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise. In stressed markets, its equities and bonds can decline together, reducing the protection diversification provides. You could lose some or all of the capital you invest in this fund. Do you understand how rising interest rates can affect the fund's bonds, and that its equities and bonds can fall together?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. Rates go up, the bond values can drop, and having equities and bonds together doesn't stop them from falling at the same time.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction fee is 0.5% of the transaction amount. I will now move to the transaction details. The proposed dealing currency for this transaction is euro.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Use the currency you just mentioned for my transaction lah. For this transaction, I'll go with Pioneer Balanced Opportunities Fund. I want to sell the units. The amount for this transaction is 10,000. Quantity-wise, make it 100 units.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Before the readback, there is an administrative point: would you prefer the correspondence to go directly to you rather than through your office administrator?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Direct to me, please. My administrator keeps the business paperwork moving, but I keep my personal banking correspondence separate. Otherwise everything ends up in the same pile, then quite troublesome to find. Also, I've got this in my notes: Put it through as a limit order, with the limit price at 100 euros per unit.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I will keep the correspondence addressed directly to you. I am preparing the readback now; please take a moment with your notes before I begin.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Wait, Rachel. Wait, I got the direction wrong earlier. Cancel that earlier direction; I meant to buy the units.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Following your correction, your final instruction is to buy 100 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 10,000 in euro, using a limit order at a limit price of 100 euros per unit. Do you confirm this final instruction?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final instruction, including my correction. Please go ahead.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. That concludes the discussion. For future appointments, you can let me know through our usual contact channel when you have a suitable opening in your diary. A telephone appointment remains an option.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That works for scheduling. Easier to arrange around the office than a branch visit. Some days my calendar looks clear, then suddenly everybody needs something. Anyway, thanks for keeping this focused. I can get back to the business paperwork now.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You are welcome. Thank you for setting aside the time and speaking privately. I hope the rest of your working day goes smoothly.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks, Rachel. Speak another time. Bye.",
+      "turn_id": 19
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "94d464c0f41eda76efb7c89889cad6fdba37fc89cd62ffd85efc101cc65d3f51",
+    "call_spec_sha256": "cdefbaf35d661962125d97c30a8f3be33445c8f3e6f16142a2ae1ec52ed7737e",
+    "check_plan_sha256": "ef503395b6a896042433b2833387e552ebb059f04240ebb7664a3af24c6ec063",
+    "check_plan_skeleton_sha256": "44ba1b94e05d7355ffae3b4a859485232c71efde7ee99f19d753110b074f955f",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "13c5b05ccd3c16a3b6461ed1c6b28a0df17b9601d12271c3a4f2fd4341d91226",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "36d7b2839a8d1dddedeef37c25513032d253a4e8075e0cb6d29ab7915fe19d1c",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

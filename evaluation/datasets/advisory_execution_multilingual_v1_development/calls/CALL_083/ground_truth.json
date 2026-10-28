@@ -1,0 +1,763 @@
+{
+  "call_id": "CALL_083",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 112,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "To confirm, your objective is to reduce market exposure and free up liquidity for anticipated personal spending.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "To confirm, your objective is to reduce market exposure and free up liquidity for anticipated personal spending.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 368,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 113,
+          "text": "The equity holdings in Pioneer Balanced Opportunities Fund can fall when stock markets decline, while rising interest rates can reduce the value of its bond holdings. Those markets can decline together, so diversification may not protect the fund's value.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "The equity holdings in Pioneer Balanced Opportunities Fund can fall when stock markets decline, while rising interest rates can reduce the value of its bond holdings. Those markets can decline together, so diversification may not protect the fund's value.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 472,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 369,
+          "text": "Do you understand these risks, including that the fund's equity and bond holdings can decline together?",
+          "turn_id": 10
+        },
+        {
+          "end": 136,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand. The shares and bonds can both fall at the same time, so spreading across them doesn't mean the fund is protected lah.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Do you understand these risks, including that the fund's equity and bond holdings can decline together?\nYes, I understand. The shares and bonds can both fall at the same time, so spreading across them doesn't mean the fund is protected lah.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 67,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction fee for this sale is 0.2% of the transaction value.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "The transaction fee for this sale is 0.2% of the transaction value.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 166,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 68,
+          "text": "You may lose some or all of the capital invested in this fund, and selling may crystallise a loss.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "You may lose some or all of the capital invested in this fund, and selling may crystallise a loss.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 268,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 167,
+          "text": "Are you willing to accept investment losses, including realising a loss when you reduce this holding?",
+          "turn_id": 12
+        },
+        {
+          "end": 146,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I'm willing to accept investment losses when reducing this holding. But I still want to keep to my minimum sale price, not sell at any price.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including realising a loss when you reduce this holding?\nYes, I'm willing to accept investment losses when reducing this holding. But I still want to keep to my minimum sale price, not sell at any price.",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 334,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because that reduces exposure to equity and bond market fluctuations and releases funds for your personal spending. Setting a minimum sale price respects your preference for price discipline, although the sale may remain unexecuted if that price is unavailable.",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because that reduces exposure to equity and bond market fluctuations and releases funds for your personal spending. Setting a minimum sale price respects your preference for price discipline, although the sale may remain unexecuted if that price is unavailable.",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 269,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Please confirm your final instruction: sell 10,000 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 100,000,000 in Japanese yen, using a limit order at a minimum sale price of 10,000 Japanese yen. Is that your instruction, and may I submit it?",
+          "turn_id": 16
+        },
+        {
+          "end": 83,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm the final instruction exactly as you read it back. Please submit it.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "Please confirm your final instruction: sell 10,000 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 100,000,000 in Japanese yen, using a limit order at a minimum sale price of 10,000 Japanese yen. Is that your instruction, and may I submit it?\nYes, I confirm the final instruction exactly as you read it back. Please submit it.",
+      "gold_evidence_turns": [
+        16,
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G6705732N",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 68,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My identification number is G six seven zero five seven three two N.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My identification number is G six seven zero five seven three two N.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "G6705732N"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "27 August 1982",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 138,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 69,
+          "text": "My date of birth is the twenty-seventh of August nineteen eighty-two.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the twenty-seventh of August nineteen eighty-two.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "27 August 1982"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 76,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "For this transaction, use my holding in Pioneer Balanced Opportunities Fund.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "For this transaction, use my holding in Pioneer Balanced Opportunities Fund.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "JPY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 50,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "The transaction currency, use Japanese yen please.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "The transaction currency, use Japanese yen please.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 100000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 93,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 51,
+          "text": "Set the transaction amount at 100,000,000.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Set the transaction amount at 100,000,000.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": 100000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 15,
+      "gold_evidence": [
+        {
+          "end": 123,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 94,
+          "text": "The quantity is 10,000 units.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "The quantity is 10,000 units.",
+      "gold_evidence_turns": [
+        15
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 15,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 77,
+          "text": "I want to sell from my existing holding.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "I want to sell from my existing holding.",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 253,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 147,
+          "text": "Use a limit order, with the minimum sale price at 10,000 Japanese yen. Below that price, don't execute ah.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Use a limit order, with the minimum sale price at 10,000 Japanese yen. Below that price, don't execute ah.",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, Adrian Lim. This is Rachel Tan. Thank you for making time for our arranged portfolio review. Is this still a convenient moment to speak?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, now quite quiet in the office. Usually everyone comes looking for me when I sit down, but today I can talk without getting interrupted lah.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Before we begin the review, I need your verification details.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My identification number is G six seven zero five seven three two N. My date of birth is the twenty-seventh of August nineteen eighty-two.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. Away from the business, have you had much time for your personal interests?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Not much lately. My camera sitting in the cupboard, hardly touch it. I want to get out more, take some photographs and catch up with friends. Otherwise every conversation becomes about work, quite tiring also.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though you have plenty you would like to catch up on. For future telephone contact, are quieter office periods generally preferable?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Afternoons usually easier. Morning got deliveries and staff asking things. Just arrange with me beforehand; I prefer talking on the phone rather than trying to type while people are waiting.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will note that contact preference. We can turn to the portfolio review now.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For this transaction, use my holding in Pioneer Balanced Opportunities Fund. I want to sell from my existing holding.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "To confirm, your objective is to reduce market exposure and free up liquidity for anticipated personal spending. The equity holdings in Pioneer Balanced Opportunities Fund can fall when stock markets decline, while rising interest rates can reduce the value of its bond holdings. Those markets can decline together, so diversification may not protect the fund's value. Do you understand these risks, including that the fund's equity and bond holdings can decline together?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand. The shares and bonds can both fall at the same time, so spreading across them doesn't mean the fund is protected lah.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction fee for this sale is 0.2% of the transaction value. You may lose some or all of the capital invested in this fund, and selling may crystallise a loss. Are you willing to accept investment losses, including realising a loss when you reduce this holding?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm willing to accept investment losses when reducing this holding. But I still want to keep to my minimum sale price, not sell at any price. Use a limit order, with the minimum sale price at 10,000 Japanese yen. Below that price, don't execute ah.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing your holding in Pioneer Balanced Opportunities Fund because that reduces exposure to equity and bond market fluctuations and releases funds for your personal spending. Setting a minimum sale price respects your preference for price discipline, although the sale may remain unexecuted if that price is unavailable.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The transaction currency, use Japanese yen please. Set the transaction amount at 100,000,000. The quantity is 10,000 units.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please confirm your final instruction: sell 10,000 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 100,000,000 in Japanese yen, using a limit order at a minimum sale price of 10,000 Japanese yen. Is that your instruction, and may I submit it?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm the final instruction exactly as you read it back. Please submit it.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. That concludes our review, and I will leave you to the rest of your afternoon.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thanks for the call. Good, still got a bit of quiet time before everyone comes back. Speak again.",
+      "turn_id": 19
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "SINGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "793ae003137a9e602cfb750a936b5edcd87aa17cb0c8409e813738d833eef83a",
+    "call_spec_sha256": "d37cd7bfb509d595001c392a1dfecaf444423d32b24d3a5f23e5827846433983",
+    "check_plan_sha256": "9a250e154edf5a0026cb380710eba5ccbbabadd268a25cdfa82a46c54af8a407",
+    "check_plan_skeleton_sha256": "6c05cfa46b617e800e27c5355a1618d0c124b510e6b07996cc7b15b332e0e0fd",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "3d5489f64f51ccd4a371542eba84c55cc1488162b43e6f9249e6fd09ac5ac3b1",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "2d99351795ffcdf44dd919e3b87e11c19ed37f706dce8c2fbaa7860cd2c35da4",
+    "register_guide_sha256": "009d5b56c8650503a966d6281eb56ed20ddb5e073bdf9eeba56c86924d424c57"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}
