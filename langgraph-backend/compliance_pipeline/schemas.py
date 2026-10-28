@@ -173,7 +173,7 @@ class SubCriterionAnswer(BaseModel):
 
     id: str = Field("", description="The sub-criterion id exactly as given.")
     # NOT_APPLICABLE is not offered to the LLM: only the gate (applies_when) sets it.
-    status: Literal["PASS", "FAIL", "CANNOT_DETERMINE"] = "CANNOT_DETERMINE"
+    status: Literal["PASS", "FAIL", "CANNOT_DETERMINE"]
     evidence: list[EvidenceQuote] = Field(default_factory=list)
     absence_review: AbsenceReview | None = Field(None, description=(
         "Only for PASS based on no prohibited conduct being observed after full transcript review. "

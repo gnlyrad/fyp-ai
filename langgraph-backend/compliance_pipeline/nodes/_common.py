@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 
 from compliance_pipeline.schemas import (
     EvidenceQuote,
@@ -37,55 +38,97 @@ def format_transcript(segments: list[dict], with_timestamps: bool = False) -> st
 # Evidence resolution: LLM-cited quotes -> persisted (segment_id, char span) refs.
 # ---------------------------------------------------------------------------
 
-_NORMALISE_RE = re.compile(r"[^\w]+", re.UNICODE)
+def _cjk(char: str) -> bool:
+    return bool(char) and ("\u3400" <= char <= "\u9fff" or "\U00020000" <= char <= "\U000323af")
+
+
+def _normalised_span(text: str) -> tuple[str, list[tuple[int, int]]]:
+    """Canonical characters with exact source spans, never translated words.
+
+    Width/case and whitespace are presentation differences. Numeric signs,
+    decimal separators and currency/percent symbols retain their meaning.
+    Spaces next to Chinese characters are optional; Latin word boundaries are not.
+    """
+    chars: list[str] = []
+    spans: list[tuple[int, int]] = []
+    kind: list[str] = []
+    index = 0
+    while index < len(text):
+        end = index + 1
+        while end < len(text) and unicodedata.category(text[end]).startswith("M"):
+            end += 1
+        canonical = unicodedata.normalize("NFKC", text[index:end]).casefold()
+        for char in canonical:
+            chars.append(char)
+            spans.append((index, end))
+            kind.append("space" if char.isspace() else "literal")
+        index = end
+
+    out, mapping = [], []
+    for i, char in enumerate(chars):
+        previous = chars[i - 1] if i else ""
+        following = chars[i + 1] if i + 1 < len(chars) else ""
+        word = char.isalnum() or char == "_" or unicodedata.category(char).startswith("M")
+        numeric_punctuation = ((char in ".,/:" and previous.isdecimal() and following.isdecimal())
+                               or (char in "+-\u2212" and following.isdecimal()))
+        if word or numeric_punctuation or unicodedata.category(char) in {"Sc", "Sm"} or char in "%\u2030\u2044":
+            out.append({"\u2212": "-", "\u2044": "/"}.get(char, char))
+            mapping.append(spans[i])
+        elif kind[i] == "space":
+            # Only whitespace may disappear next to CJK. Do not remove
+            # punctuation between separate Chinese clauses or Latin words.
+            if i and chars[i - 1].isspace():
+                continue
+            left = i - 1
+            right = i + 1
+            while left >= 0 and chars[left].isspace():
+                left -= 1
+            while right < len(chars) and chars[right].isspace():
+                right += 1
+            if ((left >= 0 and _cjk(chars[left])) or (right < len(chars) and _cjk(chars[right]))):
+                continue
+            if out and out[-1] != " ":
+                out.append(" ")
+                mapping.append(spans[i])
+        elif out and out[-1] != " ":
+            out.append(" ")
+            mapping.append(spans[i])
+    while out and out[-1] == " ":
+        out.pop()
+        mapping.pop()
+    return "".join(out), mapping
 
 
 def _normalise(text: str) -> str:
-    """Lowercase and collapse everything that isn't a word character, so
-    quotes can be matched case/whitespace/punctuation-insensitively."""
-    return _NORMALISE_RE.sub(" ", text.lower()).strip()
+    return _normalised_span(text)[0]
 
 
 def _find_normalised(haystack: str, needle: str) -> tuple[int, int] | None:
-    """Find `needle` in `haystack` ignoring case, whitespace, and
-    punctuation differences, returning the original `(start, end)` char
-    offsets into `haystack`, or None if no match.
+    """Match cosmetic case/width/spacing differences at original char offsets.
+
+    Financial symbols and numeric punctuation remain significant. No translation,
+    numeral conversion or missing word/negation repair is performed.
 
     Builds a normalised version of `haystack` alongside a mapping from each
     normalised char back to its original index, so the match found in
     normalised space can be translated back to original offsets.
     """
-    norm_chars: list[str] = []
-    index_map: list[int] = []  # index_map[i] = original index of norm_chars[i]
-    prev_was_space = True  # collapse leading/runs of separators like _NORMALISE_RE does
-    for i, ch in enumerate(haystack):
-        if re.match(r"\w", ch, re.UNICODE):
-            norm_chars.append(ch.lower())
-            index_map.append(i)
-            prev_was_space = False
-        else:
-            if not prev_was_space and norm_chars:
-                norm_chars.append(" ")
-                index_map.append(i)
-            prev_was_space = True
-    # Trim trailing space to mirror `.strip()` in _normalise.
-    while norm_chars and norm_chars[-1] == " ":
-        norm_chars.pop()
-        index_map.pop()
-
-    norm_haystack = "".join(norm_chars)
+    norm_haystack, index_map = _normalised_span(haystack)
     norm_needle = _normalise(needle)
     if not norm_needle:
         return None
 
     pos = norm_haystack.find(norm_needle)
-    if pos == -1:
-        return None
-
-    start_orig = index_map[pos]
-    end_norm = pos + len(norm_needle) - 1
-    end_orig = index_map[end_norm] + 1
-    return start_orig, end_orig
+    while pos != -1:
+        end_norm = pos + len(norm_needle) - 1
+        # Case/compatibility folding may expand one source glyph. A match
+        # must cover that glyph completely, not half of a ligature or sharp S.
+        whole_start = pos == 0 or index_map[pos - 1] != index_map[pos]
+        whole_end = end_norm + 1 == len(index_map) or index_map[end_norm + 1] != index_map[end_norm]
+        if whole_start and whole_end:
+            return index_map[pos][0], index_map[end_norm][1]
+        pos = norm_haystack.find(norm_needle, pos + 1)
+    return None
 
 
 def resolve_evidence(

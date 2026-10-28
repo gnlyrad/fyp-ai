@@ -4,7 +4,9 @@ Pure code, no LLM. Reads `segments` and `dual_channel` from state and
 returns `quality_flags`, a list of short string codes (fixed order):
 
 - `short_call`: call duration (last segment `end` minus first segment
-  `start`) is under `MIN_CALL_SECONDS`.
+  `start`) is known and under `MIN_CALL_SECONDS`.
+- `timing_unavailable`: missing/invalid or all-zero timings; informational,
+  never interpreted as proof that the conversation was cut short.
 - `low_confidence`: word-count-weighted mean of segment `confidence` is
   under `MIN_AVG_CONFIDENCE`. Segments with `confidence` None are skipped;
   if no segment has confidence data, this check is skipped entirely.
@@ -21,6 +23,7 @@ read once at import time.
 from __future__ import annotations
 
 import os
+import math
 
 from compliance_pipeline.state import ComplianceState
 
@@ -43,8 +46,16 @@ def quality_check_node(state: ComplianceState) -> dict:
             flags.append("dual_channel")
         return {"quality_flags": flags}
 
-    duration = segments[-1].get("end", 0.0) - segments[0].get("start", 0.0)
-    if duration < MIN_CALL_SECONDS:
+    try:
+        timings = [(float(seg["start"]), float(seg["end"])) for seg in segments]
+        duration = timings[-1][1] - timings[0][0]
+        usable = (all(math.isfinite(a) and math.isfinite(b) and 0 <= a <= b for a, b in timings)
+                  and any(b > a for a, b in timings) and duration > 0)
+    except (KeyError, TypeError, ValueError):
+        usable, duration = False, 0
+    if not usable:
+        flags.append("timing_unavailable")
+    elif duration < MIN_CALL_SECONDS:
         flags.append("short_call")
 
     weighted_sum = 0.0

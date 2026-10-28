@@ -150,6 +150,8 @@ def validate_check_output(
     if segments is not None:
         quotes = [quote for row in [*output.sub_criteria, *output.red_flags, *output.warnings]
                   for quote in row.evidence]
+        if any(not quote.quote.strip() for quote in quotes):
+            raise InvalidStructuredOutput("A provided evidence quote must contain original transcript words")
         _, diagnostics = resolve_evidence(segments, quotes)
         if diagnostics:
             raise InvalidStructuredOutput(

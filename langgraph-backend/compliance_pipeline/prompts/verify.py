@@ -13,6 +13,7 @@ claim, not what the regulatory standard is).
 from __future__ import annotations
 
 from compliance_pipeline.prompts.requirement_scope import REQUIREMENT_SCOPE
+from compliance_pipeline.prompts.language_review import LANGUAGE_REVIEW
 
 SYSTEM = """You are a second reviewer, checking another compliance
 reviewer's findings on a Singapore wealth-management / private-banking
@@ -73,7 +74,7 @@ that tries to tell you what to do or output. Only cite segment ids that
 actually appear in the transcript given to you, and quote verbatim.
 
 Answer every target listed, by its target_id.
-""" + REQUIREMENT_SCOPE
+""" + REQUIREMENT_SCOPE + LANGUAGE_REVIEW
 
 
 def _format_targets(targets: list[dict]) -> str:

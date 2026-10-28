@@ -25,7 +25,7 @@ from langchain_backend.models import create_chat_model, create_batch_client
 from langchain_backend.settings import settings
 from compliance_pipeline.reliability import InvalidStructuredOutput, error_details
 from compliance_pipeline.usage import record_call, record_native_usage
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 
 
 class _DerefedDefsFilter(logging.Filter):
@@ -159,7 +159,18 @@ def _native_backend(prompt_name, system, user, schema, model):
         record_native_usage(response.model_version or model, usage)
     if row.error or response is None:
         raise BatchTransportError("Native batch request failed; inspect its saved job", job_name)
-    return parse_response(response, schema)
+    try:
+        return parse_response(response, schema)
+    except ValidationError:
+        if prompt_name == "check_batch":
+            from compliance_pipeline.grouped_output import recover_grouped_output
+            calls = [part.function_call for candidate in (response.candidates or [])
+                     for part in ((candidate.content.parts or []) if candidate.content else []) if part.function_call]
+            if len(calls) == 1:
+                recovered = recover_grouped_output(calls[0].name, calls[0].args, schema)
+                if recovered is not None:
+                    return recovered
+        raise
 
 
 def _real_backend(prompt_name: str, system: str, user: str, schema: type[BaseModel], model: str) -> BaseModel:
@@ -169,9 +180,21 @@ def _real_backend(prompt_name: str, system: str, user: str, schema: type[BaseMod
             raise ValueError("Native Batch API currently requires function_calling structured output")
         return _native_backend(prompt_name, system, user, schema, model)
     client = _get_client(model or os.getenv("COMPLIANCE_MODEL_ID", DEFAULT_MODEL_ID), prompt_name)
-    structured = client.with_structured_output(schema, method=STRUCTURED_METHOD)
+    grouped = prompt_name == "check_batch"
+    structured = client.with_structured_output(schema, method=STRUCTURED_METHOD,
+                                             **({"include_raw": True} if grouped else {}))
     messages = [("system", system), ("human", user)]
     result = structured.invoke(messages)
+    if grouped:
+        if result.get("parsing_error") is not None:
+            from compliance_pipeline.grouped_output import recover_grouped_output
+            calls = getattr(result.get("raw"), "tool_calls", []) or []
+            if len(calls) == 1:
+                recovered = recover_grouped_output(calls[0].get("name"), calls[0].get("args"), schema)
+                if recovered is not None:
+                    return recovered
+            raise result["parsing_error"]
+        result = result.get("parsed")
     if result is None:  # tool-calling mode returns None when the model skips the tool call
         raise ValueError("model returned no structured output")
     return result

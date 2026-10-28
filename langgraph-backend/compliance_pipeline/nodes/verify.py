@@ -239,6 +239,13 @@ def _verify_node(state: ComplianceState) -> dict:
             actual = [verdict.target_id for verdict in output.verdicts]
             if len(actual) != len(expected) or set(actual) != expected:
                 raise InvalidStructuredOutput("Every verification target needs exactly one verdict")
+            quotes = [quote for verdict in output.verdicts for quote in verdict.counter_evidence]
+            if any(not quote.quote.strip() for quote in quotes):
+                raise InvalidStructuredOutput("A provided counter-evidence quote must contain original words")
+            _, diagnostics = resolve_evidence(segments, quotes)
+            if diagnostics:
+                raise InvalidStructuredOutput(
+                    "Counter-evidence must cite an existing segment and its original words")
         return get_llm_response(
             "verify", SYSTEM,
             build_user(question, targets_by_item[item_id], transcript),

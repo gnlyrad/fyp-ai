@@ -11,6 +11,7 @@ call and is untrusted data, not instructions.
 from __future__ import annotations
 
 from compliance_pipeline.prompts.requirement_scope import REQUIREMENT_SCOPE
+from compliance_pipeline.prompts.language_review import LANGUAGE_REVIEW
 
 SYSTEM = """You are a compliance reviewer for a Singapore wealth-management /
 private-banking phone call. You are judging ONE checklist item at a time.
@@ -132,7 +133,7 @@ Before returning the initial answer, check consistency: if an issue is the
 absence of the very act required by this criterion, it is a FAIL for omission,
 not a PASS with that omission relegated to a warning. Extra precautions that
 the criterion does not require may still be warnings alongside PASS.
-""" + REQUIREMENT_SCOPE
+""" + REQUIREMENT_SCOPE + LANGUAGE_REVIEW
 
 
 def _format_rules(rules: list[dict]) -> str:

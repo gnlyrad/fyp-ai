@@ -178,3 +178,50 @@ optional S3 input/storage/retrieval and deployment.
 Results retain the native status and include `execution_status`, `failure_category`,
 and `failure_stage`. Failed checks/verification are distinct from successful
 `CANNOT_DETERMINE` answers. Provider diagnostics omit raw exception messages.
+
+### Multilingual NLP reliability
+
+The existing `compliance` graph continues to accept transcript JSON and a caller
+checklist. Its public input/output shapes, model defaults, routing and verification
+rollup are unchanged. `requirement_type` is still optional. No transcription or
+audio processing changes are needed for these NLP improvements.
+
+Evidence lookup accepts cosmetic width/case differences and whitespace next to
+Chinese characters while retaining offsets into the original, unchanged text.
+Negation, numbers, financial symbols and numeric punctuation are not replaced.
+Translated or invented evidence still fails validation. A provided evidence quote
+must contain original words; a legitimate absence finding uses its existing
+absence-review representation rather than an empty quote.
+
+Standard and native grouped responses retain independently parsed, unique item
+answers if a sibling has a malformed result. The existing production recovery
+process receives only the missing/unusable rows. Duplicate IDs are excluded;
+missing statuses are formatting failures rather than implicit semantic unclear
+answers. A completed valid PASS, FAIL or CANNOT_DETERMINE is not retried to select
+a better-scoring answer. Existing attempt limits and native job receipt rules
+still apply. Verification also validates any supplied counter-evidence before
+using it; a valid semantic `not_supported` verdict keeps the existing conservative
+downgrade behavior.
+
+Checking and verification prompts explicitly cover English, Singlish, Mandarin,
+code-switching, scoped consent, negation, withdrawals and corrected final orders.
+Quotes remain in their original language. No extra model stage or blanket second
+review is added. Missing/all-zero timing metadata yields the informational
+`timing_unavailable` flag, rather than claiming a short recording. Known short
+recordings still receive `short_call`.
+
+The new `advisory_execution_multilingual_v1_development` dataset contains 175
+development transcripts, 88 containing Chinese characters. Its manifest declares
+placeholder timings and pending dialogue verification; no recording files are
+included in that dataset. Treat it as a development benchmark, preserve the
+separate 75-call held-out split, and do not claim audio/transcription accuracy
+from those JSON files. The production code never reads this dataset or its labels.
+
+For validation, freeze the model, grouping, reasoning, retrieval and retry settings
+and compare the baseline and candidate on identical approved inputs. Report binary
+decision coverage and detected breaches divided by **all** gold breaches, including
+unclear/failed predictions in the latter denominator. Also report false clearances,
+precision, per-language counts, reported model-token cost and incomplete usage.
+Offline regressions establish recovery/evidence behavior, not improved benchmark
+percentages. Live inference and evaluation remain a separately authorized step;
+the evaluator, datasets, labels and `.env` are not modified by these changes.
