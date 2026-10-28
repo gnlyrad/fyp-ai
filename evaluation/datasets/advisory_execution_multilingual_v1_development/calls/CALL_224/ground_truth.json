@@ -1,0 +1,791 @@
+{
+  "call_id": "CALL_224",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 158,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 11,
+          "text": "To confirm your objective, you are seeking regular income and less dependence on equity performance, while retaining access to your invested funds.",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "To confirm your objective, you are seeking regular income and less dependence on equity performance, while retaining access to your invested funds.",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 138,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Harbor SGD Bond Fund, rising market interest rates can reduce the value of the underlying bonds and lower the fund's net asset value.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "With Harbor SGD Bond Fund, rising market interest rates can reduce the value of the underlying bonds and lower the fund's net asset value.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 248,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 139,
+          "text": "Do you understand how rising interest rates could affect the fund's underlying bonds and its net asset value?",
+          "turn_id": 8
+        },
+        {
+          "end": 117,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand that rising interest rates can push down the underlying bond values and the fund's net asset value.",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates could affect the fund's underlying bonds and its net asset value?\nYes, I understand that rising interest rates can push down the underlying bond values and the fund's net asset value.",
+      "gold_evidence_turns": [
+        8,
+        9
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 136,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 82,
+          "text": "The transaction fee is 0.5% of the transaction amount.",
+          "turn_id": 16
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.5% of the transaction amount.",
+      "gold_evidence_turns": [
+        16
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 96,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Are you willing to accept investment losses and fluctuations in fund value in pursuit of income?",
+          "turn_id": 10
+        },
+        {
+          "end": 165,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to accept investment losses and fluctuations in fund value in pursuit of income, but I am not comfortable with highly concentrated equity exposure.",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses and fluctuations in fund value in pursuit of income?\nYes, I am willing to accept investment losses and fluctuations in fund value in pursuit of income, but I am not comfortable with highly concentrated equity exposure.",
+      "gold_evidence_turns": [
+        10,
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 174,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend Harbor SGD Bond Fund because its bond exposure and income-oriented approach align with your preference for regular income and less reliance on equity performance.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "I recommend Harbor SGD Bond Fund because its bond exposure and income-oriented approach align with your preference for regular income and less reliance on equity performance.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 207,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 137,
+          "text": "I guarantee that this investment will deliver positive future returns.",
+          "turn_id": 16
+        }
+      ],
+      "gold_evidence_text": "I guarantee that this investment will deliver positive future returns.",
+      "gold_evidence_turns": [
+        16
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S0757034N",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 60,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My NRIC number is S zero seven five seven zero three four N.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My NRIC number is S zero seven five seven zero three four N.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "S0757034N"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "01 April 1997",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 122,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 61,
+          "text": "My date of birth is the first of April nineteen ninety-seven.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the first of April nineteen ninety-seven.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "01 April 1997"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "product_reference"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Harbor SGD Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 83,
+          "event_id": "EV_012",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "For comparison, Harbor SGD Bond Fund is an income-oriented fund investing in bonds.",
+          "turn_id": 6
+        },
+        {
+          "end": 95,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "I'd like the income-oriented bond fund you mentioned before the technology-focused alternative.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "For comparison, Harbor SGD Bond Fund is an income-oriented fund investing in bonds.\nI'd like the income-oriented bond fund you mentioned before the technology-focused alternative.",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 6,
+          "value": "Harbor SGD Bond Fund"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 6,
+          "value": "Nova Technology Equity Fund"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "Harbor SGD Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SGD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 17,
+      "gold_evidence": [
+        {
+          "end": 50,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Please use Singapore dollars for this transaction.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "Please use Singapore dollars for this transaction.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 17,
+          "value": "SGD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "large_number_expression"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1200000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 17,
+      "gold_evidence": [
+        {
+          "end": 94,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 51,
+          "text": "The amount I want to invest is 1.2 million.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "The amount I want to invest is 1.2 million.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 17,
+          "value": 1200000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 17,
+      "gold_evidence": [
+        {
+          "end": 131,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 95,
+          "text": "The quantity I want is 10,000 units.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "The quantity I want is 10,000 units.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 17,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 17,
+      "gold_evidence": [
+        {
+          "end": 164,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 132,
+          "text": "I want to buy the selected fund.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "I want to buy the selected fund.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 17,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 17,
+      "gold_evidence": [
+        {
+          "end": 201,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 165,
+          "text": "Please place this as a market order.",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "Please place this as a market order.",
+      "gold_evidence_turns": [
+        17
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 17,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Adrian Lim. This is Claire Tan. We have time for the brief discussion you requested. Is this still a convenient break in your working day?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Claire. It is, thank you. I've stepped away from my consulting work, so I can speak privately. I'd prefer to keep the discussion focused rather than work through a long presentation.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. Before we begin, may I have your identification details?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My NRIC number is S zero seven five seven zero three four N. My date of birth is the first of April nineteen ninety-seven.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. To confirm your objective, you are seeking regular income and less dependence on equity performance, while retaining access to your invested funds.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Could you take me through the comparison? A straightforward explanation would be helpful. I don't need a slide-by-slide discussion.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For comparison, Harbor SGD Bond Fund is an income-oriented fund investing in bonds. The alternative, Nova Technology Equity Fund, invests in technology shares, so its performance is linked to that sector's share prices and business conditions.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'd like the income-oriented bond fund you mentioned before the technology-focused alternative.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Harbor SGD Bond Fund, rising market interest rates can reduce the value of the underlying bonds and lower the fund's net asset value. Do you understand how rising interest rates could affect the fund's underlying bonds and its net asset value?",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand that rising interest rates can push down the underlying bond values and the fund's net asset value.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Are you willing to accept investment losses and fluctuations in fund value in pursuit of income?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to accept investment losses and fluctuations in fund value in pursuit of income, but I am not comfortable with highly concentrated equity exposure.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend Harbor SGD Bond Fund because its bond exposure and income-oriented approach align with your preference for regular income and less reliance on equity performance.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'll consider that. For the written material, could you keep the covering note concise? I prefer a clear summary with the supporting documents separate, rather than having to search through a long message.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can keep the administrative covering note brief and distinguish it from the accompanying documents. The documents themselves would remain complete. Would you prefer correspondence through the usual secure channel?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, the usual secure channel is convenient. I check that myself; my consulting staff don't handle my personal banking correspondence. It also keeps these messages separate from client project emails.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is helpful for the correspondence arrangements. Returning to the discussion, The transaction fee is 0.5% of the transaction amount. I guarantee that this investment will deliver positive future returns.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please use Singapore dollars for this transaction. The amount I want to invest is 1.2 million. The quantity I want is 10,000 units. I want to buy the selected fund. Please place this as a market order.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. I'll keep the administrative correspondence together. For any follow-up conversation, would you prefer that I arrange it with you by message rather than call unexpectedly?",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please message me to arrange a convenient time. My work diary can change when a consulting meeting runs over, and I would rather speak when I can give the conversation my attention.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. We can arrange any further conversation directly with you. There is no need to involve your office in scheduling.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That works for the scheduling. Thank you for keeping the discussion brief, Claire. I'll look out for the correspondence.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for your time, Adrian. Goodbye.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Goodbye.",
+      "turn_id": 23
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "d440beab56088129b707636cbf995cfaa327003bdeb7f008230d1d7de758bfe4",
+    "call_spec_sha256": "6358b9bd29287ba74825687ec27ca920a38667536b190d8b1158eb0028423f42",
+    "check_plan_sha256": "4cdf9dbc37b4679a8ed3fd7493b51167ea57522253c4d310ba89683e37fc256c",
+    "check_plan_skeleton_sha256": "a3bc7e3126bd35eac27ad6ec0ae612ec479ca6400e4d2b341063b5408b48f0cb",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "2bc6f862b164199b3c7252d5b708f79e5c7e8fc51cae5fe4bc4c742f3bad5521",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "26d352400ccb51dbc26707ec09b9e3dd5b40242d0ac6759e65f3a5edb15d5528"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

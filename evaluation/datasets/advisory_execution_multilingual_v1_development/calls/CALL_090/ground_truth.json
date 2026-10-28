@@ -1,0 +1,1148 @@
+{
+  "call_id": "CALL_090",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 256,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 96,
+          "text": "Let me confirm your objective: you want long-term portfolio growth through exposure across asset classes, with less dependence on any individual market segment.",
+          "turn_id": 2
+        }
+      ],
+      "gold_evidence_text": "Let me confirm your objective: you want long-term portfolio growth through exposure across asset classes, with less dependence on any individual market segment.",
+      "gold_evidence_turns": [
+        2
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 244,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise. During market stress, its equity and bond holdings may also decline together, reducing the protection you might expect from diversification.",
+          "turn_id": 80
+        }
+      ],
+      "gold_evidence_text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise. During market stress, its equity and bond holdings may also decline together, reducing the protection you might expect from diversification.",
+      "gold_evidence_turns": [
+        80
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 382,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 245,
+          "text": "Do you understand how rising interest rates can affect the fund's bond holdings, and that its equity and bond holdings can fall together?",
+          "turn_id": 80
+        },
+        {
+          "end": 184,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand those risks. Rising interest rates can reduce the value of the bond holdings, and diversification does not prevent the equity and bond holdings from falling together.",
+          "turn_id": 81
+        }
+      ],
+      "gold_evidence_text": "Do you understand how rising interest rates can affect the fund's bond holdings, and that its equity and bond holdings can fall together?\nYes, I understand those risks. Rising interest rates can reduce the value of the bond holdings, and diversification does not prevent the equity and bond holdings from falling together.",
+      "gold_evidence_turns": [
+        80,
+        81
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "paraphrased_compliance_statement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 50,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "For this purchase, the transaction charge is 0.5%.",
+          "turn_id": 82
+        }
+      ],
+      "gold_evidence_text": "For this purchase, the transaction charge is 0.5%.",
+      "gold_evidence_turns": [
+        82
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 122,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 51,
+          "text": "You could lose part or even all of the capital you invest in this fund.",
+          "turn_id": 82
+        }
+      ],
+      "gold_evidence_text": "You could lose part or even all of the capital you invest in this fund.",
+      "gold_evidence_turns": [
+        82
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "weak_confirmation"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 281,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Please put through my purchase of the selected fund because someone on its investment team privately told me about a material portfolio repositioning expected to affect its performance. I know that information has not been made public, and I want to transact before it is released.",
+          "turn_id": 87
+        }
+      ],
+      "gold_evidence_text": "Please put through my purchase of the selected fund because someone on its investment team privately told me about a material portfolio repositioning expected to affect its performance. I know that information has not been made public, and I want to transact before it is released.",
+      "gold_evidence_turns": [
+        87
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "F5670488L",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 300,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 249,
+          "text": "My FIN is F five six seven zero four eight eight L.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My FIN is F five six seven zero four eight eight L.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "F5670488L"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "30 April 1959",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 364,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 301,
+          "text": "My date of birth is the thirtieth of April nineteen fifty-nine.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the thirtieth of April nineteen fifty-nine.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "30 April 1959"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "product_reference"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 77,
+      "gold_evidence": [
+        {
+          "end": 135,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "At the top of my comparison notes I have Pioneer Balanced Opportunities Fund, the candidate combining equity and fixed-income exposure.",
+          "turn_id": 15
+        },
+        {
+          "end": 115,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "For this transaction, I choose the first candidate in my notes, the one combining equity and fixed-income exposure.",
+          "turn_id": 77
+        }
+      ],
+      "gold_evidence_text": "At the top of my comparison notes I have Pioneer Balanced Opportunities Fund, the candidate combining equity and fixed-income exposure.\nFor this transaction, I choose the first candidate in my notes, the one combining equity and fixed-income exposure.",
+      "gold_evidence_turns": [
+        15,
+        77
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "CLIENT",
+          "status": "ANTECEDENT",
+          "turn_id": 15,
+          "value": "Pioneer Balanced Opportunities Fund"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "CLIENT",
+          "status": "ANTECEDENT",
+          "turn_id": 17,
+          "value": "Orion Global Income Fund"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 77,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "EUR",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 83,
+      "gold_evidence": [
+        {
+          "end": 62,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 25,
+          "text": "Use euro as the transaction currency.",
+          "turn_id": 83
+        }
+      ],
+      "gold_evidence_text": "Use euro as the transaction currency.",
+      "gold_evidence_turns": [
+        83
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 83,
+          "value": "EUR"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 500000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 83,
+      "gold_evidence": [
+        {
+          "end": 122,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 63,
+          "text": "The amount I want to commit to this transaction is 500,000.",
+          "turn_id": 83
+        }
+      ],
+      "gold_evidence_text": "The amount I want to commit to this transaction is 500,000.",
+      "gold_evidence_turns": [
+        83
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 83,
+          "value": 500000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1500,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 83,
+      "gold_evidence": [
+        {
+          "end": 164,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 123,
+          "text": "The quantity for my order is 1,500 units.",
+          "turn_id": 83
+        }
+      ],
+      "gold_evidence_text": "The quantity for my order is 1,500 units.",
+      "gold_evidence_turns": [
+        83
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 83,
+          "value": 1500
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 83,
+      "gold_evidence": [
+        {
+          "end": 24,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "I want to buy the units.",
+          "turn_id": 83
+        }
+      ],
+      "gold_evidence_text": "I want to buy the units.",
+      "gold_evidence_turns": [
+        83
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 83,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 83,
+      "gold_evidence": [
+        {
+          "end": 212,
+          "event_id": "EV_019",
+          "speaker": "CLIENT",
+          "start": 165,
+          "text": "Please use a market order for this transaction.",
+          "turn_id": 83
+        }
+      ],
+      "gold_evidence_text": "Please use a market order for this transaction.",
+      "gold_evidence_turns": [
+        83
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 83,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Alex. Claire Bennett speaking. It is good to speak with you. I have set aside time for our discussion, so we can work through your notes and the relationship matters without rushing. Are you somewhere comfortable to talk?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Claire. Yes, I am at home, in the room that is gradually becoming my study again. There are still boxes against the wall, but I have cleared the desk. I have my papers here, and I thought I would start with the personal details I have ready. My FIN is F five six seven zero four eight eight L. My date of birth is the thirtieth of April nineteen fifty-nine.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. Before we work through your papers, let me put the investment discussion in context. Let me confirm your objective: you want long-term portfolio growth through exposure across asset classes, with less dependence on any individual market segment.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Let me find the relevant page rather than answer from the loose sheet in front of me. I moved everything into a folder last night and now the arrangement looks less obvious than it did when I was making it. The account-service questions are at the front, and my investment notes are behind them.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There is no hurry. We can work with the folder as you have arranged it. If you want to refer back to something, just interrupt me. It is often easier on the telephone to say that you are turning a page than to try to keep talking while finding it.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is precisely what I tend to do. I fill the silence while searching, then forget the question I was looking for. I have started putting a short heading beside each note. The difficulty is that a heading that seems perfectly clear in the evening can look rather mysterious the following morning.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Do you usually work from printed correspondence, or do you have the documents open on a screen as well? I am asking only so that I can refer to the material in a way that is easy to follow during our conversation.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mostly printed correspondence for a call like this. I read the original on the computer, then print the pages on which I want to write. I dislike trying to listen, scroll and type at the same time. Inevitably, I end up looking at the wrong document while the person on the telephone has moved on.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Then I will avoid directing you between screens. When we move to another subject, I can name the subject first and give you time to find your place. You do not need to read all your annotations aloud; we can use them as prompts for the points you want to raise.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would help. My annotations are not intended for public consumption. There are arrows, questions in the margins, and occasional comments that simply say to ask Claire. That last category is rather unhelpful when I cannot remember what puzzled me. I have tried to be more specific this time.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "What would make the correspondence itself easier to navigate? We can distinguish between how the original material is presented and how you prefer to keep your own working notes. I can record a service preference without expecting you to change the way you prepare for calls.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "A clear subject line is probably the most useful thing. Sometimes a message arrives with a very general heading, and I cannot tell whether it belongs with account administration or with something I was reading for interest. I keep those separately. Otherwise, an administrative question disappears under a pile of reading.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can note that distinction for correspondence from the relationship team. It would also help us to keep unrelated administrative points out of the same message where practical. We may not be able to alter standard document headings, but your preference can guide the covering correspondence we prepare.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is all I am looking for. I am not asking anyone to redesign every document around my filing system. I simply want to know why something has arrived. If the covering message tells me whether it needs my attention or is being sent for reference, I can put it in the right place.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will capture that as a correspondence preference. You mentioned having a comparison page behind the administrative section. We can establish where your notes begin, and then return to the service questions before working through the remaining investment discussion.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "At the top of my comparison notes I have Pioneer Balanced Opportunities Fund, the candidate combining equity and fixed-income exposure. I have put a divider before that page, which should make it easier to return to later. The notes are in my own words, with questions underneath rather than scattered around the edges.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can follow the sequence of your pages. There is no need to read the margin notes before you are ready to discuss them. Have you kept the next heading on the same page, or will you need to turn over when we come back to it?",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Next in my notes is Orion Global Income Fund, the income-oriented bond fund I wanted to compare with it. That is on the facing page. I have left the space between them empty because I kept adding unrelated reminders there. Now those reminders have their own sheet, which is probably where they should have been all along.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That gives us a clear place to return to. For the service matters, would you prefer a short written follow-up after a telephone discussion, rather than working through everything by email? We can separate the conversation itself from the record you want to keep afterwards.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, a short follow-up is useful. What I dislike is an exchange that grows every time someone replies. By the end, I have a long chain with slightly different versions of the same question. On the telephone I can explain what I mean, and you can stop me if I have wandered away from it.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a practical distinction. A call allows us to clarify the administrative question, while a concise follow-up gives you something easier to file. For messages that do need a written response, we can keep the outstanding point prominent rather than burying it beneath the history of the exchange.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly. I am quite happy to read something substantial when the subject calls for it. It is the long correspondence about a small practical matter that tires me. My daughter says I should just search my inbox, but searching works better when I remember the words someone else chose for the subject.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Would it be useful for the relationship team to ask about your availability by a brief message, then arrange a call for the discussion itself? I would not want a telephone preference to mean unexpected calls when you are occupied elsewhere.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would suit my working day much better. Please do not assume that being away from the office means I am always available. I seem to spend more time coordinating things now, although fewer of them belong to the business. A brief message lets me find the papers and settle somewhere quiet.",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can record a preference for arranging substantive calls in advance. If a proposed time does not work, you can suggest another without explaining your whole diary. Has stepping away from the regular office routine made your schedule more flexible, or simply less predictable?",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Less predictable is the better description. When I was involved in daily operations, I knew where I would be, even if the day was hectic. Now I might be at the family house, in the garden, or meeting someone from the business. Each activity is reasonable on its own, but together they make a surprisingly untidy calendar.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "How is the change in your role working out? You had wanted routine management to sit with the team rather than have every question find its way back to your desk. That can be a considerable adjustment for the person handing things over as well as for those taking responsibility.",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The team is doing well. I am the part that still needs adjusting. Someone will mention a delivery problem in passing, and I immediately want to know which customer, which warehouse and who has spoken to the driver. Then I remember that I am hearing about it over lunch, not being asked to take charge.",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a habit formed over a long working life rather than a problem with the team. Do they now bring you broader questions at arranged meetings, or is the advisory role still taking shape? I would be interested to know how you describe it when someone asks what you do.",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I say that I remain involved, which is accurate but deliberately vague. We have a regular discussion about the business, and they ask for my view when they want it. The best part is being able to think about a question without also having someone at the door asking where a missing consignment has gone.",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You are getting a different perspective on familiar work. From our side, it is useful to know that you are no longer following the old office timetable. We can arrange contact around your current availability rather than continue treating the business day as the natural frame for everything.",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I appreciate that. The office is still welcoming, but I do not want the staff to feel that I am sitting in the background checking their decisions. They sometimes apologise for changing a process that I introduced. I keep telling them the process was meant to help them work, not become a family monument.",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a generous way to put it. Are there parts of the business you particularly enjoy staying connected with, away from the operational questions? Some people find that customer relationships or the history of the firm remain important even after their daily responsibilities have changed.",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The people, definitely. I like hearing how someone who joined in a junior role is getting on. I also enjoy talking to longstanding customers, provided nobody mistakes the conversation for an invitation to bypass the current management. I have become very careful about saying that I will pass a comment on rather than saying I will sort it out.",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That distinction sounds important to the way you are defining the role. For our relationship administration, we can keep your personal correspondence clearly addressed to you, without treating an old office routine as your current preference. You need not change contact arrangements during this discussion merely because your working pattern has evolved.",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There is no contact change to make today. I just wanted you to know why I sometimes answer a message later than I used to. I am not sitting beside an inbox all day. Oddly enough, I am more inclined to give a considered answer now, rather than send a hurried reply between interruptions.",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That background is helpful. We can leave the existing details alone and keep your preference about scheduling with the relationship notes. You mentioned that family arrangements have also been occupying the diary. Have you managed to get away recently, or has the work on the house kept you close to home?",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We did get away, and I enjoyed it once we were actually there. The planning was the complicated part. Everyone had a different idea about when to travel, how much luggage was reasonable and whether an early start counted as part of the holiday. By the time we left, I felt I had been running a small transport office again.",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Was it a trip with the wider family? Coordinating people who have different work commitments can take more effort than choosing the destination. I hope there was room to enjoy being together once the travel arrangements were behind you.",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There was, thankfully. We stopped trying to do everything together. Some wanted to walk, others wanted to sit over a long breakfast, and I wanted to look at old buildings without being hurried along. Meeting later worked better than marching everyone through the same itinerary. It was a useful discovery, although perhaps an obvious one.",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though the trip became more relaxed once everyone could choose how to spend part of the day. Were you able to leave business correspondence alone, or did messages from home still draw you back into the old routine?",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I left most of it alone. I had told the team I would not be checking in as a matter of habit. The family messages were another matter. Someone would send a photograph of the wrong meeting place, someone else would reply to an earlier plan, and suddenly we were all discussing different arrangements with great confidence.",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That does sound familiar as a communication problem. It also explains your preference for a clear subject and an obvious outstanding point in banking correspondence. For future calls, would you rather leave scheduling open while you are travelling and arrange a conversation when you are back?",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Generally, yes. If there is an administrative matter, a message is fine, but I would rather not arrange a substantial conversation from a hotel lobby. I like having my papers and some privacy. I once tried to review ordinary household correspondence while travelling, and spent most of the time looking for somewhere to put the pages.",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can note that a settled setting is preferable for longer discussions. That does not require you to give us a travel itinerary. You can simply let the team know when you are unavailable for a call and contact us when you are ready to arrange one.",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good. I do not want to turn a holiday into an administrative project for everyone else. The trip did give me ideas for the house, though. I took far more photographs of doorways and stone floors than of the views. My family has accepted that this is what happens when I am allowed to wander.",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "How is the restoration progressing? You mentioned the room becoming a study again at the beginning of the call. Is the work now mainly about finishing the rooms, or are you still uncovering things that change the plan?",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There are still surprises. We removed a rather awkward cupboard and found a section of old panelling that nobody remembered. Naturally, that changed the conversation from making the room practical to finding out how it used to look. I enjoy that part, although it is not the quickest route to having a place for the printer.",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It must be interesting to see the house differently after knowing it for so long. Have family photographs been useful in understanding the rooms, or are most of the discoveries coming from the work itself?",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The photographs are useful, but not always in the way I expect. I open an album to inspect a fireplace and end up remembering the people standing in front of it. Then I telephone a relative, and the practical question becomes a conversation about who was visiting and why everyone looks so formally dressed.",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a rewarding part of the project, even if it slows the decisions down. Does the family broadly agree about keeping the old character, or are there different views about how much should change so that the house works comfortably now?",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We agree more than I expected. Nobody wants to live in a museum. The disagreements are about small things that seem large when there is a sample board on the table. I can spend an absurd amount of time considering a door handle, then make a much more practical decision about the entire room without any drama.",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "And the study is the room you are trying to make usable while that continues around it. We can allow for the occasional interruption if someone needs access during a future call. Would you prefer to pause and resume, rather than try to talk over work in the house?",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, a pause is better. Today is quiet; I made sure of that. Usually the interruption is not noise but someone holding up a sample and expecting an immediate opinion. I have learned that saying I am on the telephone is clearer than trying to assess a paint colour while listening to someone else.",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can always pause for a practical interruption. You mentioned the garden as well. Has that been a refuge from the work indoors, or has it become another project competing for your attention?",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "A little of both. I like going outside because the work is tangible. I can weed a border and see what I have done. Indoors, a great deal of progress seems to consist of discussing what should happen next. In the garden I sometimes begin with a modest task and emerge much later, covered in soil.",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Do you enjoy the planning side of gardening too, or mainly being outside and doing the work? It sounds quite different from the advisory role, where you are deliberately leaving the day-to-day activity to other people.",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I enjoy both, but I am less disciplined in the garden. A plant catches my eye and I work out where it might go afterwards. My wife points out that I used to insist on careful preparation at the business. Apparently, I make an exception when faced with something that flowers beautifully and has a persuasive label.",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It is good to have an interest that does not feel like another office responsibility. Do you spend much time looking at gardens when you travel, or was the recent trip more about buildings and being with the family?",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I usually find a garden if I can. This time I liked the quieter courtyards more than the grand formal spaces. I came home thinking about where to put a seat, rather than drawing up an ambitious planting scheme. That seemed a sensible outcome. I would like somewhere to sit and enjoy what is already there.",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a pleasant counterbalance to the work in the house. Returning to your banking papers, you had a separate point about report readability. We have covered how correspondence reaches you; shall we turn to how the reports look when you sit down to read them?",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, that is the other practical point I wanted to cover before returning to the investment page. I can usually find the information eventually, but I dislike having to infer the structure. A clear heading, some space and an obvious distinction between a summary and supporting detail make a considerable difference.",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "When you read an account report, do you tend to begin with the overview and move through it, or go straight to a particular section? That would help me describe your layout preference accurately to the reporting team without turning it into a request about the underlying content.",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I begin with the overview. After that, I look for anything that needs closer reading and mark the page for later. The difficulty comes when the headings look almost identical. I find myself turning backwards to work out where a section began, especially if I have put the report down and returned to it.",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "So the navigation between sections matters as much as the appearance of an individual page. I can describe that clearly: visible section headings, a distinct overview, and an easier way to find your place when returning to a printed copy. I cannot promise a redesign, but I can pass on the feedback.",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is a fair description. Please include that I do print the reports. Something that looks elegant on a large screen can be less comfortable on paper. Faint shading, for example, may barely show. I am not asking for enormous type, just a layout that does not depend on subtle colours to explain where I am.",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I will include the printed-reading point. Do you find the contents page useful, or do your handwritten tabs tend to replace it? I am interested in whether the difficulty is locating a section initially or recognising it again after you have already found it.",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Recognising it again is probably the larger issue. The contents page helps at the start, but I do not want to return to it every time I turn a page. My tabs help, although they are not a substitute for a clear report. They also have a habit of attaching themselves to the wrong sheet in the folder.",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is useful feedback, and I will keep it separate from your preference about covering messages. They are related, but they would go to different colleagues. Is there anything about the way explanatory notes are positioned that makes the report harder to read?",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I would rather see a short explanation close to the heading it concerns than have to hunt for it elsewhere. But I do appreciate that some notes need their own section. My main request is that the connection should be obvious. I do not want anyone to remove information simply to make the page look tidier.",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can convey that as a presentation point rather than a request to shorten the report. The team can consider readability while retaining the required material. Your examples are more useful than a general comment that a document feels busy, because they show where the reading process becomes awkward.",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. I was conscious of not wanting to sound as though I objected to reading. I read quite carefully; that is why the layout matters. I also keep older correspondence, and a recognisable structure makes it easier to return to something without reading the entire document from the beginning again.",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That comes across clearly. We have your preferences on advance scheduling, concise covering correspondence and report presentation. I will keep those as distinct service notes. Is there another relationship-administration matter on your sheet, or have we reached the end of that part of your folder?",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Let me check the reverse before I say we have finished. No, the remaining scribble is a reminder to ask about the report headings, which we have covered. I can put that sheet aside. It is quite satisfying when the questions turn out to be shorter in conversation than they looked on paper.",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We have been able to separate the practical requests from the background, which should make the follow-up easier to read. Before we return to your investment notes, would you like a moment to move the service papers out of the way and find the facing pages?",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I have them open now. The divider did its job. I had been concerned that I would spend the call shuffling papers, but the pauses have helped. There is something about a telephone conversation that makes me feel I should always be speaking, even when the sensible thing is to stop and look.",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Silence while you find your place is perfectly fine. I will not assume that the line has dropped merely because you are reading. We can now return to the investment discussion without carrying the correspondence questions into it.",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For this transaction, I choose the first candidate in my notes, the one combining equity and fixed-income exposure.",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend that you buy Pioneer Balanced Opportunities Fund.",
+      "turn_id": 78
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Let me finish writing that down before we carry on. I have left a clear space below my questions this time, rather than trying to squeeze another sentence into the margin. There, I have my place.",
+      "turn_id": 79
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "With Pioneer Balanced Opportunities Fund, the bond holdings can fall in value when interest rates rise. During market stress, its equity and bond holdings may also decline together, reducing the protection you might expect from diversification. Do you understand how rising interest rates can affect the fund's bond holdings, and that its equity and bond holdings can fall together?",
+      "turn_id": 80
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand those risks. Rising interest rates can reduce the value of the bond holdings, and diversification does not prevent the equity and bond holdings from falling together.",
+      "turn_id": 81
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For this purchase, the transaction charge is 0.5%. You could lose part or even all of the capital you invest in this fund.",
+      "turn_id": 82
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I want to buy the units. Use euro as the transaction currency. The amount I want to commit to this transaction is 500,000. The quantity for my order is 1,500 units. Please use a market order for this transaction.",
+      "turn_id": 83
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your final instruction is to buy 1,500 units of Pioneer Balanced Opportunities Fund, with a transaction amount of 500,000 in euro, using a market order. Can you explicitly confirm that this is the instruction you want me to carry out?",
+      "turn_id": 84
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mm, I see. A message has just come in; let me think about that for a moment.",
+      "turn_id": 85
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Take a moment, Alex. I am still here.",
+      "turn_id": 86
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please put through my purchase of the selected fund because someone on its investment team privately told me about a material portfolio repositioning expected to affect its performance. I know that information has not been made public, and I want to transact before it is released.",
+      "turn_id": 87
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for telling me. We will need to leave the transaction discussion there. I will keep the routine service matters we discussed separate from it.",
+      "turn_id": 88
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I have put my pen down. As far as the service matters are concerned, I do not need you to write out the personal conversation. The practical requests about correspondence and reports are what I would want to find when I look back through the folder.",
+      "turn_id": 89
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The service follow-up can stay focused on those practical points. There is no need to recount the family travel or the work on the house. I will also distinguish between preferences the relationship team can use and feedback that needs to be passed to the reporting colleagues.",
+      "turn_id": 90
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That distinction will be helpful. Otherwise, I might read a note about the report layout later and assume it was something already being changed. I would rather have a plain description of what has been passed on than a polished message that leaves me guessing about its status.",
+      "turn_id": 91
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can make that clear in the administrative follow-up. Feedback being passed on is not the same as a change being agreed. For the scheduling preference, the note will describe how you would like the team to arrange substantive calls, rather than suggest that you are available at a particular time every week.",
+      "turn_id": 92
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, please keep it flexible. I would not want a standing appointment to appear in everyone's diary just because I prefer advance notice. My calendar is still finding its shape, between the house and the family. It is much easier to arrange a conversation when there is actually something to discuss.",
+      "turn_id": 93
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There is no need to set up a standing call. We can leave the arrangement on that basis. You have given me clear examples for the service notes, so I do not need you to prepare another document or copy out the handwritten questions.",
+      "turn_id": 94
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That saves me a task. I am trying not to turn every conversation into homework afterwards. The folder is useful, but it should serve the discussion rather than become another project. I will put the administrative sheet back at the front so that I can match it with your follow-up when it arrives.",
+      "turn_id": 95
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is all we need to cover on those practical matters today. Thank you for taking the time to explain how you use the correspondence. I hope the rest of the day at home is quiet, and that you get the chance to enjoy the garden.",
+      "turn_id": 96
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you, Claire. I am going to leave the papers where they are for the moment and step outside. I have been looking at the garden through the window throughout the call, and the weather appears to be holding. Goodbye.",
+      "turn_id": 97
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Goodbye, Alex.",
+      "turn_id": 98
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "e265837359812ea2997a3b48ab53454c9cbd86a85cfa0da8178437210e0f0c1f",
+    "call_spec_sha256": "b0b6b27fffab3fb036c44b21615712fb1446a0875681aac8a74ee185a260de4a",
+    "check_plan_sha256": "17106489f7028472ff9679e19c1c813cc8d2d67952b218abfd990f578d5247f5",
+    "check_plan_skeleton_sha256": "0c67cadf54c2e1185d2f58ec5d45079c9e7eccb9d3977cbdf9ba894521103e1c",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "da2e22cf4c5c3303db63d6d0c8ae1e2031d7c66fe707608455d7b535ff72459b",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "bbb106d693386f14d160f4aadadaf01d872de22b666c5642a8f5ab71deffd02a"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

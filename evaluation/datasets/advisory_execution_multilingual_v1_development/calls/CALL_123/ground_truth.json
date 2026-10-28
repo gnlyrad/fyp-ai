@@ -1,0 +1,1080 @@
+{
+  "call_id": "CALL_123",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 40,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "我明白了，您这次的投资目标是从现有持仓中腾出资金，并减少债券市场波动对您的影响。",
+          "turn_id": 58
+        }
+      ],
+      "gold_evidence_text": "我明白了，您这次的投资目标是从现有持仓中腾出资金，并减少债券市场波动对您的影响。",
+      "gold_evidence_turns": [
+        58
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 55,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 11,
+          "text": "猎户座环球收益基金持有债券，如果市场利率上升，所持债券的价格可能下跌，从而拉低基金净值。",
+          "turn_id": 60
+        }
+      ],
+      "gold_evidence_text": "猎户座环球收益基金持有债券，如果市场利率上升，所持债券的价格可能下跌，从而拉低基金净值。",
+      "gold_evidence_turns": [
+        60
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 90,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 56,
+          "text": "刚才解释的利率上升可能导致债券价格和基金净值下跌的风险，您是否理解？",
+          "turn_id": 60
+        },
+        {
+          "end": 40,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解，市场利率上升时，基金持有的债券可能跌价，我持有的基金净值也可能跟着下降。",
+          "turn_id": 61
+        }
+      ],
+      "gold_evidence_text": "刚才解释的利率上升可能导致债券价格和基金净值下跌的风险，您是否理解？\n我理解，市场利率上升时，基金持有的债券可能跌价，我持有的基金净值也可能跟着下降。",
+      "gold_evidence_turns": [
+        60,
+        61
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 18,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "这笔交易的手续费率是百分之零点二五。",
+          "turn_id": 62
+        }
+      ],
+      "gold_evidence_text": "这笔交易的手续费率是百分之零点二五。",
+      "gold_evidence_turns": [
+        62
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 48,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 19,
+          "text": "还需要提醒您，投资这只基金可能损失部分甚至全部投入的本金。",
+          "turn_id": 62
+        }
+      ],
+      "gold_evidence_text": "还需要提醒您，投资这只基金可能损失部分甚至全部投入的本金。",
+      "gold_evidence_turns": [
+        62
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "weak_confirmation"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "guarantee_request_refusal"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T3811441M",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 76,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 57,
+          "text": "我的身份证件号码是T三八一一四四一M。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "我的身份证件号码是T三八一一四四一M。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "T3811441M"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_corrections"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "18 June 1971",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 50,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "不对，刚才拿到的是家人的资料。我找到自己的证件了，我的出生日期是一九七一年六月十八日，请以这个为准。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "不对，刚才拿到的是家人的资料。我找到自己的证件了，我的出生日期是一九七一年六月十八日，请以这个为准。",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "07 June 1971"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "23 June 1971"
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "18 June 1971"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Orion Global Income Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": "Orion Global Income Fund"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": "Orion Global Income Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "JPY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 5000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": 5000000
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": 5000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 5000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": 5000
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": 5000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 71,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+          "turn_id": 71
+        }
+      ],
+      "gold_evidence_text": "改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "gold_evidence_turns": [
+        71
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 69,
+          "value": "MARKET"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 71,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您好，这里是私人银行服务，我是林雅婷。请问有什么可以帮您？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "林雅婷，您好，我是陈文华。我想谈谈账户里原来持仓的处理安排，相关材料都摆在书桌上了。家里的文件也在旁边，有点杂，我得边看边跟您说。今天是在家里打电话，周围还算安静，不用像在公司那样总有人进来找我。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生，您好。您可以慢慢整理，通话不必赶。我们先处理身份资料的核对，再接着谈您想讨论的事情。涉及个人资料时，您也留意身边环境，避免让无关人员听到。",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "书房里没有其他人，门也关着。我把证件放在文件夹旁边，平时都是自己保管，今天为了找账户资料，才把柜子里的东西搬出来。我的身份证件号码是T三八一一四四一M。 我记得我的出生日期是一九七一年六月七日。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "谢谢您提供资料。我在听，您若还要查看手边的文件，可以先看清楚，不用急着接着说。",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "抱歉，刚才凭记忆说错了，我看手边这份资料，出生日期应该是一九七一年六月二十三日。 平常我对这些事情记得还算清楚，碰到家里的文件混在桌上，就容易把眼前看到的当成自己的。这个文件夹外面没有写名字，只有里面的纸有标注，我刚才没留意。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以先查看证件本身。资料整理好后，我们再往下谈；通话期间如果需要停下来找东西，直接告诉我就可以。",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不对，刚才拿到的是家人的资料。我找到自己的证件了，我的出生日期是一九七一年六月十八日，请以这个为准。 现在证件就在面前，其他家人的资料我已经放到旁边了。不好意思，让您跟着听我改来改去。平时总觉得纸本拿在手上踏实，偏偏整理的时候又很容易混在眼前。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "没关系，查清楚再往下谈就好。您刚才说账户文件和家庭资料都在桌上，现在桌面是否方便继续通话？如果翻纸的声音影响收音，我会提醒您。",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "现在可以了。我把电话放稳，文件也摊开了，不会拿着话筒到处走。您听到翻纸声不用担心，我人还在这里。我的习惯是看原来的纸张，屏幕上来回切换页面反而容易漏掉内容，尤其公司和家里都用电子文件，看久了眼睛累。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "目前声音很清楚。您可以按习惯查看纸本，涉及账户的内容我们就在通话中沟通。我建议您卖出猎户座环球收益基金。",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我先记着您的建议，容我把思路理清。我今天特意不在公司谈，就是不想刚说到自己的事情，又被仓库或客户的电话打断。最近开始把日常工作交给同事处理，嘴上说该放手，实际坐下来又觉得哪里都想过问，所以连整理个人文件都拖着。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您平时直接参与家里的生意，临时事务确实容易占住注意力。今天既然在家，可以按您舒服的节奏谈。公司那边现在仍然经常需要您处理日常协调吗？",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "还是会找我，但事情已经跟以前不同了。过去大家遇到客户催货，或者送货安排有变，都会直接来问。现在负责这些工作的同事其实很熟悉流程，只是习惯了先听我的意见。我若马上接过去，他们反而没有机会把事情处理完整。家里也有人在公司做事，彼此太熟，说起工作经常没有明确的边界。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "家族企业里，工作关系和家人的相处确实很容易交在同个场景里。您既熟悉业务，同事又习惯向您请教，角色转变可能需要双方慢慢适应。您现在更想保留哪些日常参与方式？这里只是聊您平时的工作安排，不涉及账户指示。",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我还是喜欢知道客户有没有意见，也愿意听负责送货的同事讲现场情况。不过不想再守着电话，等着所有人来问。我有时候去公司，本来只是看看信件，坐下后却发现桌上已经摆满待处理的东西。大家不是故意把工作推给我，而是看见我来了，就顺手把事情拿过来，最后我又忙到忘记原本要做什么。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "听起来，您并不是不关心公司，而是希望自己不再成为日常事务都要经过的环节。我们这边联系您时，也可以注意不要总在您处理公司事情的时候打扰。至于账户沟通的时间，您可以等生活安排稳定后再考虑，不必今天就定下来。",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "对，联系时间我先不改，最近还在摸索。有时在家反而方便，有时家里又在讨论旅行，电话响了也不安静。我不想现在把自己说得很有空，到时又临时改约。公司那边有位长期合作的同事很细心，交给他处理我并不担心，只是我自己看见待办的纸条，就忍不住伸手去拿。",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "那我们就先不动联络安排。您今天能留出不被公司打断的空间，已经方便我们把事情谈完整。您刚才提到纸条，我想您平常处理公司事务，也很依赖手边的书面记录。",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "是的。公司用系统查资料很方便，但我看到需要跟进的事情，还是会在纸上写。我写的不是正式业务记录，更多是提醒自己去问谁、哪件事还没回音。同事知道我的习惯，有时也会留字条。现在交接的时候才发现，只有我自己看得懂的记号，对别人没有什么帮助，还得坐下来解释当时为什么这么写。",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "工作上的备忘和正式记录，使用的人不同，确实会有这种差别。银行这边的资料如果有您找不到的地方，您可以具体告诉我文件的栏目或标题，我再协助定位。涉及个人资料的文件，也不需要交给公司同事代为解释。",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这个我很在意，自己的账户一直自己管，不会拿去让公司的人翻。只是家里的柜子跟公司的文件袋外观看起来差不多，带回来的空文件袋又舍不得丢，久了就混用。今天拿出来才发现，有的装着个人信件，有的装着家里的旅游资料。内容并没有给别人看，就是找起来费时间，也容易像刚才那样拿错。",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "明白，您说的是外观相似，查找时容易混淆。账户文件若需要重新索取，我们可以另行处理文件查询，不必为了找纸张勉强凭记忆回答。至于今天，您可以把需要查看的资料留在手边，其他文件不用在电话里逐项说明。",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "那就好，我不是要把桌上的东西都跟您交代，只是解释为什么刚才乱了。其实我挺喜欢整理旧信件，看到以前手写的备注，会想起当时在忙什么。可真正需要找某份材料时，这种慢慢翻看的习惯就不太合适，容易看着看着跑题。今天我已经把无关的东西挪开，后面不会再拿家人的证件来回答。",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您不必为刚才的情况反复道歉。现在资料已经分开，我们可以继续。您刚才提到家里在安排旅行，看来您打算把工作以外的时间慢慢留出来，家人也在参与安排。",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "他们的热情比我高。以前总是我说公司走不开，家里也就先不谈了。现在我愿意看看行程，才发现大家各有事情，反而不容易凑到能出门的时候。有人希望住得热闹，出门就是餐馆和商店；有人想找安静的地方。我倒是不挑目的地，只怕每天赶着集合，回来比上班还累。",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "家人期待的旅行节奏不太相同，讨论本身就需要耐心。您如果只是想放松，行程排得太紧，体验可能确实和原先想的不太相像。现在主要还是在交流偏好，尚未忙到需要随时查看出行消息吧？",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "还在交流，谁都没有拍板。我已经跟他们说，别因为我难得愿意出门，就把所有想去的地方都塞进来。我喜欢早上在住处附近走走，看到街边有人卖花就停下来看看，不太喜欢车停下就赶去拍照，再赶回车上。家人听了也笑，说我去哪里都像在自家附近散步，不过他们现在也愿意把行程放松些。",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您喜欢的更像是换个环境生活，而不是忙着赶景点。家里既然还在商量，您可以保留讨论空间。若以后人在外地，涉及银行联络时，您可以通过平常的正式渠道联系，不需要把私人行程的细节都交给我们。",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这点很好。我不想出门还惦记该向谁报行程，也不希望家人觉得陪我旅行就是换个地方等我接电话。以前吃饭时公司来电，我总觉得接完马上就好，结果聊完大家已经吃得差不多。现在回头想，家人不是不体谅生意忙，而是不知道我什么时候才算真的有空。",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "长时间习惯随时回应工作，身边的人确实不容易判断什么时候适合跟您说话。今天这通电话我们也会尊重您的节奏。如果家里临时有事，您可以直接说，不需要勉强把谈话接下去。",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "今天倒没有别的安排，我也想把账户的事情谈清楚，只是我说话喜欢把来龙去脉交代完整。以前跟熟悉的客户谈事情也是这样，怕只说结论，对方不知道我为什么突然换个做法。有时讲远了自己才发觉。不过跟您通话我不用担心被催，就自然说得多了些。",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以把想说的内容讲清楚，我会留意把账户事项和日常话题区分开。您不需要为了节省通话时间而仓促作答；如果只是谈生活安排，也不会被当作交易指示。",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这样说我就安心些。我有时候随口说句想法，自己还没想定，别人已经拿着去安排了，公司里尤其容易发生。今天我想先把事情摆开，再回到具体内容。旅行也是，家里发来照片，我说地方看着不错，他们就以为我选好了，我后来还得解释，只是觉得风景好看，不是已经决定出发。",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "日常交流里，表达印象和作出决定确实不是同回事。您今天谈到的生活话题，我会按生活话题来听。涉及正式账户事项时，我们会回到相应的沟通环节，不会把闲谈替代成您的授权。",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我现在也学着不急着替家人下结论。以前听他们说哪里麻烦，我就立刻想怎么解决，结果人家只是想聊聊。最近在家时间多，发现自己很少有机会听完别人说话，不是被电话打断，就是忙着想接下来该做什么。现在能坐着喝茶，听他们把旅行的想法说完，倒比真的去哪里还让我觉得新鲜。",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "能有不被事务打断的谈话，确实与在工作间隙匆匆交流不同。您平时离开公司以后，除了和家人商量行程，还有什么比较喜欢做、又不需要追着日程走的事情？",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我喜欢照料花草，尤其是早上还没热起来的时候，到阳台看看叶子，擦擦花盆周围的水。以前总是匆忙浇完就走，回来才发现枯叶还挂着。现在愿意蹲下来慢慢看，才知道平时以为长得差不多的植物，其实状态很不相同。我不追求摆得像花店，只要看着舒服，自己有事可以慢慢做就好。",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "听您这样描述，园艺对您来说更像是安静的日常，不需要拿来展示。书房靠近阳台吗？刚才通话里背景很安静，和您说的那种环境很相称。",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "书房能看见阳台，但窗户关着，所以外面的声音不大。家人喜欢颜色鲜艳的花，我自己反而喜欢叶子长得舒展的植物。去逛花圃时，他们在前面看花，我会停在比较不起眼的角落。经营生意总要赶进度，花草不管我着不着急，该慢的时候还是慢，照顾它们让我没那么想催事情。",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这和您在公司处理催货、协调交付的节奏很不相同。您说得很具体，我能想象您为什么愿意把闲暇留在阳台。园艺方面我不算熟悉，就听您介绍，不冒充懂得怎么照料。",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "其实我也不算懂，都是看它们长得怎么样再慢慢摸索。有的花买回来很好看，回家后就没精神，我起初还会懊恼，后来觉得自己喜欢的是照顾的过程，不是非得养成什么样。家里有人嫌阳台堆着旧花盆不好看，我就把不用的收走，留下平时真的会去看的，不再看见喜欢的就往家搬。",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "能保留自己真正愿意照看的东西，阳台也会更方便使用。您平时会和家人共同打理，还是各有喜欢做的部分？如果谈到这些让您想起还有家务要忙，我们也可以随时停下来。",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不用停，家里现在很安静。花草主要是我照看，家人有空就来看看，偶尔帮忙清理。我不要求他们按我的习惯做，不然休闲又变成我在分配工作了。以前我连花盆摆哪里都要解释，后来发现自己越讲越像在开会，大家就走开。我现在宁可让他们随意看看，有兴趣再聊，没有兴趣也不勉强。",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您自己能留意到工作习惯什么时候带进了生活里，也挺有意思。我们平常接触客户，往往只看到处理事务的那面，难得听您讲这样安静的日常。",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我过去也觉得闲下来没什么可说的，总要拿出事情正在往前走，才觉得没有白过。现在陪家人去买菜，或者在家把花盆周围擦干净，做完也觉得舒服。不是说以后不管公司了，只是不想所有谈话最后都转回工作。哪怕出门喝茶，碰见熟人，聊着聊着又成了问生意怎么样，自己也会顺势说下去。",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "熟悉您的人习惯从生意聊起，您也习惯回应，话题就容易回到那里。今天您已经谈了不少工作以外的事情。家人知道您偏爱安静的活动，对旅行的安排也更容易找到能交流的部分。",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "他们现在会把公园、步道的照片发给我，不再只发餐厅和商场。我看了觉得挺好，但也提醒他们，别把散步变成必须完成的任务。真到外面，天热就找地方坐，想回去休息就回去。我在公司习惯把事情列出来，生活上反而不太想总拿着清单，看漏了什么、还差什么，那样心里又忙起来。",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "生活中的清单和工作上的清单，给您的感受确实不相同。银行相关的材料则可以只在需要时查看，不必占住休闲安排。今天您把文件准备在身边，我们可以等您觉得适合时，再回到账户沟通。",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "现在就可以慢慢回来了。我看着手边这些纸，倒想起文件留存的事。我不打算今天改任何账户设置，只是想知道，如果有文件看不清，或者收到后发现缺了页，是直接联系您，还是先去找寄送的部门？我不太喜欢在不同地方反复解释，尤其不确定自己找对了没有。",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以通过平常的官方联络渠道向我们提出文件查询，并说明是哪些材料出现问题。收到具体情况后，我们会按相关流程协助查找。您不需要在不确定来电身份的情况下，把整份个人文件发送出去；如果涉及补寄或设置变更，会另行处理，不会因为今天聊到就自动更改。",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我问的就是这个。家里收到信件，通常先放到书桌，我回来才拆。有时纸张折得紧，装订的位置又不显眼，我会怀疑是不是少拿了内容，其实是夹在后面。等到想问的时候，又记不起当时从哪里收到。我想把询问的渠道弄清楚，而不是每次碰到疑问就先让家人帮我找。",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "渠道清楚后，碰到具体疑问再联系即可。文件是否完整，需要结合实际材料查看，我现在不作判断。您如果之后来查询，可以描述标题和看到的问题，不必把其他家庭成员的资料也夹进去。",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我会留意。刚才拿错资料以后，我也觉得家人的证件不该跟自己的账户信件摊在同个地方。不过整理归整理，我不想把家里弄得像公司档案室，连拿张纸都要先想应该放在哪个柜子。只要需要的时候能找到，不会把别人的东西当成自己的，就已经很好了。",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以保留自己用得顺手的方式。对银行沟通而言，重点是查看资料时能辨认文件属于谁，以及相关内容是否清楚。家里怎么摆放，还是以您使用方便为主，我就不替您安排了。",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢，您没有让我再准备很复杂的东西。我有时听人讲整理方法，刚听觉得有道理，回家照着做又发现不适合自己，最后材料摆得整齐，反而找不到。我的纸上有手写备注，家人觉得乱，我却认得出来。只是私人资料和家人的资料必须分开，这次确实是我疏忽。",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "今天需要更正的资料已经由您亲自说明，接下来不必继续责备自己。现在您身边环境安静，材料也在手边，我们可以把注意力转回原本想讨论的事项。您若还需要翻查，就直接停下来查看。",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "好，生活上的事情说了不少，也谢谢您耐心听。我现在把旅游的纸张收进抽屉，桌上只留跟今天通话有关的材料。公司的电话也先没有去看，免得看到消息又分心。关于账户这边，我希望把想法谈完整，不因为自己翻得慢就赶着说完。",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我明白了，您这次的投资目标是从现有持仓中腾出资金，并减少债券市场波动对您的影响。",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "您接着说，我会听。刚才聊生活时，我把手边的备注也重新看过了。文件上的印刷内容和我自己写的字，我现在分开看，不会看到什么就马上念出来。有需要停下来查原件的时候，我会告诉您，不再单凭记忆往下接。",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "接下来我说明相关事项。猎户座环球收益基金持有债券，如果市场利率上升，所持债券的价格可能下跌，从而拉低基金净值。 刚才解释的利率上升可能导致债券价格和基金净值下跌的风险，您是否理解？",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解，市场利率上升时，基金持有的债券可能跌价，我持有的基金净值也可能跟着下降。",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这笔交易的手续费率是百分之零点二五。 还需要提醒您，投资这只基金可能损失部分甚至全部投入的本金。",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我还想问您个问题。剩下还持有的部分，您能保证以后肯定有收益吗？",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "不能，我无法保证未来的投资收益，实际表现仍然取决于市场情况。",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我先低头看看手里的纸。刚才有张手写便笺压在文件下面，我拿出来放到旁边，免得看着原件又被自己的字带着走。您稍等，我不离开电话，只是把桌上的内容重新摆清楚。",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以，我在电话这边等您。您整理时不用同时说话，等准备好再继续。",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "现在纸张摆开了。我有时拿着旧便笺，会不自觉沿着当时写下来的想法说，所以刚才想停下来看看。今天跟公司同事交接文件也有这种感觉：纸上记着的是当时的情况，不等于现在说话可以不再细看。您不用替我接话，我看完就自己说。",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "好的，我不替您补充。您按自己的节奏查看即可。",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "请用市价单，帮我卖出猎户座环球收益基金，数量是五千份，交易金额是五百万人民币。",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我听到您的表述了。",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "请先不要执行，我撤回刚才那份交易指示，接下来我重新说。 改为用限价单，卖出猎户座环球收益基金，数量五千份，交易金额五百万日元，每份限价设为一千日元。",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您修改后的交易指示我已经记录下来了。请您明确确认，是否授权我按这份最终指示办理？",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "嗯，我还在翻这些资料，让我再想想。",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以继续考虑。我不会把刚才的回应视为明确授权，也不会在这通电话里替您作决定。",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "今天先谈到这里吧，资料我还想自己静下来看。刚才家里的事情说得挺多，等真正看着纸上的内容，我还是想留点安静的时间，不急着接着回答。谢谢您耐心听我说，也等我找文件。",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "不客气，陈先生。今天先结束通话，之后如需继续沟通，请通过平常的官方渠道联系。也请您收好桌上的个人证件和家庭资料。",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "好，我会把文件收好。谢谢您，林雅婷，再见。",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈先生，再见。",
+      "turn_id": 78
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "5a09d6d083c97ece32e7f39f7d9b60c522eb51f407da02010ba1121fc289b77e",
+    "call_spec_sha256": "7e474eb8c0b71f80b3b6d647c8ee85670550b778662542fd09744ce6a8e6f9d5",
+    "check_plan_sha256": "525b08b94605804c72f571be57632c123ab035f718c705ccc86912673f322429",
+    "check_plan_skeleton_sha256": "8a97cdcf7b540884c38049ef0c945e9547cb3b516f0d8e54449ca37d5baf620c",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "b38be9698ec5f34a3b8e8bd0e9bfbe276ac1f035d9381161173a1eab982dc2ed",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "2651ed966817adebb92349491199de7f80aa0697948ca0432e4a2633a528fc06"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

@@ -1,0 +1,774 @@
+{
+  "call_id": "CALL_174",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 39,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "我确认您的投资目标是建立偏重稳定收入的配置，让个人财务需要不那么依赖生意收入。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "我确认您的投资目标是建立偏重稳定收入的配置，让个人财务需要不那么依赖生意收入。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 89,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 40,
+          "text": "海港新元债券基金持有的债券会受市场利率影响：利率上升时，债券价格可能下跌，基金净值也可能随之下降。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "海港新元债券基金持有的债券会受市场利率影响：利率上升时，债券价格可能下跌，基金净值也可能随之下降。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 113,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 90,
+          "text": "您是否理解刚才说明的利率变化对基金净值的风险？",
+          "turn_id": 4
+        },
+        {
+          "end": 82,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我明白，rising interest rates can push down the bond prices and the fund’s unit value.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "您是否理解刚才说明的利率变化对基金净值的风险？\n我明白，rising interest rates can push down the bond prices and the fund’s unit value.",
+      "gold_evidence_turns": [
+        4,
+        5
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 21,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "为了追求投资收入，您是否愿意接受投资亏损？",
+          "turn_id": 6
+        },
+        {
+          "end": 35,
+          "event_id": "EV_006",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我愿意接受投资亏损，也接受基金净值波动，这是我为了追求收入愿意承担的。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "为了追求投资收入，您是否愿意接受投资亏损？\n我愿意接受投资亏损，也接受基金净值波动，这是我为了追求收入愿意承担的。",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 66,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "我推荐这只基金，是因为它偏重债券收入，符合您希望在生意以外建立投资收入的目标；组合持有不同发行人的债券，也能减少对个别发行人的依赖。",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "我推荐这只基金，是因为它偏重债券收入，符合您希望在生意以外建立投资收入的目标；组合持有不同发行人的债券，也能减少对个别发行人的依赖。",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 83,
+          "event_id": "EV_008",
+          "speaker": "EMPLOYEE",
+          "start": 9,
+          "text": "按您更正后的指示，以新币交易，金额为一百万，买入海港新元债券基金共两千份，采用限价单，每份限价为五百新币。请您明确确认，这是否就是您的最终交易指示？",
+          "turn_id": 14
+        },
+        {
+          "end": 35,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我确认，您刚才复述的更正后指示就是我的最终交易指示，请按这个指示执行。",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "按您更正后的指示，以新币交易，金额为一百万，买入海港新元债券基金共两千份，采用限价单，每份限价为五百新币。请您明确确认，这是否就是您的最终交易指示？\n我确认，您刚才复述的更正后指示就是我的最终交易指示，请按这个指示执行。",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 90,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 67,
+          "text": "这项投资未来肯定会带来正回报，我可以向您保证。",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "这项投资未来肯定会带来正回报，我可以向您保证。",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "S0063950D",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 87,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 69,
+          "text": "我的身份证号码是S零零六三九五零D。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "我的身份证号码是S零零六三九五零D。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "S0063950D"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "25 December 1980",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 108,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 88,
+          "text": "我的出生日期是一九八〇年十二月二十五日。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九八〇年十二月二十五日。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "25 December 1980"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Harbor SGD Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 29,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 10,
+          "text": "这次我要交易的产品是海港新元债券基金。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "这次我要交易的产品是海港新元债券基金。",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "Harbor SGD Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_currencies"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SGD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 42,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 30,
+          "text": "这笔交易的币种就用新币。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "这笔交易的币种就用新币。",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "SGD"
+        },
+        {
+          "event_id": "EV_015",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 9,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 17,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "这笔交易我确定投入的金额是一百万。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "这笔交易我确定投入的金额是一百万。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 1000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 27,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 18,
+          "text": "数量确定为两千份。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "数量确定为两千份。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 2000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 36,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 28,
+          "text": "交易方向是买入。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "交易方向是买入。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "one_field_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 40,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "不对，订单类型您说错了，我要的是限价单，每份限价设为五百新币，其他交易内容不变。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "不对，订单类型您说错了，我要的是限价单，每份限价设为五百新币，其他交易内容不变。",
+      "gold_evidence_turns": [
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 11,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_020",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 12,
+          "value": "MARKET"
+        },
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "林志明先生，您好，我是陈雅婷。您预约的投资电话，现在方便谈吗？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "方便，谢谢您打来。Please keep the call brief; I’m between meetings. 身份资料我先报给您。我的身份证号码是S零零六三九五零D。 我的出生日期是一九八〇年十二月二十五日。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "谢谢，我会把通话安排得紧凑些。您最近还有时间打理花园吗？",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "有，最近在整理盆栽。忙完公司的事情，看看新叶子，心情就轻松些。我们回到今天的话题吧。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我确认您的投资目标是建立偏重稳定收入的配置，让个人财务需要不那么依赖生意收入。 海港新元债券基金持有的债券会受市场利率影响：利率上升时，债券价格可能下跌，基金净值也可能随之下降。 您是否理解刚才说明的利率变化对基金净值的风险？",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我明白，rising interest rates can push down the bond prices and the fund’s unit value.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "为了追求投资收入，您是否愿意接受投资亏损？",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我愿意接受投资亏损，也接受基金净值波动，这是我为了追求收入愿意承担的。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我推荐这只基金，是因为它偏重债券收入，符合您希望在生意以外建立投资收入的目标；组合持有不同发行人的债券，也能减少对个别发行人的依赖。 这项投资未来肯定会带来正回报，我可以向您保证。",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我把具体内容说清楚。这次我要交易的产品是海港新元债券基金。 这笔交易的币种就用新币。 之前谈生意时，我们用日元的汇率变化作比较，我才想到问汇率风险；那只是背景，不是要更改这笔交易的币种。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "请继续，我在记录。",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这笔交易我确定投入的金额是一百万。 数量确定为两千份。 交易方向是买入。 Please use a limit order so I have control over the execution price.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我复述您的指示：以新币交易，金额为一百万，买入海港新元债券基金共两千份，采用市价单。",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不对，订单类型您说错了，我要的是限价单，每份限价设为五百新币，其他交易内容不变。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "抱歉，刚才读错了。按您更正后的指示，以新币交易，金额为一百万，买入海港新元债券基金共两千份，采用限价单，每份限价为五百新币。请您明确确认，这是否就是您的最终交易指示？",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我确认，您刚才复述的更正后指示就是我的最终交易指示，请按这个指示执行。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "谢谢，今天的电话就到这里，不耽误您接下来的安排了。",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you for keeping it brief. 以后电话更新也请这样简洁。再见。",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "好的，我会留意您的通话偏好。林先生，再见。",
+      "turn_id": 18
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "EN_ZH_MIXED",
+    "mixing_style": "ZH_LED",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "6bd85c1f52452479429c97b9396b8c78d2fe1a63164eef5471701130f524bab3",
+    "call_spec_sha256": "d51c2295a2cb7b026b259b5b0dbaac01e935559572058e69b88e8280b84c2dae",
+    "check_plan_sha256": "89f5d46bddb2f800245206d3f611581ccd6606c193cbb993e296e7f84cbf3088",
+    "check_plan_skeleton_sha256": "39162eb2a878144c4d03406323c7deb312a15cd208d51d395ff0f2e25bdbe582",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "0be285417a1766c9ac7a8d2a72e1092843012ed03bb0bd30186cf4f23ec0dcf1",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "67a516d14d060249c6362a8cc680440f055391071aca2924b59e79a5b2bd9d9b"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

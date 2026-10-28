@@ -1,0 +1,170 @@
+{
+  "audio_segments": [
+    {
+      "end_time": "0.0",
+      "id": 0,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Good morning, private banking, Rachel Bennett speaking. How can I help you today?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 1,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Hello, Rachel. It's Adrian Cole. I'm back from a business trip and wanted to discuss my portfolio before my next meeting. I'd appreciate keeping the conversation fairly brief."
+    },
+    {
+      "end_time": "0.0",
+      "id": 2,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Of course. Have you had a chance to settle back into the office, or are you still travelling?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 3,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "I'm back in the office, although it feels as though I've spent more time with our distribution teams than at my own desk lately. Calling is much easier than arranging a branch visit."
+    },
+    {
+      "end_time": "0.0",
+      "id": 4,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Telephone contact is fine for our discussion. We can keep the administrative conversation here rather than arrange a visit. I'll let you get your notes in front of you before we begin."
+    },
+    {
+      "end_time": "0.0",
+      "id": 5,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "They're here. Let me give you my details. My identification number is T three four five seven five nine zero L. My date of birth is 29 November 1987."
+    },
+    {
+      "end_time": "0.0",
+      "id": 6,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Thank you. Let me distinguish the holdings we're discussing. For comparison, there's Crest Emerging Markets Bond Fund, which is a pooled emerging-market debt investment. Then there's Atlas USD Corporate Bond 2031, the individual corporate bond already in your portfolio."
+    },
+    {
+      "end_time": "0.0",
+      "id": 7,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "The latter, the individual bond you just mentioned, is the holding I want to transact in."
+    },
+    {
+      "end_time": "0.0",
+      "id": 8,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "I recommend reducing Atlas USD Corporate Bond 2031 because the holding concentrates your credit exposure in an individual issuer. Reducing it would lessen that concentration and the need to monitor that issuer closely."
+    },
+    {
+      "end_time": "0.0",
+      "id": 9,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "An employee of the issuer told me confidentially that its upcoming financial report will reveal serious deterioration in its ability to service its debt; that report has not been announced publicly. I'm instructing you to sell this holding because of that information. I want to sell the holding. Use US dollars for this transaction. The amount I want to sell is 100,000."
+    },
+    {
+      "end_time": "0.0",
+      "id": 10,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "For Atlas USD Corporate Bond 2031, deterioration in the issuer's creditworthiness can depress the resale price and increase the risk of missed interest or principal payments. Do you understand how worsening issuer creditworthiness could affect the bond's resale price and its interest or principal payments?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 11,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Yes, I understand. The resale price could fall, and the issuer could miss interest or principal payments."
+    },
+    {
+      "end_time": "0.0",
+      "id": 12,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "The transaction fee is 0.2% of the sale value. You could lose some or all of your invested capital, and selling below your purchase price would crystallise a loss. Are you willing to accept investment losses, including a loss crystallised by selling this holding?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 13,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Yes, I am willing to accept those losses, including crystallising a loss on the holding. Let me look at the allocation note on my desk before you read anything back."
+    },
+    {
+      "end_time": "0.0",
+      "id": 14,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Take a moment to look at your notes. I'll wait."
+    },
+    {
+      "end_time": "0.0",
+      "id": 15,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Actually, I've checked my intended allocation: replace my earlier sale amount with 25,000. The quantity for this transaction is 2,000 units. Place it as a limit order with a limit price of 12.5 US dollars."
+    },
+    {
+      "end_time": "0.0",
+      "id": 16,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Your revised instruction is to sell 2,000 units of Atlas USD Corporate Bond 2031, for an amount of 25,000 in US dollars, using a limit order at 12.5 US dollars. Can you explicitly confirm that this is your final instruction?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 17,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Mm, I hear you. I'm distracted by my meeting; let me think about it."
+    },
+    {
+      "end_time": "0.0",
+      "id": 18,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "We can pause the conversation here. You don't need to keep talking while you're being interrupted. Would telephone contact still be the most convenient way to pick up the discussion?"
+    },
+    {
+      "end_time": "0.0",
+      "id": 19,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "Yes, please keep contact by telephone. I'm usually moving between the office and the warehouse, so a branch appointment is awkward. I'll call when I have some privacy and my meeting is out of the way."
+    },
+    {
+      "end_time": "0.0",
+      "id": 20,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "Thank you, Adrian. When you call, you can ask for Rachel Bennett. If I'm unavailable, please leave a callback message without including any sensitive details."
+    },
+    {
+      "end_time": "0.0",
+      "id": 21,
+      "speaker_label": "spk_1",
+      "start_time": "0.0",
+      "transcript": "That's helpful. I need to step into the meeting now. Thank you for your time, Rachel."
+    },
+    {
+      "end_time": "0.0",
+      "id": 22,
+      "speaker_label": "spk_0",
+      "start_time": "0.0",
+      "transcript": "You're welcome. Thank you for calling, and goodbye."
+    }
+  ],
+  "transcripts": [
+    {
+      "transcript": "Good morning, private banking, Rachel Bennett speaking. How can I help you today?\n\nHello, Rachel. It's Adrian Cole. I'm back from a business trip and wanted to discuss my portfolio before my next meeting. I'd appreciate keeping the conversation fairly brief.\n\nOf course. Have you had a chance to settle back into the office, or are you still travelling?\n\nI'm back in the office, although it feels as though I've spent more time with our distribution teams than at my own desk lately. Calling is much easier than arranging a branch visit.\n\nTelephone contact is fine for our discussion. We can keep the administrative conversation here rather than arrange a visit. I'll let you get your notes in front of you before we begin.\n\nThey're here. Let me give you my details. My identification number is T three four five seven five nine zero L. My date of birth is 29 November 1987.\n\nThank you. Let me distinguish the holdings we're discussing. For comparison, there's Crest Emerging Markets Bond Fund, which is a pooled emerging-market debt investment. Then there's Atlas USD Corporate Bond 2031, the individual corporate bond already in your portfolio.\n\nThe latter, the individual bond you just mentioned, is the holding I want to transact in.\n\nI recommend reducing Atlas USD Corporate Bond 2031 because the holding concentrates your credit exposure in an individual issuer. Reducing it would lessen that concentration and the need to monitor that issuer closely.\n\nAn employee of the issuer told me confidentially that its upcoming financial report will reveal serious deterioration in its ability to service its debt; that report has not been announced publicly. I'm instructing you to sell this holding because of that information. I want to sell the holding. Use US dollars for this transaction. The amount I want to sell is 100,000.\n\nFor Atlas USD Corporate Bond 2031, deterioration in the issuer's creditworthiness can depress the resale price and increase the risk of missed interest or principal payments. Do you understand how worsening issuer creditworthiness could affect the bond's resale price and its interest or principal payments?\n\nYes, I understand. The resale price could fall, and the issuer could miss interest or principal payments.\n\nThe transaction fee is 0.2% of the sale value. You could lose some or all of your invested capital, and selling below your purchase price would crystallise a loss. Are you willing to accept investment losses, including a loss crystallised by selling this holding?\n\nYes, I am willing to accept those losses, including crystallising a loss on the holding. Let me look at the allocation note on my desk before you read anything back.\n\nTake a moment to look at your notes. I'll wait.\n\nActually, I've checked my intended allocation: replace my earlier sale amount with 25,000. The quantity for this transaction is 2,000 units. Place it as a limit order with a limit price of 12.5 US dollars.\n\nYour revised instruction is to sell 2,000 units of Atlas USD Corporate Bond 2031, for an amount of 25,000 in US dollars, using a limit order at 12.5 US dollars. Can you explicitly confirm that this is your final instruction?\n\nMm, I hear you. I'm distracted by my meeting; let me think about it.\n\nWe can pause the conversation here. You don't need to keep talking while you're being interrupted. Would telephone contact still be the most convenient way to pick up the discussion?\n\nYes, please keep contact by telephone. I'm usually moving between the office and the warehouse, so a branch appointment is awkward. I'll call when I have some privacy and my meeting is out of the way.\n\nThank you, Adrian. When you call, you can ask for Rachel Bennett. If I'm unavailable, please leave a callback message without including any sensitive details.\n\nThat's helpful. I need to step into the meeting now. Thank you for your time, Rachel.\n\nYou're welcome. Thank you for calling, and goodbye."
+    }
+  ]
+}

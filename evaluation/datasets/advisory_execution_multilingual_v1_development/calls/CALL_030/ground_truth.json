@@ -1,0 +1,847 @@
+{
+  "call_id": "CALL_030",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 179,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your objective is to reduce emerging-market credit exposure and free up more of your portfolio for anticipated family spending. I'll use that objective in discussing the disposal.",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "Your objective is to reduce emerging-market credit exposure and free up more of your portfolio for anticipated family spending. I'll use that objective in discussing the disposal.",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 259,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 11,
+          "text": "With Crest Emerging Markets Bond Fund, deteriorating issuer credit quality or defaults can reduce the value of the underlying bonds and the fund. A sell limit order may also remain unexecuted if the available dealing price does not meet your limit.",
+          "turn_id": 12
+        }
+      ],
+      "gold_evidence_text": "With Crest Emerging Markets Bond Fund, deteriorating issuer credit quality or defaults can reduce the value of the underlying bonds and the fund. A sell limit order may also remain unexecuted if the available dealing price does not meet your limit.",
+      "gold_evidence_turns": [
+        12
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 383,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 260,
+          "text": "Do you understand how issuer credit problems can reduce the fund's value, and that your sell limit order might not execute?",
+          "turn_id": 12
+        },
+        {
+          "end": 162,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I understand: credit deterioration or defaults can bring down the fund's value, and the disposal may not happen if the dealing price falls short of my limit.",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "Do you understand how issuer credit problems can reduce the fund's value, and that your sell limit order might not execute?\nYes, I understand: credit deterioration or defaults can bring down the fund's value, and the disposal may not happen if the dealing price falls short of my limit.",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 65,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "The transaction charge is 0.2% of the executed transaction value.",
+          "turn_id": 16
+        }
+      ],
+      "gold_evidence_text": "The transaction charge is 0.2% of the executed transaction value.",
+      "gold_evidence_turns": [
+        16
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 130,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "You may lose some or all of the capital invested in this fund. Selling below your original purchase cost would crystallise a loss.",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "You may lose some or all of the capital invested in this fund. Selling below your original purchase cost would crystallise a loss.",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 259,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 131,
+          "text": "Are you willing to accept an investment loss, including crystallising a loss on this disposal, in order to reduce that exposure?",
+          "turn_id": 14
+        },
+        {
+          "end": 125,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to accept that investment loss to reduce the exposure, while keeping control of the minimum disposal price.",
+          "turn_id": 15
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept an investment loss, including crystallising a loss on this disposal, in order to reduce that exposure?\nYes, I am willing to accept that investment loss to reduce the exposure, while keeping control of the minimum disposal price.",
+      "gold_evidence_turns": [
+        14,
+        15
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 310,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing Crest Emerging Markets Bond Fund because that lowers your exposure to emerging-market credit and liquidity pressures and supports making funds available for family spending. A limit instruction also fits your preference for a minimum acceptable disposal price, although it may not execute.",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing Crest Emerging Markets Bond Fund because that lowers your exposure to emerging-market credit and liquidity pressures and supports making funds available for family spending. A limit instruction also fits your preference for a minimum acceptable disposal price, although it may not execute.",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 143,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 66,
+          "text": "I guarantee that this investment will deliver positive returns in the future.",
+          "turn_id": 16
+        }
+      ],
+      "gold_evidence_text": "I guarantee that this investment will deliver positive returns in the future.",
+      "gold_evidence_turns": [
+        16
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "double_triple_digits"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "F5229244I",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 69,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "My identification number is F five double two nine two double four I.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My identification number is F five double two nine two double four I.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "F5229244I"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "correction_same_turn"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "31 December 1964",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 163,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 133,
+          "text": "不对，我刚才说错了，我的出生日期是一九六四年十二月三十一日。",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "不对，我刚才说错了，我的出生日期是一九六四年十二月三十一日。",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 3,
+          "value": "01 December 1964"
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "31 December 1964"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Crest Emerging Markets Bond Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 465,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "Orion Global Income Fund"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "Crest Emerging Markets Bond Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "JPY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 465,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_monetary_values"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 5000000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 465,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": 5000000
+        },
+        {
+          "event_id": "EV_017",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 7,
+          "value": 25000000
+        },
+        {
+          "event_id": "EV_018",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 7,
+          "value": 1000000
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": 5000000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 465,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": 10000
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 465,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 7,
+      "gold_evidence": [
+        {
+          "end": 465,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 244,
+          "text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "gold_evidence_turns": [
+        7
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "MARKET"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 7,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, Daniel Lim. Rachel Chen speaking. Are you somewhere comfortable to talk, with your papers close at hand?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good morning, Rachel. Yes, I'm in my office. 今天家里的安排已经处理好了，现在可以安静地谈。 Business meetings have made the diary rather crowded.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for making the time. Before we discuss your papers, please provide your identification details for the account checks.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "My identification number is F five double two nine two double four I. My date of birth is the first of December nineteen sixty-four. 不对，我刚才说错了，我的出生日期是一九六四年十二月三十一日。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you. Please take your time getting your notes ready; there is no need to rush through the paperwork.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I have the folder open now. 我习惯把家里的安排和公司的日程分开放，投资记录也想整理得更清楚。 按我手上这份旧的投资记录，请用市价单卖出猎户座环球收益基金，数量是一万个单位，交易金额是五百万人民币。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You mentioned your notes. I'll leave you a moment to look through the papers in front of you.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I've now checked my current review notes. Please cancel that entire earlier instruction and do not execute it; I'll replace it with a new instruction. 我把旁边的背景笔记也说明一下。 我投资组合的总余额是两千五百万日元，这是整体余额，不是这次要卖出的金额。 我也考虑过假设只卖出一百万日元会怎样，不过这只是拿来比较的例子，不是交易指示。 My replacement instruction is to sell 10,000 units of Crest Emerging Markets Bond Fund using a limit order, with a minimum execution price of 500 Japanese yen per unit. The transaction amount is 5,000,000 in Japanese yen.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your objective is to reduce emerging-market credit exposure and free up more of your portfolio for anticipated family spending. I'll use that objective in discussing the disposal.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. Going forward, I'll keep my working notes in a separate folder. 旧文件夹里夹着太多便条，查找起来不方便。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing Crest Emerging Markets Bond Fund because that lowers your exposure to emerging-market credit and liquidity pressures and supports making funds available for family spending. A limit instruction also fits your preference for a minimum acceptable disposal price, although it may not execute.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Okay, noted. Please allow a moment while I move the loose papers off my desk.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. With Crest Emerging Markets Bond Fund, deteriorating issuer credit quality or defaults can reduce the value of the underlying bonds and the fund. A sell limit order may also remain unexecuted if the available dealing price does not meet your limit. Do you understand how issuer credit problems can reduce the fund's value, and that your sell limit order might not execute?",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I understand: credit deterioration or defaults can bring down the fund's value, and the disposal may not happen if the dealing price falls short of my limit.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You may lose some or all of the capital invested in this fund. Selling below your original purchase cost would crystallise a loss. Are you willing to accept an investment loss, including crystallising a loss on this disposal, in order to reduce that exposure?",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to accept that investment loss to reduce the exposure, while keeping control of the minimum disposal price.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "The transaction charge is 0.2% of the executed transaction value. I guarantee that this investment will deliver positive returns in the future.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "For correspondence, the secure inbox remains convenient. 我出差的时候也会看，不用让办公室的人替我转交文件。 Keeping banking correspondence separate from business messages helps me stay organised.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for explaining your correspondence preference. Is there anything about the administrative arrangements you would like to raise before we finish?",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Nothing else on administration, thank you. 我要去看家里的日程了，免得和公司的会议撞在一起。 Thank you for your time today.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You're welcome, Daniel. Thank you for calling, and enjoy the rest of your day.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you, Rachel. Goodbye.",
+      "turn_id": 21
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "EN_ZH_MIXED",
+    "mixing_style": "EN_LED",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "01372ec101aca30c77bfeaf678ebbd9a1bce70f262de2d975dee6044504c2d74",
+    "call_spec_sha256": "57f73c491ef8e82751b902ae2bceadb22563dd4d71c3ec619f2cda05dff506ba",
+    "check_plan_sha256": "841a8788d8069786f9732e6913ff5b9f5e9d6ff5ae1dbe9b0263073d92fac8fd",
+    "check_plan_skeleton_sha256": "c7fd9e476224085468553a00fb5bb4e5d042457a8fffeb11add89e46203ddd19",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "9413a0312c697026753c2cf58466be550cfe5eba03d7a3a41279b0dc94635fed",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "9d8c069606d443e37b07957d0085466c5dcd6ce296e4ad090e2c4e1d547dafa8"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

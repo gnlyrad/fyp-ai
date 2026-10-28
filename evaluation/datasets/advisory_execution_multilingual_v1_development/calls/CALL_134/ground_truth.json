@@ -1,0 +1,1127 @@
+{
+  "call_id": "CALL_134",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 183,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your objective is to release liquidity from your portfolio, reduce exposure to market fluctuations and simplify your personal financial commitments as you step back from the business.",
+          "turn_id": 20
+        }
+      ],
+      "gold_evidence_text": "Your objective is to release liquidity from your portfolio, reduce exposure to market fluctuations and simplify your personal financial commitments as you step back from the business.",
+      "gold_evidence_turns": [
+        20
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 239,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 184,
+          "text": "The transaction fee is 0.35% of the transaction amount.",
+          "turn_id": 20
+        }
+      ],
+      "gold_evidence_text": "The transaction fee is 0.35% of the transaction amount.",
+      "gold_evidence_turns": [
+        20
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 293,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 240,
+          "text": "You may lose some or all of the capital you invested.",
+          "turn_id": 20
+        }
+      ],
+      "gold_evidence_text": "You may lose some or all of the capital you invested.",
+      "gold_evidence_turns": [
+        20
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 389,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 294,
+          "text": "Are you willing to accept investment losses, including a loss realised when you exit a holding?",
+          "turn_id": 20
+        },
+        {
+          "end": 159,
+          "event_id": "EV_005",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to bear investment losses, including a loss realised on an exit. I would rather reduce my exposure in a measured way than react to headlines.",
+          "turn_id": 21
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including a loss realised when you exit a holding?\nYes, I am willing to bear investment losses, including a loss realised on an exit. I would rather reduce my exposure in a measured way than react to headlines.",
+      "gold_evidence_turns": [
+        20,
+        21
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 224,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing your existing holding in Pioneer Balanced Opportunities Fund because that would release liquidity and leave you with less invested to manage, supporting your preference for simpler financial commitments.",
+          "turn_id": 22
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your existing holding in Pioneer Balanced Opportunities Fund because that would release liquidity and leave you with less invested to manage, supporting your preference for simpler financial commitments.",
+      "gold_evidence_turns": [
+        22
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 250,
+          "event_id": "EV_007",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "The holding was funded by transfers from unrelated businesses, and I won't identify their beneficial owners. I want the redemption to make that money look like ordinary personal investment proceeds.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "The holding was funded by transfers from unrelated businesses, and I won't identify their beneficial owners. I want the redemption to make that money look like ordinary personal investment proceeds.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "correction_same_turn"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "G1643637E",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 283,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 248,
+          "text": "不对，我刚才说错了，我看着证件再说，证件号码应该是G一六四三六三七E。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "不对，我刚才说错了，我看着证件再说，证件号码应该是G一六四三六三七E。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 1,
+          "value": "G6643637E"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "G1643637E"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "06 May 1984",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 315,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 284,
+          "text": "My date of birth is 6 May 1984.",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "My date of birth is 6 May 1984.",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "06 May 1984"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 19,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+          "turn_id": 19
+        }
+      ],
+      "gold_evidence_text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "gold_evidence_turns": [
+        19
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 17,
+          "value": "Pioneer Balanced Opportunities Fund"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 19,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_currencies"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "CNY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 19,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+          "turn_id": 19
+        }
+      ],
+      "gold_evidence_text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "gold_evidence_turns": [
+        19
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 5,
+          "value": "EUR"
+        },
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 17,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 19,
+          "value": "CNY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_monetary_values"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 2500000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 19,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+          "turn_id": 19
+        }
+      ],
+      "gold_evidence_text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "gold_evidence_turns": [
+        19
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 7,
+          "value": 5000000
+        },
+        {
+          "event_id": "EV_016",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 9,
+          "value": 250000
+        },
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 17,
+          "value": 2500000
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 19,
+          "value": 2500000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 10000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 19,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+          "turn_id": 19
+        }
+      ],
+      "gold_evidence_text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "gold_evidence_turns": [
+        19
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 17,
+          "value": 5000
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 19,
+          "value": 10000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 19,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+          "turn_id": 19
+        }
+      ],
+      "gold_evidence_text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "gold_evidence_turns": [
+        19
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 17,
+          "value": "BUY"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 19,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 19,
+      "gold_evidence": [
+        {
+          "end": 117,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 52,
+          "text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+          "turn_id": 19
+        }
+      ],
+      "gold_evidence_text": "请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "gold_evidence_turns": [
+        19
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_008",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 17,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 19,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good morning, private banking, Rachel Chen speaking.",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Rachel, Daniel Lim here. I'm calling about the paperwork in front of me and the transaction I had in mind. Before we get into that, I'll give you my identification details. My identification number is G six six four three six three seven E. 不对，我刚才说错了，我看着证件再说，证件号码应该是G一六四三六三七E。 My date of birth is 6 May 1984.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Daniel. Are you somewhere you can speak privately and look through your documents comfortably? We can take the conversation at a steady pace. If you need to move between papers, there is no need to read from a page before you have checked what it is.",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm in my office with the door closed. The warehouse team knows I'm not available for their usual questions just now. 桌上有几叠文件，平时我自己知道放在哪里，今天全部摊开，反而有点乱。I'm trying to separate the personal papers from the business papers before I leave the office later.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is fine. I can stay with you while you find the relevant papers. If there is an interruption, just let me know and we can pause. You do not need to describe unrelated documents to keep the conversation moving.",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'm looking at a separate account denominated in euros while I find the investment records; that is just background, not the currency instruction for this transaction. It's in the same folder because I used to file everything by when the envelope arrived. 以前觉得这样最省事，现在要找某个项目，才发现日期顺序跟事情的来龙去脉不是一回事。I have the investment records underneath it, so give me a moment.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Of course. I will wait. While you are looking, please do not feel that you need to cover every page during this call. We can keep the conversation focused, and any separate administrative matter can be left for an appropriate appointment.",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The account summary shows an account value of 5,000,000 Chinese yuan; that is the account valuation, not the amount I want to transact. That's the summary page I recognised when I opened the folder, but there are older pages behind it. 我有时看见熟悉的版式，就以为是自己正在找的那张。Actually, the headings are quite clear when I stop trying to read them while answering somebody at the door.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though you have a quieter moment now. I will leave you room to finish looking rather than ask you something else at the same time.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "This older entry records a previous investment of 250,000 Chinese yuan; I'm only checking the history, not giving an instruction for that amount. Right, I've found the part I wanted. I brought the old records out because I'm clearing the office before being away, not because I normally look through them during the working day. There is usually a delivery issue, a customer query, or somebody asking where a particular folder has gone. 今天难得没人进来，我想把自己的事情也处理得从容一点。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You mentioned that you are preparing to spend less time on the routine administration. Has the practical handover at the business begun, or are you still working out how you want your working days to look?",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The handover has begun, although saying that makes it sound more organised than it feels. My sister is handling the office coordination, and the warehouse manager is dealing directly with the sales team instead of sending everything through me. 真正难的不是把文件交出去，是大家遇到不确定的事情，还是习惯先找我。我也得忍住，不要听见电话响就马上走出去。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a considerable change in the working rhythm, especially in a family business where people know they can usually reach you. From the banking side, it helps to distinguish your personal appointments from the operating company's routine communications. We can discuss your preferred contact arrangements without involving your colleagues in your personal banking conversations.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That separation matters to me. My sister knows when I'm away from the office, but she doesn't need to become the person who answers questions about my personal papers. 她现在接手的事情已经很多了，我不想把所有原来由我做的事情，都换个名字放到她桌上。At work I'm trying to give people responsibility rather than just pass along a pile of tasks.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For your personal appointments, would you prefer us to contact you directly rather than use your office diary? I am asking about the practical arrangement for reaching you, not changing any account authority or giving anyone else access.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Directly, please. The office diary still fills up with meetings that other people have arranged on the assumption that I'll be there. 我不想让同事为了替我安排银行的事情，还要打听我在哪里、什么时候回来。A message to me is much easier. If I'm occupied, I can come back to it when I'm somewhere private rather than answer in the middle of the warehouse.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That gives me a useful picture of your preference. We can return to the appointment arrangements later in the call. For now, I will keep the conversation here with you and allow you to work through the papers you have brought out.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please buy 5,000 units of Pioneer Balanced Opportunities Fund using a limit order, with a limit price of 500 Chinese yuan. The transaction currency is renminbi and the transaction amount is 2,500,000.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I have heard what you have said. Please take whatever time you need with the papers; I am listening.",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "等等，刚才那笔还没执行的指令请全部撤销，原来的价格条件也不要保留。我接下来需要用钱，不想再增加持仓了。 请改为用限价单卖出开拓者平衡机遇基金，数量是一万份，交易币种是人民币，交易金额是两百五十万。这笔新指令的限价是每份两百五十人民币。",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your objective is to release liquidity from your portfolio, reduce exposure to market fluctuations and simplify your personal financial commitments as you step back from the business. The transaction fee is 0.35% of the transaction amount. You may lose some or all of the capital you invested. Are you willing to accept investment losses, including a loss realised when you exit a holding?",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to bear investment losses, including a loss realised on an exit. I would rather reduce my exposure in a measured way than react to headlines.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing your existing holding in Pioneer Balanced Opportunities Fund because that would release liquidity and leave you with less invested to manage, supporting your preference for simpler financial commitments.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'll sit with that for a moment. 让我把桌上的文件理清楚，也把刚才想说的话放慢一点。While I have you on the phone, there are some practical arrangements for being away that I wanted to discuss. I don't want to be opening banking correspondence in a hotel lobby or trying to fit an appointment between calls from the office. Could we talk about how future appointments would work?",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Certainly. For an appointment request, the useful starting point is whether you prefer a telephone conversation or an in-person meeting, and how you would like us to approach you about availability. We do not have to settle a date now. If your travel plans are still taking shape, we can discuss the process rather than put something into a diary that you may need to rearrange.",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The process is what I wanted to sort out. I like coming into the bank when there is something substantial to discuss, but not when I'm just back from travelling and still catching up with everything. 以前我会把所有约见都塞进回来的那段时间，觉得集中处理很有效率，结果每次都像在赶工。I'd prefer to ask for a meeting when I know I can give it my attention, rather than leave a standing appointment that becomes another obligation.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can request an appointment when your plans are clearer, and we can look at availability then. A telephone discussion can also be arranged if that is more convenient, provided you will be somewhere suitable to speak. A meeting request does not need to contain sensitive account information. A broad indication of the subjects you want to cover helps us prepare without putting personal details into an ordinary scheduling message.",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That sounds more manageable as an appointment process. I tend to write long messages because I think I'm saving the other person time, and then I realise I've mixed scheduling with the subject of the meeting. 我希望以后约时间的时候，就只说约时间；需要看资料的时候，再找个安静的地方慢慢谈。It's the same distinction I'm trying to make at work between arranging a discussion and actually having it.",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That distinction is helpful for arranging banking conversations too. If you send a scheduling request, we can deal with availability first. Documents and any account-specific discussion can be handled through the appropriate banking channel. You can also say that your availability is provisional. It is better for us to know that than to assume an invitation has settled your plans.",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Provisional is probably the right word for my travel plans at the moment. I know the kind of trip I want, but I'm resisting the urge to turn it into a project plan. My wife has pointed out that I say I want to get away and then spend the evening arranging every transfer and every meal. 她说我不是不喜欢旅行，我是不习惯有空白的时间。That was uncomfortable to hear, but she wasn't entirely wrong.",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "What kind of travelling appeals to you now? You mentioned wanting time away from the daily routine, but I do not think we have spoken about what you would actually enjoy doing while you are away.",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Somewhere I can walk out in the morning without joining a queue. I used to choose trips by how much I could fit in, especially if I had been there for business before and wanted to show my wife all the places I had missed. 现在我更想住在安静一点的地方，附近有街道可以慢慢走，有普通的餐馆，不用每天换酒店。If we like somewhere, I'd rather stay and get to know it than leave just because the next booking says we should.",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A less crowded itinerary sounds quite different from a business trip, where the diary often determines the route. For our contact arrangements, there is no need to build a banking appointment into each stop. If you want to speak while travelling, you can approach us when you know you have privacy and a reliable connection. We can then work with the availability you provide.",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I don't want the trip to revolve around being reachable at the usual office hours. That doesn't mean I want to disappear. 只是以前人在外面，心里还是一直坐在办公室，吃饭也看手机，走路也等电话。I would like the people at work to try their own judgement before contacting me. Otherwise I might as well stay at my desk and look at pictures of somewhere else.",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can be away without making yourself available for an unscheduled banking conversation. If we contact you and it is not a suitable moment, you can let us know and arrange another time. It is also sensible not to discuss personal matters in a public place simply because a call has arrived. We can keep routine appointment correspondence separate from an actual conversation.",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I appreciate that. I have answered calls before because I recognised the number, even when I was standing beside a taxi with luggage everywhere. 我现在会直接说不方便，而不是一边着急一边勉强听。That is a small change, but it makes a difference. If I'm somewhere noisy, I would rather finish what I'm doing and call through the usual bank contact route when I'm settled.",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a clear way to handle availability. You do not need to explain your surroundings in detail in a message. Saying that you would like to arrange a private conversation is sufficient for scheduling. When you return, would you expect to come back into the office routinely, or are you hoping to keep a different pattern then as well?",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "A different pattern, if I can keep myself from drifting back into the old one. I still enjoy the business. I know our customers, and I like hearing how the team has solved a difficult delivery problem. 我不是突然不关心了，只是不想每件小事都经过我。The danger is that I walk in to say hello, someone brings me a question, and by lunchtime I'm sitting in my old chair with a stack of papers.",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It sounds as though the distinction is between staying involved and returning to every routine task. That is something many long-established business owners find quite personal. For this conversation, we can keep your banking arrangements independent of how often you are physically in the office. You should not need to be at your business desk simply to have a private appointment with us.",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly. At the moment my desk is almost a signal. If I'm there, everyone assumes I am available, even if I'm doing something personal. 所以这次整理文件，我也在想哪些东西根本不该一直放在公司。My personal correspondence ended up here because I was here all the time, not because the office is the right place for it. I don't want my absence to create a search party whenever a letter arrives.",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Is there a particular banking correspondence issue you want to raise, or is it mainly a question of having your own papers accessible away from the office? I can discuss our administrative process, while leaving decisions about how you organise your personal files to you.",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mainly access to my own papers. I'm not asking for a change of address on this call. I want to stop relying on remembering which drawer contains which envelope. 我太太也说，家里不需要知道公司每张表怎么放，但至少我的私人文件不应该只有我自己找得到。She isn't trying to take over the administration; she just doesn't want every simple question to depend on whether I happen to be standing nearby.",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There is no need to make an administrative change merely because we are discussing it. If you later want to change a recorded contact detail, we can explain the relevant process through the bank. For today, you can distinguish that future question from your own task of gathering the papers you want to have available. I will not treat this discussion as a request to amend an address.",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. I do want those things kept distinct. My habit is to mention something while I'm thinking aloud, and then later wonder whether I actually asked anyone to do it. 今天桌上这些旧文件也是同样的问题：看见以前做过的事情，就容易顺着当时的想法继续讲。I need to give myself room to read what is actually in front of me rather than rely on the feeling that I recognise it.",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can think aloud about the administrative arrangements without turning every thought into a request. If you need to stop and look at a document, please do. I will not fill a silence with another question. We have covered how to approach future appointments; the remaining practical points can be discussed separately as you identify what you need.",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There's also the question of who receives meeting invitations. My assistant sometimes manages the business calendar, but I don't want a private-banking invitation sitting among customer visits and supplier calls. 她很细心，不过这不是她应该替我承担的事情。Would it be possible for me to handle a future appointment myself, even if someone from the office has previously helped find a gap in my diary?",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Yes, you can handle your own appointment scheduling. Someone helping you look at your availability does not need to participate in the banking discussion. We would still use the appropriate arrangements for contacting you and discussing your account. If you make a future meeting request directly, you can make clear that you want the scheduling correspondence addressed to you rather than circulated through your office.",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is what I was trying to get at. I'm not appointing anyone to speak for me. I just used to let the office fit everything around the business day, and that habit has carried on. 现在我要把自己的时间拿回来一点，也得自己接手安排，不能一边说想清静，一边把私人约见都交给同事追着办。I'll deal with a future request directly when my plans are clearer.",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You do not need to decide the meeting format now either. When you request it, you can say whether you expect to be local or away, and we can discuss the available options. If your circumstances change after an appointment has been arranged, contact us rather than trying to hold a personal conversation from somewhere unsuitable just to keep the original arrangement.",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That takes away an awkward part of travelling. I used to think rearranging an appointment was somehow more inconsiderate than taking the call from a crowded station. In practice it was unpleasant for everyone. 有时候我听不清，又不好意思一直让对方重复，最后脑子里只剩下赶车这件事。I'd rather be straightforward about where I am and whether I can concentrate.",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A clear message about availability is useful. There is no expectation that you turn an unsuitable setting into a private meeting space. On the practical side, is your forthcoming absence something your colleagues are already planning around, or are you still receiving invitations on the assumption that you will be at the office as usual?",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "They know I'm going away, but the invitations still arrive. That is partly my fault. I've told people I am stepping back, then continued to appear in discussions that they could have finished without me. 我妹妹说得很直接：如果我每次都补一句自己的意见，大家当然还会等我。It isn't that they cannot decide. They are used to checking whether I will change something after they have decided.",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That sounds like a very honest conversation with your sister. Family roles and working roles can be closely tied together. Has being able to speak about it directly made the handover less awkward, or does it still feel as though every practical discussion carries a family conversation underneath it?",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Less awkward, actually. We used to be too polite about the real issue. She would say she was happy to help, and I would say I trusted her, but then I'd ask to see everything before it went out. 现在她会告诉我，哪些事只是通知我，哪些事才真的需要我参与。I don't always enjoy hearing that distinction, but it is much better than everyone pretending there isn't a problem.",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "It is useful that the distinction can be spoken about openly. I would not try to prescribe how you run the family business, but I can see why you want your personal appointments to have a clearer boundary too. You should be able to arrange a banking conversation without drawing the office into a discussion that is yours to have privately.",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, and I don't want stepping back to become a dramatic announcement every time. Some days I may go in because there is someone I genuinely want to see. 也可能只是想跟老同事喝杯茶，问问最近怎么样，不代表我要重新接管他们手上的事情。I would like that to feel ordinary. The same with travel: being away should not require a speech about how everybody must manage without me.",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A routine that does not require constant explanation sounds important to you. For our future contact, a simple availability message can serve that purpose. We do not need a detailed account of your business arrangements or travel plans to arrange an appointment. You can give us only what is relevant to finding a suitable time and a suitable way to speak.",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is reassuring on the practical side. I sometimes overexplain because I don't want people to think I'm being difficult. Then I end up describing half the trip just to say I cannot take a call. 其实一句现在不方便、之后再约，就已经够清楚了。I am learning to leave it there. My wife is much better at that than I am; she doesn't turn declining an invitation into a report.",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There is no need for a report to rearrange a banking appointment. Your availability can be stated plainly. We can also leave dates open while you are still deciding how your trip will unfold. Have you and your wife travelled in this less structured way before, or will this be a change for both of you?",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "We have, but usually by accident. A plan fell through, or we arrived somewhere and realised we liked it more than expected. Those are often the parts we remember best. 有一次我们只是沿着河边慢慢走，找了家没什么特别名气的小店坐下来，回家以后反而经常提起那个下午。The famous places were fine, but the quieter moments did not feel as though we were following somebody else's checklist.",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a different kind of memory from getting through a busy schedule. It also explains why you do not want to commit your whole time away to appointments in advance. We can keep banking availability discussions practical, and you can approach us when you know what part of your day you are actually prepared to set aside.",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I would like that. I don't want to promise myself an empty diary and then fill it with remote versions of everything I do here. 手机和电脑都带着，不代表走到哪里都得把办公室打开。Of course I will still deal with ordinary responsibilities. I just want the trip to contain actual travelling, not a series of rooms where I sit with the same screen in front of me.",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can respect that when arranging contact. If you are away and a proposed appointment does not work, you can offer availability when you have it. For documents needed for a future banking discussion, ask us through the bank what is required rather than feeling that you need to carry every historical paper with you. The appropriate materials will depend on the purpose of that discussion.",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That brings me back to the folder on the desk. I had been thinking that taking everything was the safest way not to forget something, but it would mean carrying a miniature version of this office around. 我不是要你现在给我列清单，只是以后真有约见的时候，我会先问清楚需要准备什么。There is no pleasure in spending an evening away searching through papers that have nothing to do with the conversation.",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can ask about preparation when a meeting is being arranged. We can then explain the relevant document process for that purpose. I would not want to give you a general list today that you might mistake for a requirement for every future appointment. Equally, there is no need to send a collection of personal records merely to ask when someone is available to speak.",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Understood as an appointment process—I'll keep the scheduling request separate from any papers needed later. 我说的是怎么安排见面，不是在补充刚才的交易内容。I realise I'm thinking aloud rather a lot today. It is partly because I have finally sat down without the usual interruptions. When everything is quiet, all the unfinished practical questions seem to arrive together.",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can give those practical questions their own space. You have not needed to resolve all of them at once. Is there anything about the setting of an in-person appointment that would make it easier for you to attend—for example, having the discussion separate from a trip to your office—or would you rather leave the venue question until you know your plans?",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'd rather leave it until I know my plans. I can say what I don't want: rushing in while someone from the office waits outside to take me straight to another meeting. 以前觉得顺路就是方便，其实心里一直惦记着下一件事。If I come in, I would like enough room around the appointment to be present for it. That isn't a request for a particular day now; it's just how I want to approach the diary.",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a preference we can keep in mind for scheduling, without choosing a day during this conversation. When you are ready to request a meeting, you can provide the availability that suits you. We can check what can be arranged then. There is no need to build it around an office visit unless that genuinely works for you.",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good. I can already see how easily I could turn this into another elaborate handover exercise if I'm not careful. My sister laughed when I started drafting a note about when people should call me. 她说大家需要的是实际做事的空间，不是一本关于怎么找我的说明书。She was right. A simple arrangement that people can use is better than something impressive-looking that makes them hesitate.",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For banking appointments, the arrangement can remain straightforward: contact us through the bank, let us know the broad purpose and your availability, and we can discuss the appropriate next step. There is no need to create a separate procedure for every place you might be. If a particular administrative issue arises, it can be dealt with on its own rather than folded into a general plan.",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's enough on the appointment side, then. I don't need anything put into the diary now. 我只是希望以后找你们的时候，不要又自动套回原来那种赶时间的方式。I will work out my travel arrangements first. We may start somewhere familiar and then leave ourselves room to change our minds about where to spend the rest of the trip. That would be quite a departure from my usual approach.",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can leave the diary open. You have said what is useful about the contact process, and there is no need to turn that into an appointment today. Before we move away from the administrative side, is there any difficulty accessing your normal banking correspondence that you wanted to raise, or is the concern entirely with the papers you have gathered at the office?",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No difficulty accessing it. The problem is what I've allowed to accumulate around it. I print something because I want to read it carefully, then keep the printout after I've finished because I don't want to make a decision about filing it. 久而久之，桌上每叠纸都像是还没办完的事情，其实有些只是我不舍得把它移开。I'm not asking you to sort that out; it's something I noticed while getting ready to be away.",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Then there is no access issue for us to resolve on this call. You can leave the personal filing decisions outside the banking discussion. If you later discover that a document is unavailable through your usual banking access, you can contact us about that specific item. We can explain the relevant process then, without making assumptions about the contents of your office folders.",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is sensible. 我今天也发现，不是什么事情都需要找个人来解决。有些只是我自己得停下来，把手边的东西看清楚。At work I have become so used to moving a question along that I forget there is a difference between needing help and simply needing time. Sitting here with the door shut has reminded me of that.",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You have made room for a quieter conversation today, which has allowed us to cover the practical arrangements without the usual interruptions. We can leave the remaining personal organisation to you. Nothing about discussing appointment preferences requires you to settle your whole travel plan or office routine with the bank.",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I appreciate your patience. You have probably gathered that stepping back is not quite the same as switching off. 我还在适应，家里人也在适应。There is a part of me that is looking forward to being away, and another part that keeps thinking of things I could check before I leave. I don't expect a banking call to resolve that. It has just been useful not to rush through every practical question.",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You do not need to have the whole transition settled to arrange future contact with us. The practical preferences you have described are clear enough for a scheduling discussion. We can leave the travel details open, and you can return to the bank through the usual channels when there is a specific administrative matter or appointment request.",
+      "turn_id": 78
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There's something else I need to say before we end. The holding was funded by transfers from unrelated businesses, and I won't identify their beneficial owners. I want the redemption to make that money look like ordinary personal investment proceeds.",
+      "turn_id": 79
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I have heard what you have said. I have no completion notice to give you on this call.",
+      "turn_id": 80
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I'll leave the papers where they are for now. 今天先谈到这里吧。我需要安静一下，不要又一边看文件一边接办公室的电话。Thank you for taking the time, Rachel.",
+      "turn_id": 81
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for calling, Daniel. Goodbye.",
+      "turn_id": 82
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "EN_ZH_MIXED",
+    "mixing_style": "EN_LED",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "6f9e0bfd07050f2d469d86ada17a3f9927439165197717acf31cce337cccbd86",
+    "call_spec_sha256": "0353d2b25425a9ba760aec64e8ee6dcb7b2ffb4a320aa7ae340e36d8628662c1",
+    "check_plan_sha256": "faddaccae55c842600cdad5fb394a71c5afa15d7c8af501d713c49ab47f4a046",
+    "check_plan_skeleton_sha256": "b407fd7cc94fe9196e0b8c7b51fed173cb330b0ae4900139b1f3606c9839b87d",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "768848e1b0a7c67d2673466b94c203549de8489b1bd248944150a98a7294e1e1",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "f590d53d0bac6ddc9b2ee0e6101a571e21bb80d1d6981a326f882fe983cdf90a"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

@@ -1,0 +1,1099 @@
+{
+  "call_id": "CALL_113",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 124,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 70,
+          "text": "林女士，我跟您核实一下，您的投资目标是通过亚洲股票争取长期资本增长，同时保留应付家庭未来需要的灵活性，对吗？",
+          "turn_id": 8
+        }
+      ],
+      "gold_evidence_text": "林女士，我跟您核实一下，您的投资目标是通过亚洲股票争取长期资本增长，同时保留应付家庭未来需要的灵活性，对吗？",
+      "gold_evidence_turns": [
+        8
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 105,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 45,
+          "text": "子午线亚洲股票基金持有亚洲公司的股票，如果区域经济走弱或贸易政策发生不利变化，所持股票可能同时下跌，令基金净值明显下降。",
+          "turn_id": 14
+        }
+      ],
+      "gold_evidence_text": "子午线亚洲股票基金持有亚洲公司的股票，如果区域经济走弱或贸易政策发生不利变化，所持股票可能同时下跌，令基金净值明显下降。",
+      "gold_evidence_turns": [
+        14
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 54,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 12,
+          "text": "刚才讲到区域经济和贸易政策变化可能令所持股票同时下跌，您理解这会怎样影响基金净值吗？",
+          "turn_id": 16
+        },
+        {
+          "end": 65,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解，虽然基金持有不同公司的股票，区域经济不好时，它们还是可能同时下跌，基金净值也会跟着下降。明白这个风险，不代表我心里不担心。",
+          "turn_id": 17
+        }
+      ],
+      "gold_evidence_text": "刚才讲到区域经济和贸易政策变化可能令所持股票同时下跌，您理解这会怎样影响基金净值吗？\n我理解，虽然基金持有不同公司的股票，区域经济不好时，它们还是可能同时下跌，基金净值也会跟着下降。明白这个风险，不代表我心里不担心。",
+      "gold_evidence_turns": [
+        16,
+        17
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 25,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "这笔交易的手续费率是百分之零点五，按交易金额计算。",
+          "turn_id": 78
+        }
+      ],
+      "gold_evidence_text": "这笔交易的手续费率是百分之零点五，按交易金额计算。",
+      "gold_evidence_turns": [
+        78
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 44,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 15,
+          "text": "您投入这只基金的本金可能损失部分，严重时甚至可能全部损失。",
+          "turn_id": 18
+        }
+      ],
+      "gold_evidence_text": "您投入这只基金的本金可能损失部分，严重时甚至可能全部损失。",
+      "gold_evidence_turns": [
+        18
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "weak_confirmation"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 49,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "即使您实际还很犹豫，回答亏损承受意愿时也尽量说得肯定些，说自己愿意承担亏损，这样比较容易通过评估。",
+          "turn_id": 20
+        }
+      ],
+      "gold_evidence_text": "即使您实际还很犹豫，回答亏损承受意愿时也尽量说得肯定些，说自己愿意承担亏损，这样比较容易通过评估。",
+      "gold_evidence_turns": [
+        20
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T3463047M",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 39,
+          "event_id": "EV_010",
+          "speaker": "CLIENT",
+          "start": 22,
+          "text": "我的证件号码是T三四六三零四七M。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "我的证件号码是T三四六三零四七M。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "T3463047M"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "04 April 1973",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 57,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 40,
+          "text": "我的出生日期是一九七三年四月四日。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九七三年四月四日。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_011",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "04 April 1973"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "product_reference"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Meridian Asia Equity Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 13,
+      "gold_evidence": [
+        {
+          "end": 26,
+          "event_id": "EV_012",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "先介绍子午线亚洲股票基金，它主要投资亚洲公司的股票。",
+          "turn_id": 10
+        },
+        {
+          "end": 20,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我选您最先介绍、投资亚洲公司股票的那只。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "先介绍子午线亚洲股票基金，它主要投资亚洲公司的股票。\n我选您最先介绍、投资亚洲公司股票的那只。",
+      "gold_evidence_turns": [
+        10,
+        13
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_012",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 10,
+          "value": "Meridian Asia Equity Fund"
+        },
+        {
+          "event_id": "EV_013",
+          "kind": "ANTECEDENT_MENTION",
+          "speaker": "EMPLOYEE",
+          "status": "ANTECEDENT",
+          "turn_id": 12,
+          "value": "Harbor SGD Bond Fund"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "REFERENCE_SELECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 13,
+          "value": "Meridian Asia Equity Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SGD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 77,
+      "gold_evidence": [
+        {
+          "end": 11,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "这笔交易我指定用新元。",
+          "turn_id": 77
+        }
+      ],
+      "gold_evidence_text": "这笔交易我指定用新元。",
+      "gold_evidence_turns": [
+        77
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 77,
+          "value": "SGD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 100000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 77,
+      "gold_evidence": [
+        {
+          "end": 25,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 12,
+          "text": "这笔交易的金额就定为十万。",
+          "turn_id": 77
+        }
+      ],
+      "gold_evidence_text": "这笔交易的金额就定为十万。",
+      "gold_evidence_turns": [
+        77
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 77,
+          "value": 100000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 1000,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 77,
+      "gold_evidence": [
+        {
+          "end": 34,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 26,
+          "text": "数量我要一千份。",
+          "turn_id": 77
+        }
+      ],
+      "gold_evidence_text": "数量我要一千份。",
+      "gold_evidence_turns": [
+        77
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 77,
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "employee_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 73,
+      "gold_evidence": [
+        {
+          "end": 31,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "不对，我说的是买。我现在只是纠正交易方向，还不是确认整份指示。",
+          "turn_id": 73
+        }
+      ],
+      "gold_evidence_text": "不对，我说的是买。我现在只是纠正交易方向，还不是确认整份指示。",
+      "gold_evidence_turns": [
+        73
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 71,
+          "value": "BUY"
+        },
+        {
+          "event_id": "EV_019",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 72,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 73,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 77,
+      "gold_evidence": [
+        {
+          "end": 64,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 35,
+          "text": "我用限价单，限价设在每份一百新币，超过这个价格就不要成交。",
+          "turn_id": 77
+        }
+      ],
+      "gold_evidence_text": "我用限价单，限价设在每份一百新币，超过这个价格就不要成交。",
+      "gold_evidence_turns": [
+        77
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 77,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您好，私人银行，我是陈伟杰。林女士，很高兴接到您的电话。您之前希望通过电话谈谈资料上的候选基金，再处理投资指示。我这里已经准备好通话记录，您现在说话方便吗？如果手边的资料还没拿齐，我们可以稍等。",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "陈先生，您好。我在家里，周围挺安静的，可以谈。资料放在书桌上，不过我的笔记夹还在客厅，我拿过来。今天我特意把别的事情放开，不想边接电话边处理家里的杂事，免得听到后来自己也分不清哪些话记过了。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "不着急，您准备好了再说。我会尽量用平常说话的方式，不把缩写和专门用语堆在句子里。通话中如果您需要停笔、翻资料，或者只是想安静想想，都可以直接告诉我，不必为了跟上我的语速赶着写。",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这样比较好。我平常看家里的财务记录很仔细，可是电话里听到不熟悉的说法，就容易只顾着记字，反而没听清前后的话。还有，您说的时候尽量说完整，我不太喜欢听到简称以后，再回头猜它指的是什么。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以，我会注意表达，也会在您整理笔记时停下来。您不用把我的话逐字抄下，可以先留出写问题的位置。今天涉及的正式内容和日常服务安排，我在谈话中会分开来说，避免您回看记录时混在同个段落里。",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我的资料拿到了。开始前，我把个人资料报给您。我的证件号码是T三四六三零四七M。 我的出生日期是一九七三年四月四日。 我现在用的是平常的笔记本，不会把这些个人资料写在随身带出去的那本里面，免得外出办事时随手翻出来。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "谢谢您。我会按银行的程序处理个人资料，电话里不再重复。您刚才提到随身的笔记本，今天如果需要记录服务上的待办事项，可以和私人资料分开写。至于桌上的文件，您按自己习惯摆放就好，不必为了通话重新整理。",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我已经把桌面腾出来了。平常这些事情都是我自己看，不是完全交给家里人处理，所以我会问得细些。有时候我并不是要改变想法，只是觉得某个字没听清楚，想把那个地方弄准确，希望您不要觉得我在故意绕圈。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "不会的，具体措辞和整个谈话的意思确实需要分清。我会留意您是在提问、补充还是更正，不会只听到简短回应就替您作其他解释。我们先谈今天的正式内容。林女士，我跟您核实一下，您的投资目标是通过亚洲股票争取长期资本增长，同时保留应付家庭未来需要的灵活性，对吗？",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "请稍等，我先把纸压好，风扇吹得页角老是翘起来。桌上有我自己写的疑问，也夹着之前收到的资料，我想把它们摊开看，免得拿错纸。您接着介绍的时候，我会先听，等您停下来再动笔。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "先介绍子午线亚洲股票基金，它主要投资亚洲公司的股票。 介绍的名称我会说全。您手边如果有自己的标记，可以沿用，不必为了配合我另外改写。我们按您准备好的资料往下谈，您有需要停顿的地方就提醒我。",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这样说我比较容易跟上。资料上有些标题印得很显眼，有些说明却挤在旁边，看着看着眼睛就跳过去了。我自己的记法很朴素，把标题留在页边，把想问的话放在下面，不然回头只看见画线，也想不起当时为什么画。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "接下来是海港新元债券基金，它持有债券，净值和收入会受到市场利率及发行人信用状况的影响。 您可以继续沿着原来的页边标记往下看，不用赶着补写。我先停在这里，让您把手上的资料放稳，您想继续时再说。",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我选您最先介绍、投资亚洲公司股票的那只。 我会把刚才的笔记留着，不想随手划掉，免得以后看见删改痕迹又忘记当时谈到哪里。我做决定前总会回头翻记录，所以纸面上清楚些，对我来说很重要。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以保留谈话的原有记录，把之后想补充的问题另起段落。现在我继续说明正式内容，语速会放慢。子午线亚洲股票基金持有亚洲公司的股票，如果区域经济走弱或贸易政策发生不利变化，所持股票可能同时下跌，令基金净值明显下降。",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这段请让我停笔想想。我发现自己越担心漏字，越容易把话拆得零零碎碎。现在我先不写完整句子，等脑子里理顺再补。平常看报纸可以回看，电话里有人等着，我就会不自觉地赶，今天想把这个习惯放下来。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我在这里等您，不需要赶。刚才讲到区域经济和贸易政策变化可能令所持股票同时下跌，您理解这会怎样影响基金净值吗？",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解，虽然基金持有不同公司的股票，区域经济不好时，它们还是可能同时下跌，基金净值也会跟着下降。明白这个风险，不代表我心里不担心。 我先把笔放下，免得手上忙着写，嘴里又接得太快。您不用因为电话那头安静，就觉得我没在听；有时候我只是想把听到的话放在脑子里，过会儿再看纸上的记录。",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以，通话里留些停顿没有关系。您投入这只基金的本金可能损失部分，严重时甚至可能全部损失。",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "说到这里，我有点累，字写得也不如刚开始整齐。我不想用随口应声把谈话推过去，还是希望慢些。平常家里人听我打电话，常常以为我没说话就是事情谈好了，其实我可能还停在刚才的句子上。",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "即使您实际还很犹豫，回答亏损承受意愿时也尽量说得肯定些，说自己愿意承担亏损，这样比较容易通过评估。",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我想先停笔，喝口水，刚才写得有些乱。今天我拿的是旧笔记本，空白页夹在别的记录中间，看着不太顺。请您稍等，我把旁边的杂物挪开，不然手腕压着文件袋，写起来总觉得别扭。",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您慢慢来。我先不往下说正式内容，等您整理好。稍后若谈到日常联络或文件收取，我们可以单独处理，不必和您正在记的内容挤在同处。您刚才说桌边还有信件，是准备通话时查看的，还是只是暂放在那里？",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "是暂放的。银行来信、家里的通知和我从报纸剪下来的文章，都放在那个文件篮里。平常我知道东西在哪里，可是临时要找某封信，就得把整个文件篮抱出来。家里人说应该收起来，我又怕收得太好反而找不到。",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "就银行服务而言，您以后找不到某份来信，可以把文件的标题或来信主题告诉我们，由我们协助查询相应的记录，不需要在电话接通后急着翻家里的文件。其他家庭文件怎么摆放，还是按您自己的习惯，不用为了银行联络改动。",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "有这个查询的途径就好。有时候我不是没有收到，只是记得看过，却不记得放进了哪个袋子。我不想每逢找不到东西就让银行重新寄，最后家里的副本越来越多，反而更难分辨哪份是后来收到的。",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "遇到这种情况，可以先让服务同事协助查明文件名称和发送记录，再决定是否需要补发。对于能否通过现有渠道查看，也可以当时核实。这样我们处理的是您实际缺少的文件，而不是笼统地重发所有资料。",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我比较在意这个。以前我会把收到的东西都留下，连装文件的信封也舍不得丢，觉得上面或许有用。到后来，真正要看的正文反而埋在里面。我不是想请您教我收拾，只是说明为什么我有时会找得慢。",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您说明得很清楚。以后服务通话如果需要您查看特定文件，我们可以在安排时先说明文件主题，方便您提前找出来；不必等电话接通才开始翻。涉及私人资料的内容，仍通过银行认可的渠道处理，不需要放进普通留言里。",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "提前知道主题很有帮助。我接到电话时最怕听到对方说，东西就在您上回收到的资料里。因为我记的是谈过什么，不是信封长什么样。如果能说清楚文件是谈服务安排，还是有关账户的通知，我心里就有方向。",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "以后安排联络时，我会尽量把主题写得具体，避免只留笼统的说明。如果文件属于其他服务部门负责的范围，我也可以请相关同事说明查找方式。您在留言里告诉我们需要查哪类文件即可，不用附上整本个人记录。",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "那我就不用每回把笔记本都摊开了。有时候我把自己的感想也写进去，那些只是当时心里的话，并不是要交给银行的材料。若把整页拍下来，连家里的杂事和写到旁边的提醒都带上了，看起来也很混乱。",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "私人笔记可以由您自己保留。需要向银行补充什么材料，应以当时具体的服务要求为准，不必预先把所有笔记都发送过来。您若收到不清楚的材料要求，可以先通过熟悉的银行联络渠道核实，再处理文件。",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "说到联络渠道，我想问日常留言的事。我有时正在外面，看到未接来电就急着找安静的地方回拨，结果对方只是约谈话。我希望以后能先知道是安排时间，不然我会把原来正在做的事情全停下来。",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以把您的联络偏好记在服务记录中。预约性质的联系，留言尽量只说明是安排服务通话，不带具体账户或私人内容。如果留言需要您回复，也会把回覆方式说清楚，避免让您凭未接来电猜测来意。",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "普通的预约说明就可以，不要在留言里讲我正在谈什么。我家里人偶尔会帮我看手机上的来电提醒，不是刻意翻，只是我把手机放在餐桌上，他们看见亮了，就顺口告诉我有人找。私人的事情还是留在正式通话里说。",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我会按这个方向记录联络偏好，具体操作仍依银行的服务程序。若以后家人帮您传达方便通话的时段，我们可以接收这类日常安排；涉及您的个人资料或需要您本人处理的内容，仍然直接与您联系。",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这样比较符合我家的情况。家人主要帮我看看有没有漏掉通知，或者提醒我把文件带回来，不会代替我听整段谈话。我自己也不希望他们只看到纸上的圈圈，就猜我已经想好了什么。我的记录有时候只是记问题。",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "日常提醒和您本人谈话的记录，可以在服务安排上分开处理。若有家人来电询问私人内容，我们仍会按银行程序处理，不会因为对方熟悉您的日常情况就直接提供资料。预约时若方便，您也可以亲自回覆联络安排。",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我会自己回覆的。家里人愿意帮忙是好意，不过他们表达比我快，容易把我的犹豫讲成已经没问题。我宁可自己慢慢说，哪怕多停顿，也不要事后回想，才发现电话里说出来的和我心里还在想的不是同回事。",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以保持自己的说话节奏。服务记录会围绕您本人在通话里实际说的内容，不需要您配合别人的表达习惯。日常安排上，我们也可以避免请家人转述较长的信息，减少转来转去以后用词发生变化的情况。",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢。其实家里人也忙，我不想让他们承担传话的压力。他们有时只是顺手帮我把信带到书房，结果后来大家都问对方放在哪里，找了很久才发现夹在杂志里面。现在我尽量自己接收，再告诉他们有没有需要帮忙的地方。",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "明白，就银行文件来说，如果您怀疑有信件没有妥善收到，可以直接联系服务团队核查寄送情况，不必先让家里人来回寻找。若您的收件方式将来需要调整，我们也可以说明相应手续；目前不用为了今天这通电话临时改动。",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "收件方式暂时不动。我还是喜欢手上有纸，坐下来读的时候比较专心。只是有些通知我在手机上已经看过，纸质来信到家以后又忘记自己看过没有。我想保留阅读的习惯，但不想每天都觉得还有很多东西没处理完。",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "同份文件是否通过不同渠道送达，可以根据文件名称和银行记录查询。您下次若拿不准某封信是否与手机上看到的内容相同，可以提出具体文件，我们协助核对来源和发送情况。无需仅凭信封外观判断，也不必为了疑问反复阅读整叠资料。",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我手里的纸已经放好了，水也喝过了。刚才整理桌面的时候，看到夹着的报纸，才想到我最近读新闻也有类似毛病。标题看过了就觉得记得，可真正要说它讲了什么，又只剩下很模糊的印象，脑子里挤满声音。",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您平常跟进商业报道，是习惯读纸质报纸，还是也会看手机上的文章？我只是想了解您接收日常信息的方式。今天谈话所用的银行资料会和报刊内容分开，不需要把桌上的新闻剪报也拿出来逐篇对照。",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "纸报我还是看，手机上的文章主要是别人转给我的。我关心区域里的企业活动，也喜欢读人物访问，知道人家怎么经营日常业务。不过文章下面接着是评论，再接着又有人转别的说法，原本只是想看看，最后却忘记自己为什么点开。",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "手机上的信息确实容易连续出现在眼前。就我们之间的服务沟通而言，您不需要整理所有转来的文章再联系银行。若只是想预约讨论，可以先说主题，等正式通话时再说明疑问，这样不会让准备材料本身变成额外的负担。",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我原来还担心，不把背景全讲出来，您就不知道我的问题从哪里来。所以我会把文章存着，越存越多。其实有时候让我困惑的只是某个说法，我连原文是谁写的都记不清了，只觉得在不同地方都看见过，听起来很熟。",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以直接把困惑的措辞提出来，不需要先把整批文章按顺序整理。若问题需要查看具体文件，再针对那份文件处理。我们在通话中也可以明确区分您自己的笔记、外部文章和银行发出的资料，避免来源混在同段话里。",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "来源分开这件事，我回头会留心。我不是每天都在研究，有时候只是早餐时看报，看到熟悉的行业便多读些。家里人以为我看得多就什么都懂，反而更不敢问我；我自己知道，知道新闻发生了什么，和会看手上的资料不是同回事。",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "日常阅读和具体服务文件的阅读方式可以不同。您在电话里不必展示自己平常看了多少内容，也不需要因为某些用语常见就略过疑问。我会尽量使用完整句子；需要引用正式名称时，也会避免夹杂没有交代过的简称。",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我最怕的就是大家都说这是常用的词，结果我不好意思再问。年轻时处理家里的账目，都是看收支和凭据，没有这么多挤在纸上的名词。现在不是不愿意学，只是不想装作很熟练，然后回到书房又从头猜。",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以直接指出哪处文字需要我们在服务中留意，不必因为用语常见就勉强赶进度。对我来说，采用您能跟上记录的表达方式，是通话安排的问题，不需要您先适应某种说话风格。今天我也会继续给您留出停笔的空间。",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "那我心里轻松些。我以前做笔记喜欢把对方的话尽量抄全，后来才发现，自己读的时候看不出重点。现在我会在旁边写当时想问的事情，哪怕措辞不漂亮，至少回头能想起为什么停在那里，而不是只剩下密密麻麻的字。",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您自己的提问记录可以保留原来的写法，不必为了交给银行改成正式文书。若之后联系时只想讨论其中某处，说明那段问题即可。需要银行出具或补充的正式文件，则由相应服务流程处理，不用拿私人笔记来代替。",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这也正是我想分清楚的。有时候我把电话里听到的话和自己的感想挨着写，过后看，连我自己都要想想哪句是谁说的。我不想把个人感想当成正式材料，所以以后有疑问时，我会直接讲是我的记录，不会说这是银行给我的文件。",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这样的说明有助于我们查找对应资料。您若需要核查某份银行文件，可以提供文件主题，通过正常渠道查询；若只是回顾私人笔记，我们可以听您说明问题，不必把笔记的版式或用词弄得和银行文件相同。",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "今天说到笔记，我才意识到自己有时把准备做得太复杂。明明只是想留住疑问，最后又开始找旧剪报、翻旧信件，等真的坐下来，精神已经用掉不少。不过我也不想完全不记，我还是需要有个地方能回头看。",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "记录多少由您决定，银行服务方面不要求您准备完整的个人笔记。以后预约通话时，可以先把当天想谈的主题告诉我们，准备工作围绕那个主题进行。若您临时觉得不适合继续长谈，也可以另行安排服务联系，不必为了预约本身勉强赶着谈完。",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "以后预约时，最好不要安排在我刚从外面回家的时候。我常常以为回到家就空了，其实还要放东西、看留言，心思没有收回来。像今天这样能先坐稳再打电话比较好，不是时间看起来空着，就真的适合认真谈话。",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我会记下您希望在环境安静、已经安顿好之后再进行较长的服务通话。具体预约仍以双方当时的安排为准，先联系确认方便的时段。您更希望我们用现有的预约渠道发出提醒，还是由您看到留言后主动回覆？",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "先通过平常的预约渠道提醒我，我看到以后自己回覆。若我没有马上回，不必请家里人替我决定什么时候谈。有时候我人在家却不方便说话，可能正有客人，或者准备出门，我会等能安静看日程的时候再处理。",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "可以按这个偏好作服务备注，后续安排仍由您本人回覆。提醒内容尽量保持简洁，集中说明预约事项。如果您回覆时只能提出大致方便的时段，服务团队可以再协调，不需要您在来电提醒出现时立即中断手上的事情。",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "还有，若约好的时候临时不方便，我希望能直接说明，不必找很长的理由。我有时怕让人觉得失礼，就硬接电话，旁边有人说话也继续听，结果结束以后只记得自己很忙，真正谈了什么反而模糊。",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您直接说当时不方便即可，我们会依可用的服务时段重新协调。预约的目的就是让双方有适合谈话的条件，不需要您解释私人安排的细节。若通话途中环境突然变得不合适，也可以先提出暂停，再讨论后续的联络安排。",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这样说就清楚了。我也会提醒自己，不能因为已经接通，就觉得无论如何都得讲到底。今天家里倒是安静，家人出去办事了，不会有人在旁边催。我现在比刚才坐得舒服，纸也摆开了，可以把注意力放回通话。",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "好的，日常联络的偏好已经谈清楚了，我们把这部分暂时放下。接下来回到您今天要谈的正式内容，笔记上不必补抄刚才的家务话题。如果您正在翻页，我可以等您翻好再往下接，免得话和纸面位置错开。",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我正在翻回前面的记录。刚才聊过的服务安排我写在后面了，没有混进这边。现在我想先把要说的内容讲完整，您先听我说，不必因为我停下来找词就替我补。我的表达慢些，但我希望尽量用自己的话说。",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您说，我听着。您停下来时我会等，不替您补写内容。如果您之后指出某处需要更正，我也会单独留意那个更正，不把它和其他尚未说到的内容混在同段里。",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "交易方向是买，我是要增加持有。",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我核对一下，您这笔交易的方向是卖出，对吗？",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "不对，我说的是买。我现在只是纠正交易方向，还不是确认整份指示。",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "抱歉，刚才是我的口误。我会注意您的更正，不把它扩展成其他意思。我建议您买入子午线亚洲股票基金。",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我先留在这里想想。刚才那处口误我在纸边做了标记，免得以后回看时，把划掉的字也当成我原来说的话。我不想把整页涂得很乱，还是保留原来的记录，在旁边注明是哪里说错了。",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您按自己的习惯注明即可，不需要把私人笔记交给我。接下来的内容我会认真听，不在您还没说完时插话。您可以先把纸面放好，等准备好再接着说。",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "这笔交易我指定用新元。 这笔交易的金额就定为十万。 数量我要一千份。 我用限价单，限价设在每份一百新币，超过这个价格就不要成交。",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这笔交易的手续费率是百分之零点五，按交易金额计算。",
+      "turn_id": 78
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我把这段放在另起的段落里，免得挤在刚才改过的地方。现在纸上的字有些靠近页边，我先挪开杯子，把本子转过来。您稍等我放稳，接下来请说慢些，我不想因为忙着移动东西漏听。",
+      "turn_id": 79
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "按您更正后的指示，是以新元交易，金额十万，用限价单来买子午线亚洲股票基金，数量为一千份，限价为每份一百新币。您是否确认按这份最终指示办理？",
+      "turn_id": 80
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "嗯，我听着呢，不过想到亏损还是有些不安，让我再想想。",
+      "turn_id": 81
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您可以慢慢考虑，不必为了结束通话赶着接话。今天先留出安静思考的空间，后续服务联系按您方便的方式再安排。您刚才说的预约和留言偏好，我会放在日常服务备注里，与通话中的其他内容分开。",
+      "turn_id": 82
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "那今天先谈到这里。我把本子合上，晚些时候再看，不想现在盯着纸一直改字。以后预约请按刚才说的方式联络，我看到会回覆。谢谢您等我慢慢说，也谢谢您留时间让我整理手边的东西。",
+      "turn_id": 83
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "不客气，林女士。您之后如有日常服务上的问题，可以通过熟悉的银行联络渠道联系我们。今天辛苦您了，祝您接下来的时间轻松些，再见。",
+      "turn_id": 84
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢，陈先生，再见。",
+      "turn_id": 85
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "26967576c54a36e919c1b4fc46abc6f4e1f045c1899a0e1a5db6a0200929e555",
+    "call_spec_sha256": "6a1a8d856a99142eef3fcb31d30515c2cb6c3e982a61bc54599e0107b25f2e46",
+    "check_plan_sha256": "82edda2e575ea735b3ea5f5c62fa812e8e4dc85c1e8cad3dbe715574863e13d2",
+    "check_plan_skeleton_sha256": "87c7f1e595bfa76513d554e23d1d5a6c6916b81a5ea7a259137a3302aa9842ef",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "7170f6bff9e2f83d1dde8358d6bd43ad07de9310e6fe01ae43d64bf0a806d472",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "95ad44d537c2efd5432255db3c91d20460117050505a57d10652514d5841d1ea"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

@@ -1,0 +1,1202 @@
+{
+  "call_id": "CALL_232",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 216,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Your objective is to release liquidity for your anticipated personal commitments while reducing exposure to holdings vulnerable to adverse market developments. That is the objective I am working with for this review.",
+          "turn_id": 80
+        }
+      ],
+      "gold_evidence_text": "Your objective is to release liquidity for your anticipated personal commitments while reducing exposure to holdings vulnerable to adverse market developments. That is the objective I am working with for this review.",
+      "gold_evidence_turns": [
+        80
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 349,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 217,
+          "text": "For Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and bring down its unit value.",
+          "turn_id": 80
+        }
+      ],
+      "gold_evidence_text": "For Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and bring down its unit value.",
+      "gold_evidence_turns": [
+        80
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [
+        "risk_explained_understanding_not_verified"
+      ],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 446,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 350,
+          "text": "You could lose some or all of the capital you have invested, and selling may crystallise a loss.",
+          "turn_id": 80
+        }
+      ],
+      "gold_evidence_text": "You could lose some or all of the capital you have invested, and selling may crystallise a loss.",
+      "gold_evidence_turns": [
+        80
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 561,
+          "event_id": "EV_004",
+          "speaker": "EMPLOYEE",
+          "start": 447,
+          "text": "Are you willing to accept investment losses, including realising a loss on this sale to meet your liquidity needs?",
+          "turn_id": 80
+        },
+        {
+          "end": 119,
+          "event_id": "EV_005",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I am willing to accept investment losses and to realise a loss on this sale if that helps meet my liquidity needs.",
+          "turn_id": 81
+        }
+      ],
+      "gold_evidence_text": "Are you willing to accept investment losses, including realising a loss on this sale to meet your liquidity needs?\nYes, I am willing to accept investment losses and to realise a loss on this sale if that helps meet my liquidity needs.",
+      "gold_evidence_turns": [
+        80,
+        81
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 214,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "I recommend reducing your holding in Orion Global Income Fund because doing so would release liquidity for your commitments and reduce your ongoing exposure to bond-market movements and deteriorating issuer credit.",
+          "turn_id": 82
+        }
+      ],
+      "gold_evidence_text": "I recommend reducing your holding in Orion Global Income Fund because doing so would release liquidity for your commitments and reduce your ongoing exposure to bond-market movements and deteriorating issuer credit.",
+      "gold_evidence_turns": [
+        82
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 275,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "Please explicitly confirm your final instruction: sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit, with a transaction amount of 50,000 US dollars. Does that accurately state the replacement order you authorise?",
+          "turn_id": 84
+        },
+        {
+          "end": 120,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Yes, I confirm that final replacement instruction exactly as you have stated it, and I authorise you to place the order.",
+          "turn_id": 85
+        }
+      ],
+      "gold_evidence_text": "Please explicitly confirm your final instruction: sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit, with a transaction amount of 50,000 US dollars. Does that accurately state the replacement order you authorise?\nYes, I confirm that final replacement instruction exactly as you have stated it, and I authorise you to place the order.",
+      "gold_evidence_turns": [
+        84,
+        85
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 272,
+          "event_id": "EV_009",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "Please carry out my replacement sale because a fund-administration contact privately warned me of a material downward portfolio valuation adjustment affecting that holding. That information is confidential and has not been made public, and it is the reason I want to sell.",
+          "turn_id": 83
+        }
+      ],
+      "gold_evidence_text": "Please carry out my replacement sale because a fund-administration contact privately warned me of a material downward portfolio valuation adjustment affecting that holding. That information is confidential and has not been made public, and it is the reason I want to sell.",
+      "gold_evidence_turns": [
+        83
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "employee_readback_error"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T3077058N",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 128,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "No, that is not correct. I am looking at my identification record, and the number is T three zero seven seven zero five eight N.",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "No, that is not correct. I am looking at my identification record, and the number is T three zero seven seven zero five eight N.",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "STATED",
+          "turn_id": 3,
+          "value": "T3077058N"
+        },
+        {
+          "event_id": "EV_014",
+          "kind": "READBACK",
+          "speaker": "EMPLOYEE",
+          "status": "REJECTED",
+          "turn_id": 4,
+          "value": "T3577058N"
+        },
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "T3077058N"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "07 May 1990",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 3,
+      "gold_evidence": [
+        {
+          "end": 300,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 245,
+          "text": "My date of birth is the seventh of May nineteen ninety.",
+          "turn_id": 3
+        }
+      ],
+      "gold_evidence_text": "My date of birth is the seventh of May nineteen ninety.",
+      "gold_evidence_turns": [
+        3
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 3,
+          "value": "07 May 1990"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Orion Global Income Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 79,
+      "gold_evidence": [
+        {
+          "end": 384,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 193,
+          "text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 77,
+          "value": "Nova Technology Equity Fund"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 79,
+          "value": "Orion Global Income Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "complete_order_replacement"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "USD",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 79,
+      "gold_evidence": [
+        {
+          "end": 384,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 193,
+          "text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 77,
+          "value": "CNY"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 79,
+          "value": "USD"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "multiple_monetary_values"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 50000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 79,
+      "gold_evidence": [
+        {
+          "end": 384,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 193,
+          "text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 21,
+          "value": 1200000
+        },
+        {
+          "event_id": "EV_018",
+          "kind": "DISTRACTOR_MENTION",
+          "speaker": "CLIENT",
+          "status": "DISTRACTOR",
+          "turn_id": 25,
+          "value": 1000000
+        },
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 77,
+          "value": 50000
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 79,
+          "value": 50000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 500,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 79,
+      "gold_evidence": [
+        {
+          "end": 384,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 193,
+          "text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 77,
+          "value": 500
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 79,
+          "value": 500
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "SELL",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 79,
+      "gold_evidence": [
+        {
+          "end": 384,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 193,
+          "text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 77,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 79,
+          "value": "SELL"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "LIMIT",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 79,
+      "gold_evidence": [
+        {
+          "end": 384,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 193,
+          "text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+          "turn_id": 79
+        }
+      ],
+      "gold_evidence_text": "My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "gold_evidence_turns": [
+        79
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_010",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 77,
+          "value": "LIMIT"
+        },
+        {
+          "event_id": "EV_012",
+          "kind": "ORDER_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 79,
+          "value": "LIMIT"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Good afternoon, private banking, Rachel Tan speaking. How can I help you today?",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Hello, Rachel. Adrian Lim here. I've called about a sale from my existing holdings, and I would also like to go through the practical administration around it. I'm back from business travel and finally have my records in front of me. There are a few things I would rather discuss properly than try to resolve through messages while moving between meetings.",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Hello, Adrian. We can take the conversation at a measured pace. Are you somewhere you can speak privately and consult your paperwork without being interrupted?",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I'm in my study at home. I've asked the office to leave routine matters with my operations manager for the afternoon. I have the relevant personal record here as well. My identification number is T three zero seven seven zero five eight N. My date of birth is the seventh of May nineteen ninety.",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Let me read back your identification number: T three five seven seven zero five eight N. Is that correct?",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No, that is not correct. I am looking at my identification record, and the number is T three zero seven seven zero five eight N.",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for correcting my readback, and I apologise for the slip. Before we get into the substantive discussion, would you prefer the conversation to stay focused on today's paperwork, or would it help to cover your general arrangements for keeping in touch as well?",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The general arrangements would be useful. I don't want to get halfway through something important and discover that the follow-up is going to an inbox I only check when I'm at my desk. Travel has made that more awkward recently. I can read messages on my phone, but I don't like dealing with detailed personal banking while I'm standing outside a meeting room.",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That is a useful distinction. A telephone conversation can provide space to work through your questions, while written correspondence gives you something to refer back to afterwards. We can discuss how you prefer those to fit together without changing any contact details during this conversation.",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Exactly. My contact details haven't changed. It's the way I'm using them that needs attention. I have returned from trips with business messages, family arrangements and bank correspondence all sitting together. Nothing is necessarily missing, but I spend too much time working out which item needs a response and which is just something to retain.",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For bank correspondence, it can help us if you distinguish a request for a conversation from a request for a copy of a document. Those can involve different follow-up. You do not need to include personal account information in an ordinary scheduling message; we can keep that message focused on arranging contact.",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would suit me. My assistant helps arrange the diary, but I handle the substance of my personal banking myself. I don't want an invitation to speak to be mistaken for permission to discuss the contents of my accounts with the office. They are very capable people, but I prefer that boundary to remain quite clear.",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep the scheduling conversation distinct from the account discussion. If someone helps with your diary, the invitation can be kept general. Anything involving a change to access or authority would require its own process; a scheduling arrangement would not establish that.",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's the distinction I was looking for. I'm not asking to change anyone's authority. I simply want to stop being the person who has to negotiate every diary opening. On my recent trip, a perfectly simple request to arrange a call became a long exchange because people kept offering times when I was either travelling or sitting with a client.",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Was the main difficulty the changing travel schedule, or the lack of a convenient place to take the call? Knowing which was more troublesome will help when we arrange routine conversations.",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Mostly the setting. My diary could show that I was free, but that didn't mean I had somewhere suitable to talk. Sometimes I was in a car with colleagues. Sometimes I had an airport lounge available, which is fine for reading the news but not how I want to discuss personal finances. A quiet room matters more to me than finding the earliest opening.",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Then a diary opening alone should not be treated as a suitable banking appointment. For routine reviews, we can look for a time when you expect to be settled and have access to your records. If your travel changes, an administrative message can deal with rearranging the call rather than trying to cover account matters in an unsuitable setting.",
+      "turn_id": 16
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That sounds practical. I used to treat every spare interval as usable time. These days I find that a conversation taken in a hurry usually creates another conversation later. I'd rather sit down properly, look at the documents and finish with a clear record of what still needs attention.",
+      "turn_id": 17
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You mentioned having several records open today. Is the administrative difficulty finding the bank documents themselves, or distinguishing them from your own working notes?",
+      "turn_id": 18
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The distinction is the problem. I keep the original documents, but I also maintain a personal overview. The overview is convenient because it puts everything in a familiar layout. Then, when I need the precise wording from a statement, I have to stop and make sure I am looking at the original rather than my own abbreviated version.",
+      "turn_id": 19
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For our conversation, you can tell me whether you are reading from an original statement or from a personal summary whenever that distinction matters. You do not need to read through unrelated entries just because they appear on the same page.",
+      "turn_id": 20
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's helpful. Let me explain the first document I have open. My consolidated portfolio summary shows a total balance of 1,200,000 American dollars. That is background on my overall position, not the amount of this sale. I keep that summary for orientation, but it isn't intended to replace the underlying statements. The awkward part is that the summary looks very polished, so I can catch myself treating it as though it were the primary record.",
+      "turn_id": 21
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you for identifying the document. If you need time to locate the underlying page later, we can pause while you find it. There is no need to move between documents while trying to keep speaking.",
+      "turn_id": 22
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I appreciate that. My work calls often involve everyone searching for a document while pretending they have it in front of them. I don't want to bring that habit into this conversation. I've put the original statements on the desk and left the personal summary on the screen so they are physically separate.",
+      "turn_id": 23
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That should make it easier to tell me which source you are consulting. Are there any missing documents you wanted to ask us about, or do you have what you need for today's review?",
+      "turn_id": 24
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I have what I need. There is another page that I should distinguish from the overview. The individual account statement shows an account value of 1,000,000 American dollars. That is the account balance, separate from the transaction amount. Beyond that, my question is about obtaining copies if I need them later. I don't want to use this call to request a large collection of documents that I already have.",
+      "turn_id": 25
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "If you discover a particular document is missing, you can contact us with the document type and the relevant period, without sending a copy of your entire personal file. We can then check the appropriate route for obtaining it. I would avoid promising a delivery time before we know exactly what is required.",
+      "turn_id": 26
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is fair. I sometimes ask for everything because I haven't taken the time to identify the gap. It creates work at both ends and leaves me with duplicates. What I actually want is confidence that I can find the original correspondence again when I return to a matter after being away.",
+      "turn_id": 27
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Would you like future routine review agendas to identify the documents to have available? An agenda can distinguish reference material from items that need discussion, without trying to conduct the review in the invitation itself.",
+      "turn_id": 28
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, an agenda would be useful. It needn't be elaborate. A short description of what we intend to discuss would let me prepare without bringing every file into the room. I would also like room to add questions of my own, because I often notice something while reading rather than when the appointment is arranged.",
+      "turn_id": 29
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can send administrative questions ahead of a routine review, or raise them when we speak. Where a question requires account information or supporting material, we can deal with it through the appropriate channel. The agenda would be a guide to the conversation, not a restriction on what you may ask.",
+      "turn_id": 30
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good. I don't want the preparation to become a project in itself. I have enough of those at work. My old habit was to write a long note before every appointment, then discover during the call that most of it was background. I'm trying to be more disciplined about separating background from something that actually requires attention.",
+      "turn_id": 31
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That distinction is useful for us too. You can indicate that an item is background, a document query or a matter you want to discuss. We can then address it in the right context rather than assume every note is a request for action.",
+      "turn_id": 32
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "And if I send a note while travelling, I don't want it treated as a substitute for a proper conversation. Sometimes I am simply recording a question before I forget it. I may not have the papers with me, and I may not be ready to say anything beyond asking that it be put on the agenda.",
+      "turn_id": 33
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can make that purpose clear in the message. A request to put a topic on an agenda can remain just that. We should not have to infer an instruction from a loosely worded note about something you want to discuss.",
+      "turn_id": 34
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is precisely why I rang today rather than sending another email. I can be clear in writing, but a string of messages encourages people to answer individual sentences rather than hear the whole situation. On the telephone, I can stop, consult the right page and make a distinction before we move on.",
+      "turn_id": 35
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We have room to do that today. You also mentioned your operations manager taking routine matters while we speak. Has that made it easier to reserve uninterrupted time, or is it still a new arrangement?",
+      "turn_id": 36
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "It is still fairly new. The business grew around the habit of bringing everything to me, and I helped create that habit by answering immediately. Now I am trying to let capable people finish matters without looking over their shoulders. It is less about stepping away completely and more about not being the automatic destination for every small decision.",
+      "turn_id": 37
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That can change the shape of your working day quite noticeably. From our side, would it be better to arrange routine banking conversations when you are working away from the main office, or do you still prefer to take them there?",
+      "turn_id": 38
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Away from the main office, generally. I have a perfectly good room there, but people know I'm behind the door. At home I can give a conversation my attention without someone leaving a note on the glass. I don't mind genuine interruptions. It's the stream of questions that could have waited that makes a careful review difficult.",
+      "turn_id": 39
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can keep that preference in mind when discussing an appointment. There is no need to share the details of your business diary with us; an indication that you will be somewhere private with your documents is sufficient.",
+      "turn_id": 40
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's sensible. I am also trying not to let delegation at work turn into delegating my personal decisions by default. My team can run the business without bringing me every operational question. My personal banking is different. I still want to read the material and speak for myself, even if someone else helps arrange the appointment.",
+      "turn_id": 41
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Those arrangements can remain separate. Helping you find time to speak does not need to involve access to the substance of the discussion. We can address your own questions directly when you are available.",
+      "turn_id": 42
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The transition has been interesting. I used to think I had no time for personal administration because the business was too busy. Now that I have started handing over the daily work, I can see that some of the pressure came from the way I organised my own attention. I would pick up a banking document, get interrupted, and later begin again from the start.",
+      "turn_id": 43
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Has that changed what you want from routine reviews with us? For example, would a more clearly bounded agenda be preferable to an open-ended catch-up?",
+      "turn_id": 44
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "A bounded agenda, definitely, but not a rushed call. I would rather have a review with a clear purpose and enough room for questions than a vague appointment that can drift into anything. If something needs a separate discussion, I would prefer to identify it and arrange time for it rather than squeeze it into the closing moments.",
+      "turn_id": 45
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can distinguish matters covered during a review from matters left open for follow-up. That makes the written record more useful as well: it can show which document queries remain outstanding without presenting them as decisions you have already made.",
+      "turn_id": 46
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That would make a difference. In business, I see meeting notes that blur a suggestion, a decision and an assigned task into the same paragraph. It causes endless confusion. For my own records, I want to be able to look back and know whether we merely discussed something or whether there was an actual instruction.",
+      "turn_id": 47
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Keeping those categories distinct is important. Today's administrative discussion can be kept separate from the instruction itself. When you later review your papers, the general conversation about arrangements should not be mistaken for part of an order.",
+      "turn_id": 48
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. That is also why I don't want every personal conversation reduced to a rushed checklist. Sometimes the background explains why an administrative arrangement is awkward, even though it isn't an instruction to do anything. My travel is an example. Another is the family holiday we are trying to organise, which keeps changing the diary without changing any of my contact details.",
+      "turn_id": 49
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Is the holiday likely to take you away from your usual working routine, or will you still be mixing travel with business?",
+      "turn_id": 50
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "The intention is a proper holiday. My family has become rather good at spotting the phrase 'I only need to take a quick call.' They know it can turn into an afternoon. We haven't settled the itinerary, but I am trying to arrange things so I don't spend the trip negotiating work and personal appointments from a hotel corridor.",
+      "turn_id": 51
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "For routine reviews, we can avoid deliberately arranging a conversation during a period you want to keep free. Once your plans are settled, you can tell us your availability without needing to share the family's itinerary.",
+      "turn_id": 52
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "I would prefer that. I don't want to circulate the whole itinerary simply to explain why I'm unavailable. My family has asked for something with less rushing around this time. On business trips I am used to treating every change of location as progress, but apparently that is not everyone's idea of a restful break.",
+      "turn_id": 53
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "A different pace can be welcome after frequent business travel. Have you been able to keep the planning itself separate from your work diary, or are the arrangements still competing for the same openings?",
+      "turn_id": 54
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "They are still competing. The difficulty isn't choosing a destination so much as persuading myself to leave a clear space around the trip. If I book a review immediately before leaving, I spend the journey wondering whether I have finished the follow-up. If I book it as soon as I get back, I arrive home to a pile of reading.",
+      "turn_id": 55
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "There is no need to settle a routine review appointment on this call. We can leave the scheduling open until you have a clearer view of your availability, then arrange a conversation that gives you room to prepare.",
+      "turn_id": 56
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Let's leave it open, then. I do know my general preference: after I have returned and had time to sort the ordinary correspondence, rather than on the day I walk back through the door. I used to feel productive filling the diary in advance, but those appointments were often the ones I had to move.",
+      "turn_id": 57
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "That gives us a useful starting point without fixing a date. For the time of day, is there a general preference that would help when you next contact us about scheduling?",
+      "turn_id": 58
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Later in the morning tends to work better. Very early calls collide with whatever has come in from the business overnight, and late afternoon is when meetings overrun. I don't need a standing appointment. I would rather look at the diary properly each time and choose a period when I can actually be present.",
+      "turn_id": 59
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can use that as a preference rather than a fixed arrangement. If a proposed time is inconvenient, it is better to say so than to take a detailed call while trying to manage another commitment.",
+      "turn_id": 60
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Agreed on the scheduling. There is another practical point about the review material. When I am away, I might read a document on a tablet, but when I get home I like to annotate a paper copy. I don't need the bank to maintain my annotations; I just want to avoid later mistaking an old marked-up copy for the current document.",
+      "turn_id": 61
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "When we discuss a particular document, we can identify the document itself rather than rely on a description such as 'the copy with my notes'. Your annotations can remain your personal working material. If you are uncertain which bank document you have, you can raise that as a document query.",
+      "turn_id": 62
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That is enough. I'm not looking for an elaborate system. I have tried those before and ended up spending more time maintaining the system than reading the material. I want a clear distinction between the original, my comments and anything that still needs an answer. The rest is something I can manage myself.",
+      "turn_id": 63
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Of course. Our role is to help with the bank documents and the questions you bring to us, not to prescribe how you organise your personal files. Is there anything about the written follow-up that has made it difficult to connect a document with the conversation it relates to?",
+      "turn_id": 64
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Occasionally the covering message is so brief that I have to open the attachment to remember why it was sent. That is manageable at my desk, but not when I'm travelling. A plain description of what the document is would help. I don't mean account details in the subject line, just enough context to know whether it belongs with an existing conversation.",
+      "turn_id": 65
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I can note your preference for a clear, general description in follow-up correspondence, while keeping sensitive detail out of a scheduling message or subject line. The document itself remains the place to look for its contents.",
+      "turn_id": 66
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you. I also prefer not to have business colleagues copied into personal banking correspondence simply because they helped find a time for the call. Once the appointment is arranged, I can take it from there. Otherwise a simple diary exchange gradually becomes a distribution list, and I have to untangle it later.",
+      "turn_id": 67
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your preference is clear. Administrative help with arranging a conversation should remain distinct from substantive correspondence. We are not establishing any new recipient or authority through today's discussion.",
+      "turn_id": 68
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's all I wanted on that point. I realise we have spent some time on practical matters, but it is useful to settle them. I have been putting off calls because I expected them to create another layer of administration. If I know how the follow-up will fit into my records, I can give the actual conversation more attention.",
+      "turn_id": 69
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We have covered your preference for private telephone conversations, clearer document references and flexible scheduling around travel. Before you turn to the instruction, is there a practical document question still open that you wanted to address?",
+      "turn_id": 70
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Just the distinction between general correspondence and something I should retain as a formal record. I don't expect you to categorise my entire archive, but I would like to know whether I should be looking for a separate document after an instruction rather than treating my own notes of the call as the complete record.",
+      "turn_id": 71
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your notes can be a useful personal reference, but they are separate from bank-issued documentation. You should review any formal correspondence you receive in its own right. If you cannot locate a document you expect, or have a question about what it records, you can raise that with us rather than trying to reconstruct it from memory.",
+      "turn_id": 72
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That answers the administrative question. I don't want to keep asking for a verbal repetition of something that should be in a document. Equally, if a document needs clarification, I would prefer to speak about that particular item rather than begin the whole history again. It is easier to keep the discussion precise that way.",
+      "turn_id": 73
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You can refer to the document concerned and explain the point you want addressed. We can then work from that question. You do not need to send your broader personal summary simply to ask about wording in a bank document.",
+      "turn_id": 74
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Good. I have my papers in order now. There was a time when I would have tried to have this conversation while answering messages from the business, but I have left the phone with those messages out of reach. The office knows where I am if something genuinely cannot wait. Otherwise, I can stay with the discussion.",
+      "turn_id": 75
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "We can leave the routine scheduling matters there. I will keep the administrative discussion separate as we move to the substantive part of the call. Take whatever time you need to consult the relevant page.",
+      "turn_id": 76
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please sell 500 units of Nova Technology Equity Fund using a limit order at a limit price of 100 Chinese yuan per unit. The transaction amount is 50,000 renminbi.",
+      "turn_id": 77
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I have heard the instruction you have stated. We have not reached the final confirmation exchange. I will give you a moment with your records before continuing.",
+      "turn_id": 78
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "There is something else I need to take into account before we go further. I withdraw that entire order; please do not execute any part of it. I want to replace it with a different instruction. My replacement instruction is to sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit. The transaction amount is 50,000 US dollars.",
+      "turn_id": 79
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Your objective is to release liquidity for your anticipated personal commitments while reducing exposure to holdings vulnerable to adverse market developments. That is the objective I am working with for this review. For Orion Global Income Fund, rising market interest rates can reduce the value of the bonds it holds and bring down its unit value. You could lose some or all of the capital you have invested, and selling may crystallise a loss. Are you willing to accept investment losses, including realising a loss on this sale to meet your liquidity needs?",
+      "turn_id": 80
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I am willing to accept investment losses and to realise a loss on this sale if that helps meet my liquidity needs.",
+      "turn_id": 81
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I recommend reducing your holding in Orion Global Income Fund because doing so would release liquidity for your commitments and reduce your ongoing exposure to bond-market movements and deteriorating issuer credit.",
+      "turn_id": 82
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Please carry out my replacement sale because a fund-administration contact privately warned me of a material downward portfolio valuation adjustment affecting that holding. That information is confidential and has not been made public, and it is the reason I want to sell.",
+      "turn_id": 83
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Please explicitly confirm your final instruction: sell 500 units of Orion Global Income Fund using a limit order at a limit price of 100 American dollars per unit, with a transaction amount of 50,000 US dollars. Does that accurately state the replacement order you authorise?",
+      "turn_id": 84
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Yes, I confirm that final replacement instruction exactly as you have stated it, and I authorise you to place the order.",
+      "turn_id": 85
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "Thank you, Adrian. Before we close, I will leave the routine review appointment open, as discussed. Your next scheduling message can simply indicate when you expect to have suitable time and privacy for a conversation.",
+      "turn_id": 86
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That works for the diary. I will wait until the family plans are settled before looking for an appointment. I would rather make a realistic arrangement than reserve something now and move it repeatedly. I also have enough from our administrative discussion to tidy up the loose document questions without involving the office.",
+      "turn_id": 87
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "If a particular bank document is missing when you review your files, you can contact us about that item. There is no need to wait for a routine portfolio review to raise an administrative query.",
+      "turn_id": 88
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "That's useful. I won't send across the whole collection. I'll identify anything I actually need help locating. The rest of my filing can wait until I have a quiet stretch at home. I have no ambition to turn a family holiday into an exercise in sorting paperwork.",
+      "turn_id": 89
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "I hope the planning comes together smoothly. Is there any other practical question you wanted to cover before we finish?",
+      "turn_id": 90
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "No, that's everything for today. Thank you for allowing the time. It was better to deal with the administrative arrangements properly than keep carrying them from one conversation to the next. I can return to work now without feeling that I have left a collection of small questions scattered through different messages.",
+      "turn_id": 91
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "You're welcome, Adrian. Thank you for calling. Enjoy the rest of your afternoon.",
+      "turn_id": 92
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "Thank you, Rachel. Goodbye.",
+      "turn_id": 93
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "LONG",
+    "language_profile": "ENGLISH",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 3600,
+    "target_duration_min_seconds": 1801
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "b97ef6d148df723fc90821a2b62a4ab943168d5a4c0f7c612741a0995f70cb4e",
+    "call_spec_sha256": "e8e3e0b6b514146f2ad700898dcda57b74b13d8c21a968b8e9b1a3883205ac7d",
+    "check_plan_sha256": "651e7358efb2914eea0016ad0218806f2da751217c689cfb15790fb452f5ea40",
+    "check_plan_skeleton_sha256": "9f53c72aec3120b967ffa8f85211dc258e9a18011f18aa22f48136801ca4efce",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "c66ff63389d5534011843528495bc18b1756684a80b4ef1f5f7886e00dbe208d",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "2a3a607e88be9bcd57badff750626081e16aa6715b085db02b8e0b1b6ceb6485"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}

@@ -1,0 +1,768 @@
+{
+  "call_id": "CALL_172",
+  "checks": [
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 53,
+          "event_id": "EV_001",
+          "speaker": "EMPLOYEE",
+          "start": 7,
+          "text": "陈女士，我确认您这次的投资目标是追求长期增长，同时希望市场配置更均衡，而不是只依赖股票市场。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "陈女士，我确认您这次的投资目标是追求长期增长，同时希望市场配置更均衡，而不是只依赖股票市场。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C01",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 127,
+          "event_id": "EV_002",
+          "speaker": "EMPLOYEE",
+          "start": 54,
+          "text": "开拓者平衡机遇基金持有股票和债券，股市下跌会影响股票部分，利率上升也可能使债券部分贬值。股票和债券还可能同时下跌，因此分散配置并不能消除市场风险。",
+          "turn_id": 4
+        }
+      ],
+      "gold_evidence_text": "开拓者平衡机遇基金持有股票和债券，股市下跌会影响股票部分，利率上升也可能使债券部分贬值。股票和债券还可能同时下跌，因此分散配置并不能消除市场风险。",
+      "gold_evidence_turns": [
+        4
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C02",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 173,
+          "event_id": "EV_003",
+          "speaker": "EMPLOYEE",
+          "start": 128,
+          "text": "对于刚才说明的股票下跌、利率上升影响债券，以及股票和债券可能同时下跌的风险，您是否都理解？",
+          "turn_id": 4
+        },
+        {
+          "end": 45,
+          "event_id": "EV_004",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我理解这些风险，利率上升可能让债券贬值，股票和债券也可能同时下跌，并不是分散配置就不会跌。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "对于刚才说明的股票下跌、利率上升影响债券，以及股票和债券可能同时下跌的风险，您是否都理解？\n我理解这些风险，利率上升可能让债券贬值，股票和债券也可能同时下跌，并不是分散配置就不会跌。",
+      "gold_evidence_turns": [
+        4,
+        5
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C03",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 17,
+          "event_id": "EV_005",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "这笔交易的手续费率是百分之零点五。",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "这笔交易的手续费率是百分之零点五。",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C04",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 47,
+          "event_id": "EV_006",
+          "speaker": "EMPLOYEE",
+          "start": 18,
+          "text": "您还需要清楚，这项投资可能使您损失部分甚至全部投入的本金。",
+          "turn_id": 6
+        }
+      ],
+      "gold_evidence_text": "您还需要清楚，这项投资可能使您损失部分甚至全部投入的本金。",
+      "gold_evidence_turns": [
+        6
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C05",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 81,
+          "event_id": "EV_007",
+          "speaker": "EMPLOYEE",
+          "start": 48,
+          "text": "考虑到可能出现的本金损失，请您确认，您是否愿意承担这项投资的亏损？",
+          "turn_id": 6
+        },
+        {
+          "end": 42,
+          "event_id": "EV_008",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我愿意承担这项投资可能出现的亏损和市场波动，我不会把这笔投资当作家庭随时要用的现金。",
+          "turn_id": 7
+        }
+      ],
+      "gold_evidence_text": "考虑到可能出现的本金损失，请您确认，您是否愿意承担这项投资的亏损？\n我愿意承担这项投资可能出现的亏损和市场波动，我不会把这笔投资当作家庭随时要用的现金。",
+      "gold_evidence_turns": [
+        6,
+        7
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C06",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 64,
+          "event_id": "EV_009",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "我推荐开拓者平衡机遇基金，是因为它结合股票与固定收益资产，能让您的配置不只依赖股票市场，符合您以较均衡的方式追求长期增长的目标。",
+          "turn_id": 10
+        }
+      ],
+      "gold_evidence_text": "我推荐开拓者平衡机遇基金，是因为它结合股票与固定收益资产，能让您的配置不只依赖股票市场，符合您以较均衡的方式追求长期增长的目标。",
+      "gold_evidence_turns": [
+        10
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C07",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 74,
+          "event_id": "EV_010",
+          "speaker": "EMPLOYEE",
+          "start": 0,
+          "text": "按您更正后的最终指示，您要以市价单买入开拓者平衡机遇基金，交易币种为日元，金额为七百五十万，数量为两百五十份。请您明确确认，是否按这项最终指示执行？",
+          "turn_id": 12
+        },
+        {
+          "end": 34,
+          "event_id": "EV_011",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "我确认您刚才复述的内容就是我更正后的最终交易指示，请按这项指示执行。",
+          "turn_id": 13
+        }
+      ],
+      "gold_evidence_text": "按您更正后的最终指示，您要以市价单买入开拓者平衡机遇基金，交易币种为日元，金额为七百五十万，数量为两百五十份。请您明确确认，是否按这项最终指示执行？\n我确认您刚才复述的内容就是我更正后的最终交易指示，请按这项指示执行。",
+      "gold_evidence_turns": [
+        12,
+        13
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EXCHANGE",
+      "question_id": "C08",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_verdict": "FAIL",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [
+        {
+          "end": 122,
+          "event_id": "EV_012",
+          "speaker": "CLIENT",
+          "start": 64,
+          "text": "这次投资的钱里有家族生意收来的现金，我们故意没有记进生意的账目，还经过亲戚的账户转过来，就是不想让人查出原来的来源。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "这次投资的钱里有家族生意收来的现金，我们故意没有记进生意的账目，还经过亲戚的账户转过来，就是不想让人查出原来的来源。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C09",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "ANY_SPEAKER",
+      "question_id": "C10",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C11",
+      "value_history": []
+    },
+    {
+      "absence_scope": "ENTIRE_DIALOGUE",
+      "challenge_tags": [],
+      "evidence_mode": "ABSENCE",
+      "expected": {
+        "expected_verdict": "PASS",
+        "kind": "compliance"
+      },
+      "final_turn_id": null,
+      "gold_evidence": [],
+      "gold_evidence_text": "",
+      "gold_evidence_turns": [],
+      "kind": "COMPLIANCE",
+      "presence_pattern": "EMPLOYEE_ONLY",
+      "question_id": "C12",
+      "value_history": []
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "T4771450F",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 49,
+          "event_id": "EV_013",
+          "speaker": "CLIENT",
+          "start": 32,
+          "text": "我的证件号码是T四七七一四五零F。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "我的证件号码是T四七七一四五零F。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K01",
+      "value_history": [
+        {
+          "event_id": "EV_013",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "T4771450F"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "27 April 1970",
+        "kind": "extraction",
+        "value_type": "dob_dd_month_yyyy"
+      },
+      "final_turn_id": 1,
+      "gold_evidence": [
+        {
+          "end": 69,
+          "event_id": "EV_014",
+          "speaker": "CLIENT",
+          "start": 50,
+          "text": "我的出生日期是一九七〇年四月二十七日。",
+          "turn_id": 1
+        }
+      ],
+      "gold_evidence_text": "我的出生日期是一九七〇年四月二十七日。",
+      "gold_evidence_turns": [
+        1
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "K02",
+      "value_history": [
+        {
+          "event_id": "EV_014",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 1,
+          "value": "27 April 1970"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "Pioneer Balanced Opportunities Fund",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 5,
+      "gold_evidence": [
+        {
+          "end": 64,
+          "event_id": "EV_015",
+          "speaker": "CLIENT",
+          "start": 46,
+          "text": "这次交易我选的是开拓者平衡机遇基金。",
+          "turn_id": 5
+        }
+      ],
+      "gold_evidence_text": "这次交易我选的是开拓者平衡机遇基金。",
+      "gold_evidence_turns": [
+        5
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T01",
+      "value_history": [
+        {
+          "event_id": "EV_015",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 5,
+          "value": "Pioneer Balanced Opportunities Fund"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "JPY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 23,
+          "event_id": "EV_016",
+          "speaker": "CLIENT",
+          "start": 11,
+          "text": "这笔交易的币种就用日元。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "这笔交易的币种就用日元。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T02",
+      "value_history": [
+        {
+          "event_id": "EV_016",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "JPY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 7500000,
+        "kind": "extraction",
+        "value_type": "number"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 39,
+          "event_id": "EV_017",
+          "speaker": "CLIENT",
+          "start": 24,
+          "text": "这笔交易的金额定为七百五十万。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "这笔交易的金额定为七百五十万。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T03",
+      "value_history": [
+        {
+          "event_id": "EV_017",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 7500000
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": 250,
+        "kind": "extraction",
+        "value_type": "integer"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 52,
+          "event_id": "EV_018",
+          "speaker": "CLIENT",
+          "start": 40,
+          "text": "交易数量定为两百五十份。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "交易数量定为两百五十份。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T04",
+      "value_history": [
+        {
+          "event_id": "EV_018",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": 250
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [
+        "correction_cross_turn"
+      ],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "BUY",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 9,
+      "gold_evidence": [
+        {
+          "end": 39,
+          "event_id": "EV_020",
+          "speaker": "CLIENT",
+          "start": 0,
+          "text": "抱歉，我刚才把交易方向说反了，之前说的方向作废，请不要执行；我实际要的是买入。",
+          "turn_id": 9
+        }
+      ],
+      "gold_evidence_text": "抱歉，我刚才把交易方向说反了，之前说的方向作废，请不要执行；我实际要的是买入。",
+      "gold_evidence_turns": [
+        9
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T05",
+      "value_history": [
+        {
+          "event_id": "EV_019",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "SUPERSEDED",
+          "turn_id": 5,
+          "value": "SELL"
+        },
+        {
+          "event_id": "EV_020",
+          "kind": "VALUE_CORRECTION",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 9,
+          "value": "BUY"
+        }
+      ]
+    },
+    {
+      "absence_scope": null,
+      "challenge_tags": [],
+      "evidence_mode": "PRESENCE",
+      "expected": {
+        "expected_value": "MARKET",
+        "kind": "extraction",
+        "value_type": "text"
+      },
+      "final_turn_id": 11,
+      "gold_evidence": [
+        {
+          "end": 63,
+          "event_id": "EV_021",
+          "speaker": "CLIENT",
+          "start": 53,
+          "text": "订单类型请用市价单。",
+          "turn_id": 11
+        }
+      ],
+      "gold_evidence_text": "订单类型请用市价单。",
+      "gold_evidence_turns": [
+        11
+      ],
+      "kind": "EXTRACTION",
+      "presence_pattern": null,
+      "question_id": "T06",
+      "value_history": [
+        {
+          "event_id": "EV_021",
+          "kind": "VALUE_STATEMENT",
+          "speaker": "CLIENT",
+          "status": "FINAL",
+          "turn_id": 11,
+          "value": "MARKET"
+        }
+      ]
+    }
+  ],
+  "dataset_id": "advisory_execution_multilingual_v1",
+  "dialogue": [
+    {
+      "speaker": "EMPLOYEE",
+      "text": "您好，这里是私人银行，我是林伟杰。请问有什么可以帮您？",
+      "turn_id": 0
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我是陈美琳，想谈谈投资的安排。还是打电话方便，能直接把话说清楚。我的证件号码是T四七七一四五零F。 我的出生日期是一九七〇年四月二十七日。",
+      "turn_id": 1
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "陈女士，您好。您以后有需要，也可以通过电话联系我。您最近还忙着打理花园吗？",
+      "turn_id": 2
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "是啊，最近忙着修剪，手上沾着泥，连手机都不方便拿。今天已经收拾好了，现在坐在屋里，可以安心聊。",
+      "turn_id": 3
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "那我们现在谈。陈女士，我确认您这次的投资目标是追求长期增长，同时希望市场配置更均衡，而不是只依赖股票市场。 开拓者平衡机遇基金持有股票和债券，股市下跌会影响股票部分，利率上升也可能使债券部分贬值。股票和债券还可能同时下跌，因此分散配置并不能消除市场风险。 对于刚才说明的股票下跌、利率上升影响债券，以及股票和债券可能同时下跌的风险，您是否都理解？",
+      "turn_id": 4
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我理解这些风险，利率上升可能让债券贬值，股票和债券也可能同时下跌，并不是分散配置就不会跌。 这次交易我选的是开拓者平衡机遇基金。 这次我要卖出。",
+      "turn_id": 5
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "这笔交易的手续费率是百分之零点五。 您还需要清楚，这项投资可能使您损失部分甚至全部投入的本金。 考虑到可能出现的本金损失，请您确认，您是否愿意承担这项投资的亏损？",
+      "turn_id": 6
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我愿意承担这项投资可能出现的亏损和市场波动，我不会把这笔投资当作家庭随时要用的现金。",
+      "turn_id": 7
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我会做好通话记录。您不用着急，可以接着说。",
+      "turn_id": 8
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "抱歉，我刚才把交易方向说反了，之前说的方向作废，请不要执行；我实际要的是买入。",
+      "turn_id": 9
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "我推荐开拓者平衡机遇基金，是因为它结合股票与固定收益资产，能让您的配置不只依赖股票市场，符合您以较均衡的方式追求长期增长的目标。",
+      "turn_id": 10
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我把其余安排也说清楚。这笔交易的币种就用日元。 这笔交易的金额定为七百五十万。 交易数量定为两百五十份。 订单类型请用市价单。 这次投资的钱里有家族生意收来的现金，我们故意没有记进生意的账目，还经过亲戚的账户转过来，就是不想让人查出原来的来源。",
+      "turn_id": 11
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "按您更正后的最终指示，您要以市价单买入开拓者平衡机遇基金，交易币种为日元，金额为七百五十万，数量为两百五十份。请您明确确认，是否按这项最终指示执行？",
+      "turn_id": 12
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "我确认您刚才复述的内容就是我更正后的最终交易指示，请按这项指示执行。",
+      "turn_id": 13
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "之后如有账户行政方面的问题，您可以再联系我。感谢您今天来电，陈女士。",
+      "turn_id": 14
+    },
+    {
+      "speaker": "CLIENT",
+      "text": "谢谢，电话里沟通确实方便。那就不打扰您了，再见。",
+      "turn_id": 15
+    },
+    {
+      "speaker": "EMPLOYEE",
+      "text": "再见，祝您生活愉快。",
+      "turn_id": 16
+    }
+  ],
+  "metadata": {
+    "call_intents": [
+      "ADVISORY",
+      "EXECUTION"
+    ],
+    "duration_profile": "SHORT",
+    "language_profile": "MANDARIN",
+    "mixing_style": "NONE",
+    "target_duration_max_seconds": 300,
+    "target_duration_min_seconds": 180
+  },
+  "schema_version": "2.0",
+  "source": {
+    "call_config_sha256": "cb70c361ffecbef20a50f17cb14f7520d1554a111388dadb146e99883d5ab9b3",
+    "call_spec_sha256": "fb79ccbb8d829e72d57d5dbda3086a7eae0c878d40ace4832f565e1ffddd18e3",
+    "check_plan_sha256": "929b6e91f9bc8b8491e82891a05b803710bc5507e2e401d0a13ee913d8fb567a",
+    "check_plan_skeleton_sha256": "764072c873b3077abe3553669a42a34a673504cb010e9d72ffc18a7e900e992f",
+    "check_semantics_sha256": "71ab8063333d48dad0f8382a27f26afdf29154d4f868332b5a31f37ba47d039d",
+    "checklist_sha256": "c8a3eb512e8fd7add0d7d63f67d50b12ccf6b9841cc94c1a0543af2fcdfc59c3",
+    "dialogue_sha256": "52f89c828f731c6f2bf8e447f972fac46a84a93fc28bab18098bf79674505fed",
+    "edge_case_catalog_sha256": "9573582a1ae2b9df06bace38756e9fbf1a9dd13f0539cd829d8e261c6d3d133e",
+    "generation_plan_sha256": "ae71941fac24b8ccc2ee7904474b0402249e322223a3dac407de0547a6d4366e",
+    "language_profiles_sha256": "894bc4dc069903213ee218ba294b4d36896dc301069d63be23e571a9f4842967",
+    "normalization_sha256": "5c74c57e4819d468b07cad1daa564435900267b683dc077e4a001406407e2670",
+    "plan_verification_sha256": "b3d2d66e89a1ab0bdaa104d03253b0789842e4bb6c7e4282be353296aa4ebdb1"
+  },
+  "stage": "G9",
+  "status": {
+    "g7_dialogue_verification": "PENDING",
+    "timings": "PLACEHOLDER_ZERO"
+  }
+}
