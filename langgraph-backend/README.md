@@ -225,3 +225,21 @@ precision, per-language counts, reported model-token cost and incomplete usage.
 Offline regressions establish recovery/evidence behavior, not improved benchmark
 percentages. Live inference and evaluation remain a separately authorized step;
 the evaluator, datasets, labels and `.env` are not modified by these changes.
+
+## Production measurements
+
+The existing NLP graph now returns an additive `observability` object with a run
+UUID, stage timings, reported model-token usage and an estimated chat cost. The optional
+`analysis_run_id` identifies this measured output; the existing backend stores
+it inside the output JSON, without an immutable officer-review revision link. No additional model requests are made. Local measurement defaults on;
+set `COMPLIANCE_OBSERVABILITY_ENABLED=0` to disable it. No telemetry is sent from
+the Python service to Langfuse.
+
+Prices come from `compliance_pipeline/config/observability_prices.json`, with a
+source URL and expiry. Missing models or expired prices produce an unknown cost,
+not zero. `COMPLIANCE_PRICE_BOOK_PATH` can select a reviewed replacement snapshot.
+Reported chat cost excludes embeddings, transcription and unreported usage.
+Reasoning is already included in output; cached input is not charged twice.
+This instrumentation does not alter prompts, verdict selection or evaluation.
+Read-only review reporting is owned by the backend; see its
+`docs/production-observability.md`.

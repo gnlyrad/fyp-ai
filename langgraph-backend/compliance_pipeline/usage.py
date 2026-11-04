@@ -59,6 +59,7 @@ def track_usage(node: Callable[..., Any]) -> Callable[..., Any]:
 
     @functools.wraps(node)
     def wrapped(state: Any, *args: Any, **kwargs: Any) -> Any:
+        started_ns = time.time_ns()
         calls: list[dict] = []
         native: list[dict] = []
         native_token = _native_usage.set(native)
@@ -91,6 +92,17 @@ def track_usage(node: Callable[..., Any]) -> Callable[..., Any]:
                  "node_latency_ms": round((time.perf_counter() - started) * 1000, 3)}
                 for call in calls
             ]}
+        if isinstance(update, dict) and (calls or total):
+            from compliance_pipeline.observability import _enabled, stage_record
+            if _enabled():
+                transports = {}
+                if standard_usage:
+                    transports["standard"] = standard_usage
+                if batch_usage:
+                    transports["batch"] = batch_usage
+                update = {**update, "stage_observations": [stage_record(
+                    node.__name__.removesuffix("_node"), started_ns, time.time_ns(), transports, calls,
+                    elapsed_ms=(time.perf_counter() - started) * 1000)]}
         return update
 
     return wrapped

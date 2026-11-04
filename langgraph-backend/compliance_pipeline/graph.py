@@ -40,6 +40,7 @@ from compliance_pipeline.nodes.role_inference import role_inference_node
 from compliance_pipeline.nodes.verify import verify_node
 from compliance_pipeline.state import CheckItemTask, ComplianceState, InputState, OutputState
 from compliance_pipeline.usage import track_usage
+from compliance_pipeline.observability import begin_observation, finish_observation, track_stage
 
 
 def _route_to_checks(state: ComplianceState) -> list[Send] | str:
@@ -114,8 +115,9 @@ def warm_checks_node(state):
 def build_graph():
     builder = StateGraph(ComplianceState, input_schema=InputState, output_schema=OutputState)
 
-    builder.add_node("ingest", ingest_node)
-    builder.add_node("quality_check", quality_check_node)
+    builder.add_node("observe_start", begin_observation)
+    builder.add_node("ingest", track_stage(ingest_node))
+    builder.add_node("quality_check", track_stage(quality_check_node))
     builder.add_node("role_inference", track_usage(role_inference_node))
     builder.add_node("call_intent", track_usage(call_intent_node))
     builder.add_node("check_item", track_usage(check_item_node))
@@ -123,10 +125,12 @@ def build_graph():
     builder.add_node("warm_checks", track_usage(warm_checks_node))
     builder.add_node("verify", track_usage(verify_node))
     builder.add_node("decide", track_usage(decide_node))
-    builder.add_node("aggregate", aggregate_node)
+    builder.add_node("aggregate", track_stage(aggregate_node))
+    builder.add_node("observe_finish", finish_observation)
     builder.add_node("output", output_node)
 
-    builder.add_edge(START, "ingest")
+    builder.add_edge(START, "observe_start")
+    builder.add_edge("observe_start", "ingest")
     builder.add_edge("ingest", "quality_check")
     builder.add_edge("quality_check", "role_inference")
     builder.add_edge("role_inference", "call_intent")
@@ -137,7 +141,8 @@ def build_graph():
     builder.add_edge("check_batch", "verify")
     builder.add_edge("verify", "decide")
     builder.add_edge("decide", "aggregate")
-    builder.add_edge("aggregate", "output")
+    builder.add_edge("aggregate", "observe_finish")
+    builder.add_edge("observe_finish", "output")
     builder.add_edge("output", END)
 
     return builder.compile()

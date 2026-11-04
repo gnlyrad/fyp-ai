@@ -66,6 +66,11 @@ class ComplianceState(TypedDict, total=False):
     usage_by_stage: Annotated[dict, merge_stage_usage]
     usage_by_transport: Annotated[dict, merge_stage_usage]
     llm_calls: Annotated[list[dict], operator.add]
+    analysis_run_id: str
+    observation_started_ns: int
+    observation_clock_ns: int
+    stage_observations: Annotated[list[dict], operator.add]
+    observability: dict
 
     # Deviations from CLAUDE.md's ComplianceState, see module docstring.
     verified_results: list[ItemResult]
@@ -93,6 +98,7 @@ class InputState(TypedDict, total=False):
     results: dict  # AWS Transcribe `results` object; takes precedence
     checklist: list[dict]  # optional; replaces the default Stage 2 checks (see config.resolve_checklist)
     call_id: str
+    analysis_run_id: str  # optional backend execution UUID, used only for telemetry correlation
     speaker_roles: dict
 
 
@@ -100,6 +106,7 @@ class OutputState(TypedDict, total=False):
     """What the graph returns."""
 
     call_id: str
+    observability: dict
     transcript: str
     segments: list[dict]
     quality_flags: list[str]
