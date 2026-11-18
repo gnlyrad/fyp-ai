@@ -21,6 +21,15 @@ export type SttRunSummary = {
   vocabulary_name: string | null; language_model_name: string | null;
 };
 
+/** The noisy / channel-degraded runs are published under <dataset>__environment_v2, which is its own card beside the clean baseline. */
+export const NOISY_DATASET_SUFFIX = "__environment_v2";
+export function datasetLabel(datasetId: string): string {
+  const noisy = datasetId.endsWith(NOISY_DATASET_SUFFIX);
+  const words = (noisy ? datasetId.slice(0, -NOISY_DATASET_SUFFIX.length) : datasetId).split("_");
+  const base = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  return noisy ? `${base} (noisy and channel-degraded)` : `${base} (clean)`;
+}
+
 export type SttDataset = { dataset_id: string; label: string; run_count: number; latest_run_at: string | null; dataset_call_count: number };
 
 export type SttOp = "equal" | "substitute" | "delete" | "insert";

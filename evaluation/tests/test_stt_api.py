@@ -61,7 +61,7 @@ def world(tmp_path):
 def test_datasets_runs_run_and_call_reads(world):
     client = world[0]
     datasets = client.get("/api/stt/datasets").json()
-    assert datasets == [{"dataset_id": "toy_v1", "label": "Toy V1", "run_count": 1, "latest_run_at": "2026-10-17T00:00:00Z", "dataset_call_count": 2}]
+    assert datasets == [{"dataset_id": "toy_v1", "label": "Toy V1 (clean)", "run_count": 1, "latest_run_at": "2026-10-17T00:00:00Z", "dataset_call_count": 2}]
     runs = client.get("/api/stt/datasets/toy_v1").json()["runs"]
     assert runs[0]["run_id"] == "run1" and runs[0]["calls_scored"] == 1 and runs[0]["dataset_call_count"] == 2
     run = client.get("/api/stt/runs/run1").json()

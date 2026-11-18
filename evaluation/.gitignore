@@ -3,3 +3,5 @@ runs/*
 stt_runs/*
 !stt_runs/.gitkeep
 stt_runs_archive/
+.cache/
+.recovery-staging-*/

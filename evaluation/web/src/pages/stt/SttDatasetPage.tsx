@@ -3,7 +3,7 @@ import { DataTable, type Column } from "../../components/DataTable";
 import { Page } from "../../components/Page";
 import { Badge, Card, ErrorPanel, Loading } from "../../components/ui";
 import { sgt } from "../../lib/format";
-import { sttPaths, useSttDataset, type SttRunSummary } from "../../lib/stt";
+import { datasetLabel, sttPaths, useSttDataset, type SttRunSummary } from "../../lib/stt";
 import { isAvailable, rate, sdi } from "./parts";
 
 export default function SttDatasetPage() {
@@ -45,12 +45,12 @@ export default function SttDatasetPage() {
     },
   ];
   return (
-    <Page section="stt" crumbs={[{ label: "Datasets", to: sttPaths.home() }, { label: data.data?.dataset.label ?? datasetId }]}>
+    <Page section="stt" crumbs={[{ label: "Datasets", to: sttPaths.home() }, { label: data.data ? datasetLabel(datasetId) : datasetId }]}>
       {data.isPending && <Loading />}
       {data.isError && <ErrorPanel error={data.error} />}
       {data.data && (
         <>
-          <h1 className="mb-1 text-xl font-semibold text-ink">{data.data.dataset.label}</h1>
+          <h1 className="mb-1 text-xl font-semibold text-ink">{datasetLabel(datasetId)}</h1>
           <p className="mb-4 text-[13px] text-ink-2">Each row is one set of Transcribe results, scored offline against the dataset's reference transcripts.</p>
           <Card>
             <DataTable id="sttruns" columns={columns} rows={data.data.runs} rowKey={(run) => run.run_id}

@@ -36,7 +36,10 @@ def _read(path: Path) -> Any:
 
 
 def dataset_label(dataset_id: str) -> str:
-    return dataset_id.replace("_", " ").title()
+    suffix = "__environment_v2"
+    noisy = dataset_id.endswith(suffix)
+    base = (dataset_id[:-len(suffix)] if noisy else dataset_id).replace("_", " ").title()
+    return f"{base} (noisy and channel-degraded)" if noisy else f"{base} (clean)"
 
 
 class SttStore:
